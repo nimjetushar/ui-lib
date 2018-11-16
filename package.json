@@ -1,0 +1,18 @@
+{
+  "name": "ui-lib",
+  "version": "1.0.0",
+  "description": "UI library provides different components",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimjetushar/ui-lib.git"
+  },
+  "keywords": [],
+  "author": "Tushar Nimje",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nimjetushar/ui-lib/issues"
+  },
+  "homepage": "https://github.com/nimjetushar/ui-lib#readme"
+}
