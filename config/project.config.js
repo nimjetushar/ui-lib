@@ -13,4 +13,4 @@ const Config = {
   docDirName: "docs"
 };
 
-export default Config;
+module.exports = Config;
