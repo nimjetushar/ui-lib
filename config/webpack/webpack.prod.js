@@ -1,95 +1,97 @@
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var helpers = require('./helpers');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
-const { AngularCompilerPlugin } = require('@ngtools/webpack');
-const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
+const webpack = require('webpack'),
+  OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"),
+  path = require('path'),
+  {
+    AngularCompilerPlugin
+  } = require('@ngtools/webpack');
 
-module.exports =  {
+const rootDir = path.resolve(__dirname, "../../"),
+  entryPoint = "src/index.ts";
+
+const config = require("../project.config"),
+  mode = config.envTypes.PRODUCTION;
+
+module.exports = {
+  mode: mode,
   devtool: 'source-map',
   entry: {
-    'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
-    'app': './src/main.ts'
+    app: ["reflect-metadata", "zone.js", path.resolve(rootDir, entryPoint)]
   },
 
   resolve: {
-    extensions: ['.ts', '.js'],
-     alias: {
-            jquery: "jquery/src/jquery"
-        }
+    extensions: [".ts", ".js"],
+    modules: ["./node_modules"],
+    symlinks: true,
+    mainFields: ["browser", "module", "main"]
   },
+
   output: {
-    path: helpers.root('dist'),
+    path: path.resolve(rootDir, "dist"),
     publicPath: '',
-    filename: '[name].[hash].js',
-    chunkFilename: '[id].[hash].chunk.js'
+    filename: "[name].bundle.js",
+    chunkFilename: "[name].chunk.js",
+    crossOriginLoading: false
   },
+
   module: {
-    rules: [
-      {
+    rules: [{
         "test": /\.ts$/,
         "loader": "@ngtools/webpack"
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        use: [{
+          loader: "raw-loader",
+          options: {
+            minimize: true
+          }
+        }]
       },
       {
         test: /\.(png|jpe?g|gif|cur|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file-loader?name=assets/[name].[hash].[ext]'
+        loader: 'file-loader?name=assets/[name].[ext]'
       },
       {
-        test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', loader: 'css-loader?sourceMap' })
-      },
-      {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw-loader'
+        test: /\.scss$/,
+        use: ["css-loader", "sass-loader"]
       }
     ]
   },
+  
   plugins: [
-    // Workaround for angular/angular#11580
-    new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)@angular/,
-      path.resolve(__dirname, '../src')
-    ),
-
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills']
-    }),
-
-    new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
-      mangle: {
-        keep_fnames: true
-      }
+    new webpack.SourceMapDevToolPlugin({
+      filename: "[file].map[query]",
+      moduleFilenameTemplate: "[resource-path]",
+      fallbackModuleFilenameTemplate: "[resource-path]?[hash]",
+      sourceRoot: "webpack:///"
     }),
-    new ExtractTextPlugin('[name].[hash].css'),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'ENV': JSON.stringify(ENV)
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      htmlLoader: {
-        minimize: false // workaround for ng2
-      }
-    }),
+    new webpack.NamedModulesPlugin({}),
+    new webpack.HotModuleReplacementPlugin(),
     new AngularCompilerPlugin({
-      "mainPath": "main.ts",
-      "platform": 0,
-      "sourceMap": true,
-      "tsConfigPath": "src\\tsconfig.json",
-      "skipCodeGeneration": true,
-      "compilerOptions": {}
-    })
-  ]
+      mainPath: path.resolve(rootDir, entryPoint),
+      sourceMap: true,
+      tsConfigPath: path.resolve(rootDir, "config/tsconfig.json"),
+      skipCodeGeneration: true
+    }),
+    new OptimizeCSSAssetsPlugin({})
+  ],
+
+  node: {
+    fs: "empty",
+    global: true,
+    crypto: "empty",
+    tls: "empty",
+    net: "empty",
+    process: true,
+    module: false,
+    clearImmediate: false,
+    setImmediate: false
+  },
+
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
+  }
 };

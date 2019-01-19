@@ -2,14 +2,16 @@ const path = require("path"),
   HtmlWebpackPlugin = require("html-webpack-plugin"),
   rxPaths = require("rxjs/_esm5/path-mapping"),
   webpack = require("webpack"),
-  { AngularCompilerPlugin } = require("@ngtools/webpack");
+  {
+    AngularCompilerPlugin
+  } = require("@ngtools/webpack");
 
 const config = require("../project.config"),
   port = config.devServer.port,
   mode = config.envTypes.DEVELOPMENT;
 
-const rootDir = path.resolve(__dirname, "../../");
-const cwd = process.cwd();
+const rootDir = path.resolve(__dirname, "../../"),
+  cwd = process.cwd();
 
 module.exports = {
   mode: mode,
@@ -38,25 +40,22 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.ts$/,
         exclude: [/node_modules/, /src/],
-        use: [
-          {
-            loader: "@ngtools/webpack"
-          }
-        ],
+        use: [{
+          loader: "@ngtools/webpack"
+        }],
         include: [path.resolve(rootDir, "demo")]
       },
       {
         test: /\.html$/,
-        use: [
-          {
-            loader: "raw-loader",
-            options: { minimize: true }
+        use: [{
+          loader: "raw-loader",
+          options: {
+            minimize: true
           }
-        ]
+        }]
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -64,21 +63,19 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ["to-string-loader", "style-loader", "css-loader", "sass-loader"]
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
 
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
-
     new webpack.SourceMapDevToolPlugin({
       filename: "[file].map[query]",
       moduleFilenameTemplate: "[resource-path]",
       fallbackModuleFilenameTemplate: "[resource-path]?[hash]",
       sourceRoot: "webpack:///"
     }),
-
     new webpack.NamedModulesPlugin({}),
     new webpack.HotModuleReplacementPlugin(),
     new AngularCompilerPlugin({
@@ -87,7 +84,6 @@ module.exports = {
       tsConfigPath: path.resolve(rootDir, "config/tsconfig.json"),
       skipCodeGeneration: true
     }),
-
     new HtmlWebpackPlugin({
       template: "demo/index.html",
       filename: "./index.html",
