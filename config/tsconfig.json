@@ -14,11 +14,10 @@
     "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true,
     "typeRoots": ["./../node_modules/@types/"],
-    "outDir": "../demo",
     "baseUrl": "./"
   },
   "exclude": ["node_modules"],
-  "include": ["../demo"],
+  "include": ["../demo", "../src"],
   "compileOnSave": false,
   "buildOnSave": false
 }
