@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { UiLibraryComponent } from './ui-library.component';
 
 @NgModule({
-  declarations: [UiLibraryComponent],
+  declarations: [],
   imports: [
   ],
-  exports: [UiLibraryComponent]
+  exports: []
 })
 export class UiLibraryModule { }
