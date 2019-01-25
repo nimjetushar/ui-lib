@@ -6,4 +6,4 @@ import { NgModule } from '@angular/core';
   ],
   exports: []
 })
-export class UiLibraryModule { }
+export class UiLibrary { }
