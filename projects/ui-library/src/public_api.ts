@@ -4,4 +4,4 @@
 
 export * from './lib/ui-library.module';
 
-export * from 'utils';
+export * from 'n-utilities/utils';

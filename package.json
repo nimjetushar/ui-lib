@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build ui-library",
+    "build": "ng build ui-library && gulp",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -24,10 +24,11 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
-    "grid.css": "https://github.com/nimjetushar/grid-css.git",
+    "font-awesome": "^4.7.0",
+    "grid-css": "git+https://github.com/nimjetushar/grid-css.git",
+    "n-utilities": "git+https://github.com/nimjetushar/Utils.git",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "utils": "git+https://github.com/nimjetushar/Utils.git",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -40,6 +41,9 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.1.1",
