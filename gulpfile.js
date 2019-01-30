@@ -15,7 +15,9 @@ const AUTOPREFIXER_BROWSERS = [
 ];
 
 const sassFiles = "projects/ui-library/src/styles.scss",
-  cssDest = "dist/ui-library/";
+  baseDest = "dist/ui-library",
+  fontDest = `${baseDest}/fonts`
+  cssDest = `${baseDest}/styles`;
 
 function styles() {
   return gulp
@@ -27,6 +29,13 @@ function styles() {
     .pipe(gulp.dest(cssDest));
 }
 
-const defaultTask = gulp.series(styles);
+function font() {
+  return gulp.src([
+      'node_modules/font-awesome/fonts/**/*'
+    ])
+    .pipe(gulp.dest(fontDest));
+}
+
+const defaultTask = gulp.parallel(styles, font);
 
 exports.default = defaultTask;
