@@ -1,5 +1,6 @@
 export interface MenuItem {
     label: string;
-    route: string;
+    route?: string;
     badge?: string;
+    children?: Array<MenuItem>;
 }

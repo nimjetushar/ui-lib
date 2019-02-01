@@ -5,10 +5,12 @@ import { UiLibrary } from 'ui-library';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DeveloperComponent } from './demo/developer/developer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DeveloperComponent
   ],
   imports: [
     BrowserModule,
