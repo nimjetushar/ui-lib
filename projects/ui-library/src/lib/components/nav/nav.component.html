@@ -1,0 +1,14 @@
+<div class="main-container-sidebar" id="main-container-sidebar" [class.sidebar-expanded]="expanded">
+  <div class="main-container-sidebar-header">
+    <div class="main-container-sidebar__header__toggle" (click)="toggleMenu()">
+      <i class="{{expanded ? 'dva-cancel':'dva-menu'}}"></i>
+    </div>
+  </div>
+  <div id="main-container__sidebar__content" class="main-container-sidebar__content">
+    <ul role="menu" id="main-nav" class="main-nav" [class.main-nav-expanded]="expanded">
+      <li role="menuitem" class="main-nav__list-item" *ngFor="let menuItem of menuItems">
+        {{menuItem.label}}
+      </li>
+    </ul>
+  </div>
+</div>

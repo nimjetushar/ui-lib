@@ -1,0 +1,36 @@
+<div class="main-container-header">
+
+  <div class="main-container__header__content-left">
+
+    <div id="main-container-header-menu-icon-container" class="main-container__header__content-left__sidebar-toggle d-block d-md-none"
+      (click)="handleSidebarToggle()">
+      <i class="dva-menu"></i>
+    </div>
+
+    <div id="main-container__header__logo-container" class="main-container__header__content-left__logo-container">
+
+      <div class="main-container__header__content-left__logo-container__logo" (click)="onLogoClick()">
+        <img src="assets/images/DaVita_Logo_RGB_2C.png" />
+      </div>
+
+      <div class="main-container__header__content-left__logo-container__title-container">
+        <span id="main-container__body__header__title" class="main-container__header__content-left__logo-container__title-container__title">{{title}}</span>
+        <ng-content select="[header-content-left]"></ng-content>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container__header__content-right">
+    <div [class.display-none]="!userAccountInfo" id="main-container__user-account" class="main-container__header__content-right__user-account"
+      ngbDropdown placement="bottom-right">
+
+      <div class="main-container__header__content-right__user-account__name" id="main-container__user-account__toggle"
+        ngbDropdownToggle>
+        <span class="main-container__header__content-right__user-account__name__text">{{userAccountInfo?.firsdpsame}}
+          {{userAccountInfo?.lasdpsame}} </span>
+        <i class="dva-caret-down main-container__header__content-right__user-account__name__icon"></i>
+      </div>
+    </div>
+  </div>
+
+</div>
