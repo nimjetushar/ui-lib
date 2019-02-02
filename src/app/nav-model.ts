@@ -5,7 +5,7 @@ export class NavModel {
     private _navItems: MenuItem[] = [
         {
             label: 'Getting Started',
-            badge: 'dva-home',
+            badge: 'fa-home',
             children: [
                 {
                     label: 'Developers',

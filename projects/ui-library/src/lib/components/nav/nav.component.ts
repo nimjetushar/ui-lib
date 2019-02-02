@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 import { MenuItem } from './nav.interface';
 
@@ -7,7 +7,7 @@ import { MenuItem } from './nav.interface';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
 
   @Input() menuItems: Array<MenuItem> = [];
 
@@ -16,8 +16,6 @@ export class NavComponent implements OnInit {
   expanded: boolean;
 
   constructor() { }
-
-  ngOnInit(): void { }
 
   toggleMenu(): void {
     this.expanded = !this.expanded;
