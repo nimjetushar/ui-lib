@@ -1,12 +1,54 @@
 @import "../../styles/variable.scss";
+@import "../../styles/functions.scss";
+@import "../../styles/mixins.scss";
 
 #main-container-sidebar {
-    position: absolute;
-    left: 0;
+  position: absolute;
+  left: $sidebar-init-position;
+  top: 0;
+  bottom: 0;
+  width: $sidebar-width-expanded;
+  height: $sidebar-height;
+  background: $color-background;
+  @include transition(left $main-container-transistion-delay ease-in-out);
+  z-index: 20;
+
+  .header {
+    @include flex(2 0 auto);
+    @include HGroup(0, flex-start, center);
+    height: $main-container-header-height;
+    background-color: $color-primary;
+  }
+
+  .sidebar-toggle {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    padding-top: rem(19);
+    padding-left: rem(29);
+    padding-right: rem(29);
+
+    i.fa {
+      font-size: $nav-icon-size;
+      color: $color-white;
+    }
+  }
+}
+
+.main-container-sidbar.overlay {
+    position: fixed;
     top: 0;
     bottom: 0;
-    // width: rem(3);
-    background-color: $color-primary;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    background: $color-overlay;
+}
+
+#main-container-sidebar.sidebar-expanded {
+  left: 0;
 }
 
 

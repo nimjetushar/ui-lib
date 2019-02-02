@@ -10,16 +10,19 @@ import { MenuItem } from './nav.interface';
 export class NavComponent {
 
   @Input() menuItems: Array<MenuItem> = [];
+  @Input() set expanded(status: boolean) {
+    this._expanded = status;
+  }
 
   @Output() sliderStatus: EventEmitter<boolean> = new EventEmitter();
 
-  expanded: boolean;
+  private _expanded: boolean;
 
   constructor() { }
 
   toggleMenu(): void {
-    this.expanded = !this.expanded;
-    this.sliderStatus.emit(this.expanded);
+    this.expanded = !this._expanded;
+    this.sliderStatus.emit(this._expanded);
   }
 
 }

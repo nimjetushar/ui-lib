@@ -1,5 +1,6 @@
 <div class="application-wrapper">
-  <lib-nav [menuItems]="menuItems"></lib-nav>
+  <lib-header [title]="appTitle" (sideBarToggled)="sideBarToggled($event)"></lib-header>
+  <lib-nav [menuItems]="menuItems" [expanded]="expanded" (sliderStatus)="sideBarToggled($event)"></lib-nav>
 
   <div class="main-container" id="main-container">
     <div class="main-container-content">

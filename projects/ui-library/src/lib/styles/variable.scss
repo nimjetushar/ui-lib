@@ -1,3 +1,6 @@
+@import "./functions.scss";
+
+// colors
 $color-primary: #0069B1;
 $color-primaryhover: #003F81;
 $color-secondary: #82B20A;
@@ -30,14 +33,28 @@ $color-black: #000000;
 $color-white: #FFFFFF;
 $color-text-main-menu-item: #283764;
 $color-disabled: #F2F2F2;
+$color-overlay: rgba(0, 0, 0, 0.5);
 
 $color-text-disabled: $color-light; // text disabled
 
 $border-disabled: 1px solid $color-light;
 
+// font
 $font-weight-bold: 700;
 $font-weight-medium-bold: 600;
 $font-weight-medium: 500;
 $font-weight-regular: 400;
 $font-weight-light-regular: 300;
 $font-weight-light: 200;
+
+
+//containers
+$main-container-header-height: 4.5rem;
+$main-container-transistion-delay: 250ms;
+
+// header, nav
+$nav-icon-size: rem(35);
+$sidebar-height: 100vh;
+$sidebar-width: 240px;
+$sidebar-width-expanded: rem($sidebar-width);
+$sidebar-init-position: rem(-$sidebar-width);
