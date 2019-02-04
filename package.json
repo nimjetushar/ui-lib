@@ -29,7 +29,7 @@
     "grid-css": "git+https://github.com/nimjetushar/grid-css.git",
     "materialize-css": "^1.0.0",
     "n-utilities": "git+https://github.com/nimjetushar/Utils.git",
-    "rxjs": "~6.3.3",
+    "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
