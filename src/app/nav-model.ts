@@ -9,11 +9,17 @@ export class NavModel {
             children: [
                 {
                     label: 'Developers',
-                    route: ''
-                },
+                    route: 'developer'
+                }
+            ]
+        },
+        {
+            label: 'Styles',
+            badge: 'fa-home',
+            children: [
                 {
-                    label: 'Designers',
-                    route: ''
+                    label: 'Color Pallet',
+                    route: 'colorPallet'
                 }
             ]
         }

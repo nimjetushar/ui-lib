@@ -20,7 +20,7 @@
     ],
     "paths": {
       "ui-library": [
-        "dist/ui-library"
+        "projects/ui-library/src/"
       ],
       "ui-library/*": [
         "dist/ui-library/*"
