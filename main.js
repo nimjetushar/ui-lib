@@ -479,7 +479,7 @@ var routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'developer'
+        redirectTo: 'setup'
     }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -814,6 +814,10 @@ var NavModel = /** @class */ (function () {
                 label: 'Getting Started',
                 badge: 'fa-home',
                 children: [
+                    {
+                        label: 'Setup',
+                        route: 'setup'
+                    },
                     {
                         label: 'Developers',
                         route: 'developer'
