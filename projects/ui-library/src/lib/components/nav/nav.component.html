@@ -7,7 +7,7 @@
   <div id="sidebar-content" class="sidebar-content">
     <ul role="menu" id="main-nav" class="main-nav">
       <li role="menuitem" class="list-item" *ngFor="let menuItem of menuItems;let idx = index"
-        [class.selected]="selectedMenu?.subMenuIdx === idx">
+        [class.selected]="selectedMenu?.idx === idx">
         <div class="menu-item" (click)="onMenuClick(menuItem, idx)">
           <lib-badge class="badge" [badge]="menuItem?.badge"></lib-badge>
           <span class="label">{{menuItem.label}}</span>

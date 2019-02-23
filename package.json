@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "gulp": "gulp",
-    "deploy": "gh-pages -d dist/ui-lib"
+    "deploy": "npm run build-demo && gh-pages -d dist/ui-lib"
   },
   "author": "Tushar Nimje",
   "license": "MIT",

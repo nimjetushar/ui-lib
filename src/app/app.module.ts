@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DeveloperComponent } from './demo/developer/developer.component';
 import { ColorPalletComponent } from './demo/color-pallet/color-pallet.component';
+import { SetupComponent } from './demo/setup/setup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DeveloperComponent,
-    ColorPalletComponent
+    ColorPalletComponent,
+    SetupComponent
   ],
   imports: [
     BrowserModule,

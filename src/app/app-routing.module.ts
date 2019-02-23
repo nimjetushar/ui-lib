@@ -3,11 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DeveloperComponent } from './demo/developer/developer.component';
 import { ColorPalletComponent } from './demo/color-pallet/color-pallet.component';
+import { SetupComponent } from './demo/setup/setup.component';
 
 const routes: Routes = [
   {
     path: 'developer',
     component: DeveloperComponent
+  },
+  {
+    path: 'setup',
+    component: SetupComponent
   },
   {
     path: 'colorPallet',
@@ -16,7 +21,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'developer'
+    redirectTo: 'setup'
   }
 ];
 

@@ -118,7 +118,9 @@ $color-main-nav-item:#E5EAEE;
   }
 
   .selected {
-
+    &>.menu-item {
+      border-left: 4px solid $color-primary;
+    }
     .label,
     .badge {
       color: $color-primary;
@@ -140,6 +142,7 @@ $color-main-nav-item:#E5EAEE;
   width: 100%;
   height: 100%;
   background: $color-overlay;
+  cursor: pointer;
 }
 
 #main-container-sidebar.sidebar-expanded {

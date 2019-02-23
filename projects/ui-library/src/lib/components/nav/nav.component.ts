@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 import { MenuItem } from './nav.interface';
 
@@ -8,7 +9,7 @@ import { MenuItem } from './nav.interface';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent {
+export class NavComponent implements OnInit {
 
   @Input() menuItems: Array<MenuItem> = [];
   @Input() set expanded(status: boolean) {
@@ -29,6 +30,27 @@ export class NavComponent {
 
   constructor(private _router: Router) { }
 
+  ngOnInit(): void {
+    this._router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((route: NavigationEnd) => {
+      const curRoute = route.url;
+      for (let i = 0; i < this.menuItems.length; i++) {
+        const menuItem = this.menuItems[i];
+        if (menuItem.children) {
+          for (let k = 0; k < menuItem.children.length; k++) {
+            const subMenu = menuItem.children[k];
+            if (curRoute.includes(subMenu.route)) {
+              this.selectedMenu = { idx: i, subMenuIdx: k };
+              this.expandedMenu = i;
+              return;
+            }
+          }
+        }
+      }
+    });
+  }
+
   toggleMenu(): void {
     this.expanded = !this.expanded;
     this.sliderStatus.emit(this.expanded);
@@ -48,7 +70,7 @@ export class NavComponent {
 
     if (!this.diableDefaultClick) {
       this._router.navigate([subMenu.route]);
-      this.expanded = false;
+      this.toggleMenu();
     }
     this.menuClickTrigger.emit({ isParent: false, menu: menu, subMenu: subMenu });
   }

@@ -8,6 +8,10 @@ export class NavModel {
             badge: 'fa-home',
             children: [
                 {
+                    label: 'Setup',
+                    route: 'setup'
+                },
+                {
                     label: 'Developers',
                     route: 'developer'
                 }
