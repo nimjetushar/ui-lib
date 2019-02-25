@@ -5,5 +5,12 @@
 [![Status](https://api.dependabot.com/badges/status?host=github&repo=nimjetushar/ui-lib)](https://dependabot.com)
 [![Website](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=my-website)](https://nimjetushar.github.io/ui-lib/)
 
-# License
+## Getting started:
+
+Download / clone repositry from [https://github.com/nimjetushar/ui-lib.git](https://github.com/nimjetushar/ui-lib.git).
+
+Install dependencies ```npm install``` <br>
+Create build ```npm run build``` 
+
+## License
 [![GitHub license](https://img.shields.io/github/license/nimjetushar/ui-lib.svg)](https://github.com/nimjetushar/ui-lib/blob/master/LICENSE)
