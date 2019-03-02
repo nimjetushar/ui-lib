@@ -12,7 +12,7 @@ Download / clone repositry from [https://github.com/nimjetushar/ui-lib.git](http
 Install dependencies ```npm install``` <br>
 Create build ```npm run build``` 
 
-Place the generated build from dist folder into respective project directory and import the js file and scss file into your porject.
+Place the generated build from dist folder into respective project directory and import the js file and scss file into your project.
 
 ## License
 [![GitHub license](https://img.shields.io/github/license/nimjetushar/ui-lib.svg)](https://github.com/nimjetushar/ui-lib/blob/master/LICENSE)
