@@ -1,27 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DeveloperComponent } from './demo/developer/developer.component';
-import { ColorPalletComponent } from './demo/color-pallet/color-pallet.component';
-import { SetupComponent } from './demo/setup/setup.component';
-
 const routes: Routes = [
   {
-    path: 'developer',
-    component: DeveloperComponent
+    path: 'gettingStarted',
+    loadChildren: './demo/getting-started/getting-started.module#GettingStartedModule'
   },
   {
-    path: 'setup',
-    component: SetupComponent
-  },
-  {
-    path: 'colorPallet',
-    component: ColorPalletComponent
+    path: 'styles',
+    loadChildren: './demo/styles/styles.module#StylesModule'
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'setup'
+    redirectTo: 'gettingStarted/setup'
   }
 ];
 

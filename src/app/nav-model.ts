@@ -9,23 +9,31 @@ export class NavModel {
             children: [
                 {
                     label: 'Setup',
-                    route: 'setup'
+                    route: 'gettingStarted/setup'
                 },
                 {
                     label: 'Developers',
-                    route: 'developer'
+                    route: 'gettingStarted/developer'
                 }
             ]
         },
         {
             label: 'Styles',
-            badge: 'fa-home',
+            badge: 'fa-css3',
             children: [
                 {
                     label: 'Color Pallet',
-                    route: 'colorPallet'
+                    route: 'styles/colorPallet'
+                },
+                {
+                    label: 'Reference',
+                    route: 'styles/reference'
                 }
             ]
+        },
+        {
+            label: 'Components',
+            badge: 'fa-slack'
         }
     ];
 
