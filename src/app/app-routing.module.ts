@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { UtilityComponent } from './demo/utility/utility.component';
 
 const routes: Routes = [
   {
@@ -9,6 +10,10 @@ const routes: Routes = [
   {
     path: 'styles',
     loadChildren: './demo/styles/styles.module#StylesModule'
+  },
+  {
+    path: 'utility',
+    component: UtilityComponent
   },
   {
     path: '',

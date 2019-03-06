@@ -34,15 +34,31 @@ export class NavComponent implements OnInit {
     this._router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((route: NavigationEnd) => {
-      const curRoute = route.url;
-      for (let i = 0; i < this.menuItems.length; i++) {
+      let i = 0, k = -1;
+      const curRoute = route.url,
+        menuHighlight = (menu: MenuItem) => {
+          if (curRoute.includes(menu.route)) {
+            this.selectedMenu = { idx: i, subMenuIdx: k };
+            this.expandedMenu = i;
+            return true;
+          }
+        };
+
+      for (i = 0; i < this.menuItems.length; i++) {
         const menuItem = this.menuItems[i];
+
+        if (menuItem.route && !menuItem.children) {
+          const dobreak = menuHighlight(menuItem);
+          if (dobreak) {
+            return;
+          }
+        }
+
         if (menuItem.children) {
-          for (let k = 0; k < menuItem.children.length; k++) {
-            const subMenu = menuItem.children[k];
-            if (curRoute.includes(subMenu.route)) {
-              this.selectedMenu = { idx: i, subMenuIdx: k };
-              this.expandedMenu = i;
+          for (k = 0; k < menuItem.children.length; k++) {
+            const subMenu = menuItem.children[k],
+              dobreak = menuHighlight(subMenu);
+            if (dobreak) {
               return;
             }
           }
@@ -57,6 +73,12 @@ export class NavComponent implements OnInit {
   }
 
   onMenuClick(menu: MenuItem, index: number): void {
+    if (menu.route) {
+      this.selectedMenu = { idx: index, subMenuIdx: -1 };
+      this._router.navigate([menu.route]);
+      this.toggleMenu();
+      return;
+    }
     if (this.expandedMenu === undefined || this.expandedMenu !== index) {
       this.expandedMenu = index;
       this.menuClickTrigger.emit({ isParent: true, menu: menu });

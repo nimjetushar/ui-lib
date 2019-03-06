@@ -1,3 +1,17 @@
-<div class="styles-reference">
-  https://fontawesome.com/v4.7.0/icons/
-</div>
+<demo-wrapper header="References">
+  <div content>
+    <div class="styles-reference">
+      <div class="descriptions">
+        The library component contains following css framework / libraries
+        <ul>
+          <li *ngFor="let item of libLists">
+            <a [href]="item.url" target="_blank">
+              <i class="fa {{item.icon}}"></i>
+              {{item.name}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</demo-wrapper>

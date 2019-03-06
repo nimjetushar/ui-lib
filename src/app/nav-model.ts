@@ -34,6 +34,11 @@ export class NavModel {
         {
             label: 'Components',
             badge: 'fa-slack'
+        },
+        {
+            label: 'Utility',
+            badge: 'fa-wrench',
+            route: 'utility'
         }
     ];
 

@@ -1,3 +1,24 @@
+@import "../../../styles/variable.scss";
+
 .styles-reference {
-    
+  .descriptions {
+    ul li {
+      margin: rem(10);
+      margin-left: 0;
+
+      a {
+        color: #000;
+      }
+
+      i {
+        margin-right: rem(10);
+      }
+
+      &:hover {
+        i {
+          color: #ee6e73;
+        }
+      }
+    }
+  }
 }
