@@ -6,6 +6,8 @@
     "build": "ng build ui-library && gulp",
     "build-demo": "ng build",
     "test": "ng test",
+    "test-lib": "ng test ui-library",
+    "test-server": "ng test --watch=false --browsers=ChromeHeadless && ng test ui-library --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "gulp": "gulp",

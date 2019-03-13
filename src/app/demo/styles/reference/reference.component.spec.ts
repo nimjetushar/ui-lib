@@ -1,3 +1,4 @@
+import { Common } from './../../common/common.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReferenceComponent } from './reference.component';
@@ -8,9 +9,10 @@ describe('ReferenceComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReferenceComponent ]
+      declarations: [ReferenceComponent],
+      imports: [Common]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -100,7 +100,8 @@
               "src/tsconfig.spec.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "**/e2e/**"
             ]
           }
         }
@@ -128,7 +129,8 @@
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "**/e2e/**"
             ]
           }
         }
@@ -168,7 +170,8 @@
               "projects/ui-library/tsconfig.spec.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "**/e2e/**"
             ]
           }
         }
