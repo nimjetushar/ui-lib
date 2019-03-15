@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: './demo/styles/styles.module#StylesModule'
   },
   {
+    path: 'component',
+    loadChildren: './demo/components/components.module#ComponentsModule'
+  },
+  {
     path: 'utility',
     component: UtilityComponent
   },

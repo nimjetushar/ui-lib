@@ -1,7 +1,7 @@
 <div class="demo-wrapper row">
   <div class="col-12">
     <div class="component-header">{{header}}</div>
-    <div class="component-content">
+    <div class="component-content"  [ngClass]="{'demo-container': isDemoContainer}">
       <ng-content select="[content]"></ng-content>
     </div>
   </div>

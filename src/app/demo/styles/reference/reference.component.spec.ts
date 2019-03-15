@@ -1,7 +1,7 @@
-import { Common } from './../../common/common.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReferenceComponent } from './reference.component';
+import { comModules } from '__test__/common.imports';
 
 describe('ReferenceComponent', () => {
   let component: ReferenceComponent;
@@ -10,7 +10,7 @@ describe('ReferenceComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ReferenceComponent],
-      imports: [Common]
+      imports: [...comModules]
     })
       .compileComponents();
   }));

@@ -6,4 +6,18 @@
     line-height: 110%;
     margin: 1.9466666667rem 0 1.168rem 0;
   }
+
+  .demo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 12.5rem;
+    position: relative;
+    padding: 2rem 2rem 2.5rem;
+    margin: 1.5rem 0 0;
+    background-color: #f5f7fa;
+    color: #152935;
+    border: 1px solid #dfe3e6;
+  }
 }

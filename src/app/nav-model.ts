@@ -33,7 +33,13 @@ export class NavModel {
         },
         {
             label: 'Components',
-            badge: 'fa-slack'
+            badge: 'fa-slack',
+            children: [
+                {
+                    label: 'Badge',
+                    route: 'component/badge'
+                }
+            ]
         },
         {
             label: 'Utility',
