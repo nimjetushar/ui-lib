@@ -9,7 +9,7 @@
       <li role="menuitem" class="list-item" *ngFor="let menuItem of menuItems;let idx = index"
         [class.selected]="selectedMenu?.idx === idx">
         <div class="menu-item" (click)="onMenuClick(menuItem, idx)">
-          <lib-badge class="badge" [badge]="menuItem?.badge"></lib-badge>
+          <t-badge class="badge" [badge]="menuItem?.badge"></t-badge>
           <span class="label">{{menuItem.label}}</span>
         </div>
 

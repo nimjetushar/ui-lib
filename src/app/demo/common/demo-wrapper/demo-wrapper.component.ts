@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
@@ -6,7 +6,8 @@ import { filter } from 'rxjs/operators';
   // tslint:disable-next-line:component-selector
   selector: 'demo-wrapper',
   templateUrl: './demo-wrapper.component.html',
-  styleUrls: ['./demo-wrapper.component.scss']
+  styleUrls: ['./demo-wrapper.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DemoWrapperComponent implements OnInit {
   @Input() header: string;

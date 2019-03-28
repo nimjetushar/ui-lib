@@ -1,6 +1,6 @@
 <div class="application-wrapper">
-  <lib-header [title]="appTitle" (sideBarToggled)="sideBarToggled($event)"></lib-header>
-  <lib-nav [menuItems]="menuItems" [expanded]="expanded" (sliderStatus)="sideBarToggled($event)"></lib-nav>
+  <t-header [title]="appTitle" (sideBarToggled)="sideBarToggled($event)"></t-header>
+  <t-nav [menuItems]="menuItems" [expanded]="expanded" (sliderStatus)="sideBarToggled($event)"></t-nav>
 
   <div class="main-container container-fluid" id="main-container">
     <router-outlet></router-outlet>

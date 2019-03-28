@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DemoWrapperComponent } from './demo-wrapper/demo-wrapper.component';
-
+import { UiLibrary } from 'ui-library';
 
 @NgModule({
   declarations: [DemoWrapperComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    UiLibrary
   ],
-  exports: [DemoWrapperComponent]
+  exports: [DemoWrapperComponent, UiLibrary]
 })
 export class Common { }

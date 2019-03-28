@@ -1,0 +1,21 @@
+@import "../../styles//variable.scss";
+.primary {
+    background: $color-primary;
+    &:hover {
+        background: $color-primaryhover;
+    }
+}
+
+.secondary {
+    background: $color-secondary;
+    &:hover {
+        background: $color-secondaryhover;
+    }
+}
+
+.tertiary {
+    background: #757575;
+    &:hover {
+        background: #616161;
+    }
+}

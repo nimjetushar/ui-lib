@@ -5,7 +5,7 @@ import { filter } from 'rxjs/operators';
 import { MenuItem } from './nav.interface';
 
 @Component({
-  selector: 'lib-nav',
+  selector: 't-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
