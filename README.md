@@ -4,6 +4,7 @@
 <br/>
 [![Build Status](https://semaphoreci.com/api/v1/nimjetushar/ui-lib/branches/master/shields_badge.svg)](https://semaphoreci.com/nimjetushar/ui-lib)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2f3503831efb41fe9e5cde24acd60be7)](https://www.codacy.com/app/tushar/ui-lib?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nimjetushar/ui-lib&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/2f3503831efb41fe9e5cde24acd60be7)](https://www.codacy.com/app/tushar/ui-lib?utm_source=github.com&utm_medium=referral&utm_content=nimjetushar/ui-lib&utm_campaign=Badge_Coverage)
 [![Status](https://api.dependabot.com/badges/status?host=github&repo=nimjetushar/ui-lib)](https://dependabot.com)
 <br/>
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/nimjetushar/ui-library)
