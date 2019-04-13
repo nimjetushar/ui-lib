@@ -116,7 +116,7 @@ var GettingStartedModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"setup-page\">\n  <div class=\"setup\">\n    <demo-wrapper header=\"Setup\">\n      <div content>\n          <p class=\"caption\">\n              Download or clone the repo from\n              <a href=\"https://github.com/nimjetushar/ui-lib.git\">https://github.com/nimjetushar/ui-lib.git</a>.\n              Follow the process mentioned in README.md and create the build for the UI library\n              and import the package into required project and enjoy the features.\n            </p>\n      </div>\n    </demo-wrapper>\n  </div>\n</div>\n"
+module.exports = "<div class=\"setup-page\">\n  <div class=\"setup\">\n    <demo-wrapper header=\"Setup\">\n      <div output>\n        <ul class=\"caption browser-default\">\n          <li>Download or clone the repo from\n            <a href=\"https://github.com/nimjetushar/ui-lib.git\">https://github.com/nimjetushar/ui-lib.git</a>\n          </li>\n          <li> Follow the process mentioned in README.md</li>\n          <li>create the build for the UI library and import the package into required\n            project</li>\n        </ul>\n      </div>\n    </demo-wrapper>\n  </div>\n</div>\n"
 
 /***/ }),
 
