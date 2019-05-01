@@ -46,7 +46,7 @@
     "@angular/language-service": "~7.2.0",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~11.11.1",
+    "@types/node": "~11.13.8",
 	"codacy-coverage": "3.4.0",
     "codelyzer": "~5.0.0",
     "gh-pages": "^2.0.1",
