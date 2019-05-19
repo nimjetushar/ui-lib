@@ -140,9 +140,9 @@ var SetupComponent = /** @class */ (function () {
     SetupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-setup',
-            template: __webpack_require__(/*! ./setup.component.html */ "./src/app/demo/getting-started/setup/setup.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+            template: __webpack_require__(/*! ./setup.component.html */ "./src/app/demo/getting-started/setup/setup.component.html"),
+            styles: ["\n      .setup-page ul {\n        padding-left: 10px;\n      }\n    "]
+        })
     ], SetupComponent);
     return SetupComponent;
 }());

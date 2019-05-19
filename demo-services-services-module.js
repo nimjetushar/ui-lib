@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  http works!\n</p>\n"
+module.exports = "<div class=\"badge-component\">\n  <demo-wrapper header=\"Http Service\" [options]=\"options\">\n    <div doc>\n      Inject <b>HttpService</b> into component.\n    </div>\n  </demo-wrapper>\n</div>"
 
 /***/ }),
 
@@ -38,16 +38,28 @@ __webpack_require__.r(__webpack_exports__);
 
 var HttpComponent = /** @class */ (function () {
     function HttpComponent() {
+        this.options = {
+            name: 'HttpService',
+            methods: [
+                {
+                    method: 'getRequest',
+                    param: ['url: string', 'param: any (optional)'],
+                    desc: 'GET request takes url and param'
+                },
+                {
+                    method: 'postRequest',
+                    param: ['url: string', 'param: any'],
+                    desc: 'POST request takes url and param'
+                }
+            ]
+        };
     }
-    HttpComponent.prototype.ngOnInit = function () {
-    };
     HttpComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-http',
             template: __webpack_require__(/*! ./http.component.html */ "./src/app/demo/services/http/http.component.html"),
             styles: [__webpack_require__(/*! ./http.component.scss */ "./src/app/demo/services/http/http.component.scss")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        })
     ], HttpComponent);
     return HttpComponent;
 }());
