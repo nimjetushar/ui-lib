@@ -1,6 +1,22 @@
 @import "../../styles//variable.scss";
+
+.btn {
+    font-size: rem(16);
+}
+
+t-badge {
+    &.left {
+        margin-right: rem(8);
+    }
+
+    &.right {
+        margin-left: rem(8);
+    }
+}
+
 .primary {
     background: $color-primary;
+
     &:hover {
         background: $color-primaryhover;
     }
@@ -8,6 +24,7 @@
 
 .secondary {
     background: $color-secondary;
+
     &:hover {
         background: $color-secondaryhover;
     }
@@ -15,6 +32,7 @@
 
 .tertiary {
     background: #757575;
+
     &:hover {
         background: #616161;
     }

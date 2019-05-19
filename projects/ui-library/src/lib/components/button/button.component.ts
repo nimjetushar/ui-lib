@@ -3,9 +3,9 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 't-button',
   template: `
-    <button class="btn waves-effect waves-light btn-small"
-      [ngClass]="{'disabled': disabled, 'btn-large': large}" [disabled]="disabled">
-      <t-badge *ngIf="badge" [class]="badgePosition" [badge]="badge"></t-badge>
+    <button class="btn waves-effect waves-light {{buttonType}}"
+      [ngClass]="{'disabled': disabled, 'btn-large': isLarge, 'btn-small': !isLarge}" [disabled]="disabled">
+      <t-badge *ngIf="badge" [class]="bPos" [badge]="badge"></t-badge>
       {{label}}
     </button>
   `,
@@ -15,12 +15,15 @@ export class ButtonComponent {
   @Input() label: string;
   @Input() badge: string;
   @Input() disabled: boolean;
-  @Input() large: boolean;
-  @Input() badgePosition: string = 'left';
-
-  public buttonType: string;
+  @Input() isLarge: boolean;
+  @Input() set badgePosition(val: 'right') {
+    this.bPos = ['right', 'left'].includes(val) ? val : 'left';
+  }
 
   @Input() set type(val: 'primary' | 'secondary' | 'tertiary') {
     this.buttonType = ['primary', 'secondary', 'tertiary'].includes(val) ? val : undefined;
   }
+
+  public buttonType: string;
+  public bPos: string = 'left';
 }
