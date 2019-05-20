@@ -24,10 +24,6 @@ export class NavModel {
                 {
                     label: 'Color Pallet',
                     route: 'styles/colorPallet'
-                },
-                {
-                    label: 'Reference',
-                    route: 'styles/reference'
                 }
             ]
         },
@@ -38,6 +34,24 @@ export class NavModel {
                 {
                     label: 'Badge',
                     route: 'component/badge'
+                },
+                {
+                    label: 'Button',
+                    route: 'component/button'
+                }
+            ]
+        },
+        {
+            label: 'Services',
+            badge: 'fa-sign-in',
+            children: [
+                {
+                    label: 'Http',
+                    route: 'services/http'
+                },
+                {
+                    label: 'Toast',
+                    route: 'services/toast'
                 }
             ]
         },
@@ -45,6 +59,11 @@ export class NavModel {
             label: 'Utility',
             badge: 'fa-wrench',
             route: 'utility'
+        },
+        {
+            label: 'Reference',
+            badge: 'fa-link',
+            route: 'reference'
         }
     ];
 

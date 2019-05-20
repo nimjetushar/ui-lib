@@ -2,14 +2,20 @@
 @import "../../../node_modules/font-awesome/scss/font-awesome.scss";
 @import "../../../node_modules/materialize-css/sass/materialize.scss";
 
+@import "../../../node_modules/ngx-toastr/toastr.css";
+
 @import "./lib/styles/fonts.scss";
 @import "./lib/styles/variable.scss";
 
 * {
-  font-family: $font-regular;
-  outline: 0;
+    font-family: $font-regular;
+    outline: 0;
 }
 
 .main-container {
-  padding-top: $main-container-header-height;
+    padding-top: $main-container-header-height;
+}
+
+.overlay-container #toast-container {
+    min-width: auto;
 }

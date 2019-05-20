@@ -1,3 +1,4 @@
+import { DynamicFieldsComponent } from './dynamic-fields/dynamic-fields.component';
 import { ButtonComponent } from './button/button.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
@@ -7,12 +8,14 @@ export const Components = [
     NavComponent,
     HeaderComponent,
     BadgeComponent,
-    ButtonComponent
+    ButtonComponent,
+    DynamicFieldsComponent
 ];
 
 export const ExportedComponents = [
     NavComponent,
     HeaderComponent,
     BadgeComponent,
-    ButtonComponent
+    ButtonComponent,
+    DynamicFieldsComponent
 ];

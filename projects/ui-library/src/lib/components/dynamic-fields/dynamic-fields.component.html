@@ -1,3 +1,13 @@
-<p>
-  dynamic-fields works!
-</p>
+<div class="dynamic-fields">
+  <div *ngFor="let field of fields" [ngSwitch]="field.type">
+    <div *ngSwitchCase="'text'">
+      <label>{{field.label}}</label>
+      <input type="text" class="input-text" [(ngModel)]="data[field.model]" />
+    </div>
+    <div *ngSwitchCase="'checkbox'">
+      <label>{{field.label}}</label>
+      <input type="checkbox" class="input-checkbox" [value]="field.value"
+        [(ngModel)]="data[field.model]" />
+    </div>
+  </div>
+</div>

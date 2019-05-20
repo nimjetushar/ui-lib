@@ -1,47 +1,42 @@
 import { Injectable } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+import { ToastrService, ActiveToast, ComponentType, IndividualConfig } from 'ngx-toastr';
+export { ActiveToast } from 'ngx-toastr';
 
-export interface ToastParameters {
+export interface ToastParameters extends IndividualConfig {
   message?: string;
   title?: string;
   type?: 'success' | 'error' | 'warning' | 'info';
-  enableHtml?: boolean;
-  timeOut?: number;
-  closeButton?: boolean;
 }
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToastService {
 
-  private defaultParam: ToastParameters = {
+  private defaultParam: Partial<ToastParameters> = {
     type: 'success',
     enableHtml: true,
-    timeOut: 0,
+    timeOut: 10000,
     closeButton: false
   };
 
   constructor(private toastr: ToastrService) { }
 
-  show(toastParam: ToastParameters): void {
-    toastParam = Object.assign(this.defaultParam, toastParam);
-
-    const param = {
-      enableHtml: toastParam.enableHtml,
-      timeOut: toastParam.timeOut,
-      closeButton: toastParam.closeButton
-    };
+  show(toastParam: Partial<ToastParameters>): ActiveToast<any> {
+    const param = Object.assign({}, this.defaultParam, toastParam);
 
     switch (toastParam.type) {
       case 'info':
-        this.toastr.info(toastParam.message, toastParam.title, param);
-        break;
+        return this.toastr.info(toastParam.message, toastParam.title, param);
       case 'success':
-        this.toastr.success(toastParam.message, toastParam.title, param);
-        break;
+        return this.toastr.success(toastParam.message, toastParam.title, param);
+      case 'error':
+        return this.toastr.error(toastParam.message, toastParam.title, param);
+      case 'warning':
+        return this.toastr.warning(toastParam.message, toastParam.title, param);
       default:
-        throw new Error(('invalid parameter'));
+        throw new Error('invalid parameter');
     }
   }
 }

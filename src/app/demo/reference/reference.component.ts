@@ -22,6 +22,11 @@ export class ReferenceComponent {
       name: 'Font awesome',
       url: 'https://fontawesome.com/v4.7.0/icons/',
       icon: 'fa-font-awesome'
+    },
+    {
+      name: 'ngx-toastr',
+      url: 'https://www.npmjs.com/package/ngx-toastr',
+      icon: 'fa-comments'
     }
   ];
 

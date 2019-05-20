@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UtilityComponent } from './demo/utility/utility.component';
+import { ReferenceComponent } from './demo/reference/reference.component';
 
 const routes: Routes = [
   {
@@ -16,8 +17,16 @@ const routes: Routes = [
     loadChildren: './demo/components/components.module#ComponentsModule'
   },
   {
+    path: 'services',
+    loadChildren: './demo/services/services.module#ServicesModule'
+  },
+  {
     path: 'utility',
     component: UtilityComponent
+  },
+  {
+    path: 'reference',
+    component: ReferenceComponent
   },
   {
     path: '',

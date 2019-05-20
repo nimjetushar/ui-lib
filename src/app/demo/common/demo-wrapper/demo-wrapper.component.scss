@@ -1,52 +1,115 @@
 @import "../../../styles/variable.scss";
 
 $code-spacing: rem(35);
+$header-color: #ee6e73;
+
+.code-wrapper {
+    display: block;
+    width: 100%;
+    min-height: rem(30);
+    padding: rem(25);
+    margin: 1.5rem 0 0;
+    background-color: #f5f7fa;
+    color: #152935;
+    border: 1px solid #dfe3e6;
+    font-size: rem(18);
+}
+
 demo-wrapper {
     .component-header {
-        color: #ee6e73;
+        color: $header-color;
         font-weight: 300;
-        font-size: 2.52rem;
+        font-size: rem(45);
         line-height: 110%;
-        margin: 1.9466666667rem 0 1.168rem 0;
+        margin: rem(20) 0 rem(10) 0;
     }
-    .demo-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-height: 12.5rem;
+
+    h6.header {
+        color: $header-color;
+    }
+
+    .seperator {
+        margin: rem(10) 0;
+    }
+
+    .code-sample {
+        @extend .code-wrapper;
         position: relative;
-        padding: 2rem 2rem 2.5rem;
-        margin: 1.5rem 0 0;
-        background-color: #f5f7fa;
-        color: #152935;
-        border: 1px solid #dfe3e6;
-    }
-    .component-content>div {
         width: 100%;
+        word-break: break-all;
+
+        .copy {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 1px solid #dfe3e6;
+            border-top: 0;
+            border-right: 0;
+            padding: 0 rem(10);
+            font-size: rem(15);
+            color: #a7a1a1;
+            cursor: pointer;
+        }
+
+        .ne {
+            color: #2f6f9f;
+            padding: 0 10px;
+        }
+
+        .na {
+            color: #4f9fcf;
+        }
+
+        .a {
+            color: #d44950;
+            padding-right: 10px;
+        }
+
+        .b {
+            display: block;
+            visibility: hidden;
+            height: 10px;
+        }
+
+        .a+.ne {
+            padding-left: 0;
+        }
     }
-    .pre {
-        margin: $code-spacing 0;
-        &:first-child {
-            margin: 0 0 $code-spacing 0;
+
+    .code-output {
+        @extend .code-wrapper;
+    }
+
+    .code-doc {
+        @extend .code-wrapper;
+        border-left: 3px solid #f11722;
+        word-break: break-word;
+    }
+
+    .code-options {
+        @extend .code-wrapper;
+
+        .header {
+            font-size: rem(22);
+            margin-bottom: rem(10);
         }
-        &:last-child {
-            margin: $code-spacing 0 0 0;
-        }
-        .markup {
-            border-bottom: 1px solid #a3a4ac;
-            margin-bottom: 10px;
-            .label {
-                background: rgba(141, 137, 137, 0.2);
-                padding: 2px 12px;
-                border: 1px solid #a3a4ac;
-                border-bottom: 0;
-                border-top-left-radius: 6px;
-                border-top-right-radius: 6px;
+
+        .table {
+            overflow-x: auto;
+
+            table .desc td {
+                word-break: break-word;
             }
         }
-        .code {
-            padding: rem(10);
+
+        .method-option {
+            ul {
+                margin: 0;
+            }
         }
+    }
+
+    .component-content>div {
+        width: 100%;
     }
 }

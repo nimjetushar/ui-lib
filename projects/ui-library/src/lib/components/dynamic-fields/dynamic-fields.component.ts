@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+export interface Fields {
+  label: 'string';
+  type: 'text' | 'checkbox';
+}
 
 @Component({
   selector: 't-dynamic-fields',
@@ -7,8 +12,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DynamicFieldsComponent implements OnInit {
 
+  @Input() fields: Fields[] = [];
+
+  data: any = {};
+
   constructor() { }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { }
 
 }

@@ -2,7 +2,12 @@ import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
-import { MenuItem } from './nav.interface';
+export interface MenuItem {
+  label: string;
+  route?: string;
+  badge?: string;
+  children?: Array<MenuItem>;
+}
 
 @Component({
   selector: 't-nav',
@@ -13,6 +18,7 @@ export class NavComponent implements OnInit {
 
   @Input() menuItems: Array<MenuItem> = [];
   @Input() set expanded(status: boolean) {
+    document.getElementsByTagName('body')[0].style.overflow = status ? 'hidden' : 'auto';
     this._expanded = status;
   }
   get expanded(): boolean {
@@ -26,7 +32,7 @@ export class NavComponent implements OnInit {
   private _expanded: boolean;
 
   expandedMenu: number;
-  selectedMenu: { idx: number, subMenuIdx: number } = <any>{};
+  selectedMenu: { idx: number, subMenuIdx: number } = {} as any;
 
   constructor(private _router: Router) { }
 

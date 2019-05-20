@@ -28,7 +28,7 @@ export class HttpService {
     return this.http.put(url, body, { headers: this.header });
   }
 
-  deleteRequest(url: string, params: any): Observable<any> {
+  deleteRequest(url: string, params?: any): Observable<any> {
     return this.http.delete(url, { headers: this.header, params: params });
   }
 }
