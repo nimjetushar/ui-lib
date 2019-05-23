@@ -16,7 +16,7 @@ export class ButtonComponent {
   @Input() badge: string;
   @Input() disabled: boolean;
   @Input() isLarge: boolean;
-  @Input() set badgePosition(val: 'right') {
+  @Input() set badgePosition(val: 'left') {
     this.bPos = ['right', 'left'].includes(val) ? val : 'left';
   }
 
