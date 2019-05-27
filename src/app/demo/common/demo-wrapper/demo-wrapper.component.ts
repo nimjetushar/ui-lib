@@ -1,4 +1,4 @@
-import { customElements, attributes } from './../../../constants/constants';
+import { attributes } from './../../../constants/constants';
 import {
   Component, Input, OnInit, ViewEncapsulation,
   ViewChild, ElementRef
@@ -121,13 +121,11 @@ export class DemoWrapperComponent implements OnInit {
       }];
     }
 
-    for (const item of customElements) {
-      if (ele.includes(item)) {
-        return [{
-          content: ele,
-          class: 'ne'
-        }];
-      }
+    if (ele.includes('<t-') || ele.includes('</t-')) {
+      return [{
+        content: ele,
+        class: 'ne'
+      }];
     }
 
     for (const item of attributes) {

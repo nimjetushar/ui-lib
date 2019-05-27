@@ -38,6 +38,10 @@ export class NavModel {
                 {
                     label: 'Button',
                     route: 'component/button'
+                },
+                {
+                    label: 'Dynamic Fields',
+                    route: 'component/dynamicFields'
                 }
             ]
         },
