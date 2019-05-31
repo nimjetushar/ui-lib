@@ -1,0 +1,64 @@
+<div class="toast-component">
+  <demo-wrapper header="Toast Service" [options]="options">
+    <div output>
+      <t-button type='primary' label='show success' (click)='showToast("success")'>
+      </t-button>
+      <t-button type='primary' label='show error' (click)='showToast("error")'></t-button>
+      <t-button type='primary' label='show info' (click)='showToast("info")'></t-button>
+      <t-button type='primary' label='show warning' (click)='showToast("warning")'>
+      </t-button>
+    </div>
+    <div doc>
+      Inject <b>ToastService</b> into component.
+      <div class='toast-types'>
+        <div>Toast types are :-</div>
+        <div>
+          <b>success</b>, <b>info</b>, <b>error</b>, <b>warning</b>
+        </div>
+      </div>
+      <div class='toast-position'>
+        <div>Toast positions are :-</div>
+        <div>
+          <b>toast-top-right</b>, <b>toast-top-left</b>,
+          <b>toast-bottom-right</b>, <b>toast-bottom-left</b>, <b>toast-top-center</b>,
+          <b>toast-bottom-center</b>, <b>toast-top-full-width</b>,
+          <b>toast-bottom-full-width</b>
+        </div>
+      </div>
+      <div class='active-toast'>
+        <div>ActiveToast provides following options :-</div>
+        <div class="strong">toastId: number (Your Toast ID. Use this to close it
+          individually)</div>
+        <div class="strong">message: string (message of your toast. Stored to prevent
+          duplicates)
+        </div>
+        <div class="strong">portal: ComponentRef&lt;any&gt; (reference to the component)
+        </div>
+        <div class="strong">toastRef: ToastRef&lt;any&gt; (a reference to your toast)
+        </div>
+        <div class="strong">onShown: Observable&lt;any&gt; (triggered when toast is
+          active)</div>
+        <div class="strong">onHidden: Observable&lt;any&gt; (triggered when toast is
+          destroyed)</div>
+        <div class="strong">onTap: Observable&lt;any&gt; (triggered on toast click)</div>
+        <div class="strong">onAction: Observable&lt;any&gt; (available for your use in
+          custom toast)
+        </div>
+
+        <div class='sample-code'>
+          <code>
+            <div>showToaster() &#123;</div>
+            <div>&nbsp; this.toastr.success('Hello world!', 'Toastr fun!')</div>
+            <div>&nbsp;&nbsp; .onTap</div>
+            <div>&nbsp;&nbsp; .pipe(take(1))</div>
+            <div>&nbsp;&nbsp; .subscribe(() => this.toasterClickedHandler());</div>
+            <div>&#125;</div>
+            <div>toasterClickedHandler() &#123;</div>
+            <div>&nbsp; console.log('Toastr clicked');</div>
+            <div>&#125;</div>
+          </code>
+        </div>
+      </div>
+    </div>
+  </demo-wrapper>
+</div>
