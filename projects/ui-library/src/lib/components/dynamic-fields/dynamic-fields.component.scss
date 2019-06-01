@@ -1,0 +1,31 @@
+@import "../../styles/functions.scss";
+
+.dynamic-fields {
+    .button-container {
+        justify-content: flex-end;
+        display: flex;
+
+        t-button {
+            margin: 0 rem(5);
+        }
+    }
+
+    .input-element {
+        margin: rem(15) 0;
+    }
+
+    label {
+        font-size: rem(16);
+    }
+
+    input[type=text] {
+        font-size: rem(15);
+        height: rem(25);
+    }
+
+    .input-select {
+        select {
+            display: block;
+        }
+    }
+}

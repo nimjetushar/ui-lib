@@ -3,13 +3,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export interface Fields {
   label: string;
   type: 'text' | 'checkbox' | 'radio' | 'select';
-  identifier: string;
+  model: string;
   disabled?: boolean;
   options?: string;
 }
 
 export interface Dropdown {
-  label: 'string';
+  label: string;
   value: any;
 }
 
