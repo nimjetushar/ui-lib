@@ -1,11 +1,13 @@
 @import "../../../node_modules/grid-css/src/grid.scss";
 @import "../../../node_modules/font-awesome/scss/font-awesome.scss";
-@import "../../../node_modules/materialize-css/sass/materialize.scss";
-
+@import "normalize.css";
+@import "./lib/styles/normalize.scss";
 @import "../../../node_modules/ngx-toastr/toastr.css";
 
 @import "./lib/styles/fonts.scss";
 @import "./lib/styles/variable.scss";
+@import "./lib/styles/utility.scss";
+@import "./lib/styles/table.scss";
 
 * {
     font-family: $font-regular;

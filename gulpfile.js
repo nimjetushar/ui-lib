@@ -35,8 +35,9 @@ function moveStyles() {
 
 function font() {
   return gulp.src([
-      'node_modules/font-awesome/fonts/**/*'
-    ])
+    'node_modules/font-awesome/fonts/**/*',
+    'projects/ui-library/src/lib/assets/fonts/**/*'
+  ])
     .pipe(gulp.dest(fontDest));
 }
 

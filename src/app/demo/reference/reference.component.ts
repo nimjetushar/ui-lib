@@ -9,11 +9,6 @@ export class ReferenceComponent {
 
   libLists: Array<{ name: string, url: string, icon: string }> = [
     {
-      name: 'Material Css',
-      url: 'https://materializecss.com/',
-      icon: 'fa-map'
-    },
-    {
       name: 'Grid system',
       url: 'https://nimjetushar.github.io/grid-css/',
       icon: 'fa-th'
