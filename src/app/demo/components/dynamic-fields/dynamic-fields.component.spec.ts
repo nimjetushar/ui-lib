@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DynamicFieldsComponent } from './dynamic-fields.component';
+import { comModules } from '__test__/common.imports';
 
 describe('DynamicFieldsComponent', () => {
   let component: DynamicFieldsComponent;
@@ -8,9 +9,10 @@ describe('DynamicFieldsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DynamicFieldsComponent ]
+      declarations: [DynamicFieldsComponent],
+      imports: [...comModules]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

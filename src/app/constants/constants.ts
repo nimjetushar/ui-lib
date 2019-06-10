@@ -1,5 +1,5 @@
-export const attributes = [
+export const Attributes = [
     'badge',
     'label', 'disabled', 'isLarge', 'badgePosition', 'type',
-    'fields'
+    'fields', 'options'
 ];

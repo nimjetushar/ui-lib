@@ -13,4 +13,18 @@ describe('ToastService', () => {
     const service: ToastService = TestBed.get(ToastService);
     expect(service).toBeTruthy();
   });
+
+  it('should show success toast', () => {
+    const service: ToastService = TestBed.get(ToastService);
+    spyOn(service['toastr'], 'success');
+    service.show({ type: 'success' });
+    expect(service['toastr'].success).toHaveBeenCalled();
+  });
+
+  it('should show error toast', () => {
+    const service: ToastService = TestBed.get(ToastService);
+    spyOn(service['toastr'], 'error');
+    service.show({ type: 'error' });
+    expect(service['toastr'].error).toHaveBeenCalled();
+  });
 });

@@ -4,6 +4,7 @@ export interface Fields {
   label: string;
   type: 'text' | 'checkbox' | 'radio' | 'select';
   model: string;
+  name?: string;
   disabled?: boolean;
   options?: string;
 }
