@@ -22,7 +22,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let row of docOptions">
-                <td *ngFor="let col of docColumns" [class]="col.class">{{row[col.value]}}
+                <td *ngFor="let col of docColumns" [class]="col.class">{{row[col.value] || '-'}}
                 </td>
               </tr>
             </tbody>

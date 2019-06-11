@@ -1,4 +1,4 @@
-import { attributes } from './../../../constants/constants';
+import { Attributes } from './../../../constants/constants';
 import {
   Component, Input, OnInit, ViewEncapsulation,
   ViewChild, ElementRef
@@ -68,7 +68,7 @@ export class DemoWrapperComponent implements OnInit {
   docColumns: Array<Column> = [
     { label: 'Name', value: 'parameter' },
     { label: 'Type', value: 'type' },
-    { label: 'Default', value: 'default' },
+    { label: 'Default', value: 'default', class: 'default-value' },
     { label: 'Description', value: 'desc', class: 'desc' }
   ];
 
@@ -128,7 +128,10 @@ export class DemoWrapperComponent implements OnInit {
       }];
     }
 
-    for (const item of attributes) {
+    for (const sel of Attributes) {
+      const selector = `[${sel}]`,
+        item = ele.includes(selector) ? selector : sel;
+
       if (ele.includes(item)) {
         const e = ele.split(item)[1],
           list = [{
