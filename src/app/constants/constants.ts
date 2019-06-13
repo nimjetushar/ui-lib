@@ -3,3 +3,7 @@ export const Attributes = [
     'label', 'disabled', 'isLarge', 'badgePosition', 'type',
     'fields', 'options'
 ];
+
+export const ComponentEvents = [
+    'primaryHandler', 'secondaryHandler'
+]

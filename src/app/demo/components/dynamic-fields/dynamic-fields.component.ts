@@ -9,7 +9,9 @@ import { Fields, Options } from './../../../../../projects/ui-library/src/lib/co
 })
 export class DynamicFieldsComponent {
 
-  public compSyntax: string = '<t-dynamic-fields [fields]="field" [options]="option" ></t-dynamic-fields>';
+  public compSyntax: string =
+    // tslint:disable-next-line: max-line-length
+    `<t-dynamic-fields [fields]="field" [options]="option" (primaryHandler)="onSearch($event)" (secondaryHandler)="onReset($event)" ></t-dynamic-fields>`;
 
   public options: DemoOptions = {
     name: 't-dynamic-fields',
@@ -55,4 +57,12 @@ export class DynamicFieldsComponent {
   };
 
   constructor() { }
+
+  onSearch(param: { [key: string]: any }): void {
+    console.log(param);
+  }
+
+  onReset(param: { [key: string]: any }): void {
+    console.log(param);
+  }
 }

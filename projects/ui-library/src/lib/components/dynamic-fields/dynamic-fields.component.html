@@ -35,8 +35,10 @@
 
   <div class="button-container">
     <div class="default-button" *ngIf="!disableDefaultAction">
-      <t-button [label]="primaryBtnLabel" type="primary"></t-button>
-      <t-button *ngIf="!removeSecBtn" [label]="secondaryBtnLabel" type="secondary">
+      <t-button [label]="primaryBtnLabel" type="primary" (click)="primaryClick()">
+      </t-button>
+      <t-button *ngIf="!removeSecBtn" [label]="secondaryBtnLabel" type="secondary"
+        (click)="secondaryClick()">
       </t-button>
     </div>
     <div class="custom-action-button" *ngIf="disableDefaultAction">

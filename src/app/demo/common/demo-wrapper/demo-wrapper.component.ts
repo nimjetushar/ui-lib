@@ -1,4 +1,4 @@
-import { Attributes } from './../../../constants/constants';
+import { Attributes, ComponentEvents } from './../../../constants/constants';
 import {
   Component, Input, OnInit, ViewEncapsulation,
   ViewChild, ElementRef
@@ -130,6 +130,26 @@ export class DemoWrapperComponent implements OnInit {
 
     for (const sel of Attributes) {
       const selector = `[${sel}]`,
+        item = ele.includes(selector) ? selector : sel;
+
+      if (ele.includes(item)) {
+        const e = ele.split(item)[1],
+          list = [{
+            content: item,
+            class: 'na'
+          }];
+        if (e) {
+          list.push({
+            content: e,
+            class: 'a'
+          });
+        }
+        return list;
+      }
+    }
+
+    for (const sel of ComponentEvents) {
+      const selector = `(${sel})`,
         item = ele.includes(selector) ? selector : sel;
 
       if (ele.includes(item)) {
