@@ -10,22 +10,25 @@
         }
     }
 
-    .input-element {
-        margin: rem(15) 0;
+    input,
+    select {
+        margin: 0 rem(10);
+        outline: 0;
     }
 
-    label {
-        font-size: rem(16);
-    }
-
-    input[type=text] {
-        font-size: rem(15);
-        height: rem(25);
-    }
-
+    .input-text,
+    .input-number,
+    .input-radio,
+    .input-checkbox,
     .input-select {
-        select {
-            display: block;
-        }
+        margin: rem(10) rem(5);
     }
+
+    .input-text {}
+
+    .input-radio {}
+
+    .input-checkbox {}
+
+    .input-select {}
 }

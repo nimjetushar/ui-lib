@@ -3,30 +3,39 @@
 
     <!-- input type text -->
     <div *ngSwitchCase="'text'" class='input-text'>
-      <label>{{field.label}}</label>
-      <input type="text" [name]='field.name' [(ngModel)]="data[field.model]" />
+      <label [for]="field.model">{{field.label}}</label>
+      <input [id]='field.model' type="text" [name]='field.name'
+        [(ngModel)]="data[field.model]" />
+    </div>
+
+    <div *ngSwitchCase="'number'" class='input-number'>
+      <label [for]="field.model">{{field.label}}</label>
+      <input [id]='field.model' type="number" [name]='field.name'
+        [(ngModel)]="data[field.model]" />
     </div>
 
     <!-- input type checkbox -->
     <div *ngSwitchCase="'checkbox'" class='input-checkbox'>
-      <label>
+      <label [for]="field.model">
         <span>{{field.label}}</span>
-        <input type="checkbox" [(ngModel)]="data[field.model]" [name]='field.name' />
+        <input [id]='field.model' type="checkbox" [(ngModel)]="data[field.model]"
+          [name]='field.name' />
       </label>
     </div>
 
     <!-- input type checkbox -->
     <div *ngSwitchCase="'radio'" class='input-radio'>
-      <label>
+      <label [for]="field.model">
         <span>{{field.label}}</span>
-        <input type="radio" [(ngModel)]="data[field.model]" [name]='field.name' />
+        <input [id]='field.model' type="radio" [(ngModel)]="data[field.model]"
+          [name]='field.name' />
       </label>
     </div>
 
     <!-- dropdown -->
     <div *ngSwitchCase="'select'" class='input-select'>
-      <label>{{field.label}}</label>
-      <select>
+      <label [for]="field.model">{{field.label}}</label>
+      <select [id]='field.model' [(ngModel)]="data[field.model]">
         <option *ngFor="let item of dropdownOptions[field.options]" [value]="item.value">
           {{item.label}}</option>
       </select>

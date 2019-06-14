@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Options as DemoOptions } from '../../common/demo-wrapper/demo-wrapper.component';
-import { Fields, Options } from './../../../../../projects/ui-library/src/lib/components/dynamic-fields/dynamic-fields.component';
+import {
+  Fields, Options,
+  DynamicFieldsComponent
+} from './../../../../../projects/ui-library/src/lib/components/dynamic-fields/dynamic-fields.component';
 
 @Component({
   selector: 'app-dynamic-fields',
   templateUrl: './dynamic-fields.component.html',
   styleUrls: ['./dynamic-fields.component.scss']
 })
-export class DynamicFieldsComponent {
+export class DynamicFieldsDemoComponent {
+
+  @ViewChild(DynamicFieldsComponent) dyFieldComp: DynamicFieldsComponent;
 
   public compSyntax: string =
     // tslint:disable-next-line: max-line-length
@@ -56,13 +61,18 @@ export class DynamicFieldsComponent {
     }
   };
 
+  output: any;
+
   constructor() { }
 
   onSearch(param: { [key: string]: any }): void {
     console.log(param);
+    this.output = Object.assign({}, param);
   }
 
   onReset(param: { [key: string]: any }): void {
     console.log(param);
+    this.output = undefined;
+    this.dyFieldComp.reset();
   }
 }

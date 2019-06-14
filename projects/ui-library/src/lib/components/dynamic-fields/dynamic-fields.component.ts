@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 export interface Fields {
   label: string;
-  type: 'text' | 'checkbox' | 'radio' | 'select';
+  type: 'text' | 'checkbox' | 'radio' | 'select' | 'number';
   model: string;
   name?: string;
   disabled?: boolean;
@@ -78,5 +78,9 @@ export class DynamicFieldsComponent implements OnInit {
 
   secondaryClick(): void {
     this.secondaryHandler.emit(this.data);
+  }
+
+  reset(): void {
+    this.data = {};
   }
 }
