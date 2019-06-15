@@ -177,6 +177,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_common_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/common.module */ "./src/app/demo/common/common.module.ts");
 /* harmony import */ var _badge_badge_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./badge/badge.component */ "./src/app/demo/components/badge/badge.component.ts");
 /* harmony import */ var _button_button_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./button/button.component */ "./src/app/demo/components/button/button.component.ts");
+/* harmony import */ var _dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./dynamic-fields/dynamic-fields.component */ "./src/app/demo/components/dynamic-fields/dynamic-fields.component.ts");
+
 
 
 
@@ -187,6 +189,7 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     { path: 'badge', component: _badge_badge_component__WEBPACK_IMPORTED_MODULE_5__["BadgeComponent"] },
     { path: 'button', component: _button_button_component__WEBPACK_IMPORTED_MODULE_6__["ButtonComponent"] },
+    { path: 'dynamicFields', component: _dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_7__["DynamicFieldsDemoComponent"] },
     {
         path: '',
         pathMatch: 'full',
@@ -198,7 +201,11 @@ var ComponentsModule = /** @class */ (function () {
     }
     ComponentsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-            declarations: [_badge_badge_component__WEBPACK_IMPORTED_MODULE_5__["BadgeComponent"], _button_button_component__WEBPACK_IMPORTED_MODULE_6__["ButtonComponent"]],
+            declarations: [
+                _badge_badge_component__WEBPACK_IMPORTED_MODULE_5__["BadgeComponent"],
+                _button_button_component__WEBPACK_IMPORTED_MODULE_6__["ButtonComponent"],
+                _dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_7__["DynamicFieldsDemoComponent"]
+            ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes),
@@ -207,6 +214,118 @@ var ComponentsModule = /** @class */ (function () {
         })
     ], ComponentsModule);
     return ComponentsModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/demo/components/dynamic-fields/dynamic-fields.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/demo/components/dynamic-fields/dynamic-fields.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"badge-component\">\n  <demo-wrapper header=\"Dynamic Fields\" [code]=\"compSyntax\" [options]=\"options\">\n    <div output>\n      <t-dynamic-fields [fields]='field' [options]='option'\n        (primaryHandler)=\"onSearch($event)\" (secondaryHandler)=\"onReset($event)\">\n      </t-dynamic-fields>\n\n      <div class=\"comp-output\" *ngIf=\"output\">\n        {{output | json}}\n      </div>\n    </div>\n    <div doc>\n      Note: For performance the component inputs are optimised so don't provide parameter\n      which are not required for proper functioning.\n    </div>\n  </demo-wrapper>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/demo/components/dynamic-fields/dynamic-fields.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/app/demo/components/dynamic-fields/dynamic-fields.component.scss ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RlbW8vY29tcG9uZW50cy9keW5hbWljLWZpZWxkcy9keW5hbWljLWZpZWxkcy5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/demo/components/dynamic-fields/dynamic-fields.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/demo/components/dynamic-fields/dynamic-fields.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: DynamicFieldsDemoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DynamicFieldsDemoComponent", function() { return DynamicFieldsDemoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _projects_ui_library_src_lib_components_dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../../../projects/ui-library/src/lib/components/dynamic-fields/dynamic-fields.component */ "./projects/ui-library/src/lib/components/dynamic-fields/dynamic-fields.component.ts");
+
+
+
+var DynamicFieldsDemoComponent = /** @class */ (function () {
+    function DynamicFieldsDemoComponent() {
+        this.compSyntax = 
+        // tslint:disable-next-line: max-line-length
+        "<t-dynamic-fields [fields]=\"field\" [options]=\"option\" (primaryHandler)=\"onSearch($event)\" (secondaryHandler)=\"onReset($event)\" ></t-dynamic-fields>";
+        this.options = {
+            name: 't-dynamic-fields',
+            options: []
+        };
+        this.field = [
+            {
+                label: 'Name',
+                type: 'text',
+                model: 'name'
+            },
+            {
+                label: 'New model',
+                type: 'checkbox',
+                model: 'isNew'
+            },
+            {
+                label: 'Brand',
+                type: 'select',
+                model: 'brand',
+                options: 'brand'
+            }
+        ];
+        this.option = {
+            dropdown: {
+                brand: [
+                    {
+                        label: 'Maruti',
+                        value: 'maruti'
+                    },
+                    {
+                        label: 'Hyundai',
+                        value: 'hyundai'
+                    },
+                    {
+                        label: 'Ford',
+                        value: 'ford'
+                    }
+                ]
+            }
+        };
+    }
+    DynamicFieldsDemoComponent.prototype.onSearch = function (param) {
+        console.log(param);
+        this.output = Object.assign({}, param);
+    };
+    DynamicFieldsDemoComponent.prototype.onReset = function (param) {
+        console.log(param);
+        this.output = undefined;
+        this.dyFieldComp.reset();
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_projects_ui_library_src_lib_components_dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_2__["DynamicFieldsComponent"]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _projects_ui_library_src_lib_components_dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_2__["DynamicFieldsComponent"])
+    ], DynamicFieldsDemoComponent.prototype, "dyFieldComp", void 0);
+    DynamicFieldsDemoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-dynamic-fields',
+            template: __webpack_require__(/*! ./dynamic-fields.component.html */ "./src/app/demo/components/dynamic-fields/dynamic-fields.component.html"),
+            styles: [__webpack_require__(/*! ./dynamic-fields.component.scss */ "./src/app/demo/components/dynamic-fields/dynamic-fields.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], DynamicFieldsDemoComponent);
+    return DynamicFieldsDemoComponent;
 }());
 
 
