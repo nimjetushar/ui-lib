@@ -6,4 +6,4 @@ export const Attributes = [
 
 export const ComponentEvents = [
     'primaryHandler', 'secondaryHandler'
-]
+];
