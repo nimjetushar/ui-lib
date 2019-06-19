@@ -1,4 +1,3 @@
-import { Attributes, ComponentEvents } from './../../../constants/constants';
 import {
   Component, Input, OnInit, ViewEncapsulation,
   ViewChild, ElementRef
@@ -81,7 +80,6 @@ export class DemoWrapperComponent implements OnInit {
   constructor(private toast: ToastService) { }
 
   ngOnInit(): void {
-    this.generateCodeSnipet();
     this.enableOutput = !this.outputWrapper.nativeElement.childNodes.length;
     this.enableDoc = !this.refWrapper.nativeElement.childNodes.length;
   }
@@ -95,82 +93,5 @@ export class DemoWrapperComponent implements OnInit {
     document.body.removeChild(copyEle);
 
     this.toast.show({ message: 'Copied...', type: 'info' });
-  }
-
-  private generateCodeSnipet(): void {
-    const htmlEle = this.code && this.code.split(' ') || [];
-    let renderCodeEle = [];
-    for (const item of htmlEle) {
-      renderCodeEle = renderCodeEle.concat(this.contentMapper(item));
-    }
-    this.codeEle = renderCodeEle;
-  }
-
-  /**
-   * converts the input syntax into proper html content and renders into UI
-   * @private
-   * @param {string} ele
-   * @returns {Array<{ content: string; class: string }>}
-   * @memberof DemoWrapperComponent
-   */
-  private contentMapper(ele: string): Array<{ content: string; class: string }> {
-    if (ele.trim() === '/n') {
-      return [{
-        content: '',
-        class: 'b'
-      }];
-    }
-
-    if (ele.includes('<t-') || ele.includes('</t-')) {
-      return [{
-        content: ele,
-        class: 'ne'
-      }];
-    }
-
-    for (const sel of Attributes) {
-      const selector = `[${sel}]`,
-        item = ele.includes(selector) ? selector : sel;
-
-      if (ele.includes(item)) {
-        const e = ele.split(item)[1],
-          list = [{
-            content: item,
-            class: 'na'
-          }];
-        if (e) {
-          list.push({
-            content: e,
-            class: 'a'
-          });
-        }
-        return list;
-      }
-    }
-
-    for (const sel of ComponentEvents) {
-      const selector = `(${sel})`,
-        item = ele.includes(selector) ? selector : sel;
-
-      if (ele.includes(item)) {
-        const e = ele.split(item)[1],
-          list = [{
-            content: item,
-            class: 'na'
-          }];
-        if (e) {
-          list.push({
-            content: e,
-            class: 'a'
-          });
-        }
-        return list;
-      }
-    }
-
-    return [{
-      content: ele,
-      class: 'a'
-    }];
   }
 }

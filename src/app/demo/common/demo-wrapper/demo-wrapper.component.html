@@ -4,7 +4,10 @@
     <div class="component-content">
       <code class="code-sample" *ngIf="code" data-lang="html">
         <span class="copy" (click)="copyToClipboard()">copy</span>
-        <span *ngFor="let item of codeEle" [class]="item.class">{{item.content}}</span>
+        <code>
+          {{code}}
+        </code>
+        <!-- <span *ngFor="let item of codeEle" [class]="item.class">{{item.content}}</span> -->
       </code>
       <div class="code-output" #output [ngClass]="{'hide': enableOutput}">
         <ng-content select="[output]"></ng-content>

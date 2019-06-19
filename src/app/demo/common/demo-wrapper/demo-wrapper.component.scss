@@ -51,28 +51,8 @@ demo-wrapper {
             cursor: pointer;
         }
 
-        .ne {
-            color: #2f6f9f;
-            padding: 0 10px;
-        }
-
-        .na {
-            color: #4f9fcf;
-        }
-
-        .a {
-            color: #d44950;
-            padding-right: 10px;
-        }
-
-        .b {
-            display: block;
-            visibility: hidden;
-            height: 10px;
-        }
-
-        .a+.ne {
-            padding-left: 0;
+        code {
+            white-space: pre-line;
         }
     }
 
