@@ -3,13 +3,15 @@ import { ButtonComponent } from './button/button.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { BadgeComponent } from './badge/badge.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 export const Components = [
     NavComponent,
     HeaderComponent,
     BadgeComponent,
     ButtonComponent,
-    DynamicFieldsComponent
+    DynamicFieldsComponent,
+    CheckboxComponent
 ];
 
 export const ExportedComponents = [
@@ -17,5 +19,6 @@ export const ExportedComponents = [
     HeaderComponent,
     BadgeComponent,
     ButtonComponent,
-    DynamicFieldsComponent
+    DynamicFieldsComponent,
+    CheckboxComponent
 ];
