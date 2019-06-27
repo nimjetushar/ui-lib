@@ -5,11 +5,13 @@ import { Common } from '../common/common.module';
 import { BadgeComponent } from './badge/badge.component';
 import { ButtonComponent } from './button/button.component';
 import { DynamicFieldsDemoComponent } from './dynamic-fields/dynamic-fields.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 const routes: Routes = [
   { path: 'badge', component: BadgeComponent },
   { path: 'button', component: ButtonComponent },
   { path: 'dynamicFields', component: DynamicFieldsDemoComponent },
+  { path: 'checkbox', component: CheckboxComponent },
   {
     path: '',
     pathMatch: 'full',
@@ -21,7 +23,8 @@ const routes: Routes = [
   declarations: [
     BadgeComponent,
     ButtonComponent,
-    DynamicFieldsDemoComponent
+    DynamicFieldsDemoComponent,
+    CheckboxComponent
   ],
   imports: [
     CommonModule,
