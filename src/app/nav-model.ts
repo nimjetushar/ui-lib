@@ -40,6 +40,10 @@ export class NavModel {
                     route: 'component/button'
                 },
                 {
+                    label: 'Checkbox',
+                    route: 'component/checkbox'
+                },
+                {
                     label: 'Dynamic Fields',
                     route: 'component/dynamicFields'
                 }

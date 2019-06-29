@@ -15,8 +15,8 @@ export class DynamicFieldsDemoComponent {
   @ViewChild(DynamicFieldsComponent) dyFieldComp: DynamicFieldsComponent;
 
   public compSyntax: string =
-    // tslint:disable-next-line: max-line-length
-    `<t-dynamic-fields [fields]="field" [options]="option" (primaryHandler)="onSearch($event)" (secondaryHandler)="onReset($event)" ></t-dynamic-fields>`;
+    `<t-dynamic-fields [fields]="field" [options]="option"
+    (primaryHandler)="onSearch($event)" (secondaryHandler)="onReset($event)"></t-dynamic-fields>`;
 
   public options: DemoOptions = {
     name: 't-dynamic-fields',

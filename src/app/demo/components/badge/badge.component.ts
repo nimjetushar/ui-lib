@@ -13,7 +13,8 @@ export class BadgeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.compSyntax = `<t-badge badge="fa-home" ></t-badge> /n <t-badge badge="fa-font-awesome" ></t-badge>`;
+    this.compSyntax = `<t-badge badge="fa-home"></t-badge> \n
+     <t-badge badge="fa-font-awesome"></t-badge>`;
 
     this.options = {
       name: 't-badge',
