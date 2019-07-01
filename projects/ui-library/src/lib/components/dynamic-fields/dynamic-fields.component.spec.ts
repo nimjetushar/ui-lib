@@ -4,6 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DynamicFieldsComponent } from './dynamic-fields.component';
 import { ButtonComponent } from '../button/button.component';
 import { BadgeComponent } from '../badge/badge.component';
+import { CheckboxComponent } from './../checkbox/checkbox.component';
 
 describe('DynamicFieldsComponent', () => {
   let component: DynamicFieldsComponent;
@@ -14,7 +15,8 @@ describe('DynamicFieldsComponent', () => {
       declarations: [
         DynamicFieldsComponent,
         ButtonComponent,
-        BadgeComponent
+        BadgeComponent,
+        CheckboxComponent
       ],
       imports: [FormsModule]
     })

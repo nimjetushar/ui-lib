@@ -16,11 +16,8 @@
 
     <!-- input type checkbox -->
     <div *ngSwitchCase="'checkbox'" class='input-checkbox'>
-      <label [for]="field.model">
-        <span>{{field.label}}</span>
-        <input [id]='field.model' type="checkbox" [(ngModel)]="data[field.model]"
-          [name]='field.name' />
-      </label>
+      <t-checkbox [label]="field.label" [(value)]="data[field.model]" [name]='field.name'>
+      </t-checkbox>
     </div>
 
     <!-- input type checkbox -->
