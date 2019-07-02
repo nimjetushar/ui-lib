@@ -8,7 +8,8 @@ import { Options } from '../../common/demo-wrapper/demo-wrapper.component';
 })
 export class CheckboxComponent {
 
-  compSyntax: string = `<t-checkbox label="Checkbox" (handleChange)="handleChange($event)"></t-checkbox> \n
+  compSyntax: string = `<t-checkbox name="checkbox" label="Checkbox" [(value)]="modelValue"
+  (handleChange)="handleChange($event)"></t-checkbox> \n
   <t-checkbox label="Checkbox" disabled="true"></t-checkbox>`;
 
   public options: Options = {
@@ -18,6 +19,16 @@ export class CheckboxComponent {
         parameter: 'label',
         type: 'string',
         desc: 'checkbox label'
+      },
+      {
+        parameter: 'value',
+        type: 'boolean',
+        desc: 'model value which changes on basis of checkbox selection'
+      },
+      {
+        parameter: 'name',
+        type: 'string',
+        desc: 'checkbox name'
       },
       {
         parameter: 'disabled',
@@ -35,9 +46,13 @@ export class CheckboxComponent {
     ]
   };
 
+  checkboxVal: boolean;
+  modelValue: boolean = true;
+
   constructor() { }
 
-  handleChange(event: any): void {
+  handleChange(event: boolean): void {
     console.log(event);
+    this.checkboxVal = event;
   }
 }

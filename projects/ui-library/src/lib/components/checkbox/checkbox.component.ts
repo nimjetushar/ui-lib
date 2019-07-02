@@ -8,8 +8,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class CheckboxComponent {
 
   @Input() label: string;
+  @Input() name: string;
   @Input() checked: boolean;
   @Input() disabled: boolean;
+
+  @Input() value: any;
+  @Output() valueChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Output() handleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -18,5 +22,6 @@ export class CheckboxComponent {
   handleOnChange(event: any): void {
     this.checked = event.target.checked;
     this.handleChange.emit(this.checked);
+    this.valueChange.emit(this.checked);
   }
 }

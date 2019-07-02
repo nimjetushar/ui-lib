@@ -1,3 +1,4 @@
+import { comModules } from '__test__/common.imports';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CheckboxComponent } from './checkbox.component';
@@ -8,9 +9,10 @@ describe('CheckboxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CheckboxComponent ]
+      declarations: [CheckboxComponent],
+      imports: [...comModules]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -67,7 +67,7 @@ export class DemoWrapperComponent implements OnInit {
   docColumns: Array<Column> = [
     { label: 'Name', value: 'parameter' },
     { label: 'Type', value: 'type' },
-    { label: 'Default', value: 'default', class: 'default-value' },
+    { label: 'Default', value: 'default' },
     { label: 'Description', value: 'desc', class: 'desc' }
   ];
 
