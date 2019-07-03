@@ -1,3 +1,4 @@
+import { RadioComponent } from './radio/radio.component';
 import { DynamicFieldsComponent } from './dynamic-fields/dynamic-fields.component';
 import { ButtonComponent } from './button/button.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,7 +12,8 @@ export const Components = [
     BadgeComponent,
     ButtonComponent,
     DynamicFieldsComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    RadioComponent
 ];
 
 export const ExportedComponents = [
@@ -20,5 +22,6 @@ export const ExportedComponents = [
     BadgeComponent,
     ButtonComponent,
     DynamicFieldsComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    RadioComponent
 ];

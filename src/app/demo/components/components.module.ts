@@ -6,12 +6,14 @@ import { BadgeComponent } from './badge/badge.component';
 import { ButtonComponent } from './button/button.component';
 import { DynamicFieldsDemoComponent } from './dynamic-fields/dynamic-fields.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { RadioDemoComponent } from './radio-demo/radio-demo.component';
 
 const routes: Routes = [
   { path: 'badge', component: BadgeComponent },
   { path: 'button', component: ButtonComponent },
   { path: 'dynamicFields', component: DynamicFieldsDemoComponent },
   { path: 'checkbox', component: CheckboxComponent },
+  { path: 'radio', component: RadioDemoComponent },
   {
     path: '',
     pathMatch: 'full',
@@ -24,7 +26,8 @@ const routes: Routes = [
     BadgeComponent,
     ButtonComponent,
     DynamicFieldsDemoComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    RadioDemoComponent
   ],
   imports: [
     CommonModule,
