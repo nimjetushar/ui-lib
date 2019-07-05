@@ -21,7 +21,7 @@ export class CheckboxComponent {
         desc: 'checkbox label'
       },
       {
-        parameter: 'value',
+        parameter: 'model',
         type: 'boolean',
         desc: 'model value which changes on basis of checkbox selection'
       },
@@ -34,7 +34,7 @@ export class CheckboxComponent {
         parameter: 'disabled',
         default: 'false',
         type: 'boolean',
-        desc: 'Disable button'
+        desc: 'Disable component'
       }
     ],
     methods: [

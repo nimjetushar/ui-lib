@@ -12,25 +12,27 @@ export class RadioComponent {
   @Input() name: string;
   @Input() value: string | boolean = true;
 
-  @Input() set model(value: boolean) {
+  @Input() set model(value: boolean | string) {
     this._model = value;
-    this.checked = value;
+    this.checked = value === this.value ? true : false;
   }
-  get model(): boolean {
+  get model(): boolean | string {
     return this._model;
   }
-  @Output() modelChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() modelChange: EventEmitter<boolean | string> = new EventEmitter<boolean | string>();
 
-  @Output() handleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() handleChange: EventEmitter<boolean | string> = new EventEmitter<boolean | string>();
 
   checked: boolean;
-  private _model: boolean;
+  private _model: boolean | string;
 
   constructor() { }
 
   handleOnChange(event: any): void {
-    this.checked = event.target.checked;
-    this.handleChange.emit(this.checked);
-    this.modelChange.emit(this.checked);
+    const checked = event.target.checked;
+    this.checked = (checked && this.value === this.model) ? true : false;
+    const value = checked ? this.value : false;
+    this.handleChange.emit(value);
+    this.modelChange.emit(value);
   }
 }

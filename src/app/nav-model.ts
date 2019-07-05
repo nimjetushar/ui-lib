@@ -46,6 +46,10 @@ export class NavModel {
                 {
                     label: 'Dynamic Fields',
                     route: 'component/dynamicFields'
+                },
+                {
+                    label: 'Radio button',
+                    route: 'component/radio'
                 }
             ]
         },

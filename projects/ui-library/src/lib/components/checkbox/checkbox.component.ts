@@ -9,19 +9,20 @@ export class CheckboxComponent {
 
   @Input() label: string;
   @Input() name: string;
-  @Input() checked: boolean;
   @Input() disabled: boolean;
 
-  @Input() value: any;
-  @Output() valueChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() model: boolean;
+  @Output() modelChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Output() handleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  checked: boolean;
 
   constructor() { }
 
   handleOnChange(event: any): void {
     this.checked = event.target.checked;
     this.handleChange.emit(this.checked);
-    this.valueChange.emit(this.checked);
+    this.modelChange.emit(this.checked);
   }
 }

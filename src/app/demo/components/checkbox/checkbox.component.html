@@ -1,7 +1,7 @@
 <div class="checkbox-component">
   <demo-wrapper header="Checkbox" [code]="compSyntax" [options]="options">
     <div output>
-      <t-checkbox label="Checkbox" name="checkbox" [(value)]="modelValue"
+      <t-checkbox label="Checkbox" name="checkbox" [(model)]="modelValue"
         (handleChange)="handleChange($event)"></t-checkbox>
       <div *ngIf="checkboxVal !== undefined" class="output">
         <span>Output: </span>
