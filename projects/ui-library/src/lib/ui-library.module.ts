@@ -7,10 +7,12 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { Components, ExportedComponents } from './components/components';
 import { Services } from './services/services';
+import { ExportedDirectives, Directives, EntryPointDirectives } from './directives/directives';
 
 @NgModule({
   declarations: [
-    ...Components
+    ...Components,
+    ...Directives
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,11 @@ import { Services } from './services/services';
     ...Services
   ],
   exports: [
-    ...ExportedComponents
+    ...ExportedComponents,
+    ...ExportedDirectives
+  ],
+  entryComponents: [
+    ...EntryPointDirectives
   ]
 })
 export class UiLibrary { }
