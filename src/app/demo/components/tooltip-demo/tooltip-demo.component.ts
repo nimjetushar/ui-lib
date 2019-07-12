@@ -8,7 +8,7 @@ import { Options } from '../../common/demo-wrapper/demo-wrapper.component';
 })
 export class TooltipDemoComponent {
 
-  compSyntax: string = ` <span tooltip="content to be shown in the tooltip" 
+  compSyntax: string = ` <span tooltip="content to be shown in the tooltip"
   [tooltipDisabled]="false"
   [tooltipAnimation]="true"
   tooltipPlacement="bottom"

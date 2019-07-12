@@ -189,4 +189,4 @@ class TooltipContentComponent implements AfterViewInit {
     }
 }
 
-export { TooltipContentComponent as TooltipContent }
+export { TooltipContentComponent as TooltipContent };
