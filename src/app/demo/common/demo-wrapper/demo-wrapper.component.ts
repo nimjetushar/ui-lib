@@ -25,7 +25,7 @@ interface MethodOptions {
 
 export interface Options {
   name: string;
-  componentType?: 'Service' | 'Component';
+  componentType?: 'Service' | 'Component' | 'Directive';
   options?: DocOptions[];
   methods?: MethodOptions[];
 }
