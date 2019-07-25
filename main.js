@@ -173,6 +173,91 @@ var ButtonComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./projects/ui-library/src/lib/components/checkbox/checkbox.component.html":
+/*!*********************************************************************************!*\
+  !*** ./projects/ui-library/src/lib/components/checkbox/checkbox.component.html ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<label class=\"checkbox\" [class.disabled]=\"disabled\">{{label}}\n  <input type=\"checkbox\" [name]=\"name\" [checked]=\"checked\" [disabled]=\"disabled\"\n    (change)=\"handleOnChange($event)\" [(ngModel)]=\"model\">\n  <span class=\"fa checkmark checkmark-primary active\"></span>\n</label>"
+
+/***/ }),
+
+/***/ "./projects/ui-library/src/lib/components/checkbox/checkbox.component.scss":
+/*!*********************************************************************************!*\
+  !*** ./projects/ui-library/src/lib/components/checkbox/checkbox.component.scss ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".hide {\n  display: none !important; }\n\n.disable {\n  pointer-events: none;\n  opacity: 0.4; }\n\n.z-depth-1 {\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }\n\n.z-depth-1-half {\n  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2); }\n\n/* The checkbox component - which includes the label, the form input, and the span for the checkmark */\n\n.checkbox {\n  display: inline;\n  position: relative;\n  padding-left: 1.25rem;\n  margin-bottom: 0.75rem;\n  cursor: pointer;\n  font-size: 1rem;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none; }\n\n.checkbox input {\n    position: relative;\n    opacity: 0; }\n\n.checkbox.disabled {\n    opacity: 0.5;\n    cursor: default;\n    pointer-events: none; }\n\n.checkbox .checkmark-primary {\n    position: absolute;\n    top: 0.25rem;\n    left: 0;\n    height: 1rem;\n    width: 1rem; }\n\n.checkbox .checkmark-primary.active {\n      background-color: #fff;\n      border: solid #0069B1 0.0625rem; }\n\n.checkbox .checkmark:after {\n    content: \"\";\n    position: absolute;\n    display: none;\n    bottom: 0;\n    left: 0;\n    top: -1px;\n    right: 0; }\n\n.checkbox .checkmark.active:after {\n    content: \"\\f00c\";\n    color: #FFFFFF; }\n\n.checkbox input:checked ~ .checkmark {\n    background-color: #0069B1; }\n\n.checkbox input:checked ~ .checkmark:after {\n      display: block;\n      font-size: 0.8125rem;\n      height: 1rem;\n      line-height: 15px; }\n\n.checkbox .checkmark.disabled:after {\n    color: #DFDFDF;\n    margin-left: 0.03125rem;\n    margin-bottom: 0.03125rem; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL3VpLWxpYnJhcnkvc3JjL2xpYi9jb21wb25lbnRzL2NoZWNrYm94L0U6XFxQcm9qZWN0c1xcdWktbGliL3Byb2plY3RzXFx1aS1saWJyYXJ5XFxzcmNcXGxpYlxcc3R5bGVzXFx1dGlsaXR5LnNjc3MiLCJwcm9qZWN0cy91aS1saWJyYXJ5L3NyYy9saWIvY29tcG9uZW50cy9jaGVja2JveC9FOlxcUHJvamVjdHNcXHVpLWxpYi9wcm9qZWN0c1xcdWktbGlicmFyeVxcc3JjXFxsaWJcXGNvbXBvbmVudHNcXGNoZWNrYm94XFxjaGVja2JveC5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL3VpLWxpYnJhcnkvc3JjL2xpYi9jb21wb25lbnRzL2NoZWNrYm94L0U6XFxQcm9qZWN0c1xcdWktbGliL3Byb2plY3RzXFx1aS1saWJyYXJ5XFxzcmNcXGxpYlxcc3R5bGVzXFxmdW5jdGlvbnMuc2NzcyIsInByb2plY3RzL3VpLWxpYnJhcnkvc3JjL2xpYi9jb21wb25lbnRzL2NoZWNrYm94L0U6XFxQcm9qZWN0c1xcdWktbGliL3Byb2plY3RzXFx1aS1saWJyYXJ5XFxzcmNcXGxpYlxcc3R5bGVzXFx2YXJpYWJsZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksd0JBQXdCLEVBQUE7O0FBRzVCO0VBQ0ksb0JBQW9CO0VBQ3BCLFlBQVksRUFBQTs7QUFHaEI7RUFDSSwrR0FFa0MsRUFBQTs7QUFHdEM7RUFDSSwrR0FBK0csRUFBQTs7QUNibkgsc0dBQUE7O0FBQ0E7RUFDSSxlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLHFCQ0srQjtFREovQixzQkNJK0I7RURIL0IsZUFBZTtFQUNmLGVDRStCO0VERC9CLHlCQUFpQjtLQUFqQixzQkFBaUI7TUFBakIscUJBQWlCO1VBQWpCLGlCQUFpQixFQUFBOztBQVByQjtJQVVRLGtCQUFrQjtJQUNsQixVQUFVLEVBQUE7O0FBWGxCO0lBZVEsWUFBWTtJQUNaLGVBQWU7SUFDZixvQkFBb0IsRUFBQTs7QUFqQjVCO0lBcUJRLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osT0FBTztJQUNQLFlBQVk7SUFDWixXQUFXLEVBQUE7O0FBekJuQjtNQTRCWSxzQkFBc0I7TUFDdEIsK0JDckJ1QixFQUFBOztBRFJuQztJQWtDUSxXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYixTQUFTO0lBQ1QsT0FBTztJQUNQLFNBQVM7SUFDVCxRQUFRLEVBQUE7O0FBeENoQjtJQTZDWSxnQkFBZ0I7SUFDaEIsY0U3QlMsRUFBQTs7QUZqQnJCO0lBbURRLHlCQUF5QixFQUFBOztBQW5EakM7TUFzRFksY0FBYztNQUNkLG9CQy9DdUI7TURnRHZCLFlDaER1QjtNRGlEdkIsaUJBQWlCLEVBQUE7O0FBekQ3QjtJQThEUSxjRXJEYTtJRnNEYix1QkN2RDJCO0lEd0QzQix5QkN4RDJCLEVBQUEiLCJmaWxlIjoicHJvamVjdHMvdWktbGlicmFyeS9zcmMvbGliL2NvbXBvbmVudHMvY2hlY2tib3gvY2hlY2tib3guY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaGlkZSB7XHJcbiAgICBkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5kaXNhYmxlIHtcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gICAgb3BhY2l0eTogMC40O1xyXG59XHJcblxyXG4uei1kZXB0aC0xIHtcclxuICAgIGJveC1zaGFkb3c6IDAgMnB4IDJweCAwIHJnYmEoMCwgMCwgMCwgMC4xNCksXHJcbiAgICAgICAgMCAzcHggMXB4IC0ycHggcmdiYSgwLCAwLCAwLCAwLjEyKSxcclxuICAgICAgICAwIDFweCA1cHggMCByZ2JhKDAsIDAsIDAsIDAuMik7XHJcbn1cclxuXHJcbi56LWRlcHRoLTEtaGFsZiB7XHJcbiAgICBib3gtc2hhZG93OiAwIDNweCAzcHggMCByZ2JhKDAsIDAsIDAsIDAuMTQpLCAwIDFweCA3cHggMCByZ2JhKDAsIDAsIDAsIDAuMTIpLCAwIDNweCAxcHggLTFweCByZ2JhKDAsIDAsIDAsIDAuMik7XHJcbn0iLCJAaW1wb3J0IFwiLi4vLi4vc3R5bGVzL3ZhcmlhYmxlLnNjc3NcIjtcclxuQGltcG9ydCBcIi4uLy4uL3N0eWxlcy8vdXRpbGl0eS5zY3NzXCI7XHJcblxyXG4vKiBUaGUgY2hlY2tib3ggY29tcG9uZW50IC0gd2hpY2ggaW5jbHVkZXMgdGhlIGxhYmVsLCB0aGUgZm9ybSBpbnB1dCwgYW5kIHRoZSBzcGFuIGZvciB0aGUgY2hlY2ttYXJrICovXHJcbi5jaGVja2JveCB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IHJlbSgyMCk7XHJcbiAgICBtYXJnaW4tYm90dG9tOiByZW0oMTIpO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgZm9udC1zaXplOiByZW0oMTYpO1xyXG4gICAgdXNlci1zZWxlY3Q6IG5vbmU7XHJcblxyXG4gICAgaW5wdXQge1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICBvcGFjaXR5OiAwO1xyXG4gICAgfVxyXG5cclxuICAgICYuZGlzYWJsZWQge1xyXG4gICAgICAgIG9wYWNpdHk6IDAuNTtcclxuICAgICAgICBjdXJzb3I6IGRlZmF1bHQ7XHJcbiAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgICB9XHJcblxyXG4gICAgLmNoZWNrbWFyay1wcmltYXJ5IHtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgdG9wOiAwLjI1cmVtO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgaGVpZ2h0OiAxcmVtO1xyXG4gICAgICAgIHdpZHRoOiAxcmVtO1xyXG5cclxuICAgICAgICAmLmFjdGl2ZSB7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbiAgICAgICAgICAgIGJvcmRlcjogc29saWQgIzAwNjlCMSByZW0oMSk7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5jaGVja21hcms6YWZ0ZXIge1xyXG4gICAgICAgIGNvbnRlbnQ6IFwiXCI7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIGRpc3BsYXk6IG5vbmU7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgdG9wOiAtMXB4O1xyXG4gICAgICAgIHJpZ2h0OiAwO1xyXG4gICAgfVxyXG5cclxuICAgIC5jaGVja21hcmsuYWN0aXZlIHtcclxuICAgICAgICAmOmFmdGVyIHtcclxuICAgICAgICAgICAgY29udGVudDogXCJcXGYwMGNcIjtcclxuICAgICAgICAgICAgY29sb3I6ICRjb2xvci13aGl0ZTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgaW5wdXQ6Y2hlY2tlZH4uY2hlY2ttYXJrIHtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA2OUIxO1xyXG5cclxuICAgICAgICAmOmFmdGVyIHtcclxuICAgICAgICAgICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogcmVtKDEzKTtcclxuICAgICAgICAgICAgaGVpZ2h0OiByZW0oMTYpO1xyXG4gICAgICAgICAgICBsaW5lLWhlaWdodDogMTVweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLmNoZWNrbWFyay5kaXNhYmxlZDphZnRlciB7XHJcbiAgICAgICAgY29sb3I6ICRjb2xvci1saWdodDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogcmVtKC41KTtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiByZW0oLjUpO1xyXG4gICAgfVxyXG59IiwiJGJyb3dzZXItY29udGV4dDogMTY7XHJcbiRmdWxsV2lkdGg6IDEwMCU7XHJcblxyXG5AZnVuY3Rpb24gcmVtKCRwaXhlbHMsICRjb250ZXh0OiAkYnJvd3Nlci1jb250ZXh0KSB7XHJcbiAgQGlmICh1bml0bGVzcygkcGl4ZWxzKSkge1xyXG4gICAgJHBpeGVsczogJHBpeGVscyAqIDFweDtcclxuICB9XHJcblxyXG4gIEBpZiAodW5pdGxlc3MoJGNvbnRleHQpKSB7XHJcbiAgICAkY29udGV4dDogJGNvbnRleHQgKiAxcHg7XHJcbiAgfVxyXG5cclxuICBAcmV0dXJuICRwaXhlbHMgLyAkY29udGV4dCAqIDFyZW07XHJcbn1cclxuIiwiQGltcG9ydCBcIi4vZnVuY3Rpb25zLnNjc3NcIjtcclxuXHJcbi8vIGNvbG9yc1xyXG4kY29sb3ItcHJpbWFyeTogIzAwNjlCMTtcclxuJGNvbG9yLXByaW1hcnlob3ZlcjogIzAwM0Y4MTtcclxuJGNvbG9yLXNlY29uZGFyeTogIzgyQjIwQTtcclxuJGNvbG9yLXNlY29uZGFyeWhvdmVyOiAjNTA4MjAwO1xyXG4kY29sb3ItaW5mb3JtYXRpb25hbDogIzAwQThFNDtcclxuJGNvbG9yLWluZm9ybWF0aW9uYWxob3ZlcjogIzAwNzlCMjtcclxuJGNvbG9yLWF0dGVudGlvbjogI0ZGQTgxRTtcclxuJGNvbG9yLWF0dGVudGlvbmhvdmVyOiAjRUU4MDAwO1xyXG4kY29sb3ItZXJyb3I6ICNEMjBGNTU7XHJcbiRjb2xvci1lcnJvcmhvdmVyOiAjOUEwMDJEO1xyXG4kY29sb3ItbGlnaHQ6ICNERkRGREY7XHJcbiRjb2xvci1tZWRpdW06ICNCMkIyQjI7XHJcbiRjb2xvci1kYXJrOiAjN0Q3RDdEO1xyXG4kY29sb3ItdGV4dHN0eWxlOiAjNDE0MTQxO1xyXG4kY29sb3ItdGV4dHN0eWxlLWRhcmtlcjogIzMyMzIzMjtcclxuJGNvbG9yLWJhY2tncm91bmQ6ICNGMkYyRjI7XHJcbiRjb2xvci1iYWNrZ3JvdW5kLW1haW46ICNGQUZCRkQ7XHJcbiRjb2xvci1ibGFjazogIzAwMDAwMDtcclxuJGNvbG9yLXdoaXRlOiAjRkZGRkZGO1xyXG4kY29sb3ItdGV4dC1tYWluLW1lbnUtaXRlbTogIzI4Mzc2NDtcclxuJGNvbG9yLWRpc2FibGVkOiAjRjJGMkYyO1xyXG4kY29sb3Itb3ZlcmxheTogcmdiYSgwLCAwLCAwLCAwLjUpO1xyXG5cclxuJGNvbG9yLXRleHQtZGlzYWJsZWQ6ICRjb2xvci1saWdodDsgLy8gdGV4dCBkaXNhYmxlZFxyXG5cclxuJGJvcmRlci1kaXNhYmxlZDogMXB4IHNvbGlkICRjb2xvci1saWdodDtcclxuXHJcbi8vIGZvbnRcclxuJGZvbnQtd2VpZ2h0LWJvbGQ6IDcwMDtcclxuJGZvbnQtd2VpZ2h0LW1lZGl1bS1ib2xkOiA2MDA7XHJcbiRmb250LXdlaWdodC1tZWRpdW06IDUwMDtcclxuJGZvbnQtd2VpZ2h0LXJlZ3VsYXI6IDQwMDtcclxuJGZvbnQtd2VpZ2h0LWxpZ2h0LXJlZ3VsYXI6IDMwMDtcclxuJGZvbnQtd2VpZ2h0LWxpZ2h0OiAyMDA7XHJcblxyXG4vL2NvbnRhaW5lcnNcclxuJG1haW4tY29udGFpbmVyLWhlYWRlci1oZWlnaHQ6IDQuNXJlbTtcclxuJG1haW4tY29udGFpbmVyLXRyYW5zaXN0aW9uLWRlbGF5OiAyNTBtcztcclxuXHJcbi8vIGhlYWRlciwgbmF2XHJcbiRuYXYtaWNvbi1zaXplOiByZW0oMzUpO1xyXG4kc2lkZWJhci1oZWlnaHQ6IDEwMHZoO1xyXG4kc2lkZWJhci13aWR0aDogMzAwcHg7XHJcbiRzaWRlYmFyLXdpZHRoLWV4cGFuZGVkOiByZW0oJHNpZGViYXItd2lkdGgpO1xyXG4kc2lkZWJhci1pbml0LXBvc2l0aW9uOiByZW0oLSRzaWRlYmFyLXdpZHRoKTtcclxuXHJcbi8vIFRhYmxlXHJcbiR0YWJsZS1ib3JkZXItY29sb3I6IHJnYmEoMCwwLDAsLjEyKSAhZGVmYXVsdDtcclxuJHRhYmxlLXN0cmlwZWQtY29sb3I6IHJnYmEoMjQyLCAyNDIsIDI0MiwgMC41KSAhZGVmYXVsdDtcclxuJG1lZGl1bS1zY3JlZW46IDk5MnB4ICFkZWZhdWx0O1xyXG4kbWVkaXVtLWFuZC1kb3duOiBcIm9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoIDogI3skbWVkaXVtLXNjcmVlbn0pXCIgIWRlZmF1bHQ7XHJcblxyXG4vLyBidXR0b25cclxuJHNlY29uZGFyeS1jb2xvcjogJGNvbG9yLXNlY29uZGFyeTtcclxuJGJ1dHRvbi1ib3JkZXI6IG5vbmUgIWRlZmF1bHQ7XHJcbiRidXR0b24tYmFja2dyb3VuZC1mb2N1czogbGlnaHRlbigkc2Vjb25kYXJ5LWNvbG9yLCA0JSkgIWRlZmF1bHQ7XHJcbiRidXR0b24tZm9udC1zaXplOiAxNHB4ICFkZWZhdWx0O1xyXG4kYnV0dG9uLWljb24tZm9udC1zaXplOiAxLjNyZW0gIWRlZmF1bHQ7XHJcbiRidXR0b24taGVpZ2h0OiAzNnB4ICFkZWZhdWx0O1xyXG4kYnV0dG9uLXBhZGRpbmc6IDAgMTZweCAhZGVmYXVsdDtcclxuJGJ1dHRvbi1yYWRpdXM6IDJweCAhZGVmYXVsdDtcclxuXHJcbi8vIERpc2FibGVkIHN0eWxlc1xyXG4kYnV0dG9uLWRpc2FibGVkLWJhY2tncm91bmQ6ICNERkRGREYgIWRlZmF1bHQ7XHJcbiRidXR0b24tZGlzYWJsZWQtY29sb3I6ICM5RjlGOUYgIWRlZmF1bHQ7XHJcblxyXG4vLyBSYWlzZWQgYnV0dG9uc1xyXG4kYnV0dG9uLXJhaXNlZC1iYWNrZ3JvdW5kOiAkc2Vjb25kYXJ5LWNvbG9yICFkZWZhdWx0O1xyXG4kYnV0dG9uLXJhaXNlZC1iYWNrZ3JvdW5kLWhvdmVyOiBsaWdodGVuKCRidXR0b24tcmFpc2VkLWJhY2tncm91bmQsIDUlKSAhZGVmYXVsdDtcclxuJGJ1dHRvbi1yYWlzZWQtY29sb3I6ICNmZmYgIWRlZmF1bHQ7XHJcblxyXG4vLyBMYXJnZSBidXR0b25zXHJcbiRidXR0b24tbGFyZ2UtZm9udC1zaXplOiAxNXB4ICFkZWZhdWx0O1xyXG4kYnV0dG9uLWxhcmdlLWljb24tZm9udC1zaXplOiAxLjZyZW0gIWRlZmF1bHQ7XHJcbiRidXR0b24tbGFyZ2UtaGVpZ2h0OiAkYnV0dG9uLWhlaWdodCAqIDEuNSAhZGVmYXVsdDtcclxuJGJ1dHRvbi1mbG9hdGluZy1sYXJnZS1zaXplOiA1NnB4ICFkZWZhdWx0O1xyXG5cclxuLy8gU21hbGwgYnV0dG9uc1xyXG4kYnV0dG9uLXNtYWxsLWZvbnQtc2l6ZTogMTNweCAhZGVmYXVsdDtcclxuJGJ1dHRvbi1zbWFsbC1pY29uLWZvbnQtc2l6ZTogMS4ycmVtICFkZWZhdWx0O1xyXG4kYnV0dG9uLXNtYWxsLWhlaWdodDogJGJ1dHRvbi1oZWlnaHQgKiAuOSAhZGVmYXVsdDtcclxuJGJ1dHRvbi1mbG9hdGluZy1zbWFsbC1zaXplOiAkYnV0dG9uLWhlaWdodCAqIC45ICFkZWZhdWx0O1xyXG5cclxuLy8gRmxhdCBidXR0b25zXHJcbiRidXR0b24tZmxhdC1jb2xvcjogIzM0MzQzNCAhZGVmYXVsdDtcclxuJGJ1dHRvbi1mbGF0LWRpc2FibGVkLWNvbG9yOiBsaWdodGVuKCM5OTksIDEwJSkgIWRlZmF1bHQ7XHJcblxyXG4vLyBGbG9hdGluZyBidXR0b25zXHJcbiRidXR0b24tZmxvYXRpbmctYmFja2dyb3VuZDogJHNlY29uZGFyeS1jb2xvciAhZGVmYXVsdDtcclxuJGJ1dHRvbi1mbG9hdGluZy1iYWNrZ3JvdW5kLWhvdmVyOiAkYnV0dG9uLWZsb2F0aW5nLWJhY2tncm91bmQgIWRlZmF1bHQ7XHJcbiRidXR0b24tZmxvYXRpbmctY29sb3I6ICNmZmYgIWRlZmF1bHQ7XHJcbiRidXR0b24tZmxvYXRpbmctc2l6ZTogNDBweCAhZGVmYXVsdDtcclxuJGJ1dHRvbi1mbG9hdGluZy1yYWRpdXM6IDUwJSAhZGVmYXVsdDtcclxuXHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./projects/ui-library/src/lib/components/checkbox/checkbox.component.ts":
+/*!*******************************************************************************!*\
+  !*** ./projects/ui-library/src/lib/components/checkbox/checkbox.component.ts ***!
+  \*******************************************************************************/
+/*! exports provided: CheckboxComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckboxComponent", function() { return CheckboxComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var CheckboxComponent = /** @class */ (function () {
+    function CheckboxComponent() {
+        this.modelChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.handleChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    CheckboxComponent.prototype.handleOnChange = function (event) {
+        this.checked = event.target.checked;
+        this.handleChange.emit(this.checked);
+        this.modelChange.emit(this.checked);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], CheckboxComponent.prototype, "label", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], CheckboxComponent.prototype, "name", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+    ], CheckboxComponent.prototype, "disabled", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+    ], CheckboxComponent.prototype, "model", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], CheckboxComponent.prototype, "modelChange", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], CheckboxComponent.prototype, "handleChange", void 0);
+    CheckboxComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 't-checkbox',
+            template: __webpack_require__(/*! ./checkbox.component.html */ "./projects/ui-library/src/lib/components/checkbox/checkbox.component.html"),
+            styles: [__webpack_require__(/*! ./checkbox.component.scss */ "./projects/ui-library/src/lib/components/checkbox/checkbox.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], CheckboxComponent);
+    return CheckboxComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./projects/ui-library/src/lib/components/components.ts":
 /*!**************************************************************!*\
   !*** ./projects/ui-library/src/lib/components/components.ts ***!
@@ -184,29 +269,37 @@ var ButtonComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Components", function() { return Components; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExportedComponents", function() { return ExportedComponents; });
-/* harmony import */ var _dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dynamic-fields/dynamic-fields.component */ "./projects/ui-library/src/lib/components/dynamic-fields/dynamic-fields.component.ts");
-/* harmony import */ var _button_button_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./button/button.component */ "./projects/ui-library/src/lib/components/button/button.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header/header.component */ "./projects/ui-library/src/lib/components/header/header.component.ts");
-/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nav/nav.component */ "./projects/ui-library/src/lib/components/nav/nav.component.ts");
-/* harmony import */ var _badge_badge_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./badge/badge.component */ "./projects/ui-library/src/lib/components/badge/badge.component.ts");
+/* harmony import */ var _radio_radio_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./radio/radio.component */ "./projects/ui-library/src/lib/components/radio/radio.component.ts");
+/* harmony import */ var _dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dynamic-fields/dynamic-fields.component */ "./projects/ui-library/src/lib/components/dynamic-fields/dynamic-fields.component.ts");
+/* harmony import */ var _button_button_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./button/button.component */ "./projects/ui-library/src/lib/components/button/button.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header/header.component */ "./projects/ui-library/src/lib/components/header/header.component.ts");
+/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./nav/nav.component */ "./projects/ui-library/src/lib/components/nav/nav.component.ts");
+/* harmony import */ var _badge_badge_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./badge/badge.component */ "./projects/ui-library/src/lib/components/badge/badge.component.ts");
+/* harmony import */ var _checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./checkbox/checkbox.component */ "./projects/ui-library/src/lib/components/checkbox/checkbox.component.ts");
+
+
 
 
 
 
 
 var Components = [
-    _nav_nav_component__WEBPACK_IMPORTED_MODULE_3__["NavComponent"],
-    _header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"],
-    _badge_badge_component__WEBPACK_IMPORTED_MODULE_4__["BadgeComponent"],
-    _button_button_component__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"],
-    _dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_0__["DynamicFieldsComponent"]
+    _nav_nav_component__WEBPACK_IMPORTED_MODULE_4__["NavComponent"],
+    _header_header_component__WEBPACK_IMPORTED_MODULE_3__["HeaderComponent"],
+    _badge_badge_component__WEBPACK_IMPORTED_MODULE_5__["BadgeComponent"],
+    _button_button_component__WEBPACK_IMPORTED_MODULE_2__["ButtonComponent"],
+    _dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_1__["DynamicFieldsComponent"],
+    _checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_6__["CheckboxComponent"],
+    _radio_radio_component__WEBPACK_IMPORTED_MODULE_0__["RadioComponent"]
 ];
 var ExportedComponents = [
-    _nav_nav_component__WEBPACK_IMPORTED_MODULE_3__["NavComponent"],
-    _header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"],
-    _badge_badge_component__WEBPACK_IMPORTED_MODULE_4__["BadgeComponent"],
-    _button_button_component__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"],
-    _dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_0__["DynamicFieldsComponent"]
+    _nav_nav_component__WEBPACK_IMPORTED_MODULE_4__["NavComponent"],
+    _header_header_component__WEBPACK_IMPORTED_MODULE_3__["HeaderComponent"],
+    _badge_badge_component__WEBPACK_IMPORTED_MODULE_5__["BadgeComponent"],
+    _button_button_component__WEBPACK_IMPORTED_MODULE_2__["ButtonComponent"],
+    _dynamic_fields_dynamic_fields_component__WEBPACK_IMPORTED_MODULE_1__["DynamicFieldsComponent"],
+    _checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_6__["CheckboxComponent"],
+    _radio_radio_component__WEBPACK_IMPORTED_MODULE_0__["RadioComponent"]
 ];
 
 
@@ -219,7 +312,7 @@ var ExportedComponents = [
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dynamic-fields\">\n  <div *ngFor=\"let field of renderFields\" [ngSwitch]=\"field.type\" class='input-element'>\n\n    <!-- input type text -->\n    <div *ngSwitchCase=\"'text'\" class='input-text'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <input [id]='field.model' type=\"text\" [name]='field.name'\n        [(ngModel)]=\"data[field.model]\" />\n    </div>\n\n    <div *ngSwitchCase=\"'number'\" class='input-number'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <input [id]='field.model' type=\"number\" [name]='field.name'\n        [(ngModel)]=\"data[field.model]\" />\n    </div>\n\n    <!-- input type checkbox -->\n    <div *ngSwitchCase=\"'checkbox'\" class='input-checkbox'>\n      <label [for]=\"field.model\">\n        <span>{{field.label}}</span>\n        <input [id]='field.model' type=\"checkbox\" [(ngModel)]=\"data[field.model]\"\n          [name]='field.name' />\n      </label>\n    </div>\n\n    <!-- input type checkbox -->\n    <div *ngSwitchCase=\"'radio'\" class='input-radio'>\n      <label [for]=\"field.model\">\n        <span>{{field.label}}</span>\n        <input [id]='field.model' type=\"radio\" [(ngModel)]=\"data[field.model]\"\n          [name]='field.name' />\n      </label>\n    </div>\n\n    <!-- dropdown -->\n    <div *ngSwitchCase=\"'select'\" class='input-select'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <select [id]='field.model' [(ngModel)]=\"data[field.model]\">\n        <option *ngFor=\"let item of dropdownOptions[field.options]\" [value]=\"item.value\">\n          {{item.label}}</option>\n      </select>\n    </div>\n  </div>\n\n  <div class=\"button-container\">\n    <div class=\"default-button\" *ngIf=\"!disableDefaultAction\">\n      <t-button [label]=\"primaryBtnLabel\" type=\"primary\" (click)=\"primaryClick()\">\n      </t-button>\n      <t-button *ngIf=\"!removeSecBtn\" [label]=\"secondaryBtnLabel\" type=\"secondary\"\n        (click)=\"secondaryClick()\">\n      </t-button>\n    </div>\n    <div class=\"custom-action-button\" *ngIf=\"disableDefaultAction\">\n      <span>\n        <t-button></t-button>\n      </span>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"dynamic-fields\">\n  <div *ngFor=\"let field of renderFields\" [ngSwitch]=\"field.type\" class='input-element'>\n\n    <!-- input type text -->\n    <div *ngSwitchCase=\"'text'\" class='input-text'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <input [id]='field.model' type=\"text\" [name]='field.name'\n        [(ngModel)]=\"data[field.model]\" />\n    </div>\n\n    <div *ngSwitchCase=\"'number'\" class='input-number'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <input [id]='field.model' type=\"number\" [name]='field.name'\n        [(ngModel)]=\"data[field.model]\" />\n    </div>\n\n    <!-- input type checkbox -->\n    <div *ngSwitchCase=\"'checkbox'\" class='input-checkbox'>\n      <t-checkbox [label]=\"field.label\" [(model)]=\"data[field.model]\" [name]='field.name'>\n      </t-checkbox>\n    </div>\n\n    <!-- input type checkbox -->\n    <div *ngSwitchCase=\"'radio'\" class='input-radio'>\n      <label [for]=\"field.model\">\n        <span>{{field.label}}</span>\n        <input [id]='field.model' type=\"radio\" [(ngModel)]=\"data[field.model]\"\n          [name]='field.name' />\n      </label>\n    </div>\n\n    <!-- dropdown -->\n    <div *ngSwitchCase=\"'select'\" class='input-select'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <select [id]='field.model' [(ngModel)]=\"data[field.model]\">\n        <option *ngFor=\"let item of dropdownOptions[field.options]\" [value]=\"item.value\">\n          {{item.label}}</option>\n      </select>\n    </div>\n  </div>\n\n  <div class=\"button-container\">\n    <div class=\"default-button\" *ngIf=\"!disableDefaultAction\">\n      <t-button [label]=\"primaryBtnLabel\" type=\"primary\" (click)=\"primaryClick()\">\n      </t-button>\n      <t-button *ngIf=\"!removeSecBtn\" [label]=\"secondaryBtnLabel\" type=\"secondary\"\n        (click)=\"secondaryClick()\">\n      </t-button>\n    </div>\n    <div class=\"custom-action-button\" *ngIf=\"disableDefaultAction\">\n      <span>\n        <t-button></t-button>\n      </span>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -567,6 +660,442 @@ var NavComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./projects/ui-library/src/lib/components/radio/radio.component.html":
+/*!***************************************************************************!*\
+  !*** ./projects/ui-library/src/lib/components/radio/radio.component.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<label class=\"radio\" [class.disabled]=\"disabled\" [ngClass]=\"{'active': checked}\">\n  &nbsp;{{label}}\n  <input type=\"radio\" [name]=\"name\" [checked]=\"checked\" [disabled]=\"disabled\"\n    (change)=\"handleOnChange($event)\" [(ngModel)]=\"model\" [value]=\"value\">\n</label>"
+
+/***/ }),
+
+/***/ "./projects/ui-library/src/lib/components/radio/radio.component.scss":
+/*!***************************************************************************!*\
+  !*** ./projects/ui-library/src/lib/components/radio/radio.component.scss ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".hide {\n  display: none !important; }\n\n.disable {\n  pointer-events: none;\n  opacity: 0.4; }\n\n.z-depth-1 {\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }\n\n.z-depth-1-half {\n  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2); }\n\n/* The checkbox component - which includes the label, the form input, and the span for the checkmark */\n\n.radio {\n  display: inline;\n  position: relative;\n  padding-left: 1.25rem;\n  cursor: pointer;\n  font-size: 1rem;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none; }\n\n.radio input {\n    position: relative;\n    opacity: 0; }\n\n.radio:before {\n    content: '';\n    width: 1.125rem;\n    height: 1.125rem;\n    border-radius: 50%;\n    border: 1px solid #0069B1;\n    display: inline-block;\n    position: absolute;\n    left: 0;\n    top: 2px; }\n\n.radio.disabled {\n    opacity: 0.5;\n    cursor: default;\n    pointer-events: none; }\n\n.radio.active:before {\n  content: '';\n  border: 5px solid #0069B1; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL3VpLWxpYnJhcnkvc3JjL2xpYi9jb21wb25lbnRzL3JhZGlvL0U6XFxQcm9qZWN0c1xcdWktbGliL3Byb2plY3RzXFx1aS1saWJyYXJ5XFxzcmNcXGxpYlxcc3R5bGVzXFx1dGlsaXR5LnNjc3MiLCJwcm9qZWN0cy91aS1saWJyYXJ5L3NyYy9saWIvY29tcG9uZW50cy9yYWRpby9FOlxcUHJvamVjdHNcXHVpLWxpYi9wcm9qZWN0c1xcdWktbGlicmFyeVxcc3JjXFxsaWJcXGNvbXBvbmVudHNcXHJhZGlvXFxyYWRpby5jb21wb25lbnQuc2NzcyIsInByb2plY3RzL3VpLWxpYnJhcnkvc3JjL2xpYi9jb21wb25lbnRzL3JhZGlvL0U6XFxQcm9qZWN0c1xcdWktbGliL3Byb2plY3RzXFx1aS1saWJyYXJ5XFxzcmNcXGxpYlxcc3R5bGVzXFxmdW5jdGlvbnMuc2NzcyIsInByb2plY3RzL3VpLWxpYnJhcnkvc3JjL2xpYi9jb21wb25lbnRzL3JhZGlvL0U6XFxQcm9qZWN0c1xcdWktbGliL3Byb2plY3RzXFx1aS1saWJyYXJ5XFxzcmNcXGxpYlxcc3R5bGVzXFx2YXJpYWJsZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksd0JBQXdCLEVBQUE7O0FBRzVCO0VBQ0ksb0JBQW9CO0VBQ3BCLFlBQVksRUFBQTs7QUFHaEI7RUFDSSwrR0FFa0MsRUFBQTs7QUFHdEM7RUFDSSwrR0FBK0csRUFBQTs7QUNYbkgsc0dBQUE7O0FBQ0E7RUFDSSxlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLHFCQ0crQjtFREYvQixlQUFlO0VBQ2YsZUNDK0I7RURBL0IseUJBQWlCO0tBQWpCLHNCQUFpQjtNQUFqQixxQkFBaUI7VUFBakIsaUJBQWlCLEVBQUE7O0FBTnJCO0lBU1Esa0JBQWtCO0lBQ2xCLFVBQVUsRUFBQTs7QUFWbEI7SUFjUSxXQUFXO0lBQ1gsZUNUMkI7SURVM0IsZ0JDVjJCO0lEVzNCLGtCQUFrQjtJQUNsQix5QkVyQmU7SUZzQmYscUJBQXFCO0lBQ3JCLGtCQUFrQjtJQUNsQixPQUFPO0lBQ1AsUUFBUSxFQUFBOztBQXRCaEI7SUEwQlEsWUFBWTtJQUNaLGVBQWU7SUFDZixvQkFBb0IsRUFBQTs7QUFJNUI7RUFFUSxXQUFXO0VBQ1gseUJFdENlLEVBQUEiLCJmaWxlIjoicHJvamVjdHMvdWktbGlicmFyeS9zcmMvbGliL2NvbXBvbmVudHMvcmFkaW8vcmFkaW8uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaGlkZSB7XHJcbiAgICBkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5kaXNhYmxlIHtcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gICAgb3BhY2l0eTogMC40O1xyXG59XHJcblxyXG4uei1kZXB0aC0xIHtcclxuICAgIGJveC1zaGFkb3c6IDAgMnB4IDJweCAwIHJnYmEoMCwgMCwgMCwgMC4xNCksXHJcbiAgICAgICAgMCAzcHggMXB4IC0ycHggcmdiYSgwLCAwLCAwLCAwLjEyKSxcclxuICAgICAgICAwIDFweCA1cHggMCByZ2JhKDAsIDAsIDAsIDAuMik7XHJcbn1cclxuXHJcbi56LWRlcHRoLTEtaGFsZiB7XHJcbiAgICBib3gtc2hhZG93OiAwIDNweCAzcHggMCByZ2JhKDAsIDAsIDAsIDAuMTQpLCAwIDFweCA3cHggMCByZ2JhKDAsIDAsIDAsIDAuMTIpLCAwIDNweCAxcHggLTFweCByZ2JhKDAsIDAsIDAsIDAuMik7XHJcbn0iLCJAaW1wb3J0IFwiLi4vLi4vc3R5bGVzL3ZhcmlhYmxlLnNjc3NcIjtcclxuQGltcG9ydCBcIi4uLy4uL3N0eWxlcy8vdXRpbGl0eS5zY3NzXCI7XHJcblxyXG4kcmFkaW8tZGltZW5zaW9uczogMTg7XHJcblxyXG4vKiBUaGUgY2hlY2tib3ggY29tcG9uZW50IC0gd2hpY2ggaW5jbHVkZXMgdGhlIGxhYmVsLCB0aGUgZm9ybSBpbnB1dCwgYW5kIHRoZSBzcGFuIGZvciB0aGUgY2hlY2ttYXJrICovXHJcbi5yYWRpbyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IHJlbSgyMCk7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBmb250LXNpemU6IHJlbSgxNik7XHJcbiAgICB1c2VyLXNlbGVjdDogbm9uZTtcclxuXHJcbiAgICBpbnB1dCB7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIG9wYWNpdHk6IDA7XHJcbiAgICB9XHJcblxyXG4gICAgJjpiZWZvcmUge1xyXG4gICAgICAgIGNvbnRlbnQ6ICcnO1xyXG4gICAgICAgIHdpZHRoOiByZW0oJHJhZGlvLWRpbWVuc2lvbnMpO1xyXG4gICAgICAgIGhlaWdodDogcmVtKCRyYWRpby1kaW1lbnNpb25zKTtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgJGNvbG9yLXByaW1hcnk7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIHRvcDogMnB4O1xyXG4gICAgfVxyXG5cclxuICAgICYuZGlzYWJsZWQge1xyXG4gICAgICAgIG9wYWNpdHk6IDAuNTtcclxuICAgICAgICBjdXJzb3I6IGRlZmF1bHQ7XHJcbiAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5yYWRpby5hY3RpdmUge1xyXG4gICAgJjpiZWZvcmUge1xyXG4gICAgICAgIGNvbnRlbnQ6ICcnO1xyXG4gICAgICAgIGJvcmRlcjogNXB4IHNvbGlkICRjb2xvci1wcmltYXJ5O1xyXG4gICAgfVxyXG59IiwiJGJyb3dzZXItY29udGV4dDogMTY7XHJcbiRmdWxsV2lkdGg6IDEwMCU7XHJcblxyXG5AZnVuY3Rpb24gcmVtKCRwaXhlbHMsICRjb250ZXh0OiAkYnJvd3Nlci1jb250ZXh0KSB7XHJcbiAgQGlmICh1bml0bGVzcygkcGl4ZWxzKSkge1xyXG4gICAgJHBpeGVsczogJHBpeGVscyAqIDFweDtcclxuICB9XHJcblxyXG4gIEBpZiAodW5pdGxlc3MoJGNvbnRleHQpKSB7XHJcbiAgICAkY29udGV4dDogJGNvbnRleHQgKiAxcHg7XHJcbiAgfVxyXG5cclxuICBAcmV0dXJuICRwaXhlbHMgLyAkY29udGV4dCAqIDFyZW07XHJcbn1cclxuIiwiQGltcG9ydCBcIi4vZnVuY3Rpb25zLnNjc3NcIjtcclxuXHJcbi8vIGNvbG9yc1xyXG4kY29sb3ItcHJpbWFyeTogIzAwNjlCMTtcclxuJGNvbG9yLXByaW1hcnlob3ZlcjogIzAwM0Y4MTtcclxuJGNvbG9yLXNlY29uZGFyeTogIzgyQjIwQTtcclxuJGNvbG9yLXNlY29uZGFyeWhvdmVyOiAjNTA4MjAwO1xyXG4kY29sb3ItaW5mb3JtYXRpb25hbDogIzAwQThFNDtcclxuJGNvbG9yLWluZm9ybWF0aW9uYWxob3ZlcjogIzAwNzlCMjtcclxuJGNvbG9yLWF0dGVudGlvbjogI0ZGQTgxRTtcclxuJGNvbG9yLWF0dGVudGlvbmhvdmVyOiAjRUU4MDAwO1xyXG4kY29sb3ItZXJyb3I6ICNEMjBGNTU7XHJcbiRjb2xvci1lcnJvcmhvdmVyOiAjOUEwMDJEO1xyXG4kY29sb3ItbGlnaHQ6ICNERkRGREY7XHJcbiRjb2xvci1tZWRpdW06ICNCMkIyQjI7XHJcbiRjb2xvci1kYXJrOiAjN0Q3RDdEO1xyXG4kY29sb3ItdGV4dHN0eWxlOiAjNDE0MTQxO1xyXG4kY29sb3ItdGV4dHN0eWxlLWRhcmtlcjogIzMyMzIzMjtcclxuJGNvbG9yLWJhY2tncm91bmQ6ICNGMkYyRjI7XHJcbiRjb2xvci1iYWNrZ3JvdW5kLW1haW46ICNGQUZCRkQ7XHJcbiRjb2xvci1ibGFjazogIzAwMDAwMDtcclxuJGNvbG9yLXdoaXRlOiAjRkZGRkZGO1xyXG4kY29sb3ItdGV4dC1tYWluLW1lbnUtaXRlbTogIzI4Mzc2NDtcclxuJGNvbG9yLWRpc2FibGVkOiAjRjJGMkYyO1xyXG4kY29sb3Itb3ZlcmxheTogcmdiYSgwLCAwLCAwLCAwLjUpO1xyXG5cclxuJGNvbG9yLXRleHQtZGlzYWJsZWQ6ICRjb2xvci1saWdodDsgLy8gdGV4dCBkaXNhYmxlZFxyXG5cclxuJGJvcmRlci1kaXNhYmxlZDogMXB4IHNvbGlkICRjb2xvci1saWdodDtcclxuXHJcbi8vIGZvbnRcclxuJGZvbnQtd2VpZ2h0LWJvbGQ6IDcwMDtcclxuJGZvbnQtd2VpZ2h0LW1lZGl1bS1ib2xkOiA2MDA7XHJcbiRmb250LXdlaWdodC1tZWRpdW06IDUwMDtcclxuJGZvbnQtd2VpZ2h0LXJlZ3VsYXI6IDQwMDtcclxuJGZvbnQtd2VpZ2h0LWxpZ2h0LXJlZ3VsYXI6IDMwMDtcclxuJGZvbnQtd2VpZ2h0LWxpZ2h0OiAyMDA7XHJcblxyXG4vL2NvbnRhaW5lcnNcclxuJG1haW4tY29udGFpbmVyLWhlYWRlci1oZWlnaHQ6IDQuNXJlbTtcclxuJG1haW4tY29udGFpbmVyLXRyYW5zaXN0aW9uLWRlbGF5OiAyNTBtcztcclxuXHJcbi8vIGhlYWRlciwgbmF2XHJcbiRuYXYtaWNvbi1zaXplOiByZW0oMzUpO1xyXG4kc2lkZWJhci1oZWlnaHQ6IDEwMHZoO1xyXG4kc2lkZWJhci13aWR0aDogMzAwcHg7XHJcbiRzaWRlYmFyLXdpZHRoLWV4cGFuZGVkOiByZW0oJHNpZGViYXItd2lkdGgpO1xyXG4kc2lkZWJhci1pbml0LXBvc2l0aW9uOiByZW0oLSRzaWRlYmFyLXdpZHRoKTtcclxuXHJcbi8vIFRhYmxlXHJcbiR0YWJsZS1ib3JkZXItY29sb3I6IHJnYmEoMCwwLDAsLjEyKSAhZGVmYXVsdDtcclxuJHRhYmxlLXN0cmlwZWQtY29sb3I6IHJnYmEoMjQyLCAyNDIsIDI0MiwgMC41KSAhZGVmYXVsdDtcclxuJG1lZGl1bS1zY3JlZW46IDk5MnB4ICFkZWZhdWx0O1xyXG4kbWVkaXVtLWFuZC1kb3duOiBcIm9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoIDogI3skbWVkaXVtLXNjcmVlbn0pXCIgIWRlZmF1bHQ7XHJcblxyXG4vLyBidXR0b25cclxuJHNlY29uZGFyeS1jb2xvcjogJGNvbG9yLXNlY29uZGFyeTtcclxuJGJ1dHRvbi1ib3JkZXI6IG5vbmUgIWRlZmF1bHQ7XHJcbiRidXR0b24tYmFja2dyb3VuZC1mb2N1czogbGlnaHRlbigkc2Vjb25kYXJ5LWNvbG9yLCA0JSkgIWRlZmF1bHQ7XHJcbiRidXR0b24tZm9udC1zaXplOiAxNHB4ICFkZWZhdWx0O1xyXG4kYnV0dG9uLWljb24tZm9udC1zaXplOiAxLjNyZW0gIWRlZmF1bHQ7XHJcbiRidXR0b24taGVpZ2h0OiAzNnB4ICFkZWZhdWx0O1xyXG4kYnV0dG9uLXBhZGRpbmc6IDAgMTZweCAhZGVmYXVsdDtcclxuJGJ1dHRvbi1yYWRpdXM6IDJweCAhZGVmYXVsdDtcclxuXHJcbi8vIERpc2FibGVkIHN0eWxlc1xyXG4kYnV0dG9uLWRpc2FibGVkLWJhY2tncm91bmQ6ICNERkRGREYgIWRlZmF1bHQ7XHJcbiRidXR0b24tZGlzYWJsZWQtY29sb3I6ICM5RjlGOUYgIWRlZmF1bHQ7XHJcblxyXG4vLyBSYWlzZWQgYnV0dG9uc1xyXG4kYnV0dG9uLXJhaXNlZC1iYWNrZ3JvdW5kOiAkc2Vjb25kYXJ5LWNvbG9yICFkZWZhdWx0O1xyXG4kYnV0dG9uLXJhaXNlZC1iYWNrZ3JvdW5kLWhvdmVyOiBsaWdodGVuKCRidXR0b24tcmFpc2VkLWJhY2tncm91bmQsIDUlKSAhZGVmYXVsdDtcclxuJGJ1dHRvbi1yYWlzZWQtY29sb3I6ICNmZmYgIWRlZmF1bHQ7XHJcblxyXG4vLyBMYXJnZSBidXR0b25zXHJcbiRidXR0b24tbGFyZ2UtZm9udC1zaXplOiAxNXB4ICFkZWZhdWx0O1xyXG4kYnV0dG9uLWxhcmdlLWljb24tZm9udC1zaXplOiAxLjZyZW0gIWRlZmF1bHQ7XHJcbiRidXR0b24tbGFyZ2UtaGVpZ2h0OiAkYnV0dG9uLWhlaWdodCAqIDEuNSAhZGVmYXVsdDtcclxuJGJ1dHRvbi1mbG9hdGluZy1sYXJnZS1zaXplOiA1NnB4ICFkZWZhdWx0O1xyXG5cclxuLy8gU21hbGwgYnV0dG9uc1xyXG4kYnV0dG9uLXNtYWxsLWZvbnQtc2l6ZTogMTNweCAhZGVmYXVsdDtcclxuJGJ1dHRvbi1zbWFsbC1pY29uLWZvbnQtc2l6ZTogMS4ycmVtICFkZWZhdWx0O1xyXG4kYnV0dG9uLXNtYWxsLWhlaWdodDogJGJ1dHRvbi1oZWlnaHQgKiAuOSAhZGVmYXVsdDtcclxuJGJ1dHRvbi1mbG9hdGluZy1zbWFsbC1zaXplOiAkYnV0dG9uLWhlaWdodCAqIC45ICFkZWZhdWx0O1xyXG5cclxuLy8gRmxhdCBidXR0b25zXHJcbiRidXR0b24tZmxhdC1jb2xvcjogIzM0MzQzNCAhZGVmYXVsdDtcclxuJGJ1dHRvbi1mbGF0LWRpc2FibGVkLWNvbG9yOiBsaWdodGVuKCM5OTksIDEwJSkgIWRlZmF1bHQ7XHJcblxyXG4vLyBGbG9hdGluZyBidXR0b25zXHJcbiRidXR0b24tZmxvYXRpbmctYmFja2dyb3VuZDogJHNlY29uZGFyeS1jb2xvciAhZGVmYXVsdDtcclxuJGJ1dHRvbi1mbG9hdGluZy1iYWNrZ3JvdW5kLWhvdmVyOiAkYnV0dG9uLWZsb2F0aW5nLWJhY2tncm91bmQgIWRlZmF1bHQ7XHJcbiRidXR0b24tZmxvYXRpbmctY29sb3I6ICNmZmYgIWRlZmF1bHQ7XHJcbiRidXR0b24tZmxvYXRpbmctc2l6ZTogNDBweCAhZGVmYXVsdDtcclxuJGJ1dHRvbi1mbG9hdGluZy1yYWRpdXM6IDUwJSAhZGVmYXVsdDtcclxuXHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./projects/ui-library/src/lib/components/radio/radio.component.ts":
+/*!*************************************************************************!*\
+  !*** ./projects/ui-library/src/lib/components/radio/radio.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: RadioComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RadioComponent", function() { return RadioComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var RadioComponent = /** @class */ (function () {
+    function RadioComponent() {
+        this.value = true;
+        this.modelChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.handleChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    Object.defineProperty(RadioComponent.prototype, "model", {
+        get: function () {
+            return this._model;
+        },
+        set: function (value) {
+            this._model = value;
+            this.checked = value === this.value ? true : false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    RadioComponent.prototype.handleOnChange = function (event) {
+        var checked = event.target.checked;
+        this.checked = (checked && this.value === this.model) ? true : false;
+        var value = checked ? this.value : false;
+        this.handleChange.emit(value);
+        this.modelChange.emit(value);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], RadioComponent.prototype, "label", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+    ], RadioComponent.prototype, "disabled", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], RadioComponent.prototype, "name", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], RadioComponent.prototype, "value", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object])
+    ], RadioComponent.prototype, "model", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], RadioComponent.prototype, "modelChange", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], RadioComponent.prototype, "handleChange", void 0);
+    RadioComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 't-radio',
+            template: __webpack_require__(/*! ./radio.component.html */ "./projects/ui-library/src/lib/components/radio/radio.component.html"),
+            styles: [__webpack_require__(/*! ./radio.component.scss */ "./projects/ui-library/src/lib/components/radio/radio.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], RadioComponent);
+    return RadioComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./projects/ui-library/src/lib/directives/directives.ts":
+/*!**************************************************************!*\
+  !*** ./projects/ui-library/src/lib/directives/directives.ts ***!
+  \**************************************************************/
+/*! exports provided: Directives, ExportedDirectives, EntryPointDirectives */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Directives", function() { return Directives; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExportedDirectives", function() { return ExportedDirectives; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EntryPointDirectives", function() { return EntryPointDirectives; });
+/* harmony import */ var _tooltip_tootlip_content__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tooltip/tootlip.content */ "./projects/ui-library/src/lib/directives/tooltip/tootlip.content.ts");
+/* harmony import */ var _tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tooltip/tooltip.directive */ "./projects/ui-library/src/lib/directives/tooltip/tooltip.directive.ts");
+
+
+var Directives = [
+    _tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_1__["TooltipDirective"],
+    _tooltip_tootlip_content__WEBPACK_IMPORTED_MODULE_0__["TooltipContent"]
+];
+var ExportedDirectives = [
+    _tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_1__["TooltipDirective"]
+];
+var EntryPointDirectives = [
+    _tooltip_tootlip_content__WEBPACK_IMPORTED_MODULE_0__["TooltipContent"]
+];
+
+
+/***/ }),
+
+/***/ "./projects/ui-library/src/lib/directives/tooltip/tooltip.directive.ts":
+/*!*****************************************************************************!*\
+  !*** ./projects/ui-library/src/lib/directives/tooltip/tooltip.directive.ts ***!
+  \*****************************************************************************/
+/*! exports provided: TooltipDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TooltipDirective", function() { return TooltipDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _tootlip_content__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tootlip.content */ "./projects/ui-library/src/lib/directives/tooltip/tootlip.content.ts");
+
+
+
+var TooltipDirective = /** @class */ (function () {
+    function TooltipDirective(viewContainerRef, resolver) {
+        this.viewContainerRef = viewContainerRef;
+        this.resolver = resolver;
+        this.tooltipAnimation = true;
+        this.tooltipPlacement = 'bottom';
+    }
+    TooltipDirective.prototype.show = function () {
+        if (this.tooltipDisabled || this.visible) {
+            return;
+        }
+        this.visible = true;
+        if (typeof this.content === 'string') {
+            var factory = this.resolver.resolveComponentFactory(_tootlip_content__WEBPACK_IMPORTED_MODULE_2__["TooltipContent"]);
+            if (!this.visible) {
+                return;
+            }
+            this.tooltip = this.viewContainerRef.createComponent(factory);
+            this.tooltip.instance.hostElement = this.viewContainerRef.element.nativeElement;
+            this.tooltip.instance.content = this.content;
+            this.tooltip.instance.placement = this.tooltipPlacement;
+            this.tooltip.instance.animation = this.tooltipAnimation;
+        }
+        else {
+            var tooltip = this.content;
+            tooltip.hostElement = this.viewContainerRef.element.nativeElement;
+            tooltip.placement = this.tooltipPlacement;
+            tooltip.animation = this.tooltipAnimation;
+            tooltip.show();
+        }
+    };
+    TooltipDirective.prototype.hide = function () {
+        if (!this.visible) {
+            return;
+        }
+        this.visible = false;
+        if (this.tooltip) {
+            this.tooltip.destroy();
+        }
+        if (this.content instanceof _tootlip_content__WEBPACK_IMPORTED_MODULE_2__["TooltipContent"]) {
+            this.content.hide();
+        }
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])('tooltip'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], TooltipDirective.prototype, "content", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+    ], TooltipDirective.prototype, "tooltipDisabled", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+    ], TooltipDirective.prototype, "tooltipAnimation", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], TooltipDirective.prototype, "tooltipPlacement", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('focusin'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseenter'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], TooltipDirective.prototype, "show", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('focusout'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('mouseleave'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], TooltipDirective.prototype, "hide", null);
+    TooltipDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+            // tslint:disable-next-line: directive-selector
+            selector: '[tooltip]'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ComponentFactoryResolver"]])
+    ], TooltipDirective);
+    return TooltipDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./projects/ui-library/src/lib/directives/tooltip/tooltip.scss":
+/*!*********************************************************************!*\
+  !*** ./projects/ui-library/src/lib/directives/tooltip/tooltip.scss ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-style: normal;\n  font-weight: 400;\n  line-height: 1.5;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  letter-spacing: normal;\n  word-break: normal;\n  word-spacing: normal;\n  white-space: normal;\n  line-break: auto;\n  font-size: 0.875rem;\n  word-wrap: break-word;\n  opacity: 0.9; }\n  .tooltip .tooltip-inner {\n    max-width: 200px;\n    padding: 0.25rem 0.5rem;\n    color: #fff;\n    text-align: center;\n    background-color: #000;\n    border-radius: 0.25rem; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL3VpLWxpYnJhcnkvc3JjL2xpYi9kaXJlY3RpdmVzL3Rvb2x0aXAvRTpcXFByb2plY3RzXFx1aS1saWIvcHJvamVjdHNcXHVpLWxpYnJhcnlcXHNyY1xcbGliXFxkaXJlY3RpdmVzXFx0b29sdGlwXFx0b29sdGlwLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLGNBQWM7RUFDZCxTQUFTO0VBQ1Qsa01BQWtNO0VBQ2xNLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIscUJBQXFCO0VBQ3JCLGlCQUFpQjtFQUNqQixvQkFBb0I7RUFDcEIsc0JBQXNCO0VBQ3RCLGtCQUFrQjtFQUNsQixvQkFBb0I7RUFDcEIsbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQixtQkFBbUI7RUFDbkIscUJBQXFCO0VBQ3JCLFlBQVksRUFBQTtFQXJCaEI7SUF3QlEsZ0JBQWdCO0lBQ2hCLHVCQUF1QjtJQUN2QixXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLHNCQUFzQjtJQUN0QixzQkFBc0IsRUFBQSIsImZpbGUiOiJwcm9qZWN0cy91aS1saWJyYXJ5L3NyYy9saWIvZGlyZWN0aXZlcy90b29sdGlwL3Rvb2x0aXAuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50b29sdGlwIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHotaW5kZXg6IDEwNzA7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIG1hcmdpbjogMDtcclxuICAgIGZvbnQtZmFtaWx5OiAtYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsIFwiU2Vnb2UgVUlcIiwgUm9ib3RvLCBcIkhlbHZldGljYSBOZXVlXCIsIEFyaWFsLCBcIk5vdG8gU2Fuc1wiLCBzYW5zLXNlcmlmLCBcIkFwcGxlIENvbG9yIEVtb2ppXCIsIFwiU2Vnb2UgVUkgRW1vamlcIiwgXCJTZWdvZSBVSSBTeW1ib2xcIiwgXCJOb3RvIENvbG9yIEVtb2ppXCI7XHJcbiAgICBmb250LXN0eWxlOiBub3JtYWw7XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICB0ZXh0LWFsaWduOiBzdGFydDtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAgIHRleHQtc2hhZG93OiBub25lO1xyXG4gICAgdGV4dC10cmFuc2Zvcm06IG5vbmU7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogbm9ybWFsO1xyXG4gICAgd29yZC1icmVhazogbm9ybWFsO1xyXG4gICAgd29yZC1zcGFjaW5nOiBub3JtYWw7XHJcbiAgICB3aGl0ZS1zcGFjZTogbm9ybWFsO1xyXG4gICAgbGluZS1icmVhazogYXV0bztcclxuICAgIGZvbnQtc2l6ZTogMC44NzVyZW07XHJcbiAgICB3b3JkLXdyYXA6IGJyZWFrLXdvcmQ7XHJcbiAgICBvcGFjaXR5OiAwLjk7XHJcblxyXG4gICAgLnRvb2x0aXAtaW5uZXIge1xyXG4gICAgICAgIG1heC13aWR0aDogMjAwcHg7XHJcbiAgICAgICAgcGFkZGluZzogMC4yNXJlbSAwLjVyZW07XHJcbiAgICAgICAgY29sb3I6ICNmZmY7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDA7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMC4yNXJlbTtcclxuICAgIH1cclxufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./projects/ui-library/src/lib/directives/tooltip/tootlip.content.ts":
+/*!***************************************************************************!*\
+  !*** ./projects/ui-library/src/lib/directives/tooltip/tootlip.content.ts ***!
+  \***************************************************************************/
+/*! exports provided: TooltipContent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TooltipContent", function() { return TooltipContentComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var TooltipContentComponent = /** @class */ (function () {
+    function TooltipContentComponent(element, cdr) {
+        this.element = element;
+        this.cdr = cdr;
+        this.placement = 'bottom';
+        this.animation = true;
+        this.top = -100000;
+        this.left = -100000;
+        this.isIn = false;
+        this.isFade = false;
+    }
+    TooltipContentComponent.prototype.ngAfterViewInit = function () {
+        this.show();
+        this.cdr.detectChanges();
+    };
+    TooltipContentComponent.prototype.show = function () {
+        if (!this.hostElement) {
+            return;
+        }
+        var p = this.positionElements(this.hostElement, this.element.nativeElement.children[0], this.placement);
+        this.top = p.top;
+        this.left = p.left;
+        this.isIn = true;
+        if (this.animation) {
+            this.isFade = true;
+        }
+    };
+    TooltipContentComponent.prototype.hide = function () {
+        this.top = -100000;
+        this.left = -100000;
+        this.isIn = true;
+        if (this.animation) {
+            this.isFade = false;
+        }
+    };
+    TooltipContentComponent.prototype.positionElements = function (hostEl, targetEl, positionStr, appendToBody) {
+        if (appendToBody === void 0) { appendToBody = false; }
+        var positionStrParts = positionStr.split('-');
+        var pos0 = positionStrParts[0];
+        var pos1 = positionStrParts[1] || 'center';
+        var hostElPos = appendToBody ? this.offset(hostEl) : this.position(hostEl);
+        var targetElWidth = targetEl.offsetWidth;
+        var targetElHeight = targetEl.offsetHeight;
+        var shiftWidth = {
+            center: function () {
+                return hostElPos.left + hostElPos.width / 2 - targetElWidth / 2;
+            },
+            left: function () {
+                return hostElPos.left;
+            },
+            right: function () {
+                return hostElPos.left + hostElPos.width;
+            }
+        };
+        var shiftHeight = {
+            center: function () {
+                return hostElPos.top + hostElPos.height / 2 - targetElHeight / 2;
+            },
+            top: function () {
+                return hostElPos.top;
+            },
+            bottom: function () {
+                return hostElPos.top + hostElPos.height;
+            }
+        };
+        var targetElPos;
+        switch (pos0) {
+            case 'right':
+                targetElPos = {
+                    top: shiftHeight[pos1](),
+                    left: shiftWidth[pos0]()
+                };
+                break;
+            case 'left':
+                targetElPos = {
+                    top: shiftHeight[pos1](),
+                    left: hostElPos.left - targetElWidth
+                };
+                break;
+            case 'bottom':
+                targetElPos = {
+                    top: shiftHeight[pos0](),
+                    left: shiftWidth[pos1]()
+                };
+                break;
+            default:
+                targetElPos = {
+                    top: hostElPos.top - targetElHeight,
+                    left: shiftWidth[pos1]()
+                };
+                break;
+        }
+        return targetElPos;
+    };
+    TooltipContentComponent.prototype.position = function (nativeEl) {
+        var offsetParentBCR = { top: 0, left: 0 };
+        var elBCR = this.offset(nativeEl);
+        var offsetParentEl = this.parentOffsetEl(nativeEl);
+        if (offsetParentEl !== window.document) {
+            offsetParentBCR = this.offset(offsetParentEl);
+            offsetParentBCR.top += offsetParentEl.clientTop - offsetParentEl.scrollTop;
+            offsetParentBCR.left += offsetParentEl.clientLeft - offsetParentEl.scrollLeft;
+        }
+        var boundingClientRect = nativeEl.getBoundingClientRect();
+        return {
+            width: boundingClientRect.width || nativeEl.offsetWidth,
+            height: boundingClientRect.height || nativeEl.offsetHeight,
+            top: elBCR.top - offsetParentBCR.top,
+            left: elBCR.left - offsetParentBCR.left
+        };
+    };
+    TooltipContentComponent.prototype.offset = function (nativeEl) {
+        var boundingClientRect = nativeEl.getBoundingClientRect();
+        return {
+            width: boundingClientRect.width || nativeEl.offsetWidth,
+            height: boundingClientRect.height || nativeEl.offsetHeight,
+            top: boundingClientRect.top + (window.pageYOffset || window.document.documentElement.scrollTop),
+            left: boundingClientRect.left + (window.pageXOffset || window.document.documentElement.scrollLeft)
+        };
+    };
+    TooltipContentComponent.prototype.getStyle = function (nativeEl, cssProp) {
+        if (nativeEl.currentStyle) { // IE
+            return nativeEl.currentStyle[cssProp];
+        }
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(nativeEl)[cssProp];
+        }
+        // finally try and get inline style
+        return nativeEl.style[cssProp];
+    };
+    TooltipContentComponent.prototype.isStaticPositioned = function (nativeEl) {
+        return (this.getStyle(nativeEl, 'position') || 'static') === 'static';
+    };
+    TooltipContentComponent.prototype.parentOffsetEl = function (nativeEl) {
+        var offsetParent = nativeEl.offsetParent || window.document;
+        while (offsetParent && offsetParent !== window.document && this.isStaticPositioned(offsetParent)) {
+            offsetParent = offsetParent.offsetParent;
+        }
+        return offsetParent || window.document;
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", HTMLElement)
+    ], TooltipContentComponent.prototype, "hostElement", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], TooltipContentComponent.prototype, "content", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], TooltipContentComponent.prototype, "placement", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+    ], TooltipContentComponent.prototype, "animation", void 0);
+    TooltipContentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            // tslint:disable-next-line: component-selector
+            selector: 'tooltip-content',
+            template: "\n            <div class=\"tooltip {{ placement }}\"\n                [style.top]=\"top + 'px'\"\n                [style.left]=\"left + 'px'\"\n                [class.in]=\"isIn\"\n                [class.fade]=\"isFade\"\n                role=\"tooltip\">\n                <div class=\"tooltip-inner\">\n                    <ng-content></ng-content>\n                    {{ content }}\n                </div>\n            </div>",
+            styles: [__webpack_require__(/*! ./tooltip.scss */ "./projects/ui-library/src/lib/directives/tooltip/tooltip.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
+    ], TooltipContentComponent);
+    return TooltipContentComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./projects/ui-library/src/lib/services/http.service.ts":
 /*!**************************************************************!*\
   !*** ./projects/ui-library/src/lib/services/http.service.ts ***!
@@ -710,6 +1239,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
 /* harmony import */ var _components_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/components */ "./projects/ui-library/src/lib/components/components.ts");
 /* harmony import */ var _services_services__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/services */ "./projects/ui-library/src/lib/services/services.ts");
+/* harmony import */ var _directives_directives__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./directives/directives */ "./projects/ui-library/src/lib/directives/directives.ts");
+
 
 
 
@@ -724,7 +1255,7 @@ var UiLibrary = /** @class */ (function () {
     }
     UiLibrary = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: _components_components__WEBPACK_IMPORTED_MODULE_7__["Components"].slice(),
+            declarations: _components_components__WEBPACK_IMPORTED_MODULE_7__["Components"].concat(_directives_directives__WEBPACK_IMPORTED_MODULE_9__["Directives"]),
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
@@ -733,7 +1264,8 @@ var UiLibrary = /** @class */ (function () {
                 ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrModule"].forRoot()
             ],
             providers: _services_services__WEBPACK_IMPORTED_MODULE_8__["Services"].slice(),
-            exports: _components_components__WEBPACK_IMPORTED_MODULE_7__["ExportedComponents"].slice()
+            exports: _components_components__WEBPACK_IMPORTED_MODULE_7__["ExportedComponents"].concat(_directives_directives__WEBPACK_IMPORTED_MODULE_9__["ExportedDirectives"]),
+            entryComponents: _directives_directives__WEBPACK_IMPORTED_MODULE_9__["EntryPointDirectives"].slice()
         })
     ], UiLibrary);
     return UiLibrary;
@@ -994,29 +1526,6 @@ var AppName = 'UI Library';
 
 /***/ }),
 
-/***/ "./src/app/constants/constants.ts":
-/*!****************************************!*\
-  !*** ./src/app/constants/constants.ts ***!
-  \****************************************/
-/*! exports provided: Attributes, ComponentEvents */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Attributes", function() { return Attributes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComponentEvents", function() { return ComponentEvents; });
-var Attributes = [
-    'badge',
-    'label', 'disabled', 'isLarge', 'badgePosition', 'type',
-    'fields', 'options'
-];
-var ComponentEvents = [
-    'primaryHandler', 'secondaryHandler'
-];
-
-
-/***/ }),
-
 /***/ "./src/app/demo/common/common.module.ts":
 /*!**********************************************!*\
   !*** ./src/app/demo/common/common.module.ts ***!
@@ -1064,7 +1573,7 @@ var Common = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"demo-wrapper row\">\n  <div class=\"col-12\">\n    <div class=\"component-header\">{{header}}</div>\n    <div class=\"component-content\">\n      <code class=\"code-sample\" *ngIf=\"code\" data-lang=\"html\">\n        <span class=\"copy\" (click)=\"copyToClipboard()\">copy</span>\n        <span *ngFor=\"let item of codeEle\" [class]=\"item.class\">{{item.content}}</span>\n      </code>\n      <div class=\"code-output\" #output [ngClass]=\"{'hide': enableOutput}\">\n        <ng-content select=\"[output]\"></ng-content>\n      </div>\n      <div class=\"code-doc\" #ref [ngClass]=\"{'hide': enableDoc}\">\n        <ng-content select=\"[doc]\"></ng-content>\n      </div>\n      <div class=\"code-options\" *ngIf=\"enableOptions\">\n        <div class=\"header\">{{componentType}} <b>{{name}}</b></div>\n        <!-- doc table -->\n        <div class=\"table\">\n          <table *ngIf=\"docOptions\">\n            <thead>\n              <th *ngFor=\"let col of docColumns\">{{col.label}}</th>\n            </thead>\n            <tbody>\n              <tr *ngFor=\"let row of docOptions\">\n                <td *ngFor=\"let col of docColumns\" [class]=\"col.class\">{{row[col.value] || '-'}}\n                </td>\n              </tr>\n            </tbody>\n          </table>\n          <!-- method table -->\n          <table *ngIf=\"methodOptions\" class=\"method-option\">\n            <thead>\n              <th *ngFor=\"let col of methodColumns\">{{col.label}}</th>\n            </thead>\n            <tbody>\n              <tr *ngFor=\"let row of methodOptions\">\n                <td *ngFor=\"let col of methodColumns\" [class]=\"col.class\">\n                  <span\n                    *ngIf=\"col.value !== 'param'; else elseTpl\">{{row[col.value]}}</span>\n                  <ng-template #elseTpl>\n                    <ul>\n                      <li *ngFor=\"let item of row[col.value]\">\n                        {{item}}\n                      </li>\n                    </ul>\n                  </ng-template>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"demo-wrapper row\">\n  <div class=\"col-12\">\n    <div class=\"component-header\">{{header}}</div>\n    <div class=\"component-content\">\n      <code class=\"code-sample\" *ngIf=\"code\" data-lang=\"html\">\n        <span class=\"copy\" (click)=\"copyToClipboard()\">copy</span>\n        <code>\n          {{code}}\n        </code>\n        <!-- <span *ngFor=\"let item of codeEle\" [class]=\"item.class\">{{item.content}}</span> -->\n      </code>\n      <div class=\"code-output\" #output [ngClass]=\"{'hide': enableOutput}\">\n        <ng-content select=\"[output]\"></ng-content>\n      </div>\n      <div class=\"code-doc\" #ref [ngClass]=\"{'hide': enableDoc}\">\n        <ng-content select=\"[doc]\"></ng-content>\n      </div>\n      <div class=\"code-options\" *ngIf=\"enableOptions\">\n        <div class=\"header\">{{componentType}} <b>{{name}}</b></div>\n        <!-- doc table -->\n        <div class=\"table\">\n          <table *ngIf=\"docOptions\">\n            <thead>\n              <th *ngFor=\"let col of docColumns\">{{col.label}}</th>\n            </thead>\n            <tbody>\n              <tr *ngFor=\"let row of docOptions\">\n                <td *ngFor=\"let col of docColumns\" [class]=\"col.class\">{{row[col.value] || '-'}}\n                </td>\n              </tr>\n            </tbody>\n          </table>\n          <!-- method table -->\n          <table *ngIf=\"methodOptions\" class=\"method-option\">\n            <thead>\n              <th *ngFor=\"let col of methodColumns\">{{col.label}}</th>\n            </thead>\n            <tbody>\n              <tr *ngFor=\"let row of methodOptions\">\n                <td *ngFor=\"let col of methodColumns\" [class]=\"col.class\">\n                  <span\n                    *ngIf=\"col.value !== 'param'; else elseTpl\">{{row[col.value]}}</span>\n                  <ng-template #elseTpl>\n                    <ul>\n                      <li *ngFor=\"let item of row[col.value]\">\n                        {{item}}\n                      </li>\n                    </ul>\n                  </ng-template>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1075,7 +1584,7 @@ module.exports = "<div class=\"demo-wrapper row\">\n  <div class=\"col-12\">\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".code-wrapper, demo-wrapper .code-sample, demo-wrapper .code-output, demo-wrapper .code-doc, demo-wrapper .code-options {\n  display: block;\n  width: 100%;\n  min-height: 1.875rem;\n  padding: 1.5625rem;\n  margin: 1.5rem 0 0;\n  background-color: #f5f7fa;\n  color: #152935;\n  border: 1px solid #dfe3e6;\n  font-size: 1.125rem; }\n\ndemo-wrapper .component-header {\n  color: #ee6e73;\n  font-weight: 300;\n  font-size: 2.8125rem;\n  line-height: 110%;\n  margin: 1.25rem 0 0.625rem 0; }\n\ndemo-wrapper h6.header {\n  color: #ee6e73; }\n\ndemo-wrapper .seperator {\n  margin: 0.625rem 0; }\n\ndemo-wrapper .code-sample {\n  position: relative;\n  width: 100%;\n  word-break: break-word; }\n\ndemo-wrapper .code-sample .copy {\n    position: absolute;\n    top: 0;\n    right: 0;\n    border: 1px solid #dfe3e6;\n    border-top: 0;\n    border-right: 0;\n    padding: 0 0.625rem;\n    font-size: 0.9375rem;\n    color: #a7a1a1;\n    cursor: pointer; }\n\ndemo-wrapper .code-sample .ne {\n    color: #2f6f9f;\n    padding: 0 10px; }\n\ndemo-wrapper .code-sample .na {\n    color: #4f9fcf; }\n\ndemo-wrapper .code-sample .a {\n    color: #d44950;\n    padding-right: 10px; }\n\ndemo-wrapper .code-sample .b {\n    display: block;\n    visibility: hidden;\n    height: 10px; }\n\ndemo-wrapper .code-sample .a + .ne {\n    padding-left: 0; }\n\ndemo-wrapper .code-doc {\n  border-left: 3px solid #f11722;\n  word-break: break-word; }\n\ndemo-wrapper .code-options .header {\n  font-size: 1.375rem;\n  margin-bottom: 0.625rem; }\n\ndemo-wrapper .code-options .table {\n  overflow-x: auto; }\n\ndemo-wrapper .code-options .table table .desc td {\n    word-break: break-word; }\n\ndemo-wrapper .code-options .method-option ul {\n  margin: 0; }\n\ndemo-wrapper .component-content > div {\n  width: 100%; }\n\ndemo-wrapper .default-value {\n  text-align: center; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGVtby9jb21tb24vZGVtby13cmFwcGVyL0U6XFxQcm9qZWN0c1xcdWktbGliL3NyY1xcYXBwXFxkZW1vXFxjb21tb25cXGRlbW8td3JhcHBlclxcZGVtby13cmFwcGVyLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9kZW1vL2NvbW1vbi9kZW1vLXdyYXBwZXIvRTpcXFByb2plY3RzXFx1aS1saWIvZGlzdFxcdWktbGlicmFyeVxcc3R5bGVzXFxmdW5jdGlvbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFLQTtFQUNJLGNBQWM7RUFDZCxXQUFXO0VBQ1gsb0JDSStCO0VESC9CLGtCQ0crQjtFREYvQixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLGNBQWM7RUFDZCx5QkFBeUI7RUFDekIsbUJDRitCLEVBQUE7O0FES25DO0VBRVEsY0FoQmM7RUFpQmQsZ0JBQWdCO0VBQ2hCLG9CQ1QyQjtFRFUzQixpQkFBaUI7RUFDakIsNEJBQTJCLEVBQUE7O0FBTm5DO0VBVVEsY0F4QmMsRUFBQTs7QUFjdEI7RUFjUSxrQkFBaUIsRUFBQTs7QUFkekI7RUFtQlEsa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxzQkFBc0IsRUFBQTs7QUFyQjlCO0lBd0JZLGtCQUFrQjtJQUNsQixNQUFNO0lBQ04sUUFBUTtJQUNSLHlCQUF5QjtJQUN6QixhQUFhO0lBQ2IsZUFBZTtJQUNmLG1CQ25DdUI7SURvQ3ZCLG9CQ3BDdUI7SURxQ3ZCLGNBQWM7SUFDZCxlQUFlLEVBQUE7O0FBakMzQjtJQXFDWSxjQUFjO0lBQ2QsZUFBZSxFQUFBOztBQXRDM0I7SUEwQ1ksY0FBYyxFQUFBOztBQTFDMUI7SUE4Q1ksY0FBYztJQUNkLG1CQUFtQixFQUFBOztBQS9DL0I7SUFtRFksY0FBYztJQUNkLGtCQUFrQjtJQUNsQixZQUFZLEVBQUE7O0FBckR4QjtJQXlEWSxlQUFlLEVBQUE7O0FBekQzQjtFQW1FUSw4QkFBOEI7RUFDOUIsc0JBQXNCLEVBQUE7O0FBcEU5QjtFQTJFWSxtQkNoRnVCO0VEaUZ2Qix1QkNqRnVCLEVBQUE7O0FES25DO0VBZ0ZZLGdCQUFnQixFQUFBOztBQWhGNUI7SUFtRmdCLHNCQUFzQixFQUFBOztBQW5GdEM7RUF5RmdCLFNBQVMsRUFBQTs7QUF6RnpCO0VBK0ZRLFdBQVcsRUFBQTs7QUEvRm5CO0VBbUdRLGtCQUFrQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvZGVtby9jb21tb24vZGVtby13cmFwcGVyL2RlbW8td3JhcHBlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCIuLi8uLi8uLi9zdHlsZXMvdmFyaWFibGUuc2Nzc1wiO1xyXG5cclxuJGNvZGUtc3BhY2luZzogcmVtKDM1KTtcclxuJGhlYWRlci1jb2xvcjogI2VlNmU3MztcclxuXHJcbi5jb2RlLXdyYXBwZXIge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG1pbi1oZWlnaHQ6IHJlbSgzMCk7XHJcbiAgICBwYWRkaW5nOiByZW0oMjUpO1xyXG4gICAgbWFyZ2luOiAxLjVyZW0gMCAwO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjdmYTtcclxuICAgIGNvbG9yOiAjMTUyOTM1O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2RmZTNlNjtcclxuICAgIGZvbnQtc2l6ZTogcmVtKDE4KTtcclxufVxyXG5cclxuZGVtby13cmFwcGVyIHtcclxuICAgIC5jb21wb25lbnQtaGVhZGVyIHtcclxuICAgICAgICBjb2xvcjogJGhlYWRlci1jb2xvcjtcclxuICAgICAgICBmb250LXdlaWdodDogMzAwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogcmVtKDQ1KTtcclxuICAgICAgICBsaW5lLWhlaWdodDogMTEwJTtcclxuICAgICAgICBtYXJnaW46IHJlbSgyMCkgMCByZW0oMTApIDA7XHJcbiAgICB9XHJcblxyXG4gICAgaDYuaGVhZGVyIHtcclxuICAgICAgICBjb2xvcjogJGhlYWRlci1jb2xvcjtcclxuICAgIH1cclxuXHJcbiAgICAuc2VwZXJhdG9yIHtcclxuICAgICAgICBtYXJnaW46IHJlbSgxMCkgMDtcclxuICAgIH1cclxuXHJcbiAgICAuY29kZS1zYW1wbGUge1xyXG4gICAgICAgIEBleHRlbmQgLmNvZGUtd3JhcHBlcjtcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgd29yZC1icmVhazogYnJlYWstd29yZDtcclxuXHJcbiAgICAgICAgLmNvcHkge1xyXG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgICAgIHRvcDogMDtcclxuICAgICAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICAgICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICNkZmUzZTY7XHJcbiAgICAgICAgICAgIGJvcmRlci10b3A6IDA7XHJcbiAgICAgICAgICAgIGJvcmRlci1yaWdodDogMDtcclxuICAgICAgICAgICAgcGFkZGluZzogMCByZW0oMTApO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IHJlbSgxNSk7XHJcbiAgICAgICAgICAgIGNvbG9yOiAjYTdhMWExO1xyXG4gICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAubmUge1xyXG4gICAgICAgICAgICBjb2xvcjogIzJmNmY5ZjtcclxuICAgICAgICAgICAgcGFkZGluZzogMCAxMHB4O1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLm5hIHtcclxuICAgICAgICAgICAgY29sb3I6ICM0ZjlmY2Y7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuYSB7XHJcbiAgICAgICAgICAgIGNvbG9yOiAjZDQ0OTUwO1xyXG4gICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OiAxMHB4O1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmIge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcclxuICAgICAgICAgICAgdmlzaWJpbGl0eTogaGlkZGVuO1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDEwcHg7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuYSsubmUge1xyXG4gICAgICAgICAgICBwYWRkaW5nLWxlZnQ6IDA7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5jb2RlLW91dHB1dCB7XHJcbiAgICAgICAgQGV4dGVuZCAuY29kZS13cmFwcGVyO1xyXG4gICAgfVxyXG5cclxuICAgIC5jb2RlLWRvYyB7XHJcbiAgICAgICAgQGV4dGVuZCAuY29kZS13cmFwcGVyO1xyXG4gICAgICAgIGJvcmRlci1sZWZ0OiAzcHggc29saWQgI2YxMTcyMjtcclxuICAgICAgICB3b3JkLWJyZWFrOiBicmVhay13b3JkO1xyXG4gICAgfVxyXG5cclxuICAgIC5jb2RlLW9wdGlvbnMge1xyXG4gICAgICAgIEBleHRlbmQgLmNvZGUtd3JhcHBlcjtcclxuXHJcbiAgICAgICAgLmhlYWRlciB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogcmVtKDIyKTtcclxuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogcmVtKDEwKTtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC50YWJsZSB7XHJcbiAgICAgICAgICAgIG92ZXJmbG93LXg6IGF1dG87XHJcblxyXG4gICAgICAgICAgICB0YWJsZSAuZGVzYyB0ZCB7XHJcbiAgICAgICAgICAgICAgICB3b3JkLWJyZWFrOiBicmVhay13b3JkO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAubWV0aG9kLW9wdGlvbiB7XHJcbiAgICAgICAgICAgIHVsIHtcclxuICAgICAgICAgICAgICAgIG1hcmdpbjogMDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuY29tcG9uZW50LWNvbnRlbnQ+ZGl2IHtcclxuICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgIH1cclxuXHJcbiAgICAuZGVmYXVsdC12YWx1ZSB7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgfVxyXG59IiwiJGJyb3dzZXItY29udGV4dDogMTY7XHJcbiRmdWxsV2lkdGg6IDEwMCU7XHJcblxyXG5AZnVuY3Rpb24gcmVtKCRwaXhlbHMsICRjb250ZXh0OiAkYnJvd3Nlci1jb250ZXh0KSB7XHJcbiAgQGlmICh1bml0bGVzcygkcGl4ZWxzKSkge1xyXG4gICAgJHBpeGVsczogJHBpeGVscyAqIDFweDtcclxuICB9XHJcblxyXG4gIEBpZiAodW5pdGxlc3MoJGNvbnRleHQpKSB7XHJcbiAgICAkY29udGV4dDogJGNvbnRleHQgKiAxcHg7XHJcbiAgfVxyXG5cclxuICBAcmV0dXJuICRwaXhlbHMgLyAkY29udGV4dCAqIDFyZW07XHJcbn1cclxuIl19 */"
+module.exports = ".code-wrapper, demo-wrapper .code-sample, demo-wrapper .code-output, demo-wrapper .code-doc, demo-wrapper .code-options {\n  display: block;\n  width: 100%;\n  min-height: 1.875rem;\n  padding: 1.5625rem;\n  margin: 1.5rem 0 0;\n  background-color: #f5f7fa;\n  color: #152935;\n  border: 1px solid #dfe3e6;\n  font-size: 1.125rem; }\n\ndemo-wrapper .component-header {\n  color: #ee6e73;\n  font-weight: 300;\n  font-size: 2.8125rem;\n  line-height: 110%;\n  margin: 1.25rem 0 0.625rem 0; }\n\ndemo-wrapper h6.header {\n  color: #ee6e73; }\n\ndemo-wrapper .seperator {\n  margin: 0.625rem 0; }\n\ndemo-wrapper .code-sample {\n  position: relative;\n  width: 100%;\n  word-break: break-word; }\n\ndemo-wrapper .code-sample .copy {\n    position: absolute;\n    top: 0;\n    right: 0;\n    border: 1px solid #dfe3e6;\n    border-top: 0;\n    border-right: 0;\n    padding: 0 0.625rem;\n    font-size: 0.9375rem;\n    color: #a7a1a1;\n    cursor: pointer; }\n\ndemo-wrapper .code-sample code {\n    white-space: pre-line; }\n\ndemo-wrapper .code-doc {\n  border-left: 3px solid #f11722;\n  word-break: break-word; }\n\ndemo-wrapper .code-options .header {\n  font-size: 1.375rem;\n  margin-bottom: 0.625rem; }\n\ndemo-wrapper .code-options .table {\n  overflow-x: auto; }\n\ndemo-wrapper .code-options .table table .desc td {\n    word-break: break-word; }\n\ndemo-wrapper .code-options .method-option ul {\n  margin: 0; }\n\ndemo-wrapper .component-content > div {\n  width: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGVtby9jb21tb24vZGVtby13cmFwcGVyL0U6XFxQcm9qZWN0c1xcdWktbGliL3NyY1xcYXBwXFxkZW1vXFxjb21tb25cXGRlbW8td3JhcHBlclxcZGVtby13cmFwcGVyLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9kZW1vL2NvbW1vbi9kZW1vLXdyYXBwZXIvRTpcXFByb2plY3RzXFx1aS1saWIvZGlzdFxcdWktbGlicmFyeVxcc3R5bGVzXFxmdW5jdGlvbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFLQTtFQUNJLGNBQWM7RUFDZCxXQUFXO0VBQ1gsb0JDSStCO0VESC9CLGtCQ0crQjtFREYvQixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLGNBQWM7RUFDZCx5QkFBeUI7RUFDekIsbUJDRitCLEVBQUE7O0FES25DO0VBRVEsY0FoQmM7RUFpQmQsZ0JBQWdCO0VBQ2hCLG9CQ1QyQjtFRFUzQixpQkFBaUI7RUFDakIsNEJBQTJCLEVBQUE7O0FBTm5DO0VBVVEsY0F4QmMsRUFBQTs7QUFjdEI7RUFjUSxrQkFBaUIsRUFBQTs7QUFkekI7RUFtQlEsa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxzQkFBc0IsRUFBQTs7QUFyQjlCO0lBd0JZLGtCQUFrQjtJQUNsQixNQUFNO0lBQ04sUUFBUTtJQUNSLHlCQUF5QjtJQUN6QixhQUFhO0lBQ2IsZUFBZTtJQUNmLG1CQ25DdUI7SURvQ3ZCLG9CQ3BDdUI7SURxQ3ZCLGNBQWM7SUFDZCxlQUFlLEVBQUE7O0FBakMzQjtJQXFDWSxxQkFBcUIsRUFBQTs7QUFyQ2pDO0VBK0NRLDhCQUE4QjtFQUM5QixzQkFBc0IsRUFBQTs7QUFoRDlCO0VBdURZLG1CQzVEdUI7RUQ2RHZCLHVCQzdEdUIsRUFBQTs7QURLbkM7RUE0RFksZ0JBQWdCLEVBQUE7O0FBNUQ1QjtJQStEZ0Isc0JBQXNCLEVBQUE7O0FBL0R0QztFQXFFZ0IsU0FBUyxFQUFBOztBQXJFekI7RUEyRVEsV0FBVyxFQUFBIiwiZmlsZSI6InNyYy9hcHAvZGVtby9jb21tb24vZGVtby13cmFwcGVyL2RlbW8td3JhcHBlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCIuLi8uLi8uLi9zdHlsZXMvdmFyaWFibGUuc2Nzc1wiO1xyXG5cclxuJGNvZGUtc3BhY2luZzogcmVtKDM1KTtcclxuJGhlYWRlci1jb2xvcjogI2VlNmU3MztcclxuXHJcbi5jb2RlLXdyYXBwZXIge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG1pbi1oZWlnaHQ6IHJlbSgzMCk7XHJcbiAgICBwYWRkaW5nOiByZW0oMjUpO1xyXG4gICAgbWFyZ2luOiAxLjVyZW0gMCAwO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjdmYTtcclxuICAgIGNvbG9yOiAjMTUyOTM1O1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgI2RmZTNlNjtcclxuICAgIGZvbnQtc2l6ZTogcmVtKDE4KTtcclxufVxyXG5cclxuZGVtby13cmFwcGVyIHtcclxuICAgIC5jb21wb25lbnQtaGVhZGVyIHtcclxuICAgICAgICBjb2xvcjogJGhlYWRlci1jb2xvcjtcclxuICAgICAgICBmb250LXdlaWdodDogMzAwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogcmVtKDQ1KTtcclxuICAgICAgICBsaW5lLWhlaWdodDogMTEwJTtcclxuICAgICAgICBtYXJnaW46IHJlbSgyMCkgMCByZW0oMTApIDA7XHJcbiAgICB9XHJcblxyXG4gICAgaDYuaGVhZGVyIHtcclxuICAgICAgICBjb2xvcjogJGhlYWRlci1jb2xvcjtcclxuICAgIH1cclxuXHJcbiAgICAuc2VwZXJhdG9yIHtcclxuICAgICAgICBtYXJnaW46IHJlbSgxMCkgMDtcclxuICAgIH1cclxuXHJcbiAgICAuY29kZS1zYW1wbGUge1xyXG4gICAgICAgIEBleHRlbmQgLmNvZGUtd3JhcHBlcjtcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgd29yZC1icmVhazogYnJlYWstd29yZDtcclxuXHJcbiAgICAgICAgLmNvcHkge1xyXG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgICAgIHRvcDogMDtcclxuICAgICAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICAgICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICNkZmUzZTY7XHJcbiAgICAgICAgICAgIGJvcmRlci10b3A6IDA7XHJcbiAgICAgICAgICAgIGJvcmRlci1yaWdodDogMDtcclxuICAgICAgICAgICAgcGFkZGluZzogMCByZW0oMTApO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IHJlbSgxNSk7XHJcbiAgICAgICAgICAgIGNvbG9yOiAjYTdhMWExO1xyXG4gICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICBjb2RlIHtcclxuICAgICAgICAgICAgd2hpdGUtc3BhY2U6IHByZS1saW5lO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuY29kZS1vdXRwdXQge1xyXG4gICAgICAgIEBleHRlbmQgLmNvZGUtd3JhcHBlcjtcclxuICAgIH1cclxuXHJcbiAgICAuY29kZS1kb2Mge1xyXG4gICAgICAgIEBleHRlbmQgLmNvZGUtd3JhcHBlcjtcclxuICAgICAgICBib3JkZXItbGVmdDogM3B4IHNvbGlkICNmMTE3MjI7XHJcbiAgICAgICAgd29yZC1icmVhazogYnJlYWstd29yZDtcclxuICAgIH1cclxuXHJcbiAgICAuY29kZS1vcHRpb25zIHtcclxuICAgICAgICBAZXh0ZW5kIC5jb2RlLXdyYXBwZXI7XHJcblxyXG4gICAgICAgIC5oZWFkZXIge1xyXG4gICAgICAgICAgICBmb250LXNpemU6IHJlbSgyMik7XHJcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IHJlbSgxMCk7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAudGFibGUge1xyXG4gICAgICAgICAgICBvdmVyZmxvdy14OiBhdXRvO1xyXG5cclxuICAgICAgICAgICAgdGFibGUgLmRlc2MgdGQge1xyXG4gICAgICAgICAgICAgICAgd29yZC1icmVhazogYnJlYWstd29yZDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLm1ldGhvZC1vcHRpb24ge1xyXG4gICAgICAgICAgICB1bCB7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW46IDA7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLmNvbXBvbmVudC1jb250ZW50PmRpdiB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICB9XHJcbn0iLCIkYnJvd3Nlci1jb250ZXh0OiAxNjtcclxuJGZ1bGxXaWR0aDogMTAwJTtcclxuXHJcbkBmdW5jdGlvbiByZW0oJHBpeGVscywgJGNvbnRleHQ6ICRicm93c2VyLWNvbnRleHQpIHtcclxuICBAaWYgKHVuaXRsZXNzKCRwaXhlbHMpKSB7XHJcbiAgICAkcGl4ZWxzOiAkcGl4ZWxzICogMXB4O1xyXG4gIH1cclxuXHJcbiAgQGlmICh1bml0bGVzcygkY29udGV4dCkpIHtcclxuICAgICRjb250ZXh0OiAkY29udGV4dCAqIDFweDtcclxuICB9XHJcblxyXG4gIEByZXR1cm4gJHBpeGVscyAvICRjb250ZXh0ICogMXJlbTtcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -1090,10 +1599,8 @@ module.exports = ".code-wrapper, demo-wrapper .code-sample, demo-wrapper .code-o
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DemoWrapperComponent", function() { return DemoWrapperComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../constants/constants */ "./src/app/constants/constants.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var projects_ui_library_src_lib_services_toast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/ui-library/src/lib/services/toast.service */ "./projects/ui-library/src/lib/services/toast.service.ts");
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var projects_ui_library_src_lib_services_toast_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/ui-library/src/lib/services/toast.service */ "./projects/ui-library/src/lib/services/toast.service.ts");
 
 
 
@@ -1107,7 +1614,7 @@ var DemoWrapperComponent = /** @class */ (function () {
         this.docColumns = [
             { label: 'Name', value: 'parameter' },
             { label: 'Type', value: 'type' },
-            { label: 'Default', value: 'default', class: 'default-value' },
+            { label: 'Default', value: 'default' },
             { label: 'Description', value: 'desc', class: 'desc' }
         ];
         this.methodColumns = [
@@ -1132,7 +1639,6 @@ var DemoWrapperComponent = /** @class */ (function () {
         configurable: true
     });
     DemoWrapperComponent.prototype.ngOnInit = function () {
-        this.generateCodeSnipet();
         this.enableOutput = !this.outputWrapper.nativeElement.childNodes.length;
         this.enableDoc = !this.refWrapper.nativeElement.childNodes.length;
     };
@@ -1145,104 +1651,36 @@ var DemoWrapperComponent = /** @class */ (function () {
         document.body.removeChild(copyEle);
         this.toast.show({ message: 'Copied...', type: 'info' });
     };
-    DemoWrapperComponent.prototype.generateCodeSnipet = function () {
-        var htmlEle = this.code && this.code.split(' ') || [];
-        var renderCodeEle = [];
-        for (var _i = 0, htmlEle_1 = htmlEle; _i < htmlEle_1.length; _i++) {
-            var item = htmlEle_1[_i];
-            renderCodeEle = renderCodeEle.concat(this.contentMapper(item));
-        }
-        this.codeEle = renderCodeEle;
-    };
-    /**
-     * converts the input syntax into proper html content and renders into UI
-     * @private
-     * @param {string} ele
-     * @returns {Array<{ content: string; class: string }>}
-     * @memberof DemoWrapperComponent
-     */
-    DemoWrapperComponent.prototype.contentMapper = function (ele) {
-        if (ele.trim() === '/n') {
-            return [{
-                    content: '',
-                    class: 'b'
-                }];
-        }
-        if (ele.includes('<t-') || ele.includes('</t-')) {
-            return [{
-                    content: ele,
-                    class: 'ne'
-                }];
-        }
-        for (var _i = 0, Attributes_1 = _constants_constants__WEBPACK_IMPORTED_MODULE_1__["Attributes"]; _i < Attributes_1.length; _i++) {
-            var sel = Attributes_1[_i];
-            var selector = "[" + sel + "]", item = ele.includes(selector) ? selector : sel;
-            if (ele.includes(item)) {
-                var e = ele.split(item)[1], list = [{
-                        content: item,
-                        class: 'na'
-                    }];
-                if (e) {
-                    list.push({
-                        content: e,
-                        class: 'a'
-                    });
-                }
-                return list;
-            }
-        }
-        for (var _a = 0, ComponentEvents_1 = _constants_constants__WEBPACK_IMPORTED_MODULE_1__["ComponentEvents"]; _a < ComponentEvents_1.length; _a++) {
-            var sel = ComponentEvents_1[_a];
-            var selector = "(" + sel + ")", item = ele.includes(selector) ? selector : sel;
-            if (ele.includes(item)) {
-                var e = ele.split(item)[1], list = [{
-                        content: item,
-                        class: 'na'
-                    }];
-                if (e) {
-                    list.push({
-                        content: e,
-                        class: 'a'
-                    });
-                }
-                return list;
-            }
-        }
-        return [{
-                content: ele,
-                class: 'a'
-            }];
-    };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
     ], DemoWrapperComponent.prototype, "header", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
     ], DemoWrapperComponent.prototype, "code", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object])
     ], DemoWrapperComponent.prototype, "options", null);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('output'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('output'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
     ], DemoWrapperComponent.prototype, "outputWrapper", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('ref'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('ref'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
     ], DemoWrapperComponent.prototype, "refWrapper", void 0);
     DemoWrapperComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             // tslint:disable-next-line:component-selector
             selector: 'demo-wrapper',
             template: __webpack_require__(/*! ./demo-wrapper.component.html */ "./src/app/demo/common/demo-wrapper/demo-wrapper.component.html"),
-            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewEncapsulation"].None,
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
             styles: [__webpack_require__(/*! ./demo-wrapper.component.scss */ "./src/app/demo/common/demo-wrapper/demo-wrapper.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_ui_library_src_lib_services_toast_service__WEBPACK_IMPORTED_MODULE_3__["ToastService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_ui_library_src_lib_services_toast_service__WEBPACK_IMPORTED_MODULE_2__["ToastService"]])
     ], DemoWrapperComponent);
     return DemoWrapperComponent;
 }());
@@ -1425,8 +1863,16 @@ var NavModel = /** @class */ (function () {
                         route: 'component/button'
                     },
                     {
-                        label: 'Dynamic Fields',
-                        route: 'component/dynamicFields'
+                        label: 'Checkbox',
+                        route: 'component/checkbox'
+                    },
+                    // {
+                    //     label: 'Dynamic Fields',
+                    //     route: 'component/dynamicFields'
+                    // },
+                    {
+                        label: 'Radio button',
+                        route: 'component/radio'
                     }
                 ]
             },
