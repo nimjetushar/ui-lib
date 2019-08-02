@@ -51,6 +51,10 @@ export class NavModel {
                     label: 'Radio button',
                     route: 'component/radio'
                 }
+                // {
+                //     label: 'Tooltip',
+                //     route: 'component/tooltip'
+                // }
             ]
         },
         {
