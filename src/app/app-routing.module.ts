@@ -6,19 +6,19 @@ import { ReferenceComponent } from './demo/reference/reference.component';
 const routes: Routes = [
   {
     path: 'gettingStarted',
-    loadChildren: './demo/getting-started/getting-started.module#GettingStartedModule'
+    loadChildren: () => import('./demo/getting-started/getting-started.module').then(m => m.GettingStartedModule)
   },
   {
     path: 'styles',
-    loadChildren: './demo/styles/styles.module#StylesModule'
+    loadChildren: () => import('./demo/styles/styles.module').then(m => m.StylesModule)
   },
   {
     path: 'component',
-    loadChildren: './demo/components/components.module#ComponentsModule'
+    loadChildren: () => import('./demo/components/components.module').then(m => m.ComponentsModule)
   },
   {
     path: 'services',
-    loadChildren: './demo/services/services.module#ServicesModule'
+    loadChildren: () => import('./demo/services/services.module').then(m => m.ServicesModule)
   },
   {
     path: 'utility',

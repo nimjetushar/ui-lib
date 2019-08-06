@@ -12,7 +12,7 @@ import {
 })
 export class DynamicFieldsDemoComponent {
 
-  @ViewChild(DynamicFieldsComponent) dyFieldComp: DynamicFieldsComponent;
+  @ViewChild(DynamicFieldsComponent, { static: true }) dyFieldComp: DynamicFieldsComponent;
 
   public compSyntax: string =
     `<t-dynamic-fields [fields]="field"

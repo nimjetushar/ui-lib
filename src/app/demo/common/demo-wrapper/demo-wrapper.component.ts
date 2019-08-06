@@ -52,8 +52,8 @@ export class DemoWrapperComponent implements OnInit {
     }
   }
 
-  @ViewChild('output') outputWrapper: ElementRef;
-  @ViewChild('ref') refWrapper: ElementRef;
+  @ViewChild('output', { static: true }) outputWrapper: ElementRef;
+  @ViewChild('ref', { static: true }) refWrapper: ElementRef;
 
   isDemoContainer: boolean;
   codeEle: Array<{ content: string; class: string }>;
