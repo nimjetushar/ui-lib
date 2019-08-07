@@ -3,10 +3,10 @@
  */
 
 //  Export lib module
-export * from './lib/ui-library.module';
+export { UiLibrary } from './lib/ui-library.module';
 
 // exports lib interfaces
-export * from './lib/components/component.interfaces';
+export { MenuItem, Fields } from './lib/components/component.interfaces';
 
 // export util library
-export * from 'n-utilities/utils';
+export { Utility } from './lib/utilities';
