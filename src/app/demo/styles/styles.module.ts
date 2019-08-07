@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { Common } from '../common/common.module';
 import { ColorPalletComponent } from './color-pallet/color-pallet.component';
+import { GridComponent } from './grid/grid.component';
 
 const routes: Routes = [
   { path: 'colorPallet', component: ColorPalletComponent },
+  { path: 'grid', component: GridComponent },
   {
     path: '',
     pathMatch: 'full',
@@ -16,7 +18,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ColorPalletComponent
+    ColorPalletComponent,
+    GridComponent
   ],
   imports: [
     CommonModule,
