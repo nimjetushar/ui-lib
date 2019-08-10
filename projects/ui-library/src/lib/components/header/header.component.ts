@@ -8,9 +8,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent {
   @Input() title: string;
   @Input() logoSrc: string;
+  @Input() routeLink: string;
 
   @Output() sideBarToggled: EventEmitter<boolean> = new EventEmitter();
   @Output() logoClickEmitter: EventEmitter<undefined> = new EventEmitter();
+
 
   handleSidebarToggle(): void {
     this.sideBarToggled.emit(true);
