@@ -5,8 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.scss']
 })
-export class GridComponent {
-
-  constructor() { }
-
-}
+export class GridComponent { }
