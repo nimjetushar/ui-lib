@@ -47,7 +47,8 @@ $color-main-nav-item:#E5EAEE;
     @include flex(2 0 auto);
     @include HGroup(0, flex-start, center);
     height: $main-container-header-height;
-    background-color: $color-primary;
+    background-color: $menu-bg;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
   }
 
   .sidebar-toggle {

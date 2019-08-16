@@ -70,6 +70,9 @@ export class NavComponent implements OnInit {
           }
         }
       }
+
+      this.selectedMenu = {} as any;
+      this.expandedMenu = undefined;
     });
   }
 
