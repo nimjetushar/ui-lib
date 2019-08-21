@@ -2,8 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UtilityComponent } from './demo/utility/utility.component';
 import { ReferenceComponent } from './demo/reference/reference.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'gettingStarted',
     loadChildren: () => import('./demo/getting-started/getting-started.module').then(m => m.GettingStartedModule)
@@ -31,7 +36,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'gettingStarted/setup'
+    redirectTo: 'home'
   }
 ];
 
