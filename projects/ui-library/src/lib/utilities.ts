@@ -3,7 +3,7 @@ import {
     isBoolean, setDataToLocal, getDataFromLocal, removeItemFromLocal,
     setDataToSession, getDataFromSession, removeItemFromSession, isEqual,
     isFunction, hasKey, sort
-} from 'n-utilities/utils';
+} from 'tutility';
 
 export const Utility = {
     deepCopy,

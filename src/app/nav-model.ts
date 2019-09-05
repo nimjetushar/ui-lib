@@ -24,6 +24,10 @@ export class NavModel {
                 {
                     label: 'Color Pallet',
                     route: 'styles/colorPallet'
+                },
+                {
+                    label: 'Grid',
+                    route: 'styles/grid'
                 }
             ]
         },
@@ -50,11 +54,11 @@ export class NavModel {
                 {
                     label: 'Radio button',
                     route: 'component/radio'
+                },
+                {
+                    label: 'Tooltip',
+                    route: 'component/tooltip'
                 }
-                // {
-                //     label: 'Tooltip',
-                //     route: 'component/tooltip'
-                // }
             ]
         },
         {

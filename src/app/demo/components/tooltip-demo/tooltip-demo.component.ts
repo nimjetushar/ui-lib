@@ -23,6 +23,23 @@ export class TooltipDemoComponent {
         type: 'string | TooltipContent',
         desc: 'content to be displayed inside tooltip'
       },
+      {
+        parameter: 'tooltipDisabled',
+        type: 'boolean',
+        desc: 'disables tooltip'
+      },
+      {
+        parameter: 'tooltipAnimation',
+        type: 'boolean',
+        default: true,
+        desc: 'enable animation for tooltip'
+      },
+      {
+        parameter: 'tooltipPlacement',
+        type: 'top | bottom | left | right',
+        default: 'bottom',
+        desc: 'tooltip placement'
+      }
     ]
   };
 
