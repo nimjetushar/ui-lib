@@ -5,7 +5,7 @@ import {
     isFunction, hasKey, sort
 } from 'tutility';
 
-export const Utility = {
+export const UTILITY = {
     deepCopy,
     isDefined,
     isEmptyObject,

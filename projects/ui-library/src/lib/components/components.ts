@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { BadgeComponent } from './badge/badge.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 export const Components = [
     NavComponent,
@@ -13,7 +14,8 @@ export const Components = [
     ButtonComponent,
     DynamicFieldsComponent,
     CheckboxComponent,
-    RadioComponent
+    RadioComponent,
+    DropdownComponent
 ];
 
 export const ExportedComponents = [
@@ -23,5 +25,6 @@ export const ExportedComponents = [
     ButtonComponent,
     DynamicFieldsComponent,
     CheckboxComponent,
-    RadioComponent
+    RadioComponent,
+    DropdownComponent
 ];

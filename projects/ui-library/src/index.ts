@@ -9,4 +9,4 @@ export { UiLibrary } from './lib/ui-library.module';
 export { MenuItem, Fields } from './lib/components/component.interfaces';
 
 // export util library
-export { Utility } from './lib/utilities';
+export { UTILITY as Utility } from './lib/utilities';
