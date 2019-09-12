@@ -8,7 +8,6 @@ export interface ToastParameters extends IndividualConfig {
   type?: 'success' | 'error' | 'warning' | 'info';
 }
 
-
 @Injectable({
   providedIn: 'root'
 })

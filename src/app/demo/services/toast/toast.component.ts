@@ -134,6 +134,6 @@ export class ToastComponent {
   constructor(private toastService: ToastService) { }
 
   showToast(type: 'success' | 'error' | 'warning' | 'info'): void {
-    this.toastService.show({ title: 'Title', message: 'message', type: type, progressBar: true });
+    this.toastService.show({ title: 'Title', message: 'message', type, progressBar: true });
   }
 }
