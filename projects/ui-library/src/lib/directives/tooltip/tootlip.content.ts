@@ -22,18 +22,15 @@ import {
 })
 class TooltipContentComponent implements AfterViewInit {
 
-    @Input() hostElement: HTMLElement;
-
+    @Input() animation: boolean = true;
     @Input() content: string;
-
+    @Input() hostElement: HTMLElement;
     @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
 
-    @Input() animation: boolean = true;
-
-    top: number = -100000;
-    left: number = -100000;
-    isIn: boolean = false;
     isFade: boolean = false;
+    isIn: boolean = false;
+    left: number = -100000;
+    top: number = -100000;
 
     constructor(private element: ElementRef,
         private cdr: ChangeDetectorRef) {
@@ -77,25 +74,25 @@ class TooltipContentComponent implements AfterViewInit {
         const targetElWidth = targetEl.offsetWidth;
         const targetElHeight = targetEl.offsetHeight;
         const shiftWidth: any = {
-            center: function (): number {
+            center: (): number => {
                 return hostElPos.left + hostElPos.width / 2 - targetElWidth / 2;
             },
-            left: function (): number {
+            left: (): number => {
                 return hostElPos.left;
             },
-            right: function (): number {
+            right: (): number => {
                 return hostElPos.left + hostElPos.width;
             }
         };
 
         const shiftHeight: any = {
-            center: function (): number {
+            center: (): number => {
                 return hostElPos.top + hostElPos.height / 2 - targetElHeight / 2;
             },
-            top: function (): number {
+            top: (): number => {
                 return hostElPos.top;
             },
-            bottom: function (): number {
+            bottom: (): number => {
                 return hostElPos.top + hostElPos.height;
             }
         };

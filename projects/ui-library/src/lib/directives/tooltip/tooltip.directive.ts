@@ -11,11 +11,8 @@ import { TooltipContent } from './tootlip.content';
 export class TooltipDirective {
 
     @Input('tooltip') content: string | TooltipContent;
-
     @Input() tooltipDisabled: boolean;
-
     @Input() tooltipAnimation: boolean = true;
-
     @Input() tooltipPlacement: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
 
     private tooltip: ComponentRef<TooltipContent>;
@@ -41,11 +38,11 @@ export class TooltipDirective {
 
             this.tooltip = this.viewContainerRef.createComponent(factory);
             this.tooltip.instance.hostElement = this.viewContainerRef.element.nativeElement;
-            this.tooltip.instance.content = this.content as string;
+            this.tooltip.instance.content = this.content;
             this.tooltip.instance.placement = this.tooltipPlacement;
             this.tooltip.instance.animation = this.tooltipAnimation;
         } else {
-            const tooltip = this.content as TooltipContent;
+            const tooltip = this.content;
             tooltip.hostElement = this.viewContainerRef.element.nativeElement;
             tooltip.placement = this.tooltipPlacement;
             tooltip.animation = this.tooltipAnimation;
@@ -66,7 +63,7 @@ export class TooltipDirective {
         }
 
         if (this.content instanceof TooltipContent) {
-            (this.content as TooltipContent).hide();
+            (this.content).hide();
         }
     }
 }
