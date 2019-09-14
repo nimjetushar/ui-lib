@@ -6,7 +6,7 @@ export interface MenuItem {
   label: string;
   route?: string;
   badge?: string;
-  children?: Array<MenuItem>;
+  children?: MenuItem[];
 }
 
 @Component({
@@ -16,7 +16,7 @@ export interface MenuItem {
 })
 export class NavComponent implements OnInit {
 
-  @Input() menuItems: Array<MenuItem> = [];
+  @Input() menuItems: MenuItem[] = [];
   @Input() set expanded(status: boolean) {
     document.getElementsByTagName('body')[0].style.overflow = status ? 'hidden' : 'auto';
     this._expanded = status;
@@ -29,10 +29,10 @@ export class NavComponent implements OnInit {
   @Output() sliderStatus: EventEmitter<boolean> = new EventEmitter();
   @Output() menuClickTrigger: EventEmitter<{ isParent: boolean, menu: MenuItem, subMenu?: MenuItem }> = new EventEmitter();
 
-  private _expanded: boolean;
-
   expandedMenu: number;
   selectedMenu: { idx: number, subMenuIdx: number } = {} as any;
+
+  private _expanded: boolean;
 
   constructor(private _router: Router) { }
 
@@ -90,7 +90,7 @@ export class NavComponent implements OnInit {
     }
     if (this.expandedMenu === undefined || this.expandedMenu !== index) {
       this.expandedMenu = index;
-      this.menuClickTrigger.emit({ isParent: true, menu: menu });
+      this.menuClickTrigger.emit({ isParent: true, menu });
     } else {
       this.expandedMenu = undefined;
     }
@@ -103,6 +103,6 @@ export class NavComponent implements OnInit {
       this._router.navigate([subMenu.route]);
       this.toggleMenu();
     }
-    this.menuClickTrigger.emit({ isParent: false, menu: menu, subMenu: subMenu });
+    this.menuClickTrigger.emit({ isParent: false, menu, subMenu });
   }
 }
