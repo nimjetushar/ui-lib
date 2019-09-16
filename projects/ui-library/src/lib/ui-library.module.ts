@@ -6,13 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 
 import { Components, ExportedComponents } from './components/components';
-import { Services } from './services/services';
-import { ExportedDirectives, Directives, EntryPointDirectives } from './directives/directives';
+import { SERVICES } from './services/services';
+import { DIRECTIVES, entryPointDirectives, exportedDirectives } from './directives/directives';
 
 @NgModule({
   declarations: [
     ...Components,
-    ...Directives
+    ...DIRECTIVES
   ],
   imports: [
     CommonModule,
@@ -22,14 +22,14 @@ import { ExportedDirectives, Directives, EntryPointDirectives } from './directiv
     ToastrModule.forRoot()
   ],
   providers: [
-    ...Services
+    ...SERVICES
   ],
   exports: [
     ...ExportedComponents,
-    ...ExportedDirectives
+    ...exportedDirectives
   ],
   entryComponents: [
-    ...EntryPointDirectives
+    ...entryPointDirectives
   ]
 })
 export class UiLibrary { }

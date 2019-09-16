@@ -1,7 +1,7 @@
 import { HttpService } from './http.service';
 import { ToastService } from './toast.service';
 
-export const Services = [
+export const SERVICES = [
     HttpService,
     ToastService
 ];

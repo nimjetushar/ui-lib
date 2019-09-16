@@ -1,15 +1,15 @@
 import { TooltipContent } from './tooltip/tootlip.content';
 import { TooltipDirective } from './tooltip/tooltip.directive';
 
-export const Directives = [
+export const DIRECTIVES = [
     TooltipDirective,
     TooltipContent
 ];
 
-export const ExportedDirectives = [
+export const exportedDirectives = [
     TooltipDirective
 ];
 
-export const EntryPointDirectives = [
+export const entryPointDirectives = [
     TooltipContent
 ];
