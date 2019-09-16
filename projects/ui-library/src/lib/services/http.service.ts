@@ -16,8 +16,12 @@ export class HttpService {
     this.header = header;
   }
 
+  deleteRequest(url: string, params?: any): Observable<any> {
+    return this.http.delete(url, { headers: this.header, params });
+  }
+
   getRequest(url: string, params: any): Observable<any> {
-    return this.http.get(url, { headers: this.header, params: params });
+    return this.http.get(url, { headers: this.header, params });
   }
 
   postRequest(url: string, body: any): Observable<any> {
@@ -26,9 +30,5 @@ export class HttpService {
 
   putRequest(url: string, body: any): Observable<any> {
     return this.http.put(url, body, { headers: this.header });
-  }
-
-  deleteRequest(url: string, params?: any): Observable<any> {
-    return this.http.delete(url, { headers: this.header, params: params });
   }
 }
