@@ -56,7 +56,7 @@ export class DemoWrapperComponent implements OnInit {
   @ViewChild('ref', { static: true }) refWrapper: ElementRef;
 
   isDemoContainer: boolean;
-  codeEle: Array<{ content: string; class: string }>;
+  codeEle: { content: string; class: string }[];
   enableOutput: boolean = true;
   enableDoc: boolean = true;
   enableOptions: boolean;
@@ -64,14 +64,14 @@ export class DemoWrapperComponent implements OnInit {
   docOptions: DocOptions[];
   methodOptions: MethodOptions[];
   componentType: string = 'Component';
-  docColumns: Array<Column> = [
+  docColumns: Column[] = [
     { label: 'Name', value: 'parameter' },
     { label: 'Type', value: 'type' },
     { label: 'Default', value: 'default' },
     { label: 'Description', value: 'desc', class: 'desc' }
   ];
 
-  methodColumns: Array<Column> = [
+  methodColumns: Column[] = [
     { label: 'Name', value: 'method' },
     { label: 'Parameters', value: 'param' },
     { label: 'Description', value: 'desc', class: 'desc' }
