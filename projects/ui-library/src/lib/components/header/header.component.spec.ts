@@ -29,7 +29,7 @@ describe('HeaderComponent', () => {
   it('should emit event on menu click', () => {
     spyOn(component.sideBarToggled, 'emit');
     const menu = fixture.debugElement.query(By.css('#menu-icon-container'));
-    menu.triggerEventHandler('click', null);
+    menu.triggerEventHandler('click', undefined);
     fixture.detectChanges();
     expect(component.sideBarToggled.emit).toHaveBeenCalled();
   });
@@ -40,7 +40,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
 
     const logo = fixture.debugElement.query(By.css('#logo-container .logo'));
-    logo.triggerEventHandler('click', null);
+    logo.triggerEventHandler('click', undefined);
     fixture.detectChanges();
     expect(component.logoClickEmitter.emit).toHaveBeenCalled();
   });

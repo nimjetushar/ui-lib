@@ -10,7 +10,7 @@ const packageJson = require('../../../../package.json');
 })
 export class ReferenceComponent {
 
-  libLists: Array<{ name: string, url: string, icon: string }> = [];
+  libLists: { name: string, url: string, icon: string }[] = [];
 
   constructor() {
 

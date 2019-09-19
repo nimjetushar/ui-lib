@@ -41,7 +41,7 @@ describe('NavComponent', () => {
       subMenu = { route: 'submenu', label: 'submenu' };
     component.onSubMenuClick(menu, subMenu, 0, 0);
     expect(component['_router'].navigate).toHaveBeenCalledWith(['submenu']);
-    expect(component.menuClickTrigger.emit).toHaveBeenCalledWith({ isParent: false, menu: menu, subMenu: subMenu });
+    expect(component.menuClickTrigger.emit).toHaveBeenCalledWith({ isParent: false, menu, subMenu });
   });
 
   it('should expand on menu toggle', () => {
