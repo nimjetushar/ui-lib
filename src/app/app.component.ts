@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { MenuItem } from 'ui-library';
 import { NavModel } from './nav-model';
-import { AppName } from './constants/config';
+import { APPNAME } from './constants/config';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,8 @@ import { AppName } from './constants/config';
 })
 export class AppComponent {
 
-  menuItems: Array<MenuItem>;
-  appTitle: string = AppName;
+  menuItems: MenuItem[];
+  appTitle: string = APPNAME;
   expanded: boolean;
 
   constructor() {

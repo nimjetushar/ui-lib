@@ -1,1 +1,1 @@
-export const AppName = 'UI Library';
+export const APPNAME = 'UI Library';
