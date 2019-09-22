@@ -7,7 +7,7 @@ import { BadgeComponent } from './badge/badge.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 
-export const Components = [
+export const COMPONENTS = [
     NavComponent,
     HeaderComponent,
     BadgeComponent,
@@ -18,7 +18,7 @@ export const Components = [
     DropdownComponent
 ];
 
-export const ExportedComponents = [
+export const EXPORTEDCOMPONENTS = [
     NavComponent,
     HeaderComponent,
     BadgeComponent,

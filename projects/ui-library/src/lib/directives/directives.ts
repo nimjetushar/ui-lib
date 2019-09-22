@@ -6,10 +6,10 @@ export const DIRECTIVES = [
     TooltipContent
 ];
 
-export const exportedDirectives = [
+export const EXPORTEDDIRECTIVES = [
     TooltipDirective
 ];
 
-export const entryPointDirectives = [
+export const ENTRYPOINTDIRECTIVES = [
     TooltipContent
 ];
