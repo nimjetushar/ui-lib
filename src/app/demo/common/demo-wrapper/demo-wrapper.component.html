@@ -7,7 +7,7 @@
         <code>
           {{code}}
         </code>
-        <!-- <span *ngFor="let item of codeEle" [class]="item.class">{{item.content}}</span> -->
+      <!-- <span *ngFor="let item of codeEle" [class]="item.class">{{item.content}}</span> -->
       </code>
       <div class="code-output" #output [ngClass]="{'hide': enableOutput}">
         <ng-content select="[output]"></ng-content>
@@ -21,11 +21,13 @@
         <div class="table">
           <table *ngIf="docOptions">
             <thead>
-              <th *ngFor="let col of docColumns">{{col.label}}</th>
+              <th *ngFor="let col of docColumns" [style.width]="col?.width">{{col.label}}
+              </th>
             </thead>
             <tbody>
               <tr *ngFor="let row of docOptions">
-                <td *ngFor="let col of docColumns" [class]="col.class">{{row[col.value] || '-'}}
+                <td *ngFor="let col of docColumns" [style.width]="col?.width"
+                  [class]="col.class">{{row[col.value] || '-'}}
                 </td>
               </tr>
             </tbody>

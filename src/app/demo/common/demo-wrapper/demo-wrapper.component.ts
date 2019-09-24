@@ -4,10 +4,12 @@ import {
 } from '@angular/core';
 import { ToastService } from 'projects/ui-library/src/lib/services/toast.service';
 
-interface Column {
+export interface Column {
   label: string;
   value: string;
+
   class?: string;
+  width?: string;
 }
 
 interface DocOptions {
@@ -65,16 +67,16 @@ export class DemoWrapperComponent implements OnInit {
   methodOptions: MethodOptions[];
   componentType: string = 'Component';
   docColumns: Column[] = [
-    { label: 'Name', value: 'parameter' },
-    { label: 'Type', value: 'type' },
-    { label: 'Default', value: 'default' },
-    { label: 'Description', value: 'desc', class: 'desc' }
+    { label: 'Name', value: 'parameter', width: '20%' },
+    { label: 'Type', value: 'type', width: '20%' },
+    { label: 'Default', value: 'default', width: '20%' },
+    { label: 'Description', value: 'desc', width: '40%' }
   ];
 
   methodColumns: Column[] = [
-    { label: 'Name', value: 'method' },
-    { label: 'Parameters', value: 'param' },
-    { label: 'Description', value: 'desc', class: 'desc' }
+    { label: 'Name', value: 'method', width: '20%' },
+    { label: 'Parameters', value: 'param', width: '20%' },
+    { label: 'Description', value: 'desc', width: '60%' }
   ];
 
   constructor(private toast: ToastService) { }
