@@ -1,4 +1,4 @@
-import { Options } from './../../common/demo-wrapper/demo-wrapper.component';
+import { Options, Column } from './../../common/demo-wrapper/demo-wrapper.component';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ToastService } from 'projects/ui-library/src/lib/services/toast.service';
 
@@ -130,6 +130,50 @@ export class ToastComponent {
       }
     ]
   };
+
+  public parameterCol: Column[] = [{
+    label: 'Properties',
+    value: 'property'
+  },
+  {
+    label: 'Description',
+    value: 'desc'
+  }];
+
+  public paramData: { property: string, desc: string }[] = [
+    {
+      property: 'toastId: number',
+      desc: 'Your Toast ID. Use this to close it individually'
+    },
+    {
+      property: 'message: string',
+      desc: 'message of your toast. Stored to prevent duplicates'
+    },
+    {
+      property: 'portal: ComponentRef<any>',
+      desc: 'reference to the component'
+    },
+    {
+      property: 'toastRef: ToastRef<any>',
+      desc: 'a reference to your toast'
+    },
+    {
+      property: 'onShown: Observable<any>',
+      desc: 'triggered when toast is active'
+    },
+    {
+      property: 'onHidden: Observable<any>',
+      desc: 'triggered when toast is destroyed'
+    },
+    {
+      property: 'onTap: Observable<any>',
+      desc: 'triggered on toast click'
+    },
+    {
+      property: 'onAction: Observable<any>',
+      desc: 'available for your use in custom toast'
+    }
+  ];
 
   constructor(private toastService: ToastService) { }
 

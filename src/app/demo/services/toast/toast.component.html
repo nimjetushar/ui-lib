@@ -27,25 +27,20 @@
       </div>
       <div class='active-toast'>
         <div>ActiveToast provides following options :-</div>
-        <div class="strong">toastId: number (Your Toast ID. Use this to close it
-          individually)</div>
-        <div class="strong">message: string (message of your toast. Stored to prevent
-          duplicates)
-        </div>
-        <div class="strong">portal: ComponentRef&lt;any&gt; (reference to the component)
-        </div>
-        <div class="strong">toastRef: ToastRef&lt;any&gt; (a reference to your toast)
-        </div>
-        <div class="strong">onShown: Observable&lt;any&gt; (triggered when toast is
-          active)</div>
-        <div class="strong">onHidden: Observable&lt;any&gt; (triggered when toast is
-          destroyed)</div>
-        <div class="strong">onTap: Observable&lt;any&gt; (triggered on toast click)</div>
-        <div class="strong">onAction: Observable&lt;any&gt; (available for your use in
-          custom toast)
-        </div>
+
+        <table>
+          <thead>
+            <th *ngFor="let col of parameterCol">{{col.label}}</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of paramData">
+              <td *ngFor="let col of parameterCol">{{data[col.value]}}</td>
+            </tr>
+          </tbody>
+        </table>
 
         <div class='sample-code'>
+          <div class="strong">Sample code :-</div>
           <code>
             <div>showToaster() &#123;</div>
             <div>&nbsp; this.toastr.success('Hello world!', 'Toastr fun!')</div>
