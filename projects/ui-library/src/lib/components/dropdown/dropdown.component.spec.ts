@@ -1,6 +1,8 @@
+import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DropdownComponent } from './dropdown.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 describe('DropdownComponent', () => {
   let component: DropdownComponent;
@@ -8,9 +10,13 @@ describe('DropdownComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DropdownComponent ]
+      declarations: [DropdownComponent],
+      imports: [
+        DropdownModule,
+        FormsModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
