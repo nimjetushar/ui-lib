@@ -37,8 +37,9 @@ export class DropdownComponent implements OnInit, ControlValueAccessor {
   @Input() filter: boolean;
   @Input() placeholder: string;
 
+  value: any;
+
   private _options: Dropdown[];
-  private value: any;
 
   // Placeholders for the callbacks which are later providesd
   // by the Control Value Accessor
