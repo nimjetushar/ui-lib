@@ -21,11 +21,11 @@
       "dom"
     ],
     "paths": {
-      "ui-library": [
-        "projects/ui-library/src/"
+      "ng-library": [
+        "projects/ng-library/src"
       ],
-      "ui-library/*": [
-        "dist/ui-library/*"
+      "ng-library/*": [
+        "dist/ng-library/*"
       ]
     }
   }
