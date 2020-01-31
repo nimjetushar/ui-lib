@@ -1,6 +1,6 @@
 {
   "name": "@fourjs/ng-library",
-  "version": "20.1.29",
+  "version": "20.1.31",
   "peerDependencies": {
     "@angular/common": "~8.2.0",
     "@angular/core": "^8.2.14",
@@ -10,6 +10,7 @@
     "font-awesome": "^4.7.0",
     "ngx-toastr": "^10.0.2",
     "primeicons": "^2.0.0",
-    "primeng": "^8.0.3"
+    "primeng": "^8.0.3",
+    "tutility": "^1.0.2"
   }
 }

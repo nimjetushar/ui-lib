@@ -1,6 +1,6 @@
 {
   "name": "ui-lib",
-  "version": "20.1.29",
+  "version": "20.1.31",
   "scripts": {
     "build": "ng build ng-library && gulp",
     "test": "ng test ng-library",

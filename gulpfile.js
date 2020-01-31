@@ -10,7 +10,7 @@ const sassFiles = "projects/ng-library/src/styles.scss",
 function styles() {
   return gulp
     .src(sassFiles)
-    .pipe(sass.sync({outputStyle: 'compressed'}).on("error", sass.logError))
+    .pipe(sass.sync({ includePaths: ['node_modules'] }).on("error", sass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest(cssDest));
 }
