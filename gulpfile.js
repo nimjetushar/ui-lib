@@ -27,6 +27,10 @@ function font() {
     .pipe(gulp.dest(fontDest));
 }
 
-const defaultTask = gulp.parallel(styles, font, moveStyles);
+function moveReadme() {
+  return gulp.src(['README.md']).pipe(gulp.dest(baseDest))
+}
+
+const defaultTask = gulp.parallel(styles, font, moveStyles, moveReadme);
 
 exports.default = defaultTask;

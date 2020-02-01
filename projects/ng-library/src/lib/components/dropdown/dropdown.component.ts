@@ -1,25 +1,23 @@
-import { Component, OnInit, Input, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { noop } from '../../utilities';
+import { Component, Input, forwardRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { UiInput } from '../../class/uiInput.class';
 
 export interface Dropdown {
   label: string;
   value: any;
 }
 
-export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => DropdownComponent),
-  multi: true
-};
-
 @Component({
   selector: 't-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
-  providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => DropdownComponent),
+    multi: true
+  }]
 })
-export class DropdownComponent implements OnInit, ControlValueAccessor {
+export class DropdownComponent extends UiInput {
 
   @Input()
   set options(value: Dropdown[]) {
@@ -33,35 +31,18 @@ export class DropdownComponent implements OnInit, ControlValueAccessor {
   @Input() disabled: boolean;
   @Input() filter: boolean;
   @Input() placeholder: string;
+  @Input() staticLabel: string;
 
   value: any;
 
   private _options: Dropdown[];
 
-  // Placeholders for the callbacks which are later providesd
-  // by the Control Value Accessor
-  private onTouchedCallback: () => void = noop;
-  private onChangeCallback: (_: any) => void = noop;
-
-  constructor() { }
-
-  ngOnInit(): void {
+  writeValue(value: Dropdown): void {
+    this.value = value;
+    super.onChange(value);
   }
 
-  // From ControlValueAccessor interface
-  writeValue(value: any): void {
-    if (value !== this.value) {
-      this.value = value;
-    }
-  }
-
-  // From ControlValueAccessor interface
-  registerOnChange(fn: any): void {
-    this.onChangeCallback = fn;
-  }
-
-  // From ControlValueAccessor interface
-  registerOnTouched(fn: any): void {
-    this.onTouchedCallback = fn;
+  onChangeHandler(value: Dropdown): void {
+    this.writeValue(value);
   }
 }

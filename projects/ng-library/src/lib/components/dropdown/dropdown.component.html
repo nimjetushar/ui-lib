@@ -1,5 +1,7 @@
 <p-dropdown 
     [options]="options" 
-    [(ngModel)]="value" 
-    [placeholder]="placeholder">
+    [ngModel]="value" 
+    [placeholder]="placeholder"
+    
+    (onChange)="onChangeHandler($event)">
 </p-dropdown>

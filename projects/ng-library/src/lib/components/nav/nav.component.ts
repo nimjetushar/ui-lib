@@ -50,8 +50,7 @@ export class NavComponent implements OnInit {
           }
         };
 
-      for (i = 0; i < this.menuItems.length; i++) {
-        const menuItem = this.menuItems[i];
+      for (const menuItem of this.menuItems) {
 
         if (menuItem.route && !menuItem.children) {
           const dobreak = menuHighlight(menuItem);
@@ -61,9 +60,8 @@ export class NavComponent implements OnInit {
         }
 
         if (menuItem.children) {
-          for (k = 0; k < menuItem.children.length; k++) {
-            const subMenu = menuItem.children[k],
-              dobreak = menuHighlight(subMenu);
+          for (const subMenu of menuItem.children) {
+            const dobreak = menuHighlight(subMenu);
             if (dobreak) {
               return;
             }

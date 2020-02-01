@@ -26,8 +26,6 @@ export class RadioComponent {
   checked: boolean;
   private _model: boolean | string;
 
-  constructor() { }
-
   handleOnChange(event: any): void {
     const checked = event.target.checked;
     this.checked = (checked && this.value === this.model) ? true : false;

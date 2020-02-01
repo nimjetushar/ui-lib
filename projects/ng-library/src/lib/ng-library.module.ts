@@ -27,7 +27,12 @@ import { DIRECTIVES, ENTRYPOINTDIRECTIVES, EXPORTEDDIRECTIVES } from './directiv
     ...SERVICES
   ],
   exports: [
+    // module export
+    FormsModule,
+    HttpClientModule,
+    // component export
     ...EXPORTEDCOMPONENTS,
+    // directive export
     ...EXPORTEDDIRECTIVES
   ],
   entryComponents: [
