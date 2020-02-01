@@ -42,6 +42,7 @@ export class NavComponent implements OnInit {
     ).subscribe((route: NavigationEnd) => {
       let i = 0, k = -1;
       const curRoute = route.url,
+        menuItemLen = this.menuItems.length,
         menuHighlight = (menu: MenuItem) => {
           if (curRoute.includes(menu.route)) {
             this.selectedMenu = { idx: i, subMenuIdx: k };
@@ -50,8 +51,8 @@ export class NavComponent implements OnInit {
           }
         };
 
-      for (const menuItem of this.menuItems) {
-
+      for (i = 0; i < menuItemLen; i++) {
+        const menuItem = this.menuItems[i];
         if (menuItem.route && !menuItem.children) {
           const dobreak = menuHighlight(menuItem);
           if (dobreak) {
@@ -60,7 +61,9 @@ export class NavComponent implements OnInit {
         }
 
         if (menuItem.children) {
-          for (const subMenu of menuItem.children) {
+          const subMenuLen = menuItem.children.length;
+          for (k = 0; k < subMenuLen; k++) {
+            const subMenu = menuItem.children[k];
             const dobreak = menuHighlight(subMenu);
             if (dobreak) {
               return;

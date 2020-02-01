@@ -32,6 +32,10 @@ export class DropdownComponent extends UiInput {
   @Input() filter: boolean;
   @Input() placeholder: string;
   @Input() staticLabel: string;
+  @Input() name: string;
+  @Input() tooltip: any;
+  @Input() tooltipPosition: 'right' | 'left' | 'top' | 'bottom' = 'top';
+  @Input() tooltipDisabled: boolean;
 
   value: any;
 
@@ -39,10 +43,10 @@ export class DropdownComponent extends UiInput {
 
   writeValue(value: Dropdown): void {
     this.value = value;
-    super.onChange(value);
+    this.onChange(value);
   }
 
-  onChangeHandler(value: Dropdown): void {
-    this.writeValue(value);
+  onChangeHandler(event: any): void {
+    this.writeValue(event.value);
   }
 }
