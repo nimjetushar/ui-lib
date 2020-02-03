@@ -5,12 +5,11 @@ import {
 import { TooltipContent } from './tootlip.content';
 
 @Directive({
-    // tslint:disable-next-line: directive-selector
-    selector: '[tooltip]'
+    selector: '[tTooltip]'
 })
 export class TooltipDirective {
 
-    @Input('tooltip') content: string | TooltipContent;
+    @Input('tTooltip') content: string | TooltipContent;
     @Input() tooltipDisabled: boolean;
     @Input() tooltipAnimation: boolean = true;
     @Input() tooltipPlacement: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
@@ -43,6 +42,7 @@ export class TooltipDirective {
             this.tooltip.instance.animation = this.tooltipAnimation;
         } else {
             const tooltip = this.content;
+            if (!tooltip) { return; }
             tooltip.hostElement = this.viewContainerRef.element.nativeElement;
             tooltip.placement = this.tooltipPlacement;
             tooltip.animation = this.tooltipAnimation;

@@ -1,0 +1,29 @@
+{
+  "name": "@fourjs/ng-library",
+  "version": "20.1.31",
+  "peerDependencies": {
+    "@angular/common": "~8.2.0",
+    "@angular/core": "^8.2.14",
+    "@angular/cdk": "^8.2.3",
+    "@angular/router": "~8.2.14",
+    "@angular/forms": "~8.2.0",
+    "font-awesome": "^4.7.0",
+    "ngx-toastr": "^10.0.2",
+    "primeicons": "^2.0.0",
+    "primeng": "^8.0.3",
+    "tutility": "^1.0.2"
+  },
+  "main": "bundles/fourjs-ng-library.umd.js",
+  "module": "fesm5/fourjs-ng-library.js",
+  "es2015": "fesm2015/fourjs-ng-library.js",
+  "esm5": "esm5/fourjs-ng-library.js",
+  "esm2015": "esm2015/fourjs-ng-library.js",
+  "fesm5": "fesm5/fourjs-ng-library.js",
+  "fesm2015": "fesm2015/fourjs-ng-library.js",
+  "typings": "fourjs-ng-library.d.ts",
+  "metadata": "fourjs-ng-library.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
