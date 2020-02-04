@@ -43,9 +43,9 @@ export class DropdownComponent extends UiInput {
   get tooltipPosition(): TooltipPosition {
     return this._tooltipPosition;
   }
-  @Input() tooltipDisabled: boolean;
   @Input() autoDisplayFirst: boolean;
   @Input() scrollHeight: string;
+  @Input() autofocus: boolean;
 
   // tslint:disable: no-output-on-prefix
   @Output() onFocus: EventEmitter<any> = new EventEmitter();
@@ -65,11 +65,11 @@ export class DropdownComponent extends UiInput {
     this.writeValue(event.value);
   }
 
-  focusHandler(event): void {
+  focusHandler(event: FocusEvent): void {
     this.onFocus.emit(event);
   }
 
-  blurHandler(event): void {
+  blurHandler(event: FocusEvent): void {
     this.onBlur.emit(event);
   }
 }

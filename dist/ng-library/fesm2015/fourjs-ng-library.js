@@ -550,7 +550,7 @@ class DropdownComponent extends UiInput {
 DropdownComponent.decorators = [
     { type: Component, args: [{
                 selector: 't-dropdown',
-                template: "<p-dropdown \n    [options]=\"options\" \n    [ngModel]=\"value\" \n    [placeholder]=\"placeholder\"\n    [filter]=\"filter\"\n    [readonly]=\"readonly\"\n    [disabled]=\"disabled\"\n    [name]=\"name\"\n    [tooltip]=\"tooltip\"\n    [tooltipPosition]=\"tooltipPosition\"\n\n    (onChange)=\"onChangeHandler($event)\"\n    (onFocus)=\"focusHandler($event)\"\n    (onBlur)=\"blurHandler($event)\">\n</p-dropdown>\n",
+                template: "<p-dropdown \n    [options]=\"options\" \n    [ngModel]=\"value\" \n    [placeholder]=\"placeholder\"\n    [filter]=\"filter\"\n    [readonly]=\"readonly\"\n    [disabled]=\"disabled\"\n    [name]=\"name\"\n    [tooltip]=\"tooltip\"\n    [tooltipPosition]=\"tooltipPosition\"\n    [autoDisplayFirst]=\"autoDisplayFirst\"\n    [scrollHeight]=\"scrollHeight\"\n    [autofocus]=\"autofocus\"\n\n    (onChange)=\"onChangeHandler($event)\"\n    (onFocus)=\"focusHandler($event)\"\n    (onBlur)=\"blurHandler($event)\">\n</p-dropdown>\n",
                 providers: [{
                         provide: NG_VALUE_ACCESSOR,
                         useExisting: forwardRef((/**
@@ -573,9 +573,9 @@ DropdownComponent.propDecorators = {
     name: [{ type: Input }],
     tooltip: [{ type: Input }],
     tooltipPosition: [{ type: Input }],
-    tooltipDisabled: [{ type: Input }],
     autoDisplayFirst: [{ type: Input }],
     scrollHeight: [{ type: Input }],
+    autofocus: [{ type: Input }],
     onFocus: [{ type: Output }],
     onBlur: [{ type: Output }]
 };

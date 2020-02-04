@@ -712,7 +712,7 @@
         DropdownComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 't-dropdown',
-                        template: "<p-dropdown \n    [options]=\"options\" \n    [ngModel]=\"value\" \n    [placeholder]=\"placeholder\"\n    [filter]=\"filter\"\n    [readonly]=\"readonly\"\n    [disabled]=\"disabled\"\n    [name]=\"name\"\n    [tooltip]=\"tooltip\"\n    [tooltipPosition]=\"tooltipPosition\"\n\n    (onChange)=\"onChangeHandler($event)\"\n    (onFocus)=\"focusHandler($event)\"\n    (onBlur)=\"blurHandler($event)\">\n</p-dropdown>\n",
+                        template: "<p-dropdown \n    [options]=\"options\" \n    [ngModel]=\"value\" \n    [placeholder]=\"placeholder\"\n    [filter]=\"filter\"\n    [readonly]=\"readonly\"\n    [disabled]=\"disabled\"\n    [name]=\"name\"\n    [tooltip]=\"tooltip\"\n    [tooltipPosition]=\"tooltipPosition\"\n    [autoDisplayFirst]=\"autoDisplayFirst\"\n    [scrollHeight]=\"scrollHeight\"\n    [autofocus]=\"autofocus\"\n\n    (onChange)=\"onChangeHandler($event)\"\n    (onFocus)=\"focusHandler($event)\"\n    (onBlur)=\"blurHandler($event)\">\n</p-dropdown>\n",
                         providers: [{
                                 provide: forms.NG_VALUE_ACCESSOR,
                                 useExisting: core.forwardRef((/**
@@ -735,9 +735,9 @@
             name: [{ type: core.Input }],
             tooltip: [{ type: core.Input }],
             tooltipPosition: [{ type: core.Input }],
-            tooltipDisabled: [{ type: core.Input }],
             autoDisplayFirst: [{ type: core.Input }],
             scrollHeight: [{ type: core.Input }],
+            autofocus: [{ type: core.Input }],
             onFocus: [{ type: core.Output }],
             onBlur: [{ type: core.Output }]
         };
