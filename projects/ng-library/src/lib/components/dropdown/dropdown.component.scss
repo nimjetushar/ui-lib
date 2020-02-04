@@ -1,0 +1,24 @@
+$border-color: #a6a6a6;
+
+p-dropdown {
+    .ui-dropdown {
+        .ui-state-focus {
+            border: 1px solid $border-color;
+        }
+
+        .ui-inputtext:enabled:focus {
+            border-color: $border-color;
+        }
+
+        .ui-dropdown-filter-icon {
+            color: #000;
+        }
+
+        .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight,
+        .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item-group.ui-state-highlight {
+            background-color: #3d4851;
+        }
+    }
+
+
+}

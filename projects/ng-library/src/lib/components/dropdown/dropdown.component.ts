@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, Input, forwardRef, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { UiInput } from '../../class/uiInput.class';
 
@@ -6,6 +6,8 @@ export interface Dropdown {
   label: string;
   value: any;
 }
+
+type TooltipPosition = 'right' | 'left' | 'top' | 'bottom';
 
 @Component({
   selector: 't-dropdown',
@@ -15,7 +17,8 @@ export interface Dropdown {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => DropdownComponent),
     multi: true
-  }]
+  }],
+  encapsulation: ViewEncapsulation.None
 })
 export class DropdownComponent extends UiInput {
 
@@ -34,12 +37,24 @@ export class DropdownComponent extends UiInput {
   @Input() staticLabel: string;
   @Input() name: string;
   @Input() tooltip: any;
-  @Input() tooltipPosition: 'right' | 'left' | 'top' | 'bottom' = 'top';
+  @Input() set tooltipPosition(value: TooltipPosition) {
+    this._tooltipPosition = value || 'top';
+  }
+  get tooltipPosition(): TooltipPosition {
+    return this._tooltipPosition;
+  }
   @Input() tooltipDisabled: boolean;
+  @Input() autoDisplayFirst: boolean;
+  @Input() scrollHeight: string;
+
+  // tslint:disable: no-output-on-prefix
+  @Output() onFocus: EventEmitter<any> = new EventEmitter();
+  @Output() onBlur: EventEmitter<any> = new EventEmitter();
 
   value: any;
 
   private _options: Dropdown[];
+  private _tooltipPosition: TooltipPosition = 'top';
 
   writeValue(value: Dropdown): void {
     this.value = value;
@@ -48,5 +63,13 @@ export class DropdownComponent extends UiInput {
 
   onChangeHandler(event: any): void {
     this.writeValue(event.value);
+  }
+
+  focusHandler(event): void {
+    this.onFocus.emit(event);
+  }
+
+  blurHandler(event): void {
+    this.onBlur.emit(event);
   }
 }

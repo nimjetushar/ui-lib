@@ -9,5 +9,7 @@
     [tooltip]="tooltip"
     [tooltipPosition]="tooltipPosition"
 
-    (onChange)="onChangeHandler($event)">
+    (onChange)="onChangeHandler($event)"
+    (onFocus)="focusHandler($event)"
+    (onBlur)="blurHandler($event)">
 </p-dropdown>
