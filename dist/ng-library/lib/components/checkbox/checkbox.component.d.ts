@@ -4,9 +4,8 @@ export declare class CheckboxComponent {
     name: string;
     disabled: boolean;
     model: boolean;
+    readonly: boolean;
     modelChange: EventEmitter<boolean>;
-    handleChange: EventEmitter<boolean>;
     checked: boolean;
-    constructor();
     handleOnChange(event: any): void;
 }

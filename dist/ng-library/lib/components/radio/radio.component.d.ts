@@ -6,7 +6,6 @@ export declare class RadioComponent {
     value: string | boolean;
     model: boolean | string;
     modelChange: EventEmitter<boolean | string>;
-    handleChange: EventEmitter<boolean | string>;
     checked: boolean;
     private _model;
     handleOnChange(event: any): void;

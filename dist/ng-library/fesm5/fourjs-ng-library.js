@@ -7,8 +7,7 @@ import { NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { ToastrService, ToastrModule } from 'ngx-toastr';
 import { DropdownModule } from 'primeng/dropdown';
 import { filter } from 'rxjs/operators';
-import { noop } from 'tutility';
-export { createMap, deepCopy, getDataFromLocal, getDataFromSession, hasKey, isArray, isBoolean, isDefined, isEmptyObject, isEqual, isFunction, isObject, noop, removeItemFromLocal, removeItemFromSession, setDataToLocal, setDataToSession, sort } from 'tutility';
+import { noop, deepCopy, isDefined, isEmptyObject, createMap, isArray, isObject, isBoolean, setDataToLocal, getDataFromLocal, removeItemFromLocal, setDataToSession, getDataFromSession, removeItemFromSession, isEqual, isFunction, hasKey, sort } from 'tutility';
 
 /**
  * @fileoverview added by tsickle
@@ -357,13 +356,6 @@ var DynamicFieldsComponent = /** @class */ (function () {
     /**
      * @return {?}
      */
-    DynamicFieldsComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () { };
-    /**
-     * @return {?}
-     */
     DynamicFieldsComponent.prototype.primaryClick = /**
      * @return {?}
      */
@@ -395,8 +387,6 @@ var DynamicFieldsComponent = /** @class */ (function () {
                     styles: [".dynamic-fields .button-container{-ms-flex-pack:end;justify-content:flex-end;display:-ms-flexbox;display:flex}.dynamic-fields .button-container t-button{margin:0 .3125rem}.dynamic-fields input,.dynamic-fields select{margin:0 .625rem;outline:0}.dynamic-fields .input-checkbox,.dynamic-fields .input-number,.dynamic-fields .input-radio,.dynamic-fields .input-select,.dynamic-fields .input-text{margin:.625rem .3125rem}"]
                 }] }
     ];
-    /** @nocollapse */
-    DynamicFieldsComponent.ctorParameters = function () { return []; };
     DynamicFieldsComponent.propDecorators = {
         fields: [{ type: Input }],
         options: [{ type: Input }],
@@ -416,7 +406,6 @@ var DynamicFieldsComponent = /** @class */ (function () {
 var CheckboxComponent = /** @class */ (function () {
     function CheckboxComponent() {
         this.modelChange = new EventEmitter();
-        this.handleChange = new EventEmitter();
     }
     /**
      * @param {?} event
@@ -428,25 +417,22 @@ var CheckboxComponent = /** @class */ (function () {
      */
     function (event) {
         this.checked = event.target.checked;
-        this.handleChange.emit(this.checked);
         this.modelChange.emit(this.checked);
     };
     CheckboxComponent.decorators = [
         { type: Component, args: [{
                     selector: 't-checkbox',
-                    template: "<label class=\"checkbox\" [class.disabled]=\"disabled\">{{label}}\n  <input type=\"checkbox\" [name]=\"name\" [checked]=\"checked\" [disabled]=\"disabled\"\n    (change)=\"handleOnChange($event)\" [(ngModel)]=\"model\">\n  <span class=\"fa checkmark checkmark-primary active\"></span>\n</label>",
+                    template: "<label class=\"checkbox\" [class.disabled]=\"disabled\">{{label}}\n  <input type=\"checkbox\" \n    [name]=\"name\" \n    [(ngModel)]=\"model\"\n    [checked]=\"checked\" \n    [disabled]=\"disabled\" \n    [readonly]=\"readonly\"\n    \n    (change)=\"handleOnChange($event)\"\n    />\n  <span class=\"fa checkmark checkmark-primary active\"></span>\n</label>",
                     styles: [".hide{display:none!important}.disable{pointer-events:none;opacity:.4}.z-depth-1{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block{display:inline-block;vertical-align:top}.checkbox{display:inline;position:relative;padding-left:1.25rem;margin-bottom:.75rem;cursor:pointer;font-size:1rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.checkbox input{position:relative;opacity:0}.checkbox.disabled{opacity:.5;cursor:default;pointer-events:none}.checkbox .checkmark-primary{position:absolute;top:.25rem;left:0;height:1rem;width:1rem}.checkbox .checkmark-primary.active{background-color:#fff;border:.0625rem solid #0069b1}.checkbox .checkmark:after{content:\"\";position:absolute;display:none;bottom:0;left:0;top:-1px;right:0}.checkbox .checkmark.active:after{content:\"\\f00c\";color:#fff}.checkbox input:checked~.checkmark{background-color:#0069b1}.checkbox input:checked~.checkmark:after{display:block;font-size:.8125rem;height:1rem;line-height:15px}.checkbox .checkmark.disabled:after{color:#dfdfdf;margin-left:.03125rem;margin-bottom:.03125rem}"]
                 }] }
     ];
-    /** @nocollapse */
-    CheckboxComponent.ctorParameters = function () { return []; };
     CheckboxComponent.propDecorators = {
         label: [{ type: Input }],
         name: [{ type: Input }],
         disabled: [{ type: Input }],
         model: [{ type: Input }],
-        modelChange: [{ type: Output }],
-        handleChange: [{ type: Output }]
+        readonly: [{ type: Input }],
+        modelChange: [{ type: Output }]
     };
     return CheckboxComponent;
 }());
@@ -460,7 +446,6 @@ var RadioComponent = /** @class */ (function () {
     function RadioComponent() {
         this.value = true;
         this.modelChange = new EventEmitter();
-        this.handleChange = new EventEmitter();
     }
     Object.defineProperty(RadioComponent.prototype, "model", {
         get: /**
@@ -494,13 +479,12 @@ var RadioComponent = /** @class */ (function () {
         this.checked = (checked && this.value === this.model) ? true : false;
         /** @type {?} */
         var value = checked ? this.value : false;
-        this.handleChange.emit(value);
         this.modelChange.emit(value);
     };
     RadioComponent.decorators = [
         { type: Component, args: [{
                     selector: 't-radio',
-                    template: "<label class=\"radio\" [class.disabled]=\"disabled\" [ngClass]=\"{'active': checked}\">\n  &nbsp;{{label}}\n  <input type=\"radio\" [name]=\"name\" [checked]=\"checked\" [disabled]=\"disabled\"\n    (change)=\"handleOnChange($event)\" [(ngModel)]=\"model\" [value]=\"value\">\n</label>",
+                    template: "<label class=\"radio\" [class.disabled]=\"disabled\" [ngClass]=\"{'active': checked}\">\n  &nbsp;{{label}}\n  <input type=\"radio\" [name]=\"name\" [checked]=\"checked\" [disabled]=\"disabled\" (change)=\"handleOnChange($event)\"\n    [(ngModel)]=\"model\" [value]=\"value\">\n</label>",
                     styles: [".hide{display:none!important}.disable{pointer-events:none;opacity:.4}.z-depth-1{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block{display:inline-block;vertical-align:top}.radio{display:inline;position:relative;padding-left:1.25rem;cursor:pointer;font-size:1rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.radio input{position:relative;opacity:0}.radio:before{content:'';width:1.125rem;height:1.125rem;border-radius:50%;border:1px solid #0069b1;display:inline-block;position:absolute;left:0;top:2px}.radio.disabled{opacity:.5;cursor:default;pointer-events:none}.radio.active:before{content:'';border:5px solid #0069b1}"]
                 }] }
     ];
@@ -510,8 +494,7 @@ var RadioComponent = /** @class */ (function () {
         name: [{ type: Input }],
         value: [{ type: Input }],
         model: [{ type: Input }],
-        modelChange: [{ type: Output }],
-        handleChange: [{ type: Output }]
+        modelChange: [{ type: Output }]
     };
     return RadioComponent;
 }());
@@ -521,7 +504,10 @@ var RadioComponent = /** @class */ (function () {
  * Generated from: lib/class/uiInput.class.ts
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var UiInput = /** @class */ (function () {
+// tslint:disable: no-empty
+var  
+// tslint:disable: no-empty
+UiInput = /** @class */ (function () {
     function UiInput() {
         this.onChange = noop;
         this.onTouched = noop;
@@ -1290,5 +1276,18 @@ var NgLibrary = /** @class */ (function () {
     return NgLibrary;
 }());
 
-export { BadgeComponent, ButtonComponent, CheckboxComponent, DropdownComponent, DynamicFieldsComponent, HeaderComponent, HttpService, NavComponent, NgLibrary, RadioComponent, ToastService, COMPONENTS as ɵa, EXPORTEDCOMPONENTS as ɵb, DIRECTIVES as ɵc, EXPORTEDDIRECTIVES as ɵd, ENTRYPOINTDIRECTIVES as ɵe, TooltipDirective as ɵf, TooltipContentComponent as ɵg, SERVICES as ɵh };
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/utilities.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/** @type {?} */
+var UTILITY = {
+    deepCopy: deepCopy, isDefined: isDefined, isEmptyObject: isEmptyObject, createMap: createMap, isArray: isArray, isObject: isObject,
+    isBoolean: isBoolean, setDataToLocal: setDataToLocal, getDataFromLocal: getDataFromLocal, removeItemFromLocal: removeItemFromLocal,
+    setDataToSession: setDataToSession, getDataFromSession: getDataFromSession, removeItemFromSession: removeItemFromSession, isEqual: isEqual,
+    isFunction: isFunction, hasKey: hasKey, sort: sort, noop: noop
+};
+
+export { BadgeComponent, ButtonComponent, CheckboxComponent, DropdownComponent, DynamicFieldsComponent, HeaderComponent, HttpService, NavComponent, NgLibrary, RadioComponent, ToastService, UTILITY, COMPONENTS as ɵa, EXPORTEDCOMPONENTS as ɵb, NavComponent as ɵc, HeaderComponent as ɵd, BadgeComponent as ɵe, ButtonComponent as ɵf, DynamicFieldsComponent as ɵg, CheckboxComponent as ɵh, RadioComponent as ɵi, DropdownComponent as ɵj, UiInput as ɵk, DIRECTIVES as ɵl, EXPORTEDDIRECTIVES as ɵm, ENTRYPOINTDIRECTIVES as ɵn, TooltipDirective as ɵo, TooltipContentComponent as ɵp, SERVICES as ɵq, HttpService as ɵr, ToastService as ɵs };
 //# sourceMappingURL=fourjs-ng-library.js.map

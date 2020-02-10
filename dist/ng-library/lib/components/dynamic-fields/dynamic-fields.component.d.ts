@@ -1,4 +1,4 @@
-import { OnInit, EventEmitter } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { Dropdown } from '../dropdown/dropdown.component';
 export interface Fields {
     label: string;
@@ -8,7 +8,7 @@ export interface Fields {
     disabled?: boolean;
     options?: string;
 }
-export interface Options {
+export interface DynamicFieldOptions {
     dropdown?: {
         [key: string]: Dropdown[];
     };
@@ -18,9 +18,9 @@ export interface Options {
         removeSecBtn?: boolean;
     };
 }
-export declare class DynamicFieldsComponent implements OnInit {
+export declare class DynamicFieldsComponent {
     fields: Fields[];
-    options: Options;
+    options: DynamicFieldOptions;
     disableDefaultAction: boolean;
     customActionBtn: {
         label: string;
@@ -45,8 +45,6 @@ export declare class DynamicFieldsComponent implements OnInit {
     primaryBtnLabel: string;
     secondaryBtnLabel: string;
     removeSecBtn: boolean;
-    constructor();
-    ngOnInit(): void;
     primaryClick(): void;
     secondaryClick(): void;
     reset(): void;

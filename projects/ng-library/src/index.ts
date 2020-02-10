@@ -12,4 +12,4 @@ export * from './lib/components';
 export * from './lib/services';
 
 // export util library
-export * from './lib/utilities';
+export { UTILITY } from './lib/utilities';

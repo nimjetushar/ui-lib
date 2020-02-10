@@ -37,7 +37,8 @@ export class DropdownComponent extends UiInput {
   @Input() staticLabel: string;
   @Input() name: string;
   @Input() tooltip: any;
-  @Input() set tooltipPosition(value: TooltipPosition) {
+  @Input()
+  set tooltipPosition(value: TooltipPosition) {
     this._tooltipPosition = value || 'top';
   }
   get tooltipPosition(): TooltipPosition {

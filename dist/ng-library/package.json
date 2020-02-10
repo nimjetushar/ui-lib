@@ -1,6 +1,6 @@
 {
   "name": "@fourjs/ng-library",
-  "version": "20.1.31",
+  "version": "20.2.9",
   "peerDependencies": {
     "@angular/common": "~8.2.0",
     "@angular/core": "^8.2.14",

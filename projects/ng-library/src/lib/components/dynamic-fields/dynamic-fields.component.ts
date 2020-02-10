@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Dropdown } from '../dropdown/dropdown.component';
 
 export interface Fields {
@@ -10,7 +10,7 @@ export interface Fields {
   options?: string;
 }
 
-export interface Options {
+export interface DynamicFieldOptions {
   dropdown?: { [key: string]: Dropdown[] };
   defaultBtn?: {
     primaryLabel?: string;
@@ -24,7 +24,7 @@ export interface Options {
   templateUrl: './dynamic-fields.component.html',
   styleUrls: ['./dynamic-fields.component.scss']
 })
-export class DynamicFieldsComponent implements OnInit {
+export class DynamicFieldsComponent {
 
   // fields to be rendered
   @Input() set fields(val: Fields[]) {
@@ -33,7 +33,7 @@ export class DynamicFieldsComponent implements OnInit {
     }
   }
   // option parameter required by component to render
-  @Input() set options(val: Options) {
+  @Input() set options(val: DynamicFieldOptions) {
     if (val) {
       if (val.dropdown) {
         this.dropdownOptions = val.dropdown;
@@ -63,10 +63,6 @@ export class DynamicFieldsComponent implements OnInit {
   primaryBtnLabel: string = 'Search';
   secondaryBtnLabel: string = 'Reset';
   removeSecBtn: boolean;
-
-  constructor() { }
-
-  ngOnInit(): void { }
 
   primaryClick(): void {
     this.primaryHandler.emit(this.data);
