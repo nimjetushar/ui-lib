@@ -269,12 +269,12 @@ ButtonComponent.propDecorators = {
  */
 class DynamicFieldsComponent {
     constructor() {
-        this.data = {};
         this.primaryHandler = new EventEmitter();
         this.secondaryHandler = new EventEmitter();
         this.renderFields = [];
         this._dropdownOptions = {};
         this._disabled = {};
+        this._data = {};
     }
     // fields to be rendered
     /**
@@ -298,6 +298,21 @@ class DynamicFieldsComponent {
             this.secondaryLabel = secondaryLabel;
             this.removeSecondaryButton = removeSecondaryButton;
         }
+    }
+    /**
+     * @param {?} data
+     * @return {?}
+     */
+    set data(data) {
+        if (data) {
+            this._data = data;
+        }
+    }
+    /**
+     * @return {?}
+     */
+    get data() {
+        return this._data || {};
     }
     /**
      * @param {?} data
@@ -385,9 +400,9 @@ DynamicFieldsComponent.propDecorators = {
     fields: [{ type: Input }],
     buttonOptions: [{ type: Input }],
     data: [{ type: Input }],
-    hideDefaultAction: [{ type: Input }],
     dropdownOptions: [{ type: Input }],
     disabledFields: [{ type: Input }],
+    hideDefaultAction: [{ type: Input }],
     primaryHandler: [{ type: Output }],
     secondaryHandler: [{ type: Output }]
 };

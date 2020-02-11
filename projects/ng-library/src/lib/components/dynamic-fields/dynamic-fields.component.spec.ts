@@ -5,6 +5,9 @@ import { DynamicFieldsComponent } from './dynamic-fields.component';
 import { ButtonComponent } from '../button/button.component';
 import { BadgeComponent } from '../badge/badge.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
+import { RadioComponent } from '../radio/radio.component';
+import { DropdownComponent } from '../dropdown/dropdown.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 describe('DynamicFieldsComponent', () => {
   let component: DynamicFieldsComponent;
@@ -16,9 +19,14 @@ describe('DynamicFieldsComponent', () => {
         DynamicFieldsComponent,
         ButtonComponent,
         BadgeComponent,
-        CheckboxComponent
+        CheckboxComponent,
+        RadioComponent,
+        DropdownComponent
       ],
-      imports: [FormsModule]
+      imports: [
+        FormsModule,
+        DropdownModule
+      ]
     })
       .compileComponents();
   }));

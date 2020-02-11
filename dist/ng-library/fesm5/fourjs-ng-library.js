@@ -304,12 +304,12 @@ var ButtonComponent = /** @class */ (function () {
  */
 var DynamicFieldsComponent = /** @class */ (function () {
     function DynamicFieldsComponent() {
-        this.data = {};
         this.primaryHandler = new EventEmitter();
         this.secondaryHandler = new EventEmitter();
         this.renderFields = [];
         this._dropdownOptions = {};
         this._disabled = {};
+        this._data = {};
     }
     Object.defineProperty(DynamicFieldsComponent.prototype, "fields", {
         // fields to be rendered
@@ -341,6 +341,25 @@ var DynamicFieldsComponent = /** @class */ (function () {
                 this.primaryLabel = primaryLabel;
                 this.secondaryLabel = secondaryLabel;
                 this.removeSecondaryButton = removeSecondaryButton;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DynamicFieldsComponent.prototype, "data", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            return this._data || {};
+        },
+        set: /**
+         * @param {?} data
+         * @return {?}
+         */
+        function (data) {
+            if (data) {
+                this._data = data;
             }
         },
         enumerable: true,
@@ -456,9 +475,9 @@ var DynamicFieldsComponent = /** @class */ (function () {
         fields: [{ type: Input }],
         buttonOptions: [{ type: Input }],
         data: [{ type: Input }],
-        hideDefaultAction: [{ type: Input }],
         dropdownOptions: [{ type: Input }],
         disabledFields: [{ type: Input }],
+        hideDefaultAction: [{ type: Input }],
         primaryHandler: [{ type: Output }],
         secondaryHandler: [{ type: Output }]
     };

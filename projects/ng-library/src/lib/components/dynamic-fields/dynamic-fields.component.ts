@@ -1,5 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { DynamicFields, DynamicFieldButtonOptions, DisabledFields, DropdownOptions } from './dynamicFields.interface';
+import {
+  DynamicFields, DynamicFieldButtonOptions,
+  DynamicFieldDisabledOptions, DynamicFieldDropdownOptions, DynamicFieldDataModel
+} from './dynamicFields.interface';
 
 @Component({
   selector: 't-dynamic-fields',
@@ -24,31 +27,40 @@ export class DynamicFieldsComponent {
     }
   }
 
-  @Input() data: { [key: string]: any } = {};
-  @Input() hideDefaultAction: boolean;
+  @Input()
+  set data(data: DynamicFieldDataModel) {
+    if (data) {
+      this._data = data;
+    }
+  }
+  get data(): DynamicFieldDataModel {
+    return this._data || {};
+  }
 
   @Input()
-  set dropdownOptions(data: DropdownOptions) {
+  set dropdownOptions(data: DynamicFieldDropdownOptions) {
     if (data) {
       this._dropdownOptions = data;
     }
   }
-  get dropdownOptions(): DropdownOptions {
+  get dropdownOptions(): DynamicFieldDropdownOptions {
     return this._dropdownOptions || {};
   }
 
   @Input()
-  set disabledFields(data: DisabledFields) {
+  set disabledFields(data: DynamicFieldDisabledOptions) {
     if (data) {
       this._disabled = data;
     }
   }
-  get disabledFields(): DisabledFields {
+  get disabledFields(): DynamicFieldDisabledOptions {
     return this._disabled || {};
   }
 
-  @Output() primaryHandler: EventEmitter<{ [key: string]: any }> = new EventEmitter();
-  @Output() secondaryHandler: EventEmitter<{ [key: string]: any }> = new EventEmitter();
+  @Input() hideDefaultAction: boolean;
+
+  @Output() primaryHandler: EventEmitter<DynamicFieldDataModel> = new EventEmitter();
+  @Output() secondaryHandler: EventEmitter<DynamicFieldDataModel> = new EventEmitter();
 
   renderFields: DynamicFields[] = [];
   removeSecondaryButton: boolean;
@@ -69,8 +81,9 @@ export class DynamicFieldsComponent {
 
   private _primaryLabel: string;
   private _secondaryLabel: string;
-  private _dropdownOptions: DropdownOptions = {};
-  private _disabled: DisabledFields = {};
+  private _dropdownOptions: DynamicFieldDropdownOptions = {};
+  private _disabled: DynamicFieldDisabledOptions = {};
+  private _data: DynamicFieldDataModel = {};
 
   primaryClick(): void {
     this.primaryHandler.emit(this.data);

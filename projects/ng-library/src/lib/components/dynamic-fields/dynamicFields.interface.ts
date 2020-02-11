@@ -13,10 +13,14 @@ export interface DynamicFieldButtonOptions {
     removeSecondaryButton?: boolean;
 }
 
-export interface DisabledFields {
+export interface DynamicFieldDisabledOptions {
     [key: string]: boolean;
 }
 
-export interface DropdownOptions {
+export interface DynamicFieldDropdownOptions {
     [key: string]: Dropdown[];
+}
+
+export interface DynamicFieldDataModel {
+    [key: string]: any;
 }

@@ -1,20 +1,14 @@
 import { EventEmitter } from '@angular/core';
-import { DynamicFields, DynamicFieldButtonOptions, DisabledFields, DropdownOptions } from './dynamicFields.interface';
+import { DynamicFields, DynamicFieldButtonOptions, DynamicFieldDisabledOptions, DynamicFieldDropdownOptions, DynamicFieldDataModel } from './dynamicFields.interface';
 export declare class DynamicFieldsComponent {
     fields: DynamicFields[];
     buttonOptions: DynamicFieldButtonOptions;
-    data: {
-        [key: string]: any;
-    };
+    data: DynamicFieldDataModel;
+    dropdownOptions: DynamicFieldDropdownOptions;
+    disabledFields: DynamicFieldDisabledOptions;
     hideDefaultAction: boolean;
-    dropdownOptions: DropdownOptions;
-    disabledFields: DisabledFields;
-    primaryHandler: EventEmitter<{
-        [key: string]: any;
-    }>;
-    secondaryHandler: EventEmitter<{
-        [key: string]: any;
-    }>;
+    primaryHandler: EventEmitter<DynamicFieldDataModel>;
+    secondaryHandler: EventEmitter<DynamicFieldDataModel>;
     renderFields: DynamicFields[];
     removeSecondaryButton: boolean;
     primaryLabel: string;
@@ -23,6 +17,7 @@ export declare class DynamicFieldsComponent {
     private _secondaryLabel;
     private _dropdownOptions;
     private _disabled;
+    private _data;
     primaryClick(): void;
     secondaryClick(): void;
     reset(): void;
