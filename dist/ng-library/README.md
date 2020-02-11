@@ -8,6 +8,7 @@
 [![Status](https://api.dependabot.com/badges/status?host=github&repo=nimjetushar/ui-lib)](https://dependabot.com)
 <br/>
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/nimjetushar/ui-library)
+[![GitHub license](https://img.shields.io/github/license/nimjetushar/ui-lib.svg)](https://github.com/nimjetushar/ui-lib/blob/master/LICENSE)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/nimjetushar/ui-lib.svg)
 
 ## Getting started:

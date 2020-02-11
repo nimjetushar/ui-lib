@@ -1,23 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Dropdown } from '../dropdown/dropdown.component';
-
-export interface Fields {
-  label: string;
-  type: 'text' | 'checkbox' | 'radio' | 'select' | 'number';
-  model: string;
-  name?: string;
-  disabled?: boolean;
-  options?: string;
-}
-
-export interface DynamicFieldOptions {
-  dropdown?: { [key: string]: Dropdown[] };
-  defaultBtn?: {
-    primaryLabel?: string;
-    secondaryLabel?: string;
-    removeSecBtn?: boolean;
-  };
-}
+import { DynamicFields, DynamicFieldButtonOptions, DisabledFields, DropdownOptions } from './dynamicFields.interface';
 
 @Component({
   selector: 't-dynamic-fields',
@@ -27,42 +9,68 @@ export interface DynamicFieldOptions {
 export class DynamicFieldsComponent {
 
   // fields to be rendered
-  @Input() set fields(val: Fields[]) {
+  @Input() set fields(val: DynamicFields[]) {
     if (val && val.length) {
       this.renderFields = val;
     }
   }
   // option parameter required by component to render
-  @Input() set options(val: DynamicFieldOptions) {
+  @Input() set buttonOptions(val: DynamicFieldButtonOptions) {
     if (val) {
-      if (val.dropdown) {
-        this.dropdownOptions = val.dropdown;
-      }
-      if (val.defaultBtn) {
-        this.primaryBtnLabel = val.defaultBtn.primaryLabel;
-        this.secondaryBtnLabel = val.defaultBtn.secondaryLabel;
-        this.removeSecBtn = val.defaultBtn.removeSecBtn;
-      }
+      const { primaryLabel, secondaryLabel, removeSecondaryButton } = val;
+      this.primaryLabel = primaryLabel;
+      this.secondaryLabel = secondaryLabel;
+      this.removeSecondaryButton = removeSecondaryButton;
     }
   }
-  // disable default action button
-  @Input() disableDefaultAction: boolean;
-  // custom action button
-  @Input() customActionBtn: {
-    label: string;
-    action: (param: { [key: string]: any }) => void;
-    badge?: string;
-  }[] = [];
+
+  @Input() data: { [key: string]: any } = {};
+  @Input() hideDefaultAction: boolean;
+
+  @Input()
+  set dropdownOptions(data: DropdownOptions) {
+    if (data) {
+      this._dropdownOptions = data;
+    }
+  }
+  get dropdownOptions(): DropdownOptions {
+    return this._dropdownOptions || {};
+  }
+
+  @Input()
+  set disabledFields(data: DisabledFields) {
+    if (data) {
+      this._disabled = data;
+    }
+  }
+  get disabledFields(): DisabledFields {
+    return this._disabled || {};
+  }
 
   @Output() primaryHandler: EventEmitter<{ [key: string]: any }> = new EventEmitter();
   @Output() secondaryHandler: EventEmitter<{ [key: string]: any }> = new EventEmitter();
 
-  renderFields: Fields[] = [];
-  data: { [key: string]: any } = {};
-  dropdownOptions: { [key: string]: Dropdown[] } = {};
-  primaryBtnLabel: string = 'Search';
-  secondaryBtnLabel: string = 'Reset';
-  removeSecBtn: boolean;
+  renderFields: DynamicFields[] = [];
+  removeSecondaryButton: boolean;
+
+  set primaryLabel(label: string) {
+    this._primaryLabel = label;
+  }
+  get primaryLabel(): string {
+    return this._primaryLabel || 'Search';
+  }
+
+  set secondaryLabel(label: string) {
+    this._secondaryLabel = label;
+  }
+  get secondaryLabel(): string {
+    return this._secondaryLabel || 'Reset';
+  }
+
+  private _primaryLabel: string;
+  private _secondaryLabel: string;
+  private _dropdownOptions: DropdownOptions = {};
+  private _disabled: DisabledFields = {};
 
   primaryClick(): void {
     this.primaryHandler.emit(this.data);

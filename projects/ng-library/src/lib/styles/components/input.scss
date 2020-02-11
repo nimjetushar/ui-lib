@@ -1,0 +1,11 @@
+input[type=text],
+input[type=number] {
+    padding      : 2px 7px;
+    border-radius: 3px;
+    outline      : none;
+    border       : 1px solid #a8a0a0;
+
+    &:focus {
+        border-color: #716c6c;
+    }
+}

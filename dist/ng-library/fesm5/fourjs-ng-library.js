@@ -304,15 +304,12 @@ var ButtonComponent = /** @class */ (function () {
  */
 var DynamicFieldsComponent = /** @class */ (function () {
     function DynamicFieldsComponent() {
-        // custom action button
-        this.customActionBtn = [];
+        this.data = {};
         this.primaryHandler = new EventEmitter();
         this.secondaryHandler = new EventEmitter();
         this.renderFields = [];
-        this.data = {};
-        this.dropdownOptions = {};
-        this.primaryBtnLabel = 'Search';
-        this.secondaryBtnLabel = 'Reset';
+        this._dropdownOptions = {};
+        this._disabled = {};
     }
     Object.defineProperty(DynamicFieldsComponent.prototype, "fields", {
         // fields to be rendered
@@ -330,7 +327,7 @@ var DynamicFieldsComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DynamicFieldsComponent.prototype, "options", {
+    Object.defineProperty(DynamicFieldsComponent.prototype, "buttonOptions", {
         // option parameter required by component to render
         set: 
         // option parameter required by component to render
@@ -340,15 +337,83 @@ var DynamicFieldsComponent = /** @class */ (function () {
          */
         function (val) {
             if (val) {
-                if (val.dropdown) {
-                    this.dropdownOptions = val.dropdown;
-                }
-                if (val.defaultBtn) {
-                    this.primaryBtnLabel = val.defaultBtn.primaryLabel;
-                    this.secondaryBtnLabel = val.defaultBtn.secondaryLabel;
-                    this.removeSecBtn = val.defaultBtn.removeSecBtn;
-                }
+                var primaryLabel = val.primaryLabel, secondaryLabel = val.secondaryLabel, removeSecondaryButton = val.removeSecondaryButton;
+                this.primaryLabel = primaryLabel;
+                this.secondaryLabel = secondaryLabel;
+                this.removeSecondaryButton = removeSecondaryButton;
             }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DynamicFieldsComponent.prototype, "dropdownOptions", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            return this._dropdownOptions || {};
+        },
+        set: /**
+         * @param {?} data
+         * @return {?}
+         */
+        function (data) {
+            if (data) {
+                this._dropdownOptions = data;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DynamicFieldsComponent.prototype, "disabledFields", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            return this._disabled || {};
+        },
+        set: /**
+         * @param {?} data
+         * @return {?}
+         */
+        function (data) {
+            if (data) {
+                this._disabled = data;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DynamicFieldsComponent.prototype, "primaryLabel", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            return this._primaryLabel || 'Search';
+        },
+        set: /**
+         * @param {?} label
+         * @return {?}
+         */
+        function (label) {
+            this._primaryLabel = label;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DynamicFieldsComponent.prototype, "secondaryLabel", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            return this._secondaryLabel || 'Reset';
+        },
+        set: /**
+         * @param {?} label
+         * @return {?}
+         */
+        function (label) {
+            this._secondaryLabel = label;
         },
         enumerable: true,
         configurable: true
@@ -383,15 +448,17 @@ var DynamicFieldsComponent = /** @class */ (function () {
     DynamicFieldsComponent.decorators = [
         { type: Component, args: [{
                     selector: 't-dynamic-fields',
-                    template: "<div class=\"dynamic-fields\">\n  <div *ngFor=\"let field of renderFields\" [ngSwitch]=\"field.type\" class='input-element'>\n\n    <!-- input type text -->\n    <div *ngSwitchCase=\"'text'\" class='input-text'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <input [id]='field.model' type=\"text\" [name]='field.name'\n        [(ngModel)]=\"data[field.model]\" />\n    </div>\n\n    <div *ngSwitchCase=\"'number'\" class='input-number'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <input [id]='field.model' type=\"number\" [name]='field.name'\n        [(ngModel)]=\"data[field.model]\" />\n    </div>\n\n    <!-- input type checkbox -->\n    <div *ngSwitchCase=\"'checkbox'\" class='input-checkbox'>\n      <t-checkbox [label]=\"field.label\" [(model)]=\"data[field.model]\" [name]='field.name'>\n      </t-checkbox>\n    </div>\n\n    <!-- input type checkbox -->\n    <div *ngSwitchCase=\"'radio'\" class='input-radio'>\n      <label [for]=\"field.model\">\n        <span>{{field.label}}</span>\n        <input [id]='field.model' type=\"radio\" [(ngModel)]=\"data[field.model]\"\n          [name]='field.name' />\n      </label>\n    </div>\n\n    <!-- dropdown -->\n    <div *ngSwitchCase=\"'select'\" class='input-select'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <select [id]='field.model' [(ngModel)]=\"data[field.model]\">\n        <option *ngFor=\"let item of dropdownOptions[field.options]\" [value]=\"item.value\">\n          {{item.label}}</option>\n      </select>\n    </div>\n  </div>\n\n  <div class=\"button-container\">\n    <div class=\"default-button\" *ngIf=\"!disableDefaultAction\">\n      <t-button [label]=\"primaryBtnLabel\" type=\"primary\" (click)=\"primaryClick()\">\n      </t-button>\n      <t-button *ngIf=\"!removeSecBtn\" [label]=\"secondaryBtnLabel\" type=\"secondary\"\n        (click)=\"secondaryClick()\">\n      </t-button>\n    </div>\n    <div class=\"custom-action-button\" *ngIf=\"disableDefaultAction\">\n      <span>\n        <t-button></t-button>\n      </span>\n    </div>\n  </div>\n</div>",
+                    template: "<div class=\"dynamic-fields\">\n  <div *ngFor=\"let field of renderFields\" [ngSwitch]=\"field.type\" class='input-element'>\n\n    <!-- input type text -->\n    <div *ngSwitchCase=\"'text'\" class='input-text'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <input [id]='field.model' type=\"text\" [name]='field.name' [(ngModel)]=\"data[field.model]\"\n        [disabled]=\"disabledFields[field.model]\" />\n    </div>\n\n    <div *ngSwitchCase=\"'number'\" class='input-number'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <input [id]='field.model' type=\"number\" [name]='field.name' [(ngModel)]=\"data[field.model]\"\n        [disabled]=\"disabledFields[field.model]\" />\n    </div>\n\n    <!-- input type checkbox -->\n    <div *ngSwitchCase=\"'checkbox'\" class='input-checkbox'>\n      <t-checkbox [label]=\"field.label\" [(model)]=\"data[field.model]\" [name]='field.name'\n        [disabled]=\"disabledFields[field.model]\">\n      </t-checkbox>\n    </div>\n\n    <!-- input type radio -->\n    <div *ngSwitchCase=\"'radio'\" class='input-radio'>\n      <t-radio [label]=\"field.label\" [(ngModel)]=\"data[field.model]\" [name]='field.name'\n        [disabled]=\"disabledFields[field.model]\"></t-radio>\n    </div>\n\n    <!-- dropdown -->\n    <div *ngSwitchCase=\"'select'\" class='input-select'>\n      <t-dropdown [placeholder]=\"field.label\" [(ngModel)]=\"data[field.model]\" [options]=\"dropdownOptions[field.model]\"\n        [name]='field.name' [disabled]=\"disabledFields[field.model]\">\n      </t-dropdown>\n    </div>\n  </div>\n\n  <div class=\"button-container\">\n    <div class=\"default-button\" *ngIf=\"!hideDefaultAction\">\n      <t-button [label]=\"primaryLabel\" type=\"primary\" (click)=\"primaryClick()\">\n      </t-button>\n      <t-button *ngIf=\"!removeSecondaryButton\" [label]=\"secondaryLabel\" type=\"secondary\" (click)=\"secondaryClick()\">\n      </t-button>\n    </div>\n  </div>\n</div>",
                     styles: [".dynamic-fields .button-container{-ms-flex-pack:end;justify-content:flex-end;display:-ms-flexbox;display:flex}.dynamic-fields .button-container t-button{margin:0 .3125rem}.dynamic-fields input,.dynamic-fields select{margin:0 .625rem;outline:0}.dynamic-fields .input-checkbox,.dynamic-fields .input-number,.dynamic-fields .input-radio,.dynamic-fields .input-select,.dynamic-fields .input-text{margin:.625rem .3125rem}"]
                 }] }
     ];
     DynamicFieldsComponent.propDecorators = {
         fields: [{ type: Input }],
-        options: [{ type: Input }],
-        disableDefaultAction: [{ type: Input }],
-        customActionBtn: [{ type: Input }],
+        buttonOptions: [{ type: Input }],
+        data: [{ type: Input }],
+        hideDefaultAction: [{ type: Input }],
+        dropdownOptions: [{ type: Input }],
+        disabledFields: [{ type: Input }],
         primaryHandler: [{ type: Output }],
         secondaryHandler: [{ type: Output }]
     };

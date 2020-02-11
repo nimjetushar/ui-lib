@@ -9,11 +9,13 @@
 @import "./lib/styles/fonts.scss";
 @import "./lib/styles/variable.scss";
 @import "./lib/styles/utility.scss";
-@import "./lib/styles/table.scss";
+
+@import "./lib/styles/components/table.scss";
+@import "./lib/styles/components/input.scss";
 
 * {
-    font-family: $font-regular;
-    outline: 0;
+    font-family           : $font-regular;
+    outline               : 0;
     -webkit-font-smoothing: antialiased;
 }
 
