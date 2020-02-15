@@ -1,6 +1,7 @@
 {
   "name": "ui-lib",
   "version": "20.2.9",
+  "description": "UI library featuring various angular based components",
   "scripts": {
     "build": "ng build ng-library && gulp",
     "test": "ng test ng-library",
