@@ -6,6 +6,7 @@ import { DynamicFieldsComponent } from './dynamic-fields/dynamic-fields.componen
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { RadioComponent } from './radio/radio.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { ToastComponent } from './toast/toast.component';
 
 export const COMPONENTS = [
     NavComponent,
@@ -15,7 +16,8 @@ export const COMPONENTS = [
     DynamicFieldsComponent,
     CheckboxComponent,
     RadioComponent,
-    DropdownComponent
+    DropdownComponent,
+    ToastComponent
 ];
 
 export const EXPORTEDCOMPONENTS = [
@@ -26,7 +28,8 @@ export const EXPORTEDCOMPONENTS = [
     DynamicFieldsComponent,
     CheckboxComponent,
     RadioComponent,
-    DropdownComponent
+    DropdownComponent,
+    ToastComponent
 ];
 
 

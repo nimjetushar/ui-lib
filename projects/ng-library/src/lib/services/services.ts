@@ -1,7 +1,5 @@
-import { HttpService } from './http.service';
-import { ToastService } from './toast.service';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 export const SERVICES = [
-    HttpService,
-    ToastService
+    MessageService
 ];

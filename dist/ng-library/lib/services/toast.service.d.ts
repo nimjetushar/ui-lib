@@ -1,13 +1,20 @@
-import { ToastrService, ActiveToast, IndividualConfig } from 'ngx-toastr';
-export { ActiveToast } from 'ngx-toastr';
-export interface ToastParameters extends IndividualConfig {
-    message?: string;
+import { MessageService } from 'primeng/components/common/messageservice';
+export interface ToastParameters {
+    id?: any;
+    key?: string;
     title?: string;
-    type?: 'success' | 'error' | 'warning' | 'info';
+    message?: string;
+    type?: 'success' | 'error' | 'warn' | 'info';
+    closeButton?: boolean;
+    timeOut?: number;
+    sticky?: boolean;
+    data?: any;
 }
 export declare class ToastService {
-    private toastr;
+    private messageService;
     private defaultParam;
-    constructor(toastr: ToastrService);
-    show(toastParam: Partial<ToastParameters>): ActiveToast<any>;
+    constructor(messageService: MessageService);
+    show(toastParam: ToastParameters): void;
+    showMultiple(toastParam: ToastParameters[]): void;
+    private formatConfig;
 }

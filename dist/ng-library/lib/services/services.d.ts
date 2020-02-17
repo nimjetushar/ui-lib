@@ -1,3 +1,2 @@
-import { HttpService } from './http.service';
-import { ToastService } from './toast.service';
-export declare const SERVICES: (typeof HttpService | typeof ToastService)[];
+import { MessageService } from 'primeng/components/common/messageservice';
+export declare const SERVICES: (typeof MessageService)[];

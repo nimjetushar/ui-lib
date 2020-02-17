@@ -1,13 +1,14 @@
-import { __extends, __spread } from 'tslib';
-import { Component, Input, Output, EventEmitter, forwardRef, ViewEncapsulation, Injectable, ɵɵdefineInjectable, ɵɵinject, ElementRef, ChangeDetectorRef, Directive, ViewContainerRef, ComponentFactoryResolver, HostListener, NgModule } from '@angular/core';
+import { __extends, __spread, __values } from 'tslib';
+import { Component, Input, Output, EventEmitter, forwardRef, ViewEncapsulation, ElementRef, ChangeDetectorRef, Directive, ViewContainerRef, ComponentFactoryResolver, HostListener, NgModule, Injectable, ɵɵdefineInjectable, ɵɵinject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
-import { ToastrService, ToastrModule } from 'ngx-toastr';
 import { DropdownModule } from 'primeng/dropdown';
+import { ToastModule } from 'primeng/toast';
 import { filter } from 'rxjs/operators';
 import { noop, deepCopy, isDefined, isEmptyObject, createMap, isArray, isObject, isBoolean, setDataToLocal, getDataFromLocal, removeItemFromLocal, setDataToSession, getDataFromSession, removeItemFromSession, isEqual, isFunction, hasKey, sort } from 'tutility';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 /**
  * @fileoverview added by tsickle
@@ -772,6 +773,31 @@ var DropdownComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
+ * Generated from: lib/components/toast/toast.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var ToastComponent = /** @class */ (function () {
+    function ToastComponent() {
+        this.position = 'top-right';
+    }
+    ToastComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 't-toast',
+                    template: "<p-toast \r\n    [position]=\"position\"\r\n    [style.z-index]=\"baseZIndex\"\r\n></p-toast>",
+                    encapsulation: ViewEncapsulation.None,
+                    styles: [""]
+                }] }
+    ];
+    ToastComponent.propDecorators = {
+        position: [{ type: Input }],
+        autoZIndex: [{ type: Input }],
+        baseZIndex: [{ type: Input }]
+    };
+    return ToastComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
  * Generated from: lib/components/components.ts
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
@@ -784,7 +810,8 @@ var COMPONENTS = [
     DynamicFieldsComponent,
     CheckboxComponent,
     RadioComponent,
-    DropdownComponent
+    DropdownComponent,
+    ToastComponent
 ];
 /** @type {?} */
 var EXPORTEDCOMPONENTS = [
@@ -795,138 +822,9 @@ var EXPORTEDCOMPONENTS = [
     DynamicFieldsComponent,
     CheckboxComponent,
     RadioComponent,
-    DropdownComponent
+    DropdownComponent,
+    ToastComponent
 ];
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/services/http.service.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var HttpService = /** @class */ (function () {
-    function HttpService(http) {
-        this.http = http;
-        /** @type {?} */
-        var header = new HttpHeaders()
-            .set('Content-Type', 'application/json');
-        this.header = header;
-    }
-    /**
-     * @param {?} url
-     * @param {?=} params
-     * @return {?}
-     */
-    HttpService.prototype.deleteRequest = /**
-     * @param {?} url
-     * @param {?=} params
-     * @return {?}
-     */
-    function (url, params) {
-        return this.http.delete(url, { headers: this.header, params: params });
-    };
-    /**
-     * @param {?} url
-     * @param {?} params
-     * @return {?}
-     */
-    HttpService.prototype.getRequest = /**
-     * @param {?} url
-     * @param {?} params
-     * @return {?}
-     */
-    function (url, params) {
-        return this.http.get(url, { headers: this.header, params: params });
-    };
-    /**
-     * @param {?} url
-     * @param {?} body
-     * @return {?}
-     */
-    HttpService.prototype.postRequest = /**
-     * @param {?} url
-     * @param {?} body
-     * @return {?}
-     */
-    function (url, body) {
-        return this.http.post(url, body, { headers: this.header });
-    };
-    /**
-     * @param {?} url
-     * @param {?} body
-     * @return {?}
-     */
-    HttpService.prototype.putRequest = /**
-     * @param {?} url
-     * @param {?} body
-     * @return {?}
-     */
-    function (url, body) {
-        return this.http.put(url, body, { headers: this.header });
-    };
-    HttpService.decorators = [
-        { type: Injectable, args: [{
-                    providedIn: 'root'
-                },] }
-    ];
-    /** @nocollapse */
-    HttpService.ctorParameters = function () { return [
-        { type: HttpClient }
-    ]; };
-    /** @nocollapse */ HttpService.ngInjectableDef = ɵɵdefineInjectable({ factory: function HttpService_Factory() { return new HttpService(ɵɵinject(HttpClient)); }, token: HttpService, providedIn: "root" });
-    return HttpService;
-}());
-
-/**
- * @fileoverview added by tsickle
- * Generated from: lib/services/toast.service.ts
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var ToastService = /** @class */ (function () {
-    function ToastService(toastr) {
-        this.toastr = toastr;
-        this.defaultParam = {
-            type: 'success',
-            enableHtml: true,
-            timeOut: 10000,
-            closeButton: false
-        };
-    }
-    /**
-     * @param {?} toastParam
-     * @return {?}
-     */
-    ToastService.prototype.show = /**
-     * @param {?} toastParam
-     * @return {?}
-     */
-    function (toastParam) {
-        /** @type {?} */
-        var param = Object.assign({}, this.defaultParam, toastParam);
-        switch (toastParam.type) {
-            case 'info':
-                return this.toastr.info(toastParam.message, toastParam.title, param);
-            case 'success':
-                return this.toastr.success(toastParam.message, toastParam.title, param);
-            case 'error':
-                return this.toastr.error(toastParam.message, toastParam.title, param);
-            case 'warning':
-                return this.toastr.warning(toastParam.message, toastParam.title, param);
-            default:
-                throw new Error('invalid parameter');
-        }
-    };
-    ToastService.decorators = [
-        { type: Injectable, args: [{
-                    providedIn: 'root'
-                },] }
-    ];
-    /** @nocollapse */
-    ToastService.ctorParameters = function () { return [
-        { type: ToastrService }
-    ]; };
-    /** @nocollapse */ ToastService.ngInjectableDef = ɵɵdefineInjectable({ factory: function ToastService_Factory() { return new ToastService(ɵɵinject(ToastrService)); }, token: ToastService, providedIn: "root" });
-    return ToastService;
-}());
 
 /**
  * @fileoverview added by tsickle
@@ -935,8 +833,7 @@ var ToastService = /** @class */ (function () {
  */
 /** @type {?} */
 var SERVICES = [
-    HttpService,
-    ToastService
+    MessageService
 ];
 
 /**
@@ -1347,8 +1244,8 @@ var NgLibrary = /** @class */ (function () {
                         HttpClientModule,
                         RouterModule,
                         FormsModule,
-                        ToastrModule.forRoot(),
-                        DropdownModule
+                        DropdownModule,
+                        ToastModule
                     ],
                     providers: __spread(SERVICES),
                     exports: __spread([
@@ -1364,6 +1261,195 @@ var NgLibrary = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
+ * Generated from: lib/services/http.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var HttpService = /** @class */ (function () {
+    function HttpService(http) {
+        this.http = http;
+        /** @type {?} */
+        var header = new HttpHeaders()
+            .set('Content-Type', 'application/json');
+        this.header = header;
+    }
+    /**
+     * @param {?} url
+     * @param {?=} params
+     * @return {?}
+     */
+    HttpService.prototype.deleteRequest = /**
+     * @param {?} url
+     * @param {?=} params
+     * @return {?}
+     */
+    function (url, params) {
+        return this.http.delete(url, { headers: this.header, params: params });
+    };
+    /**
+     * @param {?} url
+     * @param {?} params
+     * @return {?}
+     */
+    HttpService.prototype.getRequest = /**
+     * @param {?} url
+     * @param {?} params
+     * @return {?}
+     */
+    function (url, params) {
+        return this.http.get(url, { headers: this.header, params: params });
+    };
+    /**
+     * @param {?} url
+     * @param {?} body
+     * @return {?}
+     */
+    HttpService.prototype.postRequest = /**
+     * @param {?} url
+     * @param {?} body
+     * @return {?}
+     */
+    function (url, body) {
+        return this.http.post(url, body, { headers: this.header });
+    };
+    /**
+     * @param {?} url
+     * @param {?} body
+     * @return {?}
+     */
+    HttpService.prototype.putRequest = /**
+     * @param {?} url
+     * @param {?} body
+     * @return {?}
+     */
+    function (url, body) {
+        return this.http.put(url, body, { headers: this.header });
+    };
+    HttpService.decorators = [
+        { type: Injectable, args: [{
+                    providedIn: 'root'
+                },] }
+    ];
+    /** @nocollapse */
+    HttpService.ctorParameters = function () { return [
+        { type: HttpClient }
+    ]; };
+    /** @nocollapse */ HttpService.ngInjectableDef = ɵɵdefineInjectable({ factory: function HttpService_Factory() { return new HttpService(ɵɵinject(HttpClient)); }, token: HttpService, providedIn: "root" });
+    return HttpService;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/services/toast.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var ToastService = /** @class */ (function () {
+    function ToastService(messageService) {
+        this.messageService = messageService;
+        this.defaultParam = {
+            severity: 'success',
+            life: 5000,
+            closable: false
+        };
+    }
+    /**
+     * @param {?} toastParam
+     * @return {?}
+     */
+    ToastService.prototype.show = /**
+     * @param {?} toastParam
+     * @return {?}
+     */
+    function (toastParam) {
+        /** @type {?} */
+        var param = this.formatConfig(toastParam);
+        this.messageService.add(param);
+    };
+    /**
+     * @param {?} toastParam
+     * @return {?}
+     */
+    ToastService.prototype.showMultiple = /**
+     * @param {?} toastParam
+     * @return {?}
+     */
+    function (toastParam) {
+        var e_1, _a;
+        if (!toastParam || toastParam && !toastParam.length) {
+            return;
+        }
+        /** @type {?} */
+        var param = [];
+        try {
+            for (var toastParam_1 = __values(toastParam), toastParam_1_1 = toastParam_1.next(); !toastParam_1_1.done; toastParam_1_1 = toastParam_1.next()) {
+                var item = toastParam_1_1.value;
+                param.push(this.formatConfig(item));
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (toastParam_1_1 && !toastParam_1_1.done && (_a = toastParam_1.return)) _a.call(toastParam_1);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+        this.messageService.addAll(param);
+    };
+    /**
+     * @private
+     * @param {?} toastParam
+     * @return {?}
+     */
+    ToastService.prototype.formatConfig = /**
+     * @private
+     * @param {?} toastParam
+     * @return {?}
+     */
+    function (toastParam) {
+        /** @type {?} */
+        var param = Object.assign({}, this.defaultParam);
+        var id = toastParam.id, key = toastParam.key, title = toastParam.title, message = toastParam.message, type = toastParam.type, closeButton = toastParam.closeButton, timeOut = toastParam.timeOut, sticky = toastParam.sticky, data = toastParam.data;
+        if (id) {
+            param.id = id;
+        }
+        if (key) {
+            param.key = key;
+        }
+        if (title) {
+            param.summary = title;
+        }
+        if (message) {
+            param.detail = message;
+        }
+        if (type) {
+            param.severity = type;
+        }
+        if (closeButton) {
+            param.closable = closeButton;
+        }
+        if (timeOut) {
+            param.life = timeOut;
+        }
+        if (sticky) {
+            param.sticky = sticky;
+        }
+        if (data) {
+            param.data = data;
+        }
+        return param;
+    };
+    ToastService.decorators = [
+        { type: Injectable, args: [{ providedIn: 'root' },] }
+    ];
+    /** @nocollapse */
+    ToastService.ctorParameters = function () { return [
+        { type: MessageService }
+    ]; };
+    /** @nocollapse */ ToastService.ngInjectableDef = ɵɵdefineInjectable({ factory: function ToastService_Factory() { return new ToastService(ɵɵinject(MessageService)); }, token: ToastService, providedIn: "root" });
+    return ToastService;
+}());
+
+/**
+ * @fileoverview added by tsickle
  * Generated from: lib/utilities.ts
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
@@ -1375,5 +1461,5 @@ var UTILITY = {
     isFunction: isFunction, hasKey: hasKey, sort: sort, noop: noop
 };
 
-export { BadgeComponent, ButtonComponent, CheckboxComponent, DropdownComponent, DynamicFieldsComponent, HeaderComponent, HttpService, NavComponent, NgLibrary, RadioComponent, ToastService, UTILITY, COMPONENTS as ɵa, EXPORTEDCOMPONENTS as ɵb, NavComponent as ɵc, HeaderComponent as ɵd, BadgeComponent as ɵe, ButtonComponent as ɵf, DynamicFieldsComponent as ɵg, CheckboxComponent as ɵh, RadioComponent as ɵi, DropdownComponent as ɵj, UiInput as ɵk, DIRECTIVES as ɵl, EXPORTEDDIRECTIVES as ɵm, ENTRYPOINTDIRECTIVES as ɵn, TooltipDirective as ɵo, TooltipContentComponent as ɵp, SERVICES as ɵq, HttpService as ɵr, ToastService as ɵs };
+export { BadgeComponent, ButtonComponent, CheckboxComponent, DropdownComponent, DynamicFieldsComponent, HeaderComponent, HttpService, NavComponent, NgLibrary, RadioComponent, ToastService, UTILITY, COMPONENTS as ɵa, EXPORTEDCOMPONENTS as ɵb, NavComponent as ɵc, HeaderComponent as ɵd, BadgeComponent as ɵe, ButtonComponent as ɵf, DynamicFieldsComponent as ɵg, CheckboxComponent as ɵh, RadioComponent as ɵi, DropdownComponent as ɵj, UiInput as ɵk, ToastComponent as ɵl, DIRECTIVES as ɵm, EXPORTEDDIRECTIVES as ɵn, ENTRYPOINTDIRECTIVES as ɵo, TooltipDirective as ɵp, TooltipContentComponent as ɵq, SERVICES as ɵr };
 //# sourceMappingURL=fourjs-ng-library.js.map

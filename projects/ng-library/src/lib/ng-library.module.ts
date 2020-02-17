@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ToastrModule } from 'ngx-toastr';
 import { DropdownModule } from 'primeng/dropdown';
+import { ToastModule } from 'primeng/toast';
 
 import { EXPORTEDCOMPONENTS, COMPONENTS } from './components/components';
 import { SERVICES } from './services/services';
@@ -20,8 +20,8 @@ import { DIRECTIVES, ENTRYPOINTDIRECTIVES, EXPORTEDDIRECTIVES } from './directiv
     HttpClientModule,
     RouterModule,
     FormsModule,
-    ToastrModule.forRoot(),
-    DropdownModule
+    DropdownModule,
+    ToastModule
   ],
   providers: [
     ...SERVICES

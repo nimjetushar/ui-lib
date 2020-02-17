@@ -12,9 +12,8 @@ export { DynamicFieldsComponent as ɵg } from './lib/components/dynamic-fields/d
 export { HeaderComponent as ɵd } from './lib/components/header/header.component';
 export { NavComponent as ɵc } from './lib/components/nav/nav.component';
 export { RadioComponent as ɵi } from './lib/components/radio/radio.component';
-export { DIRECTIVES as ɵl, ENTRYPOINTDIRECTIVES as ɵn, EXPORTEDDIRECTIVES as ɵm } from './lib/directives/directives';
-export { TooltipDirective as ɵo } from './lib/directives/tooltip/tooltip.directive';
-export { TooltipContent as ɵp } from './lib/directives/tooltip/tootlip.content';
-export { HttpService as ɵr } from './lib/services/http.service';
-export { SERVICES as ɵq } from './lib/services/services';
-export { ToastService as ɵs } from './lib/services/toast.service';
+export { ToastComponent as ɵl } from './lib/components/toast/toast.component';
+export { DIRECTIVES as ɵm, ENTRYPOINTDIRECTIVES as ɵo, EXPORTEDDIRECTIVES as ɵn } from './lib/directives/directives';
+export { TooltipDirective as ɵp } from './lib/directives/tooltip/tooltip.directive';
+export { TooltipContent as ɵq } from './lib/directives/tooltip/tootlip.content';
+export { SERVICES as ɵr } from './lib/services/services';
