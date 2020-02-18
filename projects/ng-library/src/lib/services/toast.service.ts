@@ -19,7 +19,7 @@ export class ToastService {
 
   private defaultParam: Message = {
     severity: 'success',
-    life: 5000
+    life: 4000
   };
 
   constructor(private messageService: MessageService) { }
