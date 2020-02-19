@@ -1,4 +1,4 @@
-export { NgLibrary } from './lib/ng-library.module';
-export * from './lib/components';
-export * from './lib/services';
-export { UTILITY } from './lib/utilities';
+export { NgLibrary } from './ng-library.module';
+export * from './components';
+export * from './services';
+export { UTILITY } from './utilities';

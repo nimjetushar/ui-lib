@@ -1,16 +1,16 @@
 @import "grid-styled-css/src/grid.scss";
 @import "font-awesome/scss/font-awesome.scss";
-@import "./lib/styles/normalize.scss";
+@import "./styles/normalize.scss";
 @import "primeicons/primeicons.css";
 @import "primeng/resources/primeng.min.css";
 @import "primeng/resources/themes/nova-dark/theme.css";
 
-@import "./lib/styles/fonts.scss";
-@import "./lib/styles/variable.scss";
-@import "./lib/styles/utility.scss";
+@import "./styles/fonts.scss";
+@import "./styles/variable.scss";
+@import "./styles/utility.scss";
 
-@import "./lib/styles/components/table.scss";
-@import "./lib/styles/components/input.scss";
+@import "./styles/components/table.scss";
+@import "./styles/components/input.scss";
 
 * {
     font-family           : $font-regular;

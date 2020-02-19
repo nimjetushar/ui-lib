@@ -3,13 +3,13 @@
  */
 
 //  Export lib module
-export { NgLibrary } from './lib/ng-library.module';
+export { NgLibrary } from './ng-library.module';
 
 // components exports
-export * from './lib/components';
+export * from './components';
 
 // Service export
-export * from './lib/services';
+export * from './services';
 
 // export util library
-export { UTILITY } from './lib/utilities';
+export { UTILITY } from './utilities';
