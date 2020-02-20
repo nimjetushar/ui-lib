@@ -4,6 +4,8 @@ import { ToastService } from './toast.service';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/components/common/messageservice';
 
+const life = 4000;
+
 describe('ToastService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [ToastModule],
@@ -19,13 +21,13 @@ describe('ToastService', () => {
     const service: ToastService = TestBed.get(ToastService);
     spyOn(service['messageService'], 'add');
     service.show({ type: 'success' });
-    expect(service['messageService'].add).toHaveBeenCalledWith({ severity: 'success', life: 5000 });
+    expect(service['messageService'].add).toHaveBeenCalledWith({ severity: 'success', life });
   });
 
   it('should show error toast', () => {
     const service: ToastService = TestBed.get(ToastService);
     spyOn(service['messageService'], 'add');
     service.show({ type: 'error' });
-    expect(service['messageService'].add).toHaveBeenCalledWith({ severity: 'error', life: 5000 });
+    expect(service['messageService'].add).toHaveBeenCalledWith({ severity: 'error', life });
   });
 });

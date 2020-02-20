@@ -8,7 +8,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class ToastComponent {
 
-  @Input() position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center' | 'center' = 'top-right';
+  @Input() position: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center' | 'center' = 'top-right';
   @Input() baseZIndex: number;
   @Input() key: string;
 }
