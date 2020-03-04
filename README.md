@@ -14,14 +14,65 @@
 
 ## Getting started:
 
-Download / clone repositry from [https://github.com/nimjetushar/ui-lib.git](https://github.com/nimjetushar/ui-lib.git).
+Install library
 
-Install dependencies ```npm install``` <br>
-Create build ```npm run build``` 
+``` npm i @fourjs/ng-library --save ```
+Note: Install peer dependencies.
 
-Required ``` BrowserAnimationsModule ```
+Import NgLibrary into @NgModule
 
-Place the generated build from dist folder into respective project directory and import the js file and scss file into your project. 
+```
+import { NgLibrary } from '@fourjs/ng-library';
+
+@NgModule({
+  declarations: [DemoWrapperComponent],
+  imports: [
+    NgLibrary,
+    BrowserAnimationsModule
+    // other modules imports
+    ...
+  ]
+  ...
+})
+
+```
+
+Add `"node_modules/@fourjs/ng-library/styles.css"` into of angular.json
+```
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "project-name": {
+      "projectType": "application",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            ...
+            "styles": [
+              "src/styles.scss",
+              "node_modules/@fourjs/ng-library/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+           ...
+          }
+        },
+        ...
+      }
+    }},
+  "defaultProject": "project-name"
+}
+
+```
+
+For API Documentation refer [https://nimjetushar.github.io/ui-lib/](https://nimjetushar.github.io/ui-lib/)
+
 
 ## License
 [![GitHub license](https://img.shields.io/github/license/nimjetushar/ui-lib.svg)](https://github.com/nimjetushar/ui-lib/blob/master/LICENSE)
