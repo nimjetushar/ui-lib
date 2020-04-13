@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { ToastService } from './toast.service';
 import { ToastModule } from 'primeng/toast';
-import { MessageService } from 'primeng/components/common/messageservice';
+import { MessageService } from 'primeng/api';
 
 const life = 4000;
 

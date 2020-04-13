@@ -41,13 +41,17 @@ function images() {
   return gulp.src([
     'node_modules/primeng/resources/images/*'
   ])
-    .pipe(gulp.dest(imgDest))
+    .pipe(gulp.dest(imgDest));
 }
 
 function moveReadme() {
-  return gulp.src(['README.md']).pipe(gulp.dest(baseDest))
+  return gulp.src(['README.md']).pipe(gulp.dest(baseDest));
 }
 
-const defaultTask = gulp.parallel(styles, font, images, moveStyles, moveReadme);
+function moveLicense() {
+  return gulp.src('LICENSE').pipe(gulp.dest(baseDest));
+}
+
+const defaultTask = gulp.parallel(styles, font, images, moveStyles, moveReadme, moveLicense);
 
 exports.default = defaultTask;

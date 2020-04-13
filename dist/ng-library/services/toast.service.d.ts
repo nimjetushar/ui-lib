@@ -1,4 +1,4 @@
-import { MessageService } from 'primeng/components/common/messageservice';
+import { MessageService } from 'primeng/api';
 export interface ToastParameters {
     id?: any;
     key?: string;

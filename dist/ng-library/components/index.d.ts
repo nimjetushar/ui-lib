@@ -7,3 +7,4 @@ export { DynamicFields, DynamicFieldButtonOptions, DynamicFieldDisabledOptions, 
 export { CheckboxComponent } from './checkbox/checkbox.component';
 export { RadioComponent } from './radio/radio.component';
 export { DropdownComponent, Dropdown } from './dropdown/dropdown.component';
+export { ToastComponent } from './toast/toast.component';
