@@ -6,7 +6,8 @@ export interface Dropdown {
 }
 declare type TooltipPosition = 'right' | 'left' | 'top' | 'bottom';
 export declare class DropdownComponent extends UiInput {
-    options: Dropdown[];
+    set options(value: Dropdown[]);
+    get options(): Dropdown[];
     readonly: boolean;
     disabled: boolean;
     filter: boolean;
@@ -14,7 +15,8 @@ export declare class DropdownComponent extends UiInput {
     staticLabel: string;
     name: string;
     tooltip: any;
-    tooltipPosition: TooltipPosition;
+    set tooltipPosition(value: TooltipPosition);
+    get tooltipPosition(): TooltipPosition;
     autoDisplayFirst: boolean;
     scrollHeight: string;
     autofocus: boolean;

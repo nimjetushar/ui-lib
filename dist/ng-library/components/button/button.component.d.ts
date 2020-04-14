@@ -3,8 +3,8 @@ export declare class ButtonComponent {
     badge: string;
     disabled: boolean;
     isLarge: boolean;
-    badgePosition: 'left';
-    type: 'primary' | 'secondary' | 'tertiary';
+    set badgePosition(val: 'left');
+    set type(val: 'primary' | 'secondary' | 'tertiary');
     buttonType: string;
     bPos: string;
 }

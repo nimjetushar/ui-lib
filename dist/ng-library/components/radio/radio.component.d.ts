@@ -4,7 +4,8 @@ export declare class RadioComponent {
     disabled: boolean;
     name: string;
     value: string | boolean;
-    model: boolean | string;
+    set model(value: boolean | string);
+    get model(): boolean | string;
     modelChange: EventEmitter<boolean | string>;
     checked: boolean;
     private _model;

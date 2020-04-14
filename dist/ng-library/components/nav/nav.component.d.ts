@@ -9,7 +9,8 @@ export interface MenuItem {
 export declare class NavComponent implements OnInit {
     private _router;
     menuItems: MenuItem[];
-    expanded: boolean;
+    set expanded(status: boolean);
+    get expanded(): boolean;
     diableDefaultClick: boolean;
     sliderStatus: EventEmitter<boolean>;
     menuClickTrigger: EventEmitter<{

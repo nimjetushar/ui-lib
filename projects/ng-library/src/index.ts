@@ -11,5 +11,8 @@ export * from './components';
 // Service export
 export * from './services';
 
+// Directives export
+export * from './directives';
+
 // export util library
 export { UTILITY } from './utilities';

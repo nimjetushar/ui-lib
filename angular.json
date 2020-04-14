@@ -10,7 +10,7 @@
       "prefix": "t",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "style": "scss"
         }
       },
       "architect": {
@@ -19,6 +19,11 @@
           "options": {
             "tsConfig": "projects/ng-library/tsconfig.lib.json",
             "project": "projects/ng-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-library/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
