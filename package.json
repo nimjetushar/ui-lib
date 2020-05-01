@@ -55,7 +55,7 @@
     "gulp-cssbeautify": "^2.0.1",
     "gulp-cssimport": "^7.0.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.1",
     "karma": "~4.4.1",
