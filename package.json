@@ -49,7 +49,7 @@
     "@types/node": "^13.13.4",
     "codacy-coverage": "3.4.0",
     "codelyzer": "^5.1.2",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cssbeautify": "^2.0.1",
