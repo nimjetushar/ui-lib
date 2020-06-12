@@ -24,6 +24,9 @@
     "strictInjectionParameters": true,
     "enableResourceInlining": true
   },
+  "include": [
+    "node_modules/tutility/**/*.js"
+  ],
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
