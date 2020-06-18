@@ -958,11 +958,7 @@ var NgLibrary = /** @class */ (function () {
                 ToastModule
             ],
             providers: __spread(SERVICES),
-            exports: __spread([
-                // module export
-                FormsModule,
-                HttpClientModule
-            ], EXPORTEDCOMPONENTS, EXPORTEDDIRECTIVES),
+            exports: __spread(EXPORTEDCOMPONENTS, EXPORTEDDIRECTIVES),
             entryComponents: __spread(ENTRYPOINTDIRECTIVES)
         })
     ], NgLibrary);

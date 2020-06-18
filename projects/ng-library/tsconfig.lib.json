@@ -25,6 +25,7 @@
     "enableResourceInlining": true
   },
   "include": [
+    "src",
     "node_modules/tutility/**/*.js"
   ],
   "exclude": [

@@ -910,8 +910,6 @@ NgLibrary = __decorate([
         ],
         exports: [
             // module export
-            FormsModule,
-            HttpClientModule,
             // component export
             ...EXPORTEDCOMPONENTS,
             // directive export

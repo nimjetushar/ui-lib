@@ -1166,11 +1166,7 @@
                     toast.ToastModule
                 ],
                 providers: __spread(SERVICES),
-                exports: __spread([
-                    // module export
-                    forms.FormsModule,
-                    http.HttpClientModule
-                ], EXPORTEDCOMPONENTS, EXPORTEDDIRECTIVES),
+                exports: __spread(EXPORTEDCOMPONENTS, EXPORTEDDIRECTIVES),
                 entryComponents: __spread(ENTRYPOINTDIRECTIVES)
             })
         ], NgLibrary);
