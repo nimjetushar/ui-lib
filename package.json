@@ -1,9 +1,9 @@
 {
   "name": "ui-lib",
-  "version": "20.4.14",
+  "version": "20.6.21",
   "description": "UI library featuring various angular based components",
   "scripts": {
-    "build": "ng build ng-library --prod && gulp",
+    "build": "npm run test-server && npm run lint && ng build ng-library --prod && gulp",
     "test": "ng test ng-library",
     "test-server": "ng test ng-library --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint ng-library",
@@ -34,7 +34,7 @@
     "primeng": "^9.1.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "tutility": "^1.0.4",
+    "tutility": "3.1.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

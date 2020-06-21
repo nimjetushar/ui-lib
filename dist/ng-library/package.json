@@ -1,15 +1,14 @@
 {
   "name": "@fourjs/ng-library",
-  "version": "20.4.14",
+  "version": "20.6.21",
   "description": "UI library featuring various angular based components",
   "peerDependencies": {
     "@angular/common": "~9.1.1",
     "@angular/core": "^9.1.1",
-    "@angular/cdk": "^9.2.0",
+    "@angular/cdk": "^9.2.4",
     "@angular/router": "~9.1.1",
     "@angular/forms": "~9.1.1",
-    "primeng": "^9.0.5",
-    "tutility": "^1.0.3",
+    "primeng": "^9.1.0",
     "tslib": "^1.10.0"
   },
   "main": "bundles/fourjs-ng-library.umd.js",
