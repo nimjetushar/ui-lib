@@ -7,8 +7,9 @@ import { NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast';
 import { filter } from 'rxjs/operators';
-import { noop, deepCopy, isDefined, isEmptyObject, createMap, isArray, isObject, isBoolean, setDataToLocal, getDataFromLocal, removeItemFromLocal, setDataToSession, getDataFromSession, removeItemFromSession, isEqual, isFunction, hasKey, sort } from 'tutility';
+import { noop } from 'tutility';
 import { MessageService } from 'primeng/api';
+import { deepCopy, isDefined, isEmptyObject, createMap, isArray, isObject, isBoolean, setDataToLocal, getDataFromLocal, removeItemFromLocal, setDataToSession, getDataFromSession, removeItemFromSession, isEqual, isFunction, hasKey, sort, noop as noop$1 } from 'tutility/build/utils';
 
 var NavComponent = /** @class */ (function () {
     function NavComponent(_router) {
@@ -642,6 +643,34 @@ var ToastComponent = /** @class */ (function () {
     return ToastComponent;
 }());
 
+var NavigateTopComponent = /** @class */ (function () {
+    function NavigateTopComponent() {
+        this.height = 500;
+    }
+    NavigateTopComponent.prototype.navigateToTop = function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    NavigateTopComponent.prototype.enableBtn = function () {
+        if (this.height) {
+            var top_1 = window.pageYOffset || document.documentElement.scrollTop;
+            return top_1 > this.height;
+        }
+        return true;
+    };
+    __decorate([
+        Input(),
+        __metadata("design:type", Number)
+    ], NavigateTopComponent.prototype, "height", void 0);
+    NavigateTopComponent = __decorate([
+        Component({
+            selector: 't-navigate-top',
+            template: "<div class=\"navigate-top\" *ngIf=\"enableBtn()\" (click)=\"navigateToTop()\">\n    <i class=\"fa fa-arrow-up\" aria-hidden=\"true\"></i>\n</div>",
+            styles: [""]
+        })
+    ], NavigateTopComponent);
+    return NavigateTopComponent;
+}());
+
 var COMPONENTS = [
     NavComponent,
     HeaderComponent,
@@ -651,7 +680,8 @@ var COMPONENTS = [
     CheckboxComponent,
     RadioComponent,
     DropdownComponent,
-    ToastComponent
+    ToastComponent,
+    NavigateTopComponent
 ];
 var EXPORTEDCOMPONENTS = [
     NavComponent,
@@ -662,7 +692,8 @@ var EXPORTEDCOMPONENTS = [
     CheckboxComponent,
     RadioComponent,
     DropdownComponent,
-    ToastComponent
+    ToastComponent,
+    NavigateTopComponent
 ];
 
 var SERVICES = [
@@ -1077,7 +1108,7 @@ var UTILITY = {
     deepCopy: deepCopy, isDefined: isDefined, isEmptyObject: isEmptyObject, createMap: createMap, isArray: isArray, isObject: isObject,
     isBoolean: isBoolean, setDataToLocal: setDataToLocal, getDataFromLocal: getDataFromLocal, removeItemFromLocal: removeItemFromLocal,
     setDataToSession: setDataToSession, getDataFromSession: getDataFromSession, removeItemFromSession: removeItemFromSession, isEqual: isEqual,
-    isFunction: isFunction, hasKey: hasKey, sort: sort, noop: noop
+    isFunction: isFunction, hasKey: hasKey, sort: sort, noop: noop$1
 };
 
 /*
@@ -1088,5 +1119,5 @@ var UTILITY = {
  * Generated bundle index. Do not edit.
  */
 
-export { BadgeComponent, ButtonComponent, CheckboxComponent, DropdownComponent, DynamicFieldsComponent, HeaderComponent, HttpService, NavComponent, NgLibrary, RadioComponent, ToastComponent, ToastService, TooltipDirective, UTILITY, COMPONENTS as ɵa, EXPORTEDCOMPONENTS as ɵb, NavComponent as ɵc, HeaderComponent as ɵd, BadgeComponent as ɵe, ButtonComponent as ɵf, DynamicFieldsComponent as ɵg, CheckboxComponent as ɵh, RadioComponent as ɵi, DropdownComponent as ɵj, UiInput as ɵk, ToastComponent as ɵl, DIRECTIVES as ɵm, EXPORTEDDIRECTIVES as ɵn, ENTRYPOINTDIRECTIVES as ɵo, TooltipDirective as ɵp, TooltipContentComponent as ɵq, SERVICES as ɵr };
+export { BadgeComponent, ButtonComponent, CheckboxComponent, DropdownComponent, DynamicFieldsComponent, HeaderComponent, HttpService, NavComponent, NavigateTopComponent, NgLibrary, RadioComponent, ToastComponent, ToastService, TooltipDirective, UTILITY, COMPONENTS as ɵa, EXPORTEDCOMPONENTS as ɵb, NavComponent as ɵc, HeaderComponent as ɵd, BadgeComponent as ɵe, ButtonComponent as ɵf, DynamicFieldsComponent as ɵg, CheckboxComponent as ɵh, RadioComponent as ɵi, DropdownComponent as ɵj, UiInput as ɵk, ToastComponent as ɵl, NavigateTopComponent as ɵm, DIRECTIVES as ɵn, EXPORTEDDIRECTIVES as ɵo, ENTRYPOINTDIRECTIVES as ɵp, TooltipDirective as ɵq, TooltipContentComponent as ɵr, SERVICES as ɵs };
 //# sourceMappingURL=fourjs-ng-library.js.map

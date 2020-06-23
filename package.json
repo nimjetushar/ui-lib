@@ -3,7 +3,8 @@
   "version": "20.6.21",
   "description": "UI library featuring various angular based components",
   "scripts": {
-    "build": "npm run test-server && npm run lint && ng build ng-library --prod && gulp",
+    "build": "npm run test-server && npm run lint && npm run build-only",
+    "build-only": "ng build ng-library --prod && gulp",
     "test": "ng test ng-library",
     "test-server": "ng test ng-library --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint ng-library",

@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('@angular/common/http'), require('@angular/router'), require('@angular/forms'), require('primeng/dropdown'), require('primeng/toast'), require('rxjs/operators'), require('tutility'), require('primeng/api')) :
-    typeof define === 'function' && define.amd ? define('@fourjs/ng-library', ['exports', '@angular/core', '@angular/common', '@angular/common/http', '@angular/router', '@angular/forms', 'primeng/dropdown', 'primeng/toast', 'rxjs/operators', 'tutility', 'primeng/api'], factory) :
-    (global = global || self, factory((global.fourjs = global.fourjs || {}, global.fourjs['ng-library'] = {}), global.ng.core, global.ng.common, global.ng.common.http, global.ng.router, global.ng.forms, global.dropdown, global.toast, global.rxjs.operators, global.tutility, global.api));
-}(this, (function (exports, core, common, http, router, forms, dropdown, toast, operators, tutility, api) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('@angular/common/http'), require('@angular/router'), require('@angular/forms'), require('primeng/dropdown'), require('primeng/toast'), require('rxjs/operators'), require('tutility'), require('primeng/api'), require('tutility/build/utils')) :
+    typeof define === 'function' && define.amd ? define('@fourjs/ng-library', ['exports', '@angular/core', '@angular/common', '@angular/common/http', '@angular/router', '@angular/forms', 'primeng/dropdown', 'primeng/toast', 'rxjs/operators', 'tutility', 'primeng/api', 'tutility/build/utils'], factory) :
+    (global = global || self, factory((global.fourjs = global.fourjs || {}, global.fourjs['ng-library'] = {}), global.ng.core, global.ng.common, global.ng.common.http, global.ng.router, global.ng.forms, global.dropdown, global.toast, global.rxjs.operators, global.tutility, global.api, global.utils));
+}(this, (function (exports, core, common, http, router, forms, dropdown, toast, operators, tutility, api, utils) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -850,6 +850,34 @@
         return ToastComponent;
     }());
 
+    var NavigateTopComponent = /** @class */ (function () {
+        function NavigateTopComponent() {
+            this.height = 500;
+        }
+        NavigateTopComponent.prototype.navigateToTop = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        NavigateTopComponent.prototype.enableBtn = function () {
+            if (this.height) {
+                var top_1 = window.pageYOffset || document.documentElement.scrollTop;
+                return top_1 > this.height;
+            }
+            return true;
+        };
+        __decorate([
+            core.Input(),
+            __metadata("design:type", Number)
+        ], NavigateTopComponent.prototype, "height", void 0);
+        NavigateTopComponent = __decorate([
+            core.Component({
+                selector: 't-navigate-top',
+                template: "<div class=\"navigate-top\" *ngIf=\"enableBtn()\" (click)=\"navigateToTop()\">\n    <i class=\"fa fa-arrow-up\" aria-hidden=\"true\"></i>\n</div>",
+                styles: [""]
+            })
+        ], NavigateTopComponent);
+        return NavigateTopComponent;
+    }());
+
     var COMPONENTS = [
         NavComponent,
         HeaderComponent,
@@ -859,7 +887,8 @@
         CheckboxComponent,
         RadioComponent,
         DropdownComponent,
-        ToastComponent
+        ToastComponent,
+        NavigateTopComponent
     ];
     var EXPORTEDCOMPONENTS = [
         NavComponent,
@@ -870,7 +899,8 @@
         CheckboxComponent,
         RadioComponent,
         DropdownComponent,
-        ToastComponent
+        ToastComponent,
+        NavigateTopComponent
     ];
 
     var SERVICES = [
@@ -1282,10 +1312,10 @@
     }());
 
     var UTILITY = {
-        deepCopy: tutility.deepCopy, isDefined: tutility.isDefined, isEmptyObject: tutility.isEmptyObject, createMap: tutility.createMap, isArray: tutility.isArray, isObject: tutility.isObject,
-        isBoolean: tutility.isBoolean, setDataToLocal: tutility.setDataToLocal, getDataFromLocal: tutility.getDataFromLocal, removeItemFromLocal: tutility.removeItemFromLocal,
-        setDataToSession: tutility.setDataToSession, getDataFromSession: tutility.getDataFromSession, removeItemFromSession: tutility.removeItemFromSession, isEqual: tutility.isEqual,
-        isFunction: tutility.isFunction, hasKey: tutility.hasKey, sort: tutility.sort, noop: tutility.noop
+        deepCopy: utils.deepCopy, isDefined: utils.isDefined, isEmptyObject: utils.isEmptyObject, createMap: utils.createMap, isArray: utils.isArray, isObject: utils.isObject,
+        isBoolean: utils.isBoolean, setDataToLocal: utils.setDataToLocal, getDataFromLocal: utils.getDataFromLocal, removeItemFromLocal: utils.removeItemFromLocal,
+        setDataToSession: utils.setDataToSession, getDataFromSession: utils.getDataFromSession, removeItemFromSession: utils.removeItemFromSession, isEqual: utils.isEqual,
+        isFunction: utils.isFunction, hasKey: utils.hasKey, sort: utils.sort, noop: utils.noop
     };
 
     exports.BadgeComponent = BadgeComponent;
@@ -1296,6 +1326,7 @@
     exports.HeaderComponent = HeaderComponent;
     exports.HttpService = HttpService;
     exports.NavComponent = NavComponent;
+    exports.NavigateTopComponent = NavigateTopComponent;
     exports.NgLibrary = NgLibrary;
     exports.RadioComponent = RadioComponent;
     exports.ToastComponent = ToastComponent;
@@ -1314,12 +1345,13 @@
     exports.ɵj = DropdownComponent;
     exports.ɵk = UiInput;
     exports.ɵl = ToastComponent;
-    exports.ɵm = DIRECTIVES;
-    exports.ɵn = EXPORTEDDIRECTIVES;
-    exports.ɵo = ENTRYPOINTDIRECTIVES;
-    exports.ɵp = TooltipDirective;
-    exports.ɵq = TooltipContentComponent;
-    exports.ɵr = SERVICES;
+    exports.ɵm = NavigateTopComponent;
+    exports.ɵn = DIRECTIVES;
+    exports.ɵo = EXPORTEDDIRECTIVES;
+    exports.ɵp = ENTRYPOINTDIRECTIVES;
+    exports.ɵq = TooltipDirective;
+    exports.ɵr = TooltipContentComponent;
+    exports.ɵs = SERVICES;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

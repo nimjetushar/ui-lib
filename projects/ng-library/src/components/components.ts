@@ -7,6 +7,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
 import { RadioComponent } from './radio/radio.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { ToastComponent } from './toast/toast.component';
+import { NavigateTopComponent } from './navigate-top/navigate-top.component';
 
 export const COMPONENTS = [
     NavComponent,
@@ -17,7 +18,8 @@ export const COMPONENTS = [
     CheckboxComponent,
     RadioComponent,
     DropdownComponent,
-    ToastComponent
+    ToastComponent,
+    NavigateTopComponent
 ];
 
 export const EXPORTEDCOMPONENTS = [
@@ -29,7 +31,8 @@ export const EXPORTEDCOMPONENTS = [
     CheckboxComponent,
     RadioComponent,
     DropdownComponent,
-    ToastComponent
+    ToastComponent,
+    NavigateTopComponent
 ];
 
 
