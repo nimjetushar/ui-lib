@@ -16,10 +16,18 @@
 
 Install library
 
-``` npm i @fourjs/ng-library --save ```
+` npm i @fourjs/ng-library --save `
 Note: Install peer dependencies.
+```
+
+```
 
 Import NgLibrary into @NgModule
+<br>
+Also import dependent modules 
+* BrowserAnimationsModule
+* HttpClientModule
+* FormsModule
 
 ```
 import { NgLibrary } from '@fourjs/ng-library';
@@ -28,7 +36,9 @@ import { NgLibrary } from '@fourjs/ng-library';
   declarations: [DemoWrapperComponent],
   imports: [
     NgLibrary,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
     // other modules imports
     ...
   ]
