@@ -1,14 +1,14 @@
 {
   "name": "@fourjs/ng-library",
-  "version": "20.6.25",
+  "version": "20.7.13",
   "description": "UI library featuring various angular based components",
   "peerDependencies": {
-    "@angular/common": "~9.1.1",
-    "@angular/core": "^9.1.1",
-    "@angular/cdk": "^9.2.4",
-    "@angular/router": "~9.1.1",
-    "@angular/forms": "~9.1.1",
-    "primeng": "^9.1.0"
+    "@angular/common": "9.1.1",
+    "@angular/core": "9.1.1",
+    "@angular/cdk": "9.2.4",
+    "@angular/router": "9.1.1",
+    "@angular/forms": "9.1.1",
+    "primeng": "9.1.0"
   },
   "main": "bundles/fourjs-ng-library.umd.js",
   "module": "fesm5/fourjs-ng-library.js",

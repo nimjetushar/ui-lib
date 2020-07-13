@@ -18,9 +18,7 @@ Install library
 
 ` npm i @fourjs/ng-library --save `
 Note: Install peer dependencies.
-```
-
-```
+`npm install primeng@9.1 @angular/cdk@9.2 --save`
 
 Import NgLibrary into @NgModule
 <br>
@@ -82,7 +80,6 @@ Add `"node_modules/@fourjs/ng-library/styles.css"` into of angular.json
 ```
 
 For API Documentation refer [https://nimjetushar.github.io/ui-lib/](https://nimjetushar.github.io/ui-lib/)
-
 
 ## License
 [![GitHub license](https://img.shields.io/github/license/nimjetushar/ui-lib.svg)](https://github.com/nimjetushar/ui-lib/blob/master/LICENSE)
