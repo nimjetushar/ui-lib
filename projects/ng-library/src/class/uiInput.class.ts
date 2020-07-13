@@ -1,7 +1,7 @@
-import { ControlValueAccessor } from '@angular/forms';
-import { noop } from 'tutility';
-
 // tslint:disable: no-empty
+import { ControlValueAccessor } from '@angular/forms';
+
+const noop = () => { };
 
 export class UiInput implements ControlValueAccessor {
 
