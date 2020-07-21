@@ -49,7 +49,6 @@ describe('NavComponent', () => {
     expect(component.expanded).toBeTruthy();
   });
 
-
   it('should emit event on menu toggle', () => {
     spyOn(component.sliderStatus, 'emit');
     component.toggleMenu();

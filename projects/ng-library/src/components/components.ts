@@ -34,5 +34,3 @@ export const EXPORTEDCOMPONENTS = [
     ToastComponent,
     NavigateTopComponent
 ];
-
-

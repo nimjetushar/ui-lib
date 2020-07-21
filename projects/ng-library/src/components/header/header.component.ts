@@ -13,7 +13,6 @@ export class HeaderComponent {
   @Output() sideBarToggled: EventEmitter<boolean> = new EventEmitter();
   @Output() logoClickEmitter: EventEmitter<undefined> = new EventEmitter();
 
-
   handleSidebarToggle(): void {
     this.sideBarToggled.emit(true);
   }

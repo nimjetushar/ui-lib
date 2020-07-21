@@ -1,5 +1,8 @@
 {
   "extends": "@fourjs/tslint-rules",
+  "rules": {
+    "interface-name": false
+  },
   "rulesDirectory": [
     "codelyzer"
   ]

@@ -32,9 +32,10 @@ class TooltipContentComponent implements AfterViewInit {
     left: number = -100000;
     top: number = -100000;
 
-    constructor(private element: ElementRef,
-        private cdr: ChangeDetectorRef) {
-    }
+    constructor(
+        private element: ElementRef,
+        private cdr: ChangeDetectorRef
+    ) { }
 
     ngAfterViewInit(): void {
         this.show();
@@ -64,8 +65,10 @@ class TooltipContentComponent implements AfterViewInit {
         }
     }
 
-    private positionElements(hostEl: HTMLElement, targetEl: HTMLElement,
-        positionStr: string, appendToBody: boolean = false): { top: number, left: number } {
+    private positionElements(
+        hostEl: HTMLElement, targetEl: HTMLElement,
+        positionStr: string, appendToBody: boolean = false
+    ): { top: number, left: number } {
 
         const positionStrParts = positionStr.split('-');
         const pos0 = positionStrParts[0];

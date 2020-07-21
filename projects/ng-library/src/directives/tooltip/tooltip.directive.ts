@@ -17,9 +17,10 @@ export class TooltipDirective {
     private tooltip: ComponentRef<TooltipContent>;
     private visible: boolean;
 
-    constructor(private viewContainerRef: ViewContainerRef,
-        private resolver: ComponentFactoryResolver) {
-    }
+    constructor(
+        private viewContainerRef: ViewContainerRef,
+        private resolver: ComponentFactoryResolver
+    ) { }
 
     @HostListener('focusin')
     @HostListener('mouseenter')

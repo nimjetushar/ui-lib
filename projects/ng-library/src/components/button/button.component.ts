@@ -24,6 +24,6 @@ export class ButtonComponent {
     this.buttonType = ['primary', 'secondary', 'tertiary'].includes(val) ? val : undefined;
   }
 
-  public buttonType: string;
-  public bPos: string = 'left';
+  buttonType: string;
+  bPos: string = 'left';
 }

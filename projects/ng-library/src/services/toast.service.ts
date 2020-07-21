@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MessageService } from 'primeng/api';
-import { Message } from 'primeng/api';
+import { MessageService, Message } from 'primeng/api';
 
 export interface ToastParameters {
   id?: any;
