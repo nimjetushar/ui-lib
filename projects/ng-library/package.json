@@ -1,6 +1,6 @@
 {
   "name": "@fourjs/ng-library",
-  "version": "20.7.13",
+  "version": "20.7.24",
   "description": "UI library featuring various angular based components",
   "peerDependencies": {
     "@angular/common": "9.1.1",
@@ -8,6 +8,6 @@
     "@angular/cdk": "9.2.4",
     "@angular/router": "9.1.1",
     "@angular/forms": "9.1.1",
-    "primeng": "9.1.0"
+    "primeng": "9.1.3"
   }
 }
