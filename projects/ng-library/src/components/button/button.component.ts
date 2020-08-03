@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 
+type BadgePosition = 'left' | 'right';
+type ButtonType = 'primary' | 'secondary' | 'tertiary';
+
 @Component({
   selector: 't-button',
   template: `
@@ -16,14 +19,14 @@ export class ButtonComponent {
   @Input() badge: string;
   @Input() disabled: boolean;
   @Input() isLarge: boolean;
-  @Input() set badgePosition(val: 'left') {
+  @Input() set badgePosition(val: BadgePosition) {
     this.bPos = ['right', 'left'].includes(val) ? val : 'left';
   }
 
-  @Input() set type(val: 'primary' | 'secondary' | 'tertiary') {
-    this.buttonType = ['primary', 'secondary', 'tertiary'].includes(val) ? val : undefined;
+  @Input() set type(val: ButtonType) {
+    this.buttonType = ['primary', 'secondary', 'tertiary'].includes(val) ? val : 'primary';
   }
 
-  buttonType: string;
-  bPos: string = 'left';
+  buttonType: ButtonType = 'primary';
+  bPos: BadgePosition = 'left';
 }
