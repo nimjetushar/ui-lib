@@ -8,6 +8,7 @@ import { RadioComponent } from './radio/radio.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { ToastComponent } from './toast/toast.component';
 import { NavigateTopComponent } from './navigate-top/navigate-top.component';
+import { AlertComponent } from './alert/alert.component';
 
 export const COMPONENTS = [
     NavComponent,
@@ -19,7 +20,8 @@ export const COMPONENTS = [
     RadioComponent,
     DropdownComponent,
     ToastComponent,
-    NavigateTopComponent
+    NavigateTopComponent,
+    AlertComponent
 ];
 
 export const EXPORTEDCOMPONENTS = [
@@ -32,5 +34,6 @@ export const EXPORTEDCOMPONENTS = [
     RadioComponent,
     DropdownComponent,
     ToastComponent,
-    NavigateTopComponent
+    NavigateTopComponent,
+    AlertComponent
 ];

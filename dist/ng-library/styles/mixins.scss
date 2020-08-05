@@ -1,0 +1,35 @@
+@import "./prefixer.scss";
+
+// Adds Vertical gap in Vertical Layout
+@mixin verticalGap($gap) {
+  >*:not(:last-child) {
+    margin-bottom: $gap;
+  }
+}
+
+// Adds Horizontal gap in Horizontal Layout
+@mixin horizontalGap($gap) {
+  >*:not(:last-child) {
+    margin-right: $gap;
+  }
+}
+
+// Puts child elements in vertical layout
+@mixin VGroup($gap:0, $horizontalAlign: flex-start, $verticalAlign:flex-start) {
+  @include flexbox();
+  flex-direction: column;
+  -ms-flex-direction: column;
+  @include align-items($verticalAlign);
+  @include justify-content($horizontalAlign);
+  @include verticalGap($gap)
+}
+
+// Puts child elements in horizontal layout
+@mixin HGroup($gap:0, $horizontalAlign: flex-start, $verticalAlign:flex-start) {
+  @include flexbox();
+  flex-direction: row;
+  -ms-flex-direction: row;
+  @include align-items($verticalAlign);
+  @include justify-content($horizontalAlign);
+  @include horizontalGap($gap);
+}

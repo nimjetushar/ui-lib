@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 't-navigate-top',
@@ -9,15 +9,15 @@ export class NavigateTopComponent {
 
   @Input() height: number = 500;
 
-  navigateToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  enableNavigator: boolean;
+
+  @HostListener('window:scroll')
+  scrollEvent(): void {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    this.enableNavigator = (top > this.height);
   }
 
-  enableBtn(): boolean {
-    if (this.height) {
-      const top = window.pageYOffset || document.documentElement.scrollTop;
-      return top > this.height;
-    }
-    return true;
+  navigateToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

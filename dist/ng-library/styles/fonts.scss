@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/Roboto/roboto-v19-latin-regular.eot') format('embedded-opentype'),
+        url('./fonts/Roboto/roboto-v19-latin-regular.woff2') format('woff2'),
+        url('./fonts/Roboto/roboto-v19-latin-regular.woff') format('woff'),
+        url('./fonts/Roboto/roboto-v19-latin-regular.ttf') format('truetype'),
+        url('./fonts/Roboto/roboto-v19-latin-regular.svg') format('svg');
+}
+
+$font-regular: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
