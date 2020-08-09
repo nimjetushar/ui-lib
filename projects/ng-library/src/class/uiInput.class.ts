@@ -7,7 +7,7 @@ export class UiInput implements ControlValueAccessor {
 
     onChange: any = noop;
     onTouched: any = noop;
-    writeValue(obj: any): void { }
+    writeValue(_obj: any): void { }
 
     registerOnChange(fn: any): void {
         this.onChange = fn;
@@ -17,5 +17,5 @@ export class UiInput implements ControlValueAccessor {
         this.onTouched = fn;
     }
 
-    setDisabledState?(isDisabled: boolean): void { }
+    setDisabledState?(_isDisabled: boolean): void { }
 }
