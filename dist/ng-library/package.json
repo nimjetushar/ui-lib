@@ -1,6 +1,6 @@
 {
   "name": "@fourjs/ng-library",
-  "version": "20.8.3",
+  "version": "20.8.6",
   "description": "UI library featuring various angular based components",
   "peerDependencies": {
     "@angular/common": "9.1.1",
@@ -18,11 +18,9 @@
   "fesm5": "fesm5/fourjs-ng-library.js",
   "fesm2015": "fesm2015/fourjs-ng-library.js",
   "typings": "fourjs-ng-library.d.ts",
+  "metadata": "fourjs-ng-library.metadata.json",
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.10.0"
-  },
-  "scripts": {
-    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
   }
 }

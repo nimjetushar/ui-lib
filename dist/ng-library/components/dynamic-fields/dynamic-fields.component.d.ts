@@ -1,6 +1,5 @@
 import { EventEmitter } from '@angular/core';
 import { DynamicFields, DynamicFieldButtonOptions, DynamicFieldDisabledOptions, DynamicFieldDropdownOptions, DynamicFieldDataModel } from './dynamicFields.interface';
-import * as i0 from "@angular/core";
 export declare class DynamicFieldsComponent {
     set fields(val: DynamicFields[]);
     set buttonOptions(val: DynamicFieldButtonOptions);
@@ -27,6 +26,4 @@ export declare class DynamicFieldsComponent {
     primaryClick(): void;
     secondaryClick(): void;
     reset(): void;
-    static ɵfac: i0.ɵɵFactoryDef<DynamicFieldsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDefWithMeta<DynamicFieldsComponent, "t-dynamic-fields", never, { "fields": "fields"; "buttonOptions": "buttonOptions"; "data": "data"; "dropdownOptions": "dropdownOptions"; "disabledFields": "disabledFields"; "hideDefaultAction": "hideDefaultAction"; }, { "primaryHandler": "primaryHandler"; "secondaryHandler": "secondaryHandler"; }, never, never>;
 }

@@ -1,88 +1,14 @@
-import { __extends, __spread, __values } from 'tslib';
-import { ɵɵdefineComponent, ɵɵelement, ɵɵclassMapInterpolate1, ɵsetClassMetadata, Component, Input, ɵɵgetCurrentView, ɵɵelementStart, ɵɵlistener, ɵɵrestoreView, ɵɵnextContext, ɵɵtext, ɵɵelementEnd, ɵɵclassProp, ɵɵadvance, ɵɵtextInterpolate1, ɵɵtemplate, ɵɵproperty, ɵɵtextInterpolate, EventEmitter, ɵɵdirectiveInject, ɵɵpureFunction1, Output, ɵɵsanitizeUrl, ɵɵclassMap, ɵɵpureFunction3, ɵɵProvidersFeature, forwardRef, ɵɵInheritDefinitionFeature, ɵɵgetInheritedFactory, ViewEncapsulation, ɵɵstyleProp, ɵɵresolveWindow, HostListener, ElementRef, ChangeDetectorRef, ɵɵprojectionDef, ɵɵprojection, ViewContainerRef, ComponentFactoryResolver, ɵɵdefineDirective, Directive, ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, NgModule, ɵɵinject, ɵɵdefineInjectable, Injectable } from '@angular/core';
-import { NgClass, NgForOf, NgIf, NgSwitch, NgSwitchCase, CommonModule } from '@angular/common';
+import { __decorate, __metadata, __extends, __spread, __values } from 'tslib';
+import { EventEmitter, Input, Output, Component, forwardRef, ViewEncapsulation, HostListener, ElementRef, ChangeDetectorRef, ViewContainerRef, ComponentFactoryResolver, Directive, NgModule, ɵɵdefineInjectable, ɵɵinject, Injectable } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpHeaders, HttpClient } from '@angular/common/http';
-import { NavigationEnd, Router, RouterLink, RouterModule } from '@angular/router';
-import { CheckboxControlValueAccessor, NgControlStatus, NgModel, RadioControlValueAccessor, DefaultValueAccessor, NG_VALUE_ACCESSOR, NumberValueAccessor, FormsModule } from '@angular/forms';
-import { Dropdown, DropdownModule } from 'primeng/dropdown';
-import { Toast, ToastModule } from 'primeng/toast';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { ToastModule } from 'primeng/toast';
 import { filter } from 'rxjs/operators';
 import { MessageService } from 'primeng/api';
 
-var BadgeComponent = /** @class */ (function () {
-    function BadgeComponent() {
-    }
-    BadgeComponent.ɵfac = function BadgeComponent_Factory(t) { return new (t || BadgeComponent)(); };
-    BadgeComponent.ɵcmp = ɵɵdefineComponent({ type: BadgeComponent, selectors: [["t-badge"]], inputs: { badge: "badge" }, decls: 1, vars: 3, consts: [["aria-hidden", "true"]], template: function BadgeComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵelement(0, "i", 0);
-        } if (rf & 2) {
-            ɵɵclassMapInterpolate1("fa ", ctx.badge, "");
-        } }, encapsulation: 2 });
-    return BadgeComponent;
-}());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(BadgeComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-badge',
-                template: "<i class=\"fa {{badge}}\" aria-hidden=\"true\"></i>"
-            }]
-    }], null, { badge: [{
-            type: Input
-        }] }); })();
-
-function NavComponent_li_6_li_6_Template(rf, ctx) { if (rf & 1) {
-    var _r63 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li", 13);
-    ɵɵlistener("click", function NavComponent_li_6_li_6_Template_li_click_0_listener() { ɵɵrestoreView(_r63); var subMenuItem_r59 = ctx.$implicit; var childIdx_r60 = ctx.index; var ctx_r62 = ɵɵnextContext(); var menuItem_r56 = ctx_r62.$implicit; var idx_r57 = ctx_r62.index; var ctx_r61 = ɵɵnextContext(); return ctx_r61.onSubMenuClick(menuItem_r56, subMenuItem_r59, idx_r57, childIdx_r60); });
-    ɵɵelementStart(1, "div", 14);
-    ɵɵelementStart(2, "span", 10);
-    ɵɵtext(3);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var subMenuItem_r59 = ctx.$implicit;
-    var childIdx_r60 = ctx.index;
-    var ctx_r58 = ɵɵnextContext(2);
-    ɵɵclassProp("active", (ctx_r58.selectedMenu == null ? null : ctx_r58.selectedMenu.subMenuIdx) === childIdx_r60);
-    ɵɵadvance(3);
-    ɵɵtextInterpolate1(" ", subMenuItem_r59.label, " ");
-} }
-function NavComponent_li_6_Template(rf, ctx) { if (rf & 1) {
-    var _r65 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li", 7);
-    ɵɵelementStart(1, "div", 8);
-    ɵɵlistener("click", function NavComponent_li_6_Template_div_click_1_listener() { ɵɵrestoreView(_r65); var menuItem_r56 = ctx.$implicit; var idx_r57 = ctx.index; var ctx_r64 = ɵɵnextContext(); return ctx_r64.onMenuClick(menuItem_r56, idx_r57); });
-    ɵɵelement(2, "t-badge", 9);
-    ɵɵelementStart(3, "span", 10);
-    ɵɵtext(4);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-    ɵɵelementStart(5, "ul", 11);
-    ɵɵtemplate(6, NavComponent_li_6_li_6_Template, 4, 3, "li", 12);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var menuItem_r56 = ctx.$implicit;
-    var idx_r57 = ctx.index;
-    var ctx_r54 = ɵɵnextContext();
-    ɵɵclassProp("selected", (ctx_r54.selectedMenu == null ? null : ctx_r54.selectedMenu.idx) === idx_r57);
-    ɵɵadvance(2);
-    ɵɵproperty("badge", menuItem_r56 == null ? null : menuItem_r56.badge);
-    ɵɵadvance(2);
-    ɵɵtextInterpolate(menuItem_r56.label);
-    ɵɵadvance(1);
-    ɵɵclassProp("expanded", ctx_r54.expandedMenu === idx_r57);
-    ɵɵadvance(1);
-    ɵɵproperty("ngForOf", menuItem_r56.children);
-} }
-function NavComponent_div_7_Template(rf, ctx) { if (rf & 1) {
-    var _r67 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 15);
-    ɵɵlistener("click", function NavComponent_div_7_Template_div_click_0_listener() { ɵɵrestoreView(_r67); var ctx_r66 = ɵɵnextContext(); return ctx_r66.toggleMenu(); });
-    ɵɵelementEnd();
-} }
-var _c0 = function (a0) { return { "sidebar-expanded": a0 }; };
 var NavComponent = /** @class */ (function () {
     function NavComponent(_router) {
         this._router = _router;
@@ -163,63 +89,41 @@ var NavComponent = /** @class */ (function () {
         }
         this.menuClickTrigger.emit({ isParent: false, menu: menu, subMenu: subMenu });
     };
-    NavComponent.ɵfac = function NavComponent_Factory(t) { return new (t || NavComponent)(ɵɵdirectiveInject(Router)); };
-    NavComponent.ɵcmp = ɵɵdefineComponent({ type: NavComponent, selectors: [["t-nav"]], inputs: { menuItems: "menuItems", expanded: "expanded", diableDefaultClick: "diableDefaultClick" }, outputs: { sliderStatus: "sliderStatus", menuClickTrigger: "menuClickTrigger" }, decls: 8, vars: 8, consts: [["id", "main-container-sidebar", 1, "main-container-sidebar", 3, "ngClass"], [1, "header"], [1, "sidebar-toggle", 3, "click"], ["id", "sidebar-content", 1, "sidebar-content"], ["role", "menu", "id", "main-nav", 1, "main-nav"], ["role", "menuitem", "class", "list-item", 3, "selected", 4, "ngFor", "ngForOf"], ["class", "main-container-sidbar overlay", 3, "click", 4, "ngIf"], ["role", "menuitem", 1, "list-item"], [1, "menu-item", 3, "click"], [1, "badge", 3, "badge"], [1, "label"], ["role", "menu", 1, "sub-nav"], ["role", "menuitem", "class", "list-item", "tabindex", "-1", 3, "active", "click", 4, "ngFor", "ngForOf"], ["role", "menuitem", "tabindex", "-1", 1, "list-item", 3, "click"], [1, "menu-item"], [1, "main-container-sidbar", "overlay", 3, "click"]], template: function NavComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵelementStart(0, "div", 0);
-            ɵɵelementStart(1, "div", 1);
-            ɵɵelementStart(2, "div", 2);
-            ɵɵlistener("click", function NavComponent_Template_div_click_2_listener() { return ctx.toggleMenu(); });
-            ɵɵelement(3, "i");
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-            ɵɵelementStart(4, "div", 3);
-            ɵɵelementStart(5, "ul", 4);
-            ɵɵtemplate(6, NavComponent_li_6_Template, 7, 7, "li", 5);
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-            ɵɵtemplate(7, NavComponent_div_7_Template, 1, 0, "div", 6);
-        } if (rf & 2) {
-            ɵɵproperty("ngClass", ɵɵpureFunction1(6, _c0, ctx.expanded));
-            ɵɵadvance(3);
-            ɵɵclassMapInterpolate1("fa ", ctx.expanded ? "fa-times" : "fa-bars", "");
-            ɵɵadvance(3);
-            ɵɵproperty("ngForOf", ctx.menuItems);
-            ɵɵadvance(1);
-            ɵɵproperty("ngIf", ctx.expanded);
-        } }, directives: [NgClass, NgForOf, NgIf, BadgeComponent], styles: ["#main-container-sidebar[_ngcontent-%COMP%]{position:absolute;left:-18.75rem;top:0;bottom:0;width:18.75rem;height:100vh;background:#f2f2f2;transition:left 250ms ease-in-out;z-index:20}#main-container-sidebar[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%]{-ms-flex:2 0 auto;flex:2 0 auto;display:-ms-flexbox;display:flex;flex-direction:row;-ms-flex-direction:row;-webkit-flex-align:center;-moz-align-items:center;-ms-align-items:center;-ms-flex-align:center;align-items:center;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start;height:4.5rem;background-color:#000;box-shadow:0 2px 5px 0 rgba(0,0,0,.3)}#main-container-sidebar[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:last-child){margin-right:0}#main-container-sidebar[_ngcontent-%COMP%]   .sidebar-toggle[_ngcontent-%COMP%]{cursor:pointer;position:relative;height:100%;padding-top:1.1875rem;padding-left:1.8125rem;padding-right:1.8125rem}#main-container-sidebar[_ngcontent-%COMP%]   .sidebar-toggle[_ngcontent-%COMP%]   i.fa[_ngcontent-%COMP%]{font-size:2.1875rem;color:#fff}#main-container-sidebar[_ngcontent-%COMP%]   .list-item[_ngcontent-%COMP%]{display:-ms-flexbox;display:flex;flex-direction:column;-ms-flex-direction:column;-webkit-flex-align:flex-start;-moz-align-items:flex-start;-ms-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start;width:100%}#main-container-sidebar[_ngcontent-%COMP%]   .list-item[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:last-child){margin-bottom:0}#main-container-sidebar[_ngcontent-%COMP%]   .menu-item[_ngcontent-%COMP%]{width:100%;cursor:pointer;height:2.8125rem;padding-left:1.8125rem;padding-right:1.125rem;color:#283764;display:-ms-flexbox;display:flex;flex-direction:row;-ms-flex-direction:row;-webkit-flex-align:center;-moz-align-items:center;-ms-align-items:center;-ms-flex-align:center;align-items:center;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start;-ms-flex:2 0 auto;flex:2 0 auto}#main-container-sidebar[_ngcontent-%COMP%]   .menu-item[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:last-child){margin-right:.625rem}#main-container-sidebar[_ngcontent-%COMP%]   .badge[_ngcontent-%COMP%]{font-size:1.25rem;cursor:pointer;font-weight:700;width:1.875rem;margin-left:-3px}#main-container-sidebar[_ngcontent-%COMP%]   .label[_ngcontent-%COMP%]{letter-spacing:.0625rem;color:inherit;font-size:.9375rem;text-transform:uppercase;cursor:pointer;width:100%}#main-container-sidebar[_ngcontent-%COMP%]   .main-nav[_ngcontent-%COMP%]   .label[_ngcontent-%COMP%]{font-weight:700}#main-container-sidebar[_ngcontent-%COMP%]   .sub-nav[_ngcontent-%COMP%]{list-style:none;padding:0;width:100%;opacity:0;position:absolute;left:-62.4375rem}#main-container-sidebar[_ngcontent-%COMP%]   .sub-nav[_ngcontent-%COMP%]   .list-item[_ngcontent-%COMP%]{padding-right:1.125rem;padding-left:3.75rem}#main-container-sidebar[_ngcontent-%COMP%]   .sub-nav[_ngcontent-%COMP%]   .label[_ngcontent-%COMP%]{font-weight:400}#main-container-sidebar[_ngcontent-%COMP%]   .sub-nav[_ngcontent-%COMP%]   .menu-item[_ngcontent-%COMP%]{height:2.1875rem;padding:0}#main-container-sidebar[_ngcontent-%COMP%]   .sub-nav.expanded[_ngcontent-%COMP%]{opacity:1;position:relative;left:0;transition:opacity 250ms ease-in-out}#main-container-sidebar[_ngcontent-%COMP%]   .selected[_ngcontent-%COMP%] > .menu-item[_ngcontent-%COMP%]{border-left:4px solid #0069b1}#main-container-sidebar[_ngcontent-%COMP%]   .selected[_ngcontent-%COMP%]   .badge[_ngcontent-%COMP%], #main-container-sidebar[_ngcontent-%COMP%]   .selected[_ngcontent-%COMP%]   .label[_ngcontent-%COMP%]{color:#0069b1}#main-container-sidebar[_ngcontent-%COMP%]   .selected[_ngcontent-%COMP%]   .active[_ngcontent-%COMP%]{background-color:#e5eaee}.main-container-sidbar.overlay[_ngcontent-%COMP%]{position:fixed;top:0;bottom:0;left:0;right:0;z-index:11;width:100%;height:100%;background:rgba(0,0,0,.5);cursor:pointer}#main-container-sidebar.sidebar-expanded[_ngcontent-%COMP%]{left:0}"] });
+    NavComponent.ctorParameters = function () { return [
+        { type: Router }
+    ]; };
+    __decorate([
+        Input(),
+        __metadata("design:type", Array)
+    ], NavComponent.prototype, "menuItems", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean),
+        __metadata("design:paramtypes", [Boolean])
+    ], NavComponent.prototype, "expanded", null);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], NavComponent.prototype, "diableDefaultClick", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], NavComponent.prototype, "sliderStatus", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], NavComponent.prototype, "menuClickTrigger", void 0);
+    NavComponent = __decorate([
+        Component({
+            selector: 't-nav',
+            template: "<div class=\"main-container-sidebar\" id=\"main-container-sidebar\" [ngClass]=\"{'sidebar-expanded': expanded}\">\n  <div class=\"header\">\n    <div class=\"sidebar-toggle\" (click)=\"toggleMenu()\">\n      <i class=\"fa {{expanded ? 'fa-times' : 'fa-bars'}}\"></i>\n    </div>\n  </div>\n  <div id=\"sidebar-content\" class=\"sidebar-content\">\n    <ul role=\"menu\" id=\"main-nav\" class=\"main-nav\">\n      <li role=\"menuitem\" class=\"list-item\" *ngFor=\"let menuItem of menuItems;let idx = index\"\n        [class.selected]=\"selectedMenu?.idx === idx\">\n        <div class=\"menu-item\" (click)=\"onMenuClick(menuItem, idx)\">\n          <t-badge class=\"badge\" [badge]=\"menuItem?.badge\"></t-badge>\n          <span class=\"label\">{{menuItem.label}}</span>\n        </div>\n\n        <ul role=\"menu\" class=\"sub-nav\" [class.expanded]=\"expandedMenu === idx\">\n          <li role=\"menuitem\" *ngFor=\"let subMenuItem of menuItem.children; let childIdx = index\"\n            (click)=\"onSubMenuClick(menuItem, subMenuItem, idx, childIdx)\" class=\"list-item\"\n            [class.active]=\"selectedMenu?.subMenuIdx === childIdx\" tabindex=\"-1\">\n            <div class=\"menu-item\">\n              <span class=\"label\">\n                {{subMenuItem.label}}\n              </span>\n            </div>\n          </li>\n        </ul>\n\n      </li>\n    </ul>\n  </div>\n</div>\n<div class=\"main-container-sidbar overlay\" *ngIf=\"expanded\" (click)=\"toggleMenu()\"></div>\n",
+            styles: ["#main-container-sidebar{position:absolute;left:-18.75rem;top:0;bottom:0;width:18.75rem;height:100vh;background:#f2f2f2;transition:left 250ms ease-in-out;z-index:20}#main-container-sidebar .header{-ms-flex:2 0 auto;flex:2 0 auto;display:-ms-flexbox;display:flex;flex-direction:row;-ms-flex-direction:row;-webkit-flex-align:center;-moz-align-items:center;-ms-align-items:center;-ms-flex-align:center;align-items:center;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start;height:4.5rem;background-color:#000;box-shadow:0 2px 5px 0 rgba(0,0,0,.3)}#main-container-sidebar .header>:not(:last-child){margin-right:0}#main-container-sidebar .sidebar-toggle{cursor:pointer;position:relative;height:100%;padding-top:1.1875rem;padding-left:1.8125rem;padding-right:1.8125rem}#main-container-sidebar .sidebar-toggle i.fa{font-size:2.1875rem;color:#fff}#main-container-sidebar .list-item{display:-ms-flexbox;display:flex;flex-direction:column;-ms-flex-direction:column;-webkit-flex-align:flex-start;-moz-align-items:flex-start;-ms-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start;width:100%}#main-container-sidebar .list-item>:not(:last-child){margin-bottom:0}#main-container-sidebar .menu-item{width:100%;cursor:pointer;height:2.8125rem;padding-left:1.8125rem;padding-right:1.125rem;color:#283764;display:-ms-flexbox;display:flex;flex-direction:row;-ms-flex-direction:row;-webkit-flex-align:center;-moz-align-items:center;-ms-align-items:center;-ms-flex-align:center;align-items:center;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start;-ms-flex:2 0 auto;flex:2 0 auto}#main-container-sidebar .menu-item>:not(:last-child){margin-right:.625rem}#main-container-sidebar .badge{font-size:1.25rem;cursor:pointer;font-weight:700;width:1.875rem;margin-left:-3px}#main-container-sidebar .label{letter-spacing:.0625rem;color:inherit;font-size:.9375rem;text-transform:uppercase;cursor:pointer;width:100%}#main-container-sidebar .main-nav .label{font-weight:700}#main-container-sidebar .sub-nav{list-style:none;padding:0;width:100%;opacity:0;position:absolute;left:-62.4375rem}#main-container-sidebar .sub-nav .list-item{padding-right:1.125rem;padding-left:3.75rem}#main-container-sidebar .sub-nav .label{font-weight:400}#main-container-sidebar .sub-nav .menu-item{height:2.1875rem;padding:0}#main-container-sidebar .sub-nav.expanded{opacity:1;position:relative;left:0;transition:opacity 250ms ease-in-out}#main-container-sidebar .selected>.menu-item{border-left:4px solid #0069b1}#main-container-sidebar .selected .badge,#main-container-sidebar .selected .label{color:#0069b1}#main-container-sidebar .selected .active{background-color:#e5eaee}.main-container-sidbar.overlay{position:fixed;top:0;bottom:0;left:0;right:0;z-index:11;width:100%;height:100%;background:rgba(0,0,0,.5);cursor:pointer}#main-container-sidebar.sidebar-expanded{left:0}"]
+        }),
+        __metadata("design:paramtypes", [Router])
+    ], NavComponent);
     return NavComponent;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(NavComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-nav',
-                templateUrl: './nav.component.html',
-                styleUrls: ['./nav.component.scss']
-            }]
-    }], function () { return [{ type: Router }]; }, { menuItems: [{
-            type: Input
-        }], expanded: [{
-            type: Input
-        }], diableDefaultClick: [{
-            type: Input
-        }], sliderStatus: [{
-            type: Output
-        }], menuClickTrigger: [{
-            type: Output
-        }] }); })();
 
-function HeaderComponent_div_5_Template(rf, ctx) { if (rf & 1) {
-    var _r70 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 8);
-    ɵɵlistener("click", function HeaderComponent_div_5_Template_div_click_0_listener() { ɵɵrestoreView(_r70); var ctx_r69 = ɵɵnextContext(); return ctx_r69.onLogoClick(); });
-    ɵɵelement(1, "img", 9);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var ctx_r68 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("src", ctx_r68.logoSrc, ɵɵsanitizeUrl);
-} }
 var HeaderComponent = /** @class */ (function () {
     function HeaderComponent() {
         this.sideBarToggled = new EventEmitter();
@@ -231,61 +135,52 @@ var HeaderComponent = /** @class */ (function () {
     HeaderComponent.prototype.onLogoClick = function () {
         this.logoClickEmitter.emit();
     };
-    HeaderComponent.ɵfac = function HeaderComponent_Factory(t) { return new (t || HeaderComponent)(); };
-    HeaderComponent.ɵcmp = ɵɵdefineComponent({ type: HeaderComponent, selectors: [["t-header"]], inputs: { title: "title", logoSrc: "logoSrc", routeLink: "routeLink" }, outputs: { sideBarToggled: "sideBarToggled", logoClickEmitter: "logoClickEmitter" }, decls: 9, vars: 3, consts: [[1, "main-container-header"], [1, "content"], ["id", "menu-icon-container", 1, "sidebar-toggle", 3, "click"], [1, "fa", "fa-bars"], ["id", "logo-container", 1, "logo-container"], ["class", "logo", 3, "click", 4, "ngIf"], [1, "title-container"], [1, "title", 3, "routerLink"], [1, "logo", 3, "click"], [3, "src"]], template: function HeaderComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵelementStart(0, "div", 0);
-            ɵɵelementStart(1, "div", 1);
-            ɵɵelementStart(2, "div", 2);
-            ɵɵlistener("click", function HeaderComponent_Template_div_click_2_listener() { return ctx.handleSidebarToggle(); });
-            ɵɵelement(3, "i", 3);
-            ɵɵelementEnd();
-            ɵɵelementStart(4, "div", 4);
-            ɵɵtemplate(5, HeaderComponent_div_5_Template, 2, 1, "div", 5);
-            ɵɵelementStart(6, "div", 6);
-            ɵɵelementStart(7, "span", 7);
-            ɵɵtext(8);
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-        } if (rf & 2) {
-            ɵɵadvance(5);
-            ɵɵproperty("ngIf", ctx.logoSrc);
-            ɵɵadvance(2);
-            ɵɵproperty("routerLink", ctx.routeLink);
-            ɵɵadvance(1);
-            ɵɵtextInterpolate(ctx.title);
-        } }, directives: [NgIf, RouterLink], styles: [".main-container-header[_ngcontent-%COMP%]{position:absolute;left:0;right:0;height:4.5rem;overflow:hidden;background-color:#000;display:-ms-flexbox;display:flex;flex-direction:row;-ms-flex-direction:row;-webkit-flex-align:center;-moz-align-items:center;-ms-align-items:center;-ms-flex-align:center;align-items:center;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start;z-index:10;box-shadow:0 2px 5px 0 rgba(0,0,0,.3)}.main-container-header[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:last-child){margin-right:0}.main-container-header[_ngcontent-%COMP%]   .content[_ngcontent-%COMP%]{-ms-flex:2 0 auto;flex:2 0 auto;display:-ms-flexbox;display:flex;flex-direction:row;-ms-flex-direction:row;-webkit-flex-align:center;-moz-align-items:center;-ms-align-items:center;-ms-flex-align:center;align-items:center;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start;height:4.5rem;margin-right:.3125rem}.main-container-header[_ngcontent-%COMP%]   .content[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:last-child){margin-right:0}.main-container-header[_ngcontent-%COMP%]   .sidebar-toggle[_ngcontent-%COMP%]{cursor:pointer;position:relative;height:100%;padding-top:1.1875rem;padding-left:1.8125rem;padding-right:1.8125rem}.main-container-header[_ngcontent-%COMP%]   .sidebar-toggle[_ngcontent-%COMP%]   i.fa-bars[_ngcontent-%COMP%]{font-size:2.1875rem;color:#fff}.main-container-header[_ngcontent-%COMP%]   .logo-container[_ngcontent-%COMP%]{cursor:pointer;padding-left:2rem;display:-ms-flexbox;display:flex;flex-direction:column;-ms-flex-direction:column;-webkit-flex-align:flex-start;-moz-align-items:flex-start;-ms-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start}.main-container-header[_ngcontent-%COMP%]   .logo-container[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:last-child){margin-bottom:0}.main-container-header[_ngcontent-%COMP%]   .logo-container[_ngcontent-%COMP%]   .logo[_ngcontent-%COMP%]{position:relative;padding-right:.3125rem;display:inline-block}.main-container-header[_ngcontent-%COMP%]   .logo-container[_ngcontent-%COMP%]   .logo[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{height:1.28875rem;width:3.25rem}.main-container-header[_ngcontent-%COMP%]   .logo-container[_ngcontent-%COMP%]   .title-container[_ngcontent-%COMP%]{display:-ms-flexbox;display:flex;flex-direction:row;-ms-flex-direction:row;-webkit-flex-align:center;-moz-align-items:center;-ms-align-items:center;-ms-flex-align:center;align-items:center;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start}.main-container-header[_ngcontent-%COMP%]   .logo-container[_ngcontent-%COMP%]   .title-container[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:last-child){margin-right:.625rem}.main-container-header[_ngcontent-%COMP%]   .logo-container[_ngcontent-%COMP%]   .title-container[_ngcontent-%COMP%]   .title[_ngcontent-%COMP%]{color:#fff;font-weight:500;font-size:1.625rem;letter-spacing:.0625rem;text-transform:uppercase}"] });
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], HeaderComponent.prototype, "title", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], HeaderComponent.prototype, "logoSrc", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], HeaderComponent.prototype, "routeLink", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], HeaderComponent.prototype, "sideBarToggled", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], HeaderComponent.prototype, "logoClickEmitter", void 0);
+    HeaderComponent = __decorate([
+        Component({
+            selector: 't-header',
+            template: "<div class=\"main-container-header\">\n\n  <div class=\"content\">\n\n    <div id=\"menu-icon-container\" class=\"sidebar-toggle\" (click)=\"handleSidebarToggle()\">\n      <i class=\"fa fa-bars\"></i>\n    </div>\n\n    <div id=\"logo-container\" class=\"logo-container\">\n\n      <div *ngIf=\"logoSrc\" class=\"logo\" (click)=\"onLogoClick()\">\n        <img [src]=\"logoSrc\" />\n      </div>\n\n      <div class=\"title-container\">\n        <span class=\"title\" [routerLink]=\"routeLink\">{{title}}</span>\n      </div>\n    </div>\n  </div>\n\n</div>\n",
+            styles: [".main-container-header{position:absolute;left:0;right:0;height:4.5rem;overflow:hidden;background-color:#000;display:-ms-flexbox;display:flex;flex-direction:row;-ms-flex-direction:row;-webkit-flex-align:center;-moz-align-items:center;-ms-align-items:center;-ms-flex-align:center;align-items:center;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start;z-index:10;box-shadow:0 2px 5px 0 rgba(0,0,0,.3)}.main-container-header>:not(:last-child){margin-right:0}.main-container-header .content{-ms-flex:2 0 auto;flex:2 0 auto;display:-ms-flexbox;display:flex;flex-direction:row;-ms-flex-direction:row;-webkit-flex-align:center;-moz-align-items:center;-ms-align-items:center;-ms-flex-align:center;align-items:center;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start;height:4.5rem;margin-right:.3125rem}.main-container-header .content>:not(:last-child){margin-right:0}.main-container-header .sidebar-toggle{cursor:pointer;position:relative;height:100%;padding-top:1.1875rem;padding-left:1.8125rem;padding-right:1.8125rem}.main-container-header .sidebar-toggle i.fa-bars{font-size:2.1875rem;color:#fff}.main-container-header .logo-container{cursor:pointer;padding-left:2rem;display:-ms-flexbox;display:flex;flex-direction:column;-ms-flex-direction:column;-webkit-flex-align:flex-start;-moz-align-items:flex-start;-ms-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start}.main-container-header .logo-container>:not(:last-child){margin-bottom:0}.main-container-header .logo-container .logo{position:relative;padding-right:.3125rem;display:inline-block}.main-container-header .logo-container .logo img{height:1.28875rem;width:3.25rem}.main-container-header .logo-container .title-container{display:-ms-flexbox;display:flex;flex-direction:row;-ms-flex-direction:row;-webkit-flex-align:center;-moz-align-items:center;-ms-align-items:center;-ms-flex-align:center;align-items:center;-moz-justify-content:flex-start;-ms-justify-content:flex-start;justify-content:flex-start;-ms-flex-pack:flex-start}.main-container-header .logo-container .title-container>:not(:last-child){margin-right:.625rem}.main-container-header .logo-container .title-container .title{color:#fff;font-weight:500;font-size:1.625rem;letter-spacing:.0625rem;text-transform:uppercase}"]
+        })
+    ], HeaderComponent);
     return HeaderComponent;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(HeaderComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-header',
-                templateUrl: './header.component.html',
-                styleUrls: ['./header.component.scss']
-            }]
-    }], null, { title: [{
-            type: Input
-        }], logoSrc: [{
-            type: Input
-        }], routeLink: [{
-            type: Input
-        }], sideBarToggled: [{
-            type: Output
-        }], logoClickEmitter: [{
-            type: Output
-        }] }); })();
 
-function ButtonComponent_t_badge_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "t-badge", 2);
-} if (rf & 2) {
-    var ctx_r71 = ɵɵnextContext();
-    ɵɵclassMap(ctx_r71.bPos);
-    ɵɵproperty("badge", ctx_r71.badge);
-} }
-var _c0$1 = function (a0, a1, a2) { return { "disabled": a0, "btn-large": a1, "btn-small": a2 }; };
+var BadgeComponent = /** @class */ (function () {
+    function BadgeComponent() {
+    }
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], BadgeComponent.prototype, "badge", void 0);
+    BadgeComponent = __decorate([
+        Component({
+            selector: 't-badge',
+            template: "<i class=\"fa {{badge}}\" aria-hidden=\"true\"></i>"
+        })
+    ], BadgeComponent);
+    return BadgeComponent;
+}());
+
 var ButtonComponent = /** @class */ (function () {
     function ButtonComponent() {
         this.buttonType = 'primary';
@@ -305,395 +200,42 @@ var ButtonComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    ButtonComponent.ɵfac = function ButtonComponent_Factory(t) { return new (t || ButtonComponent)(); };
-    ButtonComponent.ɵcmp = ɵɵdefineComponent({ type: ButtonComponent, selectors: [["t-button"]], inputs: { label: "label", badge: "badge", disabled: "disabled", isLarge: "isLarge", badgePosition: "badgePosition", type: "type" }, decls: 3, vars: 11, consts: [[3, "ngClass", "disabled"], [3, "class", "badge", 4, "ngIf"], [3, "badge"]], template: function ButtonComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵelementStart(0, "button", 0);
-            ɵɵtemplate(1, ButtonComponent_t_badge_1_Template, 1, 3, "t-badge", 1);
-            ɵɵtext(2);
-            ɵɵelementEnd();
-        } if (rf & 2) {
-            ɵɵclassMapInterpolate1("btn waves-effect waves-light ", ctx.buttonType, "");
-            ɵɵproperty("ngClass", ɵɵpureFunction3(7, _c0$1, ctx.disabled, ctx.isLarge, !ctx.isLarge))("disabled", ctx.disabled);
-            ɵɵadvance(1);
-            ɵɵproperty("ngIf", ctx.badge);
-            ɵɵadvance(1);
-            ɵɵtextInterpolate1(" ", ctx.label, " ");
-        } }, directives: [NgClass, NgIf, BadgeComponent], styles: [".hide[_ngcontent-%COMP%]{display:none!important}.disable[_ngcontent-%COMP%]{pointer-events:none;opacity:.4}.btn[_ngcontent-%COMP%], .btn-floating[_ngcontent-%COMP%], .btn-large[_ngcontent-%COMP%], .btn-small[_ngcontent-%COMP%], .z-depth-1[_ngcontent-%COMP%]{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.btn-floating[_ngcontent-%COMP%]:hover, .btn-large[_ngcontent-%COMP%]:hover, .btn-small[_ngcontent-%COMP%]:hover, .btn[_ngcontent-%COMP%]:hover, .z-depth-1-half[_ngcontent-%COMP%]{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block[_ngcontent-%COMP%]{display:inline-block;vertical-align:top}.btn[_ngcontent-%COMP%], .btn-flat[_ngcontent-%COMP%], .btn-large[_ngcontent-%COMP%], .btn-small[_ngcontent-%COMP%]{border:none;border-radius:2px;display:inline-block;height:36px;line-height:36px;padding:0 16px;text-transform:uppercase;vertical-align:middle;-webkit-tap-highlight-color:transparent}.btn-flat.disabled[_ngcontent-%COMP%], .btn-flat[_ngcontent-%COMP%]:disabled, .btn-flat[disabled][_ngcontent-%COMP%], .btn-floating.disabled[_ngcontent-%COMP%], .btn-floating[_ngcontent-%COMP%]:disabled, .btn-floating[disabled][_ngcontent-%COMP%], .btn-large.disabled[_ngcontent-%COMP%], .btn-large[_ngcontent-%COMP%]:disabled, .btn-large[disabled][_ngcontent-%COMP%], .btn-small.disabled[_ngcontent-%COMP%], .btn-small[_ngcontent-%COMP%]:disabled, .btn-small[disabled][_ngcontent-%COMP%], .btn.disabled[_ngcontent-%COMP%], .btn[_ngcontent-%COMP%]:disabled, .btn[disabled][_ngcontent-%COMP%], .disabled.btn-large[_ngcontent-%COMP%], .disabled.btn-small[_ngcontent-%COMP%]{pointer-events:none;background-color:#dfdfdf!important;box-shadow:none;color:#9f9f9f!important;cursor:default}.btn-flat.disabled[_ngcontent-%COMP%]:hover, .btn-flat[_ngcontent-%COMP%]:disabled:hover, .btn-flat[disabled][_ngcontent-%COMP%]:hover, .btn-floating.disabled[_ngcontent-%COMP%]:hover, .btn-floating[_ngcontent-%COMP%]:disabled:hover, .btn-floating[disabled][_ngcontent-%COMP%]:hover, .btn-large.disabled[_ngcontent-%COMP%]:hover, .btn-large[_ngcontent-%COMP%]:disabled:hover, .btn-large[disabled][_ngcontent-%COMP%]:hover, .btn-small.disabled[_ngcontent-%COMP%]:hover, .btn-small[_ngcontent-%COMP%]:disabled:hover, .btn-small[disabled][_ngcontent-%COMP%]:hover, .btn.disabled[_ngcontent-%COMP%]:hover, .btn[_ngcontent-%COMP%]:disabled:hover, .btn[disabled][_ngcontent-%COMP%]:hover, .disabled.btn-large[_ngcontent-%COMP%]:hover, .disabled.btn-small[_ngcontent-%COMP%]:hover{background-color:#dfdfdf!important;color:#9f9f9f!important}.btn[_ngcontent-%COMP%], .btn-flat[_ngcontent-%COMP%], .btn-floating[_ngcontent-%COMP%], .btn-large[_ngcontent-%COMP%], .btn-small[_ngcontent-%COMP%]{font-size:14px;outline:0}.btn[_ngcontent-%COMP%]   i[_ngcontent-%COMP%], .btn-flat[_ngcontent-%COMP%]   i[_ngcontent-%COMP%], .btn-floating[_ngcontent-%COMP%]   i[_ngcontent-%COMP%], .btn-large[_ngcontent-%COMP%]   i[_ngcontent-%COMP%], .btn-small[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{font-size:1.3rem;line-height:inherit}.btn[_ngcontent-%COMP%], .btn-large[_ngcontent-%COMP%], .btn-small[_ngcontent-%COMP%]{text-decoration:none;color:#fff;background-color:#757575;text-align:center;letter-spacing:.5px;transition:background-color .2s ease-out;cursor:pointer}.btn-large[_ngcontent-%COMP%]:hover, .btn-small[_ngcontent-%COMP%]:hover, .btn[_ngcontent-%COMP%]:hover{background-color:#828282}.btn-floating[_ngcontent-%COMP%]{display:inline-block;color:#fff;position:relative;overflow:hidden;z-index:1;width:40px;height:40px;line-height:40px;padding:0;background-color:#757575;border-radius:50%;transition:background-color .3s;cursor:pointer;vertical-align:middle}.btn-floating[_ngcontent-%COMP%]:hover{background-color:#757575}.btn-floating[_ngcontent-%COMP%]:before{border-radius:0}.btn-floating.btn-large[_ngcontent-%COMP%]{width:56px;height:56px;padding:0}.btn-floating.btn-large.halfway-fab[_ngcontent-%COMP%]{bottom:-28px}.btn-floating.btn-large[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{line-height:56px}.btn-floating.btn-small[_ngcontent-%COMP%]{width:32.4px;height:32.4px}.btn-floating.btn-small.halfway-fab[_ngcontent-%COMP%]{bottom:-16.2px}.btn-floating.btn-small[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{line-height:32.4px}.btn-floating.halfway-fab[_ngcontent-%COMP%]{position:absolute;right:24px;bottom:-20px}.btn-floating.halfway-fab.left[_ngcontent-%COMP%]{right:auto;left:24px}.btn-floating[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{width:inherit;display:inline-block;text-align:center;color:#fff;font-size:1.6rem;line-height:40px}button.btn-floating[_ngcontent-%COMP%]{border:none}.fixed-action-btn[_ngcontent-%COMP%]{position:fixed;right:23px;bottom:23px;padding-top:15px;margin-bottom:0;z-index:997}.fixed-action-btn.active[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]{visibility:visible}.fixed-action-btn.direction-left[_ngcontent-%COMP%], .fixed-action-btn.direction-right[_ngcontent-%COMP%]{padding:0 0 0 15px}.fixed-action-btn.direction-left[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%], .fixed-action-btn.direction-right[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]{text-align:right;right:64px;top:50%;-ms-transform:translateY(-50%);transform:translateY(-50%);height:100%;left:auto;width:500px}.fixed-action-btn.direction-left[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%], .fixed-action-btn.direction-right[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{display:inline-block;margin:7.5px 15px 0 0}.fixed-action-btn.direction-right[_ngcontent-%COMP%]{padding:0 15px 0 0}.fixed-action-btn.direction-right[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]{text-align:left;direction:rtl;left:64px;right:auto}.fixed-action-btn.direction-right[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{margin:7.5px 0 0 15px}.fixed-action-btn.direction-bottom[_ngcontent-%COMP%]{padding:0 0 15px}.fixed-action-btn.direction-bottom[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]{top:64px;bottom:auto;display:-ms-flexbox;display:flex;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.fixed-action-btn.direction-bottom[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{margin:15px 0 0}.fixed-action-btn.toolbar[_ngcontent-%COMP%]{padding:0;height:56px}.fixed-action-btn.toolbar.active[_ngcontent-%COMP%] > a[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{opacity:0}.fixed-action-btn.toolbar[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]{display:-ms-flexbox;display:flex;top:0;bottom:0;z-index:1}.fixed-action-btn.toolbar[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{-ms-flex:1;flex:1;display:inline-block;margin:0;height:100%;transition:none}.fixed-action-btn.toolbar[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{display:block;overflow:hidden;position:relative;width:100%;height:100%;background-color:transparent;box-shadow:none;color:#fff;line-height:56px;z-index:1}.fixed-action-btn.toolbar[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{line-height:inherit}.fixed-action-btn[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]{left:0;right:0;text-align:center;position:absolute;bottom:64px;margin:0;visibility:hidden}.fixed-action-btn[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{margin-bottom:15px}.fixed-action-btn[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   a.btn-floating[_ngcontent-%COMP%]{opacity:0}.fixed-action-btn[_ngcontent-%COMP%]   .fab-backdrop[_ngcontent-%COMP%]{position:absolute;top:0;left:0;z-index:-1;width:40px;height:40px;background-color:#757575;border-radius:50%;-ms-transform:scale(0);transform:scale(0)}.btn-flat[_ngcontent-%COMP%]{box-shadow:none;background-color:transparent;color:#343434;cursor:pointer;transition:background-color .2s}.btn-flat[_ngcontent-%COMP%]:focus, .btn-flat[_ngcontent-%COMP%]:hover{box-shadow:none}.btn-flat[_ngcontent-%COMP%]:focus{background-color:rgba(0,0,0,.1)}.btn-flat.btn-flat[disabled][_ngcontent-%COMP%], .btn-flat.disabled[_ngcontent-%COMP%]{background-color:transparent!important;color:#b3b3b3!important;cursor:default}.btn-large[_ngcontent-%COMP%]{height:54px;line-height:54px;font-size:15px;padding:0 28px}.btn-large[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{font-size:1.6rem}.btn-small[_ngcontent-%COMP%]{height:32.4px;line-height:32.4px;font-size:13px}.btn-small[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{font-size:1.2rem}.btn-block[_ngcontent-%COMP%]{display:block}t-badge.left[_ngcontent-%COMP%]{margin-right:.5rem}t-badge.right[_ngcontent-%COMP%]{margin-left:.5rem}.primary[_ngcontent-%COMP%]{background:#0069b1}.primary[_ngcontent-%COMP%]:hover{background:#003f81}.secondary[_ngcontent-%COMP%]{background:#757575}.secondary[_ngcontent-%COMP%]:hover{background:#616161}.tertiary[_ngcontent-%COMP%]{background:#757575}.tertiary[_ngcontent-%COMP%]:hover{background:#616161}"] });
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], ButtonComponent.prototype, "label", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], ButtonComponent.prototype, "badge", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], ButtonComponent.prototype, "disabled", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], ButtonComponent.prototype, "isLarge", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String),
+        __metadata("design:paramtypes", [String])
+    ], ButtonComponent.prototype, "badgePosition", null);
+    __decorate([
+        Input(),
+        __metadata("design:type", String),
+        __metadata("design:paramtypes", [String])
+    ], ButtonComponent.prototype, "type", null);
+    ButtonComponent = __decorate([
+        Component({
+            selector: 't-button',
+            template: "\n    <button class=\"btn waves-effect waves-light {{buttonType}}\"\n      [ngClass]=\"{'disabled': disabled, 'btn-large': isLarge, 'btn-small': !isLarge}\" [disabled]=\"disabled\">\n      <t-badge *ngIf=\"badge\" [class]=\"bPos\" [badge]=\"badge\"></t-badge>\n      {{label}}\n    </button>\n  ",
+            styles: [".hide{display:none!important}.disable{pointer-events:none;opacity:.4}.btn,.btn-floating,.btn-large,.btn-small,.z-depth-1{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.btn-floating:hover,.btn-large:hover,.btn-small:hover,.btn:hover,.z-depth-1-half{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block{display:inline-block;vertical-align:top}.btn,.btn-flat,.btn-large,.btn-small{border:none;border-radius:2px;display:inline-block;height:36px;line-height:36px;padding:0 16px;text-transform:uppercase;vertical-align:middle;-webkit-tap-highlight-color:transparent}.btn-flat.disabled,.btn-flat:disabled,.btn-flat[disabled],.btn-floating.disabled,.btn-floating:disabled,.btn-floating[disabled],.btn-large.disabled,.btn-large:disabled,.btn-large[disabled],.btn-small.disabled,.btn-small:disabled,.btn-small[disabled],.btn.disabled,.btn:disabled,.btn[disabled],.disabled.btn-large,.disabled.btn-small{pointer-events:none;background-color:#dfdfdf!important;box-shadow:none;color:#9f9f9f!important;cursor:default}.btn-flat.disabled:hover,.btn-flat:disabled:hover,.btn-flat[disabled]:hover,.btn-floating.disabled:hover,.btn-floating:disabled:hover,.btn-floating[disabled]:hover,.btn-large.disabled:hover,.btn-large:disabled:hover,.btn-large[disabled]:hover,.btn-small.disabled:hover,.btn-small:disabled:hover,.btn-small[disabled]:hover,.btn.disabled:hover,.btn:disabled:hover,.btn[disabled]:hover,.disabled.btn-large:hover,.disabled.btn-small:hover{background-color:#dfdfdf!important;color:#9f9f9f!important}.btn,.btn-flat,.btn-floating,.btn-large,.btn-small{font-size:14px;outline:0}.btn i,.btn-flat i,.btn-floating i,.btn-large i,.btn-small i{font-size:1.3rem;line-height:inherit}.btn,.btn-large,.btn-small{text-decoration:none;color:#fff;background-color:#757575;text-align:center;letter-spacing:.5px;transition:background-color .2s ease-out;cursor:pointer}.btn-large:hover,.btn-small:hover,.btn:hover{background-color:#828282}.btn-floating{display:inline-block;color:#fff;position:relative;overflow:hidden;z-index:1;width:40px;height:40px;line-height:40px;padding:0;background-color:#757575;border-radius:50%;transition:background-color .3s;cursor:pointer;vertical-align:middle}.btn-floating:hover{background-color:#757575}.btn-floating:before{border-radius:0}.btn-floating.btn-large{width:56px;height:56px;padding:0}.btn-floating.btn-large.halfway-fab{bottom:-28px}.btn-floating.btn-large i{line-height:56px}.btn-floating.btn-small{width:32.4px;height:32.4px}.btn-floating.btn-small.halfway-fab{bottom:-16.2px}.btn-floating.btn-small i{line-height:32.4px}.btn-floating.halfway-fab{position:absolute;right:24px;bottom:-20px}.btn-floating.halfway-fab.left{right:auto;left:24px}.btn-floating i{width:inherit;display:inline-block;text-align:center;color:#fff;font-size:1.6rem;line-height:40px}button.btn-floating{border:none}.fixed-action-btn{position:fixed;right:23px;bottom:23px;padding-top:15px;margin-bottom:0;z-index:997}.fixed-action-btn.active ul{visibility:visible}.fixed-action-btn.direction-left,.fixed-action-btn.direction-right{padding:0 0 0 15px}.fixed-action-btn.direction-left ul,.fixed-action-btn.direction-right ul{text-align:right;right:64px;top:50%;-ms-transform:translateY(-50%);transform:translateY(-50%);height:100%;left:auto;width:500px}.fixed-action-btn.direction-left ul li,.fixed-action-btn.direction-right ul li{display:inline-block;margin:7.5px 15px 0 0}.fixed-action-btn.direction-right{padding:0 15px 0 0}.fixed-action-btn.direction-right ul{text-align:left;direction:rtl;left:64px;right:auto}.fixed-action-btn.direction-right ul li{margin:7.5px 0 0 15px}.fixed-action-btn.direction-bottom{padding:0 0 15px}.fixed-action-btn.direction-bottom ul{top:64px;bottom:auto;display:-ms-flexbox;display:flex;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.fixed-action-btn.direction-bottom ul li{margin:15px 0 0}.fixed-action-btn.toolbar{padding:0;height:56px}.fixed-action-btn.toolbar.active>a i{opacity:0}.fixed-action-btn.toolbar ul{display:-ms-flexbox;display:flex;top:0;bottom:0;z-index:1}.fixed-action-btn.toolbar ul li{-ms-flex:1;flex:1;display:inline-block;margin:0;height:100%;transition:none}.fixed-action-btn.toolbar ul li a{display:block;overflow:hidden;position:relative;width:100%;height:100%;background-color:transparent;box-shadow:none;color:#fff;line-height:56px;z-index:1}.fixed-action-btn.toolbar ul li a i{line-height:inherit}.fixed-action-btn ul{left:0;right:0;text-align:center;position:absolute;bottom:64px;margin:0;visibility:hidden}.fixed-action-btn ul li{margin-bottom:15px}.fixed-action-btn ul a.btn-floating{opacity:0}.fixed-action-btn .fab-backdrop{position:absolute;top:0;left:0;z-index:-1;width:40px;height:40px;background-color:#757575;border-radius:50%;-ms-transform:scale(0);transform:scale(0)}.btn-flat{box-shadow:none;background-color:transparent;color:#343434;cursor:pointer;transition:background-color .2s}.btn-flat:focus,.btn-flat:hover{box-shadow:none}.btn-flat:focus{background-color:rgba(0,0,0,.1)}.btn-flat.btn-flat[disabled],.btn-flat.disabled{background-color:transparent!important;color:#b3b3b3!important;cursor:default}.btn-large{height:54px;line-height:54px;font-size:15px;padding:0 28px}.btn-large i{font-size:1.6rem}.btn-small{height:32.4px;line-height:32.4px;font-size:13px}.btn-small i{font-size:1.2rem}.btn-block{display:block}t-badge.left{margin-right:.5rem}t-badge.right{margin-left:.5rem}.primary{background:#0069b1}.primary:hover{background:#003f81}.secondary{background:#757575}.secondary:hover{background:#616161}.tertiary{background:#757575}.tertiary:hover{background:#616161}"]
+        })
+    ], ButtonComponent);
     return ButtonComponent;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(ButtonComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-button',
-                template: "\n    <button class=\"btn waves-effect waves-light {{buttonType}}\"\n      [ngClass]=\"{'disabled': disabled, 'btn-large': isLarge, 'btn-small': !isLarge}\" [disabled]=\"disabled\">\n      <t-badge *ngIf=\"badge\" [class]=\"bPos\" [badge]=\"badge\"></t-badge>\n      {{label}}\n    </button>\n  ",
-                styleUrls: ['./button.component.scss']
-            }]
-    }], null, { label: [{
-            type: Input
-        }], badge: [{
-            type: Input
-        }], disabled: [{
-            type: Input
-        }], isLarge: [{
-            type: Input
-        }], badgePosition: [{
-            type: Input
-        }], type: [{
-            type: Input
-        }] }); })();
 
-var CheckboxComponent = /** @class */ (function () {
-    function CheckboxComponent() {
-        this.modelChange = new EventEmitter();
-    }
-    CheckboxComponent.prototype.handleOnChange = function (event) {
-        this.checked = event.target.checked;
-        this.modelChange.emit(this.checked);
-    };
-    CheckboxComponent.ɵfac = function CheckboxComponent_Factory(t) { return new (t || CheckboxComponent)(); };
-    CheckboxComponent.ɵcmp = ɵɵdefineComponent({ type: CheckboxComponent, selectors: [["t-checkbox"]], inputs: { label: "label", name: "name", disabled: "disabled", model: "model", readonly: "readonly" }, outputs: { modelChange: "modelChange" }, decls: 4, vars: 8, consts: [[1, "checkbox"], ["type", "checkbox", 3, "name", "ngModel", "checked", "disabled", "readonly", "ngModelChange", "change"], [1, "fa", "checkmark", "checkmark-primary", "active"]], template: function CheckboxComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵelementStart(0, "label", 0);
-            ɵɵtext(1);
-            ɵɵelementStart(2, "input", 1);
-            ɵɵlistener("ngModelChange", function CheckboxComponent_Template_input_ngModelChange_2_listener($event) { return ctx.model = $event; })("change", function CheckboxComponent_Template_input_change_2_listener($event) { return ctx.handleOnChange($event); });
-            ɵɵelementEnd();
-            ɵɵelement(3, "span", 2);
-            ɵɵelementEnd();
-        } if (rf & 2) {
-            ɵɵclassProp("disabled", ctx.disabled);
-            ɵɵadvance(1);
-            ɵɵtextInterpolate1("", ctx.label, " ");
-            ɵɵadvance(1);
-            ɵɵproperty("name", ctx.name)("ngModel", ctx.model)("checked", ctx.checked)("disabled", ctx.disabled)("readonly", ctx.readonly);
-        } }, directives: [CheckboxControlValueAccessor, NgControlStatus, NgModel], styles: [".hide[_ngcontent-%COMP%]{display:none!important}.disable[_ngcontent-%COMP%]{pointer-events:none;opacity:.4}.z-depth-1[_ngcontent-%COMP%]{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half[_ngcontent-%COMP%]{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block[_ngcontent-%COMP%]{display:inline-block;vertical-align:top}.checkbox[_ngcontent-%COMP%]{display:inline;position:relative;padding-left:1.25rem;margin-bottom:.75rem;cursor:pointer;font-size:1rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.checkbox[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]{position:relative;opacity:0}.checkbox.disabled[_ngcontent-%COMP%]{opacity:.5;cursor:default;pointer-events:none}.checkbox[_ngcontent-%COMP%]   .checkmark-primary[_ngcontent-%COMP%]{position:absolute;top:.25rem;left:0;height:1rem;width:1rem}.checkbox[_ngcontent-%COMP%]   .checkmark-primary.active[_ngcontent-%COMP%]{background-color:#fff;border:.0625rem solid #0069b1}.checkbox[_ngcontent-%COMP%]   .checkmark[_ngcontent-%COMP%]:after{content:\"\";position:absolute;display:none;bottom:0;left:0;top:-1px;right:0}.checkbox[_ngcontent-%COMP%]   .checkmark.active[_ngcontent-%COMP%]:after{content:\"\\f00c\";color:#fff}.checkbox[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:checked ~ .checkmark[_ngcontent-%COMP%]{background-color:#0069b1}.checkbox[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:checked ~ .checkmark[_ngcontent-%COMP%]:after{display:block;font-size:.8125rem;height:1rem;line-height:15px}.checkbox[_ngcontent-%COMP%]   .checkmark.disabled[_ngcontent-%COMP%]:after{color:#dfdfdf;margin-left:.03125rem;margin-bottom:.03125rem}"] });
-    return CheckboxComponent;
-}());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(CheckboxComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-checkbox',
-                templateUrl: './checkbox.component.html',
-                styleUrls: ['./checkbox.component.scss']
-            }]
-    }], null, { label: [{
-            type: Input
-        }], name: [{
-            type: Input
-        }], disabled: [{
-            type: Input
-        }], model: [{
-            type: Input
-        }], readonly: [{
-            type: Input
-        }], modelChange: [{
-            type: Output
-        }] }); })();
-
-var _c0$2 = function (a0) { return { "active": a0 }; };
-var RadioComponent = /** @class */ (function () {
-    function RadioComponent() {
-        this.value = true;
-        this.modelChange = new EventEmitter();
-    }
-    Object.defineProperty(RadioComponent.prototype, "model", {
-        get: function () {
-            return this._model;
-        },
-        set: function (value) {
-            this._model = value;
-            this.checked = value === this.value ? true : false;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RadioComponent.prototype.handleOnChange = function (event) {
-        var checked = event.target.checked;
-        this.checked = (checked && this.value === this.model) ? true : false;
-        var value = checked ? this.value : false;
-        this.modelChange.emit(value);
-    };
-    RadioComponent.ɵfac = function RadioComponent_Factory(t) { return new (t || RadioComponent)(); };
-    RadioComponent.ɵcmp = ɵɵdefineComponent({ type: RadioComponent, selectors: [["t-radio"]], inputs: { label: "label", disabled: "disabled", name: "name", value: "value", model: "model" }, outputs: { modelChange: "modelChange" }, decls: 3, vars: 11, consts: [[1, "radio", 3, "ngClass"], ["type", "radio", 3, "name", "checked", "disabled", "ngModel", "value", "change", "ngModelChange"]], template: function RadioComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵelementStart(0, "label", 0);
-            ɵɵtext(1);
-            ɵɵelementStart(2, "input", 1);
-            ɵɵlistener("change", function RadioComponent_Template_input_change_2_listener($event) { return ctx.handleOnChange($event); })("ngModelChange", function RadioComponent_Template_input_ngModelChange_2_listener($event) { return ctx.model = $event; });
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-        } if (rf & 2) {
-            ɵɵclassProp("disabled", ctx.disabled);
-            ɵɵproperty("ngClass", ɵɵpureFunction1(9, _c0$2, ctx.checked));
-            ɵɵadvance(1);
-            ɵɵtextInterpolate1(" \u00A0", ctx.label, " ");
-            ɵɵadvance(1);
-            ɵɵproperty("name", ctx.name)("checked", ctx.checked)("disabled", ctx.disabled)("ngModel", ctx.model)("value", ctx.value);
-        } }, directives: [NgClass, RadioControlValueAccessor, DefaultValueAccessor, NgControlStatus, NgModel], styles: [".hide[_ngcontent-%COMP%]{display:none!important}.disable[_ngcontent-%COMP%]{pointer-events:none;opacity:.4}.z-depth-1[_ngcontent-%COMP%]{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half[_ngcontent-%COMP%]{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block[_ngcontent-%COMP%]{display:inline-block;vertical-align:top}.radio[_ngcontent-%COMP%]{display:inline;position:relative;padding-left:1.25rem;cursor:pointer;font-size:1rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.radio[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]{position:relative;opacity:0}.radio[_ngcontent-%COMP%]:before{content:'';width:1.125rem;height:1.125rem;border-radius:50%;border:1px solid #0069b1;display:inline-block;position:absolute;left:0;top:2px}.radio.disabled[_ngcontent-%COMP%]{opacity:.5;cursor:default;pointer-events:none}.radio.active[_ngcontent-%COMP%]:before{content:'';border:5px solid #0069b1}"] });
-    return RadioComponent;
-}());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(RadioComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-radio',
-                templateUrl: './radio.component.html',
-                styleUrls: ['./radio.component.scss']
-            }]
-    }], null, { label: [{
-            type: Input
-        }], disabled: [{
-            type: Input
-        }], name: [{
-            type: Input
-        }], value: [{
-            type: Input
-        }], model: [{
-            type: Input
-        }], modelChange: [{
-            type: Output
-        }] }); })();
-
-var noop = function () { };
-var UiInput = /** @class */ (function () {
-    function UiInput() {
-        this.onChange = noop;
-        this.onTouched = noop;
-    }
-    UiInput.prototype.writeValue = function (obj) { };
-    UiInput.prototype.registerOnChange = function (fn) {
-        this.onChange = fn;
-    };
-    UiInput.prototype.registerOnTouched = function (fn) {
-        this.onTouched = fn;
-    };
-    UiInput.prototype.setDisabledState = function (isDisabled) { };
-    return UiInput;
-}());
-
-var DropdownComponent = /** @class */ (function (_super) {
-    __extends(DropdownComponent, _super);
-    function DropdownComponent() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        // tslint:disable: no-output-on-prefix
-        _this.onFocus = new EventEmitter();
-        _this.onBlur = new EventEmitter();
-        _this._tooltipPosition = 'top';
-        return _this;
-    }
-    Object.defineProperty(DropdownComponent.prototype, "options", {
-        get: function () {
-            return this._options;
-        },
-        set: function (value) {
-            this._options = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DropdownComponent.prototype, "tooltipPosition", {
-        get: function () {
-            return this._tooltipPosition;
-        },
-        set: function (value) {
-            this._tooltipPosition = value || 'top';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    DropdownComponent.prototype.writeValue = function (value) {
-        this.value = value;
-        this.onChange(value);
-    };
-    DropdownComponent.prototype.onChangeHandler = function (event) {
-        this.writeValue(event.value);
-    };
-    DropdownComponent.prototype.focusHandler = function (event) {
-        this.onFocus.emit(event);
-    };
-    DropdownComponent.prototype.blurHandler = function (event) {
-        this.onBlur.emit(event);
-    };
-    DropdownComponent.ɵfac = function DropdownComponent_Factory(t) { return ɵDropdownComponent_BaseFactory(t || DropdownComponent); };
-    DropdownComponent.ɵcmp = ɵɵdefineComponent({ type: DropdownComponent, selectors: [["t-dropdown"]], inputs: { options: "options", readonly: "readonly", disabled: "disabled", filter: "filter", placeholder: "placeholder", staticLabel: "staticLabel", name: "name", tooltip: "tooltip", tooltipPosition: "tooltipPosition", autoDisplayFirst: "autoDisplayFirst", scrollHeight: "scrollHeight", autofocus: "autofocus" }, outputs: { onFocus: "onFocus", onBlur: "onBlur" }, features: [ɵɵProvidersFeature([{
-                    provide: NG_VALUE_ACCESSOR,
-                    useExisting: forwardRef(function () { return DropdownComponent; }),
-                    multi: true
-                }]), ɵɵInheritDefinitionFeature], decls: 1, vars: 12, consts: [[3, "options", "ngModel", "placeholder", "filter", "readonly", "disabled", "name", "tooltip", "tooltipPosition", "autoDisplayFirst", "scrollHeight", "autofocus", "onChange", "onFocus", "onBlur"]], template: function DropdownComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵelementStart(0, "p-dropdown", 0);
-            ɵɵlistener("onChange", function DropdownComponent_Template_p_dropdown_onChange_0_listener($event) { return ctx.onChangeHandler($event); })("onFocus", function DropdownComponent_Template_p_dropdown_onFocus_0_listener($event) { return ctx.focusHandler($event); })("onBlur", function DropdownComponent_Template_p_dropdown_onBlur_0_listener($event) { return ctx.blurHandler($event); });
-            ɵɵelementEnd();
-        } if (rf & 2) {
-            ɵɵproperty("options", ctx.options)("ngModel", ctx.value)("placeholder", ctx.placeholder)("filter", ctx.filter)("readonly", ctx.readonly)("disabled", ctx.disabled)("name", ctx.name)("tooltip", ctx.tooltip)("tooltipPosition", ctx.tooltipPosition)("autoDisplayFirst", ctx.autoDisplayFirst)("scrollHeight", ctx.scrollHeight)("autofocus", ctx.autofocus);
-        } }, directives: [Dropdown, NgControlStatus, NgModel], styles: ["p-dropdown .ui-dropdown .ui-state-focus{border:1px solid #a6a6a6}p-dropdown .ui-dropdown .ui-inputtext:enabled:focus{border-color:#a6a6a6}p-dropdown .ui-dropdown .ui-dropdown-filter-icon{color:#000}p-dropdown .ui-dropdown .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item-group.ui-state-highlight,p-dropdown .ui-dropdown .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight{background-color:#3d4851}"], encapsulation: 2 });
-    return DropdownComponent;
-}(UiInput));
-var ɵDropdownComponent_BaseFactory = ɵɵgetInheritedFactory(DropdownComponent);
-/*@__PURE__*/ (function () { ɵsetClassMetadata(DropdownComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-dropdown',
-                templateUrl: './dropdown.component.html',
-                styleUrls: ['./dropdown.component.scss'],
-                providers: [{
-                        provide: NG_VALUE_ACCESSOR,
-                        useExisting: forwardRef(function () { return DropdownComponent; }),
-                        multi: true
-                    }],
-                encapsulation: ViewEncapsulation.None
-            }]
-    }], null, { options: [{
-            type: Input
-        }], readonly: [{
-            type: Input
-        }], disabled: [{
-            type: Input
-        }], filter: [{
-            type: Input
-        }], placeholder: [{
-            type: Input
-        }], staticLabel: [{
-            type: Input
-        }], name: [{
-            type: Input
-        }], tooltip: [{
-            type: Input
-        }], tooltipPosition: [{
-            type: Input
-        }], autoDisplayFirst: [{
-            type: Input
-        }], scrollHeight: [{
-            type: Input
-        }], autofocus: [{
-            type: Input
-        }], onFocus: [{
-            type: Output
-        }], onBlur: [{
-            type: Output
-        }] }); })();
-
-function DynamicFieldsComponent_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
-    var _r81 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 10);
-    ɵɵelementStart(1, "label", 11);
-    ɵɵtext(2);
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "input", 12);
-    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_1_Template_input_ngModelChange_3_listener($event) { ɵɵrestoreView(_r81); var field_r74 = ɵɵnextContext().$implicit; var ctx_r80 = ɵɵnextContext(); return (ctx_r80.data[field_r74.model] = $event); });
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var field_r74 = ɵɵnextContext().$implicit;
-    var ctx_r75 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("for", field_r74.model);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(field_r74.label);
-    ɵɵadvance(1);
-    ɵɵproperty("id", field_r74.model)("name", field_r74.name)("ngModel", ctx_r75.data[field_r74.model])("disabled", ctx_r75.disabledFields[field_r74.model]);
-} }
-function DynamicFieldsComponent_div_1_div_2_Template(rf, ctx) { if (rf & 1) {
-    var _r85 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 13);
-    ɵɵelementStart(1, "label", 11);
-    ɵɵtext(2);
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "input", 14);
-    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_2_Template_input_ngModelChange_3_listener($event) { ɵɵrestoreView(_r85); var field_r74 = ɵɵnextContext().$implicit; var ctx_r84 = ɵɵnextContext(); return (ctx_r84.data[field_r74.model] = $event); });
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var field_r74 = ɵɵnextContext().$implicit;
-    var ctx_r76 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("for", field_r74.model);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(field_r74.label);
-    ɵɵadvance(1);
-    ɵɵproperty("id", field_r74.model)("name", field_r74.name)("ngModel", ctx_r76.data[field_r74.model])("disabled", ctx_r76.disabledFields[field_r74.model]);
-} }
-function DynamicFieldsComponent_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
-    var _r89 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 15);
-    ɵɵelementStart(1, "t-checkbox", 16);
-    ɵɵlistener("modelChange", function DynamicFieldsComponent_div_1_div_3_Template_t_checkbox_modelChange_1_listener($event) { ɵɵrestoreView(_r89); var field_r74 = ɵɵnextContext().$implicit; var ctx_r88 = ɵɵnextContext(); return (ctx_r88.data[field_r74.model] = $event); });
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var field_r74 = ɵɵnextContext().$implicit;
-    var ctx_r77 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("label", field_r74.label)("model", ctx_r77.data[field_r74.model])("name", field_r74.name)("disabled", ctx_r77.disabledFields[field_r74.model]);
-} }
-function DynamicFieldsComponent_div_1_div_4_Template(rf, ctx) { if (rf & 1) {
-    var _r93 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 17);
-    ɵɵelementStart(1, "t-radio", 18);
-    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_4_Template_t_radio_ngModelChange_1_listener($event) { ɵɵrestoreView(_r93); var field_r74 = ɵɵnextContext().$implicit; var ctx_r92 = ɵɵnextContext(); return (ctx_r92.data[field_r74.model] = $event); });
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var field_r74 = ɵɵnextContext().$implicit;
-    var ctx_r78 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("label", field_r74.label)("ngModel", ctx_r78.data[field_r74.model])("name", field_r74.name)("disabled", ctx_r78.disabledFields[field_r74.model]);
-} }
-function DynamicFieldsComponent_div_1_div_5_Template(rf, ctx) { if (rf & 1) {
-    var _r97 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 19);
-    ɵɵelementStart(1, "t-dropdown", 20);
-    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_5_Template_t_dropdown_ngModelChange_1_listener($event) { ɵɵrestoreView(_r97); var field_r74 = ɵɵnextContext().$implicit; var ctx_r96 = ɵɵnextContext(); return (ctx_r96.data[field_r74.model] = $event); });
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var field_r74 = ɵɵnextContext().$implicit;
-    var ctx_r79 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("placeholder", field_r74.label)("ngModel", ctx_r79.data[field_r74.model])("options", ctx_r79.dropdownOptions[field_r74.model])("name", field_r74.name)("disabled", ctx_r79.disabledFields[field_r74.model]);
-} }
-function DynamicFieldsComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 4);
-    ɵɵtemplate(1, DynamicFieldsComponent_div_1_div_1_Template, 4, 6, "div", 5);
-    ɵɵtemplate(2, DynamicFieldsComponent_div_1_div_2_Template, 4, 6, "div", 6);
-    ɵɵtemplate(3, DynamicFieldsComponent_div_1_div_3_Template, 2, 4, "div", 7);
-    ɵɵtemplate(4, DynamicFieldsComponent_div_1_div_4_Template, 2, 4, "div", 8);
-    ɵɵtemplate(5, DynamicFieldsComponent_div_1_div_5_Template, 2, 5, "div", 9);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var field_r74 = ctx.$implicit;
-    ɵɵproperty("ngSwitch", field_r74.type);
-    ɵɵadvance(1);
-    ɵɵproperty("ngSwitchCase", "text");
-    ɵɵadvance(1);
-    ɵɵproperty("ngSwitchCase", "number");
-    ɵɵadvance(1);
-    ɵɵproperty("ngSwitchCase", "checkbox");
-    ɵɵadvance(1);
-    ɵɵproperty("ngSwitchCase", "radio");
-    ɵɵadvance(1);
-    ɵɵproperty("ngSwitchCase", "select");
-} }
-function DynamicFieldsComponent_div_3_t_button_2_Template(rf, ctx) { if (rf & 1) {
-    var _r102 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "t-button", 24);
-    ɵɵlistener("click", function DynamicFieldsComponent_div_3_t_button_2_Template_t_button_click_0_listener() { ɵɵrestoreView(_r102); var ctx_r101 = ɵɵnextContext(2); return ctx_r101.secondaryClick(); });
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var ctx_r100 = ɵɵnextContext(2);
-    ɵɵproperty("label", ctx_r100.secondaryLabel);
-} }
-function DynamicFieldsComponent_div_3_Template(rf, ctx) { if (rf & 1) {
-    var _r104 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 21);
-    ɵɵelementStart(1, "t-button", 22);
-    ɵɵlistener("click", function DynamicFieldsComponent_div_3_Template_t_button_click_1_listener() { ɵɵrestoreView(_r104); var ctx_r103 = ɵɵnextContext(); return ctx_r103.primaryClick(); });
-    ɵɵelementEnd();
-    ɵɵtemplate(2, DynamicFieldsComponent_div_3_t_button_2_Template, 1, 1, "t-button", 23);
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var ctx_r73 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("label", ctx_r73.primaryLabel);
-    ɵɵadvance(1);
-    ɵɵproperty("ngIf", !ctx_r73.removeSecondaryButton);
-} }
 var DynamicFieldsComponent = /** @class */ (function () {
     function DynamicFieldsComponent() {
         this.primaryHandler = new EventEmitter();
@@ -791,83 +333,316 @@ var DynamicFieldsComponent = /** @class */ (function () {
     DynamicFieldsComponent.prototype.reset = function () {
         this.data = {};
     };
-    DynamicFieldsComponent.ɵfac = function DynamicFieldsComponent_Factory(t) { return new (t || DynamicFieldsComponent)(); };
-    DynamicFieldsComponent.ɵcmp = ɵɵdefineComponent({ type: DynamicFieldsComponent, selectors: [["t-dynamic-fields"]], inputs: { fields: "fields", buttonOptions: "buttonOptions", data: "data", dropdownOptions: "dropdownOptions", disabledFields: "disabledFields", hideDefaultAction: "hideDefaultAction" }, outputs: { primaryHandler: "primaryHandler", secondaryHandler: "secondaryHandler" }, decls: 4, vars: 2, consts: [[1, "dynamic-fields"], ["class", "input-element", 3, "ngSwitch", 4, "ngFor", "ngForOf"], [1, "button-container"], ["class", "default-button", 4, "ngIf"], [1, "input-element", 3, "ngSwitch"], ["class", "input-text", 4, "ngSwitchCase"], ["class", "input-number", 4, "ngSwitchCase"], ["class", "input-checkbox", 4, "ngSwitchCase"], ["class", "input-radio", 4, "ngSwitchCase"], ["class", "input-select", 4, "ngSwitchCase"], [1, "input-text"], [3, "for"], ["type", "text", 3, "id", "name", "ngModel", "disabled", "ngModelChange"], [1, "input-number"], ["type", "number", 3, "id", "name", "ngModel", "disabled", "ngModelChange"], [1, "input-checkbox"], [3, "label", "model", "name", "disabled", "modelChange"], [1, "input-radio"], [3, "label", "ngModel", "name", "disabled", "ngModelChange"], [1, "input-select"], [3, "placeholder", "ngModel", "options", "name", "disabled", "ngModelChange"], [1, "default-button"], ["type", "primary", 3, "label", "click"], ["type", "secondary", 3, "label", "click", 4, "ngIf"], ["type", "secondary", 3, "label", "click"]], template: function DynamicFieldsComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵelementStart(0, "div", 0);
-            ɵɵtemplate(1, DynamicFieldsComponent_div_1_Template, 6, 6, "div", 1);
-            ɵɵelementStart(2, "div", 2);
-            ɵɵtemplate(3, DynamicFieldsComponent_div_3_Template, 3, 2, "div", 3);
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-        } if (rf & 2) {
-            ɵɵadvance(1);
-            ɵɵproperty("ngForOf", ctx.renderFields);
-            ɵɵadvance(2);
-            ɵɵproperty("ngIf", !ctx.hideDefaultAction);
-        } }, directives: [NgForOf, NgIf, NgSwitch, NgSwitchCase, DefaultValueAccessor, NgControlStatus, NgModel, NumberValueAccessor, CheckboxComponent, RadioComponent, DropdownComponent, ButtonComponent], styles: [".dynamic-fields[_ngcontent-%COMP%]   .button-container[_ngcontent-%COMP%]{-ms-flex-pack:end;justify-content:flex-end;display:-ms-flexbox;display:flex}.dynamic-fields[_ngcontent-%COMP%]   .button-container[_ngcontent-%COMP%]   t-button[_ngcontent-%COMP%]{margin:0 .3125rem}.dynamic-fields[_ngcontent-%COMP%]   input[_ngcontent-%COMP%], .dynamic-fields[_ngcontent-%COMP%]   select[_ngcontent-%COMP%]{margin:0 .625rem;outline:0}.dynamic-fields[_ngcontent-%COMP%]   .input-checkbox[_ngcontent-%COMP%], .dynamic-fields[_ngcontent-%COMP%]   .input-number[_ngcontent-%COMP%], .dynamic-fields[_ngcontent-%COMP%]   .input-radio[_ngcontent-%COMP%], .dynamic-fields[_ngcontent-%COMP%]   .input-select[_ngcontent-%COMP%], .dynamic-fields[_ngcontent-%COMP%]   .input-text[_ngcontent-%COMP%]{margin:.625rem .3125rem}"] });
+    __decorate([
+        Input(),
+        __metadata("design:type", Array),
+        __metadata("design:paramtypes", [Array])
+    ], DynamicFieldsComponent.prototype, "fields", null);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object),
+        __metadata("design:paramtypes", [Object])
+    ], DynamicFieldsComponent.prototype, "buttonOptions", null);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object),
+        __metadata("design:paramtypes", [Object])
+    ], DynamicFieldsComponent.prototype, "data", null);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object),
+        __metadata("design:paramtypes", [Object])
+    ], DynamicFieldsComponent.prototype, "dropdownOptions", null);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object),
+        __metadata("design:paramtypes", [Object])
+    ], DynamicFieldsComponent.prototype, "disabledFields", null);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], DynamicFieldsComponent.prototype, "hideDefaultAction", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], DynamicFieldsComponent.prototype, "primaryHandler", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], DynamicFieldsComponent.prototype, "secondaryHandler", void 0);
+    DynamicFieldsComponent = __decorate([
+        Component({
+            selector: 't-dynamic-fields',
+            template: "<div class=\"dynamic-fields\">\n  <div *ngFor=\"let field of renderFields\" [ngSwitch]=\"field.type\" class='input-element'>\n\n    <!-- input type text -->\n    <div *ngSwitchCase=\"'text'\" class='input-text'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <input [id]='field.model' type=\"text\" [name]='field.name' [(ngModel)]=\"data[field.model]\"\n        [disabled]=\"disabledFields[field.model]\" />\n    </div>\n\n    <div *ngSwitchCase=\"'number'\" class='input-number'>\n      <label [for]=\"field.model\">{{field.label}}</label>\n      <input [id]='field.model' type=\"number\" [name]='field.name' [(ngModel)]=\"data[field.model]\"\n        [disabled]=\"disabledFields[field.model]\" />\n    </div>\n\n    <!-- input type checkbox -->\n    <div *ngSwitchCase=\"'checkbox'\" class='input-checkbox'>\n      <t-checkbox [label]=\"field.label\" [(model)]=\"data[field.model]\" [name]='field.name'\n        [disabled]=\"disabledFields[field.model]\">\n      </t-checkbox>\n    </div>\n\n    <!-- input type radio -->\n    <div *ngSwitchCase=\"'radio'\" class='input-radio'>\n      <t-radio [label]=\"field.label\" [(ngModel)]=\"data[field.model]\" [name]='field.name'\n        [disabled]=\"disabledFields[field.model]\"></t-radio>\n    </div>\n\n    <!-- dropdown -->\n    <div *ngSwitchCase=\"'select'\" class='input-select'>\n      <t-dropdown [placeholder]=\"field.label\" [(ngModel)]=\"data[field.model]\" [options]=\"dropdownOptions[field.model]\"\n        [name]='field.name' [disabled]=\"disabledFields[field.model]\">\n      </t-dropdown>\n    </div>\n  </div>\n\n  <div class=\"button-container\">\n    <div class=\"default-button\" *ngIf=\"!hideDefaultAction\">\n      <t-button [label]=\"primaryLabel\" type=\"primary\" (click)=\"primaryClick()\">\n      </t-button>\n      <t-button *ngIf=\"!removeSecondaryButton\" [label]=\"secondaryLabel\" type=\"secondary\" (click)=\"secondaryClick()\">\n      </t-button>\n    </div>\n  </div>\n</div>",
+            styles: [".dynamic-fields .button-container{-ms-flex-pack:end;justify-content:flex-end;display:-ms-flexbox;display:flex}.dynamic-fields .button-container t-button{margin:0 .3125rem}.dynamic-fields input,.dynamic-fields select{margin:0 .625rem;outline:0}.dynamic-fields .input-checkbox,.dynamic-fields .input-number,.dynamic-fields .input-radio,.dynamic-fields .input-select,.dynamic-fields .input-text{margin:.625rem .3125rem}"]
+        })
+    ], DynamicFieldsComponent);
     return DynamicFieldsComponent;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(DynamicFieldsComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-dynamic-fields',
-                templateUrl: './dynamic-fields.component.html',
-                styleUrls: ['./dynamic-fields.component.scss']
-            }]
-    }], null, { fields: [{
-            type: Input
-        }], buttonOptions: [{
-            type: Input
-        }], data: [{
-            type: Input
-        }], dropdownOptions: [{
-            type: Input
-        }], disabledFields: [{
-            type: Input
-        }], hideDefaultAction: [{
-            type: Input
-        }], primaryHandler: [{
-            type: Output
-        }], secondaryHandler: [{
-            type: Output
-        }] }); })();
+
+var CheckboxComponent = /** @class */ (function () {
+    function CheckboxComponent() {
+        this.modelChange = new EventEmitter();
+    }
+    CheckboxComponent.prototype.handleOnChange = function (event) {
+        this.checked = event.target.checked;
+        this.modelChange.emit(this.checked);
+    };
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], CheckboxComponent.prototype, "label", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], CheckboxComponent.prototype, "name", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], CheckboxComponent.prototype, "disabled", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], CheckboxComponent.prototype, "model", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], CheckboxComponent.prototype, "readonly", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], CheckboxComponent.prototype, "modelChange", void 0);
+    CheckboxComponent = __decorate([
+        Component({
+            selector: 't-checkbox',
+            template: "<label class=\"checkbox\" [class.disabled]=\"disabled\">{{label}}\n  <input type=\"checkbox\" \n    [name]=\"name\" \n    [(ngModel)]=\"model\"\n    [checked]=\"checked\" \n    [disabled]=\"disabled\" \n    [readonly]=\"readonly\"\n    \n    (change)=\"handleOnChange($event)\"\n    />\n  <span class=\"fa checkmark checkmark-primary active\"></span>\n</label>",
+            styles: [".hide{display:none!important}.disable{pointer-events:none;opacity:.4}.z-depth-1{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block{display:inline-block;vertical-align:top}.checkbox{display:inline;position:relative;padding-left:1.25rem;margin-bottom:.75rem;cursor:pointer;font-size:1rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.checkbox input{position:relative;opacity:0}.checkbox.disabled{opacity:.5;cursor:default;pointer-events:none}.checkbox .checkmark-primary{position:absolute;top:.25rem;left:0;height:1rem;width:1rem}.checkbox .checkmark-primary.active{background-color:#fff;border:.0625rem solid #0069b1}.checkbox .checkmark:after{content:\"\";position:absolute;display:none;bottom:0;left:0;top:-1px;right:0}.checkbox .checkmark.active:after{content:\"\\f00c\";color:#fff}.checkbox input:checked~.checkmark{background-color:#0069b1}.checkbox input:checked~.checkmark:after{display:block;font-size:.8125rem;height:1rem;line-height:15px}.checkbox .checkmark.disabled:after{color:#dfdfdf;margin-left:.03125rem;margin-bottom:.03125rem}"]
+        })
+    ], CheckboxComponent);
+    return CheckboxComponent;
+}());
+
+var RadioComponent = /** @class */ (function () {
+    function RadioComponent() {
+        this.value = true;
+        this.modelChange = new EventEmitter();
+    }
+    Object.defineProperty(RadioComponent.prototype, "model", {
+        get: function () {
+            return this._model;
+        },
+        set: function (value) {
+            this._model = value;
+            this.checked = value === this.value ? true : false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    RadioComponent.prototype.handleOnChange = function (event) {
+        var checked = event.target.checked;
+        this.checked = (checked && this.value === this.model) ? true : false;
+        var value = checked ? this.value : false;
+        this.modelChange.emit(value);
+    };
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], RadioComponent.prototype, "label", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], RadioComponent.prototype, "disabled", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], RadioComponent.prototype, "name", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], RadioComponent.prototype, "value", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object),
+        __metadata("design:paramtypes", [Object])
+    ], RadioComponent.prototype, "model", null);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], RadioComponent.prototype, "modelChange", void 0);
+    RadioComponent = __decorate([
+        Component({
+            selector: 't-radio',
+            template: "<label class=\"radio\" [class.disabled]=\"disabled\" [ngClass]=\"{'active': checked}\">\n  &nbsp;{{label}}\n  <input type=\"radio\" [name]=\"name\" [checked]=\"checked\" [disabled]=\"disabled\" (change)=\"handleOnChange($event)\"\n    [(ngModel)]=\"model\" [value]=\"value\">\n</label>",
+            styles: [".hide{display:none!important}.disable{pointer-events:none;opacity:.4}.z-depth-1{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block{display:inline-block;vertical-align:top}.radio{display:inline;position:relative;padding-left:1.25rem;cursor:pointer;font-size:1rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.radio input{position:relative;opacity:0}.radio:before{content:'';width:1.125rem;height:1.125rem;border-radius:50%;border:1px solid #0069b1;display:inline-block;position:absolute;left:0;top:2px}.radio.disabled{opacity:.5;cursor:default;pointer-events:none}.radio.active:before{content:'';border:5px solid #0069b1}"]
+        })
+    ], RadioComponent);
+    return RadioComponent;
+}());
+
+var noop = function () { };
+var ɵ0 = noop;
+var UiInput = /** @class */ (function () {
+    function UiInput() {
+        this.onChange = noop;
+        this.onTouched = noop;
+    }
+    UiInput.prototype.writeValue = function (obj) { };
+    UiInput.prototype.registerOnChange = function (fn) {
+        this.onChange = fn;
+    };
+    UiInput.prototype.registerOnTouched = function (fn) {
+        this.onTouched = fn;
+    };
+    UiInput.prototype.setDisabledState = function (isDisabled) { };
+    return UiInput;
+}());
+
+var DropdownComponent = /** @class */ (function (_super) {
+    __extends(DropdownComponent, _super);
+    function DropdownComponent() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        // tslint:disable: no-output-on-prefix
+        _this.onFocus = new EventEmitter();
+        _this.onBlur = new EventEmitter();
+        _this._tooltipPosition = 'top';
+        return _this;
+    }
+    DropdownComponent_1 = DropdownComponent;
+    Object.defineProperty(DropdownComponent.prototype, "options", {
+        get: function () {
+            return this._options;
+        },
+        set: function (value) {
+            this._options = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DropdownComponent.prototype, "tooltipPosition", {
+        get: function () {
+            return this._tooltipPosition;
+        },
+        set: function (value) {
+            this._tooltipPosition = value || 'top';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    DropdownComponent.prototype.writeValue = function (value) {
+        this.value = value;
+        this.onChange(value);
+    };
+    DropdownComponent.prototype.onChangeHandler = function (event) {
+        this.writeValue(event.value);
+    };
+    DropdownComponent.prototype.focusHandler = function (event) {
+        this.onFocus.emit(event);
+    };
+    DropdownComponent.prototype.blurHandler = function (event) {
+        this.onBlur.emit(event);
+    };
+    var DropdownComponent_1;
+    __decorate([
+        Input(),
+        __metadata("design:type", Array),
+        __metadata("design:paramtypes", [Array])
+    ], DropdownComponent.prototype, "options", null);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], DropdownComponent.prototype, "readonly", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], DropdownComponent.prototype, "disabled", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], DropdownComponent.prototype, "filter", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], DropdownComponent.prototype, "placeholder", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], DropdownComponent.prototype, "staticLabel", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], DropdownComponent.prototype, "name", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], DropdownComponent.prototype, "tooltip", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String),
+        __metadata("design:paramtypes", [String])
+    ], DropdownComponent.prototype, "tooltipPosition", null);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], DropdownComponent.prototype, "autoDisplayFirst", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], DropdownComponent.prototype, "scrollHeight", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], DropdownComponent.prototype, "autofocus", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], DropdownComponent.prototype, "onFocus", void 0);
+    __decorate([
+        Output(),
+        __metadata("design:type", EventEmitter)
+    ], DropdownComponent.prototype, "onBlur", void 0);
+    DropdownComponent = DropdownComponent_1 = __decorate([
+        Component({
+            selector: 't-dropdown',
+            template: "<p-dropdown \n    [options]=\"options\" \n    [ngModel]=\"value\" \n    [placeholder]=\"placeholder\"\n    [filter]=\"filter\"\n    [readonly]=\"readonly\"\n    [disabled]=\"disabled\"\n    [name]=\"name\"\n    [tooltip]=\"tooltip\"\n    [tooltipPosition]=\"tooltipPosition\"\n    [autoDisplayFirst]=\"autoDisplayFirst\"\n    [scrollHeight]=\"scrollHeight\"\n    [autofocus]=\"autofocus\"\n\n    (onChange)=\"onChangeHandler($event)\"\n    (onFocus)=\"focusHandler($event)\"\n    (onBlur)=\"blurHandler($event)\">\n</p-dropdown>\n",
+            providers: [{
+                    provide: NG_VALUE_ACCESSOR,
+                    useExisting: forwardRef(function () { return DropdownComponent_1; }),
+                    multi: true
+                }],
+            encapsulation: ViewEncapsulation.None,
+            styles: ["p-dropdown .ui-dropdown .ui-state-focus{border:1px solid #a6a6a6}p-dropdown .ui-dropdown .ui-inputtext:enabled:focus{border-color:#a6a6a6}p-dropdown .ui-dropdown .ui-dropdown-filter-icon{color:#000}p-dropdown .ui-dropdown .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item-group.ui-state-highlight,p-dropdown .ui-dropdown .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight{background-color:#3d4851}"]
+        })
+    ], DropdownComponent);
+    return DropdownComponent;
+}(UiInput));
 
 var ToastComponent = /** @class */ (function () {
     function ToastComponent() {
         this.position = 'top-right';
     }
-    ToastComponent.ɵfac = function ToastComponent_Factory(t) { return new (t || ToastComponent)(); };
-    ToastComponent.ɵcmp = ɵɵdefineComponent({ type: ToastComponent, selectors: [["t-toast"]], inputs: { position: "position", baseZIndex: "baseZIndex", key: "key" }, decls: 1, vars: 4, consts: [[3, "position", "key"]], template: function ToastComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵelement(0, "p-toast", 0);
-        } if (rf & 2) {
-            ɵɵstyleProp("z-index", ctx.baseZIndex);
-            ɵɵproperty("position", ctx.position)("key", ctx.key);
-        } }, directives: [Toast], styles: ["p-toast .ui-toast .ui-toast-message.ui-toast-message-success{background-color:#82b20a}p-toast .ui-toast .ui-toast-message.ui-toast-message-error{background-color:#d20f55}p-toast .ui-toast .ui-toast-message.ui-toast-message-info{background-color:#00a8e4}p-toast .ui-toast .ui-toast-message.ui-toast-message-warn{background-color:#ffa81e}"], encapsulation: 2 });
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], ToastComponent.prototype, "position", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Number)
+    ], ToastComponent.prototype, "baseZIndex", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], ToastComponent.prototype, "key", void 0);
+    ToastComponent = __decorate([
+        Component({
+            selector: 't-toast',
+            template: "<p-toast \r\n    [position]=\"position\"\r\n    [style.z-index]=\"baseZIndex\"\r\n    [key]=\"key\"\r\n></p-toast>",
+            encapsulation: ViewEncapsulation.None,
+            styles: ["p-toast .ui-toast .ui-toast-message.ui-toast-message-success{background-color:#82b20a}p-toast .ui-toast .ui-toast-message.ui-toast-message-error{background-color:#d20f55}p-toast .ui-toast .ui-toast-message.ui-toast-message-info{background-color:#00a8e4}p-toast .ui-toast .ui-toast-message.ui-toast-message-warn{background-color:#ffa81e}"]
+        })
+    ], ToastComponent);
     return ToastComponent;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(ToastComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-toast',
-                templateUrl: './toast.component.html',
-                styleUrls: ['./toast.component.scss'],
-                encapsulation: ViewEncapsulation.None
-            }]
-    }], null, { position: [{
-            type: Input
-        }], baseZIndex: [{
-            type: Input
-        }], key: [{
-            type: Input
-        }] }); })();
 
-function NavigateTopComponent_div_0_Template(rf, ctx) { if (rf & 1) {
-    var _r107 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 1);
-    ɵɵlistener("click", function NavigateTopComponent_div_0_Template_div_click_0_listener() { ɵɵrestoreView(_r107); var ctx_r106 = ɵɵnextContext(); return ctx_r106.navigateToTop(); });
-    ɵɵelement(1, "i", 2);
-    ɵɵelementEnd();
-} }
 var NavigateTopComponent = /** @class */ (function () {
     function NavigateTopComponent() {
         this.height = 500;
@@ -879,49 +654,38 @@ var NavigateTopComponent = /** @class */ (function () {
     NavigateTopComponent.prototype.navigateToTop = function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-    NavigateTopComponent.ɵfac = function NavigateTopComponent_Factory(t) { return new (t || NavigateTopComponent)(); };
-    NavigateTopComponent.ɵcmp = ɵɵdefineComponent({ type: NavigateTopComponent, selectors: [["t-navigate-top"]], hostBindings: function NavigateTopComponent_HostBindings(rf, ctx) { if (rf & 1) {
-            ɵɵlistener("scroll", function NavigateTopComponent_scroll_HostBindingHandler() { return ctx.scrollEvent(); }, false, ɵɵresolveWindow);
-        } }, inputs: { height: "height" }, decls: 1, vars: 1, consts: [["class", "navigate-top", 3, "click", 4, "ngIf"], [1, "navigate-top", 3, "click"], ["aria-hidden", "true", 1, "fa", "fa-chevron-up"]], template: function NavigateTopComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵtemplate(0, NavigateTopComponent_div_0_Template, 2, 0, "div", 0);
-        } if (rf & 2) {
-            ɵɵproperty("ngIf", ctx.enableNavigator);
-        } }, directives: [NgIf], styles: [".navigate-top[_ngcontent-%COMP%]{position:fixed;right:2em;bottom:10em;padding:.7em 1em;border-radius:50px;font-size:1em;background:rgba(0,0,0,.7);color:#fff;cursor:pointer}.navigate-top[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{position:relative;top:0;transition:.3s}.navigate-top[_ngcontent-%COMP%]:hover{background:#000}.navigate-top[_ngcontent-%COMP%]:hover   i[_ngcontent-%COMP%]{top:-7px}"] });
+    __decorate([
+        Input(),
+        __metadata("design:type", Number)
+    ], NavigateTopComponent.prototype, "height", void 0);
+    __decorate([
+        HostListener('window:scroll'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], NavigateTopComponent.prototype, "scrollEvent", null);
+    NavigateTopComponent = __decorate([
+        Component({
+            selector: 't-navigate-top',
+            template: "<div class=\"navigate-top\" *ngIf=\"enableNavigator\" (click)=\"navigateToTop()\">\n    <i class=\"fa fa-chevron-up\" aria-hidden=\"true\"></i>\n</div>",
+            styles: [".navigate-top{position:fixed;right:2em;bottom:10em;padding:.7em 1em;border-radius:50px;font-size:1em;background:rgba(0,0,0,.7);color:#fff;cursor:pointer}.navigate-top i{position:relative;top:0;transition:.3s}.navigate-top:hover{background:#000}.navigate-top:hover i{top:-7px}"]
+        })
+    ], NavigateTopComponent);
     return NavigateTopComponent;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(NavigateTopComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-navigate-top',
-                templateUrl: './navigate-top.component.html',
-                styleUrls: ['./navigate-top.component.scss']
-            }]
-    }], null, { height: [{
-            type: Input
-        }], scrollEvent: [{
-            type: HostListener,
-            args: ['window:scroll']
-        }] }); })();
 
 var AlertComponent = /** @class */ (function () {
     function AlertComponent() {
     }
-    AlertComponent.ɵfac = function AlertComponent_Factory(t) { return new (t || AlertComponent)(); };
-    AlertComponent.ɵcmp = ɵɵdefineComponent({ type: AlertComponent, selectors: [["t-alert"]], decls: 2, vars: 0, template: function AlertComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵelementStart(0, "p");
-            ɵɵtext(1, "alert works!");
-            ɵɵelementEnd();
-        } }, styles: [""] });
+    AlertComponent = __decorate([
+        Component({
+            selector: 't-alert',
+            template: "<p>alert works!</p>\n",
+            styles: [""]
+        })
+    ], AlertComponent);
     return AlertComponent;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(AlertComponent, [{
-        type: Component,
-        args: [{
-                selector: 't-alert',
-                templateUrl: './alert.component.html',
-                styleUrls: ['./alert.component.scss']
-            }]
-    }], null, null); })();
 
 var COMPONENTS = [
     NavComponent,
@@ -954,7 +718,6 @@ var SERVICES = [
     MessageService
 ];
 
-var _c0$3 = ["*"];
 var TooltipContentComponent = /** @class */ (function () {
     function TooltipContentComponent(element, cdr) {
         this.element = element;
@@ -1095,41 +858,38 @@ var TooltipContentComponent = /** @class */ (function () {
         }
         return offsetParent || window.document;
     };
-    TooltipContentComponent.ɵfac = function TooltipContentComponent_Factory(t) { return new (t || TooltipContentComponent)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(ChangeDetectorRef)); };
-    TooltipContentComponent.ɵcmp = ɵɵdefineComponent({ type: TooltipContentComponent, selectors: [["tooltip-content"]], inputs: { animation: "animation", content: "content", hostElement: "hostElement", placement: "placement" }, ngContentSelectors: _c0$3, decls: 4, vars: 12, consts: [["role", "tooltip"], [1, "tooltip-inner"]], template: function TooltipContentComponent_Template(rf, ctx) { if (rf & 1) {
-            ɵɵprojectionDef();
-            ɵɵelementStart(0, "div", 0);
-            ɵɵelementStart(1, "div", 1);
-            ɵɵprojection(2);
-            ɵɵtext(3);
-            ɵɵelementEnd();
-            ɵɵelementEnd();
-        } if (rf & 2) {
-            ɵɵclassMapInterpolate1("tooltip ", ctx.placement, "");
-            ɵɵstyleProp("top", ctx.top + "px")("left", ctx.left + "px");
-            ɵɵclassProp("in", ctx.isIn)("fade", ctx.isFade);
-            ɵɵadvance(3);
-            ɵɵtextInterpolate1(" ", ctx.content, " ");
-        } }, styles: [".tooltip[_ngcontent-%COMP%]{position:absolute;z-index:1070;display:block;margin:0;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\";font-style:normal;font-weight:400;line-height:1.5;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;white-space:normal;line-break:auto;font-size:.875rem;word-wrap:break-word;opacity:.9}.tooltip[_ngcontent-%COMP%]   .tooltip-inner[_ngcontent-%COMP%]{max-width:200px;padding:.25rem .5rem;color:#fff;text-align:center;background-color:#000;border-radius:.25rem}"] });
+    TooltipContentComponent.ctorParameters = function () { return [
+        { type: ElementRef },
+        { type: ChangeDetectorRef }
+    ]; };
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], TooltipContentComponent.prototype, "animation", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], TooltipContentComponent.prototype, "content", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", HTMLElement)
+    ], TooltipContentComponent.prototype, "hostElement", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], TooltipContentComponent.prototype, "placement", void 0);
+    TooltipContentComponent = __decorate([
+        Component({
+            // tslint:disable-next-line: component-selector
+            selector: 'tooltip-content',
+            template: "\n            <div class=\"tooltip {{ placement }}\"\n                [style.top]=\"top + 'px'\"\n                [style.left]=\"left + 'px'\"\n                [class.in]=\"isIn\"\n                [class.fade]=\"isFade\"\n                role=\"tooltip\">\n                <div class=\"tooltip-inner\">\n                    <ng-content></ng-content>\n                    {{ content }}\n                </div>\n            </div>",
+            styles: [".tooltip{position:absolute;z-index:1070;display:block;margin:0;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\";font-style:normal;font-weight:400;line-height:1.5;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;white-space:normal;line-break:auto;font-size:.875rem;word-wrap:break-word;opacity:.9}.tooltip .tooltip-inner{max-width:200px;padding:.25rem .5rem;color:#fff;text-align:center;background-color:#000;border-radius:.25rem}"]
+        }),
+        __metadata("design:paramtypes", [ElementRef,
+            ChangeDetectorRef])
+    ], TooltipContentComponent);
     return TooltipContentComponent;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(TooltipContentComponent, [{
-        type: Component,
-        args: [{
-                // tslint:disable-next-line: component-selector
-                selector: 'tooltip-content',
-                template: "\n            <div class=\"tooltip {{ placement }}\"\n                [style.top]=\"top + 'px'\"\n                [style.left]=\"left + 'px'\"\n                [class.in]=\"isIn\"\n                [class.fade]=\"isFade\"\n                role=\"tooltip\">\n                <div class=\"tooltip-inner\">\n                    <ng-content></ng-content>\n                    {{ content }}\n                </div>\n            </div>",
-                styleUrls: ['./tooltip.scss']
-            }]
-    }], function () { return [{ type: ElementRef }, { type: ChangeDetectorRef }]; }, { animation: [{
-            type: Input
-        }], content: [{
-            type: Input
-        }], hostElement: [{
-            type: Input
-        }], placement: [{
-            type: Input
-        }] }); })();
 
 var TooltipDirective = /** @class */ (function () {
     function TooltipDirective(viewContainerRef, resolver) {
@@ -1177,39 +937,49 @@ var TooltipDirective = /** @class */ (function () {
             (this.content).hide();
         }
     };
-    TooltipDirective.ɵfac = function TooltipDirective_Factory(t) { return new (t || TooltipDirective)(ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(ComponentFactoryResolver)); };
-    TooltipDirective.ɵdir = ɵɵdefineDirective({ type: TooltipDirective, selectors: [["", "tTooltip", ""]], hostBindings: function TooltipDirective_HostBindings(rf, ctx) { if (rf & 1) {
-            ɵɵlistener("focusin", function TooltipDirective_focusin_HostBindingHandler() { return ctx.show(); })("mouseenter", function TooltipDirective_mouseenter_HostBindingHandler() { return ctx.show(); })("focusout", function TooltipDirective_focusout_HostBindingHandler() { return ctx.hide(); })("mouseleave", function TooltipDirective_mouseleave_HostBindingHandler() { return ctx.hide(); });
-        } }, inputs: { content: ["tTooltip", "content"], tooltipDisabled: "tooltipDisabled", tooltipAnimation: "tooltipAnimation", tooltipPlacement: "tooltipPlacement" } });
+    TooltipDirective.ctorParameters = function () { return [
+        { type: ViewContainerRef },
+        { type: ComponentFactoryResolver }
+    ]; };
+    __decorate([
+        Input('tTooltip'),
+        __metadata("design:type", Object)
+    ], TooltipDirective.prototype, "content", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], TooltipDirective.prototype, "tooltipDisabled", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], TooltipDirective.prototype, "tooltipAnimation", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", String)
+    ], TooltipDirective.prototype, "tooltipPlacement", void 0);
+    __decorate([
+        HostListener('focusin'),
+        HostListener('mouseenter'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], TooltipDirective.prototype, "show", null);
+    __decorate([
+        HostListener('focusout'),
+        HostListener('mouseleave'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], TooltipDirective.prototype, "hide", null);
+    TooltipDirective = __decorate([
+        Directive({
+            selector: '[tTooltip]'
+        }),
+        __metadata("design:paramtypes", [ViewContainerRef,
+            ComponentFactoryResolver])
+    ], TooltipDirective);
     return TooltipDirective;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(TooltipDirective, [{
-        type: Directive,
-        args: [{
-                selector: '[tTooltip]'
-            }]
-    }], function () { return [{ type: ViewContainerRef }, { type: ComponentFactoryResolver }]; }, { content: [{
-            type: Input,
-            args: ['tTooltip']
-        }], tooltipDisabled: [{
-            type: Input
-        }], tooltipAnimation: [{
-            type: Input
-        }], tooltipPlacement: [{
-            type: Input
-        }], show: [{
-            type: HostListener,
-            args: ['focusin']
-        }, {
-            type: HostListener,
-            args: ['mouseenter']
-        }], hide: [{
-            type: HostListener,
-            args: ['focusout']
-        }, {
-            type: HostListener,
-            args: ['mouseleave']
-        }] }); })();
 
 var DIRECTIVES = [
     TooltipDirective,
@@ -1225,40 +995,24 @@ var ENTRYPOINTDIRECTIVES = [
 var NgLibrary = /** @class */ (function () {
     function NgLibrary() {
     }
-    NgLibrary.ɵmod = ɵɵdefineNgModule({ type: NgLibrary });
-    NgLibrary.ɵinj = ɵɵdefineInjector({ factory: function NgLibrary_Factory(t) { return new (t || NgLibrary)(); }, providers: __spread(SERVICES), imports: [[
+    NgLibrary = __decorate([
+        NgModule({
+            declarations: __spread(COMPONENTS, DIRECTIVES),
+            imports: [
                 CommonModule,
                 HttpClientModule,
                 RouterModule,
                 FormsModule,
                 DropdownModule,
                 ToastModule
-            ]] });
+            ],
+            providers: __spread(SERVICES),
+            exports: __spread(EXPORTEDCOMPONENTS, EXPORTEDDIRECTIVES),
+            entryComponents: __spread(ENTRYPOINTDIRECTIVES)
+        })
+    ], NgLibrary);
     return NgLibrary;
 }());
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(NgLibrary, { declarations: [NavComponent, HeaderComponent, BadgeComponent, ButtonComponent, DynamicFieldsComponent, CheckboxComponent, RadioComponent, DropdownComponent, ToastComponent, NavigateTopComponent, AlertComponent, TooltipDirective, TooltipContentComponent], imports: [CommonModule,
-        HttpClientModule,
-        RouterModule,
-        FormsModule,
-        DropdownModule,
-        ToastModule], exports: [NavComponent, HeaderComponent, BadgeComponent, ButtonComponent, DynamicFieldsComponent, CheckboxComponent, RadioComponent, DropdownComponent, ToastComponent, NavigateTopComponent, AlertComponent, TooltipDirective] }); })();
-/*@__PURE__*/ (function () { ɵsetClassMetadata(NgLibrary, [{
-        type: NgModule,
-        args: [{
-                declarations: __spread(COMPONENTS, DIRECTIVES),
-                imports: [
-                    CommonModule,
-                    HttpClientModule,
-                    RouterModule,
-                    FormsModule,
-                    DropdownModule,
-                    ToastModule
-                ],
-                providers: __spread(SERVICES),
-                exports: __spread(EXPORTEDCOMPONENTS, EXPORTEDDIRECTIVES),
-                entryComponents: __spread(ENTRYPOINTDIRECTIVES)
-            }]
-    }], null, null); })();
 
 var HttpService = /** @class */ (function () {
     function HttpService(http) {
@@ -1279,16 +1033,18 @@ var HttpService = /** @class */ (function () {
     HttpService.prototype.putRequest = function (url, body) {
         return this.http.put(url, body, { headers: this.header });
     };
-    HttpService.ɵfac = function HttpService_Factory(t) { return new (t || HttpService)(ɵɵinject(HttpClient)); };
-    HttpService.ɵprov = ɵɵdefineInjectable({ token: HttpService, factory: HttpService.ɵfac, providedIn: 'root' });
+    HttpService.ctorParameters = function () { return [
+        { type: HttpClient }
+    ]; };
+    HttpService.ɵprov = ɵɵdefineInjectable({ factory: function HttpService_Factory() { return new HttpService(ɵɵinject(HttpClient)); }, token: HttpService, providedIn: "root" });
+    HttpService = __decorate([
+        Injectable({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [HttpClient])
+    ], HttpService);
     return HttpService;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(HttpService, [{
-        type: Injectable,
-        args: [{
-                providedIn: 'root'
-            }]
-    }], function () { return [{ type: HttpClient }]; }, null); })();
 
 var ToastService = /** @class */ (function () {
     function ToastService(messageService) {
@@ -1355,14 +1111,16 @@ var ToastService = /** @class */ (function () {
         }
         return param;
     };
-    ToastService.ɵfac = function ToastService_Factory(t) { return new (t || ToastService)(ɵɵinject(MessageService)); };
-    ToastService.ɵprov = ɵɵdefineInjectable({ token: ToastService, factory: ToastService.ɵfac, providedIn: 'root' });
+    ToastService.ctorParameters = function () { return [
+        { type: MessageService }
+    ]; };
+    ToastService.ɵprov = ɵɵdefineInjectable({ factory: function ToastService_Factory() { return new ToastService(ɵɵinject(MessageService)); }, token: ToastService, providedIn: "root" });
+    ToastService = __decorate([
+        Injectable({ providedIn: 'root' }),
+        __metadata("design:paramtypes", [MessageService])
+    ], ToastService);
     return ToastService;
 }());
-/*@__PURE__*/ (function () { ɵsetClassMetadata(ToastService, [{
-        type: Injectable,
-        args: [{ providedIn: 'root' }]
-    }], function () { return [{ type: MessageService }]; }, null); })();
 
 /*
  * Public API Surface of ng-library
@@ -1372,5 +1130,5 @@ var ToastService = /** @class */ (function () {
  * Generated bundle index. Do not edit.
  */
 
-export { AlertComponent, BadgeComponent, ButtonComponent, CheckboxComponent, DropdownComponent, DynamicFieldsComponent, HeaderComponent, HttpService, NavComponent, NavigateTopComponent, NgLibrary, RadioComponent, ToastComponent, ToastService, TooltipDirective };
+export { AlertComponent, BadgeComponent, ButtonComponent, CheckboxComponent, DropdownComponent, DynamicFieldsComponent, HeaderComponent, HttpService, NavComponent, NavigateTopComponent, NgLibrary, RadioComponent, ToastComponent, ToastService, TooltipDirective, COMPONENTS as ɵa, EXPORTEDCOMPONENTS as ɵb, NavComponent as ɵc, HeaderComponent as ɵd, BadgeComponent as ɵe, ButtonComponent as ɵf, DynamicFieldsComponent as ɵg, CheckboxComponent as ɵh, RadioComponent as ɵi, DropdownComponent as ɵj, UiInput as ɵk, ToastComponent as ɵl, NavigateTopComponent as ɵm, AlertComponent as ɵn, DIRECTIVES as ɵo, EXPORTEDDIRECTIVES as ɵp, ENTRYPOINTDIRECTIVES as ɵq, TooltipDirective as ɵr, TooltipContentComponent as ɵs, SERVICES as ɵt };
 //# sourceMappingURL=fourjs-ng-library.js.map

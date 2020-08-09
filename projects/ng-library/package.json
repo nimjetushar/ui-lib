@@ -1,6 +1,6 @@
 {
   "name": "@fourjs/ng-library",
-  "version": "20.8.3",
+  "version": "20.8.6",
   "description": "UI library featuring various angular based components",
   "peerDependencies": {
     "@angular/common": "9.1.1",
