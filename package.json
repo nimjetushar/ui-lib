@@ -1,6 +1,6 @@
 {
   "name": "ui-lib",
-  "version": "20.8.6",
+  "version": "20.8.9",
   "description": "UI library featuring various angular based components",
   "scripts": {
     "build": "npm run test-server && npm run lint && npm run build-only",

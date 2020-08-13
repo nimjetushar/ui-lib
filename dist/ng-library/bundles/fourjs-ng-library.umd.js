@@ -700,14 +700,14 @@
             this.onChange = noop;
             this.onTouched = noop;
         }
-        UiInput.prototype.writeValue = function (obj) { };
+        UiInput.prototype.writeValue = function (_obj) { };
         UiInput.prototype.registerOnChange = function (fn) {
             this.onChange = fn;
         };
         UiInput.prototype.registerOnTouched = function (fn) {
             this.onTouched = fn;
         };
-        UiInput.prototype.setDisabledState = function (isDisabled) { };
+        UiInput.prototype.setDisabledState = function (_isDisabled) { };
         return UiInput;
     }());
 

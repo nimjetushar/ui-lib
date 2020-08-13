@@ -438,14 +438,14 @@ class UiInput {
         this.onChange = noop;
         this.onTouched = noop;
     }
-    writeValue(obj) { }
+    writeValue(_obj) { }
     registerOnChange(fn) {
         this.onChange = fn;
     }
     registerOnTouched(fn) {
         this.onTouched = fn;
     }
-    setDisabledState(isDisabled) { }
+    setDisabledState(_isDisabled) { }
 }
 
 var DropdownComponent_1;
