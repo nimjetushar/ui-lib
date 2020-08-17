@@ -1,5 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import { UiInput } from '../../class/uiInput.class';
+import * as i0 from "@angular/core";
 export interface Dropdown {
     label: string;
     value: any;
@@ -29,5 +30,7 @@ export declare class DropdownComponent extends UiInput {
     onChangeHandler(event: any): void;
     focusHandler(event: FocusEvent): void;
     blurHandler(event: FocusEvent): void;
+    static ɵfac: i0.ɵɵFactoryDef<DropdownComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<DropdownComponent, "t-dropdown", never, { "options": "options"; "readonly": "readonly"; "disabled": "disabled"; "filter": "filter"; "placeholder": "placeholder"; "staticLabel": "staticLabel"; "name": "name"; "tooltip": "tooltip"; "tooltipPosition": "tooltipPosition"; "autoDisplayFirst": "autoDisplayFirst"; "scrollHeight": "scrollHeight"; "autofocus": "autofocus"; }, { "onFocus": "onFocus"; "onBlur": "onBlur"; }, never, never>;
 }
 export {};

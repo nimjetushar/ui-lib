@@ -3,7 +3,8 @@ const gulp = require("gulp"),
   autoprefixer = require("gulp-autoprefixer"),
   cssimport = require("gulp-cssimport"),
   replace = require('gulp-replace'),
-  cssbeautify = require('gulp-cssbeautify');
+  cssbeautify = require('gulp-cssbeautify'),
+  exec = require('child_process').exec;
 
 const sassFiles = "projects/ng-library/src/styles.scss",
   baseDest = "dist/ng-library",
@@ -52,6 +53,22 @@ function moveLicense() {
   return gulp.src('LICENSE').pipe(gulp.dest(baseDest));
 }
 
+function executeBuild(cb) {
+  return exec('ng build ng-library', (err) => {
+    cb(err);
+  });
+}
+
+function moveBuildFolder() {
+  return gulp.src(['dist/ng-library/**/**.*'])
+    .pipe(gulp.dest('../ui-library-demo/node_modules/@fourjs/ng-library'));
+}
+
+function watchCss() {
+  return gulp.watch(['projects/ng-library/src/**/*.*'], { queue: true }, gulp.series(executeBuild, defaultTask, moveBuildFolder));
+}
+
 const defaultTask = gulp.parallel(styles, font, images, moveStyles, moveReadme, moveLicense);
 
+exports.watch = gulp.series(executeBuild, defaultTask, moveBuildFolder, watchCss);
 exports.default = defaultTask;

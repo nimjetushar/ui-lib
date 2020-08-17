@@ -40,7 +40,7 @@
         position: absolute;
         display: none;
         bottom: 0;
-        left: 0;
+        left: 1px;
         top: -1px;
         right: 0;
     }
@@ -57,7 +57,7 @@
 
         &:after {
             display: block;
-            font-size: rem(13);
+            font-size: rem(12);
             height: rem(16);
             line-height: 15px;
         }

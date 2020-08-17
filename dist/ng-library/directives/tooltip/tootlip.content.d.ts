@@ -1,4 +1,5 @@
 import { AfterViewInit, ElementRef, ChangeDetectorRef } from '@angular/core';
+import * as i0 from "@angular/core";
 declare class TooltipContentComponent implements AfterViewInit {
     private element;
     private cdr;
@@ -20,5 +21,7 @@ declare class TooltipContentComponent implements AfterViewInit {
     private getStyle;
     private isStaticPositioned;
     private parentOffsetEl;
+    static ɵfac: i0.ɵɵFactoryDef<TooltipContentComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDefWithMeta<TooltipContentComponent, "tooltip-content", never, { "animation": "animation"; "content": "content"; "hostElement": "hostElement"; "placement": "placement"; }, {}, never, ["*"]>;
 }
 export { TooltipContentComponent as TooltipContent };

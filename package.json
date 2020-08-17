@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run test-server && npm run lint && npm run build-only",
     "build-only": "ng build ng-library --prod && gulp",
-    "dev-build": "ng build ng-library && gulp",
+    "dev-build": "gulp watch",
     "test": "ng test ng-library",
     "test-server": "ng test ng-library --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint ng-library",

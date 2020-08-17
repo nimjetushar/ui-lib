@@ -1,4 +1,5 @@
 import { MessageService } from 'primeng/api';
+import * as i0 from "@angular/core";
 export interface ToastParameters {
     id?: any;
     key?: string;
@@ -17,4 +18,6 @@ export declare class ToastService {
     show(toastParam: ToastParameters): void;
     showMultiple(toastParam: ToastParameters[]): void;
     private formatConfig;
+    static ɵfac: i0.ɵɵFactoryDef<ToastService, never>;
+    static ɵprov: i0.ɵɵInjectableDef<ToastService>;
 }
