@@ -10,7 +10,8 @@ const sassFiles = "projects/ng-library/src/styles.scss",
   baseDest = "dist/ng-library",
   fontDest = `${baseDest}/fonts`,
   cssDest = `${baseDest}`,
-  imgDest = `${baseDest}/images`;
+  imgDest = `${baseDest}/images`,
+  libraryDist = '../ui-library-demo/node_modules/@fourjs/ng-library';
 
 function styles() {
   return gulp
@@ -61,14 +62,18 @@ function executeBuild(cb) {
 
 function moveBuildFolder() {
   return gulp.src(['dist/ng-library/**/**.*'])
-    .pipe(gulp.dest('../ui-library-demo/node_modules/@fourjs/ng-library'));
+    .pipe(gulp.dest(libraryDist));
 }
 
 function watchCss() {
-  return gulp.watch(['projects/ng-library/src/**/*.*'], { queue: true }, gulp.series(executeBuild, defaultTask, moveBuildFolder));
+  return gulp.watch(
+    ['projects/ng-library/src/**/*.*'],
+    { ignoreInitial: false },
+    gulp.series(executeBuild, defaultTask, moveBuildFolder)
+  );
 }
 
 const defaultTask = gulp.parallel(styles, font, images, moveStyles, moveReadme, moveLicense);
 
-exports.watch = gulp.series(executeBuild, defaultTask, moveBuildFolder, watchCss);
+exports.watch = gulp.series(watchCss);
 exports.default = defaultTask;

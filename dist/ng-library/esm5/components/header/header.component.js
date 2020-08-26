@@ -3,15 +3,15 @@ import * as i0 from "@angular/core";
 import * as i1 from "@angular/common";
 import * as i2 from "@angular/router";
 function HeaderComponent_div_5_Template(rf, ctx) { if (rf & 1) {
-    var _r70 = i0.ɵɵgetCurrentView();
+    var _r73 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "div", 8);
-    i0.ɵɵlistener("click", function HeaderComponent_div_5_Template_div_click_0_listener() { i0.ɵɵrestoreView(_r70); var ctx_r69 = i0.ɵɵnextContext(); return ctx_r69.onLogoClick(); });
+    i0.ɵɵlistener("click", function HeaderComponent_div_5_Template_div_click_0_listener() { i0.ɵɵrestoreView(_r73); var ctx_r72 = i0.ɵɵnextContext(); return ctx_r72.onLogoClick(); });
     i0.ɵɵelement(1, "img", 9);
     i0.ɵɵelementEnd();
 } if (rf & 2) {
-    var ctx_r68 = i0.ɵɵnextContext();
+    var ctx_r71 = i0.ɵɵnextContext();
     i0.ɵɵadvance(1);
-    i0.ɵɵproperty("src", ctx_r68.logoSrc, i0.ɵɵsanitizeUrl);
+    i0.ɵɵproperty("src", ctx_r71.logoSrc, i0.ɵɵsanitizeUrl);
 } }
 var HeaderComponent = /** @class */ (function () {
     function HeaderComponent() {

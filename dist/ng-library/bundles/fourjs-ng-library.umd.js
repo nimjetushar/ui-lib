@@ -245,9 +245,9 @@
             }] }); })();
 
     function NavComponent_li_6_li_6_Template(rf, ctx) { if (rf & 1) {
-        var _r63 = core.ɵɵgetCurrentView();
+        var _r66 = core.ɵɵgetCurrentView();
         core.ɵɵelementStart(0, "li", 13);
-        core.ɵɵlistener("click", function NavComponent_li_6_li_6_Template_li_click_0_listener() { core.ɵɵrestoreView(_r63); var subMenuItem_r59 = ctx.$implicit; var childIdx_r60 = ctx.index; var ctx_r62 = core.ɵɵnextContext(); var menuItem_r56 = ctx_r62.$implicit; var idx_r57 = ctx_r62.index; var ctx_r61 = core.ɵɵnextContext(); return ctx_r61.onSubMenuClick(menuItem_r56, subMenuItem_r59, idx_r57, childIdx_r60); });
+        core.ɵɵlistener("click", function NavComponent_li_6_li_6_Template_li_click_0_listener() { core.ɵɵrestoreView(_r66); var subMenuItem_r62 = ctx.$implicit; var childIdx_r63 = ctx.index; var ctx_r65 = core.ɵɵnextContext(); var menuItem_r59 = ctx_r65.$implicit; var idx_r60 = ctx_r65.index; var ctx_r64 = core.ɵɵnextContext(); return ctx_r64.onSubMenuClick(menuItem_r59, subMenuItem_r62, idx_r60, childIdx_r63); });
         core.ɵɵelementStart(1, "div", 14);
         core.ɵɵelementStart(2, "span", 10);
         core.ɵɵtext(3);
@@ -255,18 +255,18 @@
         core.ɵɵelementEnd();
         core.ɵɵelementEnd();
     } if (rf & 2) {
-        var subMenuItem_r59 = ctx.$implicit;
-        var childIdx_r60 = ctx.index;
-        var ctx_r58 = core.ɵɵnextContext(2);
-        core.ɵɵclassProp("active", (ctx_r58.selectedMenu == null ? null : ctx_r58.selectedMenu.subMenuIdx) === childIdx_r60);
+        var subMenuItem_r62 = ctx.$implicit;
+        var childIdx_r63 = ctx.index;
+        var ctx_r61 = core.ɵɵnextContext(2);
+        core.ɵɵclassProp("active", (ctx_r61.selectedMenu == null ? null : ctx_r61.selectedMenu.subMenuIdx) === childIdx_r63);
         core.ɵɵadvance(3);
-        core.ɵɵtextInterpolate1(" ", subMenuItem_r59.label, " ");
+        core.ɵɵtextInterpolate1(" ", subMenuItem_r62.label, " ");
     } }
     function NavComponent_li_6_Template(rf, ctx) { if (rf & 1) {
-        var _r65 = core.ɵɵgetCurrentView();
+        var _r68 = core.ɵɵgetCurrentView();
         core.ɵɵelementStart(0, "li", 7);
         core.ɵɵelementStart(1, "div", 8);
-        core.ɵɵlistener("click", function NavComponent_li_6_Template_div_click_1_listener() { core.ɵɵrestoreView(_r65); var menuItem_r56 = ctx.$implicit; var idx_r57 = ctx.index; var ctx_r64 = core.ɵɵnextContext(); return ctx_r64.onMenuClick(menuItem_r56, idx_r57); });
+        core.ɵɵlistener("click", function NavComponent_li_6_Template_div_click_1_listener() { core.ɵɵrestoreView(_r68); var menuItem_r59 = ctx.$implicit; var idx_r60 = ctx.index; var ctx_r67 = core.ɵɵnextContext(); return ctx_r67.onMenuClick(menuItem_r59, idx_r60); });
         core.ɵɵelement(2, "t-badge", 9);
         core.ɵɵelementStart(3, "span", 10);
         core.ɵɵtext(4);
@@ -277,23 +277,23 @@
         core.ɵɵelementEnd();
         core.ɵɵelementEnd();
     } if (rf & 2) {
-        var menuItem_r56 = ctx.$implicit;
-        var idx_r57 = ctx.index;
-        var ctx_r54 = core.ɵɵnextContext();
-        core.ɵɵclassProp("selected", (ctx_r54.selectedMenu == null ? null : ctx_r54.selectedMenu.idx) === idx_r57);
+        var menuItem_r59 = ctx.$implicit;
+        var idx_r60 = ctx.index;
+        var ctx_r57 = core.ɵɵnextContext();
+        core.ɵɵclassProp("selected", (ctx_r57.selectedMenu == null ? null : ctx_r57.selectedMenu.idx) === idx_r60);
         core.ɵɵadvance(2);
-        core.ɵɵproperty("badge", menuItem_r56 == null ? null : menuItem_r56.badge);
+        core.ɵɵproperty("badge", menuItem_r59 == null ? null : menuItem_r59.badge);
         core.ɵɵadvance(2);
-        core.ɵɵtextInterpolate(menuItem_r56.label);
+        core.ɵɵtextInterpolate(menuItem_r59.label);
         core.ɵɵadvance(1);
-        core.ɵɵclassProp("expanded", ctx_r54.expandedMenu === idx_r57);
+        core.ɵɵclassProp("expanded", ctx_r57.expandedMenu === idx_r60);
         core.ɵɵadvance(1);
-        core.ɵɵproperty("ngForOf", menuItem_r56.children);
+        core.ɵɵproperty("ngForOf", menuItem_r59.children);
     } }
     function NavComponent_div_7_Template(rf, ctx) { if (rf & 1) {
-        var _r67 = core.ɵɵgetCurrentView();
+        var _r70 = core.ɵɵgetCurrentView();
         core.ɵɵelementStart(0, "div", 15);
-        core.ɵɵlistener("click", function NavComponent_div_7_Template_div_click_0_listener() { core.ɵɵrestoreView(_r67); var ctx_r66 = core.ɵɵnextContext(); return ctx_r66.toggleMenu(); });
+        core.ɵɵlistener("click", function NavComponent_div_7_Template_div_click_0_listener() { core.ɵɵrestoreView(_r70); var ctx_r69 = core.ɵɵnextContext(); return ctx_r69.toggleMenu(); });
         core.ɵɵelementEnd();
     } }
     var _c0 = function (a0) { return { "sidebar-expanded": a0 }; };
@@ -424,15 +424,15 @@
             }] }); })();
 
     function HeaderComponent_div_5_Template(rf, ctx) { if (rf & 1) {
-        var _r70 = core.ɵɵgetCurrentView();
+        var _r73 = core.ɵɵgetCurrentView();
         core.ɵɵelementStart(0, "div", 8);
-        core.ɵɵlistener("click", function HeaderComponent_div_5_Template_div_click_0_listener() { core.ɵɵrestoreView(_r70); var ctx_r69 = core.ɵɵnextContext(); return ctx_r69.onLogoClick(); });
+        core.ɵɵlistener("click", function HeaderComponent_div_5_Template_div_click_0_listener() { core.ɵɵrestoreView(_r73); var ctx_r72 = core.ɵɵnextContext(); return ctx_r72.onLogoClick(); });
         core.ɵɵelement(1, "img", 9);
         core.ɵɵelementEnd();
     } if (rf & 2) {
-        var ctx_r68 = core.ɵɵnextContext();
+        var ctx_r71 = core.ɵɵnextContext();
         core.ɵɵadvance(1);
-        core.ɵɵproperty("src", ctx_r68.logoSrc, core.ɵɵsanitizeUrl);
+        core.ɵɵproperty("src", ctx_r71.logoSrc, core.ɵɵsanitizeUrl);
     } }
     var HeaderComponent = /** @class */ (function () {
         function HeaderComponent() {
@@ -495,9 +495,9 @@
     function ButtonComponent_t_badge_1_Template(rf, ctx) { if (rf & 1) {
         core.ɵɵelement(0, "t-badge", 2);
     } if (rf & 2) {
-        var ctx_r71 = core.ɵɵnextContext();
-        core.ɵɵclassMap(ctx_r71.bPos);
-        core.ɵɵproperty("badge", ctx_r71.badge);
+        var ctx_r74 = core.ɵɵnextContext();
+        core.ɵɵclassMap(ctx_r74.bPos);
+        core.ɵɵproperty("badge", ctx_r74.badge);
     } }
     var _c0$1 = function (a0, a1, a2) { return { "disabled": a0, "btn-large": a1, "btn-small": a2 }; };
     var ButtonComponent = /** @class */ (function () {
@@ -784,83 +784,83 @@
             }] }); })();
 
     function DynamicFieldsComponent_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
-        var _r81 = core.ɵɵgetCurrentView();
+        var _r84 = core.ɵɵgetCurrentView();
         core.ɵɵelementStart(0, "div", 10);
         core.ɵɵelementStart(1, "label", 11);
         core.ɵɵtext(2);
         core.ɵɵelementEnd();
         core.ɵɵelementStart(3, "input", 12);
-        core.ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_1_Template_input_ngModelChange_3_listener($event) { core.ɵɵrestoreView(_r81); var field_r74 = core.ɵɵnextContext().$implicit; var ctx_r80 = core.ɵɵnextContext(); return (ctx_r80.data[field_r74.model] = $event); });
+        core.ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_1_Template_input_ngModelChange_3_listener($event) { core.ɵɵrestoreView(_r84); var field_r77 = core.ɵɵnextContext().$implicit; var ctx_r83 = core.ɵɵnextContext(); return (ctx_r83.data[field_r77.model] = $event); });
         core.ɵɵelementEnd();
         core.ɵɵelementEnd();
     } if (rf & 2) {
-        var field_r74 = core.ɵɵnextContext().$implicit;
-        var ctx_r75 = core.ɵɵnextContext();
+        var field_r77 = core.ɵɵnextContext().$implicit;
+        var ctx_r78 = core.ɵɵnextContext();
         core.ɵɵadvance(1);
-        core.ɵɵproperty("for", field_r74.model);
+        core.ɵɵproperty("for", field_r77.model);
         core.ɵɵadvance(1);
-        core.ɵɵtextInterpolate(field_r74.label);
+        core.ɵɵtextInterpolate(field_r77.label);
         core.ɵɵadvance(1);
-        core.ɵɵproperty("id", field_r74.model)("name", field_r74.name)("ngModel", ctx_r75.data[field_r74.model])("disabled", ctx_r75.disabledFields[field_r74.model]);
+        core.ɵɵproperty("id", field_r77.model)("name", field_r77.name)("ngModel", ctx_r78.data[field_r77.model])("disabled", ctx_r78.disabledFields[field_r77.model]);
     } }
     function DynamicFieldsComponent_div_1_div_2_Template(rf, ctx) { if (rf & 1) {
-        var _r85 = core.ɵɵgetCurrentView();
+        var _r88 = core.ɵɵgetCurrentView();
         core.ɵɵelementStart(0, "div", 13);
         core.ɵɵelementStart(1, "label", 11);
         core.ɵɵtext(2);
         core.ɵɵelementEnd();
         core.ɵɵelementStart(3, "input", 14);
-        core.ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_2_Template_input_ngModelChange_3_listener($event) { core.ɵɵrestoreView(_r85); var field_r74 = core.ɵɵnextContext().$implicit; var ctx_r84 = core.ɵɵnextContext(); return (ctx_r84.data[field_r74.model] = $event); });
+        core.ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_2_Template_input_ngModelChange_3_listener($event) { core.ɵɵrestoreView(_r88); var field_r77 = core.ɵɵnextContext().$implicit; var ctx_r87 = core.ɵɵnextContext(); return (ctx_r87.data[field_r77.model] = $event); });
         core.ɵɵelementEnd();
         core.ɵɵelementEnd();
     } if (rf & 2) {
-        var field_r74 = core.ɵɵnextContext().$implicit;
-        var ctx_r76 = core.ɵɵnextContext();
-        core.ɵɵadvance(1);
-        core.ɵɵproperty("for", field_r74.model);
-        core.ɵɵadvance(1);
-        core.ɵɵtextInterpolate(field_r74.label);
-        core.ɵɵadvance(1);
-        core.ɵɵproperty("id", field_r74.model)("name", field_r74.name)("ngModel", ctx_r76.data[field_r74.model])("disabled", ctx_r76.disabledFields[field_r74.model]);
-    } }
-    function DynamicFieldsComponent_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
-        var _r89 = core.ɵɵgetCurrentView();
-        core.ɵɵelementStart(0, "div", 15);
-        core.ɵɵelementStart(1, "t-checkbox", 16);
-        core.ɵɵlistener("modelChange", function DynamicFieldsComponent_div_1_div_3_Template_t_checkbox_modelChange_1_listener($event) { core.ɵɵrestoreView(_r89); var field_r74 = core.ɵɵnextContext().$implicit; var ctx_r88 = core.ɵɵnextContext(); return (ctx_r88.data[field_r74.model] = $event); });
-        core.ɵɵelementEnd();
-        core.ɵɵelementEnd();
-    } if (rf & 2) {
-        var field_r74 = core.ɵɵnextContext().$implicit;
-        var ctx_r77 = core.ɵɵnextContext();
-        core.ɵɵadvance(1);
-        core.ɵɵproperty("label", field_r74.label)("model", ctx_r77.data[field_r74.model])("name", field_r74.name)("disabled", ctx_r77.disabledFields[field_r74.model]);
-    } }
-    function DynamicFieldsComponent_div_1_div_4_Template(rf, ctx) { if (rf & 1) {
-        var _r93 = core.ɵɵgetCurrentView();
-        core.ɵɵelementStart(0, "div", 17);
-        core.ɵɵelementStart(1, "t-radio", 18);
-        core.ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_4_Template_t_radio_ngModelChange_1_listener($event) { core.ɵɵrestoreView(_r93); var field_r74 = core.ɵɵnextContext().$implicit; var ctx_r92 = core.ɵɵnextContext(); return (ctx_r92.data[field_r74.model] = $event); });
-        core.ɵɵelementEnd();
-        core.ɵɵelementEnd();
-    } if (rf & 2) {
-        var field_r74 = core.ɵɵnextContext().$implicit;
-        var ctx_r78 = core.ɵɵnextContext();
-        core.ɵɵadvance(1);
-        core.ɵɵproperty("label", field_r74.label)("ngModel", ctx_r78.data[field_r74.model])("name", field_r74.name)("disabled", ctx_r78.disabledFields[field_r74.model]);
-    } }
-    function DynamicFieldsComponent_div_1_div_5_Template(rf, ctx) { if (rf & 1) {
-        var _r97 = core.ɵɵgetCurrentView();
-        core.ɵɵelementStart(0, "div", 19);
-        core.ɵɵelementStart(1, "t-dropdown", 20);
-        core.ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_5_Template_t_dropdown_ngModelChange_1_listener($event) { core.ɵɵrestoreView(_r97); var field_r74 = core.ɵɵnextContext().$implicit; var ctx_r96 = core.ɵɵnextContext(); return (ctx_r96.data[field_r74.model] = $event); });
-        core.ɵɵelementEnd();
-        core.ɵɵelementEnd();
-    } if (rf & 2) {
-        var field_r74 = core.ɵɵnextContext().$implicit;
+        var field_r77 = core.ɵɵnextContext().$implicit;
         var ctx_r79 = core.ɵɵnextContext();
         core.ɵɵadvance(1);
-        core.ɵɵproperty("placeholder", field_r74.label)("ngModel", ctx_r79.data[field_r74.model])("options", ctx_r79.dropdownOptions[field_r74.model])("name", field_r74.name)("disabled", ctx_r79.disabledFields[field_r74.model]);
+        core.ɵɵproperty("for", field_r77.model);
+        core.ɵɵadvance(1);
+        core.ɵɵtextInterpolate(field_r77.label);
+        core.ɵɵadvance(1);
+        core.ɵɵproperty("id", field_r77.model)("name", field_r77.name)("ngModel", ctx_r79.data[field_r77.model])("disabled", ctx_r79.disabledFields[field_r77.model]);
+    } }
+    function DynamicFieldsComponent_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
+        var _r92 = core.ɵɵgetCurrentView();
+        core.ɵɵelementStart(0, "div", 15);
+        core.ɵɵelementStart(1, "t-checkbox", 16);
+        core.ɵɵlistener("modelChange", function DynamicFieldsComponent_div_1_div_3_Template_t_checkbox_modelChange_1_listener($event) { core.ɵɵrestoreView(_r92); var field_r77 = core.ɵɵnextContext().$implicit; var ctx_r91 = core.ɵɵnextContext(); return (ctx_r91.data[field_r77.model] = $event); });
+        core.ɵɵelementEnd();
+        core.ɵɵelementEnd();
+    } if (rf & 2) {
+        var field_r77 = core.ɵɵnextContext().$implicit;
+        var ctx_r80 = core.ɵɵnextContext();
+        core.ɵɵadvance(1);
+        core.ɵɵproperty("label", field_r77.label)("model", ctx_r80.data[field_r77.model])("name", field_r77.name)("disabled", ctx_r80.disabledFields[field_r77.model]);
+    } }
+    function DynamicFieldsComponent_div_1_div_4_Template(rf, ctx) { if (rf & 1) {
+        var _r96 = core.ɵɵgetCurrentView();
+        core.ɵɵelementStart(0, "div", 17);
+        core.ɵɵelementStart(1, "t-radio", 18);
+        core.ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_4_Template_t_radio_ngModelChange_1_listener($event) { core.ɵɵrestoreView(_r96); var field_r77 = core.ɵɵnextContext().$implicit; var ctx_r95 = core.ɵɵnextContext(); return (ctx_r95.data[field_r77.model] = $event); });
+        core.ɵɵelementEnd();
+        core.ɵɵelementEnd();
+    } if (rf & 2) {
+        var field_r77 = core.ɵɵnextContext().$implicit;
+        var ctx_r81 = core.ɵɵnextContext();
+        core.ɵɵadvance(1);
+        core.ɵɵproperty("label", field_r77.label)("ngModel", ctx_r81.data[field_r77.model])("name", field_r77.name)("disabled", ctx_r81.disabledFields[field_r77.model]);
+    } }
+    function DynamicFieldsComponent_div_1_div_5_Template(rf, ctx) { if (rf & 1) {
+        var _r100 = core.ɵɵgetCurrentView();
+        core.ɵɵelementStart(0, "div", 19);
+        core.ɵɵelementStart(1, "t-dropdown", 20);
+        core.ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_5_Template_t_dropdown_ngModelChange_1_listener($event) { core.ɵɵrestoreView(_r100); var field_r77 = core.ɵɵnextContext().$implicit; var ctx_r99 = core.ɵɵnextContext(); return (ctx_r99.data[field_r77.model] = $event); });
+        core.ɵɵelementEnd();
+        core.ɵɵelementEnd();
+    } if (rf & 2) {
+        var field_r77 = core.ɵɵnextContext().$implicit;
+        var ctx_r82 = core.ɵɵnextContext();
+        core.ɵɵadvance(1);
+        core.ɵɵproperty("placeholder", field_r77.label)("ngModel", ctx_r82.data[field_r77.model])("options", ctx_r82.dropdownOptions[field_r77.model])("name", field_r77.name)("disabled", ctx_r82.disabledFields[field_r77.model]);
     } }
     function DynamicFieldsComponent_div_1_Template(rf, ctx) { if (rf & 1) {
         core.ɵɵelementStart(0, "div", 4);
@@ -871,8 +871,8 @@
         core.ɵɵtemplate(5, DynamicFieldsComponent_div_1_div_5_Template, 2, 5, "div", 9);
         core.ɵɵelementEnd();
     } if (rf & 2) {
-        var field_r74 = ctx.$implicit;
-        core.ɵɵproperty("ngSwitch", field_r74.type);
+        var field_r77 = ctx.$implicit;
+        core.ɵɵproperty("ngSwitch", field_r77.type);
         core.ɵɵadvance(1);
         core.ɵɵproperty("ngSwitchCase", "text");
         core.ɵɵadvance(1);
@@ -885,28 +885,28 @@
         core.ɵɵproperty("ngSwitchCase", "select");
     } }
     function DynamicFieldsComponent_div_3_t_button_2_Template(rf, ctx) { if (rf & 1) {
-        var _r102 = core.ɵɵgetCurrentView();
+        var _r105 = core.ɵɵgetCurrentView();
         core.ɵɵelementStart(0, "t-button", 24);
-        core.ɵɵlistener("click", function DynamicFieldsComponent_div_3_t_button_2_Template_t_button_click_0_listener() { core.ɵɵrestoreView(_r102); var ctx_r101 = core.ɵɵnextContext(2); return ctx_r101.secondaryClick(); });
+        core.ɵɵlistener("click", function DynamicFieldsComponent_div_3_t_button_2_Template_t_button_click_0_listener() { core.ɵɵrestoreView(_r105); var ctx_r104 = core.ɵɵnextContext(2); return ctx_r104.secondaryClick(); });
         core.ɵɵelementEnd();
     } if (rf & 2) {
-        var ctx_r100 = core.ɵɵnextContext(2);
-        core.ɵɵproperty("label", ctx_r100.secondaryLabel);
+        var ctx_r103 = core.ɵɵnextContext(2);
+        core.ɵɵproperty("label", ctx_r103.secondaryLabel);
     } }
     function DynamicFieldsComponent_div_3_Template(rf, ctx) { if (rf & 1) {
-        var _r104 = core.ɵɵgetCurrentView();
+        var _r107 = core.ɵɵgetCurrentView();
         core.ɵɵelementStart(0, "div", 21);
         core.ɵɵelementStart(1, "t-button", 22);
-        core.ɵɵlistener("click", function DynamicFieldsComponent_div_3_Template_t_button_click_1_listener() { core.ɵɵrestoreView(_r104); var ctx_r103 = core.ɵɵnextContext(); return ctx_r103.primaryClick(); });
+        core.ɵɵlistener("click", function DynamicFieldsComponent_div_3_Template_t_button_click_1_listener() { core.ɵɵrestoreView(_r107); var ctx_r106 = core.ɵɵnextContext(); return ctx_r106.primaryClick(); });
         core.ɵɵelementEnd();
         core.ɵɵtemplate(2, DynamicFieldsComponent_div_3_t_button_2_Template, 1, 1, "t-button", 23);
         core.ɵɵelementEnd();
     } if (rf & 2) {
-        var ctx_r73 = core.ɵɵnextContext();
+        var ctx_r76 = core.ɵɵnextContext();
         core.ɵɵadvance(1);
-        core.ɵɵproperty("label", ctx_r73.primaryLabel);
+        core.ɵɵproperty("label", ctx_r76.primaryLabel);
         core.ɵɵadvance(1);
-        core.ɵɵproperty("ngIf", !ctx_r73.removeSecondaryButton);
+        core.ɵɵproperty("ngIf", !ctx_r76.removeSecondaryButton);
     } }
     var DynamicFieldsComponent = /** @class */ (function () {
         function DynamicFieldsComponent() {
@@ -1076,9 +1076,9 @@
             }] }); })();
 
     function NavigateTopComponent_div_0_Template(rf, ctx) { if (rf & 1) {
-        var _r107 = core.ɵɵgetCurrentView();
+        var _r110 = core.ɵɵgetCurrentView();
         core.ɵɵelementStart(0, "div", 1);
-        core.ɵɵlistener("click", function NavigateTopComponent_div_0_Template_div_click_0_listener() { core.ɵɵrestoreView(_r107); var ctx_r106 = core.ɵɵnextContext(); return ctx_r106.navigateToTop(); });
+        core.ɵɵlistener("click", function NavigateTopComponent_div_0_Template_div_click_0_listener() { core.ɵɵrestoreView(_r110); var ctx_r109 = core.ɵɵnextContext(); return ctx_r109.navigateToTop(); });
         core.ɵɵelement(1, "i", 2);
         core.ɵɵelementEnd();
     } }
@@ -1117,19 +1117,85 @@
                 args: ['window:scroll']
             }] }); })();
 
+    function AlertComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+        core.ɵɵelementStart(0, "div", 7);
+        core.ɵɵelement(1, "i", 8);
+        core.ɵɵelementEnd();
+    } if (rf & 2) {
+        var ctx_r111 = core.ɵɵnextContext();
+        core.ɵɵadvance(1);
+        core.ɵɵclassMapInterpolate1("fa ", ctx_r111.iconClass, "");
+    } }
+    function AlertComponent_div_3_Template(rf, ctx) { if (rf & 1) {
+        core.ɵɵelementStart(0, "div", 9);
+        core.ɵɵtext(1);
+        core.ɵɵelementEnd();
+    } if (rf & 2) {
+        var ctx_r112 = core.ɵɵnextContext();
+        core.ɵɵadvance(1);
+        core.ɵɵtextInterpolate(ctx_r112.title);
+    } }
+    function AlertComponent_div_4_Template(rf, ctx) { if (rf & 1) {
+        core.ɵɵelement(0, "div", 10);
+    } if (rf & 2) {
+        var ctx_r113 = core.ɵɵnextContext();
+        core.ɵɵproperty("innerHtml", ctx_r113.message, core.ɵɵsanitizeHtml);
+    } }
     var AlertComponent = /** @class */ (function () {
         function AlertComponent() {
         }
+        Object.defineProperty(AlertComponent.prototype, "type", {
+            get: function () {
+                return this._type;
+            },
+            set: function (val) {
+                this._type = val;
+                this.setProperties(val);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        AlertComponent.prototype.setProperties = function (type) {
+            if (type) {
+                switch (type) {
+                    case 'success':
+                        this.iconClass = 'fa-check';
+                        break;
+                    case 'error':
+                        this.iconClass = 'fa-times';
+                        break;
+                    case 'warn':
+                        this.iconClass = 'fa-exclamation-triangle';
+                        break;
+                    case 'info':
+                        this.iconClass = 'fa-info';
+                        break;
+                    default:
+                        throw new Error('invalid Alert type');
+                }
+            }
+        };
         AlertComponent.ɵfac = function AlertComponent_Factory(t) { return new (t || AlertComponent)(); };
-        AlertComponent.ɵcmp = core.ɵɵdefineComponent({ type: AlertComponent, selectors: [["t-alert"]], decls: 5, vars: 0, consts: [[1, "t-alert"], [1, "inline-block", "t-alert-icon"], [1, "inline-block", "t-alert-content"], [1, "t-alert-content-title"], [1, "t-alert-content-message"]], template: function AlertComponent_Template(rf, ctx) { if (rf & 1) {
+        AlertComponent.ɵcmp = core.ɵɵdefineComponent({ type: AlertComponent, selectors: [["t-alert"]], inputs: { type: "type", title: "title", message: "message", hideIcon: "hideIcon" }, decls: 7, vars: 4, consts: [[1, "t-alert", 3, "ngClass"], ["class", "t-alert-icon", 4, "ngIf"], [1, "t-alert-content"], ["class", "t-alert-content-title", 4, "ngIf"], ["class", "t-alert-content-message", 3, "innerHtml", 4, "ngIf"], [1, "t-alert-close"], ["aria-hidden", "true", 1, "fa", "fa-times"], [1, "t-alert-icon"], ["aria-hidden", "true"], [1, "t-alert-content-title"], [1, "t-alert-content-message", 3, "innerHtml"]], template: function AlertComponent_Template(rf, ctx) { if (rf & 1) {
                 core.ɵɵelementStart(0, "div", 0);
-                core.ɵɵelement(1, "div", 1);
+                core.ɵɵtemplate(1, AlertComponent_div_1_Template, 2, 3, "div", 1);
                 core.ɵɵelementStart(2, "div", 2);
-                core.ɵɵelement(3, "div", 3);
-                core.ɵɵelement(4, "div", 4);
+                core.ɵɵtemplate(3, AlertComponent_div_3_Template, 2, 1, "div", 3);
+                core.ɵɵtemplate(4, AlertComponent_div_4_Template, 1, 1, "div", 4);
+                core.ɵɵelementEnd();
+                core.ɵɵelementStart(5, "div", 5);
+                core.ɵɵelement(6, "i", 6);
                 core.ɵɵelementEnd();
                 core.ɵɵelementEnd();
-            } }, styles: [""] });
+            } if (rf & 2) {
+                core.ɵɵproperty("ngClass", ctx.type);
+                core.ɵɵadvance(1);
+                core.ɵɵproperty("ngIf", !ctx.hideIcon);
+                core.ɵɵadvance(2);
+                core.ɵɵproperty("ngIf", ctx.title);
+                core.ɵɵadvance(1);
+                core.ɵɵproperty("ngIf", ctx.message);
+            } }, directives: [common.NgClass, common.NgIf], styles: [".hide[_ngcontent-%COMP%]{display:none!important}.disable[_ngcontent-%COMP%]{pointer-events:none;opacity:.4}.z-depth-1[_ngcontent-%COMP%]{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half[_ngcontent-%COMP%]{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block[_ngcontent-%COMP%]{display:inline-block;vertical-align:top}.t-alert[_ngcontent-%COMP%]{display:-ms-flexbox;display:flex;padding:4px;border-radius:4px}.t-alert.success[_ngcontent-%COMP%]{background-color:#82b20a}.t-alert.error[_ngcontent-%COMP%]{background-color:#d20f55}.t-alert.warn[_ngcontent-%COMP%]{background-color:#ffa81e}.t-alert.info[_ngcontent-%COMP%]{background-color:#00a8e4}.t-alert-icon[_ngcontent-%COMP%]{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:0 14px;font-size:1.125rem;font-weight:lighter;color:#fff}.t-alert-content-title[_ngcontent-%COMP%]{font-size:1.1875rem;font-weight:700}"] });
         return AlertComponent;
     }());
     /*@__PURE__*/ (function () { core.ɵsetClassMetadata(AlertComponent, [{
@@ -1139,7 +1205,15 @@
                     templateUrl: './alert.component.html',
                     styleUrls: ['./alert.component.scss']
                 }]
-        }], null, null); })();
+        }], null, { type: [{
+                type: core.Input
+            }], title: [{
+                type: core.Input
+            }], message: [{
+                type: core.Input
+            }], hideIcon: [{
+                type: core.Input
+            }] }); })();
 
     var COMPONENTS = [
         NavComponent,

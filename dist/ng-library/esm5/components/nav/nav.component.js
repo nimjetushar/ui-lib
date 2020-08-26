@@ -6,9 +6,9 @@ import * as i1 from "@angular/router";
 import * as i2 from "@angular/common";
 import * as i3 from "../badge/badge.component";
 function NavComponent_li_6_li_6_Template(rf, ctx) { if (rf & 1) {
-    var _r63 = i0.ɵɵgetCurrentView();
+    var _r66 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "li", 13);
-    i0.ɵɵlistener("click", function NavComponent_li_6_li_6_Template_li_click_0_listener() { i0.ɵɵrestoreView(_r63); var subMenuItem_r59 = ctx.$implicit; var childIdx_r60 = ctx.index; var ctx_r62 = i0.ɵɵnextContext(); var menuItem_r56 = ctx_r62.$implicit; var idx_r57 = ctx_r62.index; var ctx_r61 = i0.ɵɵnextContext(); return ctx_r61.onSubMenuClick(menuItem_r56, subMenuItem_r59, idx_r57, childIdx_r60); });
+    i0.ɵɵlistener("click", function NavComponent_li_6_li_6_Template_li_click_0_listener() { i0.ɵɵrestoreView(_r66); var subMenuItem_r62 = ctx.$implicit; var childIdx_r63 = ctx.index; var ctx_r65 = i0.ɵɵnextContext(); var menuItem_r59 = ctx_r65.$implicit; var idx_r60 = ctx_r65.index; var ctx_r64 = i0.ɵɵnextContext(); return ctx_r64.onSubMenuClick(menuItem_r59, subMenuItem_r62, idx_r60, childIdx_r63); });
     i0.ɵɵelementStart(1, "div", 14);
     i0.ɵɵelementStart(2, "span", 10);
     i0.ɵɵtext(3);
@@ -16,18 +16,18 @@ function NavComponent_li_6_li_6_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementEnd();
     i0.ɵɵelementEnd();
 } if (rf & 2) {
-    var subMenuItem_r59 = ctx.$implicit;
-    var childIdx_r60 = ctx.index;
-    var ctx_r58 = i0.ɵɵnextContext(2);
-    i0.ɵɵclassProp("active", (ctx_r58.selectedMenu == null ? null : ctx_r58.selectedMenu.subMenuIdx) === childIdx_r60);
+    var subMenuItem_r62 = ctx.$implicit;
+    var childIdx_r63 = ctx.index;
+    var ctx_r61 = i0.ɵɵnextContext(2);
+    i0.ɵɵclassProp("active", (ctx_r61.selectedMenu == null ? null : ctx_r61.selectedMenu.subMenuIdx) === childIdx_r63);
     i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate1(" ", subMenuItem_r59.label, " ");
+    i0.ɵɵtextInterpolate1(" ", subMenuItem_r62.label, " ");
 } }
 function NavComponent_li_6_Template(rf, ctx) { if (rf & 1) {
-    var _r65 = i0.ɵɵgetCurrentView();
+    var _r68 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "li", 7);
     i0.ɵɵelementStart(1, "div", 8);
-    i0.ɵɵlistener("click", function NavComponent_li_6_Template_div_click_1_listener() { i0.ɵɵrestoreView(_r65); var menuItem_r56 = ctx.$implicit; var idx_r57 = ctx.index; var ctx_r64 = i0.ɵɵnextContext(); return ctx_r64.onMenuClick(menuItem_r56, idx_r57); });
+    i0.ɵɵlistener("click", function NavComponent_li_6_Template_div_click_1_listener() { i0.ɵɵrestoreView(_r68); var menuItem_r59 = ctx.$implicit; var idx_r60 = ctx.index; var ctx_r67 = i0.ɵɵnextContext(); return ctx_r67.onMenuClick(menuItem_r59, idx_r60); });
     i0.ɵɵelement(2, "t-badge", 9);
     i0.ɵɵelementStart(3, "span", 10);
     i0.ɵɵtext(4);
@@ -38,23 +38,23 @@ function NavComponent_li_6_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementEnd();
     i0.ɵɵelementEnd();
 } if (rf & 2) {
-    var menuItem_r56 = ctx.$implicit;
-    var idx_r57 = ctx.index;
-    var ctx_r54 = i0.ɵɵnextContext();
-    i0.ɵɵclassProp("selected", (ctx_r54.selectedMenu == null ? null : ctx_r54.selectedMenu.idx) === idx_r57);
+    var menuItem_r59 = ctx.$implicit;
+    var idx_r60 = ctx.index;
+    var ctx_r57 = i0.ɵɵnextContext();
+    i0.ɵɵclassProp("selected", (ctx_r57.selectedMenu == null ? null : ctx_r57.selectedMenu.idx) === idx_r60);
     i0.ɵɵadvance(2);
-    i0.ɵɵproperty("badge", menuItem_r56 == null ? null : menuItem_r56.badge);
+    i0.ɵɵproperty("badge", menuItem_r59 == null ? null : menuItem_r59.badge);
     i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate(menuItem_r56.label);
+    i0.ɵɵtextInterpolate(menuItem_r59.label);
     i0.ɵɵadvance(1);
-    i0.ɵɵclassProp("expanded", ctx_r54.expandedMenu === idx_r57);
+    i0.ɵɵclassProp("expanded", ctx_r57.expandedMenu === idx_r60);
     i0.ɵɵadvance(1);
-    i0.ɵɵproperty("ngForOf", menuItem_r56.children);
+    i0.ɵɵproperty("ngForOf", menuItem_r59.children);
 } }
 function NavComponent_div_7_Template(rf, ctx) { if (rf & 1) {
-    var _r67 = i0.ɵɵgetCurrentView();
+    var _r70 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "div", 15);
-    i0.ɵɵlistener("click", function NavComponent_div_7_Template_div_click_0_listener() { i0.ɵɵrestoreView(_r67); var ctx_r66 = i0.ɵɵnextContext(); return ctx_r66.toggleMenu(); });
+    i0.ɵɵlistener("click", function NavComponent_div_7_Template_div_click_0_listener() { i0.ɵɵrestoreView(_r70); var ctx_r69 = i0.ɵɵnextContext(); return ctx_r69.toggleMenu(); });
     i0.ɵɵelementEnd();
 } }
 var _c0 = function (a0) { return { "sidebar-expanded": a0 }; };

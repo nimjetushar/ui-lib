@@ -1,4 +1,4 @@
-import { ɵɵdefineComponent, ɵɵelement, ɵɵclassMapInterpolate1, ɵsetClassMetadata, Component, Input, ɵɵgetCurrentView, ɵɵelementStart, ɵɵlistener, ɵɵrestoreView, ɵɵnextContext, ɵɵtext, ɵɵelementEnd, ɵɵclassProp, ɵɵadvance, ɵɵtextInterpolate1, ɵɵtemplate, ɵɵproperty, ɵɵtextInterpolate, EventEmitter, ɵɵdirectiveInject, ɵɵpureFunction1, Output, ɵɵsanitizeUrl, ɵɵclassMap, ɵɵpureFunction3, ɵɵProvidersFeature, forwardRef, ɵɵInheritDefinitionFeature, ɵɵgetInheritedFactory, ViewEncapsulation, ɵɵstyleProp, ɵɵresolveWindow, HostListener, ElementRef, ChangeDetectorRef, ɵɵprojectionDef, ɵɵprojection, ViewContainerRef, ComponentFactoryResolver, ɵɵdefineDirective, Directive, ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, NgModule, ɵɵinject, ɵɵdefineInjectable, Injectable } from '@angular/core';
+import { ɵɵdefineComponent, ɵɵelement, ɵɵclassMapInterpolate1, ɵsetClassMetadata, Component, Input, ɵɵgetCurrentView, ɵɵelementStart, ɵɵlistener, ɵɵrestoreView, ɵɵnextContext, ɵɵtext, ɵɵelementEnd, ɵɵclassProp, ɵɵadvance, ɵɵtextInterpolate1, ɵɵtemplate, ɵɵproperty, ɵɵtextInterpolate, EventEmitter, ɵɵdirectiveInject, ɵɵpureFunction1, Output, ɵɵsanitizeUrl, ɵɵclassMap, ɵɵpureFunction3, ɵɵProvidersFeature, forwardRef, ɵɵInheritDefinitionFeature, ɵɵgetInheritedFactory, ViewEncapsulation, ɵɵstyleProp, ɵɵresolveWindow, HostListener, ɵɵsanitizeHtml, ElementRef, ChangeDetectorRef, ɵɵprojectionDef, ɵɵprojection, ViewContainerRef, ComponentFactoryResolver, ɵɵdefineDirective, Directive, ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, NgModule, ɵɵinject, ɵɵdefineInjectable, Injectable } from '@angular/core';
 import { NgClass, NgForOf, NgIf, NgSwitch, NgSwitchCase, CommonModule } from '@angular/common';
 import { HttpClientModule, HttpHeaders, HttpClient } from '@angular/common/http';
 import { NavigationEnd, Router, RouterLink, RouterModule } from '@angular/router';
@@ -840,18 +840,80 @@ NavigateTopComponent.ɵcmp = ɵɵdefineComponent({ type: NavigateTopComponent, s
             args: ['window:scroll']
         }] }); })();
 
+function AlertComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+    ɵɵelementStart(0, "div", 7);
+    ɵɵelement(1, "i", 8);
+    ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r54 = ɵɵnextContext();
+    ɵɵadvance(1);
+    ɵɵclassMapInterpolate1("fa ", ctx_r54.iconClass, "");
+} }
+function AlertComponent_div_3_Template(rf, ctx) { if (rf & 1) {
+    ɵɵelementStart(0, "div", 9);
+    ɵɵtext(1);
+    ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r55 = ɵɵnextContext();
+    ɵɵadvance(1);
+    ɵɵtextInterpolate(ctx_r55.title);
+} }
+function AlertComponent_div_4_Template(rf, ctx) { if (rf & 1) {
+    ɵɵelement(0, "div", 10);
+} if (rf & 2) {
+    const ctx_r56 = ɵɵnextContext();
+    ɵɵproperty("innerHtml", ctx_r56.message, ɵɵsanitizeHtml);
+} }
 class AlertComponent {
+    set type(val) {
+        this._type = val;
+        this.setProperties(val);
+    }
+    get type() {
+        return this._type;
+    }
+    setProperties(type) {
+        if (type) {
+            switch (type) {
+                case 'success':
+                    this.iconClass = 'fa-check';
+                    break;
+                case 'error':
+                    this.iconClass = 'fa-times';
+                    break;
+                case 'warn':
+                    this.iconClass = 'fa-exclamation-triangle';
+                    break;
+                case 'info':
+                    this.iconClass = 'fa-info';
+                    break;
+                default:
+                    throw new Error('invalid Alert type');
+            }
+        }
+    }
 }
 AlertComponent.ɵfac = function AlertComponent_Factory(t) { return new (t || AlertComponent)(); };
-AlertComponent.ɵcmp = ɵɵdefineComponent({ type: AlertComponent, selectors: [["t-alert"]], decls: 5, vars: 0, consts: [[1, "t-alert"], [1, "inline-block", "t-alert-icon"], [1, "inline-block", "t-alert-content"], [1, "t-alert-content-title"], [1, "t-alert-content-message"]], template: function AlertComponent_Template(rf, ctx) { if (rf & 1) {
+AlertComponent.ɵcmp = ɵɵdefineComponent({ type: AlertComponent, selectors: [["t-alert"]], inputs: { type: "type", title: "title", message: "message", hideIcon: "hideIcon" }, decls: 7, vars: 4, consts: [[1, "t-alert", 3, "ngClass"], ["class", "t-alert-icon", 4, "ngIf"], [1, "t-alert-content"], ["class", "t-alert-content-title", 4, "ngIf"], ["class", "t-alert-content-message", 3, "innerHtml", 4, "ngIf"], [1, "t-alert-close"], ["aria-hidden", "true", 1, "fa", "fa-times"], [1, "t-alert-icon"], ["aria-hidden", "true"], [1, "t-alert-content-title"], [1, "t-alert-content-message", 3, "innerHtml"]], template: function AlertComponent_Template(rf, ctx) { if (rf & 1) {
         ɵɵelementStart(0, "div", 0);
-        ɵɵelement(1, "div", 1);
+        ɵɵtemplate(1, AlertComponent_div_1_Template, 2, 3, "div", 1);
         ɵɵelementStart(2, "div", 2);
-        ɵɵelement(3, "div", 3);
-        ɵɵelement(4, "div", 4);
+        ɵɵtemplate(3, AlertComponent_div_3_Template, 2, 1, "div", 3);
+        ɵɵtemplate(4, AlertComponent_div_4_Template, 1, 1, "div", 4);
+        ɵɵelementEnd();
+        ɵɵelementStart(5, "div", 5);
+        ɵɵelement(6, "i", 6);
         ɵɵelementEnd();
         ɵɵelementEnd();
-    } }, styles: [""] });
+    } if (rf & 2) {
+        ɵɵproperty("ngClass", ctx.type);
+        ɵɵadvance(1);
+        ɵɵproperty("ngIf", !ctx.hideIcon);
+        ɵɵadvance(2);
+        ɵɵproperty("ngIf", ctx.title);
+        ɵɵadvance(1);
+        ɵɵproperty("ngIf", ctx.message);
+    } }, directives: [NgClass, NgIf], styles: [".hide[_ngcontent-%COMP%]{display:none!important}.disable[_ngcontent-%COMP%]{pointer-events:none;opacity:.4}.z-depth-1[_ngcontent-%COMP%]{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half[_ngcontent-%COMP%]{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block[_ngcontent-%COMP%]{display:inline-block;vertical-align:top}.t-alert[_ngcontent-%COMP%]{display:-ms-flexbox;display:flex;padding:4px;border-radius:4px}.t-alert.success[_ngcontent-%COMP%]{background-color:#82b20a}.t-alert.error[_ngcontent-%COMP%]{background-color:#d20f55}.t-alert.warn[_ngcontent-%COMP%]{background-color:#ffa81e}.t-alert.info[_ngcontent-%COMP%]{background-color:#00a8e4}.t-alert-icon[_ngcontent-%COMP%]{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:0 14px;font-size:1.125rem;font-weight:lighter;color:#fff}.t-alert-content-title[_ngcontent-%COMP%]{font-size:1.1875rem;font-weight:700}"] });
 /*@__PURE__*/ (function () { ɵsetClassMetadata(AlertComponent, [{
         type: Component,
         args: [{
@@ -859,7 +921,15 @@ AlertComponent.ɵcmp = ɵɵdefineComponent({ type: AlertComponent, selectors: [[
                 templateUrl: './alert.component.html',
                 styleUrls: ['./alert.component.scss']
             }]
-    }], null, null); })();
+    }], null, { type: [{
+            type: Input
+        }], title: [{
+            type: Input
+        }], message: [{
+            type: Input
+        }], hideIcon: [{
+            type: Input
+        }] }); })();
 
 const COMPONENTS = [
     NavComponent,

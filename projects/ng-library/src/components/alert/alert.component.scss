@@ -1,9 +1,45 @@
+@import "../../styles/variable.scss";
+@import "../../styles//utility.scss";
+
 .t-alert {
-    &-icon {}
+    display: flex;
+    padding: 4px;
+    border-radius: 4px;
+
+    &.success {
+        background-color: $color-success;
+    }
+
+    &.error {
+        background-color: $color-error;
+    }
+
+    &.warn {
+        background-color: $color-attention;
+    }
+
+    &.info {
+        background-color: $color-informational;
+    }
+
+    &-icon {
+        align-self : center;
+        padding    : 0px 14px;
+        font-size  : rem(18);
+        font-weight: lighter;
+        color      : #fff;
+    }
 
     &-content {
-        &-title {}
+        &-title {
+            font-size: rem(19);
+            font-weight: bold;
+        }
 
         &-message {}
+    }
+
+    &-close {
+        
     }
 }
