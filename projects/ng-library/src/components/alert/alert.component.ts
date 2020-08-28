@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export type AlertTypes = 'success' | 'error' | 'warn' | 'info';
 
@@ -20,6 +20,9 @@ export class AlertComponent {
   @Input() title: string;
   @Input() message: string;
   @Input() hideIcon: boolean;
+  @Input() enableClose: boolean;
+
+  @Output() onCloseClick: EventEmitter<boolean> = new EventEmitter();
 
   iconClass: string;
 
@@ -44,5 +47,9 @@ export class AlertComponent {
           throw new Error('invalid Alert type');
       }
     }
+  }
+
+  closeHandler(): void {
+    this.onCloseClick.emit(true);
   }
 }

@@ -782,7 +782,7 @@ ToastComponent.ɵcmp = ɵɵdefineComponent({ type: ToastComponent, selectors: [[
     } if (rf & 2) {
         ɵɵstyleProp("z-index", ctx.baseZIndex);
         ɵɵproperty("position", ctx.position)("key", ctx.key);
-    } }, directives: [Toast], styles: ["p-toast .ui-toast .ui-toast-message.ui-toast-message-success{background-color:#82b20a}p-toast .ui-toast .ui-toast-message.ui-toast-message-error{background-color:#d20f55}p-toast .ui-toast .ui-toast-message.ui-toast-message-info{background-color:#00a8e4}p-toast .ui-toast .ui-toast-message.ui-toast-message-warn{background-color:#ffa81e}"], encapsulation: 2 });
+    } }, directives: [Toast], styles: ["p-toast .ui-toast .ui-toast-message.ui-toast-message-success{background-color:#82b20a}p-toast .ui-toast .ui-toast-message.ui-toast-message-error{background-color:#b00020}p-toast .ui-toast .ui-toast-message.ui-toast-message-info{background-color:#00a8e4}p-toast .ui-toast .ui-toast-message.ui-toast-message-warn{background-color:#ffa81e}"], encapsulation: 2 });
 /*@__PURE__*/ (function () { ɵsetClassMetadata(ToastComponent, [{
         type: Component,
         args: [{
@@ -841,8 +841,8 @@ NavigateTopComponent.ɵcmp = ɵɵdefineComponent({ type: NavigateTopComponent, s
         }] }); })();
 
 function AlertComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 7);
-    ɵɵelement(1, "i", 8);
+    ɵɵelementStart(0, "div", 6);
+    ɵɵelement(1, "i", 7);
     ɵɵelementEnd();
 } if (rf & 2) {
     const ctx_r54 = ɵɵnextContext();
@@ -850,7 +850,7 @@ function AlertComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     ɵɵclassMapInterpolate1("fa ", ctx_r54.iconClass, "");
 } }
 function AlertComponent_div_3_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 9);
+    ɵɵelementStart(0, "div", 8);
     ɵɵtext(1);
     ɵɵelementEnd();
 } if (rf & 2) {
@@ -859,12 +859,23 @@ function AlertComponent_div_3_Template(rf, ctx) { if (rf & 1) {
     ɵɵtextInterpolate(ctx_r55.title);
 } }
 function AlertComponent_div_4_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "div", 10);
+    ɵɵelement(0, "div", 9);
 } if (rf & 2) {
     const ctx_r56 = ɵɵnextContext();
     ɵɵproperty("innerHtml", ctx_r56.message, ɵɵsanitizeHtml);
 } }
+function AlertComponent_div_5_Template(rf, ctx) { if (rf & 1) {
+    const _r59 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "div", 10);
+    ɵɵelementStart(1, "i", 11);
+    ɵɵlistener("click", function AlertComponent_div_5_Template_i_click_1_listener() { ɵɵrestoreView(_r59); const ctx_r58 = ɵɵnextContext(); return ctx_r58.closeHandler(); });
+    ɵɵelementEnd();
+    ɵɵelementEnd();
+} }
 class AlertComponent {
+    constructor() {
+        this.onCloseClick = new EventEmitter();
+    }
     set type(val) {
         this._type = val;
         this.setProperties(val);
@@ -892,18 +903,19 @@ class AlertComponent {
             }
         }
     }
+    closeHandler() {
+        this.onCloseClick.emit(true);
+    }
 }
 AlertComponent.ɵfac = function AlertComponent_Factory(t) { return new (t || AlertComponent)(); };
-AlertComponent.ɵcmp = ɵɵdefineComponent({ type: AlertComponent, selectors: [["t-alert"]], inputs: { type: "type", title: "title", message: "message", hideIcon: "hideIcon" }, decls: 7, vars: 4, consts: [[1, "t-alert", 3, "ngClass"], ["class", "t-alert-icon", 4, "ngIf"], [1, "t-alert-content"], ["class", "t-alert-content-title", 4, "ngIf"], ["class", "t-alert-content-message", 3, "innerHtml", 4, "ngIf"], [1, "t-alert-close"], ["aria-hidden", "true", 1, "fa", "fa-times"], [1, "t-alert-icon"], ["aria-hidden", "true"], [1, "t-alert-content-title"], [1, "t-alert-content-message", 3, "innerHtml"]], template: function AlertComponent_Template(rf, ctx) { if (rf & 1) {
+AlertComponent.ɵcmp = ɵɵdefineComponent({ type: AlertComponent, selectors: [["t-alert"]], inputs: { type: "type", title: "title", message: "message", hideIcon: "hideIcon", enableClose: "enableClose" }, outputs: { onCloseClick: "onCloseClick" }, decls: 6, vars: 5, consts: [[1, "t-alert", 3, "ngClass"], ["class", "t-alert-icon", 4, "ngIf"], [1, "t-alert-content"], ["class", "t-alert-content-title", 4, "ngIf"], ["class", "t-alert-content-message", 3, "innerHtml", 4, "ngIf"], ["class", "t-alert-close", 4, "ngIf"], [1, "t-alert-icon"], ["aria-hidden", "true"], [1, "t-alert-content-title"], [1, "t-alert-content-message", 3, "innerHtml"], [1, "t-alert-close"], ["aria-hidden", "true", 1, "fa", "fa-times", 3, "click"]], template: function AlertComponent_Template(rf, ctx) { if (rf & 1) {
         ɵɵelementStart(0, "div", 0);
         ɵɵtemplate(1, AlertComponent_div_1_Template, 2, 3, "div", 1);
         ɵɵelementStart(2, "div", 2);
         ɵɵtemplate(3, AlertComponent_div_3_Template, 2, 1, "div", 3);
         ɵɵtemplate(4, AlertComponent_div_4_Template, 1, 1, "div", 4);
         ɵɵelementEnd();
-        ɵɵelementStart(5, "div", 5);
-        ɵɵelement(6, "i", 6);
-        ɵɵelementEnd();
+        ɵɵtemplate(5, AlertComponent_div_5_Template, 2, 0, "div", 5);
         ɵɵelementEnd();
     } if (rf & 2) {
         ɵɵproperty("ngClass", ctx.type);
@@ -913,7 +925,9 @@ AlertComponent.ɵcmp = ɵɵdefineComponent({ type: AlertComponent, selectors: [[
         ɵɵproperty("ngIf", ctx.title);
         ɵɵadvance(1);
         ɵɵproperty("ngIf", ctx.message);
-    } }, directives: [NgClass, NgIf], styles: [".hide[_ngcontent-%COMP%]{display:none!important}.disable[_ngcontent-%COMP%]{pointer-events:none;opacity:.4}.z-depth-1[_ngcontent-%COMP%]{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half[_ngcontent-%COMP%]{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block[_ngcontent-%COMP%]{display:inline-block;vertical-align:top}.t-alert[_ngcontent-%COMP%]{display:-ms-flexbox;display:flex;padding:4px;border-radius:4px}.t-alert.success[_ngcontent-%COMP%]{background-color:#82b20a}.t-alert.error[_ngcontent-%COMP%]{background-color:#d20f55}.t-alert.warn[_ngcontent-%COMP%]{background-color:#ffa81e}.t-alert.info[_ngcontent-%COMP%]{background-color:#00a8e4}.t-alert-icon[_ngcontent-%COMP%]{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:0 14px;font-size:1.125rem;font-weight:lighter;color:#fff}.t-alert-content-title[_ngcontent-%COMP%]{font-size:1.1875rem;font-weight:700}"] });
+        ɵɵadvance(1);
+        ɵɵproperty("ngIf", ctx.enableClose);
+    } }, directives: [NgClass, NgIf], styles: [".hide[_ngcontent-%COMP%]{display:none!important}.disable[_ngcontent-%COMP%]{pointer-events:none;opacity:.4}.z-depth-1[_ngcontent-%COMP%]{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half[_ngcontent-%COMP%]{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block[_ngcontent-%COMP%]{display:inline-block;vertical-align:top}.t-alert[_ngcontent-%COMP%]{display:-ms-flexbox;display:flex;padding:4px;border-radius:4px}.t-alert.success[_ngcontent-%COMP%]{background-color:#82b20a}.t-alert.error[_ngcontent-%COMP%]{background-color:#b00020}.t-alert.warn[_ngcontent-%COMP%]{background-color:#ffa81e}.t-alert.info[_ngcontent-%COMP%]{background-color:#00a8e4}.t-alert-icon[_ngcontent-%COMP%]{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:0 0 0 14px;font-size:1.125rem;font-weight:lighter;color:#fff}.t-alert-content[_ngcontent-%COMP%]{padding-left:24px;color:#fff}.t-alert-content-title[_ngcontent-%COMP%]{font-size:.9375rem;font-weight:700;word-break:break-word}.t-alert-content-message[_ngcontent-%COMP%]{font-size:.8125rem;word-break:break-word}.t-alert-close[_ngcontent-%COMP%]{margin-left:auto;padding:0 10px;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;cursor:pointer}"] });
 /*@__PURE__*/ (function () { ɵsetClassMetadata(AlertComponent, [{
         type: Component,
         args: [{
@@ -929,6 +943,10 @@ AlertComponent.ɵcmp = ɵɵdefineComponent({ type: AlertComponent, selectors: [[
             type: Input
         }], hideIcon: [{
             type: Input
+        }], enableClose: [{
+            type: Input
+        }], onCloseClick: [{
+            type: Output
         }] }); })();
 
 const COMPONENTS = [

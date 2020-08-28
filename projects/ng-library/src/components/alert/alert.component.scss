@@ -2,8 +2,8 @@
 @import "../../styles//utility.scss";
 
 .t-alert {
-    display: flex;
-    padding: 4px;
+    display      : flex;
+    padding      : 4px;
     border-radius: 4px;
 
     &.success {
@@ -24,22 +24,32 @@
 
     &-icon {
         align-self : center;
-        padding    : 0px 14px;
+        padding    : 0 0 0 14px;
         font-size  : rem(18);
         font-weight: lighter;
         color      : #fff;
     }
 
     &-content {
+        padding-left: 24px;
+        color: #fff;
+
         &-title {
-            font-size: rem(19);
+            font-size  : rem(15);
             font-weight: bold;
+            word-break: break-word;
         }
 
-        &-message {}
+        &-message {
+            font-size  : rem(13);
+            word-break: break-word;
+        }
     }
 
     &-close {
-        
+        margin-left: auto;
+        padding    : 0 10px;
+        align-self : center;
+        cursor: pointer;
     }
 }

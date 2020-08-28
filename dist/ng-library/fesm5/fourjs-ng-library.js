@@ -31,9 +31,9 @@ var BadgeComponent = /** @class */ (function () {
         }] }); })();
 
 function NavComponent_li_6_li_6_Template(rf, ctx) { if (rf & 1) {
-    var _r66 = ɵɵgetCurrentView();
+    var _r69 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "li", 13);
-    ɵɵlistener("click", function NavComponent_li_6_li_6_Template_li_click_0_listener() { ɵɵrestoreView(_r66); var subMenuItem_r62 = ctx.$implicit; var childIdx_r63 = ctx.index; var ctx_r65 = ɵɵnextContext(); var menuItem_r59 = ctx_r65.$implicit; var idx_r60 = ctx_r65.index; var ctx_r64 = ɵɵnextContext(); return ctx_r64.onSubMenuClick(menuItem_r59, subMenuItem_r62, idx_r60, childIdx_r63); });
+    ɵɵlistener("click", function NavComponent_li_6_li_6_Template_li_click_0_listener() { ɵɵrestoreView(_r69); var subMenuItem_r65 = ctx.$implicit; var childIdx_r66 = ctx.index; var ctx_r68 = ɵɵnextContext(); var menuItem_r62 = ctx_r68.$implicit; var idx_r63 = ctx_r68.index; var ctx_r67 = ɵɵnextContext(); return ctx_r67.onSubMenuClick(menuItem_r62, subMenuItem_r65, idx_r63, childIdx_r66); });
     ɵɵelementStart(1, "div", 14);
     ɵɵelementStart(2, "span", 10);
     ɵɵtext(3);
@@ -41,18 +41,18 @@ function NavComponent_li_6_li_6_Template(rf, ctx) { if (rf & 1) {
     ɵɵelementEnd();
     ɵɵelementEnd();
 } if (rf & 2) {
-    var subMenuItem_r62 = ctx.$implicit;
-    var childIdx_r63 = ctx.index;
-    var ctx_r61 = ɵɵnextContext(2);
-    ɵɵclassProp("active", (ctx_r61.selectedMenu == null ? null : ctx_r61.selectedMenu.subMenuIdx) === childIdx_r63);
+    var subMenuItem_r65 = ctx.$implicit;
+    var childIdx_r66 = ctx.index;
+    var ctx_r64 = ɵɵnextContext(2);
+    ɵɵclassProp("active", (ctx_r64.selectedMenu == null ? null : ctx_r64.selectedMenu.subMenuIdx) === childIdx_r66);
     ɵɵadvance(3);
-    ɵɵtextInterpolate1(" ", subMenuItem_r62.label, " ");
+    ɵɵtextInterpolate1(" ", subMenuItem_r65.label, " ");
 } }
 function NavComponent_li_6_Template(rf, ctx) { if (rf & 1) {
-    var _r68 = ɵɵgetCurrentView();
+    var _r71 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "li", 7);
     ɵɵelementStart(1, "div", 8);
-    ɵɵlistener("click", function NavComponent_li_6_Template_div_click_1_listener() { ɵɵrestoreView(_r68); var menuItem_r59 = ctx.$implicit; var idx_r60 = ctx.index; var ctx_r67 = ɵɵnextContext(); return ctx_r67.onMenuClick(menuItem_r59, idx_r60); });
+    ɵɵlistener("click", function NavComponent_li_6_Template_div_click_1_listener() { ɵɵrestoreView(_r71); var menuItem_r62 = ctx.$implicit; var idx_r63 = ctx.index; var ctx_r70 = ɵɵnextContext(); return ctx_r70.onMenuClick(menuItem_r62, idx_r63); });
     ɵɵelement(2, "t-badge", 9);
     ɵɵelementStart(3, "span", 10);
     ɵɵtext(4);
@@ -63,23 +63,23 @@ function NavComponent_li_6_Template(rf, ctx) { if (rf & 1) {
     ɵɵelementEnd();
     ɵɵelementEnd();
 } if (rf & 2) {
-    var menuItem_r59 = ctx.$implicit;
-    var idx_r60 = ctx.index;
-    var ctx_r57 = ɵɵnextContext();
-    ɵɵclassProp("selected", (ctx_r57.selectedMenu == null ? null : ctx_r57.selectedMenu.idx) === idx_r60);
+    var menuItem_r62 = ctx.$implicit;
+    var idx_r63 = ctx.index;
+    var ctx_r60 = ɵɵnextContext();
+    ɵɵclassProp("selected", (ctx_r60.selectedMenu == null ? null : ctx_r60.selectedMenu.idx) === idx_r63);
     ɵɵadvance(2);
-    ɵɵproperty("badge", menuItem_r59 == null ? null : menuItem_r59.badge);
+    ɵɵproperty("badge", menuItem_r62 == null ? null : menuItem_r62.badge);
     ɵɵadvance(2);
-    ɵɵtextInterpolate(menuItem_r59.label);
+    ɵɵtextInterpolate(menuItem_r62.label);
     ɵɵadvance(1);
-    ɵɵclassProp("expanded", ctx_r57.expandedMenu === idx_r60);
+    ɵɵclassProp("expanded", ctx_r60.expandedMenu === idx_r63);
     ɵɵadvance(1);
-    ɵɵproperty("ngForOf", menuItem_r59.children);
+    ɵɵproperty("ngForOf", menuItem_r62.children);
 } }
 function NavComponent_div_7_Template(rf, ctx) { if (rf & 1) {
-    var _r70 = ɵɵgetCurrentView();
+    var _r73 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "div", 15);
-    ɵɵlistener("click", function NavComponent_div_7_Template_div_click_0_listener() { ɵɵrestoreView(_r70); var ctx_r69 = ɵɵnextContext(); return ctx_r69.toggleMenu(); });
+    ɵɵlistener("click", function NavComponent_div_7_Template_div_click_0_listener() { ɵɵrestoreView(_r73); var ctx_r72 = ɵɵnextContext(); return ctx_r72.toggleMenu(); });
     ɵɵelementEnd();
 } }
 var _c0 = function (a0) { return { "sidebar-expanded": a0 }; };
@@ -210,15 +210,15 @@ var NavComponent = /** @class */ (function () {
         }] }); })();
 
 function HeaderComponent_div_5_Template(rf, ctx) { if (rf & 1) {
-    var _r73 = ɵɵgetCurrentView();
+    var _r76 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "div", 8);
-    ɵɵlistener("click", function HeaderComponent_div_5_Template_div_click_0_listener() { ɵɵrestoreView(_r73); var ctx_r72 = ɵɵnextContext(); return ctx_r72.onLogoClick(); });
+    ɵɵlistener("click", function HeaderComponent_div_5_Template_div_click_0_listener() { ɵɵrestoreView(_r76); var ctx_r75 = ɵɵnextContext(); return ctx_r75.onLogoClick(); });
     ɵɵelement(1, "img", 9);
     ɵɵelementEnd();
 } if (rf & 2) {
-    var ctx_r71 = ɵɵnextContext();
+    var ctx_r74 = ɵɵnextContext();
     ɵɵadvance(1);
-    ɵɵproperty("src", ctx_r71.logoSrc, ɵɵsanitizeUrl);
+    ɵɵproperty("src", ctx_r74.logoSrc, ɵɵsanitizeUrl);
 } }
 var HeaderComponent = /** @class */ (function () {
     function HeaderComponent() {
@@ -281,9 +281,9 @@ var HeaderComponent = /** @class */ (function () {
 function ButtonComponent_t_badge_1_Template(rf, ctx) { if (rf & 1) {
     ɵɵelement(0, "t-badge", 2);
 } if (rf & 2) {
-    var ctx_r74 = ɵɵnextContext();
-    ɵɵclassMap(ctx_r74.bPos);
-    ɵɵproperty("badge", ctx_r74.badge);
+    var ctx_r77 = ɵɵnextContext();
+    ɵɵclassMap(ctx_r77.bPos);
+    ɵɵproperty("badge", ctx_r77.badge);
 } }
 var _c0$1 = function (a0, a1, a2) { return { "disabled": a0, "btn-large": a1, "btn-small": a2 }; };
 var ButtonComponent = /** @class */ (function () {
@@ -570,83 +570,83 @@ var ɵDropdownComponent_BaseFactory = ɵɵgetInheritedFactory(DropdownComponent)
         }] }); })();
 
 function DynamicFieldsComponent_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
-    var _r84 = ɵɵgetCurrentView();
+    var _r87 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "div", 10);
     ɵɵelementStart(1, "label", 11);
     ɵɵtext(2);
     ɵɵelementEnd();
     ɵɵelementStart(3, "input", 12);
-    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_1_Template_input_ngModelChange_3_listener($event) { ɵɵrestoreView(_r84); var field_r77 = ɵɵnextContext().$implicit; var ctx_r83 = ɵɵnextContext(); return (ctx_r83.data[field_r77.model] = $event); });
+    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_1_Template_input_ngModelChange_3_listener($event) { ɵɵrestoreView(_r87); var field_r80 = ɵɵnextContext().$implicit; var ctx_r86 = ɵɵnextContext(); return (ctx_r86.data[field_r80.model] = $event); });
     ɵɵelementEnd();
     ɵɵelementEnd();
 } if (rf & 2) {
-    var field_r77 = ɵɵnextContext().$implicit;
-    var ctx_r78 = ɵɵnextContext();
+    var field_r80 = ɵɵnextContext().$implicit;
+    var ctx_r81 = ɵɵnextContext();
     ɵɵadvance(1);
-    ɵɵproperty("for", field_r77.model);
+    ɵɵproperty("for", field_r80.model);
     ɵɵadvance(1);
-    ɵɵtextInterpolate(field_r77.label);
+    ɵɵtextInterpolate(field_r80.label);
     ɵɵadvance(1);
-    ɵɵproperty("id", field_r77.model)("name", field_r77.name)("ngModel", ctx_r78.data[field_r77.model])("disabled", ctx_r78.disabledFields[field_r77.model]);
+    ɵɵproperty("id", field_r80.model)("name", field_r80.name)("ngModel", ctx_r81.data[field_r80.model])("disabled", ctx_r81.disabledFields[field_r80.model]);
 } }
 function DynamicFieldsComponent_div_1_div_2_Template(rf, ctx) { if (rf & 1) {
-    var _r88 = ɵɵgetCurrentView();
+    var _r91 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "div", 13);
     ɵɵelementStart(1, "label", 11);
     ɵɵtext(2);
     ɵɵelementEnd();
     ɵɵelementStart(3, "input", 14);
-    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_2_Template_input_ngModelChange_3_listener($event) { ɵɵrestoreView(_r88); var field_r77 = ɵɵnextContext().$implicit; var ctx_r87 = ɵɵnextContext(); return (ctx_r87.data[field_r77.model] = $event); });
+    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_2_Template_input_ngModelChange_3_listener($event) { ɵɵrestoreView(_r91); var field_r80 = ɵɵnextContext().$implicit; var ctx_r90 = ɵɵnextContext(); return (ctx_r90.data[field_r80.model] = $event); });
     ɵɵelementEnd();
     ɵɵelementEnd();
 } if (rf & 2) {
-    var field_r77 = ɵɵnextContext().$implicit;
-    var ctx_r79 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("for", field_r77.model);
-    ɵɵadvance(1);
-    ɵɵtextInterpolate(field_r77.label);
-    ɵɵadvance(1);
-    ɵɵproperty("id", field_r77.model)("name", field_r77.name)("ngModel", ctx_r79.data[field_r77.model])("disabled", ctx_r79.disabledFields[field_r77.model]);
-} }
-function DynamicFieldsComponent_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
-    var _r92 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 15);
-    ɵɵelementStart(1, "t-checkbox", 16);
-    ɵɵlistener("modelChange", function DynamicFieldsComponent_div_1_div_3_Template_t_checkbox_modelChange_1_listener($event) { ɵɵrestoreView(_r92); var field_r77 = ɵɵnextContext().$implicit; var ctx_r91 = ɵɵnextContext(); return (ctx_r91.data[field_r77.model] = $event); });
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var field_r77 = ɵɵnextContext().$implicit;
-    var ctx_r80 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("label", field_r77.label)("model", ctx_r80.data[field_r77.model])("name", field_r77.name)("disabled", ctx_r80.disabledFields[field_r77.model]);
-} }
-function DynamicFieldsComponent_div_1_div_4_Template(rf, ctx) { if (rf & 1) {
-    var _r96 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 17);
-    ɵɵelementStart(1, "t-radio", 18);
-    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_4_Template_t_radio_ngModelChange_1_listener($event) { ɵɵrestoreView(_r96); var field_r77 = ɵɵnextContext().$implicit; var ctx_r95 = ɵɵnextContext(); return (ctx_r95.data[field_r77.model] = $event); });
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var field_r77 = ɵɵnextContext().$implicit;
-    var ctx_r81 = ɵɵnextContext();
-    ɵɵadvance(1);
-    ɵɵproperty("label", field_r77.label)("ngModel", ctx_r81.data[field_r77.model])("name", field_r77.name)("disabled", ctx_r81.disabledFields[field_r77.model]);
-} }
-function DynamicFieldsComponent_div_1_div_5_Template(rf, ctx) { if (rf & 1) {
-    var _r100 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 19);
-    ɵɵelementStart(1, "t-dropdown", 20);
-    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_5_Template_t_dropdown_ngModelChange_1_listener($event) { ɵɵrestoreView(_r100); var field_r77 = ɵɵnextContext().$implicit; var ctx_r99 = ɵɵnextContext(); return (ctx_r99.data[field_r77.model] = $event); });
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    var field_r77 = ɵɵnextContext().$implicit;
+    var field_r80 = ɵɵnextContext().$implicit;
     var ctx_r82 = ɵɵnextContext();
     ɵɵadvance(1);
-    ɵɵproperty("placeholder", field_r77.label)("ngModel", ctx_r82.data[field_r77.model])("options", ctx_r82.dropdownOptions[field_r77.model])("name", field_r77.name)("disabled", ctx_r82.disabledFields[field_r77.model]);
+    ɵɵproperty("for", field_r80.model);
+    ɵɵadvance(1);
+    ɵɵtextInterpolate(field_r80.label);
+    ɵɵadvance(1);
+    ɵɵproperty("id", field_r80.model)("name", field_r80.name)("ngModel", ctx_r82.data[field_r80.model])("disabled", ctx_r82.disabledFields[field_r80.model]);
+} }
+function DynamicFieldsComponent_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
+    var _r95 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "div", 15);
+    ɵɵelementStart(1, "t-checkbox", 16);
+    ɵɵlistener("modelChange", function DynamicFieldsComponent_div_1_div_3_Template_t_checkbox_modelChange_1_listener($event) { ɵɵrestoreView(_r95); var field_r80 = ɵɵnextContext().$implicit; var ctx_r94 = ɵɵnextContext(); return (ctx_r94.data[field_r80.model] = $event); });
+    ɵɵelementEnd();
+    ɵɵelementEnd();
+} if (rf & 2) {
+    var field_r80 = ɵɵnextContext().$implicit;
+    var ctx_r83 = ɵɵnextContext();
+    ɵɵadvance(1);
+    ɵɵproperty("label", field_r80.label)("model", ctx_r83.data[field_r80.model])("name", field_r80.name)("disabled", ctx_r83.disabledFields[field_r80.model]);
+} }
+function DynamicFieldsComponent_div_1_div_4_Template(rf, ctx) { if (rf & 1) {
+    var _r99 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "div", 17);
+    ɵɵelementStart(1, "t-radio", 18);
+    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_4_Template_t_radio_ngModelChange_1_listener($event) { ɵɵrestoreView(_r99); var field_r80 = ɵɵnextContext().$implicit; var ctx_r98 = ɵɵnextContext(); return (ctx_r98.data[field_r80.model] = $event); });
+    ɵɵelementEnd();
+    ɵɵelementEnd();
+} if (rf & 2) {
+    var field_r80 = ɵɵnextContext().$implicit;
+    var ctx_r84 = ɵɵnextContext();
+    ɵɵadvance(1);
+    ɵɵproperty("label", field_r80.label)("ngModel", ctx_r84.data[field_r80.model])("name", field_r80.name)("disabled", ctx_r84.disabledFields[field_r80.model]);
+} }
+function DynamicFieldsComponent_div_1_div_5_Template(rf, ctx) { if (rf & 1) {
+    var _r103 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "div", 19);
+    ɵɵelementStart(1, "t-dropdown", 20);
+    ɵɵlistener("ngModelChange", function DynamicFieldsComponent_div_1_div_5_Template_t_dropdown_ngModelChange_1_listener($event) { ɵɵrestoreView(_r103); var field_r80 = ɵɵnextContext().$implicit; var ctx_r102 = ɵɵnextContext(); return (ctx_r102.data[field_r80.model] = $event); });
+    ɵɵelementEnd();
+    ɵɵelementEnd();
+} if (rf & 2) {
+    var field_r80 = ɵɵnextContext().$implicit;
+    var ctx_r85 = ɵɵnextContext();
+    ɵɵadvance(1);
+    ɵɵproperty("placeholder", field_r80.label)("ngModel", ctx_r85.data[field_r80.model])("options", ctx_r85.dropdownOptions[field_r80.model])("name", field_r80.name)("disabled", ctx_r85.disabledFields[field_r80.model]);
 } }
 function DynamicFieldsComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     ɵɵelementStart(0, "div", 4);
@@ -657,8 +657,8 @@ function DynamicFieldsComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     ɵɵtemplate(5, DynamicFieldsComponent_div_1_div_5_Template, 2, 5, "div", 9);
     ɵɵelementEnd();
 } if (rf & 2) {
-    var field_r77 = ctx.$implicit;
-    ɵɵproperty("ngSwitch", field_r77.type);
+    var field_r80 = ctx.$implicit;
+    ɵɵproperty("ngSwitch", field_r80.type);
     ɵɵadvance(1);
     ɵɵproperty("ngSwitchCase", "text");
     ɵɵadvance(1);
@@ -671,28 +671,28 @@ function DynamicFieldsComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     ɵɵproperty("ngSwitchCase", "select");
 } }
 function DynamicFieldsComponent_div_3_t_button_2_Template(rf, ctx) { if (rf & 1) {
-    var _r105 = ɵɵgetCurrentView();
+    var _r108 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "t-button", 24);
-    ɵɵlistener("click", function DynamicFieldsComponent_div_3_t_button_2_Template_t_button_click_0_listener() { ɵɵrestoreView(_r105); var ctx_r104 = ɵɵnextContext(2); return ctx_r104.secondaryClick(); });
+    ɵɵlistener("click", function DynamicFieldsComponent_div_3_t_button_2_Template_t_button_click_0_listener() { ɵɵrestoreView(_r108); var ctx_r107 = ɵɵnextContext(2); return ctx_r107.secondaryClick(); });
     ɵɵelementEnd();
 } if (rf & 2) {
-    var ctx_r103 = ɵɵnextContext(2);
-    ɵɵproperty("label", ctx_r103.secondaryLabel);
+    var ctx_r106 = ɵɵnextContext(2);
+    ɵɵproperty("label", ctx_r106.secondaryLabel);
 } }
 function DynamicFieldsComponent_div_3_Template(rf, ctx) { if (rf & 1) {
-    var _r107 = ɵɵgetCurrentView();
+    var _r110 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "div", 21);
     ɵɵelementStart(1, "t-button", 22);
-    ɵɵlistener("click", function DynamicFieldsComponent_div_3_Template_t_button_click_1_listener() { ɵɵrestoreView(_r107); var ctx_r106 = ɵɵnextContext(); return ctx_r106.primaryClick(); });
+    ɵɵlistener("click", function DynamicFieldsComponent_div_3_Template_t_button_click_1_listener() { ɵɵrestoreView(_r110); var ctx_r109 = ɵɵnextContext(); return ctx_r109.primaryClick(); });
     ɵɵelementEnd();
     ɵɵtemplate(2, DynamicFieldsComponent_div_3_t_button_2_Template, 1, 1, "t-button", 23);
     ɵɵelementEnd();
 } if (rf & 2) {
-    var ctx_r76 = ɵɵnextContext();
+    var ctx_r79 = ɵɵnextContext();
     ɵɵadvance(1);
-    ɵɵproperty("label", ctx_r76.primaryLabel);
+    ɵɵproperty("label", ctx_r79.primaryLabel);
     ɵɵadvance(1);
-    ɵɵproperty("ngIf", !ctx_r76.removeSecondaryButton);
+    ɵɵproperty("ngIf", !ctx_r79.removeSecondaryButton);
 } }
 var DynamicFieldsComponent = /** @class */ (function () {
     function DynamicFieldsComponent() {
@@ -842,7 +842,7 @@ var ToastComponent = /** @class */ (function () {
         } if (rf & 2) {
             ɵɵstyleProp("z-index", ctx.baseZIndex);
             ɵɵproperty("position", ctx.position)("key", ctx.key);
-        } }, directives: [Toast], styles: ["p-toast .ui-toast .ui-toast-message.ui-toast-message-success{background-color:#82b20a}p-toast .ui-toast .ui-toast-message.ui-toast-message-error{background-color:#d20f55}p-toast .ui-toast .ui-toast-message.ui-toast-message-info{background-color:#00a8e4}p-toast .ui-toast .ui-toast-message.ui-toast-message-warn{background-color:#ffa81e}"], encapsulation: 2 });
+        } }, directives: [Toast], styles: ["p-toast .ui-toast .ui-toast-message.ui-toast-message-success{background-color:#82b20a}p-toast .ui-toast .ui-toast-message.ui-toast-message-error{background-color:#b00020}p-toast .ui-toast .ui-toast-message.ui-toast-message-info{background-color:#00a8e4}p-toast .ui-toast .ui-toast-message.ui-toast-message-warn{background-color:#ffa81e}"], encapsulation: 2 });
     return ToastComponent;
 }());
 /*@__PURE__*/ (function () { ɵsetClassMetadata(ToastComponent, [{
@@ -862,9 +862,9 @@ var ToastComponent = /** @class */ (function () {
         }] }); })();
 
 function NavigateTopComponent_div_0_Template(rf, ctx) { if (rf & 1) {
-    var _r110 = ɵɵgetCurrentView();
+    var _r113 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "div", 1);
-    ɵɵlistener("click", function NavigateTopComponent_div_0_Template_div_click_0_listener() { ɵɵrestoreView(_r110); var ctx_r109 = ɵɵnextContext(); return ctx_r109.navigateToTop(); });
+    ɵɵlistener("click", function NavigateTopComponent_div_0_Template_div_click_0_listener() { ɵɵrestoreView(_r113); var ctx_r112 = ɵɵnextContext(); return ctx_r112.navigateToTop(); });
     ɵɵelement(1, "i", 2);
     ɵɵelementEnd();
 } }
@@ -904,31 +904,40 @@ var NavigateTopComponent = /** @class */ (function () {
         }] }); })();
 
 function AlertComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 7);
-    ɵɵelement(1, "i", 8);
+    ɵɵelementStart(0, "div", 6);
+    ɵɵelement(1, "i", 7);
     ɵɵelementEnd();
 } if (rf & 2) {
-    var ctx_r111 = ɵɵnextContext();
+    var ctx_r114 = ɵɵnextContext();
     ɵɵadvance(1);
-    ɵɵclassMapInterpolate1("fa ", ctx_r111.iconClass, "");
+    ɵɵclassMapInterpolate1("fa ", ctx_r114.iconClass, "");
 } }
 function AlertComponent_div_3_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 9);
+    ɵɵelementStart(0, "div", 8);
     ɵɵtext(1);
     ɵɵelementEnd();
 } if (rf & 2) {
-    var ctx_r112 = ɵɵnextContext();
+    var ctx_r115 = ɵɵnextContext();
     ɵɵadvance(1);
-    ɵɵtextInterpolate(ctx_r112.title);
+    ɵɵtextInterpolate(ctx_r115.title);
 } }
 function AlertComponent_div_4_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "div", 10);
+    ɵɵelement(0, "div", 9);
 } if (rf & 2) {
-    var ctx_r113 = ɵɵnextContext();
-    ɵɵproperty("innerHtml", ctx_r113.message, ɵɵsanitizeHtml);
+    var ctx_r116 = ɵɵnextContext();
+    ɵɵproperty("innerHtml", ctx_r116.message, ɵɵsanitizeHtml);
+} }
+function AlertComponent_div_5_Template(rf, ctx) { if (rf & 1) {
+    var _r119 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "div", 10);
+    ɵɵelementStart(1, "i", 11);
+    ɵɵlistener("click", function AlertComponent_div_5_Template_i_click_1_listener() { ɵɵrestoreView(_r119); var ctx_r118 = ɵɵnextContext(); return ctx_r118.closeHandler(); });
+    ɵɵelementEnd();
+    ɵɵelementEnd();
 } }
 var AlertComponent = /** @class */ (function () {
     function AlertComponent() {
+        this.onCloseClick = new EventEmitter();
     }
     Object.defineProperty(AlertComponent.prototype, "type", {
         get: function () {
@@ -961,17 +970,18 @@ var AlertComponent = /** @class */ (function () {
             }
         }
     };
+    AlertComponent.prototype.closeHandler = function () {
+        this.onCloseClick.emit(true);
+    };
     AlertComponent.ɵfac = function AlertComponent_Factory(t) { return new (t || AlertComponent)(); };
-    AlertComponent.ɵcmp = ɵɵdefineComponent({ type: AlertComponent, selectors: [["t-alert"]], inputs: { type: "type", title: "title", message: "message", hideIcon: "hideIcon" }, decls: 7, vars: 4, consts: [[1, "t-alert", 3, "ngClass"], ["class", "t-alert-icon", 4, "ngIf"], [1, "t-alert-content"], ["class", "t-alert-content-title", 4, "ngIf"], ["class", "t-alert-content-message", 3, "innerHtml", 4, "ngIf"], [1, "t-alert-close"], ["aria-hidden", "true", 1, "fa", "fa-times"], [1, "t-alert-icon"], ["aria-hidden", "true"], [1, "t-alert-content-title"], [1, "t-alert-content-message", 3, "innerHtml"]], template: function AlertComponent_Template(rf, ctx) { if (rf & 1) {
+    AlertComponent.ɵcmp = ɵɵdefineComponent({ type: AlertComponent, selectors: [["t-alert"]], inputs: { type: "type", title: "title", message: "message", hideIcon: "hideIcon", enableClose: "enableClose" }, outputs: { onCloseClick: "onCloseClick" }, decls: 6, vars: 5, consts: [[1, "t-alert", 3, "ngClass"], ["class", "t-alert-icon", 4, "ngIf"], [1, "t-alert-content"], ["class", "t-alert-content-title", 4, "ngIf"], ["class", "t-alert-content-message", 3, "innerHtml", 4, "ngIf"], ["class", "t-alert-close", 4, "ngIf"], [1, "t-alert-icon"], ["aria-hidden", "true"], [1, "t-alert-content-title"], [1, "t-alert-content-message", 3, "innerHtml"], [1, "t-alert-close"], ["aria-hidden", "true", 1, "fa", "fa-times", 3, "click"]], template: function AlertComponent_Template(rf, ctx) { if (rf & 1) {
             ɵɵelementStart(0, "div", 0);
             ɵɵtemplate(1, AlertComponent_div_1_Template, 2, 3, "div", 1);
             ɵɵelementStart(2, "div", 2);
             ɵɵtemplate(3, AlertComponent_div_3_Template, 2, 1, "div", 3);
             ɵɵtemplate(4, AlertComponent_div_4_Template, 1, 1, "div", 4);
             ɵɵelementEnd();
-            ɵɵelementStart(5, "div", 5);
-            ɵɵelement(6, "i", 6);
-            ɵɵelementEnd();
+            ɵɵtemplate(5, AlertComponent_div_5_Template, 2, 0, "div", 5);
             ɵɵelementEnd();
         } if (rf & 2) {
             ɵɵproperty("ngClass", ctx.type);
@@ -981,7 +991,9 @@ var AlertComponent = /** @class */ (function () {
             ɵɵproperty("ngIf", ctx.title);
             ɵɵadvance(1);
             ɵɵproperty("ngIf", ctx.message);
-        } }, directives: [NgClass, NgIf], styles: [".hide[_ngcontent-%COMP%]{display:none!important}.disable[_ngcontent-%COMP%]{pointer-events:none;opacity:.4}.z-depth-1[_ngcontent-%COMP%]{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half[_ngcontent-%COMP%]{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block[_ngcontent-%COMP%]{display:inline-block;vertical-align:top}.t-alert[_ngcontent-%COMP%]{display:-ms-flexbox;display:flex;padding:4px;border-radius:4px}.t-alert.success[_ngcontent-%COMP%]{background-color:#82b20a}.t-alert.error[_ngcontent-%COMP%]{background-color:#d20f55}.t-alert.warn[_ngcontent-%COMP%]{background-color:#ffa81e}.t-alert.info[_ngcontent-%COMP%]{background-color:#00a8e4}.t-alert-icon[_ngcontent-%COMP%]{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:0 14px;font-size:1.125rem;font-weight:lighter;color:#fff}.t-alert-content-title[_ngcontent-%COMP%]{font-size:1.1875rem;font-weight:700}"] });
+            ɵɵadvance(1);
+            ɵɵproperty("ngIf", ctx.enableClose);
+        } }, directives: [NgClass, NgIf], styles: [".hide[_ngcontent-%COMP%]{display:none!important}.disable[_ngcontent-%COMP%]{pointer-events:none;opacity:.4}.z-depth-1[_ngcontent-%COMP%]{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)}.z-depth-1-half[_ngcontent-%COMP%]{box-shadow:0 3px 3px 0 rgba(0,0,0,.14),0 1px 7px 0 rgba(0,0,0,.12),0 3px 1px -1px rgba(0,0,0,.2)}.inline-block[_ngcontent-%COMP%]{display:inline-block;vertical-align:top}.t-alert[_ngcontent-%COMP%]{display:-ms-flexbox;display:flex;padding:4px;border-radius:4px}.t-alert.success[_ngcontent-%COMP%]{background-color:#82b20a}.t-alert.error[_ngcontent-%COMP%]{background-color:#b00020}.t-alert.warn[_ngcontent-%COMP%]{background-color:#ffa81e}.t-alert.info[_ngcontent-%COMP%]{background-color:#00a8e4}.t-alert-icon[_ngcontent-%COMP%]{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:0 0 0 14px;font-size:1.125rem;font-weight:lighter;color:#fff}.t-alert-content[_ngcontent-%COMP%]{padding-left:24px;color:#fff}.t-alert-content-title[_ngcontent-%COMP%]{font-size:.9375rem;font-weight:700;word-break:break-word}.t-alert-content-message[_ngcontent-%COMP%]{font-size:.8125rem;word-break:break-word}.t-alert-close[_ngcontent-%COMP%]{margin-left:auto;padding:0 10px;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;cursor:pointer}"] });
     return AlertComponent;
 }());
 /*@__PURE__*/ (function () { ɵsetClassMetadata(AlertComponent, [{
@@ -999,6 +1011,10 @@ var AlertComponent = /** @class */ (function () {
             type: Input
         }], hideIcon: [{
             type: Input
+        }], enableClose: [{
+            type: Input
+        }], onCloseClick: [{
+            type: Output
         }] }); })();
 
 var COMPONENTS = [

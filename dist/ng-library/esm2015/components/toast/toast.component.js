@@ -12,7 +12,7 @@ ToastComponent.ɵcmp = i0.ɵɵdefineComponent({ type: ToastComponent, selectors:
     } if (rf & 2) {
         i0.ɵɵstyleProp("z-index", ctx.baseZIndex);
         i0.ɵɵproperty("position", ctx.position)("key", ctx.key);
-    } }, directives: [i1.Toast], styles: ["p-toast .ui-toast .ui-toast-message.ui-toast-message-success{background-color:#82b20a}p-toast .ui-toast .ui-toast-message.ui-toast-message-error{background-color:#d20f55}p-toast .ui-toast .ui-toast-message.ui-toast-message-info{background-color:#00a8e4}p-toast .ui-toast .ui-toast-message.ui-toast-message-warn{background-color:#ffa81e}"], encapsulation: 2 });
+    } }, directives: [i1.Toast], styles: ["p-toast .ui-toast .ui-toast-message.ui-toast-message-success{background-color:#82b20a}p-toast .ui-toast .ui-toast-message.ui-toast-message-error{background-color:#b00020}p-toast .ui-toast .ui-toast-message.ui-toast-message-info{background-color:#00a8e4}p-toast .ui-toast .ui-toast-message.ui-toast-message-warn{background-color:#ffa81e}"], encapsulation: 2 });
 /*@__PURE__*/ (function () { i0.ɵsetClassMetadata(ToastComponent, [{
         type: Component,
         args: [{

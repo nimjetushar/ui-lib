@@ -5,9 +5,9 @@ import * as i2 from "../badge/badge.component";
 function ButtonComponent_t_badge_1_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelement(0, "t-badge", 2);
 } if (rf & 2) {
-    var ctx_r74 = i0.ɵɵnextContext();
-    i0.ɵɵclassMap(ctx_r74.bPos);
-    i0.ɵɵproperty("badge", ctx_r74.badge);
+    var ctx_r77 = i0.ɵɵnextContext();
+    i0.ɵɵclassMap(ctx_r77.bPos);
+    i0.ɵɵproperty("badge", ctx_r77.badge);
 } }
 var _c0 = function (a0, a1, a2) { return { "disabled": a0, "btn-large": a1, "btn-small": a2 }; };
 var ButtonComponent = /** @class */ (function () {

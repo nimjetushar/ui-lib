@@ -2,9 +2,9 @@ import { Component, Input, HostListener } from '@angular/core';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/common";
 function NavigateTopComponent_div_0_Template(rf, ctx) { if (rf & 1) {
-    var _r110 = i0.ɵɵgetCurrentView();
+    var _r113 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "div", 1);
-    i0.ɵɵlistener("click", function NavigateTopComponent_div_0_Template_div_click_0_listener() { i0.ɵɵrestoreView(_r110); var ctx_r109 = i0.ɵɵnextContext(); return ctx_r109.navigateToTop(); });
+    i0.ɵɵlistener("click", function NavigateTopComponent_div_0_Template_div_click_0_listener() { i0.ɵɵrestoreView(_r113); var ctx_r112 = i0.ɵɵnextContext(); return ctx_r112.navigateToTop(); });
     i0.ɵɵelement(1, "i", 2);
     i0.ɵɵelementEnd();
 } }
