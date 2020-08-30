@@ -3,7 +3,7 @@
 
 .t-alert {
     display      : flex;
-    padding      : 4px;
+    padding      : 8px 4px;
     border-radius: 4px;
 
     &.success {
@@ -32,17 +32,20 @@
 
     &-content {
         padding-left: 24px;
-        color: #fff;
+        color       : #fff;
+        align-self  : center;
 
         &-title {
             font-size  : rem(15);
+            line-height: 22px;
             font-weight: bold;
-            word-break: break-word;
+            word-break : break-word;
         }
 
         &-message {
             font-size  : rem(13);
-            word-break: break-word;
+            line-height: 20px;
+            word-break : break-word;
         }
     }
 
@@ -50,6 +53,6 @@
         margin-left: auto;
         padding    : 0 10px;
         align-self : center;
-        cursor: pointer;
+        cursor     : pointer;
     }
 }

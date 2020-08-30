@@ -1,15 +1,16 @@
 {
   "name": "ui-lib",
-  "version": "20.8.9",
+  "version": "1.0.0",
   "description": "UI library featuring various angular based components",
   "scripts": {
     "build": "npm run test-server && npm run lint && npm run build-only",
-    "build-only": "ng build ng-library --prod && gulp",
+    "build-only": "npm run bumpVersion && ng build ng-library --prod && gulp",
     "start": "gulp watch",
     "test": "ng test ng-library",
     "test-server": "ng test ng-library --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint ng-library",
     "gulp": "gulp",
+    "bumpVersion": "gulp bump",
     "deploy": "gh-pages -d dist/ui-library-documentation",
     "test-coverage": "ng test ng-library --codeCoverage=true --watch=false --browsers=ChromeHeadless && cat ./coverage/lcov.info | codacy-coverage -t 8863a82776d04472bf5173b2fe6c5f0b"
   },

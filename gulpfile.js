@@ -4,6 +4,7 @@ const gulp = require("gulp"),
   cssimport = require("gulp-cssimport"),
   replace = require('gulp-replace'),
   cssbeautify = require('gulp-cssbeautify'),
+  bump = require('gulp-bump'),
   exec = require('child_process').exec;
 
 const sassFiles = "projects/ng-library/src/styles.scss",
@@ -73,7 +74,19 @@ function watchCss() {
   );
 }
 
-const defaultTask = gulp.parallel(styles, font, images, moveStyles, moveReadme, moveLicense);
+function bumpVersion(cb) {
+  const date = new Date(),
+    year = date.toLocaleDateString('en', { year: '2-digit' }),
+    version = `${year}.${date.getMonth()}.${date.getDate()}`
+
+  gulp.src('./projects/ng-library/package.json')
+    .pipe(bump({ version, key: "version" }))
+    .pipe(gulp.dest('./projects/ng-library/'), cb());
+}
 
 exports.watch = gulp.series(watchCss);
+exports.bump = gulp.series(bumpVersion);
+
+const defaultTask = gulp.parallel(styles, font, images, moveStyles, moveReadme, moveLicense);
+
 exports.default = defaultTask;
