@@ -2,8 +2,9 @@ $border-color: #a6a6a6;
 
 p-dropdown {
     .ui-dropdown {
-        .ui-state-focus {
+        &:not(.ui-state-disabled).ui-state-focus {
             border: 1px solid $border-color;
+            box-shadow: 0 0 0 0.2em #ccc;
         }
 
         .ui-inputtext:enabled:focus {
@@ -19,6 +20,4 @@ p-dropdown {
             background-color: #3d4851;
         }
     }
-
-
 }

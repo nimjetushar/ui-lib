@@ -5,6 +5,7 @@ const gulp = require("gulp"),
   replace = require('gulp-replace'),
   cssbeautify = require('gulp-cssbeautify'),
   bump = require('gulp-bump'),
+  delGulp = require('del'),
   exec = require('child_process').exec;
 
 const sassFiles = "projects/ng-library/src/styles.scss",
@@ -27,7 +28,8 @@ function styles() {
 }
 
 function moveStyles() {
-  return gulp.src(['projects/ng-library/src/styles/**.scss']).pipe(gulp.dest(`${cssDest}/styles`));
+  return gulp.src(['projects/ng-library/src/styles/**.scss'])
+    .pipe(gulp.dest(`${cssDest}/styles`));
 }
 
 function font() {
@@ -48,11 +50,13 @@ function images() {
 }
 
 function moveReadme() {
-  return gulp.src(['README.md']).pipe(gulp.dest(baseDest));
+  return gulp.src(['README.md'])
+    .pipe(gulp.dest(baseDest));
 }
 
 function moveLicense() {
-  return gulp.src('LICENSE').pipe(gulp.dest(baseDest));
+  return gulp.src('LICENSE')
+    .pipe(gulp.dest(baseDest));
 }
 
 function executeBuild(cb) {
@@ -66,12 +70,16 @@ function moveBuildFolder() {
     .pipe(gulp.dest(libraryDist));
 }
 
-function watchCss() {
+function watchFiles() {
   return gulp.watch(
     ['projects/ng-library/src/**/*.*'],
     { ignoreInitial: false },
     gulp.series(executeBuild, defaultTask, moveBuildFolder)
   );
+}
+
+function cleanup() {
+  return delGulp(`${libraryDist}/**`, { force: true });
 }
 
 function bumpVersion(cb) {
@@ -84,7 +92,7 @@ function bumpVersion(cb) {
     .pipe(gulp.dest('./projects/ng-library/'), cb());
 }
 
-exports.watch = gulp.series(watchCss);
+exports.watch = gulp.series(cleanup, watchFiles);
 exports.bump = gulp.series(bumpVersion);
 
 const defaultTask = gulp.parallel(styles, font, images, moveStyles, moveReadme, moveLicense);
