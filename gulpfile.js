@@ -85,7 +85,7 @@ function cleanup() {
 function bumpVersion(cb) {
   const date = new Date(),
     year = date.toLocaleDateString('en', { year: '2-digit' }),
-    version = `${year}.${date.getMonth()}.${date.getDate()}`
+    version = `${year}.${date.getMonth() + 1}.${date.getDate()}`
 
   gulp.src('./projects/ng-library/package.json')
     .pipe(bump({ version, key: "version" }))
