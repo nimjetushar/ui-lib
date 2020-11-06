@@ -26,8 +26,8 @@ $color-main-nav-item:#E5EAEE;
 @mixin label {
   letter-spacing: rem(1);
   color: inherit;
-  font-size: rem(15);
-  text-transform: uppercase;
+  font-size: rem(16);
+  text-transform: capitalize;
   cursor: pointer;
   width: 100%;
 }
