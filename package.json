@@ -59,7 +59,7 @@
     "gulp-bump": "^3.2.0",
     "gulp-cssbeautify": "3.0.0",
     "gulp-cssimport": "7.0.0",
-    "gulp-replace": "1.0.0",
+    "gulp-replace": "1.1.2",
     "gulp-sass": "4.1.0",
     "jasmine-core": "3.6.0",
     "jasmine-spec-reporter": "5.0.1",
