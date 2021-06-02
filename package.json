@@ -55,7 +55,7 @@
     "del": "^5.1.0",
     "gh-pages": "3.1.0",
     "gulp": "4.0.2",
-    "gulp-autoprefixer": "7.0.1",
+    "gulp-autoprefixer": "8.0.0",
     "gulp-bump": "^3.2.0",
     "gulp-cssbeautify": "3.0.0",
     "gulp-cssimport": "7.0.0",
