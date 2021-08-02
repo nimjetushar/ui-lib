@@ -43,7 +43,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "0.901.12",
     "@angular-devkit/build-ng-packagr": "0.901.1",
-    "@angular/cli": "9.1.9",
+    "@angular/cli": "12.1.4",
     "@angular/compiler-cli": "9.1.1",
     "@angular/language-service": "9.1.9",
     "@fourjs/tslint-rules": "2.2.0",
