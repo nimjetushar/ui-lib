@@ -2,8 +2,11 @@
   "name": "@fourjs/ng-library",
   "version": "0.0.1",
   "peerDependencies": {
+    "@angular/cdk": "^15.2.5",
     "@angular/common": "^15.2.0",
-    "@angular/core": "^15.2.0"
+    "@angular/core": "^15.2.0",
+    "primeicons": "^6.0.1",
+    "primeng": "^15.2.1"
   },
   "dependencies": {
     "tslib": "^2.3.0"

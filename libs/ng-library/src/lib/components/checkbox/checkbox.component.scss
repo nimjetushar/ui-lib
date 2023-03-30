@@ -1,0 +1,71 @@
+@import "../../styles/variable.scss";
+@import "../../styles//utility.scss";
+
+/* The checkbox component - which includes the label, the form input, and the span for the checkmark */
+.checkbox {
+    display: inline;
+    position: relative;
+    padding-left: rem(20);
+    margin-bottom: rem(12);
+    cursor: pointer;
+    font-size: rem(16);
+    user-select: none;
+
+    input {
+        position: relative;
+        opacity: 0;
+    }
+
+    &.disabled {
+        opacity: 0.5;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    .checkmark-primary {
+        position: absolute;
+        top: 0.25rem;
+        left: 0;
+        height: 1rem;
+        width: 1rem;
+
+        &.active {
+            background-color: #fff;
+            border: solid #0069B1 rem(1);
+        }
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        bottom: 0;
+        left: 1px;
+        top: -1px;
+        right: 0;
+    }
+
+    .checkmark.active {
+        &:after {
+            content: "\f00c";
+            color: $color-white;
+        }
+    }
+
+    input:checked~.checkmark {
+        background-color: #0069B1;
+
+        &:after {
+            display: block;
+            font-size: rem(12);
+            height: rem(16);
+            line-height: 15px;
+        }
+    }
+
+    .checkmark.disabled:after {
+        color: $color-light;
+        margin-left: rem(.5);
+        margin-bottom: rem(.5);
+    }
+}

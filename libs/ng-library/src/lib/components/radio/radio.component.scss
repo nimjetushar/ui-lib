@@ -1,0 +1,44 @@
+@import "../../styles/variable.scss";
+@import "../../styles//utility.scss";
+
+$radio-dimensions: 18;
+
+/* The checkbox component - which includes the label, the form input, and the span for the checkmark */
+.radio {
+    display: inline;
+    position: relative;
+    padding-left: rem(20);
+    cursor: pointer;
+    font-size: rem(16);
+    user-select: none;
+
+    input {
+        position: relative;
+        opacity: 0;
+    }
+
+    &:before {
+        content: '';
+        width: rem($radio-dimensions);
+        height: rem($radio-dimensions);
+        border-radius: 50%;
+        border: 1px solid $color-primary;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 2px;
+    }
+
+    &.disabled {
+        opacity: 0.5;
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+.radio.active {
+    &:before {
+        content: '';
+        border: 5px solid $color-primary;
+    }
+}

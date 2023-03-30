@@ -1,0 +1,58 @@
+@import "../../styles/variable.scss";
+@import "../../styles//utility.scss";
+
+.t-alert {
+    display      : flex;
+    padding      : 8px 4px;
+    border-radius: 4px;
+
+    &.success {
+        background-color: $color-success;
+    }
+
+    &.error {
+        background-color: $color-error;
+    }
+
+    &.warn {
+        background-color: $color-attention;
+    }
+
+    &.info {
+        background-color: $color-informational;
+    }
+
+    &-icon {
+        align-self : center;
+        padding    : 0 0 0 14px;
+        font-size  : rem(18);
+        font-weight: lighter;
+        color      : #fff;
+    }
+
+    &-content {
+        padding-left: 24px;
+        color       : #fff;
+        align-self  : center;
+
+        &-title {
+            font-size  : rem(15);
+            line-height: 22px;
+            font-weight: bold;
+            word-break : break-word;
+        }
+
+        &-message {
+            font-size  : rem(13);
+            line-height: 20px;
+            word-break : break-word;
+        }
+    }
+
+    &-close {
+        margin-left: auto;
+        padding    : 0 10px;
+        align-self : center;
+        cursor     : pointer;
+    }
+}

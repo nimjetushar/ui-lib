@@ -1,0 +1,17 @@
+<div class="badge-component">
+  <demo-wrapper header="Dynamic Fields" [code]="compSyntax" [options]="options">
+    <div output>
+      <t-dynamic-fields [data]="output" [fields]='field' [buttonOptions]='buttonOptions'
+        [dropdownOptions]="dropdownOptions" [disabledFields]="disabledOptions" (primaryHandler)="onSearch($event)"
+        (secondaryHandler)="onReset($event)">
+      </t-dynamic-fields>
+
+      <div class="comp-output" *ngIf="displayOutput">
+        {{output | json}}
+      </div>
+    </div>
+    <div doc>
+      <app-common-note></app-common-note>
+    </div>
+  </demo-wrapper>
+</div>

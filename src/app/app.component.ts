@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { MenuItem } from '@fourjs/ng-library';
+
+import { APPNAME } from './constants/config';
+import { NavModel } from './nav-model';
 
 @Component({
   selector: 'ui-library-documentation-root',
@@ -6,5 +10,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'ui-library-documentation';
+  menuItems: MenuItem[];
+  appTitle: string = APPNAME;
+  expanded = false;
+
+  constructor() {
+    const navModel = new NavModel();
+    this.menuItems = navModel.nav;
+  }
+
+  sideBarToggled(navStatus: boolean): void {
+    this.expanded = navStatus;
+  }
 }

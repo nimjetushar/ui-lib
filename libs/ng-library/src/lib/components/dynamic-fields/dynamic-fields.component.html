@@ -1,0 +1,46 @@
+<div class="dynamic-fields">
+  <div *ngFor="let field of renderFields" [ngSwitch]="field.type" class='input-element'>
+
+    <!-- input type text -->
+    <div *ngSwitchCase="'text'" class='input-text'>
+      <label [for]="field.model">{{field.label}}</label>
+      <input [id]='field.model' type="text" [name]='field.name' [(ngModel)]="data[field.model]"
+        [disabled]="disabledFields[field.model]" />
+    </div>
+
+    <div *ngSwitchCase="'number'" class='input-number'>
+      <label [for]="field.model">{{field.label}}</label>
+      <input [id]='field.model' type="number" [name]='field.name' [(ngModel)]="data[field.model]"
+        [disabled]="disabledFields[field.model]" />
+    </div>
+
+    <!-- input type checkbox -->
+    <div *ngSwitchCase="'checkbox'" class='input-checkbox'>
+      <t-checkbox [label]="field.label" [(model)]="data[field.model]" [name]='field.name'
+        [disabled]="disabledFields[field.model]">
+      </t-checkbox>
+    </div>
+
+    <!-- input type radio -->
+    <div *ngSwitchCase="'radio'" class='input-radio'>
+      <t-radio [label]="field.label" [(ngModel)]="data[field.model]" [name]='field.name'
+        [disabled]="disabledFields[field.model]"></t-radio>
+    </div>
+
+    <!-- dropdown -->
+    <div *ngSwitchCase="'select'" class='input-select'>
+      <t-dropdown [placeholder]="field.label" [(ngModel)]="data[field.model]" [options]="dropdownOptions[field.model]"
+        [name]='field.name' [disabled]="disabledFields[field.model]">
+      </t-dropdown>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <div class="default-button" *ngIf="!hideDefaultAction">
+      <t-button [label]="primaryLabel" type="primary" (click)="primaryClick()">
+      </t-button>
+      <t-button *ngIf="!removeSecondaryButton" [label]="secondaryLabel" type="secondary" (click)="secondaryClick()">
+      </t-button>
+    </div>
+  </div>
+</div>

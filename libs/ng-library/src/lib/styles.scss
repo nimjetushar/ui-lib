@@ -1,0 +1,29 @@
+@import "grid-styled-css/src/grid.scss";
+@import "font-awesome/scss/font-awesome.scss";
+@import "./styles/normalize.scss";
+@import "primeicons/primeicons.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeng/resources/themes/nova-dark/theme.css";
+
+@import "./styles/fonts.scss";
+@import "./styles/variable.scss";
+@import "./styles/utility.scss";
+
+@import "./styles/components/table.scss";
+@import "./styles/components/input.scss";
+
+* {
+    font-family           : $font-regular;
+    font-size             : 15px;
+    line-height           : 24px;
+    outline               : 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main-container {
+    padding-top: $main-container-header-height;
+}
+
+.overlay-container #toast-container {
+    min-width: auto;
+}

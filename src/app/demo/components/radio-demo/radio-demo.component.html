@@ -1,0 +1,26 @@
+<div class="radio-component">
+    <demo-wrapper header="Radio button" [code]="compSyntax" [options]="options">
+        <div output>
+            <t-radio label="Radio" name="radio" [(model)]="individualVal"></t-radio>
+            <t-button type="primary" label="clear" (click)="clearRadio()"></t-button>
+            <div class="group-radio">
+                <div>Group Radio button</div>
+                <t-radio label="Group A" name="group" [(model)]="groupVal" value="groupA">
+                </t-radio>
+                <t-radio label="Group B" name="group" [(model)]="groupVal" value="groupB">
+                </t-radio>
+                <t-radio label="Group C" name="group" [(model)]="groupVal" value="groupC">
+                </t-radio>
+                <div class="grp-output" *ngIf="groupVal">
+                    <span>Selected Group: </span>
+                    <span>{{groupVal}}</span>
+                </div>
+            </div>
+            <t-radio label="disabled radio button" name="radio" disabled="true">
+            </t-radio>
+        </div>
+        <div doc>
+            <app-common-note></app-common-note>
+        </div>
+    </demo-wrapper>
+</div>

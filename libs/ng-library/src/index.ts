@@ -1,1 +1,1 @@
-export * from './lib/ng-library.module';
+export * from './lib';

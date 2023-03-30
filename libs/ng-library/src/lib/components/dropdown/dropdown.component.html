@@ -1,0 +1,18 @@
+<p-dropdown 
+    [options]="options" 
+    [ngModel]="value" 
+    [placeholder]="placeholder"
+    [filter]="filter"
+    [readonly]="readonly"
+    [disabled]="disabled"
+    [name]="name"
+    [tooltip]="tooltip"
+    [tooltipPosition]="tooltipPosition"
+    [autoDisplayFirst]="autoDisplayFirst"
+    [scrollHeight]="scrollHeight"
+    [autofocus]="autofocus"
+
+    (onChange)="onChangeHandler($event)"
+    (onFocus)="focusHandler($event)"
+    (onBlur)="blurHandler($event)">
+</p-dropdown>

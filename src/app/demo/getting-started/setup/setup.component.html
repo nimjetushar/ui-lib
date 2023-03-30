@@ -1,0 +1,41 @@
+<div class="setup-page">
+  <div class="setup">
+    <demo-wrapper header="Setup">
+      <div doc>
+        <div class="install-title"># Install Library</div>
+
+        <code class="code">npm i @fourjs/ng-library --save</code>
+        <br>
+        <div class="peer-dependency-title"># Install peer dependencies.</div>
+        <code class="code">npm install primeng@{{primeDependency}} @angular/cdk@{{angularCdkDependency}} --save</code>
+        <br>
+        <div style="margin-top: 6px;">
+          Import NgLibrary into @NgModule and also import dependent modules
+        </div>
+        <ul class="install-dependency">
+          <li>BrowserAnimationsModule</li>
+          <li>HttpClientModule</li>
+          <li>FormsModule</li>
+        </ul>
+        <pre class="prettyprint lang-html">
+          <code>
+          import {{ '{' }} NgLibrary {{ '}' }}from '@fourjs/ng-library';
+
+          @NgModule({{ '{' }}
+              declarations: [],
+              imports: [
+                  NgLibrary,
+                  BrowserAnimationsModule,
+                  HttpClientModule,
+                  FormsModule,
+                  // other modules imports
+                  ...
+              ]
+              ...
+          {{ '}' }})
+          </code>
+        </pre>
+      </div>
+    </demo-wrapper>
+  </div>
+</div>
