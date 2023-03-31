@@ -8,21 +8,13 @@ import { CommonNoteComponent } from './common-note/common-note.component';
 import { DemoWrapperComponent } from './demo-wrapper/demo-wrapper.component';
 
 @NgModule({
-  declarations: [
-    DemoWrapperComponent,
-    CommonNoteComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-    ToastModule
-  ],
+  declarations: [DemoWrapperComponent, CommonNoteComponent],
+  imports: [CommonModule, FormsModule, HttpClientModule],
   exports: [
     DemoWrapperComponent,
     CommonNoteComponent,
     FormsModule,
-    HttpClientModule
-  ]
+    HttpClientModule,
+  ],
 })
-export class Common { }
+export class Common {}

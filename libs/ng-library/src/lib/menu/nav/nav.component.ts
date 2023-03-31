@@ -1,6 +1,12 @@
-import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  Input,
+  OnInit,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 export interface MenuItem {
   label: string;
@@ -12,68 +18,78 @@ export interface MenuItem {
 @Component({
   selector: 't-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  styleUrls: ['./nav.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavComponent implements OnInit {
-
   @Input() menuItems: MenuItem[] = [];
   @Input() set expanded(status: boolean) {
-    document.getElementsByTagName('body')[0].style.overflow = status ? 'hidden' : 'auto';
+    document.getElementsByTagName('body')[0].style.overflow = status
+      ? 'hidden'
+      : 'auto';
     this._expanded = status;
   }
   get expanded(): boolean {
     return this._expanded;
   }
-  @Input() diableDefaultClick: boolean;
 
-  @Output() sliderStatus: EventEmitter<boolean> = new EventEmitter();
-  @Output() menuClickTrigger: EventEmitter<{ isParent: boolean, menu: MenuItem, subMenu?: MenuItem }> = new EventEmitter();
+  @Input() diableDefaultClick = false;
 
-  expandedMenu: number;
-  selectedMenu: { idx: number, subMenuIdx: number } = {} as any;
+  @Output() sliderStatus = new EventEmitter<boolean>();
+  @Output() menuClickTrigger = new EventEmitter<{
+    isParent: boolean;
+    menu: MenuItem;
+    subMenu?: MenuItem;
+  }>();
 
-  private _expanded: boolean;
+  expandedMenu?: number;
+  selectedMenu: { idx?: number; subMenuIdx?: number } = {};
 
-  constructor(private _router: Router) { }
+  private _expanded = false;
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this._router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((route: NavigationEnd) => {
-      let i = 0, k = -1;
-      const curRoute = route.url,
-        menuItemLen = this.menuItems.length,
-        menuHighlight = (menu: MenuItem) => {
-          if (curRoute.includes(menu.route)) {
+    this.router.events.subscribe((route) => {
+      if (route instanceof NavigationEnd) {
+        // Hide progress spinner or progress bar
+        let i = 0,
+          k = -1;
+        const curRoute = route.url,
+          menuItemLen = this.menuItems.length;
+        const menuHighlight = (menu: MenuItem): boolean => {
+          if (menu.route && curRoute.includes(menu.route)) {
             this.selectedMenu = { idx: i, subMenuIdx: k };
             this.expandedMenu = i;
             return true;
           }
+          return false;
         };
 
-      for (i = 0; i < menuItemLen; i++) {
-        const menuItem = this.menuItems[i];
-        if (menuItem.route && !menuItem.children) {
-          const dobreak = menuHighlight(menuItem);
-          if (dobreak) {
-            return;
-          }
-        }
-
-        if (menuItem.children) {
-          const subMenuLen = menuItem.children.length;
-          for (k = 0; k < subMenuLen; k++) {
-            const subMenu = menuItem.children[k];
-            const dobreak = menuHighlight(subMenu);
+        for (i = 0; i < menuItemLen; i++) {
+          const menuItem = this.menuItems[i];
+          if (menuItem.route && !menuItem.children) {
+            const dobreak = menuHighlight(menuItem);
             if (dobreak) {
               return;
             }
           }
-        }
-      }
 
-      this.selectedMenu = {} as any;
-      this.expandedMenu = undefined;
+          if (menuItem.children) {
+            const subMenuLen = menuItem.children.length;
+            for (k = 0; k < subMenuLen; k++) {
+              const subMenu = menuItem.children[k];
+              const dobreak = menuHighlight(subMenu);
+              if (dobreak) {
+                return;
+              }
+            }
+          }
+        }
+
+        this.selectedMenu = {};
+        this.expandedMenu = undefined;
+      }
     });
   }
 
@@ -85,7 +101,7 @@ export class NavComponent implements OnInit {
   onMenuClick(menu: MenuItem, index: number): void {
     if (menu.route) {
       this.selectedMenu = { idx: index, subMenuIdx: -1 };
-      this._router.navigate([menu.route]);
+      this.router.navigate([menu.route]);
       this.toggleMenu();
       return;
     }
@@ -97,11 +113,16 @@ export class NavComponent implements OnInit {
     }
   }
 
-  onSubMenuClick(menu: MenuItem, subMenu: MenuItem, index: number, subIdx: number): void {
+  onSubMenuClick(
+    menu: MenuItem,
+    subMenu: MenuItem,
+    index: number,
+    subIdx: number
+  ): void {
     this.selectedMenu = { idx: index, subMenuIdx: subIdx };
 
     if (!this.diableDefaultClick) {
-      this._router.navigate([subMenu.route]);
+      this.router.navigate([subMenu.route]);
       this.toggleMenu();
     }
     this.menuClickTrigger.emit({ isParent: false, menu, subMenu });

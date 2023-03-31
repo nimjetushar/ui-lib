@@ -9,7 +9,6 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
       [key]="key"
     ></p-toast>
   `,
-  templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
