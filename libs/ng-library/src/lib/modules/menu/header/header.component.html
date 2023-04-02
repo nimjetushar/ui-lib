@@ -1,21 +1,21 @@
 <div class="main-container-header">
-
   <div class="content">
-
-    <div id="menu-icon-container" class="sidebar-toggle" (click)="handleSidebarToggle()">
+    <div
+      id="menu-icon-container"
+      class="sidebar-toggle"
+      (click)="handleSidebarToggle()"
+    >
       <i class="fa fa-bars"></i>
     </div>
 
     <div id="logo-container" class="logo-container">
-
       <div *ngIf="logoSrc" class="logo" (click)="onLogoClick()">
         <img [src]="logoSrc" />
       </div>
 
       <div class="title-container">
-        <span class="title" [routerLink]="routeLink">{{title}}</span>
+        <span class="title" [routerLink]="routeLink">{{ title }}</span>
       </div>
     </div>
   </div>
-
 </div>

@@ -1,0 +1,52 @@
+<div
+  class="main-container-sidebar"
+  id="main-container-sidebar"
+  [ngClass]="{ 'sidebar-expanded': expanded }"
+>
+  <div class="header">
+    <div class="sidebar-toggle" (click)="toggleMenu()">
+      <i class="fa {{ expanded ? 'fa-times' : 'fa-bars' }}"></i>
+    </div>
+  </div>
+  <div id="sidebar-content" class="sidebar-content">
+    <ul role="menu" id="main-nav" class="main-nav">
+      <li
+        role="menuitem"
+        class="list-item"
+        *ngFor="let menuItem of menuItems; let idx = index"
+        [class.selected]="selectedMenu.idx === idx"
+      >
+        <div class="menu-item" (click)="onMenuClick(menuItem, idx)">
+          <t-badge
+            *ngIf="menuItem?.badge"
+            class="badge"
+            [badge]="menuItem.badge!"
+          ></t-badge>
+          <span class="label">{{ menuItem.label }}</span>
+        </div>
+
+        <ul role="menu" class="sub-nav" [class.expanded]="expandedMenu === idx">
+          <li
+            role="menuitem"
+            *ngFor="let subMenuItem of menuItem.children; let childIdx = index"
+            (click)="onSubMenuClick(menuItem, subMenuItem, idx, childIdx)"
+            class="list-item"
+            [class.active]="selectedMenu.subMenuIdx === childIdx"
+            tabindex="-1"
+          >
+            <div class="menu-item">
+              <span class="label">
+                {{ subMenuItem.label }}
+              </span>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div
+  class="main-container-sidbar overlay"
+  *ngIf="expanded"
+  (click)="toggleMenu()"
+></div>

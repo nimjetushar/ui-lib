@@ -1,6 +1,6 @@
-@import "../../styles/variable.scss";
-@import "../../styles//functions.scss";
-@import "../../styles/mixins.scss";
+@import '../../../styles/variable.scss';
+@import '../../../styles/functions.scss';
+@import '../../../styles/mixins.scss';
 
 $header-height: $main-container-header-height;
 
@@ -13,7 +13,7 @@ $header-height: $main-container-header-height;
   background-color: $menu-bg;
   @include HGroup(0, flex-start, center);
   z-index: 10;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
 
   .content {
     @include flex(2 0 auto);

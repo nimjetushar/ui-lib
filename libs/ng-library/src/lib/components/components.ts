@@ -1,7 +1,7 @@
 import { NavComponent } from './menu/nav/nav.component';
 import { HeaderComponent } from './menu/header/header.component';
-import { BadgeComponent } from './badge/badge.component';
-import { ButtonComponent } from '../button/button.component';
+import { BadgeComponent } from '../modules/badge/badge.component';
+import { ButtonComponent } from '../modules/button/button.component';
 import { DynamicFieldsComponent } from './dynamic-fields/dynamic-fields.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { RadioComponent } from './radio/radio.component';

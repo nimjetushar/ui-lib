@@ -34,6 +34,6 @@ import { NgModule } from '@angular/core';
   ],
   entryComponents: [
     // ...ENTRYPOINTDIRECTIVES
-  ]
+  ],
 })
-export class NgLibrary { }
+export class NgLibrary {}

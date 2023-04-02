@@ -1,8 +1,8 @@
-@import "../../styles/variable.scss";
-@import "../../styles/functions.scss";
-@import "../../styles/mixins.scss";
+@import '../../../styles/variable.scss';
+@import '../../../styles/functions.scss';
+@import '../../../styles/mixins.scss';
 
-$color-main-nav-item:#E5EAEE;
+$color-main-nav-item: #e5eaee;
 
 @mixin menu-item() {
   width: 100%;
@@ -48,7 +48,7 @@ $color-main-nav-item:#E5EAEE;
     @include HGroup(0, flex-start, center);
     height: $main-container-header-height;
     background-color: $menu-bg;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
   }
 
   .sidebar-toggle {
@@ -119,7 +119,7 @@ $color-main-nav-item:#E5EAEE;
   }
 
   .selected {
-    &>.menu-item {
+    & > .menu-item {
       border-left: 4px solid $color-primary;
     }
     .label,

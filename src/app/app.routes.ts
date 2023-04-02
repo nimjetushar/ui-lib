@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UtilityComponent } from './demo/utility/utility/utility.component';
 import { ReferenceComponent } from './demo/reference/reference.component';
 import { HomeComponent } from './home/home.component';
 

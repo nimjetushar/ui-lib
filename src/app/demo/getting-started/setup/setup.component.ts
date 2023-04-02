@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as packageJson from 'libs/ng-library/package.json';
 
 @Component({
   selector: 'ui-library-documentation-setup',
@@ -11,7 +10,7 @@ export class SetupComponent {
   angularCdkDependency: string;
 
   constructor() {
-    this.primeDependency = packageJson.peerDependencies.primeng;
-    this.angularCdkDependency = packageJson.peerDependencies['@angular/cdk'];
+    this.primeDependency = '15.2.1';
+    this.angularCdkDependency = '15.2.5';
   }
 }
