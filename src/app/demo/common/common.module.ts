@@ -9,7 +9,7 @@ import { DemoWrapperComponent } from './demo-wrapper/demo-wrapper.component';
 
 @NgModule({
   declarations: [DemoWrapperComponent, CommonNoteComponent],
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, ToastModule],
   exports: [
     DemoWrapperComponent,
     CommonNoteComponent,

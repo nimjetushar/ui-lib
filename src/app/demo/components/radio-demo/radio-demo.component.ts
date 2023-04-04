@@ -8,7 +8,7 @@ import { IOptions } from '../../common/demo-wrapper/demo-wrapper.component';
 })
 export class RadioDemoComponent {
 
-  groupVal: string = 'groupA';
+  groupVal = 'groupA';
   individualVal: boolean;
 
   compSyntax: string[] = [`<t-radio label="Radio" name="radio" [(model)]="model"></t-radio>`];

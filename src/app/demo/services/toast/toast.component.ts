@@ -68,7 +68,7 @@ export class ToastComponent {
   };
 
   toastPositions: string[] = ['top-right', 'top-left', 'bottom-right', 'bottom-left', 'top-center', 'bottom-center', 'center'];
-  toastComp: string = '<t-toast baseZIndex="1050" position="top-right"></t-toast>';
+  toastComp = '<t-toast baseZIndex="1050" position="top-right"></t-toast>';
 
   parameterCol: any[] = [
     {

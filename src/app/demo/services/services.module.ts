@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { Common } from '../common/common.module';
 import { HttpComponent } from './http/http.component';
 import { ToastComponent } from './toast/toast.component';

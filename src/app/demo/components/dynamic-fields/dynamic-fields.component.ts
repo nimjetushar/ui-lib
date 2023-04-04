@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IOptions as DemoOptions } from '../../common/demo-wrapper/demo-wrapper.component';
 import {
-  DynamicFieldsComponent, DynamicFieldButtonOptions, DynamicFields,
-  DynamicFieldDropdownOptions, DynamicFieldDisabledOptions
+  DynamicFieldButtonOptions, DynamicFieldDisabledOptions, DynamicFieldDropdownOptions,
+  DynamicFields, DynamicFieldsComponent
 } from '@fourjs/ng-library';
 
 @Component({

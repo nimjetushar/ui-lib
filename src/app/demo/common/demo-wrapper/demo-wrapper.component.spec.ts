@@ -1,7 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { DemoWrapperComponent } from './demo-wrapper.component';
-import { ToastService, NgLibrary } from '@fourjs/ng-library';
+import { NgLibrary, ToastService } from '@fourjs/ng-library';
 
 describe('DemoWrapperComponent', () => {
   let component: DemoWrapperComponent;

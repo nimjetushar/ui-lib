@@ -28,7 +28,7 @@ export class AlertDemoComponent extends DemoComponent implements OnInit {
       value: 'warn'
     }
   ];
-  dropdownValue: string = 'info';
+  dropdownValue = 'info';
 
   ngOnInit(): void {
     this.compSyntax = [

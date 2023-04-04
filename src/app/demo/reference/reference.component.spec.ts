@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { ReferenceComponent } from './reference.component';
 import { comModules } from '__test__/common.imports';

@@ -94,7 +94,7 @@ export class DropdownDemoComponent {
 
   tooltipDDValue: string;
   tooltip: string;
-  tooltipPosition: string = 'left';
+  tooltipPosition = 'left';
   tooltipOption: Dropdown[] = [
     { label: 'top', value: 'top' },
     { label: 'right', value: 'right' },

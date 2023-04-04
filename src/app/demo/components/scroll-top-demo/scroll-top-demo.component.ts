@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { IOptions } from '../../common/demo-wrapper/demo-wrapper.component';
 
 @Component({

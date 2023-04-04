@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../libs/ng-library/src/lib/styles.scss';
+
 * {
   &::-webkit-scrollbar {
     width: 6px;

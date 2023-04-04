@@ -1,15 +1,15 @@
 import {
+  AfterViewInit,
   Component,
+  ElementRef,
   Input,
   OnInit,
-  ViewEncapsulation,
   ViewChild,
-  ElementRef,
-  AfterViewInit,
+  ViewEncapsulation,
 } from '@angular/core';
 import { ToastService } from '@fourjs/ng-library';
 
-declare var PR: any;
+declare let PR: any;
 
 export interface IColumn<T = string> {
   label: string;
@@ -40,7 +40,7 @@ export interface IOptions {
 }
 
 @Component({
-  // tslint:disable-next-line:component-selector
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'demo-wrapper',
   templateUrl: './demo-wrapper.component.html',
   styleUrls: ['./demo-wrapper.component.scss'],
@@ -66,13 +66,13 @@ export class DemoWrapperComponent implements OnInit, AfterViewInit {
 
   isDemoContainer!: boolean;
   codeEle!: { content: string; class: string }[];
-  enableOutput: boolean = true;
-  enableDoc: boolean = true;
+  enableOutput = true;
+  enableDoc = true;
   enableOptions!: boolean;
   name!: string;
   docOptions: IDocOptions[] | undefined;
   methodOptions!: IMethodOptions[] | undefined;
-  componentType: string = 'Component';
+  componentType = 'Component';
   docColumns: IColumn<keyof IDocOptions>[] = [
     { label: 'Name', value: 'parameter', width: '20%' },
     { label: 'Type', value: 'type', width: '20%' },

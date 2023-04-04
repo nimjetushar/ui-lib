@@ -1,7 +1,12 @@
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Common } from '../common/common.module';
+import { BadgeModule, ButtonModule } from '@fourjs/ng-library';
+
+import { Common } from '../common';
+import { ButtonDemoComponent } from './button-demo/button-demo.component';
+import { BadgeDemoComponent } from './badge-demo/badge-demo.component';
+import { CheckboxDemoComponent } from './checkbox-demo/checkbox-demo.component';
 // import { BadgeComponent } from './badge/badge.component';
 // import { ButtonComponent } from './button/button.component';
 // import { DynamicFieldsDemoComponent } from './dynamic-fields/dynamic-fields.component';
@@ -12,8 +17,8 @@ import { Common } from '../common/common.module';
 // import { AlertDemoComponent } from './alert-demo/alert-demo.component';
 
 const routes: Routes = [
-  // { path: 'badge', component: BadgeComponent },
-  // { path: 'button', component: ButtonComponent },
+  { path: 'badge', component: BadgeDemoComponent },
+  { path: 'button', component: ButtonDemoComponent },
   // { path: 'dynamicFields', component: DynamicFieldsDemoComponent },
   // { path: 'checkbox', component: CheckboxComponent },
   // { path: 'radio', component: RadioDemoComponent },
@@ -23,14 +28,15 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'alert'
-  }
+    redirectTo: 'alert',
+  },
 ];
 
 @NgModule({
   declarations: [
-    // BadgeComponent,
-    // ButtonComponent,
+    ButtonDemoComponent,
+    BadgeDemoComponent,
+    CheckboxDemoComponent,
     // DynamicFieldsDemoComponent,
     // CheckboxComponent,
     // RadioDemoComponent,
@@ -41,7 +47,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    Common
-  ]
+    Common,
+    ButtonModule,
+    BadgeModule,
+  ],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

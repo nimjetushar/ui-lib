@@ -48,5 +48,5 @@ export class TooltipDemoComponent {
     { label: 'bottom', value: 'bottom' },
     { label: 'left', value: 'left' }
   ];
-  tooltipPosition: string = 'top';
+  tooltipPosition = 'top';
 }

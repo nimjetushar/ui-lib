@@ -16,7 +16,11 @@
         "tsConfig": "./tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["./src/favicon.ico", "./src/assets"],
-        "styles": ["./src/styles.scss"],
+        "styles": [
+          "./src/styles.scss",
+          "node_modules/code-prettify/src/prettify.css",
+          "node_modules/code-prettify/styles/sunburst.css"
+        ],
         "scripts": [],
         "stylePreprocessorOptions": {
           "includePaths": ["libs/ng-library/src/lib/styles"]

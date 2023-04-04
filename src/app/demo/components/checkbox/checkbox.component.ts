@@ -42,5 +42,5 @@ export class CheckboxComponent {
     ]
   };
 
-  modelValue: boolean = true;
+  modelValue = true;
 }
