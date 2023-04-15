@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
+import * as DeviceDetector from 'device-detector-js';
 import { Detect } from 'tutility';
 
 @Component({
-  selector: 'app-utility',
+  selector: 'ui-library-documentation-utility',
   templateUrl: './utility.component.html',
-  styleUrls: ['./utility.component.scss']
+  styleUrls: ['./utility.component.scss'],
 })
 export class UtilityComponent {
-
-  deviceDetail: any;
+  deviceDetail!: DeviceDetector.DeviceDetectorResult;
 
   detecBrowserHandler(): void {
     const detect = new Detect();
     this.deviceDetail = detect.parse(navigator.userAgent);
-    console.info(this.deviceDetail);
+    console.log(this.deviceDetail);
   }
 }

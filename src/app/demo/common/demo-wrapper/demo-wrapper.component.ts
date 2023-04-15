@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { ToastService } from '@fourjs/ng-library';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let PR: any;
 
 export interface IColumn<T = string> {
@@ -40,8 +41,7 @@ export interface IOptions {
 }
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'demo-wrapper',
+  selector: 'ui-library-documentation-demo-wrapper',
   templateUrl: './demo-wrapper.component.html',
   styleUrls: ['./demo-wrapper.component.scss'],
   encapsulation: ViewEncapsulation.None,

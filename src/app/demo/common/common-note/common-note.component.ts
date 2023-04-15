@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-common-note',
+  selector: 'ui-library-documentation-common-note',
   templateUrl: './common-note.component.html',
-  styleUrls: ['./common-note.component.scss']
+  styleUrls: ['./common-note.component.scss'],
 })
-export class CommonNoteComponent { }
+export class CommonNoteComponent {}

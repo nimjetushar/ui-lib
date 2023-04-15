@@ -1,17 +1,27 @@
 <div class="badge-component">
-  <demo-wrapper header="Dynamic Fields" [code]="compSyntax" [options]="options">
+  <ui-library-documentation-demo-wrapper
+    header="Dynamic Fields"
+    [code]="compSyntax"
+    [options]="options"
+  >
     <div output>
-      <t-dynamic-fields [data]="output" [fields]='field' [buttonOptions]='buttonOptions'
-        [dropdownOptions]="dropdownOptions" [disabledFields]="disabledOptions" (primaryHandler)="onSearch($event)"
-        (secondaryHandler)="onReset($event)">
+      <t-dynamic-fields
+        [data]="output"
+        [fields]="field"
+        [buttonOptions]="buttonOptions"
+        [dropdownOptions]="dropdownOptions"
+        [disabledFields]="disabledOptions"
+        (primaryHandler)="onSearch($event)"
+        (secondaryHandler)="onReset($event)"
+      >
       </t-dynamic-fields>
 
       <div class="comp-output" *ngIf="displayOutput">
-        {{output | json}}
+        {{ output | json }}
       </div>
     </div>
     <div doc>
-      <app-common-note></app-common-note>
+      <ui-library-documentation-common-note></ui-library-documentation-common-note>
     </div>
-  </demo-wrapper>
+  </ui-library-documentation-demo-wrapper>
 </div>

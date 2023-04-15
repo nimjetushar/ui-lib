@@ -1,4 +1,4 @@
-<demo-wrapper header="References">
+<ui-library-documentation-demo-wrapper header="References">
   <div doc>
     <div class="styles-reference">
       <div class="descriptions">
@@ -6,12 +6,12 @@
         <ul>
           <li *ngFor="let item of libLists">
             <a [href]="item.url" target="_blank">
-              <i class="fa {{item.icon}}"></i>
-              {{item.name}}
+              <i class="fa {{ item.icon }}"></i>
+              {{ item.name }}
             </a>
           </li>
         </ul>
       </div>
     </div>
   </div>
-</demo-wrapper>
+</ui-library-documentation-demo-wrapper>

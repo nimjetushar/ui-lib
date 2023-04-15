@@ -21,7 +21,7 @@
           "node_modules/code-prettify/src/prettify.css",
           "node_modules/code-prettify/styles/sunburst.css"
         ],
-        "scripts": [],
+        "scripts": ["node_modules/code-prettify/src/prettify.js"],
         "stylePreprocessorOptions": {
           "includePaths": ["libs/ng-library/src/lib/styles"]
         }

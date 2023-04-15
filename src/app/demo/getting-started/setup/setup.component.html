@@ -1,15 +1,20 @@
 <div class="setup-page">
   <div class="setup">
-    <demo-wrapper header="Setup">
+    <ui-library-documentation-demo-wrapper header="Setup">
       <div doc>
         <div class="install-title"># Install Library</div>
 
         <code class="code">npm i @fourjs/ng-library --save</code>
-        <br>
+        <br />
         <div class="peer-dependency-title"># Install peer dependencies.</div>
-        <code class="code">npm install primeng@{{primeDependency}} @angular/cdk@{{angularCdkDependency}} --save</code>
-        <br>
-        <div style="margin-top: 6px;">
+        <code class="code"
+          >npm install primeng@{{ primeDependency }} @angular/cdk@{{
+            angularCdkDependency
+          }}
+          --save</code
+        >
+        <br />
+        <div style="margin-top: 6px">
           Import NgLibrary into @NgModule and also import dependent modules
         </div>
         <ul class="install-dependency">
@@ -36,6 +41,6 @@
           </code>
         </pre>
       </div>
-    </demo-wrapper>
+    </ui-library-documentation-demo-wrapper>
   </div>
 </div>

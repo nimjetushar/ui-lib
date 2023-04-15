@@ -1,16 +1,30 @@
 <div class="tooltip-component">
-  <demo-wrapper header="Tooltip" [code]="compSyntax" [options]="options">
+  <ui-library-documentation-demo-wrapper
+    header="Tooltip"
+    [code]="compSyntax"
+    [options]="options"
+  >
     <div output>
-      <div class="inline-block" style="margin: 0 40px 10px 0;">
-        <t-dropdown placeholder="Select Tooltip position" [options]="tooltipOption" [(ngModel)]="tooltipPosition">
+      <div class="inline-block" style="margin: 0 40px 10px 0">
+        <t-dropdown
+          placeholder="Select Tooltip position"
+          [options]="tooltipOption"
+          [(ngModel)]="tooltipPosition"
+        >
         </t-dropdown>
       </div>
-      <div class="inline-block" tTooltip="Content to be shown in the tooltip" [tooltipDisabled]="false"
-        [tooltipAnimation]="true" [tooltipPlacement]="tooltipPosition">Element on which tooltip is added
+      <div
+        class="inline-block"
+        tTooltip="Content to be shown in the tooltip"
+        [tooltipDisabled]="false"
+        [tooltipAnimation]="true"
+        [tooltipPlacement]="tooltipPosition"
+      >
+        Element on which tooltip is added
       </div>
     </div>
     <div doc>
-      <app-common-note></app-common-note>
+      <ui-library-documentation-common-note></ui-library-documentation-common-note>
     </div>
-  </demo-wrapper>
+  </ui-library-documentation-demo-wrapper>
 </div>

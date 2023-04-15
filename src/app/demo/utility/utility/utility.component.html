@@ -1,21 +1,31 @@
 <div class="utility-page">
   <div class="utility">
-    <demo-wrapper header="Utility">
+    <ui-library-documentation-demo-wrapper header="Utility">
       <div doc>
-        <p>Please refer to <a href="https://nimjetushar.github.io/Utils" target="_blank">link</a>
-          for various provided utilities.</p>
+        <p>
+          Please refer to
+          <a href="https://nimjetushar.github.io/Utils" target="_blank">link</a>
+          for various provided utilities.
+        </p>
 
         <div class="detect-browser">
-          <t-button label="Detect Browser" type="primary" (click)="detecBrowserHandler()"></t-button>
+          <t-button
+            label="Detect Browser"
+            type="primary"
+            (click)="detecBrowserHandler()"
+          ></t-button>
           <div class="device-detail" *ngIf="deviceDetail">
-            <span class="title">Device:</span><span>{{deviceDetail.device.type}}</span>
-            <br>
-            <span class="title">Browser:</span><span>{{deviceDetail.client.name}}</span>
-            <br>
-            <span class="title">Version:</span><span>{{deviceDetail.client.version}}</span>
+            <span class="title">Device:</span
+            ><span>{{ deviceDetail.device?.type }}</span>
+            <br />
+            <span class="title">Browser:</span
+            ><span>{{ deviceDetail.client?.name }}</span>
+            <br />
+            <span class="title">Version:</span
+            ><span>{{ deviceDetail.client?.version }}</span>
           </div>
         </div>
       </div>
-    </demo-wrapper>
+    </ui-library-documentation-demo-wrapper>
   </div>
 </div>

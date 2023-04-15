@@ -1,15 +1,27 @@
 <div class="checkbox-component">
-  <demo-wrapper header="Checkbox" [code]="compSyntax" [options]="options">
+  <ui-library-documentation-demo-wrapper
+    header="Checkbox"
+    [code]="compSyntax"
+    [options]="options"
+  >
     <div output>
-      <t-checkbox label="Checkbox" name="checkbox" [(model)]="modelValue"></t-checkbox>
+      <t-checkbox
+        label="Checkbox"
+        name="checkbox"
+        [(model)]="modelValue"
+      ></t-checkbox>
       <div *ngIf="modelValue !== undefined" class="output">
-        <span>Output: {{modelValue}}</span>
+        <span>Output: {{ modelValue }}</span>
       </div>
       <div></div>
-      <t-checkbox label="disabled checkbox" name="checkbox" disabled="true"></t-checkbox>
+      <t-checkbox
+        label="disabled checkbox"
+        name="checkbox"
+        disabled="true"
+      ></t-checkbox>
     </div>
     <div doc>
-      <app-common-note></app-common-note>
+      <ui-library-documentation-common-note></ui-library-documentation-common-note>
     </div>
-  </demo-wrapper>
+  </ui-library-documentation-demo-wrapper>
 </div>
