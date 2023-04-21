@@ -4,8 +4,9 @@ const gulp = require('gulp'),
   cssimport = require('gulp-cssimport'),
   replace = require('gulp-replace'),
   cssbeautify = require('gulp-cssbeautify'),
-  bump = require('gulp-bump'),
-  exec = require('child_process').exec;
+  bump = require('gulp-bump');
+
+const exec = require('child_process').exec;
 
 const sassFiles = 'libs/ng-library/src/lib/styles.scss',
   baseDest = 'dist/ng-library',
