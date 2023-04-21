@@ -20,7 +20,9 @@
             "prefix": "t",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@angular-eslint/no-output-on-prefix": "off",
+        "import/no-unresolved": "off"
       },
       "extends": [
         "plugin:@nrwl/nx/angular",

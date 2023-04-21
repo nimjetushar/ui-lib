@@ -11,7 +11,7 @@ import { NavModel } from './nav-model';
 })
 export class AppComponent {
   menuItems: MenuItem[];
-  appTitle: string = APPNAME;
+  appTitle = APPNAME;
   expanded = false;
 
   constructor() {

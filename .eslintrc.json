@@ -23,7 +23,8 @@
             "prefix": "ui-library-documentation",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "import/no-unresolved": "off"
       }
     },
     {

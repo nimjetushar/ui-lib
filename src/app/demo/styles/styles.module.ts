@@ -1,6 +1,6 @@
-import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { Common } from '../common/common.module';
 import { ColorPalletComponent } from './color-pallet/color-pallet.component';
@@ -12,19 +12,12 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'colorPallet'
-  }
+    redirectTo: 'colorPallet',
+  },
 ];
 
 @NgModule({
-  declarations: [
-    ColorPalletComponent,
-    GridComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    Common
-  ]
+  declarations: [ColorPalletComponent, GridComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), Common],
 })
-export class StylesModule { }
+export class StylesModule {}

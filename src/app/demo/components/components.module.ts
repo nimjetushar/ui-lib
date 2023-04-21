@@ -1,12 +1,19 @@
 import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BadgeModule, ButtonModule } from '@fourjs/ng-library';
+import { NgModule } from '@angular/core';
+import {
+  AlertModule,
+  BadgeModule,
+  ButtonModule,
+  DropdownModule,
+} from '@fourjs/ng-library';
 
-import { Common } from '../common';
-import { ButtonDemoComponent } from './button-demo/button-demo.component';
+import { AlertDemoComponent } from './alert-demo/alert-demo.component';
 import { BadgeDemoComponent } from './badge-demo/badge-demo.component';
+import { ButtonDemoComponent } from './button-demo/button-demo.component';
 import { CheckboxDemoComponent } from './checkbox-demo/checkbox-demo.component';
+import { Common } from '../common';
+
 // import { BadgeComponent } from './badge/badge.component';
 // import { ButtonComponent } from './button/button.component';
 // import { DynamicFieldsDemoComponent } from './dynamic-fields/dynamic-fields.component';
@@ -24,7 +31,7 @@ const routes: Routes = [
   // { path: 'radio', component: RadioDemoComponent },
   // { path: 'dropdown', component: DropdownDemoComponent },
   // { path: 'navigateTop', component: ScrollTopDemoComponent },
-  // { path: 'alert', component: AlertDemoComponent },
+  { path: 'alert', component: AlertDemoComponent },
   {
     path: '',
     pathMatch: 'full',
@@ -33,6 +40,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    Common,
+    ButtonModule,
+    BadgeModule,
+    AlertModule,
+    DropdownModule,
+  ],
   declarations: [
     ButtonDemoComponent,
     BadgeDemoComponent,
@@ -42,14 +58,7 @@ const routes: Routes = [
     // RadioDemoComponent,
     // DropdownDemoComponent,
     // ScrollTopDemoComponent,
-    // AlertDemoComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    Common,
-    ButtonModule,
-    BadgeModule,
+    AlertDemoComponent,
   ],
 })
 export class ComponentsModule {}

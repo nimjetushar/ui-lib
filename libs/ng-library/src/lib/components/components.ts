@@ -5,10 +5,10 @@ import { ButtonComponent } from '../modules/button/button.component';
 import { DynamicFieldsComponent } from './dynamic-fields/dynamic-fields.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { RadioComponent } from './radio/radio.component';
-import { DropdownComponent } from './dropdown/dropdown.component';
+import { DropdownComponent } from '../modules/dropdown/dropdown/dropdown.component';
 import { ToastComponent } from '../toast/toast/toast.component';
 import { NavigateTopComponent } from './navigate-top/navigate-top.component';
-import { AlertComponent } from './alert/alert.component';
+import { AlertComponent } from '../modules/alert/alert/alert.component';
 
 export const COMPONENTS = [
   NavComponent,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuModule, ToastService } from '@fourjs/ng-library';
 
 import { AppComponent } from './app.component';
@@ -10,7 +11,13 @@ import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [AppComponent, ReferenceComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, Common, MenuModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    Common,
+    MenuModule,
+    BrowserAnimationsModule,
+  ],
   providers: [ToastService],
   bootstrap: [AppComponent],
 })

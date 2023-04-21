@@ -1,22 +1,25 @@
 import { Component, ViewChild } from '@angular/core';
 import { IOptions as DemoOptions } from '../../common/demo-wrapper/demo-wrapper.component';
 import {
-  DynamicFieldButtonOptions, DynamicFieldDisabledOptions, DynamicFieldDropdownOptions,
-  DynamicFields, DynamicFieldsComponent
+  DynamicFieldButtonOptions,
+  DynamicFieldDisabledOptions,
+  DynamicFieldDropdownOptions,
+  DynamicFields,
+  DynamicFieldsComponent,
 } from '@fourjs/ng-library';
 
 @Component({
   selector: 'app-dynamic-fields',
   templateUrl: './dynamic-fields.component.html',
-  styleUrls: ['./dynamic-fields.component.scss']
+  styleUrls: ['./dynamic-fields.component.scss'],
 })
 export class DynamicFieldsDemoComponent {
+  @ViewChild(DynamicFieldsComponent, { static: true })
+  dyFieldComp: DynamicFieldsComponent;
 
-  @ViewChild(DynamicFieldsComponent, { static: true }) dyFieldComp: DynamicFieldsComponent;
-
-  compSyntax: string[] =
-    // tslint:disable-next-line: max-line-length
-    [`<t-dynamic-fields [fields]="field" [data]="data" [dropdownOptions]="dropdownOptions" [disabledFields]="disabledOptions" [buttonOptions]="buttonOptions" (primaryHandler)="onSearch($event)" (secondaryHandler)="onReset($event)" ></t-dynamic-fields>`];
+  compSyntax: string[] = [
+    `<t-dynamic-fields [fields]="field" [data]="data" [dropdownOptions]="dropdownOptions" [disabledFields]="disabledOptions" [buttonOptions]="buttonOptions" (primaryHandler)="onSearch($event)" (secondaryHandler)="onReset($event)" ></t-dynamic-fields>`,
+  ];
 
   options: DemoOptions = {
     name: 't-dynamic-fields',
@@ -24,93 +27,93 @@ export class DynamicFieldsDemoComponent {
       {
         parameter: 'fields',
         type: 'DynamicFields[]',
-        desc: 'Array of object to display fields'
+        desc: 'Array of object to display fields',
       },
       {
         parameter: 'data',
         type: 'DynamicFieldDataModel',
-        desc: 'Object which initialize the fields with default value.'
+        desc: 'Object which initialize the fields with default value.',
       },
       {
         parameter: 'dropdownOptions',
         type: 'DynamicFieldDropdownOptions',
-        desc: 'Dropdown options used to initalize dropdown if present in fields'
+        desc: 'Dropdown options used to initalize dropdown if present in fields',
       },
       {
         parameter: 'disabledFields',
         type: 'DynamicFieldDisabledOptions',
-        desc: 'Disables field if specified true'
+        desc: 'Disables field if specified true',
       },
       {
         parameter: 'disableDefaultAction',
         type: 'boolean',
-        desc: 'Hides default action buttons'
+        desc: 'Hides default action buttons',
       },
       {
         parameter: 'buttonOptions',
         type: 'DynamicFieldButtonOptions',
-        desc: 'Customize button labels and its properties.'
-      }
+        desc: 'Customize button labels and its properties.',
+      },
     ],
     methods: [
       {
         method: 'primaryHandler',
         param: ['DynamicFieldDataModel'],
-        desc: 'Emits fields data to parent component'
+        desc: 'Emits fields data to parent component',
       },
       {
         method: 'secondaryHandler',
         param: ['DynamicFieldDataModel'],
-        desc: 'Emits fields data to parent component'
-      }
-    ]
+        desc: 'Emits fields data to parent component',
+      },
+    ],
   };
 
   field: DynamicFields[] = [
     {
       label: 'Car Name',
       type: 'text',
-      model: 'name'
+      model: 'name',
     },
     {
       label: 'New model',
       type: 'checkbox',
-      model: 'isNew'
+      model: 'isNew',
     },
     {
       label: 'Select Brand',
       type: 'select',
-      model: 'brand'
-    }
+      model: 'brand',
+    },
   ];
 
   dropdownOptions: DynamicFieldDropdownOptions = {
     brand: [
       {
         label: 'Maruti',
-        value: 'maruti'
+        value: 'maruti',
       },
       {
         label: 'Hyundai',
-        value: 'hyundai'
+        value: 'hyundai',
       },
       {
         label: 'Ford',
-        value: 'ford'
-      }
-    ]
+        value: 'ford',
+      },
+    ],
   };
 
   disabledOptions: DynamicFieldDisabledOptions = {
-    isNew: true
+    isNew: true,
   };
 
   buttonOptions: DynamicFieldButtonOptions = {
-    primaryLabel: 'Submit'
+    primaryLabel: 'Submit',
   };
 
   output: any = {
-    isNew: true
+    isNew: true,
   };
 
   displayOutput: boolean;

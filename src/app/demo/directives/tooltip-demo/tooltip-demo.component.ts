@@ -5,13 +5,12 @@ import { Dropdown } from '@fourjs/ng-library';
 @Component({
   selector: 'app-tooltip-demo',
   templateUrl: './tooltip-demo.component.html',
-  styleUrls: ['./tooltip-demo.component.scss']
+  styleUrls: ['./tooltip-demo.component.scss'],
 })
 export class TooltipDemoComponent {
-
-  compSyntax: string[] =
-    // tslint:disable-next-line: max-line-length
-    [`<div tTooltip="Content to be shown in the tooltip" [tooltipDisabled]="false" [tooltipAnimation]="true"> Element on which tooltip is added </div>`];
+  compSyntax: string[] = [
+    `<div tTooltip="Content to be shown in the tooltip" [tooltipDisabled]="false" [tooltipAnimation]="true"> Element on which tooltip is added </div>`,
+  ];
 
   options: IOptions = {
     name: 'tooltip',
@@ -20,33 +19,33 @@ export class TooltipDemoComponent {
       {
         parameter: 'tooltip',
         type: 'string | TooltipContent',
-        desc: 'Content to be displayed inside tooltip'
+        desc: 'Content to be displayed inside tooltip',
       },
       {
         parameter: 'tooltipDisabled',
         type: 'boolean',
-        desc: 'Disable tooltip'
+        desc: 'Disable tooltip',
       },
       {
         parameter: 'tooltipAnimation',
         type: 'boolean',
         default: true,
-        desc: 'Enable animation for tooltip'
+        desc: 'Enable animation for tooltip',
       },
       {
         parameter: 'tooltipPlacement',
         type: 'top | bottom | left | right',
         default: 'bottom',
-        desc: 'Tooltip placement'
-      }
-    ]
+        desc: 'Tooltip placement',
+      },
+    ],
   };
 
   tooltipOption: Dropdown[] = [
     { label: 'top', value: 'top' },
     { label: 'right', value: 'right' },
     { label: 'bottom', value: 'bottom' },
-    { label: 'left', value: 'left' }
+    { label: 'left', value: 'left' },
   ];
   tooltipPosition = 'top';
 }
