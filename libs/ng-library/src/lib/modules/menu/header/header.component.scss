@@ -30,8 +30,8 @@ $header-height: $main-container-header-height;
     padding-left: rem(29);
     padding-right: rem(29);
 
-    i.fa-bars {
-      font-size: rem(35);
+    i.pi-bars {
+      font-size: $nav-icon-size;
       color: $color-white;
     }
   }
@@ -58,9 +58,10 @@ $header-height: $main-container-header-height;
       .title {
         color: $color-white;
         font-weight: 500;
-        font-size: rem(26);
+        font-size: 2rem;
         letter-spacing: rem(1);
         text-transform: uppercase;
+        margin: 0;
       }
     }
   }

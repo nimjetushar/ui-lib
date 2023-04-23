@@ -10,8 +10,8 @@ export class HeaderComponent {
   @Input() logoSrc!: string;
   @Input() routeLink!: string;
 
-  @Output() sideBarToggled: EventEmitter<boolean> = new EventEmitter();
-  @Output() logoClickEmitter: EventEmitter<undefined> = new EventEmitter();
+  @Output() sideBarToggled = new EventEmitter<boolean>();
+  @Output() logoClickEmitter = new EventEmitter();
 
   handleSidebarToggle(): void {
     this.sideBarToggled.emit(true);

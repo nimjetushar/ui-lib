@@ -9,36 +9,10 @@ import {
 } from '@angular/core';
 import { ToastService } from '@fourjs/ng-library';
 
+import { IColumn, IDocOptions, IMethodOptions, IOptions } from '../types';
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let PR: any;
-
-export interface IColumn<T = string> {
-  label: string;
-  value: T;
-
-  class?: string;
-  width?: string;
-}
-
-interface IDocOptions {
-  parameter: string;
-  description: string;
-  type: string;
-  default?: string | boolean;
-}
-
-interface IMethodOptions {
-  method: string;
-  parameter: string;
-  description: string;
-}
-
-export interface IOptions {
-  name: string;
-  componentType?: 'Service' | 'Component' | 'Directive';
-  options?: IDocOptions[];
-  methods?: IMethodOptions[];
-}
 
 @Component({
   selector: 'ui-library-documentation-demo-wrapper',
