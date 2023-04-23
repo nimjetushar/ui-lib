@@ -16,6 +16,12 @@ import { DemoBaseModule } from '../demo-base/demo-base.module';
     ToastModule,
     DemoBaseModule,
   ],
-  exports: [CommonNoteComponent, FormsModule, HttpClientModule, DemoBaseModule],
+  exports: [
+    CommonNoteComponent,
+    FormsModule,
+    ToastModule,
+    HttpClientModule,
+    DemoBaseModule,
+  ],
 })
 export class Common {}

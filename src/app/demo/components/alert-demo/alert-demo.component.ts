@@ -11,7 +11,7 @@ import { IOptions } from '../../common';
 })
 export class AlertDemoComponent implements OnInit {
   hideAlert!: boolean;
-  dropdownOption: DropdownOptions<AlertTypes>[] = [
+  readonly dropdownOption: DropdownOptions<AlertTypes>[] = [
     {
       label: 'info',
       value: 'info',
@@ -29,11 +29,13 @@ export class AlertDemoComponent implements OnInit {
       value: 'warn',
     },
   ];
-  dropdownValue = 'info';
+  dropdownValue!: AlertTypes;
   compSyntax!: string[];
   options!: IOptions;
 
   ngOnInit(): void {
+    this.dropdownValue = this.dropdownOption[0].value;
+
     this.compSyntax = [
       `<t-alert type="success" message="message........"></t-alert>`,
       `<t-alert type="error" title="Title Error" message="message........"></t-alert>`,

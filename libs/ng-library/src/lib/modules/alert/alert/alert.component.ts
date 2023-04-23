@@ -6,7 +6,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 
-export type AlertTypes = 'success' | 'error' | 'warn' | 'info';
+import { AlertTypes } from '../types';
 
 @Component({
   selector: 't-alert',
@@ -17,11 +17,11 @@ export type AlertTypes = 'success' | 'error' | 'warn' | 'info';
 export class AlertComponent {
   @Input()
   set type(val: AlertTypes | string) {
-    this._type = (val as AlertTypes) || 'info';
-    this.setProperties(this._type);
+    this.alertType = (val as AlertTypes) || this.defaultAlertType;
+    this.setProperties(this.alertType);
   }
   get type(): AlertTypes {
-    return this._type;
+    return this.alertType;
   }
 
   @Input() title?: string;
@@ -29,15 +29,20 @@ export class AlertComponent {
   @Input() hideIcon?: boolean;
   @Input() enableClose?: boolean;
 
-  @Output() onCloseClick: EventEmitter<boolean> = new EventEmitter();
+  @Output() onCloseClick = new EventEmitter<boolean>();
 
   iconClass?: string;
 
-  private _type!: AlertTypes;
+  private alertType: AlertTypes;
+  private readonly defaultAlertType: AlertTypes = 'info';
 
-  private setProperties(type: AlertTypes): void {
-    if (type) {
-      switch (type) {
+  constructor() {
+    this.alertType = this.defaultAlertType;
+  }
+
+  private setProperties(alertType: AlertTypes): void {
+    if (alertType) {
+      switch (alertType) {
         case 'success':
           this.iconClass = 'pi-check';
           break;
@@ -45,7 +50,7 @@ export class AlertComponent {
           this.iconClass = 'pi-times';
           break;
         case 'warn':
-          this.iconClass = 'pi-exclamation-circle';
+          this.iconClass = 'pi-exclamation-triangle';
           break;
         case 'info':
           this.iconClass = 'pi-info-circle';

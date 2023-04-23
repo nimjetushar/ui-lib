@@ -7,6 +7,6 @@ import { DemoWrapperComponent } from './demo-wrapper/demo-wrapper.component';
 @NgModule({
   declarations: [DemoWrapperComponent],
   imports: [CommonModule, ToastModule],
-  exports: [DemoWrapperComponent],
+  exports: [DemoWrapperComponent, ToastModule],
 })
 export class DemoBaseModule {}
