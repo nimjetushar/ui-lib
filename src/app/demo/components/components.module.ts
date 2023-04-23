@@ -9,9 +9,9 @@ import {
 } from '@fourjs/ng-library';
 
 import { AlertDemoComponent } from './alert-demo/alert-demo.component';
-import { BadgeDemoComponent } from './badge-demo/badge-demo.component';
-import { ButtonDemoComponent } from './button-demo/button-demo.component';
-import { CheckboxDemoComponent } from './checkbox-demo/checkbox-demo.component';
+// import { BadgeDemoComponent } from './badge-demo/badge-demo.component';
+// import { ButtonDemoComponent } from './button-demo/button-demo.component';
+// import { CheckboxDemoComponent } from './checkbox-demo/checkbox-demo.component';
 import { Common } from '../common';
 
 // import { BadgeComponent } from './badge/badge.component';
@@ -24,8 +24,8 @@ import { Common } from '../common';
 // import { AlertDemoComponent } from './alert-demo/alert-demo.component';
 
 const routes: Routes = [
-  { path: 'badge', component: BadgeDemoComponent },
-  { path: 'button', component: ButtonDemoComponent },
+  // { path: 'badge', component: BadgeDemoComponent },
+  // { path: 'button', component: ButtonDemoComponent },
   // { path: 'dynamicFields', component: DynamicFieldsDemoComponent },
   // { path: 'checkbox', component: CheckboxComponent },
   // { path: 'radio', component: RadioDemoComponent },
@@ -50,9 +50,9 @@ const routes: Routes = [
     DropdownModule,
   ],
   declarations: [
-    ButtonDemoComponent,
-    BadgeDemoComponent,
-    CheckboxDemoComponent,
+    // ButtonDemoComponent,
+    // BadgeDemoComponent,
+    // CheckboxDemoComponent,
     // DynamicFieldsDemoComponent,
     // CheckboxComponent,
     // RadioDemoComponent,

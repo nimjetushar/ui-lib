@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IOptions as DemoOptions } from '../../common/demo-wrapper/demo-wrapper.component';
+import { IOptions as DemoOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
 import {
   DynamicFieldButtonOptions,
   DynamicFieldDisabledOptions,

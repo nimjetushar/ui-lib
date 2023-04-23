@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IOptions } from '../../common/demo-wrapper/demo-wrapper.component';
+import { IOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
 import { Dropdown } from '@fourjs/ng-library';
 
 @Component({

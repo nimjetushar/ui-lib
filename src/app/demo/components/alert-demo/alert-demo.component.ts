@@ -47,37 +47,37 @@ export class AlertDemoComponent implements OnInit {
         {
           parameter: 'type',
           type: `success | error | warn | info`,
-          desc: 'Alert type',
+          description: 'Alert type',
+          default: 'info',
         },
         {
           parameter: 'title',
           type: `string`,
-          desc: 'Alert title',
+          description: 'Alert title',
         },
         {
           parameter: 'message',
           type: `string`,
-          desc: 'Alert message',
+          description: 'Alert message',
         },
         {
           parameter: 'hideIcon',
           type: `boolean`,
-          desc: 'Hide alert icon',
+          description: 'Hide alert icon',
           default: false,
         },
         {
           parameter: 'enableClose',
           type: `boolean`,
-          desc: 'Dispaly close button',
+          description: 'Dispaly close button',
           default: false,
         },
       ],
       methods: [
         {
           method: 'onCloseClick',
-          param: 'boolean',
-          desc: `Event triggered on click of close button, 
-          close button is just place holder actual logic need's to be implemented using this`,
+          parameter: 'boolean',
+          description: `Event triggered on click of close button, close button is just place holder actual logic need's to be implemented using this`,
         },
       ],
     };

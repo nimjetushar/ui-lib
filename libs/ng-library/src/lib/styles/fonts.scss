@@ -5,4 +5,11 @@
   src: url('./fonts/Roboto/Roboto-Regular.ttf');
 }
 
-$font-regular: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  src: url('./fonts/Roboto/Roboto-Bold.ttf');
+}
+
+$font-regular: 'Roboto', sans-serif;

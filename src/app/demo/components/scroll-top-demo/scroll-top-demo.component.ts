@@ -1,10 +1,10 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
-import { IOptions } from '../../common/demo-wrapper/demo-wrapper.component';
+import { IOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
 
 @Component({
   selector: 'app-scroll-top-demo',
   templateUrl: './scroll-top-demo.component.html',
-  styleUrls: ['./scroll-top-demo.component.scss']
+  styleUrls: ['./scroll-top-demo.component.scss'],
 })
 export class ScrollTopDemoComponent implements AfterViewInit, OnDestroy {
   compSyntax: string[] = [`<t-navigate-top height="200"></t-navigate-top>`];
@@ -15,9 +15,9 @@ export class ScrollTopDemoComponent implements AfterViewInit, OnDestroy {
         parameter: 'height',
         type: 'number',
         desc: 'Enables automatically when browser scroll crosses mentioned height',
-        default: '500'
-      }
-    ]
+        default: '500',
+      },
+    ],
   };
 
   ngAfterViewInit(): void {

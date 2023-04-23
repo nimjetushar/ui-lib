@@ -1,6 +1,6 @@
 <div class="t-alert" [ngClass]="type">
   <div class="t-alert-icon" *ngIf="!hideIcon">
-    <i class="fa {{ iconClass }}" aria-hidden="true"></i>
+    <i class="pi" [class]="iconClass" aria-hidden="true"></i>
   </div>
   <div class="t-alert-content">
     <div class="t-alert-content-title" *ngIf="title">{{ title }}</div>

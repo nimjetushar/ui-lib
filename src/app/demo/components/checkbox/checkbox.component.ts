@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
-import { IOptions } from '../../common/demo-wrapper/demo-wrapper.component';
+import { IOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
 
 @Component({
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss']
+  styleUrls: ['./checkbox.component.scss'],
 })
 export class CheckboxComponent {
-
-  compSyntax: string[] =
-    [
-      `<t-checkbox name="checkbox" label="Checkbox" [(value)]="modelValue"></t-checkbox>`,
-      `<t-checkbox label="Checkbox" disabled="true"></t-checkbox>`
-    ];
+  compSyntax: string[] = [
+    `<t-checkbox name="checkbox" label="Checkbox" [(value)]="modelValue"></t-checkbox>`,
+    `<t-checkbox label="Checkbox" disabled="true"></t-checkbox>`,
+  ];
 
   options: IOptions = {
     name: 't-checkbox',
@@ -20,26 +18,26 @@ export class CheckboxComponent {
       {
         parameter: 'label',
         type: 'string',
-        desc: 'Checkbox label'
+        desc: 'Checkbox label',
       },
       {
         parameter: 'name',
         type: 'string',
-        desc: 'Checkbox name'
+        desc: 'Checkbox name',
       },
       {
         parameter: 'disabled',
         default: 'false',
         type: 'boolean',
-        desc: 'Disable component'
+        desc: 'Disable component',
       },
       {
         parameter: 'readonly',
         default: 'false',
         type: 'boolean',
-        desc: 'Component cannot be edited'
-      }
-    ]
+        desc: 'Component cannot be edited',
+      },
+    ],
   };
 
   modelValue = true;

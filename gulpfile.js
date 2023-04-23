@@ -38,7 +38,7 @@ function moveStyles() {
 function font() {
   return gulp
     .src([
-      'node_modules/font-awesome/fonts/**/*',
+      // 'node_modules/font-awesome/fonts/**/*',
       'projects/ng-library/src/assets/fonts/**/*',
       'node_modules/primeng/resources/themes/nova-dark/fonts/**/*',
       'node_modules/primeicons/fonts/**/*',

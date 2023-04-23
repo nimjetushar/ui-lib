@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import { IOptions } from '../../common/demo-wrapper/demo-wrapper.component';
+import { IOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
 
 @Component({
   selector: 'app-radio-demo',
   templateUrl: './radio-demo.component.html',
-  styleUrls: ['./radio-demo.component.scss']
+  styleUrls: ['./radio-demo.component.scss'],
 })
 export class RadioDemoComponent {
-
   groupVal = 'groupA';
   individualVal: boolean;
 
-  compSyntax: string[] = [`<t-radio label="Radio" name="radio" [(model)]="model"></t-radio>`];
+  compSyntax: string[] = [
+    `<t-radio label="Radio" name="radio" [(model)]="model"></t-radio>`,
+  ];
 
   options: IOptions = {
     name: 't-radio',
@@ -19,20 +20,20 @@ export class RadioDemoComponent {
       {
         parameter: 'label',
         type: 'string',
-        desc: 'Radio button label'
+        desc: 'Radio button label',
       },
       {
         parameter: 'name',
         type: 'string',
-        desc: 'Radio button name'
+        desc: 'Radio button name',
       },
       {
         parameter: 'disabled',
         default: 'false',
         type: 'boolean',
-        desc: 'Disable component'
-      }
-    ]
+        desc: 'Disable component',
+      },
+    ],
   };
 
   clearRadio(): void {

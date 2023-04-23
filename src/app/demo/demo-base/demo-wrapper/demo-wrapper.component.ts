@@ -22,15 +22,15 @@ export interface IColumn<T = string> {
 
 interface IDocOptions {
   parameter: string;
-  desc: string;
+  description: string;
   type: string;
   default?: string | boolean;
 }
 
 interface IMethodOptions {
   method: string;
-  param: string;
-  desc: string;
+  parameter: string;
+  description: string;
 }
 
 export interface IOptions {
@@ -77,13 +77,13 @@ export class DemoWrapperComponent implements OnInit, AfterViewInit {
     { label: 'Name', value: 'parameter', width: '20%' },
     { label: 'Type', value: 'type', width: '20%' },
     { label: 'Default', value: 'default', width: '20%' },
-    { label: 'Description', value: 'desc', width: '40%' },
+    { label: 'Description', value: 'description', width: '40%' },
   ];
 
   methodColumns: IColumn<keyof IMethodOptions>[] = [
     { label: 'Name', value: 'method', width: '20%' },
-    { label: 'Parameters', value: 'param', width: '20%' },
-    { label: 'Description', value: 'desc', width: '60%' },
+    { label: 'Parameters', value: 'parameter', width: '20%' },
+    { label: 'Description', value: 'description', width: '60%' },
   ];
 
   constructor(private toast: ToastService) {}

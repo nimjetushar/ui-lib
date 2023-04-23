@@ -17,7 +17,7 @@ export type AlertTypes = 'success' | 'error' | 'warn' | 'info';
 export class AlertComponent {
   @Input()
   set type(val: AlertTypes | string) {
-    this._type = val as AlertTypes;
+    this._type = (val as AlertTypes) || 'info';
     this.setProperties(this._type);
   }
   get type(): AlertTypes {
@@ -39,19 +39,19 @@ export class AlertComponent {
     if (type) {
       switch (type) {
         case 'success':
-          this.iconClass = 'fa-check';
+          this.iconClass = 'pi-check';
           break;
         case 'error':
-          this.iconClass = 'fa-times';
+          this.iconClass = 'pi-times';
           break;
         case 'warn':
-          this.iconClass = 'fa-exclamation-triangle';
+          this.iconClass = 'pi-exclamation-circle';
           break;
         case 'info':
-          this.iconClass = 'fa-info';
+          this.iconClass = 'pi-info-circle';
           break;
         default:
-          throw new Error('invalid Alert type');
+          console.warn('invalid Alert type');
       }
     }
   }

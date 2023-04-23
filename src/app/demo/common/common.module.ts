@@ -5,16 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { ToastModule } from '@fourjs/ng-library';
 
 import { CommonNoteComponent } from './common-note/common-note.component';
-import { DemoWrapperComponent } from './demo-wrapper/demo-wrapper.component';
+import { DemoBaseModule } from '../demo-base/demo-base.module';
 
 @NgModule({
-  declarations: [DemoWrapperComponent, CommonNoteComponent],
-  imports: [CommonModule, FormsModule, HttpClientModule, ToastModule],
-  exports: [
-    DemoWrapperComponent,
-    CommonNoteComponent,
+  declarations: [CommonNoteComponent],
+  imports: [
+    CommonModule,
     FormsModule,
     HttpClientModule,
+    ToastModule,
+    DemoBaseModule,
   ],
+  exports: [CommonNoteComponent, FormsModule, HttpClientModule, DemoBaseModule],
 })
 export class Common {}
