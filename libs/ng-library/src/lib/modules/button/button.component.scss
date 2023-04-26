@@ -13,7 +13,6 @@
   height: $button-height;
   line-height: $button-height;
   padding: $button-padding;
-  text-transform: uppercase;
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent; // Gets rid of tap active state
 }
@@ -354,13 +353,13 @@ button.btn-floating {
   display: block;
 }
 
-t-badge {
+.t-badge {
   &.left {
-    margin-right: rem(8);
+    margin-right: 4px;
   }
 
   &.right {
-    margin-left: rem(8);
+    margin-left: 4px;
   }
 }
 

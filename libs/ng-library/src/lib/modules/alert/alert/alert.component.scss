@@ -1,7 +1,7 @@
 @import '../../../styles/variable.scss';
 @import '../../../styles//utility.scss';
 
-.t-alert {
+.t-alert-wrapper {
   display: flex;
   padding: 1.25rem 1.75rem;
   margin: 1rem 0;
@@ -33,14 +33,14 @@
     color: $color-informational;
   }
 
-  &-icon {
+  .t-alert-icon {
     align-self: center;
     padding: 0 0 0 14px;
     font-size: 1rem;
     font-weight: lighter;
   }
 
-  &-content {
+  .t-alert-content {
     padding-left: 24px;
     align-self: center;
 
@@ -58,7 +58,7 @@
     }
   }
 
-  &-close {
+  .t-alert-close {
     margin-left: auto;
     padding: 0 10px;
     align-self: center;

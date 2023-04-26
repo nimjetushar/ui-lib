@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+
 import { IOptions } from '../../common';
 
 @Component({
@@ -9,7 +10,7 @@ import { IOptions } from '../../common';
 })
 export class ButtonDemoComponent {
   compSyntax: string[] = [
-    '<t-button label="Home" type="primary" badge="fa-home"></t-button>',
+    '<t-button label="Home" type="primary" badge="pi-home"></t-button>',
   ];
 
   options: IOptions = {
@@ -18,36 +19,37 @@ export class ButtonDemoComponent {
       {
         parameter: 'label',
         type: 'string',
-        desc: 'Button label',
+        description: 'Button label',
       },
       {
         parameter: 'type',
         type: 'string',
-        desc: 'Type of button, valid values are primary, secondary, tertiary',
+        description:
+          'Type of button, valid values are primary, secondary, tertiary',
         default: 'primary',
       },
       {
         parameter: 'badge',
         type: 'string',
-        desc: 'Icon class to render badge',
+        description: 'Icon class to render badge',
       },
       {
         parameter: 'badgePosition',
         type: 'string',
         default: 'left',
-        desc: 'Badge position in button, valid values are right, left',
+        description: 'Badge position in button, valid values are right, left',
       },
       {
         parameter: 'isLarge',
         type: 'boolean',
-        default: false,
-        desc: 'Increases button size when true',
+        default: 'false',
+        description: 'Increases button size when true',
       },
       {
         parameter: 'disabled',
         default: 'false',
         type: 'boolean',
-        desc: 'Disabled button',
+        description: 'Disabled button',
       },
     ],
   };

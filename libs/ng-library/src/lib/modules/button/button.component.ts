@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 
 type BadgePosition = 'left' | 'right';
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
@@ -44,6 +44,8 @@ export class ButtonComponent {
       ? val
       : 'primary';
   }
+
+  @HostBinding('class') hostClass = 't-button';
 
   buttonType: ButtonType = 'primary';
   bPos: BadgePosition = 'left';

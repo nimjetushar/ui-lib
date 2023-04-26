@@ -4,6 +4,7 @@ import {
   Output,
   EventEmitter,
   ChangeDetectionStrategy,
+  HostBinding,
 } from '@angular/core';
 
 import { AlertTypes } from '../types';
@@ -26,10 +27,12 @@ export class AlertComponent {
 
   @Input() title?: string;
   @Input() message?: string;
-  @Input() hideIcon?: boolean;
-  @Input() enableClose?: boolean;
+  @Input() hideIcon = false;
+  @Input() enableClose = false;
 
   @Output() onCloseClick = new EventEmitter<boolean>();
+
+  @HostBinding('class') hostClass = 't-alert';
 
   iconClass?: string;
 

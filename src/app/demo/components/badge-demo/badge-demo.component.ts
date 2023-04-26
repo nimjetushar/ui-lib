@@ -14,8 +14,8 @@ export class BadgeDemoComponent implements OnInit {
 
   ngOnInit(): void {
     this.compSyntax = [
-      `<t-badge badge="fa-home"></t-badge>`,
-      `<t-badge badge="fa-font-awesome"></t-badge>`,
+      `<t-badge badge="pi-home"></t-badge>`,
+      `<t-badge badge="pi-thumbs-up-fill"></t-badge>`,
     ];
 
     this.options = {
@@ -24,7 +24,7 @@ export class BadgeDemoComponent implements OnInit {
         {
           parameter: 'badge',
           type: 'string',
-          desc: 'Icon class to render badge',
+          description: 'Icon class to render badge',
         },
       ],
     };

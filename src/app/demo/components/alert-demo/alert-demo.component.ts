@@ -66,13 +66,13 @@ export class AlertDemoComponent implements OnInit {
           parameter: 'hideIcon',
           type: `boolean`,
           description: 'Hide alert icon',
-          default: false,
+          default: 'false',
         },
         {
           parameter: 'enableClose',
           type: `boolean`,
           description: 'Dispaly close button',
-          default: false,
+          default: 'false',
         },
       ],
       methods: [

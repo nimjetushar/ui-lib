@@ -1,4 +1,4 @@
-<div class="t-alert" [ngClass]="type">
+<div class="t-alert-wrapper" [ngClass]="type">
   <div class="t-alert-icon" *ngIf="!hideIcon">
     <i class="pi" [class]="iconClass" aria-hidden="true"></i>
   </div>
@@ -11,6 +11,6 @@
     ></div>
   </div>
   <div class="t-alert-close" *ngIf="enableClose">
-    <i class="fa fa-times" aria-hidden="true" (click)="closeHandler()"></i>
+    <i class="pi pi-times" aria-hidden="true" (click)="closeHandler()"></i>
   </div>
 </div>

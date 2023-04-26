@@ -10,7 +10,7 @@ export interface IDocOptions {
   parameter: string;
   description: string;
   type: string;
-  default?: string | boolean;
+  default?: string;
 }
 
 export interface IMethodOptions {
