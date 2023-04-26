@@ -11,19 +11,12 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: ''
-  }
+    redirectTo: '',
+  },
 ];
 
 @NgModule({
-  declarations: [
-    UtilityComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    Common,
-    ButtonModule
-  ]
+  declarations: [UtilityComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), Common, ButtonModule],
 })
-export class UtilityModule { }
+export class UtilityModule {}

@@ -1,4 +1,9 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  Input,
+} from '@angular/core';
 
 type BadgePosition = 'left' | 'right';
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
@@ -29,6 +34,7 @@ type ButtonType = 'primary' | 'secondary' | 'tertiary';
     </button>
   `,
   styleUrls: ['./button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
   @Input() label!: string;
@@ -40,9 +46,14 @@ export class ButtonComponent {
   }
 
   @Input() set type(val: ButtonType) {
-    this.buttonType = ['primary', 'secondary', 'tertiary'].includes(val)
-      ? val
-      : 'primary';
+    if (val) {
+      if (['primary', 'secondary', 'tertiary'].includes(val)) {
+        this.buttonType = val;
+      } else {
+        this.buttonType = 'primary';
+        console.warn('invalid button type');
+      }
+    }
   }
 
   @HostBinding('class') hostClass = 't-button';
