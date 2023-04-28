@@ -8,7 +8,7 @@
       <t-checkbox
         label="Checkbox"
         name="checkbox"
-        [(model)]="modelValue"
+        [(value)]="modelValue"
       ></t-checkbox>
       <div *ngIf="modelValue !== undefined" class="output">
         <span>Output: {{ modelValue }}</span>

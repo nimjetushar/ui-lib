@@ -1,5 +1,9 @@
-import { ChangeDetectionStrategy } from '@angular/compiler';
-import { Component, HostBinding, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 't-badge',

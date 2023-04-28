@@ -25,7 +25,13 @@
     margin-left: 10px;
   }
 
+  &-icon {
+    position: absolute;
+    top: 1.5px;
+  }
+
   .checkmark {
+    position: relative;
     display: inline-block;
     height: 1.2rem;
     width: 1.2rem;

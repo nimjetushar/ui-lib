@@ -17,10 +17,10 @@ export class CheckboxComponent {
   @Input() label?: string;
   @Input() name = 'p-checkbox';
   @Input() disabled = false;
-  @Input() model = false;
+  @Input() value = false;
   @Input() readonly = false;
 
-  @Output() modelChange = new EventEmitter<boolean>();
+  @Output() valueChange = new EventEmitter<boolean>();
 
   @HostBinding('class') hostClass = 't-checkbox';
 
@@ -29,6 +29,6 @@ export class CheckboxComponent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleOnChange(event: any): void {
     this.checked = event.target?.checked || false;
-    this.modelChange.emit(this.checked);
+    this.valueChange.emit(this.checked);
   }
 }
