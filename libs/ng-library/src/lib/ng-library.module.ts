@@ -1,39 +1,21 @@
 import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { HttpClientModule } from '@angular/common/http';
-// import { RouterModule } from '@angular/router';
-// import { FormsModule } from '@angular/forms';
-// import { DropdownModule } from 'primeng/dropdown';
-// import { ToastModule } from 'primeng/toast';
+import { CommonModule } from '@angular/common';
 
-// import { EXPORTEDCOMPONENTS, COMPONENTS } from './components/components';
-// import { SERVICES } from './services/services';
-// import { DIRECTIVES, ENTRYPOINTDIRECTIVES, EXPORTEDDIRECTIVES } from './directives/directives';
+import { AlertModule } from './modules/alert';
+import { BadgeModule } from './modules/badge';
+import { CheckboxModule } from './modules/checkbox';
+import { ButtonModule } from './modules/button';
 
 @NgModule({
-  declarations: [
-    // ...COMPONENTS,
-    // ...DIRECTIVES
-  ],
+  declarations: [],
   imports: [
-    // CommonModule,
-    // HttpClientModule,
-    // RouterModule,
-    // FormsModule,
-    // DropdownModule,
-    // ToastModule
+    CommonModule,
+    AlertModule,
+    BadgeModule,
+    ButtonModule,
+    CheckboxModule,
   ],
-  providers: [
-    // ...SERVICES
-  ],
-  exports: [
-    // component export
-    // ...EXPORTEDCOMPONENTS,
-    // directive export
-    // ...EXPORTEDDIRECTIVES
-  ],
-  entryComponents: [
-    // ...ENTRYPOINTDIRECTIVES
-  ],
+  providers: [],
+  exports: [AlertModule, BadgeModule, ButtonModule, CheckboxModule],
 })
 export class NgLibrary {}
