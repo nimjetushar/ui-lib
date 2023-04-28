@@ -14,15 +14,16 @@ import { AlertDemoComponent } from './alert-demo/alert-demo.component';
 import { BadgeDemoComponent } from './badge-demo/badge-demo.component';
 import { ButtonDemoComponent } from './button-demo/button-demo.component';
 import { CheckboxDemoComponent } from './checkbox-demo/checkbox-demo.component';
+import { DropdownDemoComponent } from './dropdown-demo/dropdown-demo.component';
 
 const routes: Routes = [
   { path: 'alert', component: AlertDemoComponent },
   { path: 'badge', component: BadgeDemoComponent },
   { path: 'button', component: ButtonDemoComponent },
   { path: 'checkbox', component: CheckboxDemoComponent },
+  { path: 'dropdown', component: DropdownDemoComponent },
   // { path: 'dynamicFields', component: DynamicFieldsDemoComponent },
   // { path: 'radio', component: RadioDemoComponent },
-  // { path: 'dropdown', component: DropdownDemoComponent },
   // { path: 'navigateTop', component: ScrollTopDemoComponent },
   {
     path: '',
@@ -47,10 +48,10 @@ const routes: Routes = [
     BadgeDemoComponent,
     ButtonDemoComponent,
     CheckboxDemoComponent,
+    DropdownDemoComponent,
     // DynamicFieldsDemoComponent,
     // CheckboxComponent,
     // RadioDemoComponent,
-    // DropdownDemoComponent,
     // ScrollTopDemoComponent,
   ],
 })

@@ -1,87 +1,90 @@
-import { Component } from '@angular/core';
-import { Dropdown } from '@fourjs/ng-library';
-import { IOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { DropdownOptions } from '@fourjs/ng-library';
+
+import { IOptions } from '../../common';
 
 @Component({
-  selector: 'app-dropdown-demo',
+  selector: 'ui-library-documentation-dropdown-demo',
   templateUrl: './dropdown-demo.component.html',
   styleUrls: ['./dropdown-demo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownDemoComponent {
-  compSyntax: string[] = [
+  readonly compSyntax: string[] = [
     `<t-dropdown placeholder="Select option" [options]="options" [(ngModel)]="value" [filter]="true"></t-dropdown>`,
   ];
 
-  pageOptions: IOptions = {
+  readonly pageOptions: IOptions = {
     name: 't-dropdown',
     options: [
       {
         parameter: 'placeholder',
         type: 'string',
-        desc: 'Default text to display when no option is selected.',
+        description: 'Default text to display when no option is selected.',
       },
       {
         parameter: 'options',
         type: 'Dropdown[]',
-        desc: 'An array of objects to display as the available options.',
+        description: 'An array of objects to display as the available options.',
       },
       {
         parameter: 'name',
         type: 'string',
-        desc: 'Name of the input element.',
+        description: 'Name of the input element.',
       },
       {
         parameter: 'scrollHeight',
         type: 'string',
         default: '200px',
-        desc: 'Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.',
+        description:
+          'Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.',
       },
       {
         parameter: 'disabled',
         type: 'boolean',
         default: 'false',
-        desc: 'Disabled dropdown',
+        description: 'Disabled dropdown',
       },
       {
         parameter: 'readonly',
         type: 'boolean',
         default: 'false',
-        desc: 'Component cannot be edited',
+        description: 'Component cannot be edited',
       },
       {
         parameter: 'autofocus',
         type: 'boolean',
         default: 'false',
-        desc: 'Component should automatically get focus on load',
+        description: 'Component should automatically get focus on load',
       },
       {
         parameter: 'tooltip',
         type: 'any',
-        desc: 'Advisory information to display in a tooltip on hover.',
+        description: 'Advisory information to display in a tooltip on hover.',
       },
       {
         parameter: 'tooltipPosition',
         type: 'string',
         default: 'top',
-        desc: 'Position of the tooltip, valid values are right, left, top and bottom.',
+        description:
+          'Position of the tooltip, valid values are right, left, top and bottom.',
       },
     ],
     methods: [
       {
         method: 'onFocus',
-        param: ['event: Browser event'],
-        desc: 'Callback to invoke when dropdown gets focus.',
+        parameter: 'event: Browser event',
+        description: 'Callback to invoke when dropdown gets focus.',
       },
       {
         method: 'onBlur',
-        param: ['event: Browser event'],
-        desc: 'Callback to invoke when dropdown gets blur.',
+        parameter: 'event: Browser event',
+        description: 'Callback to invoke when dropdown gets blur.',
       },
     ],
   };
 
-  value: any = 'Audi';
-  options: Dropdown[] = [
+  readonly options: DropdownOptions<string>[] = [
     { label: 'Audi', value: 'Audi' },
     { label: 'BMW', value: 'BMW' },
     { label: 'Honda', value: 'Honda' },
@@ -93,17 +96,18 @@ export class DropdownDemoComponent {
     { label: 'Mercedes', value: 'Mercedes' },
   ];
 
-  tooltipDDValue: string;
-  tooltip: string;
-  tooltipPosition = 'left';
-  tooltipOption: Dropdown[] = [
+  readonly tooltipOption: DropdownOptions<string>[] = [
     { label: 'top', value: 'top' },
     { label: 'right', value: 'right' },
     { label: 'bottom', value: 'bottom' },
     { label: 'left', value: 'left' },
   ];
 
-  eventType: string;
+  eventType?: string;
+  value = 'Audi';
+  tooltipDDValue?: string;
+  tooltip?: string;
+  tooltipPosition = 'left';
 
   constructor() {
     this.options = this.options.sort((a, b) => a.value.localeCompare(b.value));
@@ -113,11 +117,11 @@ export class DropdownDemoComponent {
     this.tooltip = value ? `Selected value is ${value}` : 'Please select value';
   }
 
-  focusHandler(event: FocusEvent): void {
+  focusHandler(event: Event): void {
     this.eventType = event.type;
   }
 
-  blurHandler(event: FocusEvent): void {
+  blurHandler(event: Event): void {
     this.eventType = event.type;
   }
 }

@@ -2,21 +2,21 @@ import {
   Component,
   Input,
   forwardRef,
-  ViewEncapsulation,
   Output,
   EventEmitter,
   ChangeDetectionStrategy,
+  HostBinding,
+  ViewEncapsulation,
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { noop } from 'tutility';
 
-import { UiInput } from '../../class/uiInput.class';
+import { Tooltip } from '../../directives/tooltip';
 
 export interface DropdownOptions<T = unknown> {
   label: string;
   value: T;
 }
-
-type TooltipPosition = 'right' | 'left' | 'top' | 'bottom';
 
 @Component({
   selector: 't-dropdown',
@@ -46,32 +46,17 @@ type TooltipPosition = 'right' | 'left' | 'top' | 'bottom';
       multi: true,
     },
   ],
-  encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
-export class DropdownComponent extends UiInput {
-  @Input()
-  set options(value: DropdownOptions[]) {
-    this._options = value;
-  }
-  get options(): DropdownOptions[] {
-    return this._options;
-  }
-
+export class DropdownComponent extends Tooltip implements ControlValueAccessor {
+  @Input() options: DropdownOptions[] = [];
   @Input() readonly = false;
   @Input() disabled = false;
   @Input() filter = false;
   @Input() placeholder!: string;
   @Input() staticLabel?: string;
   @Input() name = 't-dropdown';
-  @Input() tooltip: any;
-  @Input()
-  set tooltipPosition(value: TooltipPosition) {
-    this._tooltipPosition = value || 'top';
-  }
-  get tooltipPosition(): TooltipPosition {
-    return this._tooltipPosition;
-  }
   @Input() autoDisplayFirst = false;
   @Input() scrollHeight = '200px';
   @Input() autofocus = false;
@@ -79,17 +64,28 @@ export class DropdownComponent extends UiInput {
   @Output() onFocus = new EventEmitter<Event>();
   @Output() onBlur = new EventEmitter<Event>();
 
-  value: any;
+  @HostBinding('class') hostClass = 't-dropdown';
 
-  private _options!: DropdownOptions[];
-  private _tooltipPosition: TooltipPosition = 'top';
+  value: unknown;
 
-  override writeValue(value: DropdownOptions): void {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onChange: any = noop;
+  onTouched: unknown = noop;
+
+  writeValue(value: DropdownOptions): void {
     this.value = value;
     this.onChange(value);
   }
 
-  onChangeHandler(event: any): void {
+  registerOnChange(fn: unknown): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: unknown): void {
+    this.onTouched = fn;
+  }
+
+  onChangeHandler(event: { value: DropdownOptions }): void {
     this.writeValue(event.value);
   }
 

@@ -1,2 +1,2 @@
 export { Common } from './common.module';
-export * from '../demo-base/types';
+export * from './types';
