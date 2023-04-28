@@ -6,17 +6,17 @@ import { MenuModule, ToastModule, ToastService } from '@fourjs/ng-library';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routes';
 import { Common } from './demo/common';
-import { ReferenceComponent } from './demo/reference/reference.component';
+import { ReferenceComponent } from './demo/components/reference/reference.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [AppComponent, ReferenceComponent, HomeComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     Common,
     MenuModule,
-    BrowserAnimationsModule,
     ToastModule,
   ],
   providers: [ToastService],
