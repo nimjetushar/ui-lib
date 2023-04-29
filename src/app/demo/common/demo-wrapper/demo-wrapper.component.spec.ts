@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { NgLibrary, ToastService } from '@fourjs/ng-library';
 
 import { DemoWrapperComponent } from './demo-wrapper.component';
-import { NgLibrary, ToastService } from '@fourjs/ng-library';
 
 describe('DemoWrapperComponent', () => {
   let component: DemoWrapperComponent;
@@ -11,9 +11,8 @@ describe('DemoWrapperComponent', () => {
     TestBed.configureTestingModule({
       declarations: [DemoWrapperComponent],
       imports: [NgLibrary],
-      providers: [ToastService]
-    })
-      .compileComponents();
+      providers: [ToastService],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
