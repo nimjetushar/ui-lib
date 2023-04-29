@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { Common } from '../common/common.module';
+import { DropdownModule, TooltipModule } from '@fourjs/ng-library';
+
+import { Common } from '../common';
 import { TooltipDemoComponent } from './tooltip-demo/tooltip-demo.component';
 
 const routes: Routes = [
@@ -9,18 +11,18 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'tooltip'
-  }
+    redirectTo: 'tooltip',
+  },
 ];
 
 @NgModule({
-  declarations: [
-    TooltipDemoComponent
-  ],
+  declarations: [TooltipDemoComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    Common
-  ]
+    Common,
+    TooltipModule,
+    DropdownModule,
+  ],
 })
-export class DirectivesModule { }
+export class DirectivesModule {}

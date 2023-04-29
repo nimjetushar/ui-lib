@@ -1,47 +1,43 @@
-import { Component } from '@angular/core';
-import { IOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
-import { Dropdown } from '@fourjs/ng-library';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { DropdownOptions } from '@fourjs/ng-library';
+
+import { IOptions } from '../../common';
 
 @Component({
-  selector: 'app-tooltip-demo',
+  selector: 'ui-library-documentation-tooltip-demo',
   templateUrl: './tooltip-demo.component.html',
   styleUrls: ['./tooltip-demo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TooltipDemoComponent {
-  compSyntax: string[] = [
-    `<div tTooltip="Content to be shown in the tooltip" [tooltipDisabled]="false" [tooltipAnimation]="true"> Element on which tooltip is added </div>`,
+  readonly compSyntax: string[] = [
+    `<div tTooltip="Content to be shown in the tooltip" [tooltipDisabled]="false"> Element on which tooltip is added </div>`,
   ];
 
-  options: IOptions = {
+  readonly options: IOptions = {
     name: 'tooltip',
     componentType: 'Directive',
     options: [
       {
         parameter: 'tooltip',
         type: 'string | TooltipContent',
-        desc: 'Content to be displayed inside tooltip',
+        description: 'Content to be displayed inside tooltip',
       },
       {
         parameter: 'tooltipDisabled',
         type: 'boolean',
-        desc: 'Disable tooltip',
+        description: 'Disable tooltip',
       },
       {
-        parameter: 'tooltipAnimation',
-        type: 'boolean',
-        default: true,
-        desc: 'Enable animation for tooltip',
-      },
-      {
-        parameter: 'tooltipPlacement',
+        parameter: 'tooltipPosition',
         type: 'top | bottom | left | right',
         default: 'bottom',
-        desc: 'Tooltip placement',
+        description: 'Tooltip placement',
       },
     ],
   };
 
-  tooltipOption: Dropdown[] = [
+  readonly tooltipOption: DropdownOptions<string>[] = [
     { label: 'top', value: 'top' },
     { label: 'right', value: 'right' },
     { label: 'bottom', value: 'bottom' },

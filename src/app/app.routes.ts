@@ -28,13 +28,13 @@ const routes: Routes = [
         (m) => m.ComponentsModule
       ),
   },
-  // {
-  //   path: 'directive',
-  //   loadChildren: () =>
-  //     import('./demo/directives/directives.module').then(
-  //       (m) => m.DirectivesModule
-  //     ),
-  // },
+  {
+    path: 'directive',
+    loadChildren: () =>
+      import('./demo/directives/directives.module').then(
+        (m) => m.DirectivesModule
+      ),
+  },
   // {
   //   path: 'services',
   //   loadChildren: () =>
