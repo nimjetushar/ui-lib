@@ -1,0 +1,42 @@
+@import '../../styles/functions.scss';
+
+.dynamic-fields {
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+
+    .t-button {
+      margin: 0 rem(5);
+    }
+  }
+
+  .input-element {
+    padding: 1em;
+    border-bottom: 1px solid #aba4a4;
+  }
+
+  input,
+  select {
+    outline: 0;
+  }
+
+  .input-text,
+  .input-number,
+  .input-radio,
+  .input-checkbox,
+  .input-select {
+  }
+
+  .input-text {
+  }
+
+  .input-radio {
+  }
+
+  .input-checkbox {
+  }
+
+  .input-select {
+  }
+}

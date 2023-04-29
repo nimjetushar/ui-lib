@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { IOptions as DemoOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
+import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
 import {
   DynamicFieldButtonOptions,
   DynamicFieldDisabledOptions,
@@ -8,86 +7,99 @@ import {
   DynamicFieldsComponent,
 } from '@fourjs/ng-library';
 
+import { IOptions } from '../../common';
+
+type OutputModel = {
+  name?: string;
+  isNew?: boolean;
+  brand?: string;
+};
+
 @Component({
-  selector: 'app-dynamic-fields',
-  templateUrl: './dynamic-fields.component.html',
-  styleUrls: ['./dynamic-fields.component.scss'],
+  selector: 'ui-library-documentation-dynamic-fields-demo',
+  templateUrl: './dynamic-fields-demo.component.html',
+  styleUrls: ['./dynamic-fields-demo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicFieldsDemoComponent {
   @ViewChild(DynamicFieldsComponent, { static: true })
-  dyFieldComp: DynamicFieldsComponent;
+  dyFieldComp!: DynamicFieldsComponent;
 
-  compSyntax: string[] = [
+  readonly compSyntax: string[] = [
     `<t-dynamic-fields [fields]="field" [data]="data" [dropdownOptions]="dropdownOptions" [disabledFields]="disabledOptions" [buttonOptions]="buttonOptions" (primaryHandler)="onSearch($event)" (secondaryHandler)="onReset($event)" ></t-dynamic-fields>`,
   ];
 
-  options: DemoOptions = {
+  readonly options: IOptions = {
     name: 't-dynamic-fields',
     options: [
       {
         parameter: 'fields',
         type: 'DynamicFields[]',
-        desc: 'Array of object to display fields',
+        description: 'Array of object to display fields',
       },
       {
         parameter: 'data',
         type: 'DynamicFieldDataModel',
-        desc: 'Object which initialize the fields with default value.',
+        description: 'Object which initialize the fields with default value.',
       },
       {
         parameter: 'dropdownOptions',
         type: 'DynamicFieldDropdownOptions',
-        desc: 'Dropdown options used to initalize dropdown if present in fields',
+        description:
+          'Dropdown options used to initalize dropdown if present in fields',
       },
       {
         parameter: 'disabledFields',
         type: 'DynamicFieldDisabledOptions',
-        desc: 'Disables field if specified true',
+        description: 'Disables field if specified true',
       },
       {
         parameter: 'disableDefaultAction',
         type: 'boolean',
-        desc: 'Hides default action buttons',
+        description: 'Hides default action buttons',
       },
       {
         parameter: 'buttonOptions',
         type: 'DynamicFieldButtonOptions',
-        desc: 'Customize button labels and its properties.',
+        description: 'Customize button labels and its properties.',
       },
     ],
     methods: [
       {
         method: 'primaryHandler',
-        param: ['DynamicFieldDataModel'],
-        desc: 'Emits fields data to parent component',
+        parameter: 'DynamicFieldDataModel',
+        description: 'Emits fields data to parent component',
       },
       {
         method: 'secondaryHandler',
-        param: ['DynamicFieldDataModel'],
-        desc: 'Emits fields data to parent component',
+        parameter: 'DynamicFieldDataModel',
+        description: 'Emits fields data to parent component',
       },
     ],
   };
 
-  field: DynamicFields[] = [
+  readonly field: DynamicFields<keyof OutputModel>[] = [
     {
       label: 'Car Name',
       type: 'text',
       model: 'name',
+      name: 'carName',
     },
     {
       label: 'New model',
       type: 'checkbox',
       model: 'isNew',
+      name: 'newModel',
     },
     {
       label: 'Select Brand',
       type: 'select',
       model: 'brand',
+      name: 'selectBrand',
     },
   ];
 
-  dropdownOptions: DynamicFieldDropdownOptions = {
+  readonly dropdownOptions: DynamicFieldDropdownOptions<OutputModel> = {
     brand: [
       {
         label: 'Maruti',
@@ -104,28 +116,23 @@ export class DynamicFieldsDemoComponent {
     ],
   };
 
-  disabledOptions: DynamicFieldDisabledOptions = {
-    isNew: true,
-  };
+  readonly disabledOptions: DynamicFieldDisabledOptions<OutputModel> = {};
 
-  buttonOptions: DynamicFieldButtonOptions = {
+  readonly buttonOptions: DynamicFieldButtonOptions = {
     primaryLabel: 'Submit',
   };
 
-  output: any = {
+  output: OutputModel = {
     isNew: true,
   };
 
-  displayOutput: boolean;
-
-  onSearch(param: { [key: string]: any }): void {
-    console.info(param);
-    this.displayOutput = true;
+  onSearch(param: OutputModel): void {
+    console.log(param);
     this.output = Object.assign({}, param);
   }
 
-  onReset(param: { [key: string]: any }): void {
-    console.info(param);
+  onReset(param: OutputModel): void {
+    console.log(param);
     this.output = {};
     this.dyFieldComp.reset();
   }

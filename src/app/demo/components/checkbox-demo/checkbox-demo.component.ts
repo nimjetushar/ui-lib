@@ -10,7 +10,7 @@ import { IOptions } from '../../common';
 })
 export class CheckboxDemoComponent {
   readonly compSyntax = [
-    `<t-checkbox name="checkbox" label="Checkbox" [(value)]="modelValue"></t-checkbox>`,
+    `<t-checkbox name="checkbox" label="Checkbox" [(model)]="modelValue"></t-checkbox>`,
     `<t-checkbox label="Checkbox" disabled="true"></t-checkbox>`,
   ];
 

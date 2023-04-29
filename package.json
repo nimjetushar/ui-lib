@@ -29,7 +29,7 @@
     "primeng": "^15.2.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "tutility": "^4.2.0",
+    "tutility": "^5.0.0",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {

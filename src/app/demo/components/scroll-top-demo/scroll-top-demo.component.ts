@@ -1,20 +1,25 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
-import { IOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
+
+import { IOptions } from '../../common';
 
 @Component({
-  selector: 'app-scroll-top-demo',
+  selector: 'ui-library-documentation-scroll-top-demo',
   templateUrl: './scroll-top-demo.component.html',
   styleUrls: ['./scroll-top-demo.component.scss'],
 })
 export class ScrollTopDemoComponent implements AfterViewInit, OnDestroy {
-  compSyntax: string[] = [`<t-navigate-top height="200"></t-navigate-top>`];
-  options: IOptions = {
+  readonly compSyntax: string[] = [
+    `<t-navigate-top [height]="200"></t-navigate-top>`,
+  ];
+
+  readonly options: IOptions = {
     name: 't-navigate-top',
     options: [
       {
         parameter: 'height',
         type: 'number',
-        desc: 'Enables automatically when browser scroll crosses mentioned height',
+        description:
+          'Enables automatically when browser scroll crosses mentioned height',
         default: '500',
       },
     ],

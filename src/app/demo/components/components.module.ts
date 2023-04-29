@@ -7,6 +7,9 @@ import {
   ButtonModule,
   CheckboxModule,
   DropdownModule,
+  DynamicFieldsModule,
+  NavigationModule,
+  RadioModule,
 } from '@fourjs/ng-library';
 
 import { Common } from '../common';
@@ -15,6 +18,9 @@ import { BadgeDemoComponent } from './badge-demo/badge-demo.component';
 import { ButtonDemoComponent } from './button-demo/button-demo.component';
 import { CheckboxDemoComponent } from './checkbox-demo/checkbox-demo.component';
 import { DropdownDemoComponent } from './dropdown-demo/dropdown-demo.component';
+import { DynamicFieldsDemoComponent } from './dynamic-fields-demo/dynamic-fields-demo.component';
+import { RadioDemoComponent } from './radio-demo/radio-demo.component';
+import { ScrollTopDemoComponent } from './scroll-top-demo/scroll-top-demo.component';
 
 const routes: Routes = [
   { path: 'alert', component: AlertDemoComponent },
@@ -22,9 +28,9 @@ const routes: Routes = [
   { path: 'button', component: ButtonDemoComponent },
   { path: 'checkbox', component: CheckboxDemoComponent },
   { path: 'dropdown', component: DropdownDemoComponent },
-  // { path: 'dynamicFields', component: DynamicFieldsDemoComponent },
-  // { path: 'radio', component: RadioDemoComponent },
-  // { path: 'navigateTop', component: ScrollTopDemoComponent },
+  { path: 'dynamicFields', component: DynamicFieldsDemoComponent },
+  { path: 'radio', component: RadioDemoComponent },
+  { path: 'navigateTop', component: ScrollTopDemoComponent },
   {
     path: '',
     pathMatch: 'full',
@@ -42,6 +48,9 @@ const routes: Routes = [
     ButtonModule,
     CheckboxModule,
     DropdownModule,
+    DynamicFieldsModule,
+    RadioModule,
+    NavigationModule,
   ],
   declarations: [
     AlertDemoComponent,
@@ -49,10 +58,9 @@ const routes: Routes = [
     ButtonDemoComponent,
     CheckboxDemoComponent,
     DropdownDemoComponent,
-    // DynamicFieldsDemoComponent,
-    // CheckboxComponent,
-    // RadioDemoComponent,
-    // ScrollTopDemoComponent,
+    DynamicFieldsDemoComponent,
+    RadioDemoComponent,
+    ScrollTopDemoComponent,
   ],
 })
 export class ComponentsModule {}

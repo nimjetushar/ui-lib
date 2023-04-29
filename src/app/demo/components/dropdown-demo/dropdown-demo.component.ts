@@ -109,6 +109,8 @@ export class DropdownDemoComponent {
   tooltip?: string;
   tooltipPosition = 'left';
 
+  data? = { t: '' };
+
   constructor() {
     this.options = this.options.sort((a, b) => a.value.localeCompare(b.value));
   }

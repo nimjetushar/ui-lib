@@ -1,37 +1,39 @@
-import { Component } from '@angular/core';
-import { IOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+import { IOptions } from '../../common';
 
 @Component({
-  selector: 'app-radio-demo',
+  selector: 'ui-library-documentation-radio-demo',
   templateUrl: './radio-demo.component.html',
   styleUrls: ['./radio-demo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioDemoComponent {
   groupVal = 'groupA';
-  individualVal: boolean;
+  individualVal: boolean | undefined = false;
 
-  compSyntax: string[] = [
+  readonly compSyntax: string[] = [
     `<t-radio label="Radio" name="radio" [(model)]="model"></t-radio>`,
   ];
 
-  options: IOptions = {
+  readonly options: IOptions = {
     name: 't-radio',
     options: [
       {
         parameter: 'label',
         type: 'string',
-        desc: 'Radio button label',
+        description: 'Radio button label',
       },
       {
         parameter: 'name',
         type: 'string',
-        desc: 'Radio button name',
+        description: 'Radio button name',
       },
       {
         parameter: 'disabled',
         default: 'false',
         type: 'boolean',
-        desc: 'Disable component',
+        description: 'Disable component',
       },
     ],
   };
