@@ -1,0 +1,123 @@
+@import 'variable.scss';
+
+$code-spacing: rem(35);
+$header-color: #ee6e73;
+
+.code-wrapper {
+  display: block;
+  width: 100%;
+  min-height: rem(30);
+  padding: rem(25);
+  margin: 1.5rem 0;
+  color: #152935;
+  border: 1px solid #cbced2;
+  font-size: rem(18);
+  border-radius: 5px;
+}
+
+ui-library-documentation-demo-wrapper {
+  .component-header {
+    color: $header-color;
+    font-weight: 300;
+    font-size: rem(45);
+    line-height: 110%;
+    margin: rem(20) 0 rem(10) 0;
+  }
+
+  h6.header {
+    color: $header-color;
+  }
+
+  .seperator {
+    margin: rem(10) 0;
+  }
+
+  .code-sample {
+    @extend .code-wrapper;
+    position: relative;
+    width: 100%;
+    word-break: break-word;
+    padding: 0;
+    margin: 0;
+    background: #000;
+    padding-top: 16px;
+
+    pre {
+      line-height: 1;
+
+      span {
+        line-height: 22px;
+      }
+    }
+
+    .copy {
+      position: absolute;
+      top: 10px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+      border-top: 0;
+      border-right: 0;
+      padding: 0 rem(10);
+      font-size: rem(15);
+      color: #fff;
+      cursor: pointer;
+
+      i {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    code {
+      white-space: pre-line;
+      font-size: rem(16);
+    }
+  }
+
+  .code-output {
+    @extend .code-wrapper;
+  }
+
+  .code-doc {
+    @extend .code-wrapper;
+    border-left: 3px solid #f11722;
+    word-break: break-word;
+  }
+
+  .code-options {
+    @extend .code-wrapper;
+
+    .header {
+      font-size: rem(22);
+      margin-bottom: rem(10);
+    }
+
+    .table {
+      overflow-x: auto;
+
+      thead {
+        border-bottom: 2px solid #98999a;
+      }
+
+      table .desc td {
+        word-break: break-word;
+      }
+
+      tr:last-child {
+        border-color: #98999a;
+      }
+    }
+
+    .method-option {
+      ul {
+        margin: 0;
+      }
+    }
+  }
+
+  .component-content > div {
+    width: 100%;
+  }
+}

@@ -1,0 +1,67 @@
+@import '../../../styles/variable.scss';
+@import '../../../styles//utility.scss';
+
+.t-alert-wrapper {
+  display: flex;
+  padding: 1.25rem 1.75rem;
+  margin: 1rem 0;
+  border-width: 0 0 0 6px;
+  border-style: solid;
+  border-radius: 6px;
+
+  &.success {
+    border-color: solid $color-success;
+    background-color: #e4f8f0;
+    color: $color-success;
+  }
+
+  &.error {
+    border-color: solid $color-error;
+    background-color: #ffe7e6;
+    color: $color-error;
+  }
+
+  &.warn {
+    border-color: solid $color-attention;
+    background-color: #fff2e2;
+    color: $color-attention;
+  }
+
+  &.info {
+    border-color: solid $color-informational;
+    background-color: #e9e9ff;
+    color: $color-informational;
+  }
+
+  .t-alert-icon {
+    align-self: center;
+    padding: 0 0 0 14px;
+    font-size: 1rem;
+    font-weight: lighter;
+  }
+
+  .t-alert-content {
+    padding-left: 24px;
+    align-self: center;
+
+    &-title {
+      font-size: 1rem;
+      line-height: 22px;
+      font-weight: bold;
+      word-break: break-word;
+    }
+
+    &-message {
+      font-size: 1rem;
+      line-height: 20px;
+      word-break: break-word;
+    }
+  }
+
+  .t-alert-close {
+    margin-left: auto;
+    padding: 0 10px;
+    align-self: center;
+    cursor: pointer;
+  }
+}

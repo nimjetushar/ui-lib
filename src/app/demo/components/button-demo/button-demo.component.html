@@ -1,0 +1,56 @@
+<div class="badge-component">
+  <ui-library-documentation-demo-wrapper
+    header="Buttons"
+    [code]="compSyntax"
+    [options]="options"
+  >
+    <div output>
+      <div class="row">
+        <div class="seperator col-sm-12 col-md-6 col-lg-4">
+          <h6 class="header">Primary Button</h6>
+          <t-button
+            label="Primary"
+            type="primary"
+            (click)="clickHandler()"
+          ></t-button>
+        </div>
+        <div class="seperator col-sm-12 col-md-6 col-lg-4">
+          <h6 class="header">Secondary Button</h6>
+          <t-button label="Secondary" type="secondary"></t-button>
+        </div>
+        <div class="seperator col-sm-12 col-md-6 col-lg-4">
+          <h6 class="header">Tertiary Button</h6>
+          <t-button label="Tertiary" type="tertiary"> </t-button>
+        </div>
+        <div class="seperator col-sm-12 col-md-6 col-lg-4">
+          <h6 class="header">Large Button</h6>
+          <t-button label="Home" type="primary" [isLarge]="true"></t-button>
+        </div>
+        <div class="seperator col-sm-12 col-md-6 col-lg-4 badge-btn">
+          <h6 class="header">Button with badge</h6>
+          <t-button
+            label="Home"
+            type="primary"
+            badge="pi-home"
+            badgePosition="right"
+          >
+          </t-button>
+          <t-button
+            label="Home"
+            type="primary"
+            badge="pi-home"
+            badgePosition="left"
+          >
+          </t-button>
+        </div>
+        <div class="seperator col-sm-12 col-md-6 col-lg-4">
+          <h6 class="header">Disabled</h6>
+          <t-button label="Home" type="primary" [disabled]="true"></t-button>
+        </div>
+      </div>
+    </div>
+    <div doc>
+      <ui-library-documentation-common-note></ui-library-documentation-common-note>
+    </div>
+  </ui-library-documentation-demo-wrapper>
+</div>

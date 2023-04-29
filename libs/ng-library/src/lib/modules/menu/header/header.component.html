@@ -1,0 +1,21 @@
+<div class="main-container-header">
+  <div class="content">
+    <div
+      id="menu-icon-container"
+      class="sidebar-toggle"
+      (click)="handleSidebarToggle()"
+    >
+      <i class="pi pi-bars"></i>
+    </div>
+
+    <div id="logo-container" class="logo-container">
+      <div *ngIf="logoSrc" class="logo" (click)="onLogoClick()">
+        <img [src]="logoSrc" />
+      </div>
+
+      <div class="title-container">
+        <h1 class="title" [routerLink]="routeLink">{{ title }}</h1>
+      </div>
+    </div>
+  </div>
+</div>

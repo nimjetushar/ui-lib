@@ -1,0 +1,19 @@
+@import '../../../styles/variable.scss';
+
+p-toast .ui-toast {
+  .ui-toast-message.ui-toast-message-success {
+    background-color: $color-success;
+  }
+
+  .ui-toast-message.ui-toast-message-error {
+    background-color: $color-error;
+  }
+
+  .ui-toast-message.ui-toast-message-info {
+    background-color: $color-informational;
+  }
+
+  .ui-toast-message.ui-toast-message-warn {
+    background-color: $color-attention;
+  }
+}

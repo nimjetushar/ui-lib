@@ -1,0 +1,30 @@
+<div class="tooltip-component">
+  <ui-library-documentation-demo-wrapper
+    header="Tooltip"
+    [code]="compSyntax"
+    [options]="options"
+  >
+    <div output>
+      <div class="inline-block" style="margin: 0 40px 10px 0">
+        <t-dropdown
+          placeholder="Select Tooltip position"
+          [options]="tooltipOption"
+          [(ngModel)]="tooltipPosition"
+        >
+        </t-dropdown>
+      </div>
+      <div
+        class="inline-block"
+        tTooltip="Content to be shown in the tooltip"
+        [tooltipDisabled]="false"
+        [tooltipAnimation]="true"
+        [tooltipPlacement]="tooltipPosition"
+      >
+        Element on which tooltip is added
+      </div>
+    </div>
+    <div doc>
+      <ui-library-documentation-common-note></ui-library-documentation-common-note>
+    </div>
+  </ui-library-documentation-demo-wrapper>
+</div>
