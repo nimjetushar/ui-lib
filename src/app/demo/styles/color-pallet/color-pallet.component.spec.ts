@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { ColorPalletComponent } from './color-pallet.component';
-import { comModules } from '__test__/common.imports';
 
 describe('ColorPalletComponent', () => {
   let component: ColorPalletComponent;
@@ -10,9 +9,8 @@ describe('ColorPalletComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ColorPalletComponent],
-      imports: [...comModules]
-    })
-      .compileComponents();
+      imports: [],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

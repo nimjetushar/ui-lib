@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { UtilityComponent } from './utility.component';
-import { comModules } from '__test__/common.imports';
 
 describe('UtilityComponent', () => {
   let component: UtilityComponent;
@@ -10,9 +9,8 @@ describe('UtilityComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [UtilityComponent],
-      imports: [...comModules]
-    })
-      .compileComponents();
+      imports: [],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
