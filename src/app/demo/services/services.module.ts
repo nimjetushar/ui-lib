@@ -1,29 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { Common } from '../common/common.module';
-import { HttpComponent } from './http/http.component';
-import { ToastComponent } from './toast/toast.component';
+import { ButtonModule } from '@fourjs/ng-library';
+
+import { Common } from '../common';
+import { ToastDemoComponent } from './toast-demo/toast-demo.component';
 
 const routes: Routes = [
-  { path: 'http', component: HttpComponent },
-  { path: 'toast', component: ToastComponent },
+  { path: 'toast', component: ToastDemoComponent },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'http'
-  }
+    redirectTo: 'http',
+  },
 ];
 
 @NgModule({
-  declarations: [
-    HttpComponent,
-    ToastComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    Common
-  ]
+  declarations: [ToastDemoComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), Common, ButtonModule],
 })
-export class ServicesModule { }
+export class ServicesModule {}

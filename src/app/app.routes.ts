@@ -35,11 +35,11 @@ const routes: Routes = [
         (m) => m.DirectivesModule
       ),
   },
-  // {
-  //   path: 'services',
-  //   loadChildren: () =>
-  //     import('./demo/services/services.module').then((m) => m.ServicesModule),
-  // },
+  {
+    path: 'services',
+    loadChildren: () =>
+      import('./demo/services/services.module').then((m) => m.ServicesModule),
+  },
   {
     path: 'utility',
     loadChildren: () =>

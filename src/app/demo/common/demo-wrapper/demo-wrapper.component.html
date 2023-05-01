@@ -48,7 +48,9 @@
             <tbody>
               <tr *ngFor="let row of methodOptions">
                 <td *ngFor="let col of methodColumns" [class]="col.class">
-                  <span>{{ row[col.value] }}</span>
+                  <span *ngIf="col.value !== 'parameter'">{{
+                    row[col.value]
+                  }}</span>
                 </td>
               </tr>
             </tbody>

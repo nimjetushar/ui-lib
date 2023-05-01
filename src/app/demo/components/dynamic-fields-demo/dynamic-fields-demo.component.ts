@@ -67,12 +67,12 @@ export class DynamicFieldsDemoComponent {
     methods: [
       {
         method: 'primaryHandler',
-        parameter: 'DynamicFieldDataModel',
+        parameter: ['DynamicFieldDataModel'],
         description: 'Emits fields data to parent component',
       },
       {
         method: 'secondaryHandler',
-        parameter: 'DynamicFieldDataModel',
+        parameter: ['DynamicFieldDataModel'],
         description: 'Emits fields data to parent component',
       },
     ],

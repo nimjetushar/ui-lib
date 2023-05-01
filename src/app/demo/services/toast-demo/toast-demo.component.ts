@@ -1,67 +1,69 @@
-import { IOptions } from '../../demo-base/demo-wrapper/demo-wrapper.component';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ToastService } from '@fourjs/ng-library';
 
+import { IOptions } from '../../common';
+
 @Component({
-  selector: 'app-toast',
-  templateUrl: './toast.component.html',
-  styleUrls: ['./toast.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  selector: 'ui-library-documentation-toast-demo',
+  templateUrl: './toast-demo.component.html',
+  styleUrls: ['./toast-demo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ToastComponent {
+export class ToastDemoComponent {
   options: IOptions = {
     name: 'ToastService',
     componentType: 'Service',
     methods: [
       {
         method: 'show',
-        param: ['params: ToastParameters'],
-        desc: 'Display single toast message',
+        parameter: ['params: ToastParameters'],
+        description: 'Display single toast message',
       },
       {
         method: 'showAll',
-        param: ['params: ToastParameters[]'],
-        desc: 'Display multiple toast message',
+        parameter: ['params: ToastParameters[]'],
+        description: 'Display multiple toast message',
       },
     ],
     options: [
       {
         parameter: 'title',
         type: 'string',
-        desc: 'Notification title',
+        description: 'Notification title',
       },
       {
         parameter: 'message',
         type: 'string',
-        desc: 'Notification message',
+        description: 'Notification message',
       },
       {
         parameter: 'type',
         type: 'string',
         default: 'success',
-        desc: 'Specifies type of notification to show',
+        description: 'Specifies type of notification to show',
       },
       {
         parameter: 'timeOut',
         type: 'number',
         default: '4000',
-        desc: 'Timeout for toast auto close',
+        description: 'Timeout for toast auto close',
       },
       {
         parameter: 'closeButton',
         type: 'boolean',
-        default: false,
-        desc: 'Display close button',
+        default: 'false',
+        description: 'Display close button',
       },
       {
         parameter: 'id',
         type: 'any',
-        desc: 'Identifier of the toast',
+        description: 'Identifier of the toast',
       },
       {
         parameter: 'sticky',
         type: 'boolean',
-        desc: 'Whether the toast should be closed automatically based on life property or kept visible.',
+        description:
+          'Whether the toast should be closed automatically based on life property or kept visible.',
       },
     ],
   };
@@ -94,8 +96,8 @@ export class ToastComponent {
       width: '20%',
     },
     {
-      label: 'Desc',
-      value: 'desc',
+      label: 'description',
+      value: 'description',
       width: '40%',
     },
   ];
@@ -105,14 +107,14 @@ export class ToastComponent {
       name: 'position',
       type: 'string',
       default: 'top-right',
-      desc: `Position of the component, valid values are "top-right", "top-left",
+      description: `Position of the component, valid values are "top-right", "top-left",
        "bottom-left", "bottom-right", "top-center, "bottom-center" and "center".`,
     },
     {
       name: 'baseZIndex',
       type: 'number',
       default: 0,
-      desc: 'Base zIndex value to use in layering.',
+      description: 'Base zIndex value to use in layering.',
     },
   ];
 

@@ -15,7 +15,7 @@ export interface IDocOptions {
 
 export interface IMethodOptions {
   method: string;
-  parameter: string;
+  parameter: string[];
   description: string;
 }
 
