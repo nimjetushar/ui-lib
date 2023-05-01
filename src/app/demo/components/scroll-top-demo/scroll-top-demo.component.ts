@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 
-import { IOptions } from '../../common';
+import { IOptions } from '../../../common';
 
 @Component({
   selector: 'ui-library-documentation-scroll-top-demo',

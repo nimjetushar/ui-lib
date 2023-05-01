@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DropdownModule, TooltipModule } from '@fourjs/ng-library';
 
-import { Common } from '../common';
+import { Common } from '../../common';
 import { TooltipDemoComponent } from './tooltip-demo/tooltip-demo.component';
 
 const routes: Routes = [

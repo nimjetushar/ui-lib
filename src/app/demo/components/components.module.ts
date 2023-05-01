@@ -12,7 +12,7 @@ import {
   RadioModule,
 } from '@fourjs/ng-library';
 
-import { Common } from '../common';
+import { Common } from '../../common';
 import { AlertDemoComponent } from './alert-demo/alert-demo.component';
 import { BadgeDemoComponent } from './badge-demo/badge-demo.component';
 import { ButtonDemoComponent } from './button-demo/button-demo.component';

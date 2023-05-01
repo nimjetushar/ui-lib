@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { IOptions } from '../../common';
+import { IOptions } from '../../../common';
 
 @Component({
   selector: 'ui-library-documentation-button-demo',

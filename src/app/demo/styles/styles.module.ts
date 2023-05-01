@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { Common } from '../common/common.module';
+import { Common } from '../../common';
 import { ColorPalletComponent } from './color-pallet/color-pallet.component';
 import { GridComponent } from './grid/grid.component';
 

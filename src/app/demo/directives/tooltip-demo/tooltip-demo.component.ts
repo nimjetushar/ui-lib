@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DropdownOptions } from '@fourjs/ng-library';
 
-import { IOptions } from '../../common';
+import { IOptions } from '../../../common';
 
 @Component({
   selector: 'ui-library-documentation-tooltip-demo',

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ButtonModule } from '@fourjs/ng-library';
 
-import { Common } from '../common';
+import { Common } from '../../common';
 import { ToastDemoComponent } from './toast-demo/toast-demo.component';
 
 const routes: Routes = [

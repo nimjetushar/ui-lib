@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { Common } from '../common/common.module';
+import { Common } from '../../common';
 import { DeveloperComponent } from './developer/developer.component';
 import { SetupComponent } from './setup/setup.component';
 
@@ -12,19 +12,12 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'setup'
-  }
+    redirectTo: 'setup',
+  },
 ];
 
 @NgModule({
-  declarations: [
-    DeveloperComponent,
-    SetupComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    Common
-  ]
+  declarations: [DeveloperComponent, SetupComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), Common],
 })
-export class GettingStartedModule { }
+export class GettingStartedModule {}

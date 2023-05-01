@@ -7,7 +7,7 @@ import {
   DynamicFieldsComponent,
 } from '@fourjs/ng-library';
 
-import { IOptions } from '../../common';
+import { IOptions } from '../../../common';
 
 type OutputModel = {
   name?: string;

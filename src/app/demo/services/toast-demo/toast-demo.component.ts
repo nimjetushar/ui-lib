@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 import { ToastService } from '@fourjs/ng-library';
 
-import { IOptions } from '../../common';
+import { IOptions } from '../../../common';
 
 type DataType = {
   name: string;

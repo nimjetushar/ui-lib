@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AlertTypes, DropdownOptions } from '@fourjs/ng-library';
 
-import { IOptions } from '../../common';
+import { IOptions } from '../../../common';
 
 @Component({
   selector: 'ui-library-documentation-alert-demo',

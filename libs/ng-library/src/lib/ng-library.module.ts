@@ -5,6 +5,9 @@ import { AlertModule } from './modules/alert';
 import { BadgeModule } from './modules/badge';
 import { CheckboxModule } from './modules/checkbox';
 import { ButtonModule } from './modules/button';
+import { MenuModule } from './modules/menu';
+import { DropdownModule } from './modules/dropdown';
+import { DynamicFieldsModule } from './modules/dynamic-fields';
 
 @NgModule({
   declarations: [],
@@ -14,8 +17,19 @@ import { ButtonModule } from './modules/button';
     BadgeModule,
     ButtonModule,
     CheckboxModule,
+    DropdownModule,
+    DynamicFieldsModule,
+    MenuModule,
   ],
   providers: [],
-  exports: [AlertModule, BadgeModule, ButtonModule, CheckboxModule],
+  exports: [
+    AlertModule,
+    BadgeModule,
+    ButtonModule,
+    CheckboxModule,
+    DropdownModule,
+    DynamicFieldsModule,
+    MenuModule,
+  ],
 })
 export class NgLibrary {}
