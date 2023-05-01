@@ -8,12 +8,7 @@ import {
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
-export interface MenuItem {
-  label: string;
-  route?: string;
-  badge?: string;
-  children?: MenuItem[];
-}
+import { MenuItem } from '../types';
 
 @Component({
   selector: 't-nav',

@@ -12,11 +12,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { noop } from 'tutility';
 
 import { Tooltip } from '../tooltip';
-
-export interface DropdownOptions<T = unknown> {
-  label: string;
-  value: T;
-}
+import { DropdownOptions } from './types';
 
 @Component({
   selector: 't-dropdown',

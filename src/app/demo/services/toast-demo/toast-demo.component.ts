@@ -1,16 +1,34 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ViewEncapsulation,
+} from '@angular/core';
 import { ToastService } from '@fourjs/ng-library';
 
 import { IOptions } from '../../common';
+
+type DataType = {
+  name: string;
+  type: string;
+  default: string;
+  description: string;
+};
+
+type ColumnType<T = string> = {
+  label: string;
+  value: T;
+  width: string;
+};
 
 @Component({
   selector: 'ui-library-documentation-toast-demo',
   templateUrl: './toast-demo.component.html',
   styleUrls: ['./toast-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class ToastDemoComponent {
-  options: IOptions = {
+  readonly options: IOptions = {
     name: 'ToastService',
     componentType: 'Service',
     methods: [
@@ -68,7 +86,7 @@ export class ToastDemoComponent {
     ],
   };
 
-  toastPositions: string[] = [
+  readonly toastPositions: string[] = [
     'top-right',
     'top-left',
     'bottom-right',
@@ -77,9 +95,10 @@ export class ToastDemoComponent {
     'bottom-center',
     'center',
   ];
-  toastComp = '<t-toast baseZIndex="1050" position="top-right"></t-toast>';
+  readonly toastComp =
+    '<t-toast baseZIndex="1050" position="top-right"></t-toast>';
 
-  parameterCol: any[] = [
+  readonly parameterCol: ColumnType<keyof DataType>[] = [
     {
       label: 'Name',
       value: 'name',
@@ -102,7 +121,7 @@ export class ToastDemoComponent {
     },
   ];
 
-  paramData: any[] = [
+  readonly paramData: DataType[] = [
     {
       name: 'position',
       type: 'string',
@@ -113,7 +132,7 @@ export class ToastDemoComponent {
     {
       name: 'baseZIndex',
       type: 'number',
-      default: 0,
+      default: '0',
       description: 'Base zIndex value to use in layering.',
     },
   ];
