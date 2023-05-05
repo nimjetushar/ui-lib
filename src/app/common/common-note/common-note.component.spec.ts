@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CommonNoteComponent } from './common-note.component';
 
@@ -6,12 +6,11 @@ describe('CommonNoteComponent', () => {
   let component: CommonNoteComponent;
   let fixture: ComponentFixture<CommonNoteComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CommonNoteComponent ]
-    })
-    .compileComponents();
-  }));
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [CommonNoteComponent],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CommonNoteComponent);

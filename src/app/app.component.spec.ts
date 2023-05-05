@@ -4,11 +4,12 @@ import { NgLibrary } from '@fourjs/ng-library';
 
 import { AppComponent } from './app.component';
 import { APPNAME } from './constants/config';
+import { Common } from './common';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, NgLibrary],
+      imports: [RouterTestingModule, NgLibrary, Common],
       declarations: [AppComponent],
     }).compileComponents();
   });

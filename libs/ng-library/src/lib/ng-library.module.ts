@@ -8,6 +8,10 @@ import { ButtonModule } from './modules/button';
 import { MenuModule } from './modules/menu';
 import { DropdownModule } from './modules/dropdown';
 import { DynamicFieldsModule } from './modules/dynamic-fields';
+import { NavigationModule } from './modules/navigate-top';
+import { ToastModule } from './modules/toast';
+import { RadioModule } from './modules/radio';
+import { TooltipModule } from './modules/tooltip';
 
 @NgModule({
   declarations: [],
@@ -20,6 +24,10 @@ import { DynamicFieldsModule } from './modules/dynamic-fields';
     DropdownModule,
     DynamicFieldsModule,
     MenuModule,
+    NavigationModule,
+    RadioModule,
+    ToastModule,
+    TooltipModule,
   ],
   providers: [],
   exports: [
@@ -30,6 +38,10 @@ import { DynamicFieldsModule } from './modules/dynamic-fields';
     DropdownModule,
     DynamicFieldsModule,
     MenuModule,
+    NavigationModule,
+    RadioModule,
+    ToastModule,
+    TooltipModule,
   ],
 })
 export class NgLibrary {}

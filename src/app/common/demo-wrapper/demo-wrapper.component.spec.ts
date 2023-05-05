@@ -1,5 +1,6 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgLibrary, ToastService } from '@fourjs/ng-library';
+import PR = require('code-prettify/src/prettify.js');
 
 import { DemoWrapperComponent } from './demo-wrapper.component';
 
@@ -7,13 +8,13 @@ describe('DemoWrapperComponent', () => {
   let component: DemoWrapperComponent;
   let fixture: ComponentFixture<DemoWrapperComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [DemoWrapperComponent],
       imports: [NgLibrary],
       providers: [ToastService],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DemoWrapperComponent);
