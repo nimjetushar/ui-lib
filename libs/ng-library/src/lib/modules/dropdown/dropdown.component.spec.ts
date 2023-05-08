@@ -1,23 +1,35 @@
 import { FormsModule } from '@angular/forms';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { DropdownComponent } from './dropdown.component';
-import { DropdownModule } from 'primeng/dropdown';
 
 describe('DropdownComponent', () => {
   let component: DropdownComponent;
   let fixture: ComponentFixture<DropdownComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeAll(() => {
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(), // Deprecated
+        removeListener: jest.fn(), // Deprecated
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+      })),
+    });
+  });
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [DropdownComponent],
-      imports: [
-        DropdownModule,
-        FormsModule
-      ]
-    })
-      .compileComponents();
-  }));
+      imports: [DropdownModule, FormsModule],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DropdownComponent);
@@ -30,7 +42,7 @@ describe('DropdownComponent', () => {
   });
 
   it('should update value', () => {
-    spyOn(component, 'onChange');
+    jest.spyOn(component, 'onChange');
     const val = { label: 'test', value: 'test' };
     component.writeValue(val);
     expect(component.value).toEqual(val);
@@ -38,14 +50,14 @@ describe('DropdownComponent', () => {
   });
 
   it('should emit blur event', () => {
-    spyOn(component.onBlur, 'emit');
-    component.blurHandler(undefined);
+    jest.spyOn(component.onBlur, 'emit');
+    component.blurHandler(null as unknown as Event);
     expect(component.onBlur.emit).toHaveBeenCalled();
   });
 
   it('should emit focus event', () => {
-    spyOn(component.onFocus, 'emit');
-    component.focusHandler(undefined);
+    jest.spyOn(component.onFocus, 'emit');
+    component.focusHandler(null as unknown as Event);
     expect(component.onFocus.emit).toHaveBeenCalled();
   });
 });

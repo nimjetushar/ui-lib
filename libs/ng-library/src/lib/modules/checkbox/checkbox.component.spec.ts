@@ -10,9 +10,8 @@ describe('CheckboxComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [CheckboxComponent]
-    })
-      .compileComponents();
+      declarations: [CheckboxComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -26,7 +25,7 @@ describe('CheckboxComponent', () => {
   });
 
   it('should emit checkbox selection status', () => {
-    spyOn(component.modelChange, 'emit');
+    jest.spyOn(component.modelChange, 'emit');
     component.handleOnChange({ target: { checked: true } });
     expect(component.modelChange.emit).toHaveBeenCalledWith(true);
 

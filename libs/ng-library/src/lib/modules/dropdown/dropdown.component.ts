@@ -4,7 +4,6 @@ import {
   forwardRef,
   Output,
   EventEmitter,
-  ChangeDetectionStrategy,
   HostBinding,
   ViewEncapsulation,
 } from '@angular/core';
@@ -42,7 +41,6 @@ import { DropdownOptions } from './types';
       multi: true,
     },
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
 export class DropdownComponent extends Tooltip implements ControlValueAccessor {

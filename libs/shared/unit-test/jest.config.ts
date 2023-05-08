@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'ng-library',
-  preset: '../../jest.preset.js',
+  displayName: 'shared-unit-test',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/libs/ng-library',
+  coverageDirectory: '../../../coverage/libs/shared/unit-test',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
@@ -13,7 +13,7 @@ export default {
       },
     ],
   },
-  transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$|tutility)'],
+  transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',
