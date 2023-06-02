@@ -1,0 +1,15 @@
+<label class="checkbox" [class.disabled]="disabled">
+  <span class="checkmark">
+    <i class="checkmark-icon" [ngClass]="model ? 'pi pi-check' : ''"></i>
+  </span>
+  <input
+    type="checkbox"
+    [name]="name"
+    [(ngModel)]="model"
+    [checked]="checked"
+    [disabled]="disabled"
+    [readonly]="readonly"
+    (change)="handleOnChange($event)"
+  />
+  <span *ngIf="label" class="checkbox-label">{{ label }}</span>
+</label>

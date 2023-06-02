@@ -1,0 +1,64 @@
+<div class="toast-demo-component">
+  <ui-library-documentation-demo-wrapper
+    header="Toast Service"
+    [options]="options"
+  >
+    <div output>
+      <t-button
+        class="success"
+        type="primary"
+        label="success"
+        (click)="showToast('success')"
+      >
+      </t-button>
+      <t-button
+        class="error"
+        type="primary"
+        label="error"
+        (click)="showToast('error')"
+      ></t-button>
+      <t-button
+        class="info"
+        type="primary"
+        label="info"
+        (click)="showToast('info')"
+      ></t-button>
+      <t-button
+        class="warning"
+        type="primary"
+        label="warning"
+        (click)="showToast('warn')"
+      >
+      </t-button>
+
+      <t-button type="primary" label="multiple" (click)="multipleToast()">
+      </t-button>
+    </div>
+    <div doc>
+      Add <b>{{ toastComp }}</b> into HTML and Provide <b>ToastService</b> into
+      Root Module.
+      <div class="toast-types">
+        <span>Toast types are :- </span>
+        <b>success</b>, <b>info</b>, <b>error</b>, <b>warning</b>
+      </div>
+      <div class="active-toast">
+        <div>t-toast provides following inputs :-</div>
+        <table>
+          <thead>
+            <th *ngFor="let col of parameterCol" [style.width]="col?.width">
+              {{ col.label }}
+            </th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of paramData">
+              <td *ngFor="let col of parameterCol" [style.width]="col?.width">
+                {{ data[col.value] }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ui-library-documentation-demo-wrapper>
+  <t-toast></t-toast>
+</div>

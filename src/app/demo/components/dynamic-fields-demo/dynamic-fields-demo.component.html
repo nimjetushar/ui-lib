@@ -1,0 +1,27 @@
+<div class="dynamic-fields-component">
+  <ui-library-documentation-demo-wrapper
+    header="Dynamic Fields"
+    [code]="compSyntax"
+    [options]="options"
+  >
+    <div output>
+      <t-dynamic-fields
+        [data]="output"
+        [fields]="field"
+        [buttonOptions]="buttonOptions"
+        [dropdownOptions]="dropdownOptions"
+        [disabledFields]="disabledOptions"
+        (primaryHandler)="onSearch($event)"
+        (secondaryHandler)="onReset($event)"
+      >
+      </t-dynamic-fields>
+
+      <div class="comp-output">
+        {{ output | json }}
+      </div>
+    </div>
+    <div doc>
+      <ui-library-documentation-common-note></ui-library-documentation-common-note>
+    </div>
+  </ui-library-documentation-demo-wrapper>
+</div>

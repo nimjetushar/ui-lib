@@ -1,0 +1,28 @@
+import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NgLibrary } from '@fourjs/ng-library';
+
+import { AppComponent } from './app.component';
+import { APPNAME } from './constants/config';
+import { Common } from './common';
+
+describe('AppComponent', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RouterTestingModule, NgLibrary, Common],
+      declarations: [AppComponent],
+    }).compileComponents();
+  });
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it(`should have as title '${APPNAME}'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.appTitle).toEqual(APPNAME);
+  });
+});

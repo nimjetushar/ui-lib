@@ -1,0 +1,62 @@
+<div class="ui-library-documentation-demo-wrapper row">
+  <div class="col-12">
+    <div class="component-header">{{ header }}</div>
+    <div class="component-content">
+      <div class="code-sample" *ngIf="code && code.length">
+        <div class="copy" (click)="copyToClipboard()">
+          <i class="pi pi-copy" aria-hidden="true"></i>
+        </div>
+        <pre *ngFor="let c of code">
+          <code class="prettyprint lang-html">{{c}}</code>
+        </pre>
+      </div>
+      <div class="code-output" #output [ngClass]="{ hide: enableOutput }">
+        <ng-content select="[output]"></ng-content>
+      </div>
+      <div class="code-doc" #ref [ngClass]="{ hide: enableDoc }">
+        <ng-content select="[doc]"></ng-content>
+      </div>
+      <div class="code-options" *ngIf="enableOptions">
+        <div class="header">
+          {{ componentType }} <b>{{ name }}</b>
+        </div>
+        <!-- doc table -->
+        <div class="table">
+          <table *ngIf="docOptions">
+            <thead>
+              <th *ngFor="let col of docColumns" [style.width]="col?.width">
+                {{ col.label }}
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of docOptions">
+                <td
+                  *ngFor="let col of docColumns"
+                  [style.width]="col?.width"
+                  [class]="col.class"
+                >
+                  {{ row[col.value] || '-' }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- method table -->
+          <table *ngIf="methodOptions" class="method-option">
+            <thead>
+              <th *ngFor="let col of methodColumns">{{ col.label }}</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of methodOptions">
+                <td *ngFor="let col of methodColumns" [class]="col.class">
+                  <span *ngIf="col.value !== 'parameter'">{{
+                    row[col.value]
+                  }}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
