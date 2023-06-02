@@ -21,18 +21,13 @@ export class ReferenceComponent {
       {
         name: `Angular (${angularversion})`,
         url: 'https://angular.io/api',
-        icon: 'fa-font',
+        icon: 'pi-google',
       },
       {
         name: 'Grid system',
         url: 'https://nimjetushar.github.io/grid-css/',
-        icon: 'fa-th',
-      },
-      {
-        name: 'ngx-toastr',
-        url: 'https://www.npmjs.com/package/ngx-toastr',
-        icon: 'fa-comments',
-      },
+        icon: 'pi-list',
+      }
     ];
   }
 }

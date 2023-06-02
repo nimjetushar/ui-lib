@@ -7,11 +7,13 @@ import {
 
 @Component({
   selector: 't-badge',
-  template: `<i class="pi" [class]="badge" aria-hidden="true"></i>`,
+  template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BadgeComponent {
   @Input() badge!: string;
 
-  @HostBinding('class') hostClass = 't-badge';
+  @HostBinding('class') get hostClass() {
+    return `t-badge pi ${this.badge ?? ''}`;
+  }
 }
