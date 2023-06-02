@@ -16,7 +16,7 @@ Install library
 
 `npm i @fourjs/ng-library --save`
 Note: Install peer dependencies.
-`npm install primeng@15.2.1 @angular/cdk@15.2.5 --save`
+`npm install primeng@16.0.0 @angular/cdk@16.0.2 --save`
 
 Import NgLibrary into @NgModule
 <br>

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgLibrary, ToastService } from '@fourjs/ng-library';
-import PR = require('code-prettify/src/prettify.js');
+require('code-prettify/src/prettify.js');
 
 import { DemoWrapperComponent } from './demo-wrapper.component';
 
