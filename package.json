@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
+    "deploy":"x run ui-library-documentation:build --outputPath=docs",
     "test": "npm run test:library",
     "lint": "nx lint",
     "styles": "gulp",
