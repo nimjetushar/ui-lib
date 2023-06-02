@@ -23,7 +23,7 @@
     "@angular/platform-browser": "16.0.3",
     "@angular/platform-browser-dynamic": "16.0.3",
     "@angular/router": "16.0.3",
-    "@nrwl/angular": "16.2.2",
+    "@nrwl/angular": "16.3.1",
     "code-prettify": "^0.1.0",
     "device-detector-js": "^3.0.3",
     "grid-styled-css": "^1.1.0",
