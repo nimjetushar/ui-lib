@@ -12,6 +12,7 @@ import { NavigationModule } from './modules/navigate-top';
 import { ToastModule } from './modules/toast';
 import { RadioModule } from './modules/radio';
 import { TooltipModule } from './modules/tooltip';
+import { ModalModule } from './modules/dialog';
 
 @NgModule({
   declarations: [],
@@ -28,6 +29,7 @@ import { TooltipModule } from './modules/tooltip';
     RadioModule,
     ToastModule,
     TooltipModule,
+    ModalModule,
   ],
   providers: [],
   exports: [
