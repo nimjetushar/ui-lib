@@ -1,1 +1,16 @@
-<p>dialog works!</p>
+<div class="dialog">
+  <div class="dialog-header">
+    {{ config.title }}
+    <span class="dialog-close" (click)="close()">
+      <i class="fa-solid fa-xmark"></i>
+    </span>
+  </div>
+  <div class="dialog-content">
+    {{ config.message }}
+  </div>
+  <div class="dialog-footer">
+    <t-button>Submit</t-button>
+  </div>
+</div>
+
+<div class="dialog-backdrop" (click)="close()"></div>

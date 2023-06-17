@@ -6,6 +6,7 @@ import {
   BadgeModule,
   ButtonModule,
   CheckboxModule,
+  DialogModule,
   DropdownModule,
   DynamicFieldsModule,
   NavigationModule,
@@ -21,12 +22,14 @@ import { DropdownDemoComponent } from './dropdown-demo/dropdown-demo.component';
 import { DynamicFieldsDemoComponent } from './dynamic-fields-demo/dynamic-fields-demo.component';
 import { RadioDemoComponent } from './radio-demo/radio-demo.component';
 import { ScrollTopDemoComponent } from './scroll-top-demo/scroll-top-demo.component';
+import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
 
 const routes: Routes = [
   { path: 'alert', component: AlertDemoComponent },
   { path: 'badge', component: BadgeDemoComponent },
   { path: 'button', component: ButtonDemoComponent },
   { path: 'checkbox', component: CheckboxDemoComponent },
+  { path: 'dialog', component: DialogDemoComponent },
   { path: 'dropdown', component: DropdownDemoComponent },
   { path: 'dynamicFields', component: DynamicFieldsDemoComponent },
   { path: 'radio', component: RadioDemoComponent },
@@ -51,6 +54,7 @@ const routes: Routes = [
     DynamicFieldsModule,
     RadioModule,
     NavigationModule,
+    DialogModule,
   ],
   declarations: [
     AlertDemoComponent,
@@ -61,6 +65,7 @@ const routes: Routes = [
     DynamicFieldsDemoComponent,
     RadioDemoComponent,
     ScrollTopDemoComponent,
+    DialogDemoComponent,
   ],
 })
 export class ComponentsModule {}

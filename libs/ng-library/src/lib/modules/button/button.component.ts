@@ -31,6 +31,7 @@ type ButtonType = 'primary' | 'secondary' | 'tertiary';
         [class]="bPos"
         [badge]="badge"
       ></t-badge>
+      <ng-content></ng-content>
     </button>
   `,
   styleUrls: ['./button.component.scss'],
