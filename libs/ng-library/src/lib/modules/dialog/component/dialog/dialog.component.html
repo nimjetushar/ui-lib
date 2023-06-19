@@ -13,4 +13,7 @@
   </div>
 </div>
 
-<div class="dialog-backdrop" (click)="close()"></div>
+<div
+  class="dialog-backdrop"
+  (click)="!config.diableBackdropClose && close()"
+></div>

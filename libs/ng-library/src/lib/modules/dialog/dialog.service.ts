@@ -8,9 +8,10 @@ import {
 } from '@angular/core';
 
 import { DialogComponent } from './component/dialog/dialog.component';
-import { DialogConfig } from './type';
+import { ConfirmationDialogConfig, DialogConfig } from './type';
 import { DialogRef } from './class/dialogRef.class';
 import { Dialog } from './class/dialog';
+import { ConfirmationComponent } from './component/confirmation/confirmation.component';
 
 @Injectable({
   providedIn: 'root',
@@ -28,15 +29,16 @@ export class DialogService {
     return this.openDialog(modalComponentFactory, config);
   }
 
-  openConfirmation(config: DialogConfig) {
-    const modalComponentFactory =
-      this.resolver.resolveComponentFactory(DialogComponent);
+  openConfirmation(config: ConfirmationDialogConfig) {
+    const modalComponentFactory = this.resolver.resolveComponentFactory(
+      ConfirmationComponent
+    );
     return this.openDialog(modalComponentFactory, config);
   }
 
   private openDialog(
     modalComponentFactory: ComponentFactory<Dialog>,
-    config: DialogConfig
+    config: DialogConfig | ConfirmationDialogConfig
   ): DialogRef {
     const modalComponent = modalComponentFactory.create(this.injector);
 

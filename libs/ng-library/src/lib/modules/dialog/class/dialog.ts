@@ -8,7 +8,7 @@ export class Dialog {
   @Input() config!: DialogConfig;
   @Input() dialogRef!: DialogRef;
 
-  @Inject(ElementRef) elementRef!: ElementRef;
+  constructor(@Inject(ElementRef) private elementRef: ElementRef) {}
 
   protected removeElement(): void {
     this.elementRef.nativeElement.remove();

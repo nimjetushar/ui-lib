@@ -1,1 +1,25 @@
-<p>confirmation works!</p>
+<div class="dialog confirmation-dialog">
+  <div class="dialog-header">
+    {{ config.title }}
+    <span class="dialog-close" (click)="close()">
+      <i class="fa-solid fa-xmark"></i>
+    </span>
+  </div>
+  <div class="dialog-content">
+    <i *ngIf="config.iconClass" [class]="config.iconClass"></i>
+    <span>{{ config.message }}</span>
+  </div>
+  <div class="dialog-footer">
+    <t-button style="margin-right: 12px" (click)="okay()">{{
+      config.primaryBtnLabel ?? 'Ok'
+    }}</t-button>
+    <t-button (click)="close()">{{
+      config.secondaryBtnLabel ?? 'Cancel'
+    }}</t-button>
+  </div>
+</div>
+
+<div
+  class="dialog-backdrop"
+  (click)="!config.diableBackdropClose && close()"
+></div>

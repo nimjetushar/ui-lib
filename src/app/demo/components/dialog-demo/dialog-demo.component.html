@@ -1,1 +1,13 @@
-<button (click)="openModel()">open</button>
+<div class="dialog-component">
+  <ui-library-documentation-demo-wrapper
+    header="Dialog"
+    [code]="compSyntax"
+    [options]="options"
+  >
+    <div output>
+      <t-button (click)="openConfirmationDialog()"
+        >Open Confirmation Dialog</t-button
+      >
+    </div>
+  </ui-library-documentation-demo-wrapper>
+</div>

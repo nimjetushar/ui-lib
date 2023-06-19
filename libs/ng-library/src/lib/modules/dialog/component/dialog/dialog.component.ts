@@ -9,10 +9,6 @@ import { Dialog } from '../../class/dialog';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DialogComponent extends Dialog {
-  constructor() {
-    super();
-  }
-
   close(): void {
     this.removeElement();
     this.dialogRef.close();
