@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 import { Dialog } from '../../class/dialog';
 import {
@@ -14,8 +14,8 @@ import { DialogRef } from '../../class/dialogRef.class';
   encapsulation: ViewEncapsulation.None,
 })
 export class ConfirmationComponent extends Dialog {
-  @Input() override config!: ConfirmationDialogConfig;
-  @Input() override dialogRef!: DialogRef<ConfirmationDialogReturnType>;
+  override config!: ConfirmationDialogConfig;
+  override dialogRef!: DialogRef<ConfirmationDialogReturnType>;
 
   okay(): void {
     this.dialogRef.close('ok');

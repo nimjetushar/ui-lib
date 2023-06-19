@@ -3,6 +3,7 @@ import { ConfirmationDialogConfig, DialogService } from '@fourjs/ng-library';
 
 import { FontAwesomeUrl } from '../../../constants/config';
 import { IOptions } from '../../../common';
+import { DynamicDialogComponent } from './dynamic-dialog.component';
 
 @Component({
   selector: 'ui-library-documentation-dialog-demo',
@@ -16,8 +17,8 @@ export class DialogDemoComponent {
     methods: [
       {
         method: 'open',
-        parameter: ['DialogConfig'],
-        description: 'Display custom dialog',
+        parameter: ['Component', 'DialogConfig'],
+        description: 'Display custom dialog based on provided component',
       },
       {
         method: 'openConfirmation',
@@ -75,6 +76,12 @@ export class DialogDemoComponent {
       title: 'Delete',
       message: 'Are you sure do you want to delete !!!',
       iconClass: 'fa-solid fa-trash',
+    });
+  }
+
+  openDynamicDialog() {
+    this.dialogService.open(DynamicDialogComponent, {
+      title: 'Dynamic Dialog',
     });
   }
 }

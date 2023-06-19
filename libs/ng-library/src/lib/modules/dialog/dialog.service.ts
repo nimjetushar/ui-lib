@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import {
-  ComponentFactory,
   ComponentFactoryResolver,
+  ComponentRef,
   Inject,
   Injectable,
   Injector,
@@ -12,6 +12,7 @@ import {
   ConfirmationDialogConfig,
   ConfirmationDialogReturnType,
   DialogConfig,
+  DynamicDialogComponentType,
 } from './type';
 import { DialogRef } from './class/dialogRef.class';
 import { Dialog } from './class/dialog';
@@ -27,29 +28,34 @@ export class DialogService {
     @Inject(DOCUMENT) private document: Document
   ) {}
 
-  open<T = any>(config: DialogConfig) {
-    const modalComponentFactory =
-      this.resolver.resolveComponentFactory(DialogComponent);
+  open<T = any>(
+    componentRef: DynamicDialogComponentType,
+    config: DialogConfig
+  ) {
     const dialogRef = new DialogRef<T>();
 
-    return this.openDialog(modalComponentFactory, dialogRef, config);
+    const modalComponentFactory =
+      this.resolver.resolveComponentFactory(DialogComponent);
+    const modalComponent = modalComponentFactory.create(this.injector);
+    modalComponent.instance.childComponentType = componentRef;
+    return this.openDialog(modalComponent, dialogRef, config);
   }
 
   openConfirmation(config: ConfirmationDialogConfig) {
+    const dialogRef = new DialogRef<ConfirmationDialogReturnType>();
+
     const modalComponentFactory = this.resolver.resolveComponentFactory(
       ConfirmationComponent
     );
-    const dialogRef = new DialogRef<ConfirmationDialogReturnType>();
-    return this.openDialog(modalComponentFactory, dialogRef, config);
+    const modalComponent = modalComponentFactory.create(this.injector);
+    return this.openDialog(modalComponent, dialogRef, config);
   }
 
   private openDialog(
-    modalComponentFactory: ComponentFactory<Dialog>,
+    modalComponent: ComponentRef<Dialog>,
     dialogRef: DialogRef,
     config: DialogConfig | ConfirmationDialogConfig
   ): DialogRef {
-    const modalComponent = modalComponentFactory.create(this.injector);
-
     modalComponent.instance.config = config;
     modalComponent.instance.dialogRef = dialogRef;
 

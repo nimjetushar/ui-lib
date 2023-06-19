@@ -6,6 +6,7 @@ import { ButtonModule, DialogModule } from '@fourjs/ng-library';
 import { Common } from '../../common';
 import { ToastDemoComponent } from './toast-demo/toast-demo.component';
 import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
+import { DynamicDialogComponent } from './dialog-demo/dynamic-dialog.component';
 
 const routes: Routes = [
   { path: 'dialog', component: DialogDemoComponent },
@@ -18,7 +19,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ToastDemoComponent, DialogDemoComponent],
+  declarations: [
+    ToastDemoComponent,
+    DialogDemoComponent,
+    DynamicDialogComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

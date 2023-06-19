@@ -1,14 +1,14 @@
-import { Directive, ElementRef, Inject, Input } from '@angular/core';
+import { Directive, ElementRef, Inject } from '@angular/core';
 
 import { DialogConfig } from '../type';
 import { DialogRef } from './dialogRef.class';
 
 @Directive()
 export class Dialog {
-  @Input() config!: DialogConfig;
-  @Input() dialogRef!: DialogRef;
+  config!: DialogConfig;
+  dialogRef!: DialogRef;
 
-  constructor(@Inject(ElementRef) private elementRef: ElementRef) {}
+  constructor(@Inject(ElementRef) protected elementRef: ElementRef) {}
 
   cancel(): void {
     this.removeElement();

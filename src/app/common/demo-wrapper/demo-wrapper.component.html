@@ -52,9 +52,9 @@
                     row[col.value]
                   }}</span>
                   <ng-template #parameterTpl>
-                    <span *ngFor="let param of row.parameter">
-                      {{ param }}
-                    </span>
+                    <div *ngFor="let param of row.parameter; let last = last">
+                      {{ param }}<span *ngIf="!last">,</span>
+                    </div>
                   </ng-template>
                 </td>
               </tr>

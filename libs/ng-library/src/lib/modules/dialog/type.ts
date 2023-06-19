@@ -1,3 +1,5 @@
+import { Type } from '@angular/core';
+
 export type DialogConfig = {
   title?: string;
   message?: string;
@@ -13,3 +15,5 @@ export type ConfirmationDialogConfig = DialogConfig & {
 };
 
 export type ConfirmationDialogReturnType = 'ok' | 'cancel' | undefined;
+
+export type DynamicDialogComponentType = Type<any>;
