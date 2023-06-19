@@ -1,14 +1,14 @@
 import { Observable, Subject } from 'rxjs';
 
 export class DialogRef<T = any> {
-  private readonly _onClose = new Subject<T>();
+  private readonly _onClose = new Subject<T | undefined>();
   private readonly _onDestroy = new Subject<null>();
 
   /**
    * Event triggered on dialog is closed.
    * @group Events
    */
-  onClose: Observable<T> = this._onClose.asObservable();
+  onClose: Observable<T | undefined> = this._onClose.asObservable();
 
   /**
    * Event triggered on dialog instance is destroyed.
@@ -20,7 +20,7 @@ export class DialogRef<T = any> {
    * Closes dialog.
    * @group Method
    */
-  close(result: T) {
+  close(result?: T) {
     this._onClose.next(result);
   }
   /**
@@ -28,6 +28,6 @@ export class DialogRef<T = any> {
    * @group Method
    */
   destroy() {
-    this._onDestroy.next(null);
+    this._onDestroy.complete();
   }
 }

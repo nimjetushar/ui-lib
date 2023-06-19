@@ -80,8 +80,12 @@ export class DialogDemoComponent {
   }
 
   openDynamicDialog() {
-    this.dialogService.open(DynamicDialogComponent, {
-      title: 'Dynamic Dialog',
-    });
+    this.dialogService
+      .open(DynamicDialogComponent, {
+        title: 'Dynamic Dialog',
+      })
+      .onClose.subscribe((data) => {
+        console.log('Dynamic dialog close', data);
+      });
   }
 }

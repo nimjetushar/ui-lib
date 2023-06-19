@@ -59,6 +59,16 @@ export class DialogService {
     modalComponent.instance.config = config;
     modalComponent.instance.dialogRef = dialogRef;
 
+    const onCloseSub = dialogRef.onClose.subscribe(() => {
+      modalComponent.instance.removeElement();
+    });
+
+    const onDestroySub = dialogRef.onDestroy.subscribe(() => {
+      modalComponent.instance.removeElement();
+      onCloseSub.unsubscribe();
+      onDestroySub.unsubscribe();
+    });
+
     modalComponent.hostView.detectChanges();
 
     this.document.body.appendChild(modalComponent.location.nativeElement);

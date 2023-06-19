@@ -68,5 +68,8 @@ export class DialogComponent extends Dialog implements AfterViewInit, OnInit {
     viewContainerRef?.clear();
 
     this.componentRef = viewContainerRef?.createComponent(componentFactory);
+    if (this.componentRef) {
+      this.componentRef.instance.dialogRef = this.dialogRef;
+    }
   }
 }
