@@ -1,0 +1,10 @@
+<div class="dialog-header">
+  {{ config.title }}
+  <span
+    *ngIf="!config.hideCloseIcon"
+    class="dialog-close"
+    (click)="close.emit()"
+  >
+    <i class="fa-solid fa-xmark"></i>
+  </span>
+</div>

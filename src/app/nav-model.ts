@@ -83,6 +83,10 @@ export class NavModel {
       badge: 'pi-cloud',
       children: [
         {
+          label: 'Dialog',
+          route: 'services/dialog',
+        },
+        {
           label: 'Toast',
           route: 'services/toast',
         },

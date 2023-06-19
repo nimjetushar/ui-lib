@@ -1,10 +1,5 @@
 <div class="dialog">
-  <div class="dialog-header">
-    {{ config.title }}
-    <span class="dialog-close" (click)="close()">
-      <i class="fa-solid fa-xmark"></i>
-    </span>
-  </div>
+  <t-dialog-header [config]="config" (close)="cancel()"></t-dialog-header>
   <div class="dialog-content">
     {{ config.message }}
   </div>
@@ -15,5 +10,5 @@
 
 <div
   class="dialog-backdrop"
-  (click)="!config.diableBackdropClose && close()"
+  (click)="!config.diableBackdropClose && cancel()"
 ></div>

@@ -1,13 +1,13 @@
 <div class="dialog-component">
   <ui-library-documentation-demo-wrapper
-    header="Dialog"
-    [code]="compSyntax"
+    header="Dialog Service"
     [options]="options"
   >
     <div output>
-      <t-button (click)="openConfirmationDialog()"
+      <t-button class="btn-space-right" (click)="openConfirmationDialog()"
         >Open Confirmation Dialog</t-button
       >
+      <t-button (click)="openDeleteDialog()">Open Delete Dialog</t-button>
     </div>
   </ui-library-documentation-demo-wrapper>
 </div>

@@ -34,12 +34,12 @@ export class ToastDemoComponent {
     methods: [
       {
         method: 'show',
-        parameter: ['params: ToastParameters'],
+        parameter: ['ToastParameters'],
         description: 'Display single toast message',
       },
       {
         method: 'showAll',
-        parameter: ['params: ToastParameters[]'],
+        parameter: ['Array<ToastParameters>'],
         description: 'Display multiple toast message',
       },
     ],

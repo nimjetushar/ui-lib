@@ -10,7 +10,13 @@ export class Dialog {
 
   constructor(@Inject(ElementRef) private elementRef: ElementRef) {}
 
+  cancel(): void {
+    this.removeElement();
+    this.dialogRef.close(undefined);
+  }
+
   protected removeElement(): void {
     this.elementRef.nativeElement.remove();
+    this.dialogRef.destroy();
   }
 }

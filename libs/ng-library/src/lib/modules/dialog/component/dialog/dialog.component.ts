@@ -11,11 +11,11 @@ import { Dialog } from '../../class/dialog';
 export class DialogComponent extends Dialog {
   close(): void {
     this.removeElement();
-    this.dialogRef.close();
+    this.dialogRef.close(undefined);
   }
 
   submit(): void {
     this.removeElement();
-    this.dialogRef.close();
+    this.dialogRef.close(undefined);
   }
 }

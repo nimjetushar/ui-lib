@@ -6,8 +6,8 @@ export interface IColumn<T = string> {
   width?: string;
 }
 
-export interface IDocOptions {
-  parameter: string;
+export interface IDocOptions<T = string> {
+  parameter: T;
   description: string;
   type: string;
   default?: string;
@@ -19,9 +19,9 @@ export interface IMethodOptions {
   description: string;
 }
 
-export interface IOptions {
+export interface IOptions<T = string> {
   name: string;
   componentType?: 'Service' | 'Component' | 'Directive';
-  options?: IDocOptions[];
+  options?: IDocOptions<T>[];
   methods?: IMethodOptions[];
 }

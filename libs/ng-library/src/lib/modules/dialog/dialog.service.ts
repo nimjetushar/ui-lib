@@ -8,7 +8,11 @@ import {
 } from '@angular/core';
 
 import { DialogComponent } from './component/dialog/dialog.component';
-import { ConfirmationDialogConfig, DialogConfig } from './type';
+import {
+  ConfirmationDialogConfig,
+  ConfirmationDialogReturnType,
+  DialogConfig,
+} from './type';
 import { DialogRef } from './class/dialogRef.class';
 import { Dialog } from './class/dialog';
 import { ConfirmationComponent } from './component/confirmation/confirmation.component';
@@ -23,29 +27,32 @@ export class DialogService {
     @Inject(DOCUMENT) private document: Document
   ) {}
 
-  open(config: DialogConfig) {
+  open<T = any>(config: DialogConfig) {
     const modalComponentFactory =
       this.resolver.resolveComponentFactory(DialogComponent);
-    return this.openDialog(modalComponentFactory, config);
+    const dialogRef = new DialogRef<T>();
+
+    return this.openDialog(modalComponentFactory, dialogRef, config);
   }
 
   openConfirmation(config: ConfirmationDialogConfig) {
     const modalComponentFactory = this.resolver.resolveComponentFactory(
       ConfirmationComponent
     );
-    return this.openDialog(modalComponentFactory, config);
+    const dialogRef = new DialogRef<ConfirmationDialogReturnType>();
+    return this.openDialog(modalComponentFactory, dialogRef, config);
   }
 
   private openDialog(
     modalComponentFactory: ComponentFactory<Dialog>,
+    dialogRef: DialogRef,
     config: DialogConfig | ConfirmationDialogConfig
   ): DialogRef {
     const modalComponent = modalComponentFactory.create(this.injector);
 
-    const dialogRef = new DialogRef();
-
     modalComponent.instance.config = config;
     modalComponent.instance.dialogRef = dialogRef;
+
     modalComponent.hostView.detectChanges();
 
     this.document.body.appendChild(modalComponent.location.nativeElement);

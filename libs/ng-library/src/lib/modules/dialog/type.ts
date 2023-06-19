@@ -2,6 +2,7 @@ export type DialogConfig = {
   title?: string;
   message?: string;
   diableBackdropClose?: boolean;
+  hideCloseIcon?: boolean;
 };
 
 export type ConfirmationDialogConfig = DialogConfig & {
@@ -10,3 +11,5 @@ export type ConfirmationDialogConfig = DialogConfig & {
   primaryBtnLabel?: string;
   secondaryBtnLabel?: string;
 };
+
+export type ConfirmationDialogReturnType = 'ok' | 'cancel' | undefined;
