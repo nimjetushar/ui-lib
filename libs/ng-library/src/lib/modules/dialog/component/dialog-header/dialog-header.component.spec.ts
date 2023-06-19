@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { DialogHeaderComponent } from './dialog-header.component';
 
 describe('DialogHeaderComponent', () => {
@@ -12,6 +13,7 @@ describe('DialogHeaderComponent', () => {
 
     fixture = TestBed.createComponent(DialogHeaderComponent);
     component = fixture.componentInstance;
+    component.config = { title: 'test' };
     fixture.detectChanges();
   });
 
