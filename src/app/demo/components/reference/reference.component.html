@@ -6,7 +6,7 @@
         <ul>
           <li *ngFor="let item of libLists">
             <a [href]="item.url" target="_blank">
-              <i class="pi {{ item.icon }}"></i>
+              <i [class]="item.icon"></i>
               {{ item.name }}
             </a>
           </li>
