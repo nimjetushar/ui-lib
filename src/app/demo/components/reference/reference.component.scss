@@ -1,22 +1,31 @@
 .styles-reference {
-    .descriptions {
-        ul li {
-            margin: 1rem;
-            margin-left: 0;
+  .descriptions {
+    ul li {
+      margin: 1rem;
+      margin-left: 0;
 
-            a {
-                color: #000;
-            }
+      a {
+        color: #000;
+      }
 
-            i {
-                margin-right: 1rem;
-            }
+      i {
+        margin-right: 1rem;
+      }
 
-            &:hover {
-                i, a {
-                    color: #ee6e73;
-                }
-            }
+      &:hover {
+        i,
+        a {
+          color: #ee6e73;
         }
+      }
+
+      .color-angular {
+        color: #ff0000;
+      }
+
+      .color-fontawesome {
+        color: #254d93;
+      }
     }
+  }
 }
