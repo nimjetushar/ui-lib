@@ -1,19 +1,23 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ViewEncapsulation,
+} from '@angular/core';
+
+import { ToastParameters } from '../types';
 
 @Component({
   selector: 't-toast',
-  template: `
-    <p-toast
-      [position]="position"
-      [style.z-index]="baseZIndex"
-      [key]="key"
-    ></p-toast>
-  `,
+  templateUrl: `./toast.component.html`,
   styleUrls: ['./toast.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 't-toast',
+  },
 })
 export class ToastComponent {
-  @Input() position:
+  position:
     | 'top-right'
     | 'top-left'
     | 'bottom-right'
@@ -21,6 +25,7 @@ export class ToastComponent {
     | 'top-center'
     | 'bottom-center'
     | 'center' = 'top-right';
-  @Input() baseZIndex!: number;
-  @Input() key!: string;
+  baseZIndex!: number;
+  key!: string;
+  config!: ToastParameters;
 }

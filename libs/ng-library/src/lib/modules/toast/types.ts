@@ -1,5 +1,5 @@
-export interface ToastParameters {
-  id?: any;
+export type ToastParameters = {
+  id?: string;
   key?: string;
   title?: string;
   message?: string;
@@ -7,5 +7,5 @@ export interface ToastParameters {
   closeButton?: boolean;
   timeOut?: number;
   sticky?: boolean;
-  data?: any;
-}
+  data?: unknown;
+};
