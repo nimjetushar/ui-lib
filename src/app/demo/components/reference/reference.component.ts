@@ -21,7 +21,7 @@ export class ReferenceComponent {
       {
         name: `Angular (${angularversion})`,
         url: 'https://angular.io/api',
-        icon: 'fa-brands fa-angular',
+        icon: 'fa-brands fa-angular color-angular ',
       },
       {
         name: 'Grid system',
@@ -31,7 +31,7 @@ export class ReferenceComponent {
       {
         name: 'Font Awesome',
         url: 'https://fontawesome.com/search',
-        icon: 'fa-brands fa-square-font-awesome',
+        icon: 'fa-brands fa-font-awesome color-fontawesome',
       },
     ];
   }
