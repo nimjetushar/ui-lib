@@ -1,27 +1,31 @@
 import {
   ComponentFactoryResolver,
+  ComponentRef,
   Inject,
   Injectable,
   Injector,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
-import { ToastParameters } from './types';
-import { ToastComponent } from './toast/toast.component';
+import { defaultToastPosition } from './toast';
+import { ToastConfig } from './types';
+import { ToastComponent } from './component/toast/toast.component';
 
 @Injectable({ providedIn: 'root' })
 export class ToastService {
+  private toastInstance: ComponentRef<ToastComponent> | undefined;
+
   constructor(
     private resolver: ComponentFactoryResolver,
     private injector: Injector,
     @Inject(DOCUMENT) private document: Document
   ) {}
 
-  show(toastParam: ToastParameters): void {
+  show(toastParam: ToastConfig): void {
     this.displayToast(toastParam);
   }
 
-  showMultiple(toastParam: ToastParameters[]): void {
+  showMultiple(toastParam: ToastConfig[]): void {
     if (toastParam.length) {
       for (const item of toastParam) {
         this.displayToast(item);
@@ -29,14 +33,24 @@ export class ToastService {
     }
   }
 
-  private displayToast(config: ToastParameters): void {
-    const modalComponentFactory =
-      this.resolver.resolveComponentFactory(ToastComponent);
-    const modalComponent = modalComponentFactory.create(this.injector);
-    modalComponent.instance.config = config;
+  private displayToast(config: ToastConfig): void {
+    if (!this.toastInstance) {
+      const modalComponentFactory =
+        this.resolver.resolveComponentFactory(ToastComponent);
+      const modalComponent = modalComponentFactory.create(this.injector);
+      this.toastInstance = modalComponent;
+      this.toastInstance.instance.position =
+        config.position ?? defaultToastPosition;
+      this.toastInstance.instance.baseZIndex = config.baseZIndex ?? 10;
 
-    modalComponent.hostView.detectChanges();
+      const toastRefSub = this.toastInstance.instance.toastRef.subscribe(() => {
+        this.toastInstance = undefined;
+        toastRefSub.unsubscribe();
+      });
+      this.document.body.appendChild(modalComponent.location.nativeElement);
+    }
 
-    this.document.body.appendChild(modalComponent.location.nativeElement);
+    this.toastInstance.instance.add(config);
+    this.toastInstance.hostView.detectChanges();
   }
 }

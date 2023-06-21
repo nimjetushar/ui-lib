@@ -1,0 +1,14 @@
+<div class="t-toast-container t-toast-{{ toastType }}">
+  <div class="t-toast-message-content">
+    <span class="t-toast-message-icon">
+      <i [class]="iconClass"></i>
+    </span>
+    <div class="t-toast-message">
+      <div class="t-toast-message-title">{{ config.title }}</div>
+      <div class="t-toast-message-summary">{{ config.message }}</div>
+    </div>
+    <span class="t-toast-icon-close" *ngIf="!!config.closeButton">
+      <i class="fa-solid fa-xmark" (click)="closeToast()"></i>
+    </span>
+  </div>
+</div>

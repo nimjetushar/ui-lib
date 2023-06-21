@@ -39,24 +39,10 @@
       Root Module.
       <div class="toast-types">
         <span>Toast types are :- </span>
-        <b>success</b>, <b>info</b>, <b>error</b>, <b>warning</b>
-      </div>
-      <div class="active-toast">
-        <div>t-toast provides following inputs :-</div>
-        <table>
-          <thead>
-            <th *ngFor="let col of parameterCol" [style.width]="col?.width">
-              {{ col.label }}
-            </th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let data of paramData">
-              <td *ngFor="let col of parameterCol" [style.width]="col?.width">
-                {{ data[col.value] }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <ng-container *ngFor="let type of toastType; let last = last">
+          <b>{{ type }}</b>
+          <ng-container *ngIf="!last">, </ng-container>
+        </ng-container>
       </div>
     </div>
   </ui-library-documentation-demo-wrapper>

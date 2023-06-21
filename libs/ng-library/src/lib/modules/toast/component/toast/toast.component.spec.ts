@@ -1,8 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToastComponent } from './toast.component';
-import { ToastModule } from 'primeng/toast';
-import { MessageService } from 'primeng/api';
 
 describe('ToastComponent', () => {
   let component: ToastComponent;
@@ -10,11 +8,8 @@ describe('ToastComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ToastModule],
       declarations: [ToastComponent],
-      providers: [MessageService]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
