@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AlertModule, DropdownModule } from '@fourjs/ng-library';
 
 import { AlertDemoComponent } from './alert-demo.component';
+import { Common } from '../../../common';
 
 describe('AlertDemoComponent', () => {
   let component: AlertDemoComponent;
@@ -9,6 +11,7 @@ describe('AlertDemoComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [AlertDemoComponent],
+      imports: [Common, AlertModule, DropdownModule],
     }).compileComponents();
   });
 

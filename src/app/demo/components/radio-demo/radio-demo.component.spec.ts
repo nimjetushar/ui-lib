@@ -1,19 +1,20 @@
-import { comModules } from '__test__/common.imports';
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ButtonModule, RadioModule } from '@fourjs/ng-library';
+import { FormsModule } from '@angular/forms';
 
 import { RadioDemoComponent } from './radio-demo.component';
+import { Common } from '../../../common';
 
 describe('RadioDemoComponent', () => {
   let component: RadioDemoComponent;
   let fixture: ComponentFixture<RadioDemoComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [RadioDemoComponent],
-      imports: [...comModules]
-    })
-      .compileComponents();
-  }));
+      imports: [RadioModule, FormsModule, Common, ButtonModule],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RadioDemoComponent);
