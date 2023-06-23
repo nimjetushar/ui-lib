@@ -3,22 +3,14 @@ import {
   Component,
   ViewEncapsulation,
 } from '@angular/core';
-import { ToastService } from '@fourjs/ng-library';
+import {
+  ToastConfig,
+  ToastPosition,
+  ToastService,
+  ToastType,
+} from '@fourjs/ng-library';
 
 import { IOptions } from '../../../common';
-
-type DataType = {
-  name: string;
-  type: string;
-  default: string;
-  description: string;
-};
-
-type ColumnType<T = string> = {
-  label: string;
-  value: T;
-  width: string;
-};
 
 @Component({
   selector: 'ui-library-documentation-toast-demo',
@@ -28,22 +20,35 @@ type ColumnType<T = string> = {
   encapsulation: ViewEncapsulation.None,
 })
 export class ToastDemoComponent {
-  readonly options: IOptions = {
+  readonly options: IOptions<keyof ToastConfig> = {
     name: 'ToastService',
     componentType: 'Service',
     methods: [
       {
         method: 'show',
-        parameter: ['ToastParameters'],
+        parameter: ['ToastConfig'],
         description: 'Display single toast message',
       },
       {
         method: 'showAll',
-        parameter: ['Array<ToastParameters>'],
+        parameter: ['Array<ToastConfig>'],
         description: 'Display multiple toast message',
       },
     ],
     options: [
+      {
+        parameter: 'position',
+        type: 'string',
+        default: 'top-right',
+        description: `Position of the component, valid values are "top-right", "top-left",
+         "bottom-left", "bottom-right", "top-center, "bottom-center" and "center".`,
+      },
+      {
+        parameter: 'baseZIndex',
+        type: 'number',
+        default: '10',
+        description: 'Base zIndex value to use in layering.',
+      },
       {
         parameter: 'title',
         type: 'string',
@@ -61,7 +66,7 @@ export class ToastDemoComponent {
         description: 'Specifies type of notification to show',
       },
       {
-        parameter: 'timeOut',
+        parameter: 'timeout',
         type: 'number',
         default: '4000',
         description: 'Timeout for toast auto close',
@@ -72,21 +77,10 @@ export class ToastDemoComponent {
         default: 'false',
         description: 'Display close button',
       },
-      {
-        parameter: 'id',
-        type: 'any',
-        description: 'Identifier of the toast',
-      },
-      {
-        parameter: 'sticky',
-        type: 'boolean',
-        description:
-          'Whether the toast should be closed automatically based on life property or kept visible.',
-      },
     ],
   };
 
-  readonly toastPositions: string[] = [
+  readonly toastPositions: ToastPosition[] = [
     'top-right',
     'top-left',
     'bottom-right',
@@ -98,44 +92,7 @@ export class ToastDemoComponent {
   readonly toastComp =
     '<t-toast baseZIndex="1050" position="top-right"></t-toast>';
 
-  readonly parameterCol: ColumnType<keyof DataType>[] = [
-    {
-      label: 'Name',
-      value: 'name',
-      width: '20%',
-    },
-    {
-      label: 'Type',
-      value: 'type',
-      width: '20%',
-    },
-    {
-      label: 'Default',
-      value: 'default',
-      width: '20%',
-    },
-    {
-      label: 'description',
-      value: 'description',
-      width: '40%',
-    },
-  ];
-
-  readonly paramData: DataType[] = [
-    {
-      name: 'position',
-      type: 'string',
-      default: 'top-right',
-      description: `Position of the component, valid values are "top-right", "top-left",
-       "bottom-left", "bottom-right", "top-center, "bottom-center" and "center".`,
-    },
-    {
-      name: 'baseZIndex',
-      type: 'number',
-      default: '0',
-      description: 'Base zIndex value to use in layering.',
-    },
-  ];
+  readonly toastType: ToastType[] = ['success', 'error', 'warn', 'info'];
 
   constructor(private toastService: ToastService) {}
 
