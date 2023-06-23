@@ -1,48 +1,56 @@
-import { Injectable } from '@angular/core';
-import { MessageService, Message } from 'primeng/api';
+import {
+  ComponentFactoryResolver,
+  ComponentRef,
+  Inject,
+  Injectable,
+  Injector,
+} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
-import { ToastParameters } from './types';
+import { defaultToastPosition } from './toast';
+import { ToastConfig } from './types';
+import { ToastComponent } from './component/toast/toast.component';
 
 @Injectable({ providedIn: 'root' })
 export class ToastService {
-  constructor(private messageService: MessageService) {}
+  private toastInstance: ComponentRef<ToastComponent> | undefined;
 
-  show(toastParam: ToastParameters): void {
-    const param = this.formatConfig(toastParam);
-    this.messageService.add(param);
+  constructor(
+    private resolver: ComponentFactoryResolver,
+    private injector: Injector,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
+
+  show(toastParam: ToastConfig): void {
+    this.displayToast(toastParam);
   }
 
-  showMultiple(toastParam: ToastParameters[]): void {
-    if (!toastParam || (toastParam && !toastParam.length)) {
-      return;
+  showMultiple(toastParam: ToastConfig[]): void {
+    if (toastParam.length) {
+      for (const item of toastParam) {
+        this.displayToast(item);
+      }
     }
-    const param: Message[] = toastParam.map((d) => this.formatConfig(d));
-    this.messageService.addAll(param);
   }
 
-  private formatConfig(toastParam: ToastParameters): Message {
-    const {
-      id,
-      key,
-      title,
-      message,
-      type,
-      closeButton,
-      timeOut,
-      sticky,
-      data,
-    } = toastParam;
+  private displayToast(config: ToastConfig): void {
+    if (!this.toastInstance) {
+      const modalComponentFactory =
+        this.resolver.resolveComponentFactory(ToastComponent);
+      const modalComponent = modalComponentFactory.create(this.injector);
+      this.toastInstance = modalComponent;
+      this.toastInstance.instance.position =
+        config.position ?? defaultToastPosition;
+      this.toastInstance.instance.baseZIndex = config.baseZIndex ?? 10;
 
-    return {
-      closable: closeButton,
-      data,
-      id,
-      key,
-      summary: title,
-      detail: message,
-      severity: type || 'success',
-      life: timeOut || 4000,
-      sticky,
-    };
+      const toastRefSub = this.toastInstance.instance.toastRef.subscribe(() => {
+        this.toastInstance = undefined;
+        toastRefSub.unsubscribe();
+      });
+      this.document.body.appendChild(modalComponent.location.nativeElement);
+    }
+
+    this.toastInstance.instance.add(config);
+    this.toastInstance.hostView.detectChanges();
   }
 }

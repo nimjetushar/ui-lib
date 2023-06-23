@@ -31,6 +31,12 @@
               ["parent", "sibling", "index"]
             ]
           }
+        ],
+        "@angular-eslint/no-host-metadata-property": [
+          "error",
+          {
+            "allowStatic": true
+          }
         ]
       }
     },

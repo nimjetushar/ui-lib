@@ -1,0 +1,43 @@
+.t-toast {
+  position: fixed;
+  width: 25rem;
+}
+
+.t-toast-top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.t-toast-top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.t-toast-bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.t-toast-bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.t-toast-top-center {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.t-toast-bottom-center {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.t-toast-center {
+  left: 50%;
+  top: 50%;
+  min-width: 20vw;
+  transform: translate(-50%, -50%);
+}

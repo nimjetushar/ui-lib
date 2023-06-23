@@ -46,24 +46,9 @@ $border-color-inside-doc: #d7d2d2;
     }
   }
 
-  .toast-types,
-  .active-toast {
+  .toast-types {
     border-top: 1px solid $border-color-inside-doc;
     margin-top: rem(20);
     padding-top: rem(20);
-  }
-
-  .strong {
-    font-weight: bold;
-  }
-
-  .active-toast {
-    div.strong:nth-child(odd) {
-      background: #e5dddd;
-    }
-
-    div.strong {
-      padding: rem(6);
-    }
   }
 }
