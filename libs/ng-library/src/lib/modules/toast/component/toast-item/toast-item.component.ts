@@ -34,7 +34,7 @@ export class ToastItemComponent implements OnInit, OnDestroy {
   toastType: ToastType = 'success';
   iconClass!: string;
 
-  private clearTimer: number | undefined;
+  private clearTimer: ReturnType<typeof setTimeout> | undefined;
 
   ngOnInit(): void {
     this.toastType = this.config.type ?? 'success';

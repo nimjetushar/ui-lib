@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { ToastItemComponent } from './toast-item.component';
 
 describe('ToastItemComponent', () => {
@@ -12,6 +13,7 @@ describe('ToastItemComponent', () => {
 
     fixture = TestBed.createComponent(ToastItemComponent);
     component = fixture.componentInstance;
+    component.config = { id: '1' };
     fixture.detectChanges();
   });
 
