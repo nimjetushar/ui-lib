@@ -1,32 +1,33 @@
 @import '../../../../styles/variable.scss';
 
+$dialog-bg-opacity: 0.9;
+
 .t-toast-item {
   .t-toast-container {
     margin: 0 0 1rem 0;
     border-radius: 6px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-    opacity: 0.9;
     border: solid transparent;
     border-width: 0 0 0 6px;
   }
 
   .t-toast-container.t-toast-success {
-    background-color: $color-success;
+    background-color: rgba($color-success, $dialog-bg-opacity);
     border-color: $color-successhover;
   }
 
   .t-toast-container.t-toast-error {
-    background-color: $color-error;
+    background-color: rgba($color-error, $dialog-bg-opacity);
     border-color: $color-errorhover;
   }
 
   .t-toast-container.t-toast-info {
-    background-color: $color-informational;
+    background-color: rgba($color-informational, $dialog-bg-opacity);
     border-color: $color-informationalhover;
   }
 
   .t-toast-container.t-toast-warn {
-    background-color: $color-attention;
+    background-color: rgba($color-attention, $dialog-bg-opacity);
     border-color: $color-attentionhover;
   }
 
