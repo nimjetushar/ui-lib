@@ -6,7 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "deploy": "nx run ui-library-documentation:build --outputPath=docs --baseHref=/ui-lib/",
-    "test": "npm run test:library",
+    "test": "npm run test:library && npm run test:document",
     "lint": "nx run-many --target=lint --all=true",
     "styles": "gulp",
     "bumpVersion": "gulp bump",
