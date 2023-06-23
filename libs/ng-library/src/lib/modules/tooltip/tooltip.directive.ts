@@ -4,7 +4,6 @@ import {
   AfterViewInit,
   Directive,
   ElementRef,
-  HostBinding,
   HostListener,
   Inject,
   Input,
@@ -23,6 +22,9 @@ import { TooltipOptions, TooltipPosition } from './types';
 
 @Directive({
   selector: '[tTooltip]',
+  host: {
+    class: 't-tooltip p-element',
+  },
 })
 export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   @Input() tooltipPosition!: string | TooltipPosition;
@@ -50,8 +52,6 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   }
 
   @Input() tooltipOptions!: TooltipOptions;
-
-  @HostBinding() hostClass = 't-tooltip p-element';
 
   private _tooltipOptions: TooltipOptions = {
     tooltipPosition: 'right',

@@ -1,17 +1,18 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ColorPalletComponent } from './color-pallet.component';
+import { Common } from '../../../common';
 
 describe('ColorPalletComponent', () => {
   let component: ColorPalletComponent;
   let fixture: ComponentFixture<ColorPalletComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ColorPalletComponent],
-      imports: [],
+      imports: [Common],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ColorPalletComponent);

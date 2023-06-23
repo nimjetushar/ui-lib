@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DropdownModule, TooltipModule } from '@fourjs/ng-library';
 
 import { TooltipDemoComponent } from './tooltip-demo.component';
+import { Common } from '../../../common';
 
 describe('TooltipDemoComponent', () => {
   let component: TooltipDemoComponent;
@@ -9,7 +11,7 @@ describe('TooltipDemoComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [TooltipDemoComponent],
-      imports: [],
+      imports: [Common, TooltipModule, DropdownModule],
     }).compileComponents();
   });
 
