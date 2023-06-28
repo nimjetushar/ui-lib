@@ -1,4 +1,5 @@
 import { ChangeDetectorRef } from '@angular/core';
+// eslint-disable-next-line import/no-unresolved
 import { ComponentFixture } from '@angular/core/testing';
 
 export async function runOnPushChangeDetection(
