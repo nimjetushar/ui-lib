@@ -3,7 +3,7 @@
 [![Website](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=my-website)](https://nimjetushar.github.io/ui-lib/)
 ![npm](https://img.shields.io/npm/v/@fourjs/ng-library)
 <br/>
-[![Build Status](https://semaphoreci.com/api/v1/nimjetushar/ui-lib/branches/master/shields_badge.svg)](https://semaphoreci.com/nimjetushar/ui-lib)
+[![Build Status](https://tushar.semaphoreci.com/badges/ui-lib/branches/master.svg?style=shields&key=2882fe03-a5bd-4891-8484-907ef0ebf8f7)](https://tushar.semaphoreci.com/projects/ui-lib)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2f3503831efb41fe9e5cde24acd60be7)](https://www.codacy.com/app/tushar/ui-lib?utm_source=github.com&utm_medium=referral&utm_content=nimjetushar/ui-lib&utm_campaign=Badge_Grade)
 <br/>
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/nimjetushar/ui-library)
