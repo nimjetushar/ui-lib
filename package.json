@@ -7,7 +7,7 @@
     "build": "nx build",
     "deploy": "nx run ui-library-documentation:build --outputPath=docs --baseHref=/ui-lib/",
     "test": "npm run test:library && npm run test:document",
-    "lint": "nx run-many --target=lint --all=true",
+    "lint": "nx run-many --target=lint --all=true --exclude=e2e --skip-nx-cache=true",
     "styles": "gulp",
     "bumpVersion": "gulp bump",
     "test:library": "nx run ng-library:test --codeCoverage=true",
