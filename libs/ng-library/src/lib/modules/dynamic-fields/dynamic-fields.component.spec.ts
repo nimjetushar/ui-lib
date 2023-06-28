@@ -1,5 +1,6 @@
 import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { DynamicFieldsComponent } from './dynamic-fields.component';
 import { ButtonComponent } from '../button/button.component';
@@ -7,7 +8,6 @@ import { BadgeComponent } from '../badge/badge.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { RadioComponent } from '../radio/radio.component';
 import { DropdownComponent } from '../dropdown/dropdown.component';
-import { DropdownModule } from 'primeng/dropdown';
 
 describe('DynamicFieldsComponent', () => {
   let component: DynamicFieldsComponent;
@@ -21,14 +21,10 @@ describe('DynamicFieldsComponent', () => {
         BadgeComponent,
         CheckboxComponent,
         RadioComponent,
-        DropdownComponent
+        DropdownComponent,
       ],
-      imports: [
-        FormsModule,
-        DropdownModule
-      ]
-    })
-      .compileComponents();
+      imports: [FormsModule, DropdownModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

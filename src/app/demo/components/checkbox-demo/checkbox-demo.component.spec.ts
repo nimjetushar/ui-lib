@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CheckboxModule } from '@fourjs/ng-library';
 
+import { Common } from '../../../common';
 import { CheckboxDemoComponent } from './checkbox-demo.component';
 
 describe('CheckboxDemoComponent', () => {
@@ -9,6 +11,7 @@ describe('CheckboxDemoComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CheckboxDemoComponent],
+      imports: [Common, CheckboxModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CheckboxDemoComponent);

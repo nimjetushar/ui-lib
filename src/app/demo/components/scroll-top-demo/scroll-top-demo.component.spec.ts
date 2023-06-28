@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { NavigationModule } from '@fourjs/ng-library';
 
 import { ScrollTopDemoComponent } from './scroll-top-demo.component';
+import { Common } from '../../../common';
 
 describe('ScrollTopDemoComponent', () => {
   let component: ScrollTopDemoComponent;
@@ -8,9 +10,9 @@ describe('ScrollTopDemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScrollTopDemoComponent ]
-    })
-    .compileComponents();
+      declarations: [ScrollTopDemoComponent],
+      imports: [Common, NavigationModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

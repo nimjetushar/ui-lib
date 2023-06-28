@@ -1,7 +1,7 @@
-import { comModules } from '__test__/common.imports';
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { GridComponent } from './grid.component';
+import { Common } from '../../../common';
 
 describe('GridComponent', () => {
   let component: GridComponent;
@@ -9,10 +9,9 @@ describe('GridComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GridComponent ],
-      imports: [...comModules]
-    })
-    .compileComponents();
+      declarations: [GridComponent],
+      imports: [Common],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
