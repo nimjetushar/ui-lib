@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types, @typescript-eslint/no-explicit-any */
 import { isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
@@ -15,9 +14,10 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
-import { ConnectedOverlayScrollHandler, DomHandler } from 'primeng/dom';
-import { ZIndexUtils } from 'primeng/utils';
 
+import { ConnectedOverlayScrollHandler } from '../../core/connectedoverlayscrollhandler';
+import { DomHandler } from '../../core/domHandler';
+import { ZIndexUtils, zIndex } from '../../core/zIndex.utility';
 import { TooltipOptions, TooltipPosition } from './types';
 
 @Directive({
@@ -66,17 +66,17 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   };
 
   private _disabled = false;
-  private container: any;
-  private tooltipText: any;
-  private showTimeout: any;
-  private hideTimeout: any;
+  private container!: HTMLElement;
+  private tooltipText!: HTMLElement;
+  private showTimeout!: number | null;
+  private hideTimeout!: number | null;
   private active!: boolean;
   private mouseEnterListener!: Function;
   private mouseLeaveListener!: Function;
   private containerMouseleaveListener!: Function | null;
   private clickListener!: Function;
-  private focusListener!: Function;
-  private blurListener!: Function;
+  private focusListener!: any;
+  private blurListener!: any;
   private scrollHandler: any;
   private resizeListener: any;
 
@@ -109,8 +109,10 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
           this.blurListener = this.onBlur.bind(this);
 
           const target = this.getTarget(this.el.nativeElement);
-          target.addEventListener('focus', this.focusListener);
-          target.addEventListener('blur', this.blurListener);
+          if (target) {
+            target.addEventListener('focus', this.focusListener);
+            target.addEventListener('blur', this.blurListener);
+          }
         }
       });
     }
@@ -342,7 +344,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
 
   bindContainerMouseleaveListener() {
     if (!this.containerMouseleaveListener) {
-      const targetEl: any = this.container ?? this.container.nativeElement;
+      const targetEl: any = this.container;
 
       this.containerMouseleaveListener = this.renderer.listen(
         targetEl,
@@ -371,7 +373,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     DomHandler.fadeIn(this.container, 250);
 
     if (this.getOption('tooltipZIndex') === 'auto')
-      ZIndexUtils.set('tooltip', this.container, this.config.zIndex.tooltip);
+      ZIndexUtils.set('tooltip', this.container, zIndex.tooltip);
     else this.container.style.zIndex = this.getOption('tooltipZIndex');
 
     this.bindDocumentResizeListener();
@@ -538,7 +540,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     return this._tooltipOptions[option];
   }
 
-  getTarget(el: Element) {
+  getTarget(el: HTMLElement) {
     return DomHandler.hasClass(el, 'p-inputwrapper')
       ? DomHandler.findSingle(el, 'input')
       : el;
@@ -622,9 +624,10 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
       this.el.nativeElement.removeEventListener('click', this.clickListener);
     } else if (this.getOption('tooltipEvent') === 'focus') {
       const target = this.getTarget(this.el.nativeElement);
-
-      target.removeEventListener('focus', this.focusListener);
-      target.removeEventListener('blur', this.blurListener);
+      if (target) {
+        target.removeEventListener('focus', this.focusListener);
+        target.removeEventListener('blur', this.blurListener);
+      }
     }
 
     this.unbindDocumentResizeListener();
@@ -643,7 +646,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     this.unbindScrollListener();
     this.unbindContainerMouseleaveListener();
     this.clearTimeouts();
-    this.container = null;
+    this.container = null as unknown as HTMLElement;
     this.scrollHandler = null;
   }
 

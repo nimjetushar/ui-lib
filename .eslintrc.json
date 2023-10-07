@@ -24,7 +24,19 @@
             "style": "kebab-case"
           }
         ],
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        "import/order": [
+          "error",
+          {
+            "newlines-between": "always",
+            "groups": [
+              "external",
+              "builtin",
+              "internal",
+              ["parent", "sibling", "index"]
+            ]
+          }
+        ]
       }
     },
     {
