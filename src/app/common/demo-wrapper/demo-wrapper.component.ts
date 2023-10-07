@@ -1,29 +1,21 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Input,
-  OnInit,
-  ViewChild,
-  ViewEncapsulation,
-} from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ToastService } from '@fourjs/ng-library';
 
-import { IColumn, IDocOptions, IMethodOptions, IOptions } from '../types';
+import { Column, DocOptions, MethodOptions, Options } from '../types';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let PR: any;
 
 @Component({
   selector: 'ui-library-documentation-demo-wrapper',
   templateUrl: './demo-wrapper.component.html',
   styleUrls: ['./demo-wrapper.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DemoWrapperComponent implements OnInit, AfterViewInit {
   @Input() header!: string;
-  @Input() code!: string[];
-  @Input() set options(docData: IOptions) {
+  @Input() subHeader?: string;
+  @Input() code?: string[];
+  @Input() set options(docData: Options | undefined | null) {
     if (docData) {
       this.enableOptions = true;
       this.name = docData.name;
@@ -44,17 +36,18 @@ export class DemoWrapperComponent implements OnInit, AfterViewInit {
   enableDoc = true;
   enableOptions!: boolean;
   name!: string;
-  docOptions: IDocOptions[] | undefined;
-  methodOptions!: IMethodOptions[] | undefined;
+  docOptions: DocOptions[] | undefined;
+  methodOptions!: MethodOptions[] | undefined;
   componentType = 'Component';
-  docColumns: IColumn<keyof IDocOptions>[] = [
+
+  readonly docColumns: Column<keyof DocOptions>[] = [
     { label: 'Name', value: 'parameter', width: '20%' },
     { label: 'Type', value: 'type', width: '20%' },
     { label: 'Default', value: 'default', width: '20%' },
     { label: 'Description', value: 'description', width: '40%' },
   ];
 
-  methodColumns: IColumn<keyof IMethodOptions>[] = [
+  readonly methodColumns: Column<keyof MethodOptions>[] = [
     { label: 'Name', value: 'method', width: '20%' },
     { label: 'Parameters', value: 'parameter', width: '20%' },
     { label: 'Description', value: 'description', width: '60%' },
@@ -74,9 +67,11 @@ export class DemoWrapperComponent implements OnInit, AfterViewInit {
   copyToClipboard(): void {
     const copyEle = document.createElement('input');
     document.body.appendChild(copyEle);
-    const codeSample = this.code.reduce(
-      (accumulator, currentValue) => accumulator + currentValue
-    );
+    const codeSample = this.code?.reduce((accumulator, currentValue) => accumulator + currentValue);
+    if (!codeSample) {
+      return;
+    }
+
     copyEle.setAttribute('value', codeSample);
     copyEle.select();
     document.execCommand('copy');

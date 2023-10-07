@@ -1,14 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ViewEncapsulation,
-} from '@angular/core';
-import {
-  ToastConfig,
-  ToastPosition,
-  ToastService,
-  ToastType,
-} from '@fourjs/ng-library';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ToastConfig, ToastPosition, ToastService, ToastType } from '@fourjs/ng-library';
 
 import { IOptions } from '../../../common';
 
@@ -26,12 +17,12 @@ export class ToastDemoComponent {
     methods: [
       {
         method: 'show',
-        parameter: ['ToastConfig'],
+        parameter: 'ToastConfig',
         description: 'Display single toast message',
       },
       {
         method: 'showAll',
-        parameter: ['Array<ToastConfig>'],
+        parameter: 'Array<ToastConfig>',
         description: 'Display multiple toast message',
       },
     ],
@@ -89,8 +80,7 @@ export class ToastDemoComponent {
     'bottom-center',
     'center',
   ];
-  readonly toastComp =
-    '<t-toast baseZIndex="1050" position="top-right"></t-toast>';
+  readonly toastComp = '<t-toast baseZIndex="1050" position="top-right"></t-toast>';
 
   readonly toastType: ToastType[] = ['success', 'error', 'warn', 'info'];
 

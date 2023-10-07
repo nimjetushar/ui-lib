@@ -71,12 +71,12 @@ export class DropdownDemoComponent {
     methods: [
       {
         method: 'onFocus',
-        parameter: ['event: Browser event'],
+        parameter: 'event: Browser event',
         description: 'Callback to invoke when dropdown gets focus.',
       },
       {
         method: 'onBlur',
-        parameter: ['event: Browser event'],
+        parameter: 'event: Browser event',
         description: 'Callback to invoke when dropdown gets blur.',
       },
     ],

@@ -1,5 +1,10 @@
 <div class="dropdown-component">
-  <ui-library-documentation-demo-wrapper header="Dropdown" [code]="compSyntax" [options]="pageOptions">
+  <ui-library-documentation-demo-wrapper
+    header="Dropdown"
+    subHeader="Dropdown also known as Select, is used to choose an item from a collection of options."
+    [code]="compSyntax"
+    [options]="pageOptions"
+  >
     <div output>
       <t-dropdown [options]="options" />
       <div *ngIf="value" class="output">
@@ -49,9 +54,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div doc>
-      <ui-library-documentation-common-note></ui-library-documentation-common-note>
     </div>
   </ui-library-documentation-demo-wrapper>
 </div>

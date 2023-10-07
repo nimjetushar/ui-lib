@@ -1,27 +1,37 @@
-export interface IColumn<T = string> {
+export type Column<T = string> = {
   label: string;
   value: T;
 
   class?: string;
   width?: string;
-}
+};
 
-export interface IDocOptions<T = string> {
+export type DocOptions<T = string> = {
   parameter: T;
   description: string;
   type: string;
   default?: string;
-}
+};
 
-export interface IMethodOptions {
+export type MethodOptions = {
   method: string;
-  parameter: string[];
+  parameter: string;
   description: string;
-}
+};
 
+/**
+ * @deprecated The interface is been deprecated, use Options
+ */
 export interface IOptions<T = string> {
   name: string;
   componentType?: 'Service' | 'Component' | 'Directive';
-  options?: IDocOptions<T>[];
-  methods?: IMethodOptions[];
+  options?: DocOptions<T>[];
+  methods?: MethodOptions[];
 }
+
+export type Options<T extends string = string> = {
+  name: string;
+  componentType?: 'Service' | 'Component' | 'Directive';
+  options?: DocOptions<T>[];
+  methods?: MethodOptions[];
+};

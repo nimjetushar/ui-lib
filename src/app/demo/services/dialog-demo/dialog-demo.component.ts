@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ConfirmationDialogConfig, DialogService } from '@fourjs/ng-library';
 
-import { FontAwesomeUrl } from '../../../constants/config';
 import { IOptions } from '../../../common';
+import { FontAwesomeUrl } from '../../../constants/config';
 import { DynamicDialogComponent } from './dynamic-dialog.component';
 
 @Component({
@@ -17,12 +17,12 @@ export class DialogDemoComponent {
     methods: [
       {
         method: 'open',
-        parameter: ['Component', 'DialogConfig'],
+        parameter: ['Component', 'DialogConfig'].join(', '),
         description: 'Display custom dialog based on provided component',
       },
       {
         method: 'openConfirmation',
-        parameter: ['ConfirmationDialogConfig'],
+        parameter: 'ConfirmationDialogConfig',
         description: 'Display confirmation dialog',
       },
     ],
@@ -63,7 +63,7 @@ export class DialogDemoComponent {
     const dialogRef = this.dialogService.openConfirmation({
       title: 'Confirmation',
     });
-    dialogRef.onClose.subscribe((data) => {
+    dialogRef.onClose.subscribe(data => {
       console.log('Confirmation Dialog on close', data);
     });
     dialogRef.onDestroy.subscribe(() => {
@@ -84,7 +84,7 @@ export class DialogDemoComponent {
       .open(DynamicDialogComponent, {
         title: 'Dynamic Dialog',
       })
-      .onClose.subscribe((data) => {
+      .onClose.subscribe(data => {
         console.log('Dynamic dialog close', data);
       });
   }
