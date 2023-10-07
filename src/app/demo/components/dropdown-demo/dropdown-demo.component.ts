@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { DropdownOptions } from '@fourjs/ng-library';
+import { DropdownOptions, TooltipPosition } from '@fourjs/ng-library';
 
 import { Options } from '../../../common';
 
@@ -94,7 +94,7 @@ export class DropdownDemoComponent {
     { label: 'Mercedes', value: 'Mercedes' },
   ];
 
-  readonly tooltipOption: DropdownOptions<string>[] = [
+  readonly tooltipOption: DropdownOptions<TooltipPosition>[] = [
     { label: 'top', value: 'top' },
     { label: 'right', value: 'right' },
     { label: 'bottom', value: 'bottom' },
@@ -105,7 +105,7 @@ export class DropdownDemoComponent {
   value = 'Audi';
   tooltipDDValue?: string;
   tooltip?: string;
-  tooltipPosition = 'left';
+  tooltipPosition: TooltipPosition = 'left';
 
   data? = { t: '' };
 
