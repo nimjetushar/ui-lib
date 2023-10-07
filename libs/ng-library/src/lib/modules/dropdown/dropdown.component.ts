@@ -1,93 +1,82 @@
 import {
+  ChangeDetectionStrategy,
   Component,
-  Input,
-  forwardRef,
-  Output,
   EventEmitter,
   HostBinding,
+  Input,
+  Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { noop } from 'tutility';
 
-import { Tooltip } from '../tooltip';
 import { DropdownOptions } from './types';
+
+type DropdownOptionsUI<T = any> = DropdownOptions<T> & { isSelected?: boolean };
 
 @Component({
   selector: 't-dropdown',
-  template: `<p-dropdown
-    [options]="options"
-    [ngModel]="value"
-    [placeholder]="placeholder"
-    [filter]="filter"
-    [readonly]="readonly"
-    [disabled]="disabled"
-    [name]="name"
-    [tooltip]="tooltip"
-    [tooltipPosition]="tooltipPosition"
-    [autoDisplayFirst]="autoDisplayFirst"
-    [scrollHeight]="scrollHeight"
-    [autofocus]="autofocus"
-    (onChange)="onChangeHandler($event)"
-    (onFocus)="focusHandler($event)"
-    (onBlur)="blurHandler($event)"
-  >
-  </p-dropdown>`,
+  templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DropdownComponent),
-      multi: true,
-    },
-  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
+  host: { class: 't-dropdown' },
 })
-export class DropdownComponent extends Tooltip implements ControlValueAccessor {
-  @Input() options: DropdownOptions[] = [];
-  @Input() readonly = false;
-  @Input() disabled = false;
-  @Input() filter = false;
+export class DropdownComponent<T = any> {
+  @Input()
+  set options(options: DropdownOptions<T>[] | null | undefined) {
+    if (options?.length) {
+      this.dropdownOptions = [...options];
+    }
+  }
+
   @Input() placeholder!: string;
-  @Input() staticLabel?: string;
-  @Input() name = 't-dropdown';
-  @Input() autoDisplayFirst = false;
-  @Input() scrollHeight = '200px';
-  @Input() autofocus = false;
+  @Input() panelHeight?: string;
+
+  @HostBinding('class.disabled')
+  @Input()
+  disabled = false;
 
   @Output() onFocus = new EventEmitter<Event>();
   @Output() onBlur = new EventEmitter<Event>();
 
-  @HostBinding('class') hostClass = 't-dropdown';
+  dropdownOptions: DropdownOptionsUI<T>[] = [];
+  selectedOptions: DropdownOptions<T> | null | undefined;
+  isPanelOpen = false;
+  isFocused = false;
 
-  value: unknown;
+  togglePanel(): void {
+    if (this.disabled) return;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onChange: any = noop;
-  onTouched: unknown = noop;
-
-  writeValue(value: DropdownOptions): void {
-    this.value = value;
-    this.onChange(value);
+    this.isPanelOpen = !this.isPanelOpen;
   }
 
-  registerOnChange(fn: unknown): void {
-    this.onChange = fn;
-  }
+  optionSelectHandler(option: DropdownOptionsUI<T>): void {
+    if (this.disabled) return;
 
-  registerOnTouched(fn: unknown): void {
-    this.onTouched = fn;
-  }
-
-  onChangeHandler(event: { value: DropdownOptions }): void {
-    this.writeValue(event.value);
+    this.selectedOptions = option;
+    this.dropdownOptions.forEach(o => {
+      delete o.isSelected;
+    });
+    option.isSelected = true;
+    this.isPanelOpen = false;
   }
 
   focusHandler(event: Event): void {
-    this.onFocus.emit(event);
+    if (this.disabled) return;
+    if (this.isFocused) return;
+
+    this.isFocused = true;
+    this.onFocus.emit({ ...event, type: 'focus' });
   }
 
   blurHandler(event: Event): void {
-    this.onBlur.emit(event);
+    if (!this.isFocused) return;
+
+    this.isFocused = false;
+    this.isPanelOpen = false;
+    this.onBlur.emit({ ...event, type: 'blur' });
+  }
+
+  optionsTrackBy(index: number): number {
+    return index;
   }
 }

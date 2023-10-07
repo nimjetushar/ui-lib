@@ -11,7 +11,7 @@ import { IOptions } from '../../../common';
 })
 export class DropdownDemoComponent {
   readonly compSyntax: string[] = [
-    `<t-dropdown placeholder="Select option" [options]="options" [(ngModel)]="value" [filter]="true"></t-dropdown>`,
+    `<t-dropdown placeholder="Select option" [options]="options" [(ngModel)]="value" [filter]="true" />`,
   ];
 
   readonly pageOptions: IOptions = {
@@ -36,8 +36,7 @@ export class DropdownDemoComponent {
         parameter: 'scrollHeight',
         type: 'string',
         default: '200px',
-        description:
-          'Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.',
+        description: 'Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.',
       },
       {
         parameter: 'disabled',
@@ -66,8 +65,7 @@ export class DropdownDemoComponent {
         parameter: 'tooltipPosition',
         type: 'string',
         default: 'top',
-        description:
-          'Position of the tooltip, valid values are right, left, top and bottom.',
+        description: 'Position of the tooltip, valid values are right, left, top and bottom.',
       },
     ],
     methods: [

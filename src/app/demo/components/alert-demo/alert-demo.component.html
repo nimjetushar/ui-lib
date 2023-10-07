@@ -1,19 +1,11 @@
 <div class="alert-component">
-  <ui-library-documentation-demo-wrapper
-    header="Alert"
-    [code]="compSyntax"
-    [options]="options"
-  >
+  <ui-library-documentation-demo-wrapper header="Alert" [code]="compSyntax" [options]="options">
     <div output>
       <div class="spacing">
         <t-alert type="success" message="message........"></t-alert>
       </div>
       <div class="spacing">
-        <t-alert
-          type="error"
-          title="Title Error"
-          message="message........"
-        ></t-alert>
+        <t-alert type="error" title="Title Error" message="message........"></t-alert>
       </div>
       <div class="spacing" *ngIf="!hideAlert">
         <t-alert
@@ -25,29 +17,20 @@
         ></t-alert>
       </div>
       <div class="spacing">
-        <t-alert
-          type="warn"
-          title="Title warn"
-          message="message........"
-          [hideIcon]="true"
-        ></t-alert>
+        <t-alert type="warn" title="Title warn" message="message........" [hideIcon]="true"></t-alert>
       </div>
       <div class="spacing dynamic-alert">
         <div>Select Alert type from dropdown:-</div>
         <div style="margin-bottom: 14px">
-          <t-dropdown
+          <!-- <t-dropdown
             placeholder="Select option"
             [options]="dropdownOption"
             [(ngModel)]="dropdownValue"
           >
-          </t-dropdown>
+          </t-dropdown> -->
         </div>
         <div>
-          <t-alert
-            [type]="dropdownValue"
-            title="Title {{ dropdownValue }}"
-            message="message........"
-          ></t-alert>
+          <t-alert [type]="dropdownValue" title="Title {{ dropdownValue }}" message="message........"></t-alert>
         </div>
       </div>
     </div>

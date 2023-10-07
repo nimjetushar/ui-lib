@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { DropdownModule as PrimeDropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 
+import { BlurDirective } from '../blur';
 import { DropdownComponent } from './dropdown.component';
 
 @NgModule({
   declarations: [DropdownComponent],
-  imports: [CommonModule, PrimeDropdownModule, FormsModule],
+  imports: [CommonModule, FormsModule, BlurDirective],
   exports: [DropdownComponent],
 })
 export class DropdownModule {}

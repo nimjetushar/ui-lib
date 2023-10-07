@@ -1,18 +1,7 @@
 <div class="dropdown-component">
-  <ui-library-documentation-demo-wrapper
-    header="Dropdown"
-    [code]="compSyntax"
-    [options]="pageOptions"
-  >
+  <ui-library-documentation-demo-wrapper header="Dropdown" [code]="compSyntax" [options]="pageOptions">
     <div output>
-      <t-dropdown
-        placeholder="Select option"
-        [options]="options"
-        [(ngModel)]="value"
-        [filter]="true"
-        [tooltip]="value"
-      >
-      </t-dropdown>
+      <t-dropdown [options]="options" />
       <div *ngIf="value" class="output">
         <span>Output: </span>
         <span>
@@ -22,36 +11,21 @@
       <div class="row">
         <div class="col-md-6 col-sx-12 section">
           <div class="title">Disabled Dropdown</div>
-          <t-dropdown
-            placeholder="Select option"
-            [options]="options"
-            [(ngModel)]="value"
-            [disabled]="true"
-          >
-          </t-dropdown>
+          <t-dropdown placeholder="Select option" [options]="options" [disabled]="true" />
         </div>
-        <div class="col-md-6 col-sx-12 section">
+        <!-- <div class="col-md-6 col-sx-12 section">
           <div class="title">Read-only Dropdown</div>
-          <t-dropdown
-            placeholder="Select option"
-            [options]="options"
-            [(ngModel)]="value"
-            [readonly]="true"
-          >
+          <t-dropdown placeholder="Select option" [options]="options" [(ngModel)]="value" [readonly]="true">
           </t-dropdown>
-        </div>
+        </div> -->
         <div class="col-md-6 col-sx-12 section">
           <div class="title">Tooltip Dropdown</div>
           <div class="inline-block" style="margin: 0 10px 10px 0">
-            <t-dropdown
-              placeholder="Select Tooltip position"
-              [options]="tooltipOption"
-              [(ngModel)]="tooltipPosition"
-            >
-            </t-dropdown>
+            <!-- <t-dropdown placeholder="Select Tooltip position" [options]="tooltipOption" [(ngModel)]="tooltipPosition">
+            </t-dropdown> -->
           </div>
           <div class="inline-block">
-            <t-dropdown
+            <!-- <t-dropdown
               placeholder="Select option"
               [options]="options"
               [(ngModel)]="tooltipDDValue"
@@ -59,19 +33,13 @@
               [tooltipPosition]="tooltipPosition"
               (ngModelChange)="modelChangeHandler($event)"
             >
-            </t-dropdown>
+            </t-dropdown> -->
           </div>
         </div>
         <div class="col-md-6 col-sx-12 section">
           <div class="title">Focus and Blur</div>
           <div class="inline-block">
-            <t-dropdown
-              [options]="options"
-              [autoDisplayFirst]="false"
-              (onFocus)="focusHandler($event)"
-              (onBlur)="blurHandler($event)"
-            >
-            </t-dropdown>
+            <t-dropdown [options]="options" (onFocus)="focusHandler($event)" (onBlur)="blurHandler($event)" />
             <span *ngIf="eventType" class="output" style="margin-left: 10px">
               <span>Event: </span>
               <span>

@@ -23,8 +23,10 @@ $color-background-main: #fafbfd;
 $color-black: #000000;
 $color-white: #ffffff;
 $color-text-main-menu-item: #283764;
-$color-disabled: #f2f2f2;
+$color-disabled: #cccaca;
 $color-overlay: rgba(0, 0, 0, 0.5);
+$color-selection: #00a8e4;
+$color-selectionhover: #0079b2;
 
 $color-text-disabled: $color-light; // text disabled
 
@@ -71,10 +73,7 @@ $button-disabled-color: #9f9f9f !default;
 
 // Raised buttons
 $button-raised-background: $secondary-color !default;
-$button-raised-background-hover: lighten(
-  $button-raised-background,
-  5%
-) !default;
+$button-raised-background-hover: lighten($button-raised-background, 5%) !default;
 $button-raised-color: #fff !default;
 
 // Large buttons
