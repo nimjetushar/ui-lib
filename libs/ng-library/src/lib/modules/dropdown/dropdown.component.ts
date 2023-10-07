@@ -7,7 +7,10 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
+import { noop } from 'tutility';
 
+import { createCustomInputControlValueAccessor } from '../../core/custom-input-control';
 import { DropdownOptions } from './types';
 
 type DropdownOptionsUI<T = any> = DropdownOptions<T> & { isSelected?: boolean };
@@ -16,11 +19,12 @@ type DropdownOptionsUI<T = any> = DropdownOptions<T> & { isSelected?: boolean };
   selector: 't-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
+  providers: [createCustomInputControlValueAccessor(DropdownComponent)],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   host: { class: 't-dropdown' },
 })
-export class DropdownComponent<T = any> {
+export class DropdownComponent<T = any> implements ControlValueAccessor {
   @Input()
   set options(options: DropdownOptions<T>[] | null | undefined) {
     if (options?.length) {
@@ -43,6 +47,25 @@ export class DropdownComponent<T = any> {
   isPanelOpen = false;
   isFocused = false;
 
+  onChange: any = noop;
+  onTouched: unknown = noop;
+
+  writeValue(value: T): void {
+    const option = this.dropdownOptions.find(o => o.value === value);
+    if (option) {
+      this.optionSelectHandler(option);
+    }
+    this.onChange(value);
+  }
+
+  registerOnChange(fn: unknown): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: unknown): void {
+    this.onTouched = fn;
+  }
+
   togglePanel(): void {
     if (this.disabled) return;
 
@@ -58,6 +81,7 @@ export class DropdownComponent<T = any> {
     });
     option.isSelected = true;
     this.isPanelOpen = false;
+    this.onChange(option.value);
   }
 
   focusHandler(event: Event): void {

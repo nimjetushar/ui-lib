@@ -6,7 +6,7 @@
     [options]="pageOptions"
   >
     <div output>
-      <t-dropdown [options]="options" />
+      <t-dropdown [options]="options" [(ngModel)]="value" />
       <div *ngIf="value" class="output">
         <span>Output: </span>
         <span>
@@ -18,11 +18,6 @@
           <div class="title">Disabled Dropdown</div>
           <t-dropdown placeholder="Select option" [options]="options" [disabled]="true" />
         </div>
-        <!-- <div class="col-md-6 col-sx-12 section">
-          <div class="title">Read-only Dropdown</div>
-          <t-dropdown placeholder="Select option" [options]="options" [(ngModel)]="value" [readonly]="true">
-          </t-dropdown>
-        </div> -->
         <div class="col-md-6 col-sx-12 section">
           <div class="title">Tooltip Dropdown</div>
           <div class="inline-block" style="margin: 0 10px 10px 0">

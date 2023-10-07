@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DropdownOptions } from '@fourjs/ng-library';
 
-import { IOptions } from '../../../common';
+import { Options } from '../../../common';
 
 @Component({
   selector: 'ui-library-documentation-dropdown-demo',
@@ -14,7 +14,7 @@ export class DropdownDemoComponent {
     `<t-dropdown placeholder="Select option" [options]="options" [(ngModel)]="value" [filter]="true" />`,
   ];
 
-  readonly pageOptions: IOptions = {
+  readonly pageOptions: Options = {
     name: 't-dropdown',
     options: [
       {
