@@ -1,16 +1,16 @@
 import {
   Component,
-  Input,
-  forwardRef,
-  Output,
   EventEmitter,
   HostBinding,
+  Input,
+  Output,
   ViewEncapsulation,
+  forwardRef,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { noop } from 'tutility';
 
-import { Tooltip } from '../tooltip';
+import { Tooltip } from '../../core/tooltip.class';
 import { DropdownOptions } from './types';
 
 @Component({

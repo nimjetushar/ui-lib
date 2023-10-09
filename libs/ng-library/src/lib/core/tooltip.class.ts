@@ -1,6 +1,6 @@
-import { Input, Directive } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 
-import { TooltipPosition } from './types';
+import { TooltipPosition } from '../modules/tooltip/types';
 
 @Directive()
 export class Tooltip {
