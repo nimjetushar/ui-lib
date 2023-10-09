@@ -1,10 +1,9 @@
-import { Input, Directive } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 
-import { TooltipPosition } from './types';
+import { TooltipPosition } from '../modules/tooltip';
 
 @Directive()
 export class Tooltip {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   @Input() tooltip: any;
   @Input()
   set tooltipPosition(value: TooltipPosition | string) {

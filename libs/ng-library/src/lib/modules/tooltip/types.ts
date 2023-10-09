@@ -4,7 +4,6 @@ export interface TooltipOptions {
   tooltipLabel?: string;
   tooltipPosition?: TooltipPosition;
   tooltipEvent?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   appendTo?: any;
   positionStyle?: string;
   tooltipStyleClass?: string;

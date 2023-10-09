@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types, @typescript-eslint/no-explicit-any */
 import { isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
@@ -15,16 +14,14 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
-import { ConnectedOverlayScrollHandler, DomHandler } from 'primeng/dom';
-import { ZIndexUtils } from 'primeng/utils';
 
+import { ConnectedOverlayScrollHandler } from '../../core/connectedoverlayscrollhandler';
+import { DomHandler } from '../../core/domHandler';
+import { ZIndexUtils, zIndex } from '../../utility/zIndex.utility';
 import { TooltipOptions, TooltipPosition } from './types';
 
 @Directive({
   selector: '[tTooltip]',
-  host: {
-    class: 't-tooltip p-element',
-  },
 })
 export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   @Input() tooltipPosition!: string | TooltipPosition;
@@ -43,7 +40,8 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   @Input() fitContent = true;
   @Input() hideOnEscape = true;
   @Input('tTooltip') text!: string;
-  @Input('tooltipDisabled') get disabled(): boolean {
+  @Input('tooltipDisabled')
+  get disabled(): boolean {
     return this._disabled;
   }
   set disabled(val: boolean) {
@@ -66,19 +64,19 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   };
 
   private _disabled = false;
-  private container: any;
-  private tooltipText: any;
-  private showTimeout: any;
-  private hideTimeout: any;
+  private container!: HTMLElement;
+  private tooltipText!: HTMLElement;
+  private showTimeout!: ReturnType<typeof setTimeout> | null;
+  private hideTimeout!: ReturnType<typeof setTimeout> | null;
   private active!: boolean;
-  private mouseEnterListener!: Function;
-  private mouseLeaveListener!: Function;
-  private containerMouseleaveListener!: Function | null;
-  private clickListener!: Function;
-  private focusListener!: Function;
-  private blurListener!: Function;
-  private scrollHandler: any;
-  private resizeListener: any;
+  private mouseEnterListener!: typeof this.onMouseEnter;
+  private mouseLeaveListener!: typeof this.onMouseLeave;
+  private containerMouseleaveListener?: () => void;
+  private clickListener!: () => void;
+  private focusListener!: () => void;
+  private blurListener!: () => void;
+  private scrollHandler: ConnectedOverlayScrollHandler | null = null;
+  private resizeListener?: () => void;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any,
@@ -109,8 +107,10 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
           this.blurListener = this.onBlur.bind(this);
 
           const target = this.getTarget(this.el.nativeElement);
-          target.addEventListener('focus', this.focusListener);
-          target.addEventListener('blur', this.blurListener);
+          if (target) {
+            target.addEventListener('focus', this.focusListener);
+            target.addEventListener('blur', this.blurListener);
+          }
         }
       });
     }
@@ -237,10 +237,10 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   onMouseLeave(e: any) {
     if (!this.isAutoHide()) {
       const valid =
-        DomHandler.hasClass(e.toElement, 'p-tooltip') ||
-        DomHandler.hasClass(e.toElement, 'p-tooltip-arrow') ||
-        DomHandler.hasClass(e.toElement, 'p-tooltip-text') ||
-        DomHandler.hasClass(e.relatedTarget, 'p-tooltip');
+        DomHandler.hasClass(e.toElement, 't-tooltip') ||
+        DomHandler.hasClass(e.toElement, 't-tooltip-arrow') ||
+        DomHandler.hasClass(e.toElement, 't-tooltip-text') ||
+        DomHandler.hasClass(e.relatedTarget, 't-tooltip');
       !valid && this.deactivate();
     } else {
       this.deactivate();
@@ -291,7 +291,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     this.clearShowTimeout();
 
     if (this.getOption('hideDelay')) {
-      this.clearHideTimeout(); //life timeout
+      this.clearHideTimeout(); // life timeout
       this.hideTimeout = setTimeout(() => {
         this.hide();
       }, this.getOption('hideDelay'));
@@ -309,11 +309,11 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     this.container = document.createElement('div');
 
     const tooltipArrow = document.createElement('div');
-    tooltipArrow.className = 'p-tooltip-arrow';
+    tooltipArrow.className = 't-tooltip-arrow';
     this.container.appendChild(tooltipArrow);
 
     this.tooltipText = document.createElement('div');
-    this.tooltipText.className = 'p-tooltip-text';
+    this.tooltipText.className = 't-tooltip-text';
 
     this.updateText();
 
@@ -342,7 +342,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
 
   bindContainerMouseleaveListener() {
     if (!this.containerMouseleaveListener) {
-      const targetEl: any = this.container ?? this.container.nativeElement;
+      const targetEl = this.container;
 
       this.containerMouseleaveListener = this.renderer.listen(
         targetEl,
@@ -357,7 +357,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   unbindContainerMouseleaveListener() {
     if (this.containerMouseleaveListener) {
       this.bindContainerMouseleaveListener();
-      this.containerMouseleaveListener = null;
+      this.containerMouseleaveListener = undefined;
     }
   }
 
@@ -371,7 +371,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     DomHandler.fadeIn(this.container, 250);
 
     if (this.getOption('tooltipZIndex') === 'auto')
-      ZIndexUtils.set('tooltip', this.container, this.config.zIndex.tooltip);
+      ZIndexUtils.set('tooltip', this.container, zIndex.tooltip);
     else this.container.style.zIndex = this.getOption('tooltipZIndex');
 
     this.bindDocumentResizeListener();
@@ -538,8 +538,8 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     return this._tooltipOptions[option];
   }
 
-  getTarget(el: Element) {
-    return DomHandler.hasClass(el, 'p-inputwrapper')
+  getTarget(el: HTMLElement) {
+    return DomHandler.hasClass(el, 't-inputwrapper')
       ? DomHandler.findSingle(el, 'input')
       : el;
   }
@@ -548,7 +548,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     this.container.style.left = -999 + 'px';
     this.container.style.top = -999 + 'px';
 
-    const defaultClassName = 'p-tooltip p-component p-tooltip-' + position;
+    const defaultClassName = 't-tooltip t-component t-tooltip-' + position;
     this.container.className = this.getOption('tooltipStyleClass')
       ? defaultClassName + ' ' + this.getOption('tooltipStyleClass')
       : defaultClassName;
@@ -584,7 +584,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   unbindDocumentResizeListener() {
     if (this.resizeListener) {
       window.removeEventListener('resize', this.resizeListener);
-      this.resizeListener = null;
+      this.resizeListener = undefined;
     }
   }
 
@@ -622,9 +622,10 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
       this.el.nativeElement.removeEventListener('click', this.clickListener);
     } else if (this.getOption('tooltipEvent') === 'focus') {
       const target = this.getTarget(this.el.nativeElement);
-
-      target.removeEventListener('focus', this.focusListener);
-      target.removeEventListener('blur', this.blurListener);
+      if (target) {
+        target.removeEventListener('focus', this.focusListener);
+        target.removeEventListener('blur', this.blurListener);
+      }
     }
 
     this.unbindDocumentResizeListener();
@@ -643,7 +644,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     this.unbindScrollListener();
     this.unbindContainerMouseleaveListener();
     this.clearTimeouts();
-    this.container = null;
+    this.container = null as unknown as HTMLElement;
     this.scrollHandler = null;
   }
 

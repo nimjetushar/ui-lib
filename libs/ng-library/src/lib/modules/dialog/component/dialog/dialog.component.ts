@@ -12,8 +12,8 @@ import {
 } from '@angular/core';
 import { isUndefined } from 'tutility';
 
+import { Nullable } from '../../../../utility/ts-helper';
 import { Dialog } from '../../class/dialog';
-import { Nullable } from '../../../../core/ts-helper';
 import { DynamicDialogComponentType } from '../../type';
 import { DialogContentDirective } from './dialog-content';
 
