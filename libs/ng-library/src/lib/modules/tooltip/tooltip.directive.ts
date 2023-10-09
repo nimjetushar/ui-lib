@@ -66,8 +66,8 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   private _disabled = false;
   private container!: HTMLElement;
   private tooltipText!: HTMLElement;
-  private showTimeout!: number | null;
-  private hideTimeout!: number | null;
+  private showTimeout!: ReturnType<typeof setTimeout> | null;
+  private hideTimeout!: ReturnType<typeof setTimeout> | null;
   private active!: boolean;
   private mouseEnterListener!: typeof this.onMouseEnter;
   private mouseLeaveListener!: typeof this.onMouseLeave;
