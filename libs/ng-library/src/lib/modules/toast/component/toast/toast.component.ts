@@ -7,10 +7,10 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 
-import { ToastConfig, ToastPosition } from '../../types';
-import { getUiqueIdentifier } from '../../../../core/utilities';
-import { ToastItemConfig } from '../toast-item/toast-item.component';
+import { getUiqueIdentifier } from '../../../../utility/utilities';
 import { defaultToastPosition } from '../../toast';
+import { ToastConfig, ToastPosition } from '../../types';
+import { ToastItemConfig } from '../toast-item/toast-item.component';
 
 @Component({
   selector: 't-toast',

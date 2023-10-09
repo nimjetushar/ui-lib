@@ -11,7 +11,7 @@ import { ControlValueAccessor } from '@angular/forms';
 import { noop } from 'tutility';
 
 import { createCustomInputControlValueAccessor } from '../../core/custom-input-control';
-import { Tooltip } from '../tooltip';
+import { Tooltip } from '../../core/tooltip.class';
 import { DropdownOptions } from './types';
 
 type DropdownOptionsUI<T = any> = DropdownOptions<T> & { isSelected?: boolean };
