@@ -4,14 +4,17 @@ import {
   EventEmitter,
   HostBinding,
   Input,
+  OnDestroy,
+  OnInit,
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import { ControlValueAccessor, FormControl } from '@angular/forms';
+import { Subject, debounceTime, takeUntil } from 'rxjs';
 import { noop } from 'tutility';
 
+import { Tooltip } from '../../core/classes/tooltip.class';
 import { createCustomInputControlValueAccessor } from '../../core/custom-input-control';
-import { Tooltip } from '../../core/tooltip.class';
 import { DropdownOptions } from './types';
 
 type DropdownOptionsUI<T = any> = DropdownOptions<T> & { isSelected?: boolean };
@@ -25,20 +28,24 @@ type DropdownOptionsUI<T = any> = DropdownOptions<T> & { isSelected?: boolean };
   encapsulation: ViewEncapsulation.None,
   host: { class: 't-dropdown' },
 })
-export class DropdownComponent<T = any> extends Tooltip implements ControlValueAccessor {
+export class DropdownComponent<T = any> extends Tooltip implements ControlValueAccessor, OnInit, OnDestroy {
   @Input()
   set options(options: DropdownOptions<T>[] | null | undefined) {
     if (options?.length) {
       this.dropdownOptions = [...options];
+      this.originalOptions = [...options];
     }
   }
 
   @Input() placeholder!: string;
-  @Input() panelHeight?: string;
 
   @HostBinding('class.disabled')
   @Input()
   disabled = false;
+
+  @Input() panelHeight?: string;
+  @Input() showFilter = false;
+  @Input() showClear = false;
 
   @Output() onFocus = new EventEmitter<Event>();
   @Output() onBlur = new EventEmitter<Event>();
@@ -47,9 +54,26 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
   selectedOptions: DropdownOptions<T> | null | undefined;
   isPanelOpen = false;
   isFocused = false;
-
   onChange: any = noop;
   onTouched: unknown = noop;
+  readonly filterCriteria = new FormControl('');
+
+  private readonly destroysubscription$ = new Subject();
+  private originalOptions: DropdownOptions[] = [];
+
+  ngOnInit(): void {
+    this.filterCriteria.valueChanges.pipe(debounceTime(200), takeUntil(this.destroysubscription$)).subscribe(value => {
+      const compare = value?.toLowerCase() ?? '';
+      this.dropdownOptions = compare
+        ? this.originalOptions.filter(o => o.label.toLowerCase().includes(compare)) ?? []
+        : this.originalOptions;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.destroysubscription$.next(null);
+    this.destroysubscription$.complete();
+  }
 
   writeValue(value: T): void {
     const option = this.dropdownOptions.find(o => o.value === value);
@@ -73,6 +97,15 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
     this.isPanelOpen = !this.isPanelOpen;
   }
 
+  /**
+   * updated ngmodel when option is selected
+   * hilight selected option
+   * close panel
+   *
+   * @param {DropdownOptionsUI<T>} option
+   * @return {*}  {void}
+   * @memberof DropdownComponent
+   */
   optionSelectHandler(option: DropdownOptionsUI<T>): void {
     if (this.disabled) return;
 

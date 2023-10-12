@@ -1,4 +1,7 @@
 @import '../../styles/variable.scss';
+@import './dropdown.scss';
+
+$max-height-of-panel: 20em;
 
 .t-dropdown {
   display: block;
@@ -17,10 +20,28 @@
         border-color: $color-primaryhover;
       }
 
-      .dropdown-trigger-icon {
+      .trigger-icon-wrapper {
         display: flex;
         align-items: center;
         margin-left: auto;
+      }
+
+      .dropdown-trigger-icon {
+      }
+
+      .clear-selection-icon {
+      }
+    }
+
+    .dropdown-filter-input {
+      position: relative;
+      padding: 0.5em;
+
+      .clear-icon {
+        position: absolute;
+        right: 14px;
+        top: 15px;
+        z-index: 11;
       }
     }
 
@@ -29,20 +50,18 @@
       left: 0;
       right: 0;
       z-index: 11;
-      max-height: 20em;
+      max-height: $max-height-of-panel;
       overflow-x: auto;
       background-color: $color-background;
-      border: 1px solid $color-primary;
       border-top: none;
-      animation: fadeInFromNone 0.5s ease-out;
+      animation: fadeInFromNone 0.3s ease-out;
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
 
       .dropdown-options-item {
-        padding: 0.2em 0.5em;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #bfbaba;
-        }
+        @extend .dropdown-option-item;
       }
 
       .dropdown-options-item.selected {
@@ -72,14 +91,14 @@
 
 @keyframes fadeInFromNone {
   0% {
-    opacity: 0;
+    max-height: 0;
   }
 
   1% {
-    opacity: 0;
+    max-height: 0;
   }
 
   100% {
-    opacity: 1;
+    max-height: $max-height-of-panel;
   }
 }

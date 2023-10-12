@@ -4,9 +4,16 @@
     <ng-template #placeholderTpl>
       <span>{{ placeholder || 'Select option' }}</span>
     </ng-template>
-    <i class="fa-solid fa-chevron-down dropdown-trigger-icon"></i>
+    <div class="trigger-icon-wrapper">
+      <i class="fa-solid fa-xmark clear-selection-icon" *ngIf="showClear"></i>
+      <i class="fa-solid fa-chevron-down dropdown-trigger-icon"></i>
+    </div>
   </div>
   <div class="dropdown-options" *ngIf="isPanelOpen" [style.maxHeight]="panelHeight">
+    <div class="dropdown-filter-input" *ngIf="showFilter">
+      <input style="width: 100%" type="text" placeholder="Search option..." [formControl]="filterCriteria" />
+      <i class="fa-solid fa-xmark clear-icon" (click)="filterCriteria.setValue(null)"></i>
+    </div>
     <ng-container *ngFor="let option of dropdownOptions; trackBy: optionsTrackBy">
       <div
         class="dropdown-options-item"
