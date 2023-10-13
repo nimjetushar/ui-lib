@@ -6,11 +6,14 @@
     [options]="pageOptions"
   >
     <div output>
-      <t-dropdown [options]="options" [(ngModel)]="value" />
+      <t-dropdown [options]="options" [(ngModel)]="value" (onChange)="onChangeHandler($event)" />
       <div *ngIf="value" class="output">
         <span>Output: </span>
         <span>
           {{ value }}
+        </span>
+        <span>
+          {{ changedContent }}
         </span>
       </div>
       <div class="row">
@@ -20,7 +23,7 @@
         </div>
         <div class="col-md-6 col-sx-12 section">
           <div class="title">Dropdown with filter</div>
-          <t-dropdown placeholder="Select option" [options]="options" [showFilter]="true"> </t-dropdown>
+          <t-dropdown placeholder="Select option" [options]="options" [showFilter]="true" />
         </div>
         <div class="col-md-6 col-sx-12 section">
           <div class="title">Tooltip Dropdown</div>

@@ -5,7 +5,7 @@
       <span>{{ placeholder || 'Select option' }}</span>
     </ng-template>
     <div class="trigger-icon-wrapper">
-      <i class="fa-solid fa-xmark clear-selection-icon" *ngIf="showClear"></i>
+      <i class="fa-solid fa-xmark clear-selection-icon" *ngIf="!disableClear" (click)="clearSelection($event)"></i>
       <i class="fa-solid fa-chevron-down dropdown-trigger-icon"></i>
     </div>
   </div>
@@ -14,14 +14,22 @@
       <input style="width: 100%" type="text" placeholder="Search option..." [formControl]="filterCriteria" />
       <i class="fa-solid fa-xmark clear-icon" (click)="filterCriteria.setValue(null)"></i>
     </div>
-    <ng-container *ngFor="let option of dropdownOptions; trackBy: optionsTrackBy">
-      <div
-        class="dropdown-options-item"
-        [ngClass]="{ selected: option.isSelected }"
-        (click)="optionSelectHandler(option)"
-      >
-        {{ option.label }}
-      </div>
+    <ng-container *ngIf="dropdownOptions.length; else emptyMessageTpl">
+      <ng-container *ngFor="let option of dropdownOptions; trackBy: optionsTrackBy">
+        <div
+          class="dropdown-options-item"
+          [ngClass]="{ selected: option.isSelected }"
+          (click)="optionSelectHandler(option)"
+        >
+          {{ option.label }}
+        </div>
+      </ng-container>
     </ng-container>
+
+    <ng-template #emptyMessageTpl>
+      <span>
+        {{ emptyMessage || 'No options for filter criteria' }}
+      </span>
+    </ng-template>
   </div>
 </div>

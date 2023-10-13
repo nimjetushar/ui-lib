@@ -106,6 +106,7 @@ export class DropdownDemoComponent {
   tooltipDDValue?: string;
   tooltip?: string;
   tooltipPosition: TooltipPosition = 'left';
+  changedContent = '';
 
   data? = { t: '' };
 
@@ -115,6 +116,10 @@ export class DropdownDemoComponent {
 
   modelChangeHandler(value: string): void {
     this.tooltip = value ? `Selected value is ${value}` : 'Please select value';
+  }
+
+  onChangeHandler(event: string | null): void {
+    this.changedContent = 'on change event' + event;
   }
 
   focusHandler(event: Event): void {

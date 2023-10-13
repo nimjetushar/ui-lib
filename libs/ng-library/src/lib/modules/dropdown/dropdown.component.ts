@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   EventEmitter,
   HostBinding,
@@ -8,6 +9,7 @@ import {
   OnInit,
   Output,
   ViewEncapsulation,
+  inject,
 } from '@angular/core';
 import { ControlValueAccessor, FormControl } from '@angular/forms';
 import { Subject, debounceTime, takeUntil } from 'rxjs';
@@ -33,7 +35,7 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
   set options(options: DropdownOptions<T>[] | null | undefined) {
     if (options?.length) {
       this.dropdownOptions = [...options];
-      this.originalOptions = [...options];
+      this._options = [...options];
     }
   }
 
@@ -45,34 +47,38 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
 
   @Input() panelHeight?: string;
   @Input() showFilter = false;
-  @Input() showClear = false;
+  @Input() disableClear = false;
+  @Input() emptyMessage?: string;
 
   @Output() onFocus = new EventEmitter<Event>();
   @Output() onBlur = new EventEmitter<Event>();
+  @Output() onChange = new EventEmitter<T | null>();
 
   dropdownOptions: DropdownOptionsUI<T>[] = [];
   selectedOptions: DropdownOptions<T> | null | undefined;
   isPanelOpen = false;
   isFocused = false;
-  onChange: any = noop;
   onTouched: unknown = noop;
   readonly filterCriteria = new FormControl('');
 
-  private readonly destroysubscription$ = new Subject();
-  private originalOptions: DropdownOptions[] = [];
+  private _onChange: (value: T | null) => void = noop;
+  private readonly _destroysubscription$ = new Subject();
+  private _options: DropdownOptions[] = [];
+  private _cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
-    this.filterCriteria.valueChanges.pipe(debounceTime(200), takeUntil(this.destroysubscription$)).subscribe(value => {
+    this.filterCriteria.valueChanges.pipe(debounceTime(200), takeUntil(this._destroysubscription$)).subscribe(value => {
       const compare = value?.toLowerCase() ?? '';
       this.dropdownOptions = compare
-        ? this.originalOptions.filter(o => o.label.toLowerCase().includes(compare)) ?? []
-        : this.originalOptions;
+        ? this._options.filter(o => o.label.toLowerCase().includes(compare)) ?? []
+        : this._options;
+      this._cdr.detectChanges();
     });
   }
 
   ngOnDestroy(): void {
-    this.destroysubscription$.next(null);
-    this.destroysubscription$.complete();
+    this._destroysubscription$.next(null);
+    this._destroysubscription$.complete();
   }
 
   writeValue(value: T): void {
@@ -80,11 +86,11 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
     if (option) {
       this.optionSelectHandler(option);
     }
-    this.onChange(value);
+    this.updateModel(value);
   }
 
-  registerOnChange(fn: unknown): void {
-    this.onChange = fn;
+  registerOnChange(fn: any): void {
+    this._onChange = fn;
   }
 
   registerOnTouched(fn: unknown): void {
@@ -115,7 +121,16 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
     });
     option.isSelected = true;
     this.isPanelOpen = false;
-    this.onChange(option.value);
+    this.updateModel(option.value);
+  }
+
+  clearSelection(event: Event): void {
+    event.stopPropagation();
+    this.selectedOptions = null;
+    this.dropdownOptions.forEach(o => {
+      delete o.isSelected;
+    });
+    this.updateModel(null);
   }
 
   focusHandler(event: Event): void {
@@ -136,5 +151,10 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
 
   optionsTrackBy(index: number): number {
     return index;
+  }
+
+  private updateModel(value: T | null): void {
+    this.onChange.emit(value);
+    this._onChange(value);
   }
 }
