@@ -1,8 +1,10 @@
 <div class="ui-library-documentation-demo-wrapper row">
   <div class="col-12">
-    <div class="component-header">{{ header }}</div>
+    <h1 class="component-header">{{ header }}</h1>
+    <p class="component-sub-header" *ngIf="subHeader">{{ subHeader }}</p>
+
     <div class="component-content">
-      <div class="code-sample" *ngIf="code && code.length">
+      <div class="code-sample" *ngIf="code?.length">
         <div class="copy" (click)="copyToClipboard()">
           <i class="pi pi-copy" aria-hidden="true"></i>
         </div>
@@ -17,9 +19,7 @@
         <ng-content select="[doc]"></ng-content>
       </div>
       <div class="code-options" *ngIf="enableOptions">
-        <div class="header">
-          {{ componentType }} <b>{{ name }}</b>
-        </div>
+        <div class="header">{{ componentType }} properties</div>
         <!-- doc table -->
         <div class="table">
           <table *ngIf="docOptions">
@@ -30,11 +30,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let row of docOptions">
-                <td
-                  *ngFor="let col of docColumns"
-                  [style.width]="col?.width"
-                  [class]="col.class"
-                >
+                <td *ngFor="let col of docColumns" [style.width]="col?.width" [class]="col.class">
                   {{ row[col.value] || '-' }}
                 </td>
               </tr>
@@ -48,14 +44,7 @@
             <tbody>
               <tr *ngFor="let row of methodOptions">
                 <td *ngFor="let col of methodColumns" [class]="col.class">
-                  <span *ngIf="col.value !== 'parameter'; else parameterTpl">{{
-                    row[col.value]
-                  }}</span>
-                  <ng-template #parameterTpl>
-                    <div *ngFor="let param of row.parameter; let last = last">
-                      {{ param }}<span *ngIf="!last">,</span>
-                    </div>
-                  </ng-template>
+                  <span>{{ row[col.value] }}</span>
                 </td>
               </tr>
             </tbody>

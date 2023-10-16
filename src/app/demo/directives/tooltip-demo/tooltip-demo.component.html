@@ -1,16 +1,8 @@
 <div class="tooltip-component">
-  <ui-library-documentation-demo-wrapper
-    header="Tooltip"
-    [code]="compSyntax"
-    [options]="options"
-  >
+  <ui-library-documentation-demo-wrapper header="Tooltip" [code]="compSyntax" [options]="options">
     <div output>
       <div class="inline-block" style="margin: 0 40px 10px 0">
-        <t-dropdown
-          placeholder="Select Tooltip position"
-          [options]="tooltipOption"
-          [(ngModel)]="tooltipPosition"
-        >
+        <t-dropdown placeholder="Select Tooltip position" [options]="tooltipOption" [(ngModel)]="tooltipPosition">
         </t-dropdown>
       </div>
       <div

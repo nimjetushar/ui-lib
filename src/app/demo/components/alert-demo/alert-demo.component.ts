@@ -78,7 +78,7 @@ export class AlertDemoComponent implements OnInit {
       methods: [
         {
           method: 'onCloseClick',
-          parameter: ['boolean'],
+          parameter: 'boolean',
           description: `Event triggered on click of close button, close button is just place holder actual logic need's to be implemented using this`,
         },
       ],

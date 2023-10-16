@@ -1,0 +1,41 @@
+<div class="dropdown-wrapper" [ngClass]="{ focused: isFocused }" (tBlur)="blurHandler($event)">
+  <div
+    class="dropdown-trigger"
+    (click)="togglePanel(); focusHandler($event)"
+    [tTooltip]="tooltip"
+    [tooltipPosition]="tooltipPosition"
+  >
+    <span *ngIf="selectedOptions; else placeholderTpl">{{ selectedOptions.label }}</span>
+    <ng-template #placeholderTpl>
+      <span>{{ placeholder || 'Select option' }}</span>
+    </ng-template>
+    <div class="trigger-icon-wrapper">
+      <i class="fa-solid fa-xmark clear-selection-icon" *ngIf="!disableClear" (click)="clearSelection($event)"></i>
+      <i class="fa-solid fa-chevron-down dropdown-trigger-icon"></i>
+    </div>
+    <input class="hide" [attr.name]="name" type="text" [attr.id]="inputId" #inputField />
+  </div>
+  <div class="dropdown-options" *ngIf="isPanelOpen" [style.maxHeight]="scrollHeight">
+    <div class="dropdown-filter-input" *ngIf="showFilter">
+      <input style="width: 100%" type="text" placeholder="Search option..." [formControl]="filterCriteria" />
+      <i class="fa-solid fa-xmark clear-icon" (click)="filterCriteria.setValue(null)"></i>
+    </div>
+    <ng-container *ngIf="dropdownOptions.length; else emptyMessageTpl">
+      <ng-container *ngFor="let option of dropdownOptions; trackBy: optionsTrackBy">
+        <div
+          class="dropdown-options-item"
+          [ngClass]="{ selected: option.isSelected }"
+          (click)="optionSelectHandler(option)"
+        >
+          {{ option.label }}
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <ng-template #emptyMessageTpl>
+      <span>
+        {{ emptyMessage || 'No options for filter criteria' }}
+      </span>
+    </ng-template>
+  </div>
+</div>

@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { AlertModule } from './modules/alert';
 import { BadgeModule } from './modules/badge';
-import { CheckboxModule } from './modules/checkbox';
+import { BlurDirective } from './modules/blur';
 import { ButtonModule } from './modules/button';
-import { MenuModule } from './modules/menu';
+import { CheckboxModule } from './modules/checkbox';
+import { DialogModule } from './modules/dialog';
 import { DropdownModule } from './modules/dropdown';
 import { DynamicFieldsModule } from './modules/dynamic-fields';
+import { MenuModule } from './modules/menu';
 import { NavigationModule } from './modules/navigate-top';
-import { ToastModule } from './modules/toast';
 import { RadioModule } from './modules/radio';
+import { ToastModule } from './modules/toast';
 import { TooltipModule } from './modules/tooltip';
-import { DialogModule } from './modules/dialog';
 
 @NgModule({
   declarations: [],
@@ -20,6 +21,7 @@ import { DialogModule } from './modules/dialog';
     CommonModule,
     AlertModule,
     BadgeModule,
+    BlurDirective,
     ButtonModule,
     CheckboxModule,
     DropdownModule,
@@ -35,6 +37,7 @@ import { DialogModule } from './modules/dialog';
   exports: [
     AlertModule,
     BadgeModule,
+    BlurDirective,
     ButtonModule,
     CheckboxModule,
     DropdownModule,

@@ -45,8 +45,7 @@ export class DynamicFieldsDemoComponent {
       {
         parameter: 'dropdownOptions',
         type: 'DynamicFieldDropdownOptions',
-        description:
-          'Dropdown options used to initalize dropdown if present in fields',
+        description: 'Dropdown options used to initalize dropdown if present in fields',
       },
       {
         parameter: 'disabledFields',
@@ -67,12 +66,12 @@ export class DynamicFieldsDemoComponent {
     methods: [
       {
         method: 'primaryHandler',
-        parameter: ['DynamicFieldDataModel'],
+        parameter: 'DynamicFieldDataModel',
         description: 'Emits fields data to parent component',
       },
       {
         method: 'secondaryHandler',
-        parameter: ['DynamicFieldDataModel'],
+        parameter: 'DynamicFieldDataModel',
         description: 'Emits fields data to parent component',
       },
     ],

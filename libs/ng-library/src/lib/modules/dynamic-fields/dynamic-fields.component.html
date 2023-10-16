@@ -1,9 +1,5 @@
 <div class="dynamic-fields" *ngIf="fields?.length">
-  <div
-    *ngFor="let field of fields"
-    [ngSwitch]="field.type"
-    class="input-element"
-  >
+  <div *ngFor="let field of fields" [ngSwitch]="field.type" class="input-element">
     <label class="dynamic-fields-label" [for]="field.model">
       {{ field.label }}
     </label>
@@ -31,21 +27,13 @@
 
     <!-- input type checkbox -->
     <div *ngSwitchCase="'checkbox'" class="input-checkbox">
-      <t-checkbox
-        [(model)]="data[field.model]"
-        [name]="field.name"
-        [disabled]="disabledFields[field.model]"
-      >
+      <t-checkbox [(model)]="data[field.model]" [name]="field.name" [disabled]="disabledFields[field.model]">
       </t-checkbox>
     </div>
 
     <!-- input type radio -->
     <div *ngSwitchCase="'radio'" class="input-radio">
-      <t-radio
-        [(ngModel)]="data[field.model]"
-        [name]="field.name"
-        [disabled]="disabledFields[field.model]"
-      ></t-radio>
+      <t-radio [(ngModel)]="data[field.model]" [name]="field.name" [disabled]="disabledFields[field.model]"></t-radio>
     </div>
 
     <!-- dropdown -->
@@ -63,14 +51,8 @@
 
   <div class="button-container" *ngIf="!hideActionSection">
     <div class="default-button">
-      <t-button [label]="primaryLabel" type="primary" (click)="primaryClick()">
-      </t-button>
-      <t-button
-        *ngIf="!showSecondaryButton"
-        [label]="secondaryLabel"
-        type="secondary"
-        (click)="secondaryClick()"
-      >
+      <t-button [label]="primaryLabel" type="primary" (click)="primaryClick()"> </t-button>
+      <t-button *ngIf="!showSecondaryButton" [label]="secondaryLabel" type="secondary" (click)="secondaryClick()">
       </t-button>
     </div>
   </div>

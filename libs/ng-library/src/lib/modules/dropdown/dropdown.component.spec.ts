@@ -1,5 +1,5 @@
-import { FormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 
 import { DropdownComponent } from './dropdown.component';
@@ -11,7 +11,7 @@ describe('DropdownComponent', () => {
   beforeAll(() => {
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
-      value: jest.fn().mockImplementation((query) => ({
+      value: jest.fn().mockImplementation(query => ({
         matches: false,
         media: query,
         onchange: null,
@@ -42,22 +42,19 @@ describe('DropdownComponent', () => {
   });
 
   it('should update value', () => {
-    jest.spyOn(component, 'onChange');
+    jest.spyOn(component.onChange, 'emit');
     const val = { label: 'test', value: 'test' };
     component.writeValue(val);
-    expect(component.value).toEqual(val);
-    expect(component.onChange).toHaveBeenCalledWith(val);
+    expect(component.onChange.emit).toHaveBeenCalledWith(val);
   });
 
-  it('should emit blur event', () => {
-    jest.spyOn(component.onBlur, 'emit');
-    component.blurHandler(null as unknown as Event);
-    expect(component.onBlur.emit).toHaveBeenCalled();
-  });
-
-  it('should emit focus event', () => {
+  it('should emit focus and blur event', () => {
     jest.spyOn(component.onFocus, 'emit');
+    jest.spyOn(component.onBlur, 'emit');
     component.focusHandler(null as unknown as Event);
     expect(component.onFocus.emit).toHaveBeenCalled();
+
+    component.blurHandler(null as unknown as Event);
+    expect(component.onBlur.emit).toHaveBeenCalled();
   });
 });

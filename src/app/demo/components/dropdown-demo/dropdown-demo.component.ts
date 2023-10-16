@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { DropdownOptions } from '@fourjs/ng-library';
+import { DropdownOptions, TooltipPosition } from '@fourjs/ng-library';
 
-import { IOptions } from '../../../common';
+import { Options } from '../../../common';
 
 @Component({
   selector: 'ui-library-documentation-dropdown-demo',
@@ -11,10 +11,10 @@ import { IOptions } from '../../../common';
 })
 export class DropdownDemoComponent {
   readonly compSyntax: string[] = [
-    `<t-dropdown placeholder="Select option" [options]="options" [(ngModel)]="value" [filter]="true"></t-dropdown>`,
+    `<t-dropdown placeholder="Select option" [options]="options" [(ngModel)]="value" [filter]="true" />`,
   ];
 
-  readonly pageOptions: IOptions = {
+  readonly pageOptions: Options = {
     name: 't-dropdown',
     options: [
       {
@@ -36,20 +36,13 @@ export class DropdownDemoComponent {
         parameter: 'scrollHeight',
         type: 'string',
         default: '200px',
-        description:
-          'Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.',
+        description: 'Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.',
       },
       {
         parameter: 'disabled',
         type: 'boolean',
         default: 'false',
         description: 'Disabled dropdown',
-      },
-      {
-        parameter: 'readonly',
-        type: 'boolean',
-        default: 'false',
-        description: 'Component cannot be edited',
       },
       {
         parameter: 'autofocus',
@@ -66,19 +59,18 @@ export class DropdownDemoComponent {
         parameter: 'tooltipPosition',
         type: 'string',
         default: 'top',
-        description:
-          'Position of the tooltip, valid values are right, left, top and bottom.',
+        description: 'Position of the tooltip, valid values are right, left, top and bottom.',
       },
     ],
     methods: [
       {
         method: 'onFocus',
-        parameter: ['event: Browser event'],
+        parameter: 'event: Browser event',
         description: 'Callback to invoke when dropdown gets focus.',
       },
       {
         method: 'onBlur',
-        parameter: ['event: Browser event'],
+        parameter: 'event: Browser event',
         description: 'Callback to invoke when dropdown gets blur.',
       },
     ],
@@ -96,7 +88,7 @@ export class DropdownDemoComponent {
     { label: 'Mercedes', value: 'Mercedes' },
   ];
 
-  readonly tooltipOption: DropdownOptions<string>[] = [
+  readonly tooltipOption: DropdownOptions<TooltipPosition>[] = [
     { label: 'top', value: 'top' },
     { label: 'right', value: 'right' },
     { label: 'bottom', value: 'bottom' },
@@ -107,7 +99,8 @@ export class DropdownDemoComponent {
   value = 'Audi';
   tooltipDDValue?: string;
   tooltip?: string;
-  tooltipPosition = 'left';
+  tooltipPosition: TooltipPosition = 'left';
+  changedContent = '';
 
   data? = { t: '' };
 
@@ -117,6 +110,10 @@ export class DropdownDemoComponent {
 
   modelChangeHandler(value: string): void {
     this.tooltip = value ? `Selected value is ${value}` : 'Please select value';
+  }
+
+  onChangeHandler(event: string | null): void {
+    this.changedContent = `on change event ${event}`;
   }
 
   focusHandler(event: Event): void {

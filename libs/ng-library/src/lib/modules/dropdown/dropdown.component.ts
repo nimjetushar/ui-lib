@@ -1,93 +1,172 @@
 import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
+  ElementRef,
   EventEmitter,
   HostBinding,
   Input,
+  OnDestroy,
+  OnInit,
   Output,
+  ViewChild,
   ViewEncapsulation,
-  forwardRef,
+  inject,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, FormControl } from '@angular/forms';
+import { Subject, debounceTime, takeUntil } from 'rxjs';
 import { noop } from 'tutility';
 
-import { Tooltip } from '../../core/tooltip.class';
+import { Tooltip } from '../../core/classes/tooltip.class';
+import { createCustomInputControlValueAccessor } from '../../core/custom-input-control';
 import { DropdownOptions } from './types';
+
+type DropdownOptionsUI<T = any> = DropdownOptions<T> & { isSelected?: boolean };
 
 @Component({
   selector: 't-dropdown',
-  template: `<p-dropdown
-    [options]="options"
-    [ngModel]="value"
-    [placeholder]="placeholder"
-    [filter]="filter"
-    [readonly]="readonly"
-    [disabled]="disabled"
-    [name]="name"
-    [tooltip]="tooltip"
-    [tooltipPosition]="tooltipPosition"
-    [autoDisplayFirst]="autoDisplayFirst"
-    [scrollHeight]="scrollHeight"
-    [autofocus]="autofocus"
-    (onChange)="onChangeHandler($event)"
-    (onFocus)="focusHandler($event)"
-    (onBlur)="blurHandler($event)"
-  >
-  </p-dropdown>`,
+  templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DropdownComponent),
-      multi: true,
-    },
-  ],
+  providers: [createCustomInputControlValueAccessor(DropdownComponent)],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
+  host: { class: 't-dropdown' },
 })
-export class DropdownComponent extends Tooltip implements ControlValueAccessor {
-  @Input() options: DropdownOptions[] = [];
-  @Input() readonly = false;
-  @Input() disabled = false;
-  @Input() filter = false;
+export class DropdownComponent<T = any> extends Tooltip implements ControlValueAccessor, OnInit, OnDestroy {
+  @Input()
+  set options(options: DropdownOptions<T>[] | null | undefined) {
+    if (options?.length) {
+      this.dropdownOptions = [...options];
+      this._options = [...options];
+    }
+  }
+
   @Input() placeholder!: string;
-  @Input() staticLabel?: string;
-  @Input() name = 't-dropdown';
-  @Input() autoDisplayFirst = false;
-  @Input() scrollHeight = '200px';
-  @Input() autofocus = false;
+
+  @HostBinding('class.disabled')
+  @Input()
+  disabled = false;
+
+  @Input() scrollHeight?: string;
+  @Input() showFilter = false;
+  @Input() disableClear = false;
+  @Input() emptyMessage?: string;
+  @Input() inputId?: string;
+  @Input() name?: string;
 
   @Output() onFocus = new EventEmitter<Event>();
   @Output() onBlur = new EventEmitter<Event>();
+  @Output() onChange = new EventEmitter<T | null>();
 
-  @HostBinding('class') hostClass = 't-dropdown';
+  @ViewChild('inputField') inputField!: ElementRef;
 
-  value: unknown;
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onChange: any = noop;
+  dropdownOptions: DropdownOptionsUI<T>[] = [];
+  selectedOptions: DropdownOptions<T> | null | undefined;
+  isPanelOpen = false;
+  isFocused = false;
   onTouched: unknown = noop;
+  readonly filterCriteria = new FormControl('');
 
-  writeValue(value: DropdownOptions): void {
-    this.value = value;
-    this.onChange(value);
+  private _onChange: (value: T | null) => void = noop;
+  private readonly _destroysubscription$ = new Subject();
+  private _options: DropdownOptions[] = [];
+  private _cdr = inject(ChangeDetectorRef);
+
+  ngOnInit(): void {
+    this.filterCriteria.valueChanges.pipe(debounceTime(200), takeUntil(this._destroysubscription$)).subscribe(value => {
+      const compare = value?.toLowerCase() ?? '';
+      this.dropdownOptions = compare
+        ? this._options.filter(o => o.label.toLowerCase().includes(compare)) ?? []
+        : this._options;
+      this._cdr.detectChanges();
+    });
   }
 
-  registerOnChange(fn: unknown): void {
-    this.onChange = fn;
+  ngOnDestroy(): void {
+    this._destroysubscription$.next(null);
+    this._destroysubscription$.complete();
+  }
+
+  writeValue(value: T): void {
+    const option = this.dropdownOptions.find(o => o.value === value);
+    if (option) {
+      this.optionSelectHandler(option);
+    }
+    this.updateModel(value);
+  }
+
+  registerOnChange(fn: any): void {
+    this._onChange = fn;
   }
 
   registerOnTouched(fn: unknown): void {
     this.onTouched = fn;
   }
 
-  onChangeHandler(event: { value: DropdownOptions }): void {
-    this.writeValue(event.value);
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  togglePanel(): void {
+    if (this.disabled) return;
+
+    this.isPanelOpen = !this.isPanelOpen;
+  }
+
+  /**
+   * updated ngmodel when option is selected
+   * hilight selected option
+   * close panel
+   *
+   * @param {DropdownOptionsUI<T>} option
+   * @return {*}  {void}
+   * @memberof DropdownComponent
+   */
+  optionSelectHandler(option: DropdownOptionsUI<T>): void {
+    if (this.disabled) return;
+
+    this.selectedOptions = option;
+    this.dropdownOptions.forEach(o => {
+      delete o.isSelected;
+    });
+    option.isSelected = true;
+    this.isPanelOpen = false;
+    this.updateModel(option.value);
+  }
+
+  clearSelection(event: Event): void {
+    event.stopPropagation();
+    this.selectedOptions = null;
+    this.dropdownOptions.forEach(o => {
+      delete o.isSelected;
+    });
+    this.updateModel(null);
   }
 
   focusHandler(event: Event): void {
-    this.onFocus.emit(event);
+    if (this.disabled) return;
+    if (this.isFocused) return;
+
+    this.isFocused = true;
+    this.inputField.nativeElement.focus();
+    this.onFocus.emit({ ...event, type: 'focus' });
   }
 
   blurHandler(event: Event): void {
-    this.onBlur.emit(event);
+    if (!this.isFocused) return;
+
+    this.isFocused = false;
+    this.isPanelOpen = false;
+    this.inputField.nativeElement.blur();
+    this.onBlur.emit({ ...event, type: 'blur' });
+  }
+
+  optionsTrackBy(index: number): number {
+    return index;
+  }
+
+  private updateModel(value: T | null): void {
+    this.onChange.emit(value);
+    this._onChange(value);
   }
 }

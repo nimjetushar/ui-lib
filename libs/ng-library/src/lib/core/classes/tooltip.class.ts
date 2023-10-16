@@ -1,16 +1,14 @@
 import { Directive, Input } from '@angular/core';
 
-import { TooltipPosition } from '../modules/tooltip';
+import { TooltipPosition } from '../../modules/tooltip';
 
 @Directive()
 export class Tooltip {
   @Input() tooltip: any;
   @Input()
-  set tooltipPosition(value: TooltipPosition | string) {
+  set tooltipPosition(value: TooltipPosition) {
     if (value) {
-      this._tooltipPosition = ['right', 'left', 'top', 'bottom'].includes(value)
-        ? (value as TooltipPosition)
-        : 'top';
+      this._tooltipPosition = ['right', 'left', 'top', 'bottom'].includes(value) ? value : 'top';
     }
   }
   get tooltipPosition(): TooltipPosition {

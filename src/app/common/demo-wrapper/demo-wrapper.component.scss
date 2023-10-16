@@ -15,7 +15,12 @@ $header-color: #ee6e73;
   border-radius: 5px;
 }
 
-ui-library-documentation-demo-wrapper {
+.ui-library-documentation-demo-wrapper {
+  p {
+    line-height: 1.5;
+    margin: 0 0 1rem;
+  }
+
   .component-header {
     color: $header-color;
     font-weight: 300;

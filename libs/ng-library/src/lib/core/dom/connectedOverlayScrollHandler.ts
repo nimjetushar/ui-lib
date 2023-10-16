@@ -4,10 +4,8 @@ import { DomHandler } from './domHandler';
 
 export class ConnectedOverlayScrollHandler {
   element: HTMLElement | null;
-
   listener: any;
-
-  scrollableParents: any;
+  scrollableParents?: HTMLElement[] | null;
 
   constructor(element: HTMLElement, listener: any = noop) {
     this.element = element;
