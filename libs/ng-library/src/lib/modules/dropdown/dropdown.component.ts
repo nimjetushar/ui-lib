@@ -45,10 +45,12 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
   @Input()
   disabled = false;
 
-  @Input() panelHeight?: string;
+  @Input() scrollHeight?: string;
   @Input() showFilter = false;
   @Input() disableClear = false;
   @Input() emptyMessage?: string;
+  @Input() inputId?: string;
+  @Input() name?: string;
 
   @Output() onFocus = new EventEmitter<Event>();
   @Output() onBlur = new EventEmitter<Event>();

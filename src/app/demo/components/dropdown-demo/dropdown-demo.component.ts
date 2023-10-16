@@ -45,12 +45,6 @@ export class DropdownDemoComponent {
         description: 'Disabled dropdown',
       },
       {
-        parameter: 'readonly',
-        type: 'boolean',
-        default: 'false',
-        description: 'Component cannot be edited',
-      },
-      {
         parameter: 'autofocus',
         type: 'boolean',
         default: 'false',
@@ -119,7 +113,7 @@ export class DropdownDemoComponent {
   }
 
   onChangeHandler(event: string | null): void {
-    this.changedContent = 'on change event' + event;
+    this.changedContent = `on change event ${event}`;
   }
 
   focusHandler(event: Event): void {

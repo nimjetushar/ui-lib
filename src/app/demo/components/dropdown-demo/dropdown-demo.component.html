@@ -12,6 +12,7 @@
         <span>
           {{ value }}
         </span>
+        <br />
         <span>
           {{ changedContent }}
         </span>
@@ -28,11 +29,10 @@
         <div class="col-md-6 col-sx-12 section">
           <div class="title">Tooltip Dropdown</div>
           <div class="inline-block" style="margin: 0 10px 10px 0">
-            <!-- <t-dropdown placeholder="Select Tooltip position" [options]="tooltipOption" [(ngModel)]="tooltipPosition">
-            </t-dropdown> -->
+            <t-dropdown placeholder="Select Tooltip position" [options]="tooltipOption" [(ngModel)]="tooltipPosition" />
           </div>
           <div class="inline-block">
-            <!-- <t-dropdown
+            <t-dropdown
               placeholder="Select option"
               [options]="options"
               [(ngModel)]="tooltipDDValue"
@@ -40,7 +40,7 @@
               [tooltipPosition]="tooltipPosition"
               (ngModelChange)="modelChangeHandler($event)"
             >
-            </t-dropdown> -->
+            </t-dropdown>
           </div>
         </div>
         <div class="col-md-6 col-sx-12 section">

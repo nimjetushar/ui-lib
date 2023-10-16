@@ -24,7 +24,7 @@ import { TooltipOptions, TooltipPosition } from './types';
   selector: '[tTooltip]',
 })
 export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
-  @Input() tooltipPosition!: string | TooltipPosition;
+  @Input() tooltipPosition!: TooltipPosition;
   @Input() tooltipEvent!: string;
   @Input() appendTo: any;
   @Input() positionStyle!: string;

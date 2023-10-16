@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DropdownOptions } from '@fourjs/ng-library';
 
-import { IOptions } from '../../../common';
+import { Options } from '../../../common';
 
 @Component({
   selector: 'ui-library-documentation-tooltip-demo',
@@ -14,7 +14,7 @@ export class TooltipDemoComponent {
     `<div tTooltip="Content to be shown in the tooltip" [tooltipDisabled]="false"> Element on which tooltip is added </div>`,
   ];
 
-  readonly options: IOptions = {
+  readonly options: Options = {
     name: 'tooltip',
     componentType: 'Directive',
     options: [
@@ -43,5 +43,5 @@ export class TooltipDemoComponent {
     { label: 'bottom', value: 'bottom' },
     { label: 'left', value: 'left' },
   ];
-  tooltipPosition = 'top';
+  tooltipPosition = 'top' as const;
 }

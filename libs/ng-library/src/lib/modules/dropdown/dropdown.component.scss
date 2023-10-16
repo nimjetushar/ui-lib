@@ -5,6 +5,7 @@ $max-height-of-panel: 20em;
 
 .t-dropdown {
   display: block;
+  min-width: 10em;
 
   .dropdown-wrapper {
     position: relative;

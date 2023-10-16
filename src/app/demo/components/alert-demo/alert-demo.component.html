@@ -22,12 +22,7 @@
       <div class="spacing dynamic-alert">
         <div>Select Alert type from dropdown:-</div>
         <div style="margin-bottom: 14px">
-          <!-- <t-dropdown
-            placeholder="Select option"
-            [options]="dropdownOption"
-            [(ngModel)]="dropdownValue"
-          >
-          </t-dropdown> -->
+          <t-dropdown placeholder="Select option" [options]="dropdownOption" [(ngModel)]="dropdownValue"> </t-dropdown>
         </div>
         <div>
           <t-alert [type]="dropdownValue" title="Title {{ dropdownValue }}" message="message........"></t-alert>
