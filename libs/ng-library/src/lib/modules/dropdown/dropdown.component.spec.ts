@@ -42,21 +42,19 @@ describe('DropdownComponent', () => {
   });
 
   it('should update value', () => {
-    jest.spyOn(component, 'onChange');
+    jest.spyOn(component.onChange, 'emit');
     const val = { label: 'test', value: 'test' };
     component.writeValue(val);
-    expect(component.onChange).toHaveBeenCalledWith(val);
+    expect(component.onChange.emit).toHaveBeenCalledWith(val);
   });
 
-  it('should emit blur event', () => {
-    jest.spyOn(component.onBlur, 'emit');
-    component.blurHandler(null as unknown as Event);
-    expect(component.onBlur.emit).toHaveBeenCalled();
-  });
-
-  it('should emit focus event', () => {
+  it('should emit focus and blur event', () => {
     jest.spyOn(component.onFocus, 'emit');
+    jest.spyOn(component.onBlur, 'emit');
     component.focusHandler(null as unknown as Event);
     expect(component.onFocus.emit).toHaveBeenCalled();
+
+    component.blurHandler(null as unknown as Event);
+    expect(component.onBlur.emit).toHaveBeenCalled();
   });
 });
