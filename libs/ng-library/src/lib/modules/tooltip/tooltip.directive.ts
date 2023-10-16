@@ -15,7 +15,7 @@ import {
 } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 
-import { ConnectedOverlayScrollHandler } from '../../core/dom/connectedoverlayscrollhandler';
+import { ConnectedOverlayScrollHandler } from '../../core/dom/connectedOverlayScrollHandler';
 import { DomHandler } from '../../core/dom/domHandler';
 import { ZIndexUtils, zIndex } from '../../utility/zIndex.utility';
 import { TooltipOptions, TooltipPosition } from './types';
