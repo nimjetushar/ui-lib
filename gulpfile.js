@@ -38,18 +38,9 @@ function moveStyles() {
 function font() {
   return gulp
     .src([
-      // 'node_modules/font-awesome/fonts/**/*',
       'projects/ng-library/src/assets/fonts/**/*',
-      'node_modules/primeng/resources/themes/nova-dark/fonts/**/*',
-      'node_modules/primeicons/fonts/**/*',
     ])
     .pipe(gulp.dest(fontDest));
-}
-
-function images() {
-  return gulp
-    .src(['node_modules/primeng/resources/images/*'])
-    .pipe(gulp.dest(imgDest));
 }
 
 function moveReadme() {
@@ -103,7 +94,6 @@ exports.bump = gulp.series(bumpVersion);
 const defaultTask = gulp.parallel(
   styles,
   font,
-  images,
   moveStyles,
   moveReadme,
   moveLicense

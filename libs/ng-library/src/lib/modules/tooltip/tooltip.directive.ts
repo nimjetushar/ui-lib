@@ -13,7 +13,6 @@ import {
   Renderer2,
   SimpleChanges,
 } from '@angular/core';
-import { PrimeNGConfig } from 'primeng/api';
 
 import { ConnectedOverlayScrollHandler } from '../../core/dom/connectedOverlayScrollHandler';
 import { DomHandler } from '../../core/dom/domHandler';
@@ -82,7 +81,6 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     @Inject(PLATFORM_ID) private platformId: any,
     public el: ElementRef,
     public zone: NgZone,
-    public config: PrimeNGConfig,
     private renderer: Renderer2
   ) {}
 

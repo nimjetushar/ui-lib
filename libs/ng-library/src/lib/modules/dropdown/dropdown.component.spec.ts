@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { DropdownModule } from 'primeng/dropdown';
 
 import { DropdownComponent } from './dropdown.component';
 
@@ -27,7 +26,7 @@ describe('DropdownComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [DropdownComponent],
-      imports: [DropdownModule, FormsModule],
+      imports: [FormsModule],
     }).compileComponents();
   });
 
