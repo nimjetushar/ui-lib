@@ -13,7 +13,7 @@
       <i class="fa-solid fa-xmark clear-selection-icon" *ngIf="!disableClear" (click)="clearSelection($event)"></i>
       <i class="fa-solid fa-chevron-down dropdown-trigger-icon"></i>
     </div>
-    <input class="hide" [name]="name" type="text" [attr.id]="inputId" />
+    <input class="hide" [attr.name]="name" type="text" [attr.id]="inputId" #inputField />
   </div>
   <div class="dropdown-options" *ngIf="isPanelOpen" [style.maxHeight]="scrollHeight">
     <div class="dropdown-filter-input" *ngIf="showFilter">

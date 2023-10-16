@@ -2,12 +2,14 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  ElementRef,
   EventEmitter,
   HostBinding,
   Input,
   OnDestroy,
   OnInit,
   Output,
+  ViewChild,
   ViewEncapsulation,
   inject,
 } from '@angular/core';
@@ -56,6 +58,8 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
   @Output() onBlur = new EventEmitter<Event>();
   @Output() onChange = new EventEmitter<T | null>();
 
+  @ViewChild('inputField') inputField!: ElementRef;
+
   dropdownOptions: DropdownOptionsUI<T>[] = [];
   selectedOptions: DropdownOptions<T> | null | undefined;
   isPanelOpen = false;
@@ -99,6 +103,10 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
     this.onTouched = fn;
   }
 
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
   togglePanel(): void {
     if (this.disabled) return;
 
@@ -140,6 +148,7 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
     if (this.isFocused) return;
 
     this.isFocused = true;
+    this.inputField.nativeElement.focus();
     this.onFocus.emit({ ...event, type: 'focus' });
   }
 
@@ -148,6 +157,7 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
 
     this.isFocused = false;
     this.isPanelOpen = false;
+    this.inputField.nativeElement.blur();
     this.onBlur.emit({ ...event, type: 'blur' });
   }
 
