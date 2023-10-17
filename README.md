@@ -16,7 +16,7 @@ Install library
 
 `npm i @fourjs/ng-library --save`
 Note: Install peer dependencies.
-`npm install primeng@16.0.0 @angular/cdk@16.0.2 --save`
+`npm install @angular/cdk@16.2.9 @fortawesome/fontawesome-free@6.4.0 --save`
 
 Import NgLibrary into @NgModule
 <br>
