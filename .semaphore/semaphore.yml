@@ -12,7 +12,7 @@ blocks:
           commands:
             - checkout
             - sem-version node 18
-            - npm install
-            - npm run lint
-            - npm test
-            - npm run build
+            - yarn install
+            - yarn lint
+            - yarn test
+            - yarn build
