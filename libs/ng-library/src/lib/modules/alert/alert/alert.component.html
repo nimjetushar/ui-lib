@@ -4,11 +4,8 @@
   </div>
   <div class="t-alert-content">
     <div class="t-alert-content-title" *ngIf="title">{{ title }}</div>
-    <div
-      class="t-alert-content-message"
-      *ngIf="message"
-      [innerHtml]="message"
-    ></div>
+    <div class="t-alert-content-message" *ngIf="message">{{ message }}</div>
+    <ng-content></ng-content>
   </div>
   <div class="t-alert-close" *ngIf="enableClose">
     <i class="pi pi-times" aria-hidden="true" (click)="closeHandler()"></i>
