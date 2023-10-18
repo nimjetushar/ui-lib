@@ -4,7 +4,8 @@ import { Directive, Input, TemplateRef } from '@angular/core';
   selector: '[tTemplate]',
   standalone: true,
 })
-export class TemplateDirective {
+// eslint-disable-next-line @angular-eslint/directive-class-suffix
+export class UITemplate {
   @Input() type: string | undefined;
 
   @Input('tTemplate') name: string | undefined;
@@ -12,6 +13,6 @@ export class TemplateDirective {
   constructor(public template: TemplateRef<any>) {}
 
   getType(): string {
-    return this.name!;
+    return this.name as string;
   }
 }

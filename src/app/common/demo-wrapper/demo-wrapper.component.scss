@@ -91,37 +91,6 @@ $header-color: #ee6e73;
     word-break: break-word;
   }
 
-  .code-options {
-    @extend .code-wrapper;
-
-    .header {
-      font-size: rem(22);
-      margin-bottom: rem(10);
-    }
-
-    .table {
-      overflow-x: auto;
-
-      thead {
-        border-bottom: 2px solid #98999a;
-      }
-
-      table .desc td {
-        word-break: break-word;
-      }
-
-      tr:last-child {
-        border-color: #98999a;
-      }
-    }
-
-    .method-option {
-      ul {
-        margin: 0;
-      }
-    }
-  }
-
   .component-content > div {
     width: 100%;
   }

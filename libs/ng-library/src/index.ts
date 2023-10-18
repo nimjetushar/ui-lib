@@ -11,5 +11,6 @@ export * from './lib/modules/dynamic-fields';
 export * from './lib/modules/menu';
 export * from './lib/modules/navigate-top';
 export * from './lib/modules/radio';
+export * from './lib/modules/shared';
 export * from './lib/modules/toast';
 export * from './lib/modules/tooltip';

@@ -1,0 +1,31 @@
+<div class="header">{{ componentType }} properties</div>
+<!-- doc table -->
+<div class="table">
+  <table *ngIf="docOptions?.length">
+    <thead>
+      <th *ngFor="let col of docColumns" [style.width]="col?.width">
+        {{ col.label }}
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of docOptions">
+        <td *ngFor="let col of docColumns" [style.width]="col?.width" [class]="col.class">
+          {{ row[col.value] || '-' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- method table -->
+  <table *ngIf="methodOptions?.length" class="method-option">
+    <thead>
+      <th *ngFor="let col of methodColumns">{{ col.label }}</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of methodOptions">
+        <td *ngFor="let col of methodColumns" [class]="col.class">
+          <span>{{ row[col.value] || '-' }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

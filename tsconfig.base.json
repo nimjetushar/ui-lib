@@ -16,9 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@fourjs/ng-library": ["libs/ng-library/src/index.ts"],
-      "@ui-library-documentation/shared/unit-test": [
-        "libs/shared/unit-test/src/index.ts"
-      ]
+      "@ui-library-documentation/shared/unit-test": ["libs/shared/unit-test/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

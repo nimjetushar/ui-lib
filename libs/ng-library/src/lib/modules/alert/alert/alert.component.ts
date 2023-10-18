@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 
 import { AlertTypes } from '../types';
 
@@ -9,9 +17,11 @@ const defaultAlertType = 'info';
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 't-alert' },
+  host: { class: 't-alert t-alert-wrapper' },
+  encapsulation: ViewEncapsulation.None,
 })
 export class AlertComponent {
+  @HostBinding('class')
   @Input({ required: true })
   set type(val: AlertTypes) {
     this._alertType = val || defaultAlertType;
@@ -40,16 +50,16 @@ export class AlertComponent {
     if (alertType) {
       switch (alertType) {
         case 'success':
-          this.iconClass = 'pi-check';
+          this.iconClass = 'fa-solid fa-circle-check fa-xl';
           break;
         case 'error':
-          this.iconClass = 'pi-times';
+          this.iconClass = 'fa-solid fa-circle-xmark fa-xl';
           break;
         case 'warn':
-          this.iconClass = 'pi-exclamation-triangle';
+          this.iconClass = 'fa-solid fa-triangle-exclamation fa-xl';
           break;
         case 'info':
-          this.iconClass = 'pi-info-circle';
+          this.iconClass = 'fa-solid fa-circle-info fa-xl';
           break;
         default:
           console.warn('invalid Alert type');
