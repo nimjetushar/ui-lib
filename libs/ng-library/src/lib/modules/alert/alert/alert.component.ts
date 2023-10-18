@@ -1,28 +1,34 @@
 import {
+  ChangeDetectionStrategy,
   Component,
+  EventEmitter,
+  HostBinding,
   Input,
   Output,
-  EventEmitter,
-  ChangeDetectionStrategy,
-  HostBinding,
+  ViewEncapsulation,
 } from '@angular/core';
 
 import { AlertTypes } from '../types';
+
+const defaultAlertType = 'info';
 
 @Component({
   selector: 't-alert',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 't-alert t-alert-wrapper' },
+  encapsulation: ViewEncapsulation.None,
 })
 export class AlertComponent {
-  @Input()
-  set type(val: AlertTypes | string) {
-    this.alertType = (val as AlertTypes) || this.defaultAlertType;
-    this.setProperties(this.alertType);
+  @HostBinding('class')
+  @Input({ required: true })
+  set type(val: AlertTypes) {
+    this._alertType = val || defaultAlertType;
+    this.setProperties(this._alertType);
   }
   get type(): AlertTypes {
-    return this.alertType;
+    return this._alertType;
   }
 
   @Input() title?: string;
@@ -32,31 +38,28 @@ export class AlertComponent {
 
   @Output() onCloseClick = new EventEmitter<boolean>();
 
-  @HostBinding('class') hostClass = 't-alert';
-
   iconClass?: string;
 
-  private alertType: AlertTypes;
-  private readonly defaultAlertType: AlertTypes = 'info';
+  private _alertType: AlertTypes;
 
   constructor() {
-    this.alertType = this.defaultAlertType;
+    this._alertType = defaultAlertType;
   }
 
   private setProperties(alertType: AlertTypes): void {
     if (alertType) {
       switch (alertType) {
         case 'success':
-          this.iconClass = 'pi-check';
+          this.iconClass = 'fa-solid fa-circle-check fa-xl';
           break;
         case 'error':
-          this.iconClass = 'pi-times';
+          this.iconClass = 'fa-solid fa-circle-xmark fa-xl';
           break;
         case 'warn':
-          this.iconClass = 'pi-exclamation-triangle';
+          this.iconClass = 'fa-solid fa-triangle-exclamation fa-xl';
           break;
         case 'info':
-          this.iconClass = 'pi-info-circle';
+          this.iconClass = 'fa-solid fa-circle-info fa-xl';
           break;
         default:
           console.warn('invalid Alert type');

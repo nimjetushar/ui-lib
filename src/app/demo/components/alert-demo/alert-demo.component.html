@@ -1,12 +1,20 @@
 <div class="alert-component">
   <ui-library-documentation-demo-wrapper header="Alert" [code]="compSyntax" [options]="options">
-    <div output>
+    <ng-template tTemplate="output">
       <div class="spacing">
-        <t-alert type="success" message="message........"></t-alert>
+        <t-alert type="success" title="Success" message="message........" />
       </div>
       <div class="spacing">
-        <t-alert type="error" title="Title Error" message="message........"></t-alert>
+        <t-alert type="error" title="Title error" message="message........" />
       </div>
+      <div class="spacing">
+        <t-alert type="info" title="Title info" message="message........" />
+      </div>
+      <div class="spacing">
+        <t-alert type="warn" title="Title warn" message="message........" />
+      </div>
+    </ng-template>
+    <ng-template tTemplate="output">
       <div class="spacing" *ngIf="!hideAlert">
         <t-alert
           type="info"
@@ -14,23 +22,28 @@
           message="message........"
           [enableClose]="true"
           (onCloseClick)="onClose($event)"
-        ></t-alert>
+        />
       </div>
       <div class="spacing">
-        <t-alert type="warn" title="Title warn" message="message........" [hideIcon]="true"></t-alert>
+        <t-alert type="warn" title="Title warn" message="message........" [hideIcon]="true" />
+      </div>
+      <div class="spacing">
+        <div>Alert with html / custom content</div>
+        <t-alert type="info" title="Custom alert" [enableClose]="true" (onCloseClick)="onClose($event)">
+          <p>
+            <b>message in bold</b>
+          </p>
+        </t-alert>
       </div>
       <div class="spacing dynamic-alert">
         <div>Select Alert type from dropdown:-</div>
         <div style="margin-bottom: 14px">
-          <t-dropdown placeholder="Select option" [options]="dropdownOption" [(ngModel)]="dropdownValue"> </t-dropdown>
+          <t-dropdown placeholder="Select option" [options]="dropdownOption" [(ngModel)]="dropdownValue" />
         </div>
         <div>
-          <t-alert [type]="dropdownValue" title="Title {{ dropdownValue }}" message="message........"></t-alert>
+          <t-alert [type]="dropdownValue" title="Title {{ dropdownValue }}" message="message........" />
         </div>
       </div>
-    </div>
-    <div doc>
-      <ui-library-documentation-common-note></ui-library-documentation-common-note>
-    </div>
+    </ng-template>
   </ui-library-documentation-demo-wrapper>
 </div>

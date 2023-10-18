@@ -1,7 +1,19 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { ToastService } from '@fourjs/ng-library';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ContentChildren,
+  ElementRef,
+  Input,
+  OnInit,
+  QueryList,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
+import { ToastService, UITemplate } from '@fourjs/ng-library';
 
-import { Column, DocOptions, MethodOptions, Options } from '../types';
+import { Options } from '../types';
 
 declare let PR: any;
 
@@ -12,48 +24,32 @@ declare let PR: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DemoWrapperComponent implements OnInit, AfterViewInit {
-  @Input() header!: string;
+  @Input({ required: true }) header!: string;
   @Input() subHeader?: string;
   @Input() code?: string[];
-  @Input() set options(docData: Options | undefined | null) {
+  @Input()
+  set options(docData: Options | undefined | null) {
     if (docData) {
       this.enableOptions = true;
-      this.name = docData.name;
-      this.docOptions = docData.options;
-      this.methodOptions = docData.methods;
-      if (docData.componentType) {
-        this.componentType = docData.componentType;
-      }
+      this._options = docData;
     }
+  }
+  get options() {
+    return this._options;
   }
 
   @ViewChild('output', { static: true }) outputWrapper!: ElementRef;
   @ViewChild('ref', { static: true }) refWrapper!: ElementRef;
+  @ContentChildren(UITemplate) templates!: QueryList<UITemplate>;
 
-  isDemoContainer!: boolean;
-  codeEle!: { content: string; class: string }[];
+  outputContent: TemplateRef<any>[] = [];
   enableOutput = true;
   enableDoc = true;
   enableOptions!: boolean;
-  name!: string;
-  docOptions: DocOptions[] | undefined;
-  methodOptions!: MethodOptions[] | undefined;
-  componentType = 'Component';
 
-  readonly docColumns: Column<keyof DocOptions>[] = [
-    { label: 'Name', value: 'parameter', width: '20%' },
-    { label: 'Type', value: 'type', width: '20%' },
-    { label: 'Default', value: 'default', width: '20%' },
-    { label: 'Description', value: 'description', width: '40%' },
-  ];
+  private _options?: Options | null;
 
-  readonly methodColumns: Column<keyof MethodOptions>[] = [
-    { label: 'Name', value: 'method', width: '20%' },
-    { label: 'Parameters', value: 'parameter', width: '20%' },
-    { label: 'Description', value: 'description', width: '60%' },
-  ];
-
-  constructor(private toast: ToastService) {}
+  constructor(private toast: ToastService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.enableOutput = !this.outputWrapper.nativeElement.childNodes.length;
@@ -62,6 +58,16 @@ export class DemoWrapperComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     PR.prettyPrint();
+
+    this.outputContent = [];
+    this.templates.forEach(item => {
+      switch (item.getType()) {
+        case 'output':
+          this.outputContent.push(item.template);
+          break;
+      }
+    });
+    this.cdr.detectChanges();
   }
 
   copyToClipboard(): void {

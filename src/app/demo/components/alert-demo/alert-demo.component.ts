@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AlertTypes, DropdownOptions } from '@fourjs/ng-library';
 
-import { IOptions } from '../../../common';
+import { Options } from '../../../common';
 
 @Component({
   selector: 'ui-library-documentation-alert-demo',
@@ -31,7 +31,7 @@ export class AlertDemoComponent implements OnInit {
   ];
   dropdownValue!: AlertTypes;
   compSyntax!: string[];
-  options!: IOptions;
+  options!: Options;
 
   ngOnInit(): void {
     this.dropdownValue = this.dropdownOption[0].value;
