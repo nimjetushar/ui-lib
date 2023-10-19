@@ -1,5 +1,4 @@
 @import '../../../styles/variable.scss';
-@import '../../../styles/functions.scss';
 @import '../../../styles/mixins.scss';
 
 $header-height: $main-container-header-height;
@@ -19,49 +18,33 @@ $header-height: $main-container-header-height;
     @include flex(2 0 auto);
     @include HGroup(0, flex-start, center);
     height: $main-container-header-height;
-    margin-right: rem(5);
-  }
-
-  .sidebar-toggle {
-    cursor: pointer;
-    position: relative;
-    height: 100%;
-    padding-top: rem(19);
-    padding-left: rem(29);
-    padding-right: rem(29);
-
-    i.pi-bars {
-      font-size: $nav-icon-size;
-      color: $color-white;
-    }
+    margin-right: 1em;
   }
 
   .logo-container {
     cursor: pointer;
-    padding-left: rem(32);
+    padding-left: 1em;
     @include VGroup(0);
 
     .logo {
       position: relative;
-      padding-right: rem(5);
+      padding-right: 1em;
       display: inline-block;
 
       img {
-        height: rem(20.62);
-        width: rem(52);
+        height: 2em;
+        width: 10em;
       }
     }
 
     .title-container {
-      @include HGroup(rem(10), flex-start, center);
+      @include HGroup(1em, flex-start, center);
 
       .title {
         color: $color-white;
         font-weight: 500;
-        font-size: 2rem;
-        letter-spacing: rem(1);
+        letter-spacing: 1px;
         text-transform: uppercase;
-        margin: 0;
       }
     }
   }

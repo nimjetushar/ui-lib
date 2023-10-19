@@ -1,5 +1,3 @@
-@import './functions.scss';
-
 // colors
 $color-primary: #0069b1;
 $color-primaryhover: #003f81;
@@ -45,11 +43,10 @@ $main-container-header-height: 4.5rem;
 $main-container-transistion-delay: 250ms;
 
 // header, nav
-$nav-icon-size: 2rem;
 $sidebar-height: 100vh;
 $sidebar-width: 300px;
-$sidebar-width-expanded: rem($sidebar-width);
-$sidebar-init-position: rem(-$sidebar-width);
+$sidebar-width-expanded: 20em;
+$sidebar-init-position: -20em;
 
 // Table
 $table-border-color: rgba(0, 0, 0, 0.12) !default;

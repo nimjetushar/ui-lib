@@ -1,8 +1,9 @@
-import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 import { runOnPushChangeDetection } from '@ui-library-documentation/shared/unit-test';
 
+import { MenuIconComponent } from '../menu-icon/menu-icon.component';
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -11,7 +12,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HeaderComponent],
+      declarations: [HeaderComponent, MenuIconComponent],
       imports: [RouterTestingModule],
     }).compileComponents();
   });

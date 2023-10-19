@@ -1,5 +1,11 @@
 <div class="alert-component">
-  <ui-library-documentation-demo-wrapper header="Alert" [code]="compSyntax" [options]="options">
+  <ui-library-documentation-demo-wrapper
+    header="Alert"
+    subHeader="alerts is used to display inline messages/alerts."
+    [code]="compSyntax"
+    [importSyntax]="importSyntax"
+    [options]="options"
+  >
     <ng-template tTemplate="output">
       <div class="spacing">
         <t-alert type="success" title="Success" message="message........" />
@@ -11,7 +17,11 @@
         <t-alert type="info" title="Title info" message="message........" />
       </div>
       <div class="spacing">
-        <t-alert type="warn" title="Title warn" message="message........" />
+        <t-alert
+          type="warn"
+          title="Title warn"
+          message="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        />
       </div>
     </ng-template>
     <ng-template tTemplate="output">
@@ -27,23 +37,29 @@
       <div class="spacing">
         <t-alert type="warn" title="Title warn" message="message........" [hideIcon]="true" />
       </div>
-      <div class="spacing">
-        <div>Alert with html / custom content</div>
-        <t-alert type="info" title="Custom alert" [enableClose]="true" (onCloseClick)="onClose($event)">
-          <p>
-            <b>message in bold</b>
-          </p>
-        </t-alert>
+    </ng-template>
+    <ng-template tTemplate="output">
+      <div>Select Alert type from dropdown:-</div>
+      <div style="margin-bottom: 14px">
+        <t-dropdown placeholder="Select option" [options]="dropdownOption" [(ngModel)]="dropdownValue" />
       </div>
-      <div class="spacing dynamic-alert">
-        <div>Select Alert type from dropdown:-</div>
-        <div style="margin-bottom: 14px">
-          <t-dropdown placeholder="Select option" [options]="dropdownOption" [(ngModel)]="dropdownValue" />
-        </div>
-        <div>
-          <t-alert [type]="dropdownValue" title="Title {{ dropdownValue }}" message="message........" />
-        </div>
+      <div>
+        <t-alert [type]="dropdownValue" title="Title {{ dropdownValue }}" message="message........" />
       </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <div>Alert with html / custom content</div>
+      <t-alert type="info" title="Custom alert">
+        <p>
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking
+          at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+          opposed to using <b>'Content here, content here'</b>, making it look like readable English. Many desktop
+          publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+          <i>'lorem ipsum'</i> will uncover many web sites still in their infancy. Various versions have evolved over
+          the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </p>
+      </t-alert>
     </ng-template>
   </ui-library-documentation-demo-wrapper>
 </div>

@@ -37,42 +37,36 @@ $header-color: #ee6e73;
     margin: rem(10) 0;
   }
 
-  .code-sample {
+  .import-section {
+    margin: 1.5em 0;
+    h2 {
+      font-size: rem(28);
+      font-weight: 500;
+      margin-top: 0;
+    }
+  }
+
+  .code-sample,
+  .import-sample {
     @extend .code-wrapper;
     position: relative;
     width: 100%;
     word-break: break-word;
-    padding: 0;
     margin: 0;
     background: #000;
-    padding-top: 16px;
+    padding: 1em 0;
 
     pre {
-      line-height: 1;
-
-      span {
-        line-height: 22px;
-      }
+      display: flex;
+      margin: 0.5em 2em;
     }
 
     .copy {
       position: absolute;
-      top: 10px;
-      right: 8px;
-      width: 20px;
-      height: 20px;
-      border-top: 0;
-      border-right: 0;
-      padding: 0 rem(10);
-      font-size: rem(15);
+      top: 18px;
+      right: 10px;
       color: #fff;
       cursor: pointer;
-
-      i {
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
     }
 
     code {

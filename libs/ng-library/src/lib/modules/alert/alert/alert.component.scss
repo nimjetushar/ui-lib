@@ -7,7 +7,7 @@
   margin: 1em 0;
   border-width: 0 0 0 6px;
   border-style: solid;
-  border-radius: 6px;
+  border-radius: 4px;
 
   &.success {
     border-color: $color-success;
@@ -35,7 +35,7 @@
 
   .t-alert-icon {
     align-self: center;
-    padding-right: 24px;
+    padding-right: 20px;
   }
 
   .t-alert-content {
@@ -59,6 +59,5 @@
     align-self: center;
     margin-left: auto;
     cursor: pointer;
-    color: #000;
   }
 }

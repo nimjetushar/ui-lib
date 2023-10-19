@@ -4,10 +4,17 @@
     <p class="component-sub-header" *ngIf="subHeader">{{ subHeader }}</p>
 
     <div class="component-content">
-      <div class="code-sample" *ngIf="code?.length">
-        <div class="copy" (click)="copyToClipboard()">
-          <i class="pi pi-copy" aria-hidden="true"></i>
+      <div class="import-section" *ngIf="importSyntax">
+        <h2>Import</h2>
+        <div class="import-sample">
+          <pre>
+            <code class="prettyprint lang-html">{{importSyntax}}</code>
+          </pre>
         </div>
+      </div>
+
+      <div class="code-sample" *ngIf="code?.length">
+        <i class="copy fa-regular fa-copy fa-lg" aria-hidden="true" (click)="copyToClipboard()"></i>
         <pre *ngFor="let c of code">
           <code class="prettyprint lang-html">{{c}}</code>
         </pre>
@@ -17,9 +24,11 @@
         <ng-content select="[output]"></ng-content>
       </div>
 
-      <div class="code-output" *ngFor="let content of outputContent">
-        <ng-container [ngTemplateOutlet]="content"></ng-container>
-      </div>
+      <ng-container *ngIf="outputContent.length">
+        <div class="code-output" *ngFor="let content of outputContent">
+          <ng-container [ngTemplateOutlet]="content"></ng-container>
+        </div>
+      </ng-container>
 
       <div class="code-doc" #ref [ngClass]="{ hide: enableDoc }">
         <ng-content select="[doc]"></ng-content>

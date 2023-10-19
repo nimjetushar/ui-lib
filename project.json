@@ -19,7 +19,7 @@
         "styles": [
           "./src/styles.scss",
           "node_modules/code-prettify/src/prettify.css",
-          "node_modules/code-prettify/styles/sunburst.css"
+          "node_modules/code-prettify/styles/sons-of-obsidian.css"
         ],
         "scripts": ["node_modules/code-prettify/src/prettify.js"],
         "stylePreprocessorOptions": {
