@@ -2,7 +2,7 @@
   <i [class]="iconClass" aria-hidden="true"></i>
 </div>
 <div class="t-alert-content">
-  <div class="t-alert-content-title" *ngIf="title">{{ title }}</div>
+  <div class="t-alert-content-title" *ngIf="header">{{ header }}</div>
   <div class="t-alert-content-message" *ngIf="message">{{ message }}</div>
   <ng-content></ng-content>
 </div>

@@ -31,7 +31,7 @@ export class AlertComponent {
     return this._alertType;
   }
 
-  @Input() title?: string;
+  @Input() header?: string;
   @Input() message?: string;
   @Input() hideIcon = false;
   @Input() enableClose = false;
@@ -50,16 +50,16 @@ export class AlertComponent {
     if (alertType) {
       switch (alertType) {
         case 'success':
-          this.iconClass = 'fa-solid fa-circle-check fa-xl';
+          this.iconClass = 'fa-solid fa-check fa-xl';
           break;
         case 'error':
-          this.iconClass = 'fa-solid fa-circle-xmark fa-xl';
+          this.iconClass = 'fa-solid fa-xmark fa-xl';
           break;
         case 'warn':
-          this.iconClass = 'fa-solid fa-triangle-exclamation fa-xl';
+          this.iconClass = 'fa-solid fa-exclamation fa-xl';
           break;
         case 'info':
-          this.iconClass = 'fa-solid fa-circle-info fa-xl';
+          this.iconClass = 'fa-solid fa-info fa-xl';
           break;
         default:
           console.warn('invalid Alert type');
