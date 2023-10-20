@@ -13,8 +13,8 @@ export type DocOptions<T = string> = {
   default?: string;
 };
 
-export type MethodOptions = {
-  method: string;
+export type MethodOptions<T extends string = string> = {
+  method: T;
   parameter: string;
   description: string;
 };
@@ -33,5 +33,5 @@ export type Options<T extends string = string> = {
   name: string;
   componentType?: 'Service' | 'Component' | 'Directive';
   options?: DocOptions<T>[];
-  methods?: MethodOptions[];
+  methods?: MethodOptions<T>[];
 };

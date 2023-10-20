@@ -13,11 +13,14 @@
       </div>
     </div>
 
-    <div class="code-sample" *ngIf="code?.length">
-      <ui-library-documentation-copy [content]="code" />
-      <pre *ngFor="let c of code">
+    <div class="code-section" *ngIf="code?.length">
+      <h2>Syntax</h2>
+      <div class="code-sample">
+        <ui-library-documentation-copy [content]="code" />
+        <pre *ngFor="let c of code">
           <code class="prettyprint lang-html">{{c}}</code>
       </pre>
+      </div>
     </div>
 
     <div class="code-output" #output [ngClass]="{ hide: enableOutput }">
