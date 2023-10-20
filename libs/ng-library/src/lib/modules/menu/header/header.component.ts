@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 't-header',
@@ -13,9 +7,9 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  @Input() title!: string;
-  @Input() logoSrc!: string;
-  @Input() routeLink!: string;
+  @Input({ required: true }) title!: string;
+  @Input() logoSrc?: string;
+  @Input() routeLink?: string;
 
   @Output() sideBarToggled = new EventEmitter<boolean>();
   @Output() logoClickEmitter = new EventEmitter();

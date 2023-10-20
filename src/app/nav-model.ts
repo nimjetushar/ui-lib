@@ -4,7 +4,7 @@ export class NavModel {
   private _navItems: MenuItem[] = [
     {
       label: 'Getting Started',
-      badge: 'pi-home',
+      badge: 'fa-solid fa-house',
       children: [
         {
           label: 'Setup',
@@ -18,7 +18,7 @@ export class NavModel {
     },
     {
       label: 'Styles',
-      badge: 'pi-hashtag',
+      badge: 'fa-solid fa-hashtag',
       children: [
         {
           label: 'Color Pallet',
@@ -32,7 +32,7 @@ export class NavModel {
     },
     {
       label: 'Components',
-      badge: 'pi-slack',
+      badge: 'fa-brands fa-slack',
       children: [
         {
           label: 'Alert',
@@ -70,7 +70,7 @@ export class NavModel {
     },
     {
       label: 'Directives',
-      badge: 'pi-compass',
+      badge: 'fa-solid fa-compass',
       children: [
         {
           label: 'Tooltip',
@@ -80,7 +80,7 @@ export class NavModel {
     },
     {
       label: 'Services',
-      badge: 'pi-cloud',
+      badge: 'fa-solid fa-cloud',
       children: [
         {
           label: 'Dialog',
@@ -94,12 +94,12 @@ export class NavModel {
     },
     {
       label: 'Utility',
-      badge: 'pi-cog',
+      badge: 'fa-solid fa-gear',
       route: 'utility',
     },
     {
       label: 'Reference',
-      badge: 'pi-link',
+      badge: 'fa-solid fa-link',
       route: 'reference',
     },
   ];

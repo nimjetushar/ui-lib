@@ -27,6 +27,7 @@ export class DemoWrapperComponent implements OnInit, AfterViewInit {
   @Input({ required: true }) header!: string;
   @Input() subHeader?: string;
   @Input() code?: string[];
+  @Input() importSyntax?: string;
   @Input()
   set options(docData: Options | undefined | null) {
     if (docData) {

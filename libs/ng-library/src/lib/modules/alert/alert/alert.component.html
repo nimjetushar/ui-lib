@@ -2,10 +2,10 @@
   <i [class]="iconClass" aria-hidden="true"></i>
 </div>
 <div class="t-alert-content">
-  <div class="t-alert-content-title" *ngIf="title">{{ title }}</div>
-  <div class="t-alert-content-message" *ngIf="message">{{ message }}</div>
+  <div class="t-alert-content-title" *ngIf="header">{{ header }}</div>
+  <p class="t-alert-content-message" *ngIf="message">{{ message }}</p>
   <ng-content></ng-content>
 </div>
 <div class="t-alert-close" *ngIf="enableClose">
-  <i class="fa-solid fa-xmark fa-lg" aria-hidden="true" (click)="closeHandler()"></i>
+  <i class="fa-solid fa-xmark fa-xl" aria-hidden="true" (click)="closeHandler()"></i>
 </div>

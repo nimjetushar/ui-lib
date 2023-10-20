@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: 't-badge',
@@ -11,9 +6,9 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BadgeComponent {
-  @Input() badge!: string;
+  @Input({ required: true }) badge!: string;
 
   @HostBinding('class') get hostClass() {
-    return `t-badge pi ${this.badge ?? ''}`;
+    return `t-badge ${this.badge ?? ''}`;
   }
 }
