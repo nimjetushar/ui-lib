@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { AlertTypes, DropdownOptions } from '@fourjs/ng-library';
+import { AlertComponent, AlertTypes, DropdownOptions } from '@fourjs/ng-library';
 
 import { Options } from '../../../common';
 
@@ -44,13 +44,15 @@ export class AlertDemoComponent implements OnInit {
 }
 
 const getComponenetSyntax = () => [
-  `<t-alert type="success" message="message........"></t-alert>`,
-  `<t-alert type="error" title="Title Error" message="message........"></t-alert>`,
-  `<t-alert type="info" title="Title Info" message="message........" [enableClose]="true"></t-alert>`,
-  `<t-alert type="info" title="Title Info" message="message........" [hideIcon]="true"></t-alert>`,
+  `<t-alert type="success" message="message........" />`,
+  `<t-alert type="error" title="Title Error" message="message........" />`,
+  `<t-alert type="info" title="Title Info" message="message........" [enableClose]="true" />`,
+  `<t-alert type="info" title="Title Info" message="message........" [hideIcon]="true"><p>html content...</p></t-alert>`,
 ];
 
-const getAlertComponentOptions = (): Options => {
+const instanceOfAlertComponent = new AlertComponent();
+
+const getAlertComponentOptions = (): Options<keyof typeof instanceOfAlertComponent> => {
   return {
     name: 't-alert',
     options: [
@@ -61,9 +63,9 @@ const getAlertComponentOptions = (): Options => {
         default: 'info',
       },
       {
-        parameter: 'title',
+        parameter: 'header',
         type: `string`,
-        description: 'Alert title',
+        description: 'Alert header/title',
       },
       {
         parameter: 'message',

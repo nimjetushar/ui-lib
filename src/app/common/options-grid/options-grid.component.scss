@@ -2,6 +2,7 @@
 
 .code-options {
   @extend .code-wrapper;
+  display: block;
 
   .header {
     margin: 0 0 0.4em;
