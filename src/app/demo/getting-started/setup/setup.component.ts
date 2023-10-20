@@ -7,9 +7,20 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SetupComponent {
-  angularCdkDependency: string;
+  readonly angularCdkDependency = '16.2.9';
 
-  constructor() {
-    this.angularCdkDependency = '16.2.9';
-  }
+  readonly syntax = `
+    import { NgLibrary } from '@fourjs/ng-library';
+
+    @NgModule({
+        imports: [
+          NgLibrary,
+          BrowserAnimationsModule,
+          HttpClientModule,
+          FormsModule,
+          // other modules imports
+          ...
+        ]
+        ...
+    })`;
 }
