@@ -4,11 +4,13 @@
   @extend .code-wrapper;
 
   .header {
-    font-size: rem(22);
-    margin-bottom: rem(10);
+    margin: 0 0 0.4em;
   }
 
   .table {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
     overflow-x: auto;
 
     thead {

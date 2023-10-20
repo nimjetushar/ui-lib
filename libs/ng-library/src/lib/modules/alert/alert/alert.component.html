@@ -3,7 +3,7 @@
 </div>
 <div class="t-alert-content">
   <div class="t-alert-content-title" *ngIf="header">{{ header }}</div>
-  <div class="t-alert-content-message" *ngIf="message">{{ message }}</div>
+  <p class="t-alert-content-message" *ngIf="message">{{ message }}</p>
   <ng-content></ng-content>
 </div>
 <div class="t-alert-close" *ngIf="enableClose">

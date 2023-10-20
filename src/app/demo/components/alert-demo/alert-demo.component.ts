@@ -33,14 +33,13 @@ export class AlertDemoComponent implements OnInit {
   readonly importSyntax = `import { AlertModule } from '@fourjs/ng-library';`;
 
   dropdownValue!: AlertTypes;
-  hideAlert!: boolean;
 
   ngOnInit(): void {
     this.dropdownValue = this.dropdownOption[0].value;
   }
 
   onClose(status: boolean): void {
-    this.hideAlert = status;
+    console.info('alert close triggered', { status });
   }
 }
 

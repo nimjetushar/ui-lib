@@ -8,6 +8,10 @@
   >
     <ng-template tTemplate="output">
       <h2 class="title">Basic</h2>
+      <p>
+        A single alert is rendered using <i>t-alert</i> based of different <i>type</i>, having <i>header</i> and
+        <i>message</i> as input.
+      </p>
       <div class="spacing">
         <t-alert type="success" header="Success" message="message........" />
       </div>
@@ -26,21 +30,21 @@
       </div>
     </ng-template>
     <ng-template tTemplate="output">
-      <div class="spacing" *ngIf="!hideAlert">
-        <t-alert
-          type="info"
-          header="Title Info"
-          message="message........"
-          [enableClose]="true"
-          (onCloseClick)="onClose($event)"
-        />
-      </div>
-      <div class="spacing">
-        <t-alert type="warn" header="Title warn" message="message........" [hideIcon]="true" />
-      </div>
+      <h2 class="title">Close icon</h2>
+      <t-alert
+        type="info"
+        header="Title Info"
+        message="message........"
+        [enableClose]="true"
+        (onCloseClick)="onClose($event)"
+      />
     </ng-template>
     <ng-template tTemplate="output">
-      <div>Select Alert type from dropdown:-</div>
+      <h2 class="title">Without icon</h2>
+      <t-alert type="warn" header="Title warn" message="message........" [hideIcon]="true" />
+    </ng-template>
+    <ng-template tTemplate="output">
+      <h2 class="title">Select Alert type from dropdown</h2>
       <div style="margin-bottom: 14px">
         <t-dropdown placeholder="Select option" [options]="dropdownOption" [(ngModel)]="dropdownValue" />
       </div>
@@ -50,7 +54,7 @@
     </ng-template>
 
     <ng-template tTemplate="output">
-      <div>Alert with html / custom content</div>
+      <h2 class="title">Alert with html / custom content</h2>
       <t-alert type="info" header="Custom alert">
         <p>
           It is a long established fact that a reader will be distracted by the readable content of a page when looking

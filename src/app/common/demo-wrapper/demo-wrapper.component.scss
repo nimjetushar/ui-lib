@@ -14,12 +14,11 @@ $header-color: #ee6e73;
 .ui-library-documentation-demo-wrapper {
   p {
     line-height: 1.5;
-    margin: 0 0 1rem;
+    margin: 0 0 1em;
   }
 
   .component-header {
     color: $header-color;
-    font-weight: 500;
     margin-bottom: 0.4em;
   }
 
@@ -29,8 +28,8 @@ $header-color: #ee6e73;
 
   .import-section {
     margin: 1.5em 0;
+
     h2 {
-      font-weight: 500;
       margin: 0 0 0.4em;
     }
   }
@@ -60,7 +59,7 @@ $header-color: #ee6e73;
 
     // this is used inside output section via Viewencapsulation
     h2.title {
-      margin: 0 0 1em;
+      margin: 0 0 0.4em;
     }
   }
 
