@@ -1,5 +1,7 @@
 <div class="main-container-sidebar" id="main-container-sidebar" [ngClass]="{ 'sidebar-expanded': expanded }">
-  <div class="header"><t-menu-icon [expanded]="expanded" (click)="toggleMenu()" />asd</div>
+  <div class="header">
+    <t-menu-icon [expanded]="expanded" (click)="toggleMenu()" />
+  </div>
   <div id="sidebar-content" class="sidebar-content">
     <ul role="menu" id="main-nav" class="main-nav">
       <li
@@ -9,7 +11,7 @@
         [class.selected]="selectedMenu.idx === idx"
       >
         <div class="menu-item" (click)="onMenuClick(menuItem, idx)">
-          <t-badge *ngIf="menuItem?.badge" class="badge" [badge]="menuItem.badge!"></t-badge>
+          <t-badge *ngIf="menuItem?.badge" class="badge" [badge]="menuItem.badge!" />
           <span class="label">{{ menuItem.label }}</span>
         </div>
 
