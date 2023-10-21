@@ -1,16 +1,26 @@
 @import 'variable.scss';
 
+.application-color-code {
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-secondary: #{$color-secondary};
+  --color-secondary-hover: #{$color-secondary-hover};
+  --color-informational: #{$color-informational};
+  --color-informational-hover: #{$color-informational-hover};
+  --color-attention: #{$color-attention};
+  --color-attention-hover: #{$color-attention-hover};
+  --color-error: #{$color-error};
+  --color-error-hover: #{$color-error-hover};
+}
+
 .color-pallet {
-  @media (min-width: 481px) and (max-width: 767px) {
-    .row {
-      justify-content: center;
-    }
+  .color-pallet-section {
+    display: flex;
+    flex-flow: wrap;
   }
 
   .color-code {
-    width: rem(140);
-    display: inline-block;
-    vertical-align: top;
+    width: 8em;
 
     .palet {
       width: 40px;
@@ -21,50 +31,7 @@
 
     p {
       text-align: center;
-      color: #000;
-      font-size: 13px;
-      min-height: rem(40);
     }
-  }
-
-  .primary .palet {
-    background: $color-primary;
-  }
-
-  .primaryhover .palet {
-    background: $color-primaryhover;
-  }
-
-  .secondary .palet {
-    background: $color-secondary;
-  }
-
-  .secondaryhover .palet {
-    background: $color-secondaryhover;
-  }
-
-  .informational .palet {
-    background: $color-informational;
-  }
-
-  .informationalhover .palet {
-    background: $color-informationalhover;
-  }
-
-  .attention .palet {
-    background: $color-attention;
-  }
-
-  .attentionhover .palet {
-    background: $color-attentionhover;
-  }
-
-  .error .palet {
-    background: $color-error;
-  }
-
-  .errorhover .palet {
-    background: $color-errorhover;
   }
 
   .disabled .palet {
