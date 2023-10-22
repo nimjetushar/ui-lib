@@ -13,22 +13,22 @@ $dialog-bg-opacity: 0.9;
 
   .t-toast-container.t-toast-success {
     background-color: rgba($color-success, $dialog-bg-opacity);
-    border-color: $color-successhover;
+    border-color: $color-success-hover;
   }
 
   .t-toast-container.t-toast-error {
     background-color: rgba($color-error, $dialog-bg-opacity);
-    border-color: $color-errorhover;
+    border-color: $color-error-hover;
   }
 
   .t-toast-container.t-toast-info {
     background-color: rgba($color-informational, $dialog-bg-opacity);
-    border-color: $color-informationalhover;
+    border-color: $color-informational-hover;
   }
 
   .t-toast-container.t-toast-warn {
     background-color: rgba($color-attention, $dialog-bg-opacity);
-    border-color: $color-attentionhover;
+    border-color: $color-attention-hover;
   }
 
   .t-toast-message-content {

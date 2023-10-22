@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 
 type BadgePosition = 'left' | 'right';
 type ButtonType = 'primary' | 'secondary' | 'tertiary';
@@ -20,17 +15,9 @@ type ButtonType = 'primary' | 'secondary' | 'tertiary';
       }"
       [disabled]="disabled"
     >
-      <t-badge
-        *ngIf="badge && bPos === 'left'"
-        [class]="bPos"
-        [badge]="badge"
-      ></t-badge>
+      <t-badge *ngIf="badge && bPos === 'left'" [class]="bPos" [badge]="badge"></t-badge>
       {{ label }}
-      <t-badge
-        *ngIf="badge && bPos === 'right'"
-        [class]="bPos"
-        [badge]="badge"
-      ></t-badge>
+      <t-badge *ngIf="badge && bPos === 'right'" [class]="bPos" [badge]="badge"></t-badge>
       <ng-content></ng-content>
     </button>
   `,
