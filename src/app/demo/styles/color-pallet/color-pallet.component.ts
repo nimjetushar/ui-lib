@@ -81,4 +81,40 @@ const getColorPallet = () => [
       },
     ],
   },
+  {
+    pallets: [
+      {
+        name: 'Disabled',
+        variableName: '$color-disabled',
+      },
+      {
+        name: 'Light',
+        variableName: '$color-light',
+      },
+      {
+        name: 'Medium',
+        variableName: '$color-medium',
+      },
+      {
+        name: 'Dark',
+        variableName: '$color-dark',
+      },
+      {
+        name: 'Textstyle',
+        variableName: '$color-textstyle',
+      },
+      {
+        name: 'Background',
+        variableName: '$color-background',
+      },
+      {
+        name: 'White',
+        variableName: '$color-white',
+      },
+      {
+        name: 'Black',
+        variableName: '$color-black',
+      },
+    ],
+  },
 ];

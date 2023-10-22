@@ -1,29 +1,29 @@
 .utility-page {
-    p a {
-        &:hover {
-            color: #ee6e73;
-        }
+  p a {
+    &:hover {
+      color: #ee6e73;
+    }
+  }
+
+  .detect-browser {
+    margin-top: 15px;
+    border-top: 1px solid lightgrey;
+    padding-top: 15px;
+  }
+
+  .device-detail {
+    margin-top: 20px;
+    font-size: 1em;
+
+    span {
+      padding: 0 20px 0 0;
+      display: inline-block;
+      width: 15em;
     }
 
-    .detect-browser {
-        margin-top : 15px;
-        border-top : 1px solid lightgrey;
-        padding-top: 15px;
+    span.title {
+      width: 6em;
+      font-weight: bold;
     }
-
-    .device-detail {
-        margin-top: 20px;
-        font-size : 1rem;
-
-        span {
-            padding: 0 20px 0 0;
-            display: inline-block;
-            width  : 15rem;
-        }
-
-        span.title {
-            width: 6rem;
-            font-weight: bold;
-        }
-    }
+  }
 }

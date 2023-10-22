@@ -1,57 +1,17 @@
-<ui-library-documentation-demo-wrapper class="color-pallet application-color-code" header="Color Pallet">
+<ui-library-documentation-demo-wrapper class="application-color-code" header="Color Pallet">
   <ng-template tTemplate="output">
-    <div class="color-pallet-section" *ngFor="let pallet of colorPallet">
-      <ng-container *ngFor="let color of pallet.pallets">
-        <div class="color-code">
-          <p>{{ color.name }}</p>
-          <div class="palet" [ngStyle]="{ 'background-color': color.colorHash }"></div>
-          <p>
-            {{ color.variableName }} <br />
-            <span style="padding-top: 8px; display: inline-block">{{ color.colorHash }}</span>
-          </p>
-        </div>
-      </ng-container>
-    </div>
-    <div class="row">
-      <div class="color-code disabled">
-        <p>DISABLED</p>
-        <div class="palet"></div>
-        <p>Disabled <br />#F2F2F2</p>
-      </div>
-      <div class="color-code light">
-        <p>LIGHT</p>
-        <div class="palet"></div>
-        <p>Light <br />#DFDFDF</p>
-      </div>
-      <div class="color-code medium">
-        <P> MEDIUM</P>
-        <div class="palet"></div>
-        <p>medium <br />#B2B2B2</p>
-      </div>
-      <div class="color-code dark">
-        <p>DARK</p>
-        <div class="palet"></div>
-        <p>dark <br />#7D7D7D</p>
-      </div>
-      <div class="color-code textstyle">
-        <p>TEXTSTYLE</p>
-        <div class="palet"></div>
-        <p>darker <br />#414141</p>
-      </div>
-      <div class="color-code background">
-        <p>BACKGROUND</p>
-        <div class="palet"></div>
-        <p>background <br />#F2F2F2</p>
-      </div>
-      <div class="color-code white">
-        <p>WHITE</p>
-        <div class="palet"></div>
-        <p>white<br />#FFFFFF</p>
-      </div>
-      <div class="color-code black">
-        <p>BLACK</p>
-        <div class="palet"></div>
-        <p>Black<br />#000000</p>
+    <div class="color-pallet">
+      <div class="color-pallet-section" *ngFor="let pallet of colorPallet">
+        <ng-container *ngFor="let color of pallet.pallets">
+          <div class="color-code">
+            <p>{{ color.name }}</p>
+            <div class="palet" [ngStyle]="{ 'background-color': color.colorHash }"></div>
+            <p>
+              {{ color.variableName }} <br />
+              <span style="padding-top: 8px; display: inline-block">{{ color.colorHash }}</span>
+            </p>
+          </div>
+        </ng-container>
       </div>
     </div>
   </ng-template>

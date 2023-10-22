@@ -11,16 +11,28 @@
   --color-attention-hover: #{$color-attention-hover};
   --color-error: #{$color-error};
   --color-error-hover: #{$color-error-hover};
+  --color-disabled: #{$color-disabled};
+  --color-light: #{$color-light};
+  --color-medium: #{$color-medium};
+  --color-dark: #{$color-dark};
+  --color-textstyle: #{$color-textstyle};
+  --color-background: #{$color-background};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
 }
 
 .color-pallet {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
   .color-pallet-section {
     display: flex;
     flex-flow: wrap;
   }
 
   .color-code {
-    width: 8em;
+    width: 10em;
 
     .palet {
       width: 40px;

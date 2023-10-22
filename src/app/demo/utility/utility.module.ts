@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ButtonModule } from '@fourjs/ng-library';
 
-import { UtilityComponent } from './utility/utility.component';
 import { Common } from '../../common';
+import { UtilityComponent } from './utility/utility.component';
 
 const routes: Routes = [
   { path: '', component: UtilityComponent },
