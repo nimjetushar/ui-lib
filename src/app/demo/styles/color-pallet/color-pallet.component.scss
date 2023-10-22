@@ -45,44 +45,4 @@
       text-align: center;
     }
   }
-
-  .disabled .palet {
-    background: $color-disabled;
-  }
-
-  .light .palet {
-    background: $color-light;
-  }
-
-  .medium .palet {
-    background: $color-medium;
-  }
-
-  .dark .palet {
-    background: $color-dark;
-  }
-
-  .textstyle .palet {
-    background: $color-textstyle;
-  }
-
-  .background .palet {
-    background: $color-background;
-  }
-
-  .white {
-    background-color: transparent !important;
-
-    .palet {
-      background: $color-white;
-    }
-  }
-
-  .black {
-    background-color: transparent !important;
-
-    .palet {
-      background: $color-black;
-    }
-  }
 }
