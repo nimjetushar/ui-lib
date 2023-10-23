@@ -44,6 +44,7 @@ export class DemoWrapperComponent implements OnInit, AfterViewInit {
   @ContentChildren(UITemplate) templates!: QueryList<UITemplate>;
 
   outputContent: TemplateRef<any>[] = [];
+  documentContent?: TemplateRef<any>;
   enableOutput = true;
   enableDoc = true;
   enableOptions!: boolean;
@@ -58,17 +59,19 @@ export class DemoWrapperComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    PR.prettyPrint();
-
     this.outputContent = [];
     this.templates.forEach(item => {
       switch (item.getType()) {
         case 'output':
           this.outputContent.push(item.template);
           break;
+        case 'document':
+          this.documentContent = item.template;
+          break;
       }
     });
     this.cdr.detectChanges();
+    PR.prettyPrint();
   }
 
   copyToClipboard(): void {

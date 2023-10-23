@@ -1,16 +1,38 @@
 @import 'variable.scss';
 
+.application-color-code {
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-secondary: #{$color-secondary};
+  --color-secondary-hover: #{$color-secondary-hover};
+  --color-informational: #{$color-informational};
+  --color-informational-hover: #{$color-informational-hover};
+  --color-attention: #{$color-attention};
+  --color-attention-hover: #{$color-attention-hover};
+  --color-error: #{$color-error};
+  --color-error-hover: #{$color-error-hover};
+  --color-disabled: #{$color-disabled};
+  --color-light: #{$color-light};
+  --color-medium: #{$color-medium};
+  --color-dark: #{$color-dark};
+  --color-textstyle: #{$color-textstyle};
+  --color-background: #{$color-background};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+}
+
 .color-pallet {
-  @media (min-width: 481px) and (max-width: 767px) {
-    .row {
-      justify-content: center;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  .color-pallet-section {
+    display: flex;
+    flex-flow: wrap;
   }
 
   .color-code {
-    width: rem(140);
-    display: inline-block;
-    vertical-align: top;
+    width: 10em;
 
     .palet {
       width: 40px;
@@ -21,89 +43,6 @@
 
     p {
       text-align: center;
-      color: #000;
-      font-size: 13px;
-      min-height: rem(40);
-    }
-  }
-
-  .primary .palet {
-    background: $color-primary;
-  }
-
-  .primaryhover .palet {
-    background: $color-primaryhover;
-  }
-
-  .secondary .palet {
-    background: $color-secondary;
-  }
-
-  .secondaryhover .palet {
-    background: $color-secondaryhover;
-  }
-
-  .informational .palet {
-    background: $color-informational;
-  }
-
-  .informationalhover .palet {
-    background: $color-informationalhover;
-  }
-
-  .attention .palet {
-    background: $color-attention;
-  }
-
-  .attentionhover .palet {
-    background: $color-attentionhover;
-  }
-
-  .error .palet {
-    background: $color-error;
-  }
-
-  .errorhover .palet {
-    background: $color-errorhover;
-  }
-
-  .disabled .palet {
-    background: $color-disabled;
-  }
-
-  .light .palet {
-    background: $color-light;
-  }
-
-  .medium .palet {
-    background: $color-medium;
-  }
-
-  .dark .palet {
-    background: $color-dark;
-  }
-
-  .textstyle .palet {
-    background: $color-textstyle;
-  }
-
-  .background .palet {
-    background: $color-background;
-  }
-
-  .white {
-    background-color: transparent !important;
-
-    .palet {
-      background: $color-white;
-    }
-  }
-
-  .black {
-    background-color: transparent !important;
-
-    .palet {
-      background: $color-black;
     }
   }
 }

@@ -4,11 +4,12 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular
   selector: 't-badge',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 't-badge',
+  },
 })
 export class BadgeComponent {
-  @Input({ required: true }) badge!: string;
-
-  @HostBinding('class') get hostClass() {
-    return `t-badge ${this.badge ?? ''}`;
-  }
+  @HostBinding('class')
+  @Input()
+  badge!: string;
 }

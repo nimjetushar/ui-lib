@@ -5,8 +5,7 @@ import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angu
   standalone: true,
 })
 export class BlurDirective {
-  @Output()
-  tBlur = new EventEmitter();
+  @Output() tBlur = new EventEmitter();
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: PointerEvent) {

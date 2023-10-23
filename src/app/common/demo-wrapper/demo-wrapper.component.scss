@@ -7,7 +7,7 @@ $header-color: #ee6e73;
   margin: 1.5em 0;
   color: #152935;
   border: 1px solid #cbced2;
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: #fff;
 }
 
@@ -42,7 +42,7 @@ $header-color: #ee6e73;
     flex-direction: column;
     padding: 1em;
     gap: 1em;
-    border-radius: 6px;
+    border-radius: 4px;
     background: #000;
 
     pre {
@@ -62,15 +62,20 @@ $header-color: #ee6e73;
     h2.title {
       margin: 0 0 0.4em;
     }
+
+    p {
+      code {
+        background: #98dfee;
+        padding: 1px 2px;
+        border-radius: 4px;
+      }
+    }
+    // till here
   }
 
   .code-doc {
     @extend .code-wrapper;
     border-left: 3px solid #f11722;
     word-break: break-word;
-  }
-
-  .component-content > div {
-    width: 100%;
   }
 }

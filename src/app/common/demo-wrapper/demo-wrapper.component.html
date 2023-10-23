@@ -37,6 +37,10 @@
       <ng-content select="[doc]"></ng-content>
     </div>
 
+    <div class="code-doc" *ngIf="documentContent">
+      <ng-container [ngTemplateOutlet]="documentContent" />
+    </div>
+
     <ui-library-documentation-options-grid *ngIf="enableOptions" [options]="options" />
   </div>
 </div>

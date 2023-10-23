@@ -1,39 +1,19 @@
 <div class="setup-page">
-  <div class="setup">
-    <ui-library-documentation-demo-wrapper header="Setup">
-      <div doc>
-        <div class="install-title"># Install Library</div>
-
-        <code class="code">npm i @fourjs/ng-library --save</code>
-        <br />
-        <div class="peer-dependency-title"># Install peer dependencies.</div>
-        <code class="code">npm install @angular/cdk@{{ angularCdkDependency }} --save</code>
-        <br />
-        <div style="margin-top: 6px">Import NgLibrary into @NgModule and also import dependent modules</div>
-        <ul class="install-dependency">
-          <li>BrowserAnimationsModule</li>
-          <li>HttpClientModule</li>
-          <li>FormsModule</li>
-        </ul>
-        <pre class="prettyprint lang-html">
-          <code>
-          import {{ '{' }} NgLibrary {{ '}' }}from '@fourjs/ng-library';
-
-          @NgModule({{ '{' }}
-              declarations: [],
-              imports: [
-                  NgLibrary,
-                  BrowserAnimationsModule,
-                  HttpClientModule,
-                  FormsModule,
-                  // other modules imports
-                  ...
-              ]
-              ...
-          {{ '}' }})
-          </code>
-        </pre>
-      </div>
-    </ui-library-documentation-demo-wrapper>
-  </div>
+  <ui-library-documentation-demo-wrapper header="Setup">
+    <ng-template tTemplate="document">
+      <h2 style="margin-top: 0"># Install Library</h2>
+      <code class="code">npm i @fourjs/ng-library --save</code>
+      <p># Install peer dependencies.</p>
+      <code class="code">npm install @angular/cdk@{{ angularCdkDependency }} --save</code>
+      <p>Import NgLibrary into @NgModule and also import dependent modules</p>
+      <ul class="install-dependency">
+        <li>BrowserAnimationsModule</li>
+        <li>HttpClientModule</li>
+        <li>FormsModule</li>
+      </ul>
+      <pre class="prettyprint lang-html">
+        <code>{{syntax}}</code>
+      </pre>
+    </ng-template>
+  </ui-library-documentation-demo-wrapper>
 </div>

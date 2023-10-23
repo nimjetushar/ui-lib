@@ -11,7 +11,7 @@ $border-color-inside-doc: #d7d2d2;
       background-color: $color-success;
 
       &:hover {
-        background-color: $color-successhover;
+        background-color: $color-success-hover;
       }
     }
   }
@@ -21,7 +21,7 @@ $border-color-inside-doc: #d7d2d2;
       background-color: $color-error;
 
       &:hover {
-        background-color: $color-errorhover;
+        background-color: $color-error-hover;
       }
     }
   }
@@ -31,7 +31,7 @@ $border-color-inside-doc: #d7d2d2;
       background-color: $color-informational;
 
       &:hover {
-        background-color: $color-informationalhover;
+        background-color: $color-informational-hover;
       }
     }
   }
@@ -41,7 +41,7 @@ $border-color-inside-doc: #d7d2d2;
       background-color: $color-attention;
 
       &:hover {
-        background-color: $color-attentionhover;
+        background-color: $color-attention-hover;
       }
     }
   }

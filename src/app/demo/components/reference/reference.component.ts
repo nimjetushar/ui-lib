@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let require: any;
 const packageJson = require('../../../../../package.json');
 
@@ -21,17 +20,17 @@ export class ReferenceComponent {
       {
         name: `Angular (${angularversion})`,
         url: 'https://angular.io/api',
-        icon: 'fa-brands fa-angular color-angular ',
+        icon: 'fa-brands fa-angular color-angular fa-lg',
       },
       {
         name: 'Grid system',
         url: 'https://nimjetushar.github.io/grid-css/',
-        icon: 'fa-solid fa-list',
+        icon: 'fa-solid fa-list fa-lg',
       },
       {
         name: 'Font Awesome',
         url: 'https://fontawesome.com/search',
-        icon: 'fa-brands fa-font-awesome color-fontawesome',
+        icon: 'fa-brands fa-font-awesome color-fontawesome fa-lg',
       },
     ];
   }

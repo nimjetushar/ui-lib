@@ -69,81 +69,6 @@
   }
 }
 
-// Floating button
-// .btn-floating {
-//   &:hover {
-//     background-color: $button-floating-background-hover;
-//     @extend .z-depth-1-half;
-//   }
-
-//   &:before {
-//     border-radius: 0;
-//   }
-
-//   &.btn-large {
-//     &.halfway-fab {
-//       bottom: calc($button-floating-large-size / 2);
-//     }
-
-//     width: $button-floating-large-size;
-//     height: $button-floating-large-size;
-//     padding: 0;
-
-//     i {
-//       line-height: $button-floating-large-size;
-//     }
-//   }
-
-//   &.btn-small {
-//     &.halfway-fab {
-//       bottom: calc($button-floating-small-size / 2);
-//     }
-
-//     width: $button-floating-small-size;
-//     height: $button-floating-small-size;
-
-//     i {
-//       line-height: $button-floating-small-size;
-//     }
-//   }
-
-//   &.halfway-fab {
-//     &.left {
-//       right: auto;
-//       left: 24px;
-//     }
-
-//     position: absolute;
-//     right: 24px;
-//     bottom: calc($button-floating-size / 2);
-//   }
-
-//   display: inline-block;
-//   color: $button-floating-color;
-//   position: relative;
-//   overflow: hidden;
-//   z-index: 1;
-//   width: $button-floating-size;
-//   height: $button-floating-size;
-//   line-height: $button-floating-size;
-//   padding: 0;
-//   background-color: $button-floating-background;
-//   border-radius: $button-floating-radius;
-//   @extend .z-depth-1;
-//   transition: background-color 0.3s;
-//   cursor: pointer;
-//   vertical-align: middle;
-
-//   i {
-//     width: inherit;
-//     display: inline-block;
-//     text-align: center;
-//     color: $button-floating-color;
-//     font-size: $button-large-icon-font-size;
-//     line-height: $button-floating-size;
-//   }
-// }
-
 // button fix
 button.btn-floating {
   border: $button-border;
@@ -193,7 +118,7 @@ button.btn-floating {
   background: $color-primary;
 
   &:hover {
-    background: $color-primaryhover;
+    background: $color-primary-hover;
   }
 }
 
@@ -201,7 +126,7 @@ button.btn-floating {
   background: $color-secondary;
 
   &:hover {
-    background: $color-secondaryhover;
+    background: $color-secondary-hover;
   }
 }
 

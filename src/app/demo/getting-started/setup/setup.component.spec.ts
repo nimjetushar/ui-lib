@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
-import { SetupComponent } from './setup.component';
 import { Common } from '../../../common';
+import { SetupComponent } from './setup.component';
 
 describe('SetupComponent', () => {
   let component: SetupComponent;
