@@ -1,17 +1,74 @@
 <div class="badge-component">
-  <ui-library-documentation-demo-wrapper header="Badge" [code]="compSyntax" [options]="options">
-    <div output>
-      <div>
-        <t-badge badge="pi-home"></t-badge>
+  <ui-library-documentation-demo-wrapper
+    header="Badge"
+    subHeader="Badge is a small status indicator for another element."
+    [code]="compSyntax"
+    [importSyntax]="importSyntax"
+    [options]="options"
+  >
+    <ng-template tTemplate="output">
+      <h2 class="title">Basic</h2>
+      <div style="display: flex; flex-direction: column; gap: 2em">
+        <div style="display: flex; gap: 2em">
+          <t-badge badge="fa-solid fa-house" />
+          <t-badge badge="fa-regular fa-thumbs-up" />
+        </div>
+        <div style="display: flex; gap: 2em">
+          <t-badge value="2" />
+          <t-badge [value]="100" />
+        </div>
+        <div style="display: flex; gap: 2em">
+          <i class="fa-regular fa-thumbs-up fa-xl" tBadge="3"></i>
+          <span tBadge="20">content....</span>
+          <i class="fa-regular fa-envelope fa-xl" tBadge></i>
+        </div>
       </div>
-      <div>
-        <t-badge badge="pi-thumbs-up-fill"></t-badge>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Icon</h2>
+      <p>
+        <code>badge</code> passed to the component is class name from fontawesome library. Please refer the
+        <a href="https://fontawesome.com/search?m=free&o=r" target="_blank">link</a>
+        to get icons, else any other font icon library can also be used.
+      </p>
+      <div style="display: flex; gap: 2em">
+        <t-badge badge="fa-solid fa-house" />
+        <t-badge badge="fa-regular fa-thumbs-up" />
       </div>
-    </div>
-    <div doc>
-      Badge passed to the component is class name from fontawesome library. Please refer the
-      <a href="https://fontawesome.com/search?m=free&o=r" target="_blank">link</a>
-      to get icons.
-    </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Value</h2>
+      <p>Content of the badge is specified using the <code>value</code> property.</p>
+      <div style="display: flex; gap: 2em">
+        <t-badge value="2" />
+        <t-badge [value]="10" />
+      </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Directive</h2>
+      <p>Content of the badge is specified using the <code>tBadge</code> property.</p>
+      <div style="display: flex; gap: 2em">
+        <i class="fa-regular fa-thumbs-up fa-lg" tBadge="3"></i>
+        <span tBadge="20">content....</span>
+      </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Type</h2>
+      <p>
+        Severity defines the color of the badge, possible values are <code>success</code>, <code>info</code>,
+        <code>warning</code>
+        and <code>danger</code>.
+      </p>
+      <div style="display: flex; gap: 2em">
+        <t-badge value="2" type="success" />
+        <t-badge value="4" type="info" />
+        <t-badge value="8" type="warn" />
+        <t-badge [value]="10" type="error" />
+      </div>
+    </ng-template>
   </ui-library-documentation-demo-wrapper>
 </div>

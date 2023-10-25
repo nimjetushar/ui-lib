@@ -1,4 +1,6 @@
-export type ToastType = 'success' | 'error' | 'warn' | 'info';
+import { Severity } from '../../core/core.type';
+
+export type ToastType = Severity;
 
 export type ToastPosition =
   | 'top-right'

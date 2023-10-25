@@ -22,12 +22,10 @@
           }
         ],
         "@angular-eslint/no-output-on-prefix": "off",
+        "@angular-eslint/no-host-metadata-property": "off",
         "import/no-unresolved": "off"
       },
-      "extends": [
-        "plugin:@nrwl/nx/angular",
-        "plugin:@angular-eslint/template/process-inline-templates"
-      ]
+      "extends": ["plugin:@nrwl/nx/angular", "plugin:@angular-eslint/template/process-inline-templates"]
     },
     {
       "files": ["*.html"],

@@ -12,11 +12,6 @@ $header-color: #ee6e73;
 }
 
 .ui-library-documentation-demo-wrapper {
-  p {
-    line-height: 1.5;
-    margin: 0 0 1em;
-  }
-
   .component-header {
     color: $header-color;
     margin-bottom: 0.4em;
@@ -66,8 +61,9 @@ $header-color: #ee6e73;
     p {
       code {
         background: #98dfee;
-        padding: 1px 2px;
+        padding: 1px 4px;
         border-radius: 4px;
+        font-size: 0.9em;
       }
     }
     // till here

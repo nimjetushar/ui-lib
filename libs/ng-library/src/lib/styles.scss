@@ -16,10 +16,26 @@
   -webkit-font-smoothing: antialiased;
 }
 
+:root {
+  --primary-color: #{$color-primary};
+  --success-color: #{$color-success};
+  --error-color: #{$color-error};
+  --attention-color: #{$color-attention};
+}
+
 .main-container {
   padding-top: $main-container-header-height;
 }
 
 .overlay-container #toast-container {
   min-width: auto;
+}
+
+// reset font
+.fa-lg {
+  line-height: 1;
+}
+
+.fa-xl {
+  line-height: 0.8;
 }

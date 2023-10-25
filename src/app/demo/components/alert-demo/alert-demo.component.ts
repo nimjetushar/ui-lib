@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AlertComponent, AlertTypes, DropdownOptions } from '@fourjs/ng-library';
 
 import { Options } from '../../../common';
+import { SeverityTypes } from '../../../constants/constant';
 
 @Component({
   selector: 'ui-library-documentation-alert-demo',
@@ -9,7 +10,7 @@ import { Options } from '../../../common';
   styleUrls: ['./alert-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AlertDemoComponent implements OnInit {
+export class AlertDemoComponent {
   readonly dropdownOption: DropdownOptions<AlertTypes>[] = [
     {
       label: 'info',
@@ -32,11 +33,7 @@ export class AlertDemoComponent implements OnInit {
   readonly options = getAlertComponentOptions();
   readonly importSyntax = `import { AlertModule } from '@fourjs/ng-library';`;
 
-  dropdownValue!: AlertTypes;
-
-  ngOnInit(): void {
-    this.dropdownValue = this.dropdownOption[0].value;
-  }
+  dropdownValue = this.dropdownOption[0].value;
 
   onClose(status: boolean): void {
     console.info('alert close triggered', { status });
@@ -50,15 +47,13 @@ const getComponenetSyntax = () => [
   `<t-alert type="info" title="Title Info" message="message........" [hideIcon]="true"><p>html content...</p></t-alert>`,
 ];
 
-const instanceOfAlertComponent = new AlertComponent();
-
-const getAlertComponentOptions = (): Options<keyof typeof instanceOfAlertComponent> => {
+const getAlertComponentOptions = (): Options<keyof AlertComponent> => {
   return {
     name: 't-alert',
     options: [
       {
         parameter: 'type',
-        type: `success | error | warn | info`,
+        type: SeverityTypes,
         description: 'Alert type',
         default: 'info',
       },
