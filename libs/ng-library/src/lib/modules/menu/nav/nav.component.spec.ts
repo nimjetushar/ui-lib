@@ -1,9 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { NavComponent } from './nav.component';
 import { BadgeComponent } from '../../badge';
+import { MenuIconComponent } from '../menu-icon/menu-icon.component';
+import { NavComponent } from './nav.component';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -11,7 +12,7 @@ describe('NavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NavComponent, BadgeComponent],
+      declarations: [NavComponent, BadgeComponent, MenuIconComponent],
       imports: [RouterTestingModule],
       providers: [Router],
     }).compileComponents();
