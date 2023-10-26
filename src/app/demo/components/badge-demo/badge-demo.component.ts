@@ -11,21 +11,12 @@ import { SeverityTypes } from '../../../constants/constant';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BadgeDemoComponent {
-  readonly compSyntax = [
-    `<t-badge badge="fa-solid fa-house" />`,
-    `<t-badge value="2" />`,
-    `<span tBadge="20">content....</span>`,
-  ];
+  readonly compSyntax = [`<t-badge value="2" />`, `<span tBadge="20">content....</span>`];
   readonly importSyntax = `import { BadgeModule } from '@fourjs/ng-library';`;
 
   readonly options: Options<BadgeComponent> = {
     name: 't-badge',
     options: [
-      {
-        parameter: 'badge',
-        type: 'string',
-        description: 'Icon class to render badge',
-      },
       {
         parameter: 'value',
         type: 'string | number',
