@@ -22,7 +22,13 @@
       />
     </ng-template>
     <ng-template tTemplate="output">
-      <h2 class="title">Close icon</h2>
+      <h2 class="title">Closable</h2>
+      <p>
+        Alert are <code>closable</code> using close icon being displayed on top right corner. In order to disable
+        closable messages, set <code>enableClose</code> to false. Note to hide alert use
+        <code>onCloseClick</code> output which is used to capture close icon event and then alert can be hidden using
+        <code>*ngIf</code>.
+      </p>
       <t-alert
         type="info"
         header="Title Info"
@@ -32,11 +38,12 @@
       />
     </ng-template>
     <ng-template tTemplate="output">
-      <h2 class="title">Without icon</h2>
+      <h2 class="title">Icon</h2>
       <t-alert type="warn" header="Title warn" message="message........" [hideIcon]="true" />
     </ng-template>
     <ng-template tTemplate="output">
-      <h2 class="title">Select Alert type from dropdown</h2>
+      <h2 class="title">Type</h2>
+      <p>The type option specifies the different level of the message.</p>
       <div style="margin-bottom: 14px">
         <t-dropdown placeholder="Select option" [options]="dropdownOption" [(ngModel)]="dropdownValue" />
       </div>

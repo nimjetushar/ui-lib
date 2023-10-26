@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { BadgeComponent } from '@fourjs/ng-library';
 
-import { IOptions } from '../../../common';
+import { Options } from '../../../common';
+import { SeverityTypes } from '../../../constants/constant';
 
 @Component({
   selector: 'ui-library-documentation-badge-demo',
@@ -8,25 +10,35 @@ import { IOptions } from '../../../common';
   styleUrls: ['./badge-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BadgeDemoComponent implements OnInit {
-  compSyntax!: string[];
-  options!: IOptions;
+export class BadgeDemoComponent {
+  readonly compSyntax = [
+    `<t-badge badge="fa-solid fa-house" />`,
+    `<t-badge value="2" />`,
+    `<span tBadge="20">content....</span>`,
+  ];
+  readonly importSyntax = `import { BadgeModule } from '@fourjs/ng-library';`;
 
-  ngOnInit(): void {
-    this.compSyntax = [
-      `<t-badge badge="pi-home"></t-badge>`,
-      `<t-badge badge="pi-thumbs-up-fill"></t-badge>`,
-    ];
+  readonly options: Options<BadgeComponent> = {
+    name: 't-badge',
+    options: [
+      {
+        parameter: 'badge',
+        type: 'string',
+        description: 'Icon class to render badge',
+      },
+      {
+        parameter: 'value',
+        type: 'string | number',
+        description: 'Value displayed inside badge',
+      },
+      {
+        parameter: 'type',
+        type: SeverityTypes,
+        default: 'info',
+        description: 'Badge with different severity',
+      },
+    ],
+  };
 
-    this.options = {
-      name: 't-badge',
-      options: [
-        {
-          parameter: 'badge',
-          type: 'string',
-          description: 'Icon class to render badge',
-        },
-      ],
-    };
-  }
+  badgeValue = '';
 }

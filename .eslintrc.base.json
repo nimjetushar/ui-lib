@@ -24,18 +24,7 @@
           "error",
           {
             "newlines-between": "always",
-            "groups": [
-              "external",
-              "builtin",
-              "internal",
-              ["parent", "sibling", "index"]
-            ]
-          }
-        ],
-        "@angular-eslint/no-host-metadata-property": [
-          "error",
-          {
-            "allowStatic": true
+            "groups": ["external", "builtin", "internal", ["parent", "sibling", "index"]]
           }
         ]
       }

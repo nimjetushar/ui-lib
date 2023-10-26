@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { DropdownOptions } from '@fourjs/ng-library';
+import { DropdownOptions, TooltipDirective } from '@fourjs/ng-library';
 
 import { Options } from '../../../common';
 
@@ -14,12 +14,12 @@ export class TooltipDemoComponent {
     `<div tTooltip="Content to be shown in the tooltip" [tooltipDisabled]="false"> Element on which tooltip is added </div>`,
   ];
 
-  readonly options: Options = {
-    name: 'tooltip',
+  readonly options: Options<TooltipDirective> = {
+    name: 'tTooltip',
     componentType: 'Directive',
     options: [
       {
-        parameter: 'tooltip',
+        parameter: 'tTooltip',
         type: 'string | TooltipContent',
         description: 'Content to be displayed inside tooltip',
       },
