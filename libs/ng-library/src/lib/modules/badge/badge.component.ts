@@ -12,8 +12,9 @@ import { badgeStyles } from './badge.constant';
     [ngClass]="typeClassName"
     [ngStyle]="badgeStyles"
     [style.border-radius]="value && value.length !== 1 ? '10px' : '50%'"
-    >{{ value }}</span
-  >`,
+  >
+    {{ value }}
+  </span>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
