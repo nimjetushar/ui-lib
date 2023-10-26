@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostBinding, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { isDefined } from 'tutility';
 
 import { Severity } from '../../core/core.type';
@@ -35,10 +35,6 @@ import { badgeStyles } from './badge.constant';
   },
 })
 export class BadgeComponent implements OnChanges {
-  @HostBinding('class')
-  @Input()
-  badge!: string;
-
   @Input({
     transform: (value: number | string) => value?.toString(),
   })

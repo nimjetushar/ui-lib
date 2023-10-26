@@ -11,7 +11,7 @@
         [class.selected]="selectedMenu.idx === idx"
       >
         <div class="menu-item" (click)="onMenuClick(menuItem, idx)">
-          <t-badge *ngIf="menuItem?.badge" class="badge" [badge]="menuItem.badge!" />
+          <i *ngIf="menuItem?.badge" class="badge" [ngClass]="menuItem.badge"></i>
           <span class="label">{{ menuItem.label }}</span>
         </div>
 
