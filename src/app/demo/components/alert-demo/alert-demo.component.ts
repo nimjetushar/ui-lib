@@ -47,7 +47,7 @@ const getComponenetSyntax = () => [
   `<t-alert type="info" title="Title Info" message="message........" [hideIcon]="true"><p>html content...</p></t-alert>`,
 ];
 
-const getAlertComponentOptions = (): Options<keyof AlertComponent> => {
+const getAlertComponentOptions = (): Options<AlertComponent> => {
   return {
     name: 't-alert',
     options: [

@@ -2,23 +2,18 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input, OnChanges, Simp
 import { isDefined } from 'tutility';
 
 import { Severity } from '../../core/core.type';
-
-export const badgeStyles = {
-  display: 'inline-block',
-  'min-width': '1.5rem',
-  height: '1.5rem',
-  'line-height': '1.5rem',
-  padding: '0',
-  'font-size': '0.75rem',
-  'text-align': 'center',
-  color: '#fff',
-  'background-color': 'var(--primary-color)',
-  'border-radius': '50%',
-};
+import { badgeStyles } from './badge.constant';
 
 @Component({
   selector: 't-badge',
-  template: `<span *ngIf="hasValue" class="badge" [ngClass]="typeClassName" [ngStyle]="badgeStyles">{{ value }}</span>`,
+  template: `<span
+    *ngIf="hasValue"
+    class="badge"
+    [ngClass]="typeClassName"
+    [ngStyle]="badgeStyles"
+    [style.border-radius]="value && value.length !== 1 ? '10px' : '50%'"
+    >{{ value }}</span
+  >`,
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
@@ -43,9 +38,13 @@ export class BadgeComponent implements OnChanges {
   @Input()
   badge!: string;
 
-  @Input() value!: number | string;
+  @Input({
+    transform: (value: number | string) => value?.toString(),
+  })
+  value!: string;
 
-  @Input() set type(type: Severity | null | undefined) {
+  @Input()
+  set type(type: Severity | null | undefined) {
     if (type) {
       switch (type) {
         case 'success':
@@ -67,6 +66,7 @@ export class BadgeComponent implements OnChanges {
   hasValue = false;
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.hasValue = isDefined(changes['value']?.currentValue);
+    const value = changes['value']?.currentValue;
+    this.hasValue = isDefined(value) && value !== '';
   }
 }

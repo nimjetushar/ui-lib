@@ -22,6 +22,15 @@
           <span tBadge="20">content....</span>
           <i class="fa-regular fa-envelope fa-xl" tBadge></i>
         </div>
+        <div style="display: flex; gap: 2em">
+          <label for="updateBadge">Update badge</label>
+          <input id="updateBadge" [(ngModel)]="badgeValue" />
+
+          <div style="display: flex; gap: 2em">
+            <t-badge [value]="badgeValue" />
+            <i class="fa-regular fa-envelope fa-xl" [tBadge]="badgeValue"></i>
+          </div>
+        </div>
       </div>
     </ng-template>
 

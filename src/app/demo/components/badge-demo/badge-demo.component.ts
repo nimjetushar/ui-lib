@@ -18,7 +18,7 @@ export class BadgeDemoComponent {
   ];
   readonly importSyntax = `import { BadgeModule } from '@fourjs/ng-library';`;
 
-  readonly options: Options<keyof BadgeComponent> = {
+  readonly options: Options<BadgeComponent> = {
     name: 't-badge',
     options: [
       {
@@ -34,8 +34,11 @@ export class BadgeDemoComponent {
       {
         parameter: 'type',
         type: SeverityTypes,
+        default: 'info',
         description: 'Badge with different severity',
       },
     ],
   };
+
+  badgeValue = '';
 }

@@ -38,12 +38,12 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
   @Input() autoHide = true;
   @Input() fitContent = true;
   @Input() hideOnEscape = true;
-  @Input('tTooltip') text!: string;
+  @Input() tTooltip!: string;
   @Input('tooltipDisabled')
-  get disabled(): boolean {
+  get tooltipDisabled(): boolean {
     return this._disabled;
   }
-  set disabled(val: boolean) {
+  set tooltipDisabled(val: boolean) {
     this._disabled = val;
     this.deactivate();
   }
@@ -81,7 +81,7 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
     @Inject(PLATFORM_ID) private platformId: any,
     public el: ElementRef,
     public zone: NgZone,
-    private renderer: Renderer2
+    private renderer: Renderer2,
   ) {}
 
   ngAfterViewInit() {
@@ -169,15 +169,15 @@ export class TooltipDirective implements AfterViewInit, OnDestroy, OnChanges {
       });
     }
 
-    if (simpleChange['disabled']) {
-      this.setOption({ disabled: simpleChange['disabled'].currentValue });
+    if (simpleChange['tooltipDisabled']) {
+      this.setOption({ disabled: simpleChange['tooltipDisabled'].currentValue });
     }
 
-    if (simpleChange['text']) {
-      this.setOption({ tooltipLabel: simpleChange['text'].currentValue });
+    if (simpleChange['tTooltip']) {
+      this.setOption({ tooltipLabel: simpleChange['tTooltip'].currentValue });
 
       if (this.active) {
-        if (simpleChange['text'].currentValue) {
+        if (simpleChange['tTooltip'].currentValue) {
           if (this.container && this.container.offsetParent) {
             this.updateText();
             this.align();
