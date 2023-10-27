@@ -1,0 +1,115 @@
+@import '../utility.scss';
+
+// button
+$secondary-color: $color-secondary;
+$button-font-size: 0.85em !default;
+$button-height: 2.5em !default;
+$button-padding: 0 1em !default;
+
+// Disabled styles
+$button-disabled-background: #dfdfdf !default;
+$button-disabled-color: #9f9f9f !default;
+
+// Raised buttons
+$button-raised-background: $secondary-color !default;
+$button-raised-background-hover: lighten($button-raised-background, 5%) !default;
+$button-raised-color: #fff !default;
+
+// Large buttons
+$button-large-font-size: 1em !default;
+$button-large-icon-font-size: 1.6rem !default;
+$button-large-height: $button-height * 1.25 !default;
+
+// Small buttons
+$button-small-font-size: 13px !default;
+$button-small-icon-font-size: 1.2rem !default;
+$button-small-height: $button-height * 0.9 !default;
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  height: $button-height;
+  padding: $button-padding;
+  font-size: $button-font-size;
+  line-height: $button-height;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 2px;
+  color: $button-raised-color;
+  background-color: $button-raised-background;
+  outline: 0;
+  @extend .z-depth-1;
+  transition: background-color 0.2s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-raised-background-hover;
+    @extend .z-depth-1-half;
+  }
+}
+
+// Disabled shared style
+.btn.disabled,
+.btn-large.disabled,
+.btn-small.disabled,
+.btn:disabled,
+.btn-large:disabled,
+.btn-small:disabled,
+.btn[disabled],
+.btn-large[disabled],
+.btn-small[disabled] {
+  pointer-events: none;
+  background-color: $button-disabled-background !important;
+  box-shadow: none;
+  color: $button-disabled-color !important;
+  cursor: default;
+
+  &:hover {
+    background-color: $button-disabled-background !important;
+    color: $button-disabled-color !important;
+  }
+}
+
+// Large button
+.btn-large {
+  height: $button-large-height;
+  line-height: $button-large-height;
+  font-size: $button-large-font-size;
+  padding: 0 2em;
+}
+
+// Small button
+.btn-small {
+  height: $button-small-height;
+  line-height: $button-small-height;
+  font-size: $button-small-font-size;
+}
+
+.btn.btn-primary {
+  background: $color-primary;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+}
+
+.btn.btn-secondary {
+  background: $color-secondary;
+
+  &:hover {
+    background: $color-secondary-hover;
+  }
+}
+
+.btn.btn-link {
+  background-color: #fff;
+  color: $color-primary;
+  font-weight: 600;
+  box-shadow: none;
+
+  &:hover {
+    text-decoration: underline;
+    background-color: #fff;
+  }
+}

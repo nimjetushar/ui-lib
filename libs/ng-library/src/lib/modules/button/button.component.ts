@@ -1,51 +1,34 @@
-import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-type BadgePosition = 'left' | 'right';
-type ButtonType = 'primary' | 'secondary' | 'tertiary';
-// <t-badge *ngIf="badge && bPos === 'left'" [class]="bPos" [badge]="badge"></t-badge>
-// <t-badge *ngIf="badge && bPos === 'right'" [class]="bPos" [badge]="badge"></t-badge>
+import { buttonSizeInput, buttonTypeInput, getButtonClass } from './button.utility';
+import { ButtonSize, ButtonType } from './type';
 
 @Component({
   selector: 't-button',
   template: `
-    <button
-      class="btn waves-effect waves-light {{ buttonType }}"
-      [ngClass]="{
-        disabled: disabled,
-        'btn-large': isLarge,
-        'btn-small': !isLarge
-      }"
-      [disabled]="disabled"
-    >
+    <button [ngClass]="getButtonClass()" [disabled]="disabled">
       {{ label }}
       <ng-content></ng-content>
     </button>
   `,
-  styleUrls: ['./button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 't-button',
+  },
 })
 export class ButtonComponent {
-  @Input() label!: string;
-  @Input() badge!: string;
+  @Input() label?: string;
+  @Input({ transform: buttonTypeInput }) type: ButtonType = 'primary';
   @Input() disabled = false;
-  @Input() isLarge = false;
-  @Input() set badgePosition(val: BadgePosition) {
-    this.bPos = ['right', 'left'].includes(val) ? val : 'left';
+  @Input({ transform: buttonSizeInput }) size: ButtonSize = 'normal';
+  @Input() link = false;
+
+  getButtonClass() {
+    return getButtonClass({
+      type: this.type,
+      size: this.size,
+      disabled: this.disabled,
+      link: this.link,
+    });
   }
-
-  @Input() set type(val: ButtonType) {
-    if (val) {
-      if (['primary', 'secondary', 'tertiary'].includes(val)) {
-        this.buttonType = val;
-      } else {
-        this.buttonType = 'primary';
-        console.warn('invalid button type');
-      }
-    }
-  }
-
-  @HostBinding('class') hostClass = 't-button';
-
-  buttonType: ButtonType = 'primary';
-  bPos: BadgePosition = 'left';
 }
