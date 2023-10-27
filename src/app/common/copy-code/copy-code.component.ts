@@ -8,7 +8,7 @@ import { ToastService } from '@fourjs/ng-library';
     `
       .copy {
         position: absolute;
-        top: 18px;
+        top: 10px;
         right: 10px;
         color: #fff;
         cursor: pointer;

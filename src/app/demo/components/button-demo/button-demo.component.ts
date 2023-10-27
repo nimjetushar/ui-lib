@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ButtonComponent } from '@fourjs/ng-library';
 
-import { IOptions } from '../../../common';
+import { DemoParameters, Options } from '../../../common';
 
 @Component({
   selector: 'ui-library-documentation-button-demo',
@@ -8,12 +9,11 @@ import { IOptions } from '../../../common';
   styleUrls: ['./button-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonDemoComponent {
-  compSyntax: string[] = [
-    '<t-button label="Home" type="primary" badge="pi-home"></t-button>',
-  ];
+export class ButtonDemoComponent implements DemoParameters<ButtonComponent> {
+  readonly componentSyntax: string[] = ['<t-button label="Home" type="primary" />'];
+  readonly importSyntax = 'import { ButtonModule } from "@fourjs/ng-library";';
 
-  options: IOptions = {
+  readonly options: Options<ButtonComponent> = {
     name: 't-button',
     options: [
       {
@@ -23,26 +23,14 @@ export class ButtonDemoComponent {
       },
       {
         parameter: 'type',
-        type: 'string',
-        description:
-          'Type of button, valid values are primary, secondary, tertiary',
+        type: 'primary | secondary',
+        description: 'Type of button, valid values are primary, secondary',
         default: 'primary',
       },
       {
-        parameter: 'badge',
-        type: 'string',
-        description: 'Icon class to render badge',
-      },
-      {
-        parameter: 'badgePosition',
-        type: 'string',
-        default: 'left',
-        description: 'Badge position in button, valid values are right, left',
-      },
-      {
-        parameter: 'isLarge',
-        type: 'boolean',
-        default: 'false',
+        parameter: 'size',
+        type: 'normal | large | small',
+        default: 'normal',
         description: 'Increases button size when true',
       },
       {

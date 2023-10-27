@@ -1,56 +1,40 @@
 <div class="badge-component">
   <ui-library-documentation-demo-wrapper
     header="Buttons"
-    [code]="compSyntax"
+    subHeader="Button is an extension to standard button element with icons and theming."
+    [code]="componentSyntax"
+    [importSyntax]="importSyntax"
     [options]="options"
   >
-    <div output>
+    <ng-template tTemplate="output">
+      <h2 class="title">Basic</h2>
+      <p>Text to display on a button is defined with the <code>label</code> property.</p>
       <div class="row">
         <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h6 class="header">Primary Button</h6>
-          <t-button
-            label="Primary"
-            type="primary"
-            (click)="clickHandler()"
-          ></t-button>
+          <h4 class="header">Primary Button</h4>
+          <t-button label="Primary" type="primary" (click)="clickHandler()" />
         </div>
         <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h6 class="header">Secondary Button</h6>
-          <t-button label="Secondary" type="secondary"></t-button>
+          <h4 class="header">Secondary Button</h4>
+          <t-button label="Secondary" type="secondary" />
         </div>
         <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h6 class="header">Tertiary Button</h6>
-          <t-button label="Tertiary" type="tertiary"> </t-button>
+          <h4 class="header">Link</h4>
+          <t-button label="Submit" [link]="true" />
         </div>
         <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h6 class="header">Large Button</h6>
-          <t-button label="Home" type="primary" [isLarge]="true"></t-button>
-        </div>
-        <div class="seperator col-sm-12 col-md-6 col-lg-4 badge-btn">
-          <h6 class="header">Button with badge</h6>
-          <t-button
-            label="Home"
-            type="primary"
-            badge="pi-home"
-            badgePosition="right"
-          >
-          </t-button>
-          <t-button
-            label="Home"
-            type="primary"
-            badge="pi-home"
-            badgePosition="left"
-          >
-          </t-button>
+          <h4 class="header">Size</h4>
+          <t-button label="Home" type="primary" size="large" />
         </div>
         <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h6 class="header">Disabled</h6>
-          <t-button label="Home" type="primary" [disabled]="true"></t-button>
+          <h4 class="header">Disabled</h4>
+          <t-button label="Disabled" type="primary" [disabled]="true" />
+        </div>
+        <div class="seperator col-sm-12 col-md-6 col-lg-4">
+          <h4 class="header">Custom</h4>
+          <t-button type="primary"> <i class="fa-solid fa-house"></i> custom </t-button>
         </div>
       </div>
-    </div>
-    <div doc>
-      <ui-library-documentation-common-note></ui-library-documentation-common-note>
-    </div>
+    </ng-template>
   </ui-library-documentation-demo-wrapper>
 </div>
