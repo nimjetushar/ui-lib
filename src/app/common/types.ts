@@ -38,6 +38,6 @@ export type Options<T extends object = any> = {
 
 export interface DemoParameters<T extends object> {
   componentSyntax: string[];
-  importSyntax: string;
+  importSyntax: `import { ${string} } from "@fourjs/ng-library";`;
   options: Options<T>;
 }

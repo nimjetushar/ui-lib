@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AlertComponent, AlertTypes, DropdownOptions } from '@fourjs/ng-library';
 
-import { Options } from '../../../common';
+import { DemoParameters, Options } from '../../../common';
 import { SeverityTypes } from '../../../constants/constant';
 
 @Component({
@@ -10,7 +10,7 @@ import { SeverityTypes } from '../../../constants/constant';
   styleUrls: ['./alert-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AlertDemoComponent {
+export class AlertDemoComponent implements DemoParameters<AlertComponent> {
   readonly dropdownOption: DropdownOptions<AlertTypes>[] = [
     {
       label: 'info',
@@ -29,9 +29,14 @@ export class AlertDemoComponent {
       value: 'warn',
     },
   ];
-  readonly compSyntax = getComponenetSyntax();
+  readonly componentSyntax = [
+    `<t-alert type="success" message="message........" />`,
+    `<t-alert type="error" title="Title Error" message="message........" />`,
+    `<t-alert type="info" title="Title Info" message="message........" [enableClose]="true" />`,
+    `<t-alert type="info" title="Title Info" message="message........" [hideIcon]="true"><p>html content...</p></t-alert>`,
+  ];
+  readonly importSyntax = 'import { AlertModule } from "@fourjs/ng-library";';
   readonly options = getAlertComponentOptions();
-  readonly importSyntax = `import { AlertModule } from '@fourjs/ng-library';`;
 
   dropdownValue = this.dropdownOption[0].value;
 
@@ -39,13 +44,6 @@ export class AlertDemoComponent {
     console.info('alert close triggered', { status });
   }
 }
-
-const getComponenetSyntax = () => [
-  `<t-alert type="success" message="message........" />`,
-  `<t-alert type="error" title="Title Error" message="message........" />`,
-  `<t-alert type="info" title="Title Info" message="message........" [enableClose]="true" />`,
-  `<t-alert type="info" title="Title Info" message="message........" [hideIcon]="true"><p>html content...</p></t-alert>`,
-];
 
 const getAlertComponentOptions = (): Options<AlertComponent> => {
   return {

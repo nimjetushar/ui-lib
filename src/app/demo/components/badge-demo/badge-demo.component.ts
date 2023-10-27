@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BadgeComponent } from '@fourjs/ng-library';
 
-import { Options } from '../../../common';
+import { DemoParameters, Options } from '../../../common';
 import { SeverityTypes } from '../../../constants/constant';
 
 @Component({
@@ -10,9 +10,9 @@ import { SeverityTypes } from '../../../constants/constant';
   styleUrls: ['./badge-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BadgeDemoComponent {
-  readonly compSyntax = [`<t-badge value="2" />`, `<span tBadge="20">content....</span>`];
-  readonly importSyntax = `import { BadgeModule } from '@fourjs/ng-library';`;
+export class BadgeDemoComponent implements DemoParameters<BadgeComponent> {
+  readonly componentSyntax = [`<t-badge value="2" />`, `<span tBadge="20">content....</span>`];
+  readonly importSyntax = `import { BadgeModule } from "@fourjs/ng-library";`;
 
   readonly options: Options<BadgeComponent> = {
     name: 't-badge',
