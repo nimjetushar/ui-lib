@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } f
 import { isDefined } from 'tutility';
 
 import { Severity } from '../../core/core.type';
-import { badgeStyles } from './badge.constant';
 
 @Component({
   selector: 't-badge',
@@ -10,7 +9,6 @@ import { badgeStyles } from './badge.constant';
     *ngIf="hasValue"
     class="badge"
     [ngClass]="typeClassName"
-    [ngStyle]="badgeStyles"
     [style.border-radius]="value && value.length !== 1 ? '10px' : '50%'"
   >
     {{ value }}
@@ -56,8 +54,6 @@ export class BadgeComponent implements OnChanges {
       }
     }
   }
-
-  readonly badgeStyles = badgeStyles;
 
   typeClassName?: string;
   hasValue = false;

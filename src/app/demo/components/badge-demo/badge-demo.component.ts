@@ -31,5 +31,13 @@ export class BadgeDemoComponent implements DemoParameters<BadgeComponent> {
     ],
   };
 
-  badgeValue = '';
+  badgeValue: string | number = '';
+
+  updateBadge() {
+    if (this.badgeValue === '') {
+      this.badgeValue = 0;
+      return;
+    }
+    this.badgeValue = (this.badgeValue as number) + 1;
+  }
 }

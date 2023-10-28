@@ -2,7 +2,6 @@ import { DOCUMENT } from '@angular/common';
 import { Directive, ElementRef, Inject, Input, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
 
 import { DomHandler } from '../../core/dom/domHandler';
-import { badgeStyles } from './badge.constant';
 
 @Directive({
   selector: '[tBadge]',
@@ -17,25 +16,27 @@ export class BadgeDirective implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-    this.elementRef.nativeElement.style.position = 'relative';
-
-    const badge = this.document.createElement('span');
-    DomHandler.addClass(badge, 'badge');
-    this.addStyles(badge);
-    this.renderer.appendChild(badge, this.document.createTextNode(this.tBadge));
-    this.renderer.appendChild(this.elementRef.nativeElement, badge);
+    DomHandler.addClass(this.elementRef.nativeElement, 't-badge');
+    this.createBadgeElement();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['tBadge'].currentValue !== changes['tBadge'].previousValue) {
-      const badge = this.elementRef.nativeElement.querySelector('.badge');
-
-      if (badge) {
-        badge.innerHTML = '';
-        this.renderer.appendChild(badge, this.document.createTextNode(this.tBadge));
-        this.addStyles(badge);
+      const childElements = this.elementRef.nativeElement.children;
+      for (const child of childElements) {
+        this.renderer.removeChild(this.elementRef.nativeElement, child);
       }
+      this.createBadgeElement();
     }
+  }
+
+  private createBadgeElement() {
+    const badge = this.document.createElement('span');
+    DomHandler.addClass(badge, 'badge');
+    DomHandler.addClass(badge, 'badge-element');
+    this.addStyles(badge);
+    this.renderer.appendChild(badge, this.document.createTextNode(this.tBadge));
+    this.renderer.appendChild(this.elementRef.nativeElement, badge);
   }
 
   private addStyles(element: HTMLSpanElement): void {
@@ -43,13 +44,7 @@ export class BadgeDirective implements OnInit, OnChanges {
       this.tBadge !== '' ? {} : { width: '0.5rem', 'min-width': '0.5em', height: '0.5rem' };
 
     const badgeCssProperties: Record<string, string> = {
-      ...badgeStyles,
       ...dotStyles,
-      position: 'absolute',
-      top: '0',
-      right: '0',
-      'transform-origin': '100% 0',
-      transform: 'translate(50%,-50%)',
       'border-radius': this.tBadge?.length !== 1 ? '50%' : '10px',
     };
     for (const prop in badgeCssProperties) {
