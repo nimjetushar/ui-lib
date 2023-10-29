@@ -5,21 +5,25 @@
   <div class="component-content">
     <div class="import-section" *ngIf="importSyntax">
       <h2>Import</h2>
-      <div class="import-sample">
-        <ui-library-documentation-copy [content]="importSyntax" />
-        <pre>
+      <div class="import-content">
+        <div class="import-sample">
+          <ui-library-documentation-copy [content]="importSyntax" />
+          <pre>
             <code class="prettyprint lang-html">{{importSyntax}}</code>
-        </pre>
+          </pre>
+        </div>
       </div>
     </div>
 
     <div class="code-section" *ngIf="code?.length">
       <h2>Syntax</h2>
-      <div class="code-sample">
-        <ui-library-documentation-copy [content]="code" />
-        <pre *ngFor="let c of code">
-          <code class="prettyprint lang-html">{{c}}</code>
-      </pre>
+      <div class="code-content">
+        <div class="code-sample">
+          <ui-library-documentation-copy [content]="code" />
+          <pre *ngFor="let c of code">
+            <code class="prettyprint lang-html">{{c}}</code>
+          </pre>
+        </div>
       </div>
     </div>
 
@@ -28,7 +32,7 @@
     </div>
 
     <ng-container *ngIf="outputContent.length">
-      <div class="code-output" *ngFor="let content of outputContent">
+      <div class="output" *ngFor="let content of outputContent">
         <ng-container [ngTemplateOutlet]="content" />
       </div>
     </ng-container>

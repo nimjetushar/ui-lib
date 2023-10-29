@@ -3,8 +3,8 @@
 $header-color: #ee6e73;
 
 .code-wrapper {
-  padding: 0.75em 1.25em 1.25em;
-  margin: 1.5em 0;
+  padding: 1.25em;
+  margin: 0 0 1.5em;
   color: #152935;
   border: 1px solid #cbced2;
   border-radius: 4px;
@@ -23,11 +23,14 @@ $header-color: #ee6e73;
 
   .import-section,
   .code-section {
-    @extend .code-wrapper;
-
     h2 {
       margin: 0 0 0.4em;
     }
+  }
+
+  .import-content,
+  .code-content {
+    @extend .code-wrapper;
   }
 
   .code-sample,
@@ -52,7 +55,12 @@ $header-color: #ee6e73;
 
   .code-output {
     @extend .code-wrapper;
+  }
 
+  .output {
+    .output-content {
+      @extend .code-wrapper;
+    }
     // this is used inside output section via Viewencapsulation
     h2.title {
       margin: 0 0 0.4em;

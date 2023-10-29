@@ -12,14 +12,16 @@
         A single alert is rendered using <code>t-alert</code> based of different <code>type</code>, having
         <code>header</code> and <code>message</code> as input.
       </p>
-      <t-alert type="success" header="Success" message="message........" />
-      <t-alert type="error" header="Title error" message="message........" />
-      <t-alert type="info" header="Title info" message="message........" />
-      <t-alert
-        type="warn"
-        header="Title warn"
-        message="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-      />
+      <div class="output-content">
+        <t-alert type="success" header="Success" message="message........" />
+        <t-alert type="error" header="Title error" message="message........" />
+        <t-alert type="info" header="Title info" message="message........" />
+        <t-alert
+          type="warn"
+          header="Title warn"
+          message="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        />
+      </div>
     </ng-template>
     <ng-template tTemplate="output">
       <h2 class="title">Closable</h2>
@@ -29,39 +31,47 @@
         <code>onCloseClick</code> output which is used to capture close icon event and then alert can be hidden using
         <code>*ngIf</code>.
       </p>
-      <t-alert
-        type="info"
-        header="Title Info"
-        message="message........"
-        [enableClose]="true"
-        (onCloseClick)="onClose($event)"
-      />
+      <div class="output-content">
+        <t-alert
+          type="info"
+          header="Title Info"
+          message="message........"
+          [enableClose]="true"
+          (onCloseClick)="onClose($event)"
+        />
+      </div>
     </ng-template>
     <ng-template tTemplate="output">
       <h2 class="title">Icon</h2>
-      <t-alert type="warn" header="Title warn" message="message........" [hideIcon]="true" />
+      <div class="output-content">
+        <t-alert type="warn" header="Title warn" message="message........" [hideIcon]="true" />
+      </div>
     </ng-template>
     <ng-template tTemplate="output">
       <h2 class="title">Type</h2>
       <p>The type option specifies the different level of the message.</p>
-      <div style="margin-bottom: 14px">
-        <t-dropdown placeholder="Select option" [options]="dropdownOption" [(ngModel)]="dropdownValue" />
+      <div class="output-content">
+        <div style="margin-bottom: 14px">
+          <t-dropdown placeholder="Select option" [options]="dropdownOption" [(ngModel)]="dropdownValue" />
+        </div>
+        <t-alert [type]="dropdownValue" header="Title {{ dropdownValue }}" message="message........" />
       </div>
-      <t-alert [type]="dropdownValue" header="Title {{ dropdownValue }}" message="message........" />
     </ng-template>
 
     <ng-template tTemplate="output">
       <h2 class="title">Alert with html / custom content</h2>
-      <t-alert type="info" header="Custom alert">
-        <p>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking
-          at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-          opposed to using <b>'Content here, content here'</b>, making it look like readable English. Many desktop
-          publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
-          <i>'lorem ipsum'</i> will uncover many web sites still in their infancy. Various versions have evolved over
-          the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-        </p>
-      </t-alert>
+      <div class="output-content">
+        <t-alert type="info" header="Custom alert">
+          <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+            letters, as opposed to using <b>'Content here, content here'</b>, making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for <i>'lorem ipsum'</i> will uncover many web sites still in their infancy. Various versions have
+            evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+          </p>
+        </t-alert>
+      </div>
     </ng-template>
   </ui-library-documentation-demo-wrapper>
 </div>

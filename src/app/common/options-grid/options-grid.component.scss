@@ -1,7 +1,6 @@
 @import '../demo-wrapper/demo-wrapper.component.scss';
 
 .code-options {
-  @extend .code-wrapper;
   display: block;
 
   .header {
@@ -9,6 +8,7 @@
   }
 
   .table {
+    @extend .code-wrapper;
     display: flex;
     flex-direction: column;
     gap: 1.5em;
