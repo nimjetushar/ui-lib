@@ -82,11 +82,11 @@ export class ToastDemoComponent {
   ];
   readonly toastComp = '<t-toast baseZIndex="1050" position="top-right"></t-toast>';
 
-  readonly toastType: ToastType[] = ['success', 'error', 'warn', 'info'];
+  readonly toastType: ToastType[] = ['success', 'error', 'warning', 'info'];
 
   constructor(private toastService: ToastService) {}
 
-  showToast(type: 'success' | 'error' | 'warn' | 'info'): void {
+  showToast(type: 'success' | 'error' | 'warning' | 'info'): void {
     this.toastService.show({
       title: 'Title',
       message: 'message',
@@ -98,7 +98,7 @@ export class ToastDemoComponent {
   multipleToast(): void {
     this.toastService.showMultiple([
       { title: 'Title', message: 'message', type: 'success' },
-      { title: 'Title', message: 'message', type: 'warn' },
+      { title: 'Title', message: 'message', type: 'warning' },
       { title: 'Title', message: 'message', type: 'info' },
     ]);
   }

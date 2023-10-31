@@ -1,15 +1,7 @@
 @import 'variable.scss';
+@import '../wrapper-common.style.scss';
 
 $header-color: #ee6e73;
-
-.code-wrapper {
-  padding: 1.25em;
-  margin: 0 0 1.5em;
-  color: #152935;
-  border: 1px solid #cbced2;
-  border-radius: 4px;
-  background-color: #fff;
-}
 
 .ui-library-documentation-demo-wrapper {
   .component-header {
@@ -19,38 +11,6 @@ $header-color: #ee6e73;
 
   h6.header {
     color: $header-color;
-  }
-
-  .import-section,
-  .code-section {
-    h2 {
-      margin: 0 0 0.4em;
-    }
-  }
-
-  .import-content,
-  .code-content {
-    @extend .code-wrapper;
-  }
-
-  .code-sample,
-  .import-sample {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    gap: 1em;
-    border-radius: 4px;
-    background: #000;
-
-    pre {
-      display: flex;
-      margin: 0;
-    }
-
-    code {
-      white-space: pre-line;
-    }
   }
 
   .code-output {

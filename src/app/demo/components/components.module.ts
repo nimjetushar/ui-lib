@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {
   AlertModule,
@@ -10,6 +11,7 @@ import {
   DynamicFieldsModule,
   NavigationModule,
   RadioModule,
+  ToastModule,
 } from '@fourjs/ng-library';
 
 import { Common } from '../../common';
@@ -43,6 +45,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     Common,
+    FormsModule,
     AlertModule,
     BadgeModule,
     ButtonModule,
@@ -51,6 +54,7 @@ const routes: Routes = [
     DynamicFieldsModule,
     RadioModule,
     NavigationModule,
+    ToastModule,
   ],
   declarations: [
     AlertDemoComponent,

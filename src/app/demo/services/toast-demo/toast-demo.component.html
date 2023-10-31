@@ -1,42 +1,15 @@
 <div class="toast-demo-component">
-  <ui-library-documentation-demo-wrapper
-    header="Toast Service"
-    [options]="options"
-  >
+  <ui-library-documentation-demo-wrapper header="Toast Service" [options]="options">
     <div output>
-      <t-button
-        class="success"
-        type="primary"
-        label="success"
-        (click)="showToast('success')"
-      >
-      </t-button>
-      <t-button
-        class="error"
-        type="primary"
-        label="error"
-        (click)="showToast('error')"
-      ></t-button>
-      <t-button
-        class="info"
-        type="primary"
-        label="info"
-        (click)="showToast('info')"
-      ></t-button>
-      <t-button
-        class="warning"
-        type="primary"
-        label="warning"
-        (click)="showToast('warn')"
-      >
-      </t-button>
+      <t-button class="success" type="primary" label="success" (click)="showToast('success')"> </t-button>
+      <t-button class="error" type="primary" label="error" (click)="showToast('error')"></t-button>
+      <t-button class="info" type="primary" label="info" (click)="showToast('info')"></t-button>
+      <t-button class="warning" type="primary" label="warning" (click)="showToast('warning')"> </t-button>
 
-      <t-button type="primary" label="multiple" (click)="multipleToast()">
-      </t-button>
+      <t-button type="primary" label="multiple" (click)="multipleToast()"> </t-button>
     </div>
     <div doc>
-      Add <b>{{ toastComp }}</b> into HTML and Provide <b>ToastService</b> into
-      Root Module.
+      Add <b>{{ toastComp }}</b> into HTML and Provide <b>ToastService</b> into Root Module.
       <div class="toast-types">
         <span>Toast types are :- </span>
         <ng-container *ngFor="let type of toastType; let last = last">

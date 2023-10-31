@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BadgeComponent } from '@fourjs/ng-library';
 
-import { DemoParameters, Options } from '../../../common';
+import { DemoParameters, Options, getComponentParameter } from '../../../common';
 import { SeverityTypes } from '../../../constants/constant';
 
 @Component({
@@ -13,23 +13,7 @@ import { SeverityTypes } from '../../../constants/constant';
 export class BadgeDemoComponent implements DemoParameters<BadgeComponent> {
   readonly componentSyntax = [`<t-badge value="2" />`, `<span tBadge="20">content....</span>`];
   readonly importSyntax = `import { BadgeModule } from "@fourjs/ng-library";`;
-
-  readonly options: Options<BadgeComponent> = {
-    name: 't-badge',
-    options: [
-      {
-        parameter: 'value',
-        type: 'string | number',
-        description: 'Value displayed inside badge',
-      },
-      {
-        parameter: 'type',
-        type: SeverityTypes,
-        default: 'info',
-        description: 'Badge with different severity',
-      },
-    ],
-  };
+  readonly options = getBadgeComponentOptions();
 
   badgeValue: string | number = '';
 
@@ -41,3 +25,26 @@ export class BadgeDemoComponent implements DemoParameters<BadgeComponent> {
     this.badgeValue = (this.badgeValue as number) + 1;
   }
 }
+
+const getBadgeComponentOptions = (): Options<BadgeComponent> => {
+  const instance = new BadgeComponent();
+  const getParameter = getComponentParameter(instance);
+
+  return {
+    name: 't-badge',
+    options: [
+      {
+        parameter: 'value',
+        type: 'string | number',
+        description: 'Value displayed inside badge',
+      },
+      getParameter({ parameter: 'type', description: 'Badge with different severity', type: SeverityTypes }),
+      {
+        parameter: 'type',
+        type: SeverityTypes,
+        default: 'info',
+        description: 'Badge with different severity',
+      },
+    ],
+  };
+};

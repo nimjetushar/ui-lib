@@ -5,14 +5,16 @@ import { Severity } from '../../core/core.type';
 
 @Component({
   selector: 't-badge',
-  template: `<span
-    *ngIf="hasValue"
-    class="badge"
-    [ngClass]="typeClassName"
-    [style.border-radius]="value && value.length !== 1 ? '10px' : '50%'"
-  >
-    {{ value }}
-  </span>`,
+  template: `
+    <span
+      *ngIf="hasValue"
+      class="badge"
+      [ngClass]="typeClassName"
+      [style.border-radius]="value && value.length !== 1 ? '10px' : '50%'"
+    >
+      {{ value }}
+    </span>
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
@@ -36,10 +38,21 @@ export class BadgeComponent implements OnChanges {
   @Input({
     transform: (value: number | string) => value?.toString(),
   })
-  value!: string;
+  value = '';
 
-  @Input()
-  set type(type: Severity | null | undefined) {
+  @Input() type: Severity = 'info';
+
+  typeClassName?: string;
+  hasValue = false;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const value = changes['value']?.currentValue;
+    this.hasValue = isDefined(value) && value !== '';
+
+    this.setBadgeType(this.type);
+  }
+
+  private setBadgeType(type: Severity | null | undefined) {
     if (type) {
       switch (type) {
         case 'success':
@@ -48,18 +61,10 @@ export class BadgeComponent implements OnChanges {
         case 'error':
           this.typeClassName = 'error';
           break;
-        case 'warn':
+        case 'warning':
           this.typeClassName = 'warning';
           break;
       }
     }
-  }
-
-  typeClassName?: string;
-  hasValue = false;
-
-  ngOnChanges(changes: SimpleChanges): void {
-    const value = changes['value']?.currentValue;
-    this.hasValue = isDefined(value) && value !== '';
   }
 }

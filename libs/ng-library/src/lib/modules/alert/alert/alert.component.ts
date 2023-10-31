@@ -4,13 +4,14 @@ import {
   EventEmitter,
   HostBinding,
   Input,
+  OnChanges,
+  OnInit,
   Output,
+  SimpleChanges,
   ViewEncapsulation,
 } from '@angular/core';
 
 import { AlertTypes } from '../types';
-
-const defaultAlertType = 'info';
 
 @Component({
   selector: 't-alert',
@@ -20,19 +21,13 @@ const defaultAlertType = 'info';
   host: { class: 't-alert t-alert-wrapper' },
   encapsulation: ViewEncapsulation.None,
 })
-export class AlertComponent {
+export class AlertComponent implements OnInit, OnChanges {
   @HostBinding('class')
-  @Input({ required: true })
-  set type(val: AlertTypes) {
-    this._alertType = val || defaultAlertType;
-    this.setProperties(this._alertType);
-  }
-  get type(): AlertTypes {
-    return this._alertType;
-  }
+  @Input({ transform: transformAlertTypeInput })
+  type: AlertTypes = 'info';
 
-  @Input() header?: string;
-  @Input() message?: string;
+  @Input() header = '';
+  @Input() message = '';
   @Input() hideIcon = false;
   @Input() enableClose = false;
 
@@ -40,10 +35,18 @@ export class AlertComponent {
 
   iconClass?: string;
 
-  private _alertType: AlertTypes;
+  ngOnInit(): void {
+    this.setProperties(this.type);
+  }
 
-  constructor() {
-    this._alertType = defaultAlertType;
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['type'] && changes['type'].currentValue !== changes['type'].previousValue) {
+      this.setProperties(this.type);
+    }
+  }
+
+  closeHandler(): void {
+    this.onCloseClick.emit(true);
   }
 
   private setProperties(alertType: AlertTypes): void {
@@ -55,7 +58,7 @@ export class AlertComponent {
         case 'error':
           this.iconClass = 'fa-solid fa-xmark fa-xl';
           break;
-        case 'warn':
+        case 'warning':
           this.iconClass = 'fa-solid fa-exclamation fa-xl';
           break;
         case 'info':
@@ -66,8 +69,8 @@ export class AlertComponent {
       }
     }
   }
+}
 
-  closeHandler(): void {
-    this.onCloseClick.emit(true);
-  }
+function transformAlertTypeInput(value?: AlertTypes) {
+  return value ?? 'info';
 }

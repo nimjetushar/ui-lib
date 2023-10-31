@@ -7,7 +7,7 @@ import { DomHandler } from '../../core/dom/domHandler';
   selector: '[tBadge]',
 })
 export class BadgeDirective implements OnInit, OnChanges {
-  @Input({ transform: (value: string | number) => value.toString() }) tBadge!: string;
+  @Input({ transform: (value: string | number) => value.toString() }) tBadge = '';
 
   constructor(
     private elementRef: ElementRef,

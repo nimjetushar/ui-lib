@@ -10,18 +10,18 @@ import {
   QueryList,
   TemplateRef,
   ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
-import { ToastService, UITemplate } from '@fourjs/ng-library';
+import { UITemplate } from '@fourjs/ng-library';
 
 import { Options } from '../types';
-
-declare let PR: any;
 
 @Component({
   selector: 'ui-library-documentation-demo-wrapper',
   templateUrl: './demo-wrapper.component.html',
   styleUrls: ['./demo-wrapper.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class DemoWrapperComponent implements OnInit, AfterViewInit {
   @Input({ required: true }) header!: string;
@@ -51,7 +51,7 @@ export class DemoWrapperComponent implements OnInit, AfterViewInit {
 
   private _options?: Options | null;
 
-  constructor(private toast: ToastService, private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.enableOutput = !this.outputWrapper.nativeElement.childNodes.length;
@@ -71,22 +71,5 @@ export class DemoWrapperComponent implements OnInit, AfterViewInit {
       }
     });
     this.cdr.detectChanges();
-    PR.prettyPrint();
-  }
-
-  copyToClipboard(): void {
-    const copyEle = document.createElement('input');
-    document.body.appendChild(copyEle);
-    const codeSample = this.code?.reduce((accumulator, currentValue) => accumulator + currentValue);
-    if (!codeSample) {
-      return;
-    }
-
-    copyEle.setAttribute('value', codeSample);
-    copyEle.select();
-    document.execCommand('copy');
-    document.body.removeChild(copyEle);
-
-    this.toast.show({ message: 'Copied...', type: 'info' });
   }
 }
