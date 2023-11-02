@@ -22,7 +22,7 @@ export class BadgeDirective implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['tBadge'].currentValue !== changes['tBadge'].previousValue) {
-      const childElements = this.elementRef.nativeElement.children;
+      const childElements = this.elementRef.nativeElement?.childNodes ?? [];
       for (const child of childElements) {
         this.renderer.removeChild(this.elementRef.nativeElement, child);
       }
