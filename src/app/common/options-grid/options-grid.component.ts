@@ -21,6 +21,7 @@ export class OptionsGridComponent {
     }
   }
 
+  readonly notAvailableChar = '--';
   docOptions: DocOptions[] | undefined;
   methodOptions!: MethodOptions[] | undefined;
   componentType = 'Component';

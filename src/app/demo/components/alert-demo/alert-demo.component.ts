@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AlertComponent, AlertTypes, DropdownOptions } from '@fourjs/ng-library';
 
-import { DemoParameters, Options } from '../../../common';
+import { DemoParameters, Options, getComponentParameter } from '../../../common';
 import { SeverityTypes } from '../../../constants/constant';
 
 @Component({
@@ -11,24 +11,12 @@ import { SeverityTypes } from '../../../constants/constant';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlertDemoComponent implements DemoParameters<AlertComponent> {
-  readonly dropdownOption: DropdownOptions<AlertTypes>[] = [
-    {
-      label: 'info',
-      value: 'info',
-    },
-    {
-      label: 'success',
-      value: 'success',
-    },
-    {
-      label: 'error',
-      value: 'error',
-    },
-    {
-      label: 'warn',
-      value: 'warn',
-    },
-  ];
+  readonly dropdownOption: DropdownOptions<AlertTypes>[] = (['info', 'success', 'error', 'warning'] as AlertTypes[])
+    .sort()
+    .map(i => ({
+      label: i,
+      value: i,
+    }));
   readonly componentSyntax = [
     `<t-alert type="success" message="message........" />`,
     `<t-alert type="error" title="Title Error" message="message........" />`,
@@ -46,37 +34,17 @@ export class AlertDemoComponent implements DemoParameters<AlertComponent> {
 }
 
 const getAlertComponentOptions = (): Options<AlertComponent> => {
+  const instance = new AlertComponent();
+  const getParameter = getComponentParameter(instance);
+
   return {
     name: 't-alert',
     options: [
-      {
-        parameter: 'type',
-        type: SeverityTypes,
-        description: 'Alert type',
-        default: 'info',
-      },
-      {
-        parameter: 'header',
-        type: `string`,
-        description: 'Alert header/title',
-      },
-      {
-        parameter: 'message',
-        type: `string`,
-        description: 'Alert message',
-      },
-      {
-        parameter: 'hideIcon',
-        type: `boolean`,
-        description: 'Hide alert icon',
-        default: 'false',
-      },
-      {
-        parameter: 'enableClose',
-        type: `boolean`,
-        description: 'Dispaly close button',
-        default: 'false',
-      },
+      getParameter({ parameter: 'type', description: 'Alert type', type: SeverityTypes }),
+      getParameter({ parameter: 'header', description: 'Alert header/title' }),
+      getParameter({ parameter: 'message', description: 'Alert message' }),
+      getParameter({ parameter: 'hideIcon', description: 'Hide alert icon' }),
+      getParameter({ parameter: 'enableClose', description: 'Dispaly close button' }),
     ],
     methods: [
       {

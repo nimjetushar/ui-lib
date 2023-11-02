@@ -39,6 +39,12 @@ export class ButtonDemoComponent implements DemoParameters<ButtonComponent> {
         type: 'boolean',
         description: 'Disabled button',
       },
+      {
+        parameter: 'link',
+        default: 'false',
+        type: 'boolean',
+        description: 'Add a link style to the button.',
+      },
     ],
   };
 

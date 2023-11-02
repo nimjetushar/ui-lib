@@ -8,7 +8,7 @@
   >
     <ng-template tTemplate="output">
       <h2 class="title">Basic</h2>
-      <div style="display: flex; flex-direction: column; gap: 2em">
+      <div class="output-content" style="display: flex; flex-direction: column; gap: 2em">
         <div style="display: flex; gap: 2em">
           <t-badge value="2" />
           <t-badge [value]="100" />
@@ -18,14 +18,17 @@
           <span tBadge="20">content....</span>
           <i class="fa-regular fa-envelope fa-xl" tBadge></i>
         </div>
-        <div style="display: flex; gap: 2em">
-          <label for="updateBadge">Update badge</label>
-          <input id="updateBadge" [(ngModel)]="badgeValue" />
+      </div>
+    </ng-template>
 
-          <div style="display: flex; gap: 2em">
-            <t-badge [value]="badgeValue" />
-            <i class="fa-regular fa-envelope fa-xl" [tBadge]="badgeValue"></i>
-          </div>
+    <ng-template tTemplate="output">
+      <h2 class="title">Badge update</h2>
+      <div class="output-content">
+        <button tButton (click)="updateBadge()">Update Badge</button>
+
+        <div style="display: flex; gap: 2em; margin-top: 2em">
+          <t-badge [value]="badgeValue" />
+          <i class="fa-regular fa-envelope fa-xl" [tBadge]="badgeValue"></i>
         </div>
       </div>
     </ng-template>
@@ -33,7 +36,7 @@
     <ng-template tTemplate="output">
       <h2 class="title">Value</h2>
       <p>Content of the badge is specified using the <code>value</code> property.</p>
-      <div style="display: flex; gap: 2em">
+      <div class="output-content" style="display: flex; gap: 2em">
         <t-badge value="2" />
         <t-badge [value]="10" />
       </div>
@@ -42,7 +45,7 @@
     <ng-template tTemplate="output">
       <h2 class="title">Directive</h2>
       <p>Content of the badge is specified using the <code>tBadge</code> property.</p>
-      <div style="display: flex; gap: 2em">
+      <div class="output-content" style="display: flex; gap: 2em">
         <i class="fa-regular fa-thumbs-up fa-lg" tBadge="3"></i>
         <span tBadge="20">content....</span>
       </div>
@@ -55,10 +58,10 @@
         <code>warning</code>
         and <code>danger</code>.
       </p>
-      <div style="display: flex; gap: 2em">
+      <div class="output-content" style="display: flex; gap: 2em">
         <t-badge value="2" type="success" />
         <t-badge value="4" type="info" />
-        <t-badge value="8" type="warn" />
+        <t-badge value="8" type="warning" />
         <t-badge [value]="10" type="error" />
       </div>
     </ng-template>

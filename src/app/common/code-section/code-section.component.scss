@@ -1,0 +1,30 @@
+@import '../wrapper-common.style.scss';
+
+.code-section {
+  h2 {
+    margin: 0 0 0.4em;
+  }
+
+  .content {
+    @extend .code-wrapper;
+  }
+
+  .sample {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+    border-radius: 4px;
+    background: #000;
+
+    pre {
+      display: flex;
+      margin: 0;
+    }
+
+    code {
+      white-space: pre-line;
+    }
+  }
+}

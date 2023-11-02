@@ -1,15 +1,7 @@
 @import 'variable.scss';
+@import '../wrapper-common.style.scss';
 
 $header-color: #ee6e73;
-
-.code-wrapper {
-  padding: 0.75em 1.25em 1.25em;
-  margin: 1.5em 0;
-  color: #152935;
-  border: 1px solid #cbced2;
-  border-radius: 4px;
-  background-color: #fff;
-}
 
 .ui-library-documentation-demo-wrapper {
   .component-header {
@@ -21,38 +13,14 @@ $header-color: #ee6e73;
     color: $header-color;
   }
 
-  .import-section,
-  .code-section {
-    @extend .code-wrapper;
-
-    h2 {
-      margin: 0 0 0.4em;
-    }
-  }
-
-  .code-sample,
-  .import-sample {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    gap: 1em;
-    border-radius: 4px;
-    background: #000;
-
-    pre {
-      display: flex;
-      margin: 0;
-    }
-
-    code {
-      white-space: pre-line;
-    }
-  }
-
   .code-output {
     @extend .code-wrapper;
+  }
 
+  .output {
+    .output-content {
+      @extend .code-wrapper;
+    }
     // this is used inside output section via Viewencapsulation
     h2.title {
       margin: 0 0 0.4em;

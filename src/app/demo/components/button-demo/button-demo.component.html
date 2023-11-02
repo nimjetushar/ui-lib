@@ -9,35 +9,81 @@
     <ng-template tTemplate="output">
       <h2 class="title">Basic</h2>
       <p>Text to display on a button is defined with the <code>label</code> property.</p>
-      <div class="row">
-        <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h4 class="header">Primary Button</h4>
+      <div class="output-content row">
+        <div class="col-sm-12 col-md-6 col-lg-4" style="margin-bottom: 2em">
+          <h4 style="margin-top: 0">Primary Button</h4>
           <t-button label="Primary" type="primary" (click)="clickHandler()" />
         </div>
-        <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h4 class="header">Secondary Button</h4>
+        <div class="col-sm-12 col-md-6 col-lg-4" style="margin-bottom: 2em">
+          <h4 style="margin-top: 0">Secondary Button</h4>
           <t-button label="Secondary" type="secondary" />
         </div>
-        <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h4 class="header">Link</h4>
+        <div class="col-sm-12 col-md-6 col-lg-4" style="margin-bottom: 2em">
+          <h4 style="margin-top: 0">Link</h4>
           <t-button label="Submit" [link]="true" />
         </div>
-        <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h4 class="header">Size</h4>
+        <div class="col-sm-12 col-md-6 col-lg-4" style="margin-bottom: 2em">
+          <h4 style="margin-top: 0">Size</h4>
           <t-button label="Home" type="primary" size="large" />
         </div>
-        <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h4 class="header">Disabled</h4>
+        <div class="col-sm-12 col-md-6 col-lg-4" style="margin-bottom: 2em">
+          <h4 style="margin-top: 0">Disabled</h4>
           <t-button label="Disabled" type="primary" [disabled]="true" />
         </div>
-        <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h4 class="header">Custom</h4>
-          <t-button type="primary"> <i class="fa-solid fa-house"></i> custom </t-button>
+        <div class="col-sm-12 col-md-6 col-lg-4" style="margin-bottom: 2em">
+          <h4 style="margin-top: 0">Custom</h4>
+          <t-button type="primary">
+            <i class="fa-solid fa-house"></i>
+            <b>Custom</b>
+            button
+          </t-button>
         </div>
-        <div class="seperator col-sm-12 col-md-6 col-lg-4">
-          <h4 class="header">Directive</h4>
-          <button tButton>using directive</button>
-        </div>
+      </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Directive</h2>
+      <p>Button can also be used as directive using tButton.</p>
+      <div class="output-content">
+        <button tButton>Using directive</button>
+      </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Link</h2>
+      <p>A button can be rendered as a link as well.</p>
+      <div class="output-content">
+        <t-button label="Submit" [link]="true" />
+      </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Type</h2>
+      <p>Defines different the type of button.</p>
+      <div class="output-content" style="display: flex; gap: 2em">
+        <t-button label="Primary" type="primary" />
+        <t-button label="Secondary" type="secondary" />
+      </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Sizes</h2>
+      <p>
+        Button provides <code>small</code>, <code>normal</code> and <code>large</code> sizes as alternatives to the
+        standard.
+      </p>
+      <div class="output-content" style="display: flex; gap: 2em; align-items: center">
+        <t-button label="Small" size="small" />
+        <t-button label="Normal" size="normal" />
+        <t-button label="Large" size="large" />
+      </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Disabled</h2>
+      <p>When <code>disabled</code> is present, the element cannot be edited and focused.</p>
+      <div class="output-content">
+        <t-button label="Disabled" [disabled]="true" />
       </div>
     </ng-template>
   </ui-library-documentation-demo-wrapper>

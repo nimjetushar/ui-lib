@@ -10,8 +10,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
-import { ToastConfig, ToastType } from '../../types';
 import { toastTimeOut } from '../../toast';
+import { ToastConfig, ToastType } from '../../types';
 
 export type ToastItemConfig = ToastConfig & { id: string };
 
@@ -64,7 +64,7 @@ export class ToastItemComponent implements OnInit, OnDestroy {
         return 'fa-solid fa-check';
       case 'error':
         return 'fa-solid fa-xmark';
-      case 'warn':
+      case 'warning':
         return 'fa-solid fa-exclamation';
       case 'info':
         return 'fa-solid fa-info';
