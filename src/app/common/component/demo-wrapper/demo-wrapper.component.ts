@@ -14,7 +14,7 @@ import {
 } from '@angular/core';
 import { UITemplate } from '@fourjs/ng-library';
 
-import { Options } from '../types';
+import { Options } from '../../types';
 
 @Component({
   selector: 'ui-library-documentation-demo-wrapper',

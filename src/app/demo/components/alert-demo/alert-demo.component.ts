@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AlertComponent, AlertTypes, DropdownOptions } from '@fourjs/ng-library';
 
 import { DemoParameters, Options, getComponentParameter } from '../../../common';
-import { SeverityTypes } from '../../../constants/constant';
+import { SeverityTypes } from '../../constant/constant';
 
 @Component({
   selector: 'ui-library-documentation-alert-demo',

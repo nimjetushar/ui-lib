@@ -8,7 +8,7 @@
       </p>
 
       <div class="detect-browser">
-        <t-button label="Detect Browser" type="primary" (click)="detecBrowserHandler()"></t-button>
+        <t-button label="Detect Browser" type="primary" (click)="detecBrowserHandler()" />
         <div class="device-detail" *ngIf="deviceDetail">
           <span class="title">Device:</span><span>{{ deviceDetail.device?.type }}</span>
           <br />
