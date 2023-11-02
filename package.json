@@ -48,7 +48,7 @@
     "@nrwl/eslint-plugin-nx": "16.10.0",
     "@nrwl/jest": "16.10.0",
     "@nrwl/js": "16.10.0",
-    "@nrwl/linter": "16.7.4",
+    "@nrwl/linter": "17.0.2",
     "@nrwl/workspace": "16.10.0",
     "@schematics/angular": "16.2.6",
     "@types/jest": "29.5.3",
