@@ -1,3 +1,5 @@
+@import '../variable.scss';
+
 .t-badge {
   position: relative;
   display: flex;
@@ -13,7 +15,7 @@
     font-weight: 600;
     text-align: center;
     color: #fff;
-    background-color: var(--primary-color);
+    background-color: $color-primary;
   }
 
   .badge-element {
