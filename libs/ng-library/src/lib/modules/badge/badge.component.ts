@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { isDefined } from 'tutility';
 
-import { Severity } from '../../core/core.type';
+import { Badge } from './badge.class';
 
 @Component({
   selector: 't-badge',
@@ -34,15 +34,12 @@ import { Severity } from '../../core/core.type';
     '[attr.aria-hidden]': 'true',
   },
 })
-export class BadgeComponent implements OnChanges {
+export class BadgeComponent extends Badge implements OnChanges {
   @Input({
     transform: (value: number | string) => value?.toString(),
   })
   value = '';
 
-  @Input() type: Severity = 'info';
-
-  typeClassName?: string;
   hasValue = false;
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -50,21 +47,5 @@ export class BadgeComponent implements OnChanges {
     this.hasValue = isDefined(value) && value !== '';
 
     this.setBadgeType(this.type);
-  }
-
-  private setBadgeType(type: Severity | null | undefined) {
-    if (type) {
-      switch (type) {
-        case 'success':
-          this.typeClassName = 'success';
-          break;
-        case 'error':
-          this.typeClassName = 'error';
-          break;
-        case 'warning':
-          this.typeClassName = 'warning';
-          break;
-      }
-    }
   }
 }
