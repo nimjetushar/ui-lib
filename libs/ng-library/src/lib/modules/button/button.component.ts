@@ -17,7 +17,7 @@ import { ButtonSize, ButtonType } from './type';
   },
 })
 export class ButtonComponent {
-  @Input() label?: string;
+  @Input() label = '';
   @Input({ transform: buttonTypeInput }) type: ButtonType = 'primary';
   @Input() disabled = false;
   @Input({ transform: buttonSizeInput }) size: ButtonSize = 'normal';

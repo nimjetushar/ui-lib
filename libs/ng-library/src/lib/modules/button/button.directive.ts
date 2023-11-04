@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Input, OnChanges, OnInit } from '@angular/core';
 
-import { DomHandler } from '../../core/dom/domHandler';
+import { DomHandler } from '../../core';
 import { buttonSizeInput, buttonTypeInput, getButtonClass } from './button.utility';
 import { ButtonSize, ButtonType } from './type';
 

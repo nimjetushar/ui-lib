@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Directive, ElementRef, Inject, Input, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
 
-import { DomHandler } from '../../core/dom/domHandler';
+import { DomHandler } from '../../core';
 import { Badge } from './badge.class';
 
 @Directive({
