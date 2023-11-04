@@ -2,18 +2,21 @@ import { DOCUMENT } from '@angular/common';
 import { Directive, ElementRef, Inject, Input, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
 
 import { DomHandler } from '../../core/dom/domHandler';
+import { Badge } from './badge.class';
 
 @Directive({
   selector: '[tBadge]',
 })
-export class BadgeDirective implements OnInit, OnChanges {
+export class BadgeDirective extends Badge implements OnInit, OnChanges {
   @Input({ transform: (value: string | number) => value.toString() }) tBadge = '';
 
   constructor(
     private elementRef: ElementRef,
     private renderer: Renderer2,
     @Inject(DOCUMENT) private document: Document,
-  ) {}
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
     DomHandler.addClass(this.elementRef.nativeElement, 't-badge');
@@ -28,6 +31,7 @@ export class BadgeDirective implements OnInit, OnChanges {
       }
       this.createBadgeElement();
     }
+    this.setBadgeType(this.type);
   }
 
   private createBadgeElement() {

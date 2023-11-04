@@ -3,8 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NgLibrary } from '@fourjs/ng-library';
 
 import { AppComponent } from './app.component';
-import { APPNAME } from './constants/config';
 import { Common } from './common';
+import { APPNAME } from './constants/config';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

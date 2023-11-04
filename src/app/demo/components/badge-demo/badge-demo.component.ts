@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BadgeComponent } from '@fourjs/ng-library';
 
 import { DemoParameters, Options, getComponentParameter } from '../../../common';
-import { SeverityTypes } from '../../../constants/constant';
+import { SeverityTypes } from '../../constant/constant';
 
 @Component({
   selector: 'ui-library-documentation-badge-demo',
@@ -33,18 +33,15 @@ const getBadgeComponentOptions = (): Options<BadgeComponent> => {
   return {
     name: 't-badge',
     options: [
-      {
+      getParameter({
         parameter: 'value',
-        type: 'string | number',
         description: 'Value displayed inside badge',
-      },
-      getParameter({ parameter: 'type', description: 'Badge with different severity', type: SeverityTypes }),
-      {
+      }),
+      getParameter({
         parameter: 'type',
-        type: SeverityTypes,
-        default: 'info',
         description: 'Badge with different severity',
-      },
+        type: SeverityTypes,
+      }),
     ],
   };
 };

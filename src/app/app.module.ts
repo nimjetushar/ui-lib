@@ -11,13 +11,7 @@ import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [AppComponent, ReferenceComponent, HomeComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    Common,
-    MenuModule,
-  ],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, Common, MenuModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

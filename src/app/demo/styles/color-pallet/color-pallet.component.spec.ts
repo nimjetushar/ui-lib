@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ColorPalletComponent } from './color-pallet.component';
 import { Common } from '../../../common';
+import { ColorPalletComponent } from './color-pallet.component';
 
 describe('ColorPalletComponent', () => {
   let component: ColorPalletComponent;

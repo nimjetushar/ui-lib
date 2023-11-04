@@ -11,39 +11,27 @@ const routes: Routes = [
   },
   {
     path: 'gettingStarted',
-    loadChildren: () =>
-      import('./demo/getting-started/getting-started.module').then(
-        (m) => m.GettingStartedModule
-      ),
+    loadChildren: () => import('./demo/getting-started/getting-started.module').then(m => m.GettingStartedModule),
   },
   {
     path: 'styles',
-    loadChildren: () =>
-      import('./demo/styles/styles.module').then((m) => m.StylesModule),
+    loadChildren: () => import('./demo/styles/styles.module').then(m => m.StylesModule),
   },
   {
     path: 'component',
-    loadChildren: () =>
-      import('./demo/components/components.module').then(
-        (m) => m.ComponentsModule
-      ),
+    loadChildren: () => import('./demo/components/components.module').then(m => m.ComponentsModule),
   },
   {
     path: 'directive',
-    loadChildren: () =>
-      import('./demo/directives/directives.module').then(
-        (m) => m.DirectivesModule
-      ),
+    loadChildren: () => import('./demo/directives/directives.module').then(m => m.DirectivesModule),
   },
   {
     path: 'services',
-    loadChildren: () =>
-      import('./demo/services/services.module').then((m) => m.ServicesModule),
+    loadChildren: () => import('./demo/services/services.module').then(m => m.ServicesModule),
   },
   {
     path: 'utility',
-    loadChildren: () =>
-      import('./demo/utility/utility.module').then((m) => m.UtilityModule),
+    loadChildren: () => import('./demo/utility/utility.module').then(m => m.UtilityModule),
   },
   {
     path: 'reference',

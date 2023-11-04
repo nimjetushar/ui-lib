@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 
-import { Column, DocOptions, MethodOptions, Options } from '../types';
+import { Column, DocOptions, MethodOptions, Options } from '../../types';
 
 @Component({
   selector: 'ui-library-documentation-options-grid',

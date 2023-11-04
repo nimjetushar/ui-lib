@@ -1,16 +1,8 @@
 <div class="application-wrapper">
-  <t-header
-    [title]="appTitle"
-    routeLink="home"
-    (sideBarToggled)="sideBarToggled($event)"
-  ></t-header>
-  <t-nav
-    [menuItems]="menuItems"
-    [expanded]="expanded"
-    (sliderStatus)="sideBarToggled($event)"
-  ></t-nav>
+  <t-header [title]="appTitle" routeLink="home" (sideBarToggled)="sideBarToggled($event)" />
+  <t-nav [menuItems]="menuItems" [expanded]="expanded" (sliderStatus)="sideBarToggled($event)" />
 
-  <div class="main-container container-fluid" id="main-container">
-    <router-outlet></router-outlet>
+  <div class="main-container container" id="main-container">
+    <router-outlet />
   </div>
 </div>
