@@ -6,7 +6,6 @@ import { DemoParameters, Options, getComponentParameter } from '../../../common'
 @Component({
   selector: 'ui-library-documentation-button-demo',
   templateUrl: './button-demo.component.html',
-  styleUrls: ['./button-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonDemoComponent implements DemoParameters<ButtonComponent> {

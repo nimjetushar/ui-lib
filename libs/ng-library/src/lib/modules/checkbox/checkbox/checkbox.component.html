@@ -1,15 +1,13 @@
 <label class="checkbox" [class.disabled]="disabled">
   <span class="checkmark">
-    <i class="checkmark-icon" [ngClass]="model ? 'pi pi-check' : ''"></i>
+    <i class="checkmark-icon" [ngClass]="checked ? 'fa-solid fa-check' : ''"></i>
   </span>
   <input
     type="checkbox"
     [name]="name"
-    [(ngModel)]="model"
-    [checked]="checked"
+    [(ngModel)]="checked"
     [disabled]="disabled"
-    [readonly]="readonly"
-    (change)="handleOnChange($event)"
+    (ngModelChange)="modelChangehandler($event)"
   />
   <span *ngIf="label" class="checkbox-label">{{ label }}</span>
 </label>

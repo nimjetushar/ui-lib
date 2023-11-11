@@ -1,27 +1,20 @@
 <div class="checkbox-component">
-  <ui-library-documentation-demo-wrapper
-    header="Checkbox"
-    [code]="compSyntax"
-    [options]="options"
-  >
-    <div output>
-      <t-checkbox
-        label="Checkbox"
-        name="checkbox"
-        [(model)]="modelValue"
-      ></t-checkbox>
-      <div *ngIf="modelValue !== undefined" class="output">
-        <span>Output: {{ modelValue }}</span>
+  <ui-library-documentation-demo-wrapper header="Checkbox" [code]="compSyntax" [options]="options">
+    <ng-template tTemplate="output">
+      <h2 class="title">Basic</h2>
+      <div class="output-content">
+        <div style="display: flex; align-items: center; gap: 2em">
+          <t-checkbox
+            label="Checkbox"
+            name="checkbox"
+            [binary]="true"
+            [(ngModel)]="modelValue"
+            (ngModelChange)="modelChangeHandler($event)"
+          />
+          <span>Output: {{ modelValue }}</span>
+        </div>
+        <t-checkbox label="disabled checkbox" name="checkbox" [disabled]="true" />
       </div>
-      <div></div>
-      <t-checkbox
-        label="disabled checkbox"
-        name="checkbox"
-        [disabled]="true"
-      ></t-checkbox>
-    </div>
-    <div doc>
-      <ui-library-documentation-common-note></ui-library-documentation-common-note>
-    </div>
+    </ng-template>
   </ui-library-documentation-demo-wrapper>
 </div>

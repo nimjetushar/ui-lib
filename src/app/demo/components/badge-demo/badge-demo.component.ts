@@ -7,7 +7,6 @@ import { SeverityTypes } from '../../constant/constant';
 @Component({
   selector: 'ui-library-documentation-badge-demo',
   templateUrl: './badge-demo.component.html',
-  styleUrls: ['./badge-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BadgeDemoComponent implements DemoParameters<BadgeComponent> {
