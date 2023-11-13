@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 
 import { BadgeComponent } from '../badge/badge.component';
 import { ButtonComponent } from '../button/button.component';
-import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { DropdownComponent } from '../dropdown/dropdown.component';
 import { RadioComponent } from '../radio/radio.component';
 import { DynamicFieldsComponent } from './dynamic-fields.component';
@@ -14,14 +13,7 @@ describe('DynamicFieldsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        DynamicFieldsComponent,
-        ButtonComponent,
-        BadgeComponent,
-        CheckboxComponent,
-        RadioComponent,
-        DropdownComponent,
-      ],
+      declarations: [DynamicFieldsComponent, ButtonComponent, BadgeComponent, RadioComponent, DropdownComponent],
       imports: [FormsModule],
     }).compileComponents();
   }));
