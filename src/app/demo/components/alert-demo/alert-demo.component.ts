@@ -7,7 +7,6 @@ import { SeverityTypes } from '../../constant/constant';
 @Component({
   selector: 'ui-library-documentation-alert-demo',
   templateUrl: './alert-demo.component.html',
-  styleUrls: ['./alert-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlertDemoComponent implements DemoParameters<AlertComponent> {

@@ -23,14 +23,4 @@ describe('CheckboxComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should emit checkbox selection status', () => {
-    jest.spyOn(component.modelChange, 'emit');
-    component.handleOnChange({ target: { checked: true } });
-    expect(component.modelChange.emit).toHaveBeenCalledWith(true);
-
-    component.handleOnChange({ target: { checked: false } });
-    expect(component.checked).toEqual(false);
-    expect(component.modelChange.emit).toHaveBeenCalledWith(false);
-  });
 });

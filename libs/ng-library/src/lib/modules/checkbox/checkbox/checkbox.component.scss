@@ -1,0 +1,35 @@
+@import '../../../styles/variable.scss';
+@import '../../../styles//utility.scss';
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .checkmark {
+    position: relative;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: #fff;
+    border: 1px solid #484c4f;
+
+    &-icon {
+      position: absolute;
+      top: 1.2px;
+      left: 1px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

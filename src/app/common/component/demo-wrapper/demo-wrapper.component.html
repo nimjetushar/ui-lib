@@ -3,8 +3,8 @@
   <p class="component-sub-header" *ngIf="subHeader">{{ subHeader }}</p>
 
   <div class="component-content">
-    <ui-library-documentation-code-section *ngIf="importSyntax" header="Import" [code]="[importSyntax]" />
-    <ui-library-documentation-code-section *ngIf="code && code.length" header="Syntax" [code]="code" />
+    <code-section *ngIf="importSyntax" header="Import" [code]="importSyntax" />
+    <code-section *ngIf="code && code.length" header="Syntax" [code]="code" />
 
     <div class="code-output" #output [ngClass]="{ hide: enableOutput }">
       <ng-content select="[output]"></ng-content>

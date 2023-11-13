@@ -18,6 +18,6 @@ import { OptionsGridComponent } from './component/options-grid/options-grid.comp
     CodeSectionComponent,
   ],
   imports: [CommonModule, FormsModule, ToastModule, UITemplate],
-  exports: [CommonNoteComponent, DemoWrapperComponent, UITemplate],
+  exports: [CommonNoteComponent, DemoWrapperComponent, UITemplate, CodeSectionComponent],
 })
 export class Common {}

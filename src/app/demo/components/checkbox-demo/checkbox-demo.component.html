@@ -1,27 +1,54 @@
 <div class="checkbox-component">
-  <ui-library-documentation-demo-wrapper
-    header="Checkbox"
-    [code]="compSyntax"
-    [options]="options"
-  >
-    <div output>
-      <t-checkbox
-        label="Checkbox"
-        name="checkbox"
-        [(model)]="modelValue"
-      ></t-checkbox>
-      <div *ngIf="modelValue !== undefined" class="output">
-        <span>Output: {{ modelValue }}</span>
+  <ui-library-documentation-demo-wrapper header="Checkbox" [code]="compSyntax" [options]="options">
+    <ng-template tTemplate="output">
+      <h2 class="title">Basic</h2>
+      <div class="output-content">
+        <div style="display: flex; align-items: center; gap: 2em; margin-bottom: 1em">
+          <t-checkbox
+            label="Checkbox"
+            name="checkbox"
+            [binary]="true"
+            [(ngModel)]="modelValue"
+            (ngModelChange)="modelChangeHandler($event)"
+          />
+          <span>Output: {{ modelValue }}</span>
+        </div>
+        <t-checkbox label="disabled checkbox" name="checkbox" [disabled]="true" />
       </div>
-      <div></div>
-      <t-checkbox
-        label="disabled checkbox"
-        name="checkbox"
-        [disabled]="true"
-      ></t-checkbox>
-    </div>
-    <div doc>
-      <ui-library-documentation-common-note></ui-library-documentation-common-note>
-    </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Reactive forms</h2>
+      <p>
+        Checkbox can also be used with reactive forms. In this case, the <code>formControlName</code> property is used
+        to bind the component to a form control.
+      </p>
+      <div class="output-content">
+        <form [formGroup]="formGroup">
+          <t-checkbox label="Pune" value="Pune" name="city" formControlName="city" />
+        </form>
+      </div>
+      <code-section [code]="formGroupCodeSample" />
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Disabled</h2>
+      <p>When <code>disabled</code> is present, the element cannot be edited and focused.</p>
+      <div class="output-content">
+        <t-checkbox label="Pune" value="Pune" name="city" [disabled]="true" />
+      </div>
+    </ng-template>
+
+    <ng-template tTemplate="output">
+      <h2 class="title">Custom label</h2>
+      <p>Instead of using lable input, custom label can be given using <code>inputId</code> and html label tag</p>
+      <div class="output-content">
+        <div style="display: flex">
+          <label for="customLabel" style="margin-right: 0.5em">Custom label</label>
+          <t-checkbox value="Pune" name="city" inputId="customLabel" />
+        </div>
+      </div>
+      <code-section [code]="customLabelCodeSample"></code-section>
+    </ng-template>
   </ui-library-documentation-demo-wrapper>
 </div>
