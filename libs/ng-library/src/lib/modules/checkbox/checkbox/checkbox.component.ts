@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
-import { noop } from 'tutility';
+import { isUndefined, noop } from 'tutility';
 
 import { createCustomInputControlValueAccessor } from '../../../core';
+import { getUiqueIdentifier } from '../../../utility/utilities';
 
 @Component({
   selector: 't-checkbox',
@@ -14,12 +15,13 @@ import { createCustomInputControlValueAccessor } from '../../../core';
     class: 't-checkbox',
   },
 })
-export class CheckboxComponent<T = any> implements ControlValueAccessor {
+export class CheckboxComponent<T = any> implements ControlValueAccessor, OnInit {
   @Input() label = '';
   @Input() value?: T | null;
-  @Input() name = 'p-checkbox';
+  @Input() name = '';
   @Input() disabled = false;
   @Input() binary = false;
+  @Input() inputId = '';
 
   @Output() onChange = new EventEmitter<T>();
 
@@ -27,6 +29,11 @@ export class CheckboxComponent<T = any> implements ControlValueAccessor {
   onTouched: unknown = noop;
 
   private _onChange: (value: T | null | undefined) => void = noop;
+
+  ngOnInit(): void {
+    this.name = 'pb-checkbox';
+    this.inputId = this.inputId ?? getUiqueIdentifier();
+  }
 
   writeValue(value: T | null | undefined): void {
     this.checked = this.binary ? !!value : value === this.value;
@@ -45,7 +52,7 @@ export class CheckboxComponent<T = any> implements ControlValueAccessor {
   }
 
   modelChangehandler(event: boolean) {
-    const currentValue: T = this.value === undefined ? (true as any) : this.value;
-    this._onChange(event ? currentValue : undefined);
+    const currentValue: T = isUndefined(this.value) ? (true as any) : this.value;
+    this._onChange(event ? currentValue : null);
   }
 }
