@@ -41,18 +41,18 @@ export class DropdownComponent<T = any> extends Tooltip implements ControlValueA
     }
   }
 
-  @Input() placeholder!: string;
+  @Input() placeholder = '';
 
   @HostBinding('class.disabled')
   @Input()
   disabled = false;
 
-  @Input() scrollHeight?: string;
+  @Input() scrollHeight = '200px';
   @Input() showFilter = false;
   @Input() disableClear = false;
-  @Input() emptyMessage?: string;
-  @Input() inputId?: string;
-  @Input() name?: string;
+  @Input() emptyMessage = '';
+  @Input() inputId = '';
+  @Input() name = '';
 
   @Output() onFocus = new EventEmitter<Event>();
   @Output() onBlur = new EventEmitter<Event>();

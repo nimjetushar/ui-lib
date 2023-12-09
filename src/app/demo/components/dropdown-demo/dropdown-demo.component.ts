@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { DropdownOptions, TooltipPosition } from '@fourjs/ng-library';
+import { DropdownComponent, DropdownOptions, TooltipPosition } from '@fourjs/ng-library';
 
-import { Options } from '../../../common';
+import { Options, getComponentParameter } from '../../../common';
 
 @Component({
   selector: 'ui-library-documentation-dropdown-demo',
@@ -14,67 +14,7 @@ export class DropdownDemoComponent {
     `<t-dropdown placeholder="Select option" [options]="options" [(ngModel)]="value" [filter]="true" />`,
   ];
 
-  readonly pageOptions: Options = {
-    name: 't-dropdown',
-    options: [
-      {
-        parameter: 'placeholder',
-        type: 'string',
-        description: 'Default text to display when no option is selected.',
-      },
-      {
-        parameter: 'options',
-        type: 'Dropdown[]',
-        description: 'An array of objects to display as the available options.',
-      },
-      {
-        parameter: 'name',
-        type: 'string',
-        description: 'Name of the input element.',
-      },
-      {
-        parameter: 'scrollHeight',
-        type: 'string',
-        default: '200px',
-        description: 'Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.',
-      },
-      {
-        parameter: 'disabled',
-        type: 'boolean',
-        default: 'false',
-        description: 'Disabled dropdown',
-      },
-      {
-        parameter: 'autofocus',
-        type: 'boolean',
-        default: 'false',
-        description: 'Component should automatically get focus on load',
-      },
-      {
-        parameter: 'tooltip',
-        type: 'any',
-        description: 'Advisory information to display in a tooltip on hover.',
-      },
-      {
-        parameter: 'tooltipPosition',
-        type: 'string',
-        default: 'top',
-        description: 'Position of the tooltip, valid values are right, left, top and bottom.',
-      },
-    ],
-    methods: [
-      {
-        method: 'onFocus',
-        parameter: 'event: Browser event',
-        description: 'Callback to invoke when dropdown gets focus.',
-      },
-      {
-        method: 'onBlur',
-        parameter: 'event: Browser event',
-        description: 'Callback to invoke when dropdown gets blur.',
-      },
-    ],
-  };
+  readonly pageOptions = getDropdownComponentOptions();
 
   readonly options: DropdownOptions<string>[] = [
     { label: 'Audi', value: 'Audi' },
@@ -124,3 +64,62 @@ export class DropdownDemoComponent {
     this.eventType = event.type;
   }
 }
+
+const getDropdownComponentOptions = (): Options<DropdownComponent> => {
+  const instance = new DropdownComponent();
+  const getParameter = getComponentParameter(instance);
+
+  return {
+    name: 't-dropdown',
+    options: [
+      getParameter({
+        parameter: 'placeholder',
+        description: 'Default text to display when no option is selected.',
+      }),
+      getParameter({
+        parameter: 'options',
+        description: 'An array of objects to display as the available options.',
+        type: 'Dropdown[]',
+      }),
+      getParameter({
+        parameter: 'name',
+        description: 'Name of the input element.',
+      }),
+      getParameter({
+        parameter: 'scrollHeight',
+        description: 'Height of the viewport in pixels, a scrollbar is defined if height of list exceeds this value.',
+      }),
+      getParameter({
+        parameter: 'disabled',
+        description: 'Disabled dropdown',
+      }),
+      // {
+      //   parameter: 'autofocus',
+      //   type: 'boolean',
+      //   default: 'false',
+      //   description: 'Component should automatically get focus on load',
+      // },
+      getParameter({
+        parameter: 'tooltip',
+        type: 'any',
+        description: 'Advisory information to display in a tooltip on hover.',
+      }),
+      getParameter({
+        parameter: 'tooltipPosition',
+        description: 'Position of the tooltip, valid values are right, left, top and bottom.',
+      }),
+    ],
+    methods: [
+      {
+        method: 'onFocus',
+        parameter: 'event: Browser event',
+        description: 'Callback to invoke when dropdown gets focus.',
+      },
+      {
+        method: 'onBlur',
+        parameter: 'event: Browser event',
+        description: 'Callback to invoke when dropdown gets blur.',
+      },
+    ],
+  };
+};
