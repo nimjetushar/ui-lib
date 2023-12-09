@@ -1,8 +1,4 @@
-<label
-  class="radio"
-  [class.disabled]="disabled"
-  [ngClass]="{ active: checked }"
->
+<label class="radio" [class.disabled]="disabled" [ngClass]="{ active: checked }">
   <span *ngIf="label" class="radio-label">{{ label }}</span>
   <input
     type="radio"

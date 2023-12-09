@@ -104,12 +104,10 @@ const getDropdownComponentOptions = (): Options<DropdownComponent> => {
         type: 'any',
         description: 'Advisory information to display in a tooltip on hover.',
       }),
-      {
+      getParameter({
         parameter: 'tooltipPosition',
-        type: 'string',
-        default: 'top',
         description: 'Position of the tooltip, valid values are right, left, top and bottom.',
-      },
+      }),
     ],
     methods: [
       {
